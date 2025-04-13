@@ -98,9 +98,11 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
                       </div>
                       <label className="entry__error entry__error--primary mx-auto text-center" style={{ fontSize: "16px", fontFamily: "Helvetica, sans-serif", color: "#661d1d", backgroundColor: "#ffeded", borderRadius: "3px", borderColor: "#ff4949" }}>
                       </label>
-                      <label className="entry__specification mx-auto text-center block w-3/4 text-center" style={{ fontSize: "12px", fontFamily: "Helvetica, sans-serif", color: "#8390A4" }}>
-                        Wir melden uns innerhalb von kürzester Zeit bei dir für weiter Infos zu unserem Produkt und einer Demo
-                      </label>
+                      <div className="flex justify-center w-full">
+                        <label className="entry__specification text-center w-3/4" style={{ fontSize: "12px", fontFamily: "Helvetica, sans-serif", color: "#8390A4" }}>
+                          Wir melden uns innerhalb von kürzester Zeit bei dir für weiter Infos zu unserem Produkt und einer Demo
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
