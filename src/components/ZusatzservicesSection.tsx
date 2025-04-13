@@ -58,7 +58,7 @@ const ZusatzservicesSection = () => {
               <img 
                 src="/lovable-uploads/b92f1bdf-aaee-49aa-adb9-a2c7ff1f56a9.png"
                 alt="Zusatzservices verkaufen" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover bg-transparent"
               />
             </div>
           </div>
