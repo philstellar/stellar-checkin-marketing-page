@@ -8,8 +8,10 @@ const ZusatzservicesSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Zusatzservices verkaufen</h2>
-            <p className="text-lg text-gray-700 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-stellar-600 mb-4 text-center">
+              Zusatzservices verkaufen
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 text-center">
               Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses zusätzliche 
               Services anbieten. Von Early Check-in bis zu Premium-Angeboten.
             </p>

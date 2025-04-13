@@ -8,8 +8,10 @@ const BerichteSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Berichte und Analysen</h2>
-            <p className="text-lg text-gray-700 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-stellar-600 mb-4 text-center">
+              Berichte und Analysen
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 text-center">
               Gewinnen Sie wertvolle Einblicke in Ihre Geschäftsdaten mit unseren umfassenden Analyse-Tools 
               und personalisierbaren Dashboards.
             </p>

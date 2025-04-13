@@ -36,9 +36,9 @@ export const IntegrationenSection: React.FC = () => {
       image=""
       imageAlt="Systemintegrationen für Ferienwohnungen"
       bgColor="bg-gray-50"
+      centerTitle={true}  // New prop to center title
     />
   );
 };
 
 export default IntegrationenSection;
-

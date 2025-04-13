@@ -6,8 +6,8 @@ export const VersicherungSection = () => {
   return (
     <section id="versicherung" className="section-padding bg-white">
       <div className="container-custom">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-stellar-600 mb-4">
             Gästeversicherung und / oder Kaution automatisieren
           </h2>
           <p className="text-lg text-gray-700 mb-8">
