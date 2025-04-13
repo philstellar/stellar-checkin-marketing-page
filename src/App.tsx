@@ -10,6 +10,7 @@ import Brevo from "./pages/Brevo";
 import NotFound from "./pages/NotFound";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import Agb from "./pages/Agb";
 import { BrevoFormProvider } from "./context/BrevoFormContext";
 import BrevoFormPopupWrapper from "./components/BrevoFormPopupWrapper";
 
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/kontakt" element={<Brevo />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
+            <Route path="/agb" element={<Agb />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

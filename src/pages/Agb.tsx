@@ -20,7 +20,7 @@ const Agb = () => {
               (im Folgenden „Auftraggeber" genannt)
             </p>
             
-            <h2 className="text-xl font-bold mt-8 mb-4">Allgemeines</h2>
+            <h2 className="text-xl font-bold mt-8 mb-4">1. Allgemeines</h2>
             <p>
               1.1 Diese Allgemeinen Geschäftsbedingungen (AGB) für die Erbringung von Dienstleistungen gelten für Verträge, 
               die zwischen dem Auftraggeber und dem Auftragnehmer unter Einbeziehung dieser AGB geschlossen werden.
@@ -44,7 +44,7 @@ const Agb = () => {
               vorbehaltlich einer ausdrücklichen Zustimmung – nicht an.
             </p>
             
-            <h2 className="text-xl font-bold mt-8 mb-4">Vertragsgegenstand und Leistungsumfang</h2>
+            <h2 className="text-xl font-bold mt-8 mb-4">2. Vertragsgegenstand und Leistungsumfang</h2>
             <p>
               2.1 Der Auftragnehmer erbringt die folgenden Leistungen für den Auftraggeber als selbstständiger Unternehmer:
             </p>
@@ -73,7 +73,7 @@ const Agb = () => {
               nur in Abstimmung mit dem Auftraggeber statt.
             </p>
             
-            <h2 className="text-xl font-bold mt-8 mb-4">Mitwirkungspflichten des Auftraggebers</h2>
+            <h2 className="text-xl font-bold mt-8 mb-4">3. Mitwirkungspflichten des Auftraggebers</h2>
             <p>
               Der Auftraggeber ist verpflichtet, alle Informationen, Daten und sonstigen Inhalte, die für die Erfüllung der 
               Leistung erforderlich sind, vollständig und richtig zur Verfügung zu stellen. Der Auftragnehmer ist in keiner 
@@ -82,13 +82,13 @@ const Agb = () => {
               „Haftung/Schadensersatz" bleiben hiervon unberührt.
             </p>
             
-            <h2 className="text-xl font-bold mt-8 mb-4">Entschädigung</h2>
+            <h2 className="text-xl font-bold mt-8 mb-4">4. Vergütung</h2>
             <p>
-              4.1 Die Entschädigung wird individuell vereinbart.
+              4.1 Die Vergütung wird individuell vereinbart.
             </p>
             
             <p>
-              4.2 Die Entschädigung ist nach der Erbringung der Leistungen fällig. Wird die Vergütung nach Zeiträumen 
+              4.2 Die Vergütung ist nach der Erbringung der Leistungen fällig. Wird die Vergütung nach Zeiträumen 
               bemessen, ist sie nach Ablauf eines jeden Zeitraums fällig (§ 614 BGB). Bei der Abrechnung nach Aufwand ist 
               der Auftragnehmer vorbehaltlich abweichender Vereinbarungen berechtigt, die erbrachten Leistungen monatlich 
               abzurechnen.
@@ -99,7 +99,7 @@ const Agb = () => {
               E-Mail (z.B. als PDF) aus. Die Vergütung ist innerhalb von 14 Tagen nach Erhalt der Rechnung zur Zahlung fällig.
             </p>
             
-            <h2 className="text-xl font-bold mt-8 mb-4">Haftung / Schadensersatz</h2>
+            <h2 className="text-xl font-bold mt-8 mb-4">5. Haftung / Schadensersatz</h2>
             <p>
               5.1 Der Auftragnehmer haftet unbeschränkt aus jeglichem Rechtsgrund bei Vorsatz oder grober Fahrlässigkeit, 
               bei vorsätzlicher oder fahrlässiger Verletzung des Lebens, des Körpers oder der Gesundheit, aufgrund einer 
@@ -118,7 +118,7 @@ const Agb = () => {
               aufgrund von Verstößen des Auftraggebers gegen diese Vertragsbedingungen oder geltendes Recht geltend gemacht werden.
             </p>
             
-            <h2 className="text-xl font-bold mt-8 mb-4">Vertragsdauer und Kündigung</h2>
+            <h2 className="text-xl font-bold mt-8 mb-4">6. Vertragsdauer und Kündigung</h2>
             <p>
               6.1 Die Vertragsdauer und die Fristen für die ordentliche Kündigung werden von den Parteien individuell vereinbart.
             </p>
@@ -136,7 +136,7 @@ const Agb = () => {
               auf Anfrage schriftlich bestätigen.
             </p>
             
-            <h2 className="text-xl font-bold mt-8 mb-4">Vertraulichkeit und Datenschutz</h2>
+            <h2 className="text-xl font-bold mt-8 mb-4">7. Vertraulichkeit und Datenschutz</h2>
             <p>
               7.1 Der Auftragnehmer wird alle Vorgänge, die ihm im Zusammenhang mit dem Auftrag bekannt werden, streng 
               vertraulich behandeln. Der/die Auftragnehmer/in verpflichtet sich, alle Mitarbeiter/innen und/oder Dritte, 
@@ -150,7 +150,7 @@ const Agb = () => {
               einzuhalten.
             </p>
             
-            <h2 className="text-xl font-bold mt-8 mb-4">Schlussbestimmungen</h2>
+            <h2 className="text-xl font-bold mt-8 mb-4">8. Schlussbestimmungen</h2>
             <p>
               8.1 Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.
             </p>
@@ -184,13 +184,13 @@ const Agb = () => {
             </p>
             
             <p>
-              8.6 Buyer protection is defined as the following. As a booker you are responsible to verify to only book through 
-              ways that are officially recognized by the webpage that Stellar has certified. Do not communicate with either an 
-              e-mail address or telephone number that has not been verified by us. we do our best to verify all the data we are 
-              provided in order to provide maximum protection.
+              8.6 Käuferschutz wird wie folgt definiert: Als Buchender sind Sie dafür verantwortlich, nur über Wege zu buchen, 
+              die offiziell von der von Stellar zertifizierten Webseite anerkannt sind. Kommunizieren Sie nicht mit einer 
+              E-Mail-Adresse oder Telefonnummer, die nicht von uns verifiziert wurde. Wir tun unser Bestes, um alle Daten, die 
+              uns zur Verfügung gestellt werden, zu überprüfen, um maximalen Schutz zu bieten.
             </p>
             
-            <p className="font-medium my-4">Die Daten, die wir überprüfen, sind die folgenden</p>
+            <p className="font-medium my-4">Die Daten, die wir überprüfen, sind die folgenden:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Ausweis der Schlüsselperson einschließlich biometrischer Daten</li>
               <li>Legitimität der Immobilien-Website durch Bereitstellung eines Meta-Tags</li>
@@ -201,19 +201,19 @@ const Agb = () => {
             </ul>
             
             <p>
-              8.7 Please refer to the policies of our insurance providers. You can find them linked here. Stellar Tourism 
-              Innovations GmbH is only selling insurance policies by Hiscox and is not an insurance company itself. Claim 
-              handling is up to the insurance providers and works accordingly to their policies. Their policies are at any time 
-              valid. Statements on Stellar website are only supportive and always inferior to the policies.
+              8.7 Bitte beachten Sie die Richtlinien unserer Versicherungsanbieter. Sie finden sie hier verlinkt. Die Stellar 
+              Tourism Innovations GmbH verkauft nur Versicherungspolicen von Hiscox und ist selbst keine Versicherungsgesellschaft. 
+              Die Schadensbearbeitung obliegt den Versicherungsanbietern und erfolgt gemäß deren Richtlinien. Ihre Richtlinien 
+              sind jederzeit gültig. Angaben auf der Stellar-Website dienen nur zur Unterstützung und sind den Richtlinien stets 
+              untergeordnet.
             </p>
             
             <p>
-              8.8 Right of Termination – We reserve the right to cancel any contract without further notice in case we detect 
-              fraudulent behavior.
-              Both the Customer and Stellar have the right to terminate contracts at any time, with immediate effect and without 
-              stating any reason. In the event that Stellar exercises its right of termination, all fees paid for services not 
-              yet rendered at the time of termination will be reimbursed. Any obligations or rights accrued before the effective 
-              date of termination remain unaffected.
+              8.8 Kündigungsrecht – Wir behalten uns das Recht vor, jeden Vertrag ohne weitere Ankündigung zu kündigen, falls 
+              wir betrügerisches Verhalten feststellen. Sowohl der Kunde als auch Stellar haben das Recht, Verträge jederzeit 
+              mit sofortiger Wirkung und ohne Angabe von Gründen zu kündigen. Für den Fall, dass Stellar von seinem Kündigungsrecht 
+              Gebrauch macht, werden alle für zum Zeitpunkt der Kündigung noch nicht erbrachte Leistungen gezahlten Gebühren 
+              erstattet. Etwaige vor dem Wirksamwerden der Kündigung entstandene Verpflichtungen oder Rechte bleiben unberührt.
             </p>
             
             <p className="font-medium mt-6 mb-2">Rückstellungen für abgeschlossene Versicherungspolicen</p>
@@ -240,22 +240,23 @@ const Agb = () => {
             </p>
             
             <p>
-              8.9 Any company or private person using our badge in a fraudulent way will be held responsible for any damage. 
-              That is we will claim compensation from the fraudulent party to compensate the scammed party and / or Stellar 
-              Tourism Innovations.
+              8.9 Jedes Unternehmen oder jede Privatperson, die unser Badge in betrügerischer Weise verwendet, wird für jeden 
+              Schaden haftbar gemacht. Das heißt, wir werden von der betrügerischen Partei Schadensersatz fordern, um die 
+              betrogene Partei und/oder Stellar Tourism Innovations zu entschädigen.
             </p>
             
             <p>
-              9.0 The Stellar Tourism Innovations guarantee contract shall be subject to German law. Place of fulfillment and 
-              jurisdiction is Berlin. The online booking page may direct complaints to the „Bundesanstalt für 
-              Finanzdienstleistungsaufsicht" (German Federal Financial Supervisory Authority)
+              9.0 Der Stellar Tourism Innovations Garantievertrag unterliegt deutschem Recht. Erfüllungsort und Gerichtsstand 
+              ist Berlin. Die Online-Buchungsseite kann Beschwerden an die „Bundesanstalt für Finanzdienstleistungsaufsicht" 
+              (BaFin) richten.
             </p>
             
             <p>
-              9.1 We take all reasonable steps to ensure that the information on this website is correct. However, we do not 
-              guarantee the correctness or completeness of material on this website. We may make changes to the material on this 
-              website at any time and without notice. The material on this website may be out of date, or on rare occasions 
-              incorrect and we make no commitment to ensure that such material is correct or up to date.
+              9.1 Wir unternehmen alle angemessenen Schritte, um sicherzustellen, dass die Informationen auf dieser Website 
+              korrekt sind. Wir garantieren jedoch nicht die Richtigkeit oder Vollständigkeit des Materials auf dieser Website. 
+              Wir können jederzeit und ohne Vorankündigung Änderungen am Material auf dieser Website vornehmen. Das Material auf 
+              dieser Website kann veraltet sein oder in seltenen Fällen Fehler enthalten, und wir verpflichten uns nicht, 
+              sicherzustellen, dass solches Material korrekt oder aktuell ist.
             </p>
             
             <p>
@@ -266,11 +267,11 @@ const Agb = () => {
             </p>
             
             <p>
-              9.2 Neither we nor any other party (whether or not involved in producing, maintaining or delivering this website), 
-              shall be liable or responsible for any kind of loss or damage that may result to you or a third party as a result 
-              of your or their use of our website. This exclusion shall include servicing or repair costs and, without limitation, 
-              any other direct, indirect or consequential loss, and whether in tort or contract or otherwise in connection with 
-              this website.
+              9.2 Weder wir noch eine andere Partei (unabhängig davon, ob sie an der Erstellung, Wartung oder Bereitstellung 
+              dieser Website beteiligt ist) haften für Verluste oder Schäden jeglicher Art, die Ihnen oder einem Dritten infolge 
+              Ihrer oder deren Nutzung unserer Website entstehen können. Dieser Ausschluss umfasst Service- oder Reparaturkosten 
+              und, ohne Einschränkung, alle anderen direkten, indirekten oder Folgeschäden, unabhängig davon, ob sie aus unerlaubter 
+              Handlung oder Vertrag oder anderweitig im Zusammenhang mit dieser Website entstehen.
             </p>
             
             <p>
@@ -298,7 +299,7 @@ const Agb = () => {
             </p>
             
             <p>
-              1.3 Bitte finden Sie unsere DSGVO-Datenverarbeitungsvereinbarung im Login-Bereich. Sie stimmen zu, diese 
+              Bitte finden Sie unsere DSGVO-Datenverarbeitungsvereinbarung im Login-Bereich. Sie stimmen zu, diese 
               automatisch zu akzeptieren und zu unterzeichnen, bevor Sie die Software aktiv nutzen. Sie können sie auch hier 
               auf Deutsch finden. Wenn Sie eine Übersetzung in Ihre jeweilige Sprache benötigen, lassen Sie es uns bitte wissen. 
               Die deutsche Version ist stets maßgeblich, während die Übersetzungen im Zweifelsfall nur zur Veranschaulichung dienen.
