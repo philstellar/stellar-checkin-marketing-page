@@ -1,6 +1,8 @@
 
 import { Shield, Check, ExternalLink, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const SchadenabwicklungSection = () => {
   return (
@@ -8,7 +10,7 @@ const SchadenabwicklungSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
           <div className="md:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Schadenabwicklung bei Gästeschäden</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-royal mb-4">Schadenabwicklung bei Gästeschäden</h2>
             <p className="text-lg text-gray-700 mb-8">
               Wir arbeiten mit <span className="font-semibold">Hiscox</span> zusammen, einem der weltweit führenden Spezialversicherer,
               um eine reibungslose und professionelle Abwicklung von Gästeschäden zu gewährleisten.
@@ -32,21 +34,25 @@ const SchadenabwicklungSection = () => {
                   description: "Schutz vor finanziellen Verlusten durch Gästeschäden und gleichzeitig ein positives Gästeerlebnis."
                 }
               ].map((feature, index) => (
-                <div key={index} className="flex">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-[#eef1f8] flex items-center justify-center text-[#0f2661]">
-                    {feature.icon}
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">{feature.title}</h3>
-                    <p className="mt-1 text-base text-gray-500">{feature.description}</p>
-                  </div>
-                </div>
+                <Card key={index} className="transition-all duration-300 hover:shadow-lg border border-gray-200">
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-4">
+                      <div className={cn("rounded-lg p-2.5 bg-[#eef1f8] text-royal")}>
+                        {feature.icon}
+                      </div>
+                      <CardTitle className="text-lg font-semibold text-royal">{feature.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-4">
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
             
             <div className="mt-8 flex items-center gap-6">
               <a href="/kontakt" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-stellar-600 hover:bg-stellar-700">
+                <Button className="bg-apple hover:bg-apple-600">
                   Mehr erfahren <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
               </a>
