@@ -10,6 +10,7 @@ import {
 import VersicherungSection from "@/components/VersicherungSection";
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 import BerichteSection from "@/components/BerichteSection";
+import LogoCarousel from "@/components/LogoCarousel";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,7 @@ const Index = () => {
         <OnlineCheckinSection />
         <ZusatzservicesSection />
         <IntegrationenSection />
+        <LogoCarousel />
         <VersicherungSection />
         <BerichteSection />
         <EinstellungenSection />
