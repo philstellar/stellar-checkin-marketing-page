@@ -48,7 +48,7 @@ export const OnlineCheckinSection: React.FC = () => {
   const features = [
     {
       title: "Integrationen",
-      description: "Verbinden Sie unsere Lösung mit bestehenden Systemen wie PMS, Schlüsselsafes und mehr für optimierte Verwaltungsprozesse.",
+      description: "Ob Integration in das PMS, Kurtaxensysten (z.B. AVS), wir vernetzen die Systeme",
       targetSection: "integrationen"
     },
     {

@@ -31,7 +31,7 @@ export const IntegrationenSection: React.FC = () => {
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 mx-auto max-w-2xl">
-            Verbinden Sie unsere Lösung mit Ihren bestehenden Systemen und optimieren Sie Ihre gesamte Verwaltung.
+            Ob Integration in das PMS, Kurtaxensysten (z.B. AVS), wir vernetzen die Systeme
           </p>
         </div>
         

@@ -31,7 +31,7 @@ export const IntegrationenSection: React.FC = () => {
     <FeatureSection
       id="integrationen"
       title="Nahtlose Integrationen"
-      description="Verbinden Sie unsere Lösung mit Ihren bestehenden Systemen und optimieren Sie Ihre gesamte Verwaltung."
+      description="Ob Integration in das PMS, Kurtaxensysten (z.B. AVS), wir vernetzen die Systeme"
       features={features}
       image=""
       imageAlt="Systemintegrationen für Ferienwohnungen"
