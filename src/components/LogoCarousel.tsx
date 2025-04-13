@@ -15,7 +15,7 @@ const logos: LogoType[] = [
     alt: "Ostsee Card"
   },
   {
-    src: "/lovable-uploads/659dc62b-040f-4b60-bd0a-a91d61147d17.png",
+    src: "/lovable-uploads/d854adfb-a35a-4aab-8dae-0127f61908b9.png", // Updated AVS logo
     alt: "AVS Tourismus Systeme"
   },
   {
