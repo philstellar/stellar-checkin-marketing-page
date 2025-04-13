@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-stellar-500 text-black py-12">
+    <footer className="bg-stellar-600 text-white py-12">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
@@ -12,14 +12,14 @@ const Footer = () => {
               alt="Stellar Checkin Logo" 
               className="h-10 mb-4"
             />
-            <p className="text-black mb-4 max-w-md">
+            <p className="text-white mb-4 max-w-md">
               Digitale Check-in Lösung für Ferienwohnungen - Optimieren Sie Ihre Gästeanmeldung mit unserem digitalen Check-in System.
             </p>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-black">Kontakt</h3>
-            <ul className="space-y-2 text-black">
+            <h3 className="text-lg font-semibold mb-3 text-white">Kontakt</h3>
+            <ul className="space-y-2 text-white">
               <li>Stellar Tourism Innovations GmbH</li>
               <li>Immanuelkirchstraße 37</li>
               <li>10405 Berlin</li>
@@ -29,15 +29,15 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-black">Rechtliches</h3>
+            <h3 className="text-lg font-semibold mb-3 text-white">Rechtliches</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/impressum" className="text-black hover:opacity-75 transition-opacity">
+                <Link to="/impressum" className="text-white hover:opacity-75 transition-opacity">
                   Impressum
                 </Link>
               </li>
               <li>
-                <Link to="/datenschutz" className="text-black hover:opacity-75 transition-opacity">
+                <Link to="/datenschutz" className="text-white hover:opacity-75 transition-opacity">
                   Datenschutzerklärung
                 </Link>
               </li>
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-black mt-8 pt-8 text-center text-black">
+        <div className="border-t border-white/20 mt-8 pt-8 text-center text-white">
           <p>&copy; {new Date().getFullYear()} Stellar Tourism Innovations GmbH. Alle Rechte vorbehalten.</p>
         </div>
       </div>

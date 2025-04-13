@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 72 94% 45%; /* New theme color #c5ea08 */
+    --primary: 222 75% 22%; /* Updated to #0f2661 */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -60,10 +61,10 @@
   }
 
   .stellar-gradient {
-    background: linear-gradient(135deg, #c5ea08 0%, #a3b80a 100%); /* Updated gradient with theme color */
+    background: linear-gradient(135deg, #0f2661 0%, #091c4c 100%); /* Updated gradient with new color */
   }
 
   .stellar-shadow {
-    box-shadow: 0 10px 15px -3px rgba(197, 234, 8, 0.1), 0 4px 6px -2px rgba(197, 234, 8, 0.05); /* Updated shadow color */
+    box-shadow: 0 10px 15px -3px rgba(15, 38, 97, 0.1), 0 4px 6px -2px rgba(15, 38, 97, 0.05); /* Updated shadow color */
   }
 }

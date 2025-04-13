@@ -37,7 +37,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
               <h2 className={`text-3xl font-bold mb-4 text-stellar-600 ${centerTitle ? 'inline-block relative mx-auto' : 'inline-block relative'}`}>
                 {title}
                 {centerTitle && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-stellar-300"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-stellar-500"></div>
                 )}
               </h2>
               <p className={`text-lg text-gray-600 ${centerTitle ? 'mx-auto' : ''}`}>{description}</p>
