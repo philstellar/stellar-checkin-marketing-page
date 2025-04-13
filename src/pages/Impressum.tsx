@@ -28,9 +28,7 @@ const Impressum = () => {
             </p>
             
             <h2>Vertreten durch</h2>
-            <p>
-              Philipp Reuter
-            </p>
+            <p>Philipp Reuter</p>
             
             <h2>Kontakt</h2>
             <p>
@@ -44,13 +42,11 @@ const Impressum = () => {
             </p>
             
             <h2>Verantwortliche Person für die Redaktion</h2>
-            <p>
-              Philipp Reuter
-            </p>
+            <p>Philipp Reuter</p>
             
             <h2>Versicherungsvermittlung</h2>
             <p>
-              Eintragung im Vermittlerregister bei der IHK zu Berlin unter der Nummer D-6JBK-A27XW-21<br />
+              Eintragung im Vermittlerregister bei der IHK zu Berlin unter der Nummer D-6JBK-A27XW-21
               als Versicherungsvertreter gemäß § 34 D Abs. 1 in Verbindung mit § 59 Abs. 1,2 VVG
             </p>
             
