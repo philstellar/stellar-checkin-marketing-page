@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -170,17 +169,6 @@ const Impressum = () => {
                 <p className="text-gray-700 leading-relaxed">
                   Du kannst unsere zentrale Kontaktstelle für Nutzer und Behörden gemäß Art. 11, 12 DSA wie folgt:<br />
                   E-Mail: <a href="mailto:philipp@stellar-trust.com" className="text-primary hover:underline">philipp@stellar-trust.com</a>
-                </p>
-              </section>
-              
-              <section className="mb-8">
-                <p className="text-gray-700 leading-relaxed">
-                  LAUDO ist als eine der Top-Designagenturen für die Entwicklung einzigartiger Markenidentitäten bekannt. Außerdem übernimmt LAUDO als WordPress-Agentur die komplexen Aufgaben der Webseitengestaltung.
-                </p>
-                
-                <p className="text-gray-700 leading-relaxed">
-                  LAUDO Designagentur GmbH<br />
-                  <a href="https://www.lau.do" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.lau.do</a>
                 </p>
               </section>
             </div>
