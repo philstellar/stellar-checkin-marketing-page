@@ -1,5 +1,6 @@
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero = () => {
@@ -45,9 +46,9 @@ const Hero = () => {
           <div className="md:pl-8 animate-fade-in">
             <div className="relative group hover-scale transition-all duration-300">
               <img 
-                src="/lovable-uploads/a027d0f2-291d-4ad3-8ca2-91eaadf168e6.png" 
+                src="/lovable-uploads/cf3c540d-5b62-4f28-a0b0-372f417ff304.png" 
                 alt="Stellar Checkin Dashboard auf Tablet" 
-                className="w-full h-auto object-contain rounded-lg z-10 relative"
+                className="w-full h-auto object-contain rounded-lg z-10 relative transform -rotate-2 scale-110"
               />
               <div className="absolute -bottom-3 -right-3 sm:-bottom-5 sm:-right-5 w-20 h-20 sm:w-24 sm:h-24 bg-stellar-600 rounded-lg flex items-center justify-center transform rotate-3 -z-0">
                 <span className="text-white font-bold text-lg sm:text-xl">Neu</span>
