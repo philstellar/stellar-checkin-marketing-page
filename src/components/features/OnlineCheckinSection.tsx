@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -13,8 +14,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <Card className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
       <CardHeader className="pb-2">
-        <CardTitle className="text-lg font-semibold text-royal pb-2 border-b border-apple">
+        <CardTitle className="text-lg font-semibold text-royal pb-2">
           {title}
+          <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-4">

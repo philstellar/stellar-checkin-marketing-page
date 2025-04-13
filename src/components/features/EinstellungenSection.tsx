@@ -39,8 +39,9 @@ export const EinstellungenSection: React.FC = () => {
           {features.map((feature, index) => (
             <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-semibold text-royal pb-2 border-b border-apple">
+                <CardTitle className="text-lg font-semibold text-royal pb-2">
                   {feature.title}
+                  <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-4">
