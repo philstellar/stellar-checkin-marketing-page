@@ -45,11 +45,6 @@ const Hero = () => {
                 alt="Stellar Checkin Dashboard" 
                 className="w-full h-auto object-contain rounded-lg z-10 relative transform scale-110"
               />
-              <div className="absolute -bottom-3 -right-3 sm:-bottom-5 sm:-right-5 w-20 h-20 sm:w-24 sm:h-24 bg-stellar-600 rounded-lg flex items-center justify-center transform -z-0">
-                <span className="text-white font-bold text-lg sm:text-xl">Neu</span>
-              </div>
-              
-              <div className="absolute -inset-0.5 bg-gradient-to-br from-stellar-300 to-stellar-600 opacity-0 group-hover:opacity-20 rounded-lg blur-sm transition-all duration-300"></div>
             </div>
           </div>
         </div>
