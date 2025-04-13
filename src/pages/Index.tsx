@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import { 
@@ -5,7 +6,7 @@ import {
   IntegrationenSection,
   EinstellungenSection,
   MoeglichkeitenSection
-} from "@/components/FeatureSection";
+} from "@/components/features";
 import VersicherungSection from "@/components/VersicherungSection";
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 import SchadenabwicklungSection from "@/components/SchadenabwicklungSection";
