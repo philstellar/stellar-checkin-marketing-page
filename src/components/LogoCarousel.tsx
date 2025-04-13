@@ -81,7 +81,7 @@ const LogoCarousel = () => {
                   "flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4"
                 )}
               >
-                <div className="h-24 md:h-32 flex items-center justify-center p-4 bg-white rounded-lg border border-gray-100 stellar-shadow">
+                <div className="h-24 md:h-32 flex items-center justify-center p-4 bg-transparent">
                   <img
                     src={logo.src}
                     alt={logo.alt}
