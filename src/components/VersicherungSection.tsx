@@ -1,43 +1,35 @@
 
-import { Shield, Coins, CheckCircle, ExternalLink } from "lucide-react";
+import { Shield, Check, ExternalLink, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { 
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card";
 
-export const VersicherungSection = () => {
+const VersicherungSection = () => {
   return (
     <section id="versicherung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Gästeversicherung und / oder Kaution automatisieren
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Versicherung für Ferienwohnungen</h2>
             <p className="text-lg text-gray-700 mb-8">
-              Bieten Sie Ihren Gästen eine moderne Alternative zur klassischen Kaution. Mit unserer integrierten Versicherungslösung profitieren beide Seiten.
+              Wir arbeiten mit <span className="font-semibold">Hiscox</span> zusammen, einem der weltweit führenden Spezialversicherer,
+              um umfassenden Schutz für Ihre Ferienwohnung zu gewährleisten.
             </p>
             
             <div className="space-y-6">
               {[
                 {
-                  icon: <CheckCircle className="h-6 w-6 text-stellar-600" />,
-                  title: "Schnellerer Check-in Prozess",
-                  description: "Keine Kautionsabwicklung mehr notwendig, Gäste können sofort ihre Unterkunft beziehen."
-                },
-                {
-                  icon: <CheckCircle className="h-6 w-6 text-stellar-600" />,
-                  title: "Zusätzliche Einnahmequelle",
-                  description: "Erhalten Sie Provisionen für jede abgeschlossene Versicherung - ein attraktiver Nebenverdienst."
-                },
-                {
-                  icon: <CheckCircle className="h-6 w-6 text-stellar-600" />,
+                  icon: <Shield className="h-6 w-6 text-stellar-600" />,
                   title: "Umfassender Schutz",
-                  description: "Bessere Absicherung als klassische Kautionen, da die Versicherung auch größere Schäden abdeckt."
+                  description: "Absicherung gegen Schäden durch Gäste, Einbruch, Vandalismus und mehr."
+                },
+                {
+                  icon: <Check className="h-6 w-6 text-stellar-600" />,
+                  title: "Einfache Abwicklung",
+                  description: "Schnelle und unkomplizierte Schadensabwicklung direkt über unsere Plattform."
+                },
+                {
+                  icon: <AlertTriangle className="h-6 w-6 text-stellar-600" />,
+                  title: "Günstige Konditionen",
+                  description: "Exklusive Versicherungskonditionen für Nutzer unserer Plattform."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex">
@@ -52,66 +44,31 @@ export const VersicherungSection = () => {
               ))}
             </div>
             
-            <div className="mt-8">
+            <div className="mt-8 flex items-center gap-6">
               <a href="/kontakt" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-stellar-600 hover:bg-stellar-700">
                   Mehr erfahren <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
               </a>
+              <div className="flex items-center">
+                <span className="text-gray-700 mr-3">Partner:</span>
+                <img 
+                  src="/lovable-uploads/544730f1-d669-4595-af3c-737bdc61d29a.png" 
+                  alt="Hiscox Logo" 
+                  className="h-10"
+                />
+              </div>
             </div>
           </div>
           
-          <div>
-            <Card className="border-0 shadow-lg overflow-hidden">
-              <CardHeader className="bg-stellar-600 text-white">
-                <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center">
-                    <Shield className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-2xl">Vergleich der Optionen</CardTitle>
-                    <CardDescription className="text-white/80">Versicherung vs. Kaution</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              
-              <CardContent className="p-6 space-y-6">
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div className="col-span-1"></div>
-                  <div className="font-medium text-stellar-600">Versicherung</div>
-                  <div className="font-medium text-gray-600">Kaution</div>
-                </div>
-                
-                {[
-                  {
-                    feature: "Finanzielle Belastung für Gäste",
-                    insurance: "Niedrig",
-                    deposit: "Hoch"
-                  },
-                  {
-                    feature: "Absicherung bei Schäden",
-                    insurance: "Umfassend",
-                    deposit: "Begrenzt"
-                  },
-                  {
-                    feature: "Check-in Prozess",
-                    insurance: "Schnell",
-                    deposit: "Zeitaufwändig"
-                  },
-                  {
-                    feature: "Zusätzliche Einnahmen",
-                    insurance: "Ja",
-                    deposit: "Nein"
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="grid grid-cols-3 gap-4 py-3 border-b border-gray-100">
-                    <div className="text-left font-medium text-gray-700">{item.feature}</div>
-                    <div className="text-center text-stellar-600">{item.insurance}</div>
-                    <div className="text-center text-gray-600">{item.deposit}</div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+          <div className="order-first md:order-last">
+            <div className="rounded-lg overflow-hidden stellar-shadow">
+              <img 
+                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1170"
+                alt="Versicherung für Ferienwohnungen" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

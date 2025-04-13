@@ -33,12 +33,12 @@ export const IntegrationenSection: React.FC = () => {
       title="Nahtlose Integrationen"
       description="Verbinden Sie unsere Lösung mit Ihren bestehenden Systemen und optimieren Sie Ihre gesamte Verwaltung."
       features={features}
-      image=""
+      image="/lovable-uploads/69cbcbf8-03a5-4c39-a023-9df42c0b60e3.png"
       imageAlt="Systemintegrationen für Ferienwohnungen"
       bgColor="bg-gray-50"
+      reverse={false}
     />
   );
 };
 
 export default IntegrationenSection;
-

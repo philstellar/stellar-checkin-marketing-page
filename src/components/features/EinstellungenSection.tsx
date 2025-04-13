@@ -33,9 +33,10 @@ export const EinstellungenSection: React.FC = () => {
       title="Umfangreiche Anpassungsmöglichkeiten"
       description="Passen Sie die Checkin-Lösung individuell an Ihre Bedürfnisse und die Ihrer Feriengäste an."
       features={features}
-      image=""
+      image="/lovable-uploads/a027d0f2-291d-4ad3-8ca2-91eaadf168e6.png"
       imageAlt="Anpassungsmöglichkeiten für Ferienwohnungen"
       bgColor="bg-gray-50"
+      reverse={true}
     />
   );
 };
