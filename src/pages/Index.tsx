@@ -20,11 +20,11 @@ const Index = () => {
       <main>
         <Hero />
         <OnlineCheckinSection />
-        <ZusatzservicesSection />
         <IntegrationenSection />
         <LogoCarousel />
         <VersicherungSection />
         <BerichteSection />
+        <ZusatzservicesSection />
         <EinstellungenSection />
         <ContactSection />
       </main>
