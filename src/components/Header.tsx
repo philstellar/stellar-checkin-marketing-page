@@ -78,6 +78,13 @@ const Header = () => {
                   >
                     Einstellungen
                   </a>
+                  <a 
+                    href="#versicherung"
+                    className="block px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Versicherung
+                  </a>
                 </div>
               )}
             </div>
@@ -147,6 +154,16 @@ const Header = () => {
                   }}
                 >
                   Einstellungen
+                </a>
+                <a 
+                  href="#versicherung"
+                  className="block py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  Versicherung
                 </a>
               </div>
             )}
