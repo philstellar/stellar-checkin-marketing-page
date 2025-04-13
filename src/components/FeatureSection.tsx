@@ -3,6 +3,5 @@ export {
   FeatureSection,
   OnlineCheckinSection,
   IntegrationenSection,
-  EinstellungenSection,
-  MoeglichkeitenSection
+  EinstellungenSection
 } from './features';
