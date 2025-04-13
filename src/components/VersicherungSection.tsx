@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 
 export const VersicherungSection = () => {
   return (
-    <section id="versicherung" className="section-padding bg-white">
+    <section id="versicherung" className="section-padding bg-gray-50">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-stellar-600 mb-4">
-            Gästeversicherung und / oder Kaution automatisieren
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0f2661] mb-4">
+            Gästeversicherung und Kaution automatisieren
           </h2>
-          <p className="text-lg text-gray-700 mb-8">
+          <div className="h-1 w-24 bg-[#0f2661] mx-auto mb-6 rounded-full"></div>
+          <p className="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
             Bieten Sie Ihren Gästen eine moderne Alternative zur klassischen Kaution. Mit unserer integrierten Versicherungslösung profitieren beide Seiten.
           </p>
           
@@ -32,19 +33,19 @@ export const VersicherungSection = () => {
                 description: "Bessere Absicherung als klassische Kautionen, da die Versicherung auch größere Schäden abdeckt."
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm">
-                <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-[#eef1f8] flex items-center justify-center text-[#0f2661] mb-4 mx-auto">
+              <div key={index} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-[#eef1f8] flex items-center justify-center text-[#0f2661] mb-4 mx-auto">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-base text-gray-500">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-base text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>
           
-          <div className="mt-8 text-center">
+          <div className="mt-12">
             <a href="/kontakt" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-stellar-600 hover:bg-stellar-700">
+              <Button className="bg-[#0f2661] hover:bg-[#0a1d4d] text-white px-6 py-2.5">
                 Mehr erfahren <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
             </a>
