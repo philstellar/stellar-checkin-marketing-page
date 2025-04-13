@@ -89,7 +89,7 @@ const LogoCarousel = () => {
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className="h-full w-auto object-contain max-w-full"
+                    className="h-full w-auto object-contain max-w-full filter grayscale transition-all duration-300 hover:grayscale-0 hover:filter-none"
                   />
                 </div>
               </div>
