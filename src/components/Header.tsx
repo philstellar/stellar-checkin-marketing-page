@@ -20,6 +20,7 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,13 +50,15 @@ const Header = () => {
     setIsMenuOpen(false);
     setIsDropdownOpen(false);
     
-    // Scroll to the section
-    const element = document.getElementById(sectionId);
-    if (element) {
-      // Add a small delay to allow for navigation to complete if on a different page
-      setTimeout(() => {
+    if (isHomePage) {
+      // If already on home page, scroll to the section directly
+      const element = document.getElementById(sectionId);
+      if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      }
+    } else {
+      // If on another page, navigate to home with hash
+      window.location.href = `/#${sectionId}`;
     }
   };
 
@@ -93,72 +96,48 @@ const Header = () => {
               </button>
               {isDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-20">
-                  <a 
-                    href="/#gaeste-voranmeldung"
-                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleSectionClick('gaeste-voranmeldung');
-                    }}
+                  <button 
+                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => handleSectionClick('gaeste-voranmeldung')}
                   >
                     <Monitor className="mr-2 h-4 w-4" />
                     Gäste Voranmeldung
-                  </a>
-                  <a 
-                    href="/#zusatzservices"
-                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleSectionClick('zusatzservices');
-                    }}
+                  </button>
+                  <button 
+                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => handleSectionClick('zusatzservices')}
                   >
                     <ShoppingBag className="mr-2 h-4 w-4" />
                     Zusatzservices verkaufen
-                  </a>
-                  <a 
-                    href="/#integrationen"
-                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleSectionClick('integrationen');
-                    }}
+                  </button>
+                  <button 
+                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => handleSectionClick('integrationen')}
                   >
                     <LinkIcon className="mr-2 h-4 w-4" />
                     Integrationen
-                  </a>
-                  <a 
-                    href="/#versicherung"
-                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleSectionClick('versicherung');
-                    }}
+                  </button>
+                  <button 
+                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => handleSectionClick('versicherung')}
                   >
                     <Shield className="mr-2 h-4 w-4" />
                     Versicherung
-                  </a>
-                  <a 
-                    href="/#berichte"
-                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleSectionClick('berichte');
-                    }}
+                  </button>
+                  <button 
+                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => handleSectionClick('berichte')}
                   >
                     <BarChart2 className="mr-2 h-4 w-4" />
                     Berichte und Analysen
-                  </a>
-                  <a 
-                    href="/#einstellungen"
-                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleSectionClick('einstellungen');
-                    }}
+                  </button>
+                  <button 
+                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => handleSectionClick('einstellungen')}
                   >
                     <Settings className="mr-2 h-4 w-4" />
                     Einstellungen
-                  </a>
+                  </button>
                 </div>
               )}
             </div>
@@ -168,9 +147,11 @@ const Header = () => {
             >
               Kontakt
             </Link>
-            <Button variant="default" className="bg-stellar-600 hover:bg-stellar-700">
-              Demo Anfragen
-            </Button>
+            <Link to="/kontakt">
+              <Button variant="default" className="bg-stellar-600 hover:bg-stellar-700">
+                Demo Anfragen
+              </Button>
+            </Link>
           </nav>
 
           <button
@@ -198,72 +179,48 @@ const Header = () => {
             </button>
             {isDropdownOpen && (
               <div className="pl-4">
-                <a 
-                  href="/#gaeste-voranmeldung"
-                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSectionClick('gaeste-voranmeldung');
-                  }}
+                <button
+                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => handleSectionClick('gaeste-voranmeldung')}
                 >
                   <Monitor className="mr-2 h-4 w-4" />
                   Gäste Voranmeldung
-                </a>
-                <a 
-                  href="/#zusatzservices"
-                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSectionClick('zusatzservices');
-                  }}
+                </button>
+                <button
+                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => handleSectionClick('zusatzservices')}
                 >
                   <ShoppingBag className="mr-2 h-4 w-4" />
                   Zusatzservices verkaufen
-                </a>
-                <a 
-                  href="/#integrationen"
-                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSectionClick('integrationen');
-                  }}
+                </button>
+                <button
+                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => handleSectionClick('integrationen')}
                 >
                   <LinkIcon className="mr-2 h-4 w-4" />
                   Integrationen
-                </a>
-                <a 
-                  href="/#versicherung"
-                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSectionClick('versicherung');
-                  }}
+                </button>
+                <button
+                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => handleSectionClick('versicherung')}
                 >
                   <Shield className="mr-2 h-4 w-4" />
                   Versicherung
-                </a>
-                <a 
-                  href="/#berichte"
-                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSectionClick('berichte');
-                  }}
+                </button>
+                <button
+                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => handleSectionClick('berichte')}
                 >
                   <BarChart2 className="mr-2 h-4 w-4" />
                   Berichte und Analysen
-                </a>
-                <a 
-                  href="/#einstellungen"
-                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSectionClick('einstellungen');
-                  }}
+                </button>
+                <button
+                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => handleSectionClick('einstellungen')}
                 >
                   <Settings className="mr-2 h-4 w-4" />
                   Einstellungen
-                </a>
+                </button>
               </div>
             )}
             <Link 
@@ -273,12 +230,17 @@ const Header = () => {
             >
               Kontakt
             </Link>
-            <Button 
-              className="w-full mt-4 bg-stellar-600 hover:bg-stellar-700"
+            <Link 
+              to="/kontakt" 
               onClick={() => setIsMenuOpen(false)}
+              className="block mt-4"
             >
-              Demo Anfragen
-            </Button>
+              <Button 
+                className="w-full bg-stellar-600 hover:bg-stellar-700"
+              >
+                Demo Anfragen
+              </Button>
+            </Link>
           </div>
         )}
       </div>
