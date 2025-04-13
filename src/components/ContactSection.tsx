@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
@@ -41,8 +42,10 @@ const ContactSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kontaktieren Sie uns</h2>
-            <p className="text-lg text-gray-700 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-stellar-600 mb-4 text-center">
+              Kontaktieren Sie uns
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 text-center">
               Haben Sie Fragen zu Stellar Checkin? Unser Team steht Ihnen gerne zur Verfügung.
             </p>
             
