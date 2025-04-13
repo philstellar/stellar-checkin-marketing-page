@@ -50,7 +50,7 @@ export const OnlineCheckinSection: React.FC = () => {
   return (
     <FeatureSection
       id="gaeste-voranmeldung"
-      title="DIE auf Sie und ihre Gäste zugeschnittene Online Checkin Lösung"
+      title="Auf Sie und ihre Gäste zugeschnitten"
       description="Optimieren Sie Ihren Gäste-Empfang mit einer smarten, digitalen Lösung. Reduzieren Sie Verwaltungsaufwand und verbessern Sie das Ankommen Ihrer Feriengäste."
       features={features}
       image=""
