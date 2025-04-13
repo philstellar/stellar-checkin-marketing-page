@@ -57,7 +57,9 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-royal mb-1">E-Mail</h3>
-                  <p className="text-royal-700">info@stellar-trust.com</p>
+                  <a href="mailto:info@stellar-trust.com" className="text-royal-700 hover:text-apple transition-colors">
+                    info@stellar-trust.com
+                  </a>
                 </div>
               </div>
               
@@ -67,7 +69,9 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-royal mb-1">Telefon</h3>
-                  <p className="text-royal-700">+49 304 1738487</p>
+                  <a href="tel:+4930417384870" className="text-royal-700 hover:text-apple transition-colors">
+                    +49 304 1738487
+                  </a>
                 </div>
               </div>
               

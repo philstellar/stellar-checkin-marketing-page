@@ -34,7 +34,7 @@ const Impressum = () => {
             
             <h2>Kontakt</h2>
             <p>
-              E-Mail: philipp@stellar-trust.com
+              E-Mail: <a href="mailto:philipp@stellar-trust.com" className="text-stellar-600 hover:underline">philipp@stellar-trust.com</a>
             </p>
             
             <h2>Umsatzsteuer-Identifikationsnummer</h2>
@@ -114,7 +114,7 @@ const Impressum = () => {
             <h2>Beschwerden</h2>
             <p>
               Bei Beschwerden über unsere Tätigkeit wenden Sie sich gerne an unsere Beschwerdestelle:<br />
-              E-Mail: complaint@stellar-trust.com
+              E-Mail: <a href="mailto:complaint@stellar-trust.com" className="text-stellar-600 hover:underline">complaint@stellar-trust.com</a>
             </p>
             
             <p>
@@ -140,7 +140,7 @@ const Impressum = () => {
             <h2>Zentrale Kontaktstelle nach dem Gesetz über digitale Dienste – DSA (Verordnung (EU) 2022/265)</h2>
             <p>
               Du kannst unsere zentrale Kontaktstelle für Nutzer und Behörden gemäß Art. 11, 12 DSA wie folgt:<br />
-              E-Mail: philipp@stellar-trust.com
+              E-Mail: <a href="mailto:philipp@stellar-trust.com" className="text-stellar-600 hover:underline">philipp@stellar-trust.com</a>
             </p>
             
             <p>

@@ -96,6 +96,18 @@ const Brevo = () => {
         <p className="mt-2 text-center text-sm text-gray-600">
           Erfahren Sie mehr über unsere Stellar Checkin Lösungen
         </p>
+        <div className="mt-4 text-center">
+          <p className="text-sm text-gray-600">
+            <a href="mailto:hello@stellar-trust.com" className="text-stellar-600 hover:text-stellar-500">
+              hello@stellar-trust.com
+            </a>
+          </p>
+          <p className="text-sm text-gray-600 mt-1">
+            <a href="tel:+4930417384870" className="text-stellar-600 hover:text-stellar-500">
+              +49 304 1738487
+            </a>
+          </p>
+        </div>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
