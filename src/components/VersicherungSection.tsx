@@ -1,11 +1,9 @@
-
-import { Shield, Coins, ArrowRight, CheckCircle, ExternalLink } from "lucide-react";
+import { Shield, Coins, CheckCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
@@ -103,11 +101,6 @@ export const VersicherungSection = () => {
                     feature: "Zusätzliche Einnahmen",
                     insurance: "Ja",
                     deposit: "Nein"
-                  },
-                  {
-                    feature: "Schadenabwicklung",
-                    insurance: "Professionell",
-                    deposit: "Manuell"
                   }
                 ].map((item, index) => (
                   <div key={index} className="grid grid-cols-3 gap-4 py-3 border-b border-gray-100">
@@ -117,16 +110,6 @@ export const VersicherungSection = () => {
                   </div>
                 ))}
               </CardContent>
-              
-              <CardFooter className="flex justify-between items-center bg-gray-50 p-6">
-                <div className="flex items-center gap-2">
-                  <Coins className="h-5 w-5 text-stellar-600" />
-                  <span className="text-sm font-medium">Verbessern Sie Ihr Angebot</span>
-                </div>
-                <Button variant="outline" className="border-stellar-600 text-stellar-600 hover:bg-stellar-50">
-                  Details <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardFooter>
             </Card>
           </div>
         </div>
