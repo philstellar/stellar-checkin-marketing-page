@@ -1,8 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-stellar-50 to-white"></div>
@@ -39,18 +42,19 @@ const Hero = () => {
               </p>
             </div>
           </div>
+          
           <div className="md:pl-8 animate-fade-in">
-            <div className="relative">
-              <div className="w-full h-[400px] bg-gray-200 rounded-lg overflow-hidden stellar-shadow">
-                <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                  alt="Stellar Checkin Dashboard" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="relative group hover-scale transition-all duration-300">
+              <img 
+                src="/lovable-uploads/7498575b-a9f0-44f1-b657-e059da50ab34.png" 
+                alt="Stellar Checkin Dashboard auf Tablets" 
+                className="w-full h-auto object-contain rounded-lg stellar-shadow z-10 relative"
+              />
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-5 sm:-right-5 w-20 h-20 sm:w-24 sm:h-24 bg-stellar-600 rounded-lg flex items-center justify-center transform rotate-3 -z-0">
+                <span className="text-white font-bold text-lg sm:text-xl">Neu</span>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-stellar-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">Neu</span>
-              </div>
+              
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-stellar-300 to-stellar-600 opacity-0 group-hover:opacity-20 rounded-lg blur-sm transition-all duration-300"></div>
             </div>
           </div>
         </div>
