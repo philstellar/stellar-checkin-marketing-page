@@ -4,8 +4,7 @@ import Hero from "@/components/Hero";
 import { 
   OnlineCheckinSection,
   IntegrationenSection,
-  EinstellungenSection,
-  MoeglichkeitenSection
+  EinstellungenSection
 } from "@/components/features";
 import VersicherungSection from "@/components/VersicherungSection";
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
@@ -27,7 +26,6 @@ const Index = () => {
         <VersicherungSection />
         <BerichteSection />
         <EinstellungenSection />
-        <MoeglichkeitenSection />
         <ContactSection />
       </main>
       <Footer />
