@@ -41,8 +41,8 @@ const Hero = () => {
           <div className="md:pl-8 animate-fade-in">
             <div className="relative group hover-scale transition-all duration-300">
               <img 
-                src="/lovable-uploads/111d56d3-9959-4be1-ad72-3df35f92a489.png" 
-                alt="Stellar Checkin Dashboard" 
+                src="/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png" 
+                alt="Stellar Online Check-in Interface" 
                 className="w-full h-auto object-contain rounded-lg z-10 relative transform scale-110"
               />
             </div>
@@ -54,4 +54,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
