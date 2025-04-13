@@ -25,11 +25,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal")}>
             {icon}
           </div>
-          <CardTitle className="text-lg font-semibold text-royal">{title}</CardTitle>
+          <CardTitle className="text-lg font-semibold text-royal text-left">{title}</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="pt-4">
-        <p className="text-royal-700">{description}</p>
+        <p className="text-royal-700 text-left">{description}</p>
       </CardContent>
     </Card>
   );

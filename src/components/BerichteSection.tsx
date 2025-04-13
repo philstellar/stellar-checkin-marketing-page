@@ -44,7 +44,7 @@ const BerichteSection = () => {
                   <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
                     {feature.icon}
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-lg font-semibold text-royal mb-2">{feature.title}</h3>
                     <p className="text-base text-royal-700">{feature.description}</p>
                   </div>

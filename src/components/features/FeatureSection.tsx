@@ -53,11 +53,11 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
                       <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal")}>
                         {feature.icon}
                       </div>
-                      <CardTitle className="text-lg font-semibold text-royal">{feature.title}</CardTitle>
+                      <CardTitle className="text-lg font-semibold text-royal text-left">{feature.title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-4">
-                    <p className="text-royal-700">{feature.description}</p>
+                    <p className="text-royal-700 text-left">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}
