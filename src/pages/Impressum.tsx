@@ -40,7 +40,7 @@ const Impressum = () => {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold mb-4 text-stellar-600">Kontakt</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  E-Mail: <a href="mailto:philipp@stellar-trust.com" className="text-primary hover:underline">philipp@stellar-trust.com</a>
+                  E-Mail: <a href="mailto:hello@stellar-trust.com" className="text-primary hover:underline">hello@stellar-trust.com</a>
                 </p>
               </section>
               
@@ -168,7 +168,7 @@ const Impressum = () => {
                 <h2 className="text-2xl font-bold mb-4 text-stellar-600">Zentrale Kontaktstelle nach dem Gesetz über digitale Dienste – DSA (Verordnung (EU) 2022/265)</h2>
                 <p className="text-gray-700 leading-relaxed">
                   Du kannst unsere zentrale Kontaktstelle für Nutzer und Behörden gemäß Art. 11, 12 DSA wie folgt:<br />
-                  E-Mail: <a href="mailto:philipp@stellar-trust.com" className="text-primary hover:underline">philipp@stellar-trust.com</a>
+                  E-Mail: <a href="mailto:hello@stellar-trust.com" className="text-primary hover:underline">hello@stellar-trust.com</a>
                 </p>
               </section>
             </div>
