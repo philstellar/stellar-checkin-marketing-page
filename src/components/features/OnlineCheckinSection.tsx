@@ -11,23 +11,21 @@ type FeatureCardProps = {
   title: string;
   description: string;
   icon: React.ReactNode;
-  iconColor: string;
 };
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ 
   title, 
   description, 
-  icon, 
-  iconColor
+  icon,
 }) => {
   return (
     <Card className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200">
       <CardHeader className="pb-2">
         <div className="flex items-center gap-4">
-          <div className={cn("rounded-full p-2.5", iconColor)}>
+          <div className={cn("rounded-full p-2.5 bg-stellar-100 text-stellar-600")}>
             {icon}
           </div>
-          <CardTitle className="text-lg font-semibold">{title}</CardTitle>
+          <CardTitle className="text-lg font-semibold text-stellar-600">{title}</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="pt-4">
@@ -43,49 +41,41 @@ export const OnlineCheckinSection: React.FC = () => {
       icon: <Monitor className="h-6 w-6" />,
       title: "Voranmeldung für Feriengäste",
       description: "Ermöglichen Sie Ihren Gästen eine einfache und schnelle Voranmeldung direkt von zu Hause aus.",
-      iconColor: "bg-gray-100 text-gray-700"
     },
     {
       icon: <Check className="h-6 w-6" />,
       title: "DSGVO-konforme Gästeverwaltung",
       description: "Speichern und verarbeiten Sie Gästeinformationen sicher und rechtskonform.",
-      iconColor: "bg-gray-100 text-gray-700"
     },
     {
       icon: <RefreshCw className="h-6 w-6" />,
       title: "Automatische Gastinformationen",
       description: "Informieren Sie Ihr Team automatisch über ankommende Gäste und deren Buchungsdetails.",
-      iconColor: "bg-gray-100 text-gray-700"
     },
     {
       icon: <Settings className="h-6 w-6" />,
       title: "Individualisiere deinen Online Checkin",
       description: "Passe den Online Checkin nach deinen Bedürfnissen an und integriere ihn nahtlos in deine Apps.",
-      iconColor: "bg-gray-100 text-gray-700"
     },
     {
       icon: <FileText className="h-6 w-6" />,
       title: "Digitale Meldescheine",
       description: "Erfassen Sie Gästedaten digital und erfüllen Sie gesetzliche Meldepflichten ohne Papierformulare.",
-      iconColor: "bg-gray-100 text-gray-700"
     },
     {
       icon: <Shield className="h-6 w-6" />,
       title: "Sichere Datenverarbeitung",
       description: "Alle Daten werden SSL-verschlüsselt übertragen und auf deutschen Servern gespeichert.",
-      iconColor: "bg-gray-100 text-gray-700"
     },
     {
       icon: <CalendarCheck className="h-6 w-6" />,
       title: "Automatisierte Prozesse",
       description: "Reduzieren Sie manuelle Arbeitsschritte durch automatische Benachrichtigungen und Datenverarbeitung.",
-      iconColor: "bg-gray-100 text-gray-700"
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: "E-Mail Kommunikation",
       description: "Versenden Sie automatisierte E-Mails mit Check-in Informationen an Ihre Gäste.",
-      iconColor: "bg-gray-100 text-gray-700"
     }
   ];
 
@@ -93,9 +83,9 @@ export const OnlineCheckinSection: React.FC = () => {
     <section id="gaeste-voranmeldung" className="py-16 bg-gray-50">
       <div className="container-custom">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-4 relative inline-block">
+          <h2 className="text-3xl font-bold mb-4 relative inline-block text-stellar-600">
             Auf Sie und ihre Gäste zugeschnitten
-            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-300"></div>
+            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-stellar-300"></div>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Optimieren Sie Ihren Gäste-Empfang mit einer smarten, digitalen Lösung. 
@@ -110,7 +100,6 @@ export const OnlineCheckinSection: React.FC = () => {
               title={feature.title}
               description={feature.description}
               icon={feature.icon}
-              iconColor={feature.iconColor}
             />
           ))}
         </div>
