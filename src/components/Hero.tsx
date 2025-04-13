@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -16,13 +16,17 @@ const Hero = () => {
               Vereinfachen Sie Ihre Besucheranmeldung mit unserem digitalen Check-in System. Schnell, sicher und effizient.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-stellar-600 hover:bg-stellar-700">
-                Kostenlos Testen
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-stellar-600 text-stellar-600 hover:bg-stellar-50">
-                Demo Video Ansehen
-              </Button>
+              <a href="/kontakt" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-stellar-600 hover:bg-stellar-700">
+                  Kostenlos Testen
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+              <a href="/kontakt" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="border-stellar-600 text-stellar-600 hover:bg-stellar-50">
+                  Demo Video Ansehen
+                </Button>
+              </a>
             </div>
             <div className="mt-8 flex items-center">
               <div className="flex -space-x-2">

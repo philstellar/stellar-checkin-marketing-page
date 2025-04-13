@@ -1,5 +1,5 @@
 
-import { Check, Monitor, ArrowRight, RefreshCw, Settings, Users } from "lucide-react";
+import { Check, Monitor, ArrowRight, RefreshCw, Settings, Users, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface FeatureSectionProps {
@@ -50,9 +50,11 @@ const FeatureSection = ({
             </div>
             
             <div className="mt-8">
-              <Button className="bg-stellar-600 hover:bg-stellar-700">
-                Mehr erfahren <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <a href="/kontakt" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-stellar-600 hover:bg-stellar-700">
+                  Mehr erfahren <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
             </div>
           </div>
           
@@ -218,9 +220,11 @@ export const MoeglichkeitenSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
-            Alle Funktionen entdecken
-          </Button>
+          <a href="/kontakt" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+              Alle Funktionen entdecken <ExternalLink className="ml-2 h-4 w-4" />
+            </Button>
+          </a>
         </div>
       </div>
     </section>
