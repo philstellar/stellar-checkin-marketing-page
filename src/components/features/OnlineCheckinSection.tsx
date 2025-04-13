@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -28,8 +27,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 export const OnlineCheckinSection: React.FC = () => {
   const features = [
     {
-      title: "Voranmeldung für Feriengäste",
-      description: "Ermöglichen Sie Ihren Gästen eine einfache und schnelle Voranmeldung direkt von zu Hause aus.",
+      title: "Gästedaten aufnehmen",
+      description: "Definiere welche Daten genau aufgenommen werden sollen",
     },
     {
       title: "DSGVO-konforme Gästeverwaltung",
