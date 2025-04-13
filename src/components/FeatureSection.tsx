@@ -116,13 +116,18 @@ export const IntegrationenSection = () => {
     },
     {
       icon: <Users className="h-6 w-6" />,
-      title: "Mitarbeiterverzeichnis",
-      description: "Synchronisieren Sie Ihr Mitarbeiterverzeichnis für eine reibungslose Besucherbenachrichtigung."
+      title: "PMS Integration",
+      description: "Mit Ihrem PMS integriert. Guests, Hotsaway, Smoobu, Lodgify, Beds24 und viele andere."
     },
     {
       icon: <Monitor className="h-6 w-6" />,
-      title: "API-Schnittstellen",
-      description: "Nutzen Sie unsere umfangreichen API-Schnittstellen für individuelle Anpassungen."
+      title: "Meldewesen-Anbindung",
+      description: "Automatische Meldung an AVS, Feratel, Ostseecard und andere."
+    },
+    {
+      icon: <Settings className="h-6 w-6" />,
+      title: "Steuerberechnung",
+      description: "Automatische Kalkulation von Kurtaxe, Betten- oder Gemeindesteuern."
     }
   ];
 
