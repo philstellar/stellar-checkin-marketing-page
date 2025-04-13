@@ -61,8 +61,8 @@ const BerichteSection = () => {
           <div>
             <div className="rounded-lg overflow-hidden stellar-shadow">
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170"
-                alt="Berichte und Analysen Dashboard" 
+                src="/lovable-uploads/baf0ce8b-0f9c-491e-bcda-60655db2dd38.png"
+                alt="Stellar Check-in Dashboard" 
                 className="w-full h-full object-cover"
               />
             </div>
