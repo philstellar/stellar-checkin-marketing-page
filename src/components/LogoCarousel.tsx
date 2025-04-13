@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { cn } from '@/lib/utils';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 type LogoType = {
   src: string;
@@ -85,13 +86,20 @@ const LogoCarousel = () => {
                   "flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4"
                 )}
               >
-                <div className="h-24 md:h-32 flex items-center justify-center p-4 bg-transparent">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="h-full w-auto object-contain max-w-full"
-                  />
-                </div>
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <div className="h-24 md:h-32 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer">
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        className="h-full w-auto object-contain max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                      />
+                    </div>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-auto p-2 text-center text-sm">
+                    {logo.alt}
+                  </HoverCardContent>
+                </HoverCard>
               </div>
             ))}
           </div>
