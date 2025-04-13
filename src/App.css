@@ -13,10 +13,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #9b87f5aa); /* Updated to purple */
+  filter: drop-shadow(0 0 2em #a4c309aa); /* Updated to apple green */
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #9b87f5aa); /* Updated to purple */
+  filter: drop-shadow(0 0 2em #a4c309aa); /* Updated to apple green */
 }
 
 @keyframes logo-spin {

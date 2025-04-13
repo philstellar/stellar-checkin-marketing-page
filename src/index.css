@@ -7,48 +7,48 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 54 45% 96%;
+    --foreground: 223 73% 22%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 223 73% 22%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 223 73% 22%;
 
-    --primary: 222 75% 22%; /* #0f2661 */
-    --primary-foreground: 210 40% 98%;
+    --primary: 70 91% 40%; /* Apple green #a4c309 */
+    --primary-foreground: 54 45% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 223 73% 22%; /* Royal blue #0f2661 */
+    --secondary-foreground: 54 45% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 54 45% 90%;
+    --muted-foreground: 223 40% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 324 100% 87%; /* Lavender pink #ffbee5 */
+    --accent-foreground: 223 73% 22%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 54 45% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 223 30% 80%;
+    --input: 223 30% 80%;
+    --ring: 70 91% 40%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-background: 54 45% 96%;
+    --sidebar-foreground: 223 40% 40%;
+    --sidebar-primary: 70 91% 40%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 54 45% 90%;
+    --sidebar-accent-foreground: 223 73% 22%;
+    --sidebar-border: 223 30% 80%;
+    --sidebar-ring: 70 91% 40%;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-floral text-royal font-sans;
     font-family: 'Inter', sans-serif;
   }
 
@@ -62,6 +62,10 @@
 
   .stellar-gradient {
     background: linear-gradient(135deg, #0f2661 0%, #091c4c 100%);
+  }
+
+  .apple-gradient {
+    background: linear-gradient(135deg, #a4c309 0%, #c5ea08 100%);
   }
 
   .stellar-shadow {

@@ -8,19 +8,19 @@ const Hero = () => {
 
   return (
     <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-transparent to-transparent"></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
-              Die allumfassende digitale <span className="text-stellar-600">Check-in</span> Lösung für Ferienwohnungen
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-royal leading-tight mb-4">
+              Die allumfassende digitale <span className="text-apple">Check-in</span> Lösung für Ferienwohnungen
             </h1>
-            <p className="text-lg text-gray-700 mb-8 max-w-lg">
+            <p className="text-lg text-royal-700 mb-8 max-w-lg">
               Optimieren Sie Ihre Gästeanmeldung für Ferienwohnungen mit unserem digitalen Check-in System. Schnell, sicher und effizient für Vermieter und Gäste.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="/kontakt" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-stellar-600 hover:bg-stellar-700">
+                <Button size="lg" className="bg-apple hover:bg-apple-600">
                   jetzt registrieren
                   <Rocket className="ml-2 h-4 w-4" />
                 </Button>
@@ -28,11 +28,11 @@ const Hero = () => {
             </div>
             <div className="mt-8 flex items-center">
               <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-stellar-300"></div>
-                <div className="w-8 h-8 rounded-full bg-stellar-400"></div>
-                <div className="w-8 h-8 rounded-full bg-stellar-500"></div>
+                <div className="w-8 h-8 rounded-full bg-apple-300"></div>
+                <div className="w-8 h-8 rounded-full bg-apple-400"></div>
+                <div className="w-8 h-8 rounded-full bg-apple-500"></div>
               </div>
-              <p className="ml-4 text-sm text-gray-600">
+              <p className="ml-4 text-sm text-royal-600">
                 <span className="font-medium">Einfach. Schnell. Für Ihre Ferienwohnung.</span>
               </p>
             </div>
@@ -54,4 +54,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

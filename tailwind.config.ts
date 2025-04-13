@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,19 +63,67 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				stellar: {
-					50: '#e6eaf4',
-					100: '#c3d0e7',
-					200: '#9db0d8',
-					300: '#778fc9',
-					400: '#5a77bd',
-					500: '#3d5fb2',
-					600: '#0f2661',
-					700: '#0a1d4d',
-					800: '#051538',
-					900: '#020c24',
+				// New brand colors based on provided palette
+				pear: {
+					DEFAULT: '#c5ea08',
+					100: '#272e02',
+					200: '#4e5d03',
+					300: '#748b05',
+					400: '#9bb907',
+					500: '#c5ea08',
+					600: '#d6f72e',
+					700: '#e0f962',
+					800: '#eafb97',
+					900: '#f5fdcb'
 				},
-				navy: '#0f2661'
+				apple: {
+					DEFAULT: '#a4c309',
+					100: '#212702',
+					200: '#424e04',
+					300: '#627506',
+					400: '#839c07',
+					500: '#a4c309',
+					600: '#cff415',
+					700: '#dbf750',
+					800: '#e7f98a',
+					900: '#f3fcc5'
+				},
+				lavender: {
+					DEFAULT: '#ffbee5',
+					100: '#590035',
+					200: '#b1006a',
+					300: '#ff0b9d',
+					400: '#ff64c1',
+					500: '#ffbee5',
+					600: '#ffcaea',
+					700: '#ffd7ef',
+					800: '#ffe4f4',
+					900: '#fff2fa'
+				},
+				royal: {
+					DEFAULT: '#0f2661',
+					100: '#030813',
+					200: '#060f27',
+					300: '#09173a',
+					400: '#0c1f4e',
+					500: '#0f2661',
+					600: '#1a42a6',
+					700: '#3162df',
+					800: '#7596ea',
+					900: '#bacbf4'
+				},
+				floral: {
+					DEFAULT: '#f9f8ef',
+					100: '#47431b',
+					200: '#8e8536',
+					300: '#c4ba62',
+					400: '#ded9a9',
+					500: '#f9f8ef',
+					600: '#fbfaf3',
+					700: '#fcfbf6',
+					800: '#fdfcf9',
+					900: '#fefefc'
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
