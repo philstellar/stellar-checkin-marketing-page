@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Monitor, Check, RefreshCw, Clock } from 'lucide-react';
+import { Monitor, Check, RefreshCw, Settings } from 'lucide-react';
 import FeatureSection from './FeatureSection';
 
 export const OnlineCheckinSection: React.FC = () => {
@@ -21,20 +21,20 @@ export const OnlineCheckinSection: React.FC = () => {
       description: "Informieren Sie Ihr Team automatisch über ankommende Gäste und deren Buchungsdetails."
     },
     {
-      icon: <Clock className="h-6 w-6" />,
-      title: "Flexibler Check-in",
-      description: "Bieten Sie Early Check-in oder späteren Check-in als zusätzlichen Service an und generieren Sie Mehrwert."
+      icon: <Settings className="h-6 w-6" />,
+      title: "Individualisiere deinen Online Checkin",
+      description: "Passe den Online Checkin nach deinen Bedürfnissen an und integriere ihn nahtlos in deine Apps."
     }
   ];
 
   return (
     <FeatureSection
       id="gaeste-voranmeldung"
-      title="Digitale Gästevoranmeldung für Ferienwohnungen"
+      title="DIE auf Sie und ihre Gäste zugeschnittene Online Checkin Lösung"
       description="Optimieren Sie Ihren Gäste-Empfang mit einer smarten, digitalen Lösung. Reduzieren Sie Verwaltungsaufwand und verbessern Sie das Ankommen Ihrer Feriengäste."
       features={features}
       image=""
-      imageAlt="Digitale Gästevoranmeldung für Ferienwohnungen"
+      imageAlt="Online Checkin Lösung für Ferienwohnungen"
       bgColor="bg-gray-50"
     />
   );
