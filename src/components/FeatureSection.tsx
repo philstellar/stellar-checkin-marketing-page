@@ -1,5 +1,5 @@
 
-import { Check, Monitor, ArrowRight, RefreshCw, Settings, Users, ExternalLink, Palette, Globe } from "lucide-react";
+import { Check, Monitor, ArrowRight, RefreshCw, Settings, Users, ExternalLink, Palette, Globe, CreditCard, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface FeatureSectionProps {
@@ -89,6 +89,11 @@ export const OnlineCheckinSection = () => {
       icon: <RefreshCw className="h-6 w-6" />,
       title: "Automatische Benachrichtigungen",
       description: "Ihre Mitarbeiter werden automatisch über ankommende Besucher informiert."
+    },
+    {
+      icon: <Clock className="h-6 w-6" />,
+      title: "Early Check-in",
+      description: "Bieten Sie Ihren Gästen Early Check-in als zusätzliche Option an und generieren Sie zusätzlichen Umsatz."
     }
   ];
 
@@ -126,6 +131,11 @@ export const IntegrationenSection = () => {
       icon: <Settings className="h-6 w-6" />,
       title: "Steuerberechnung",
       description: "Automatische Kalkulation von Kurtaxe, Betten- oder Gemeindesteuern."
+    },
+    {
+      icon: <CreditCard className="h-6 w-6" />,
+      title: "Zahlungen annehmen",
+      description: "Integrierte Zahlungsabwicklung für Zusatzleistungen, Kurtaxe oder andere Services direkt im Check-in-Prozess."
     }
   ];
 
@@ -220,6 +230,14 @@ export const MoeglichkeitenSection = () => {
             {
               title: "Notfallmanagement",
               description: "Generieren Sie im Notfall sofort eine Liste aller anwesenden Personen im Gebäude."
+            },
+            {
+              title: "Zusätzliche Umsatzquellen",
+              description: "Verkaufen Sie Zusatzleistungen wie Early Check-in, Late Check-out oder Premium-Services direkt über die Plattform."
+            },
+            {
+              title: "Zahlungsabwicklung",
+              description: "Nehmen Sie Zahlungen für zusätzliche Dienstleistungen direkt über die Plattform entgegen - einfach und sicher."
             }
           ].map((item, index) => (
             <div 
