@@ -89,11 +89,14 @@ const LogoCarousel = () => {
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <div className="h-24 md:h-32 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer">
-                      <img
-                        src={logo.src}
-                        alt={logo.alt}
-                        className="h-full w-auto object-contain max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                      />
+                      <div className="w-full h-full flex items-center justify-center">
+                        <img
+                          src={logo.src}
+                          alt={logo.alt}
+                          className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                          style={{ aspectRatio: '1/1' }}
+                        />
+                      </div>
                     </div>
                   </HoverCardTrigger>
                   <HoverCardContent className="w-auto p-2 text-center text-sm">
