@@ -56,8 +56,8 @@ const ZusatzservicesSection = () => {
           <div>
             <div className="rounded-lg overflow-hidden stellar-shadow">
               <img 
-                src="/lovable-uploads/1e87bebd-cc85-4900-af99-c188ac6df182.png"
-                alt="Zusatzservices verkaufen" 
+                src="/lovable-uploads/936b5262-a316-4ba0-bef3-9fbd48f5a494.png"
+                alt="Zusatzservices" 
                 className="w-full h-full object-cover bg-transparent"
               />
             </div>
