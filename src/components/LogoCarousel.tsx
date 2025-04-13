@@ -15,7 +15,7 @@ const logos: LogoType[] = [
     alt: "Ostsee Card"
   },
   {
-    src: "/lovable-uploads/d854adfb-a35a-4aab-8dae-0127f61908b9.png", // Updated AVS logo
+    src: "/lovable-uploads/d854adfb-a35a-4aab-8dae-0127f61908b9.png", 
     alt: "AVS Tourismus Systeme"
   },
   {
@@ -97,7 +97,7 @@ const LogoCarousel = () => {
                         <img
                           src={logo.src}
                           alt={logo.alt}
-                          className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                          className="max-w-full max-h-full object-contain transition-all duration-300"
                           style={{ aspectRatio: '1/1' }}
                         />
                       </div>
@@ -117,3 +117,4 @@ const LogoCarousel = () => {
 };
 
 export default LogoCarousel;
+
