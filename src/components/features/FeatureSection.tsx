@@ -8,7 +8,7 @@ export interface FeatureSectionProps {
   title: string;
   description: string;
   features: {
-    icon: React.ReactNode;
+    icon?: React.ReactNode; // Make icon optional
     title: string;
     description: string;
   }[];
@@ -49,12 +49,9 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
               {features.map((feature, index) => (
                 <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
                   <CardHeader className="pb-2">
-                    <div className="flex items-start gap-4">
-                      <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal flex-shrink-0")}>
-                        {feature.icon}
-                      </div>
-                      <CardTitle className="text-lg font-semibold text-royal text-left mt-0.5">{feature.title}</CardTitle>
-                    </div>
+                    <CardTitle className="text-lg font-semibold text-royal pb-2 border-b border-apple">
+                      {feature.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <p className="text-royal-700 text-left">{feature.description}</p>

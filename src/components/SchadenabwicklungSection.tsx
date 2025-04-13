@@ -1,8 +1,7 @@
 
-import { Shield, Check, ExternalLink, AlertTriangle } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 const SchadenabwicklungSection = () => {
   return (
@@ -20,29 +19,23 @@ const SchadenabwicklungSection = () => {
             <div className="space-y-6">
               {[
                 {
-                  icon: <AlertTriangle className="h-6 w-6" />,
                   title: "Schnelle Schadensmeldung",
                   description: "Einfache und schnelle Meldung von Schäden direkt über die Plattform mit nur wenigen Klicks."
                 },
                 {
-                  icon: <Check className="h-6 w-6" />,
                   title: "Professionelle Abwicklung",
                   description: "Versicherungsexperten von Hiscox übernehmen die Bewertung und Abwicklung der Schäden."
                 },
                 {
-                  icon: <Shield className="h-6 w-6" />,
                   title: "Umfassender Schutz",
                   description: "Schutz vor finanziellen Verlusten durch Gästeschäden und gleichzeitig ein positives Gästeerlebnis."
                 }
               ].map((feature, index) => (
                 <Card key={index} className="transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
                   <CardHeader className="pb-2">
-                    <div className="flex items-start gap-4">
-                      <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal flex-shrink-0")}>
-                        {feature.icon}
-                      </div>
-                      <CardTitle className="text-lg font-semibold text-royal text-left mt-0.5">{feature.title}</CardTitle>
-                    </div>
+                    <CardTitle className="text-lg font-semibold text-royal pb-2 border-b border-apple">
+                      {feature.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <p className="text-royal-700 text-left">{feature.description}</p>

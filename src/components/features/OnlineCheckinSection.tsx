@@ -1,32 +1,22 @@
 
 import React from 'react';
-import { 
-  Monitor, Check, RefreshCw, Settings, 
-  FileText, Shield, CalendarCheck, Mail
-} from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 type FeatureCardProps = {
   title: string;
   description: string;
-  icon: React.ReactNode;
 };
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ 
   title, 
-  description, 
-  icon,
+  description
 }) => {
   return (
     <Card className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
       <CardHeader className="pb-2">
-        <div className="flex items-start gap-4">
-          <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal flex-shrink-0")}>
-            {icon}
-          </div>
-          <CardTitle className="text-lg font-semibold text-royal text-left mt-0.5">{title}</CardTitle>
-        </div>
+        <CardTitle className="text-lg font-semibold text-royal pb-2 border-b border-apple">
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="pt-4">
         <p className="text-royal-700 text-left">{description}</p>
@@ -38,42 +28,34 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 export const OnlineCheckinSection: React.FC = () => {
   const features = [
     {
-      icon: <Monitor className="h-6 w-6" />,
       title: "Voranmeldung für Feriengäste",
       description: "Ermöglichen Sie Ihren Gästen eine einfache und schnelle Voranmeldung direkt von zu Hause aus.",
     },
     {
-      icon: <Check className="h-6 w-6" />,
       title: "DSGVO-konforme Gästeverwaltung",
       description: "Speichern und verarbeiten Sie Gästeinformationen sicher und rechtskonform.",
     },
     {
-      icon: <RefreshCw className="h-6 w-6" />,
       title: "Automatische Gastinformationen",
       description: "Informieren Sie Ihr Team automatisch über ankommende Gäste und deren Buchungsdetails.",
     },
     {
-      icon: <Settings className="h-6 w-6" />,
       title: "Individualisiere deinen Online Checkin",
       description: "Passe den Online Checkin nach deinen Bedürfnissen an und integriere ihn nahtlos in deine Apps.",
     },
     {
-      icon: <FileText className="h-6 w-6" />,
       title: "Digitale Meldescheine",
       description: "Erfassen Sie Gästedaten digital und erfüllen Sie gesetzliche Meldepflichten ohne Papierformulare.",
     },
     {
-      icon: <Shield className="h-6 w-6" />,
       title: "Sichere Datenverarbeitung",
       description: "Alle Daten werden SSL-verschlüsselt übertragen und auf deutschen Servern gespeichert.",
     },
     {
-      icon: <CalendarCheck className="h-6 w-6" />,
       title: "Automatisierte Prozesse",
       description: "Reduzieren Sie manuelle Arbeitsschritte durch automatische Benachrichtigungen und Datenverarbeitung.",
     },
     {
-      icon: <Mail className="h-6 w-6" />,
       title: "E-Mail Kommunikation",
       description: "Versenden Sie automatisierte E-Mails mit Check-in Informationen an Ihre Gäste.",
     }
@@ -99,7 +81,6 @@ export const OnlineCheckinSection: React.FC = () => {
               key={index}
               title={feature.title}
               description={feature.description}
-              icon={feature.icon}
             />
           ))}
         </div>

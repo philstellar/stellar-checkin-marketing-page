@@ -1,6 +1,6 @@
 
-import { BarChart2, ChartPie, LineChart, ExternalLink, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 const BerichteSection = () => {
   return (
@@ -20,32 +20,25 @@ const BerichteSection = () => {
             <div className="space-y-8">
               {[
                 {
-                  icon: <BarChart2 className="h-6 w-6" />,
                   title: "Detaillierte Auswertungen",
                   description: "Erhalten Sie tiefe Einblicke in Buchungszahlen, Gästeherkunft, Aufenthaltsdauer und mehr."
                 },
                 {
-                  icon: <ChartPie className="h-6 w-6" />,
                   title: "Personalisierbare Dashboards",
                   description: "Erstellen Sie maßgeschneiderte Dashboards, die genau die Kennzahlen anzeigen, die für Sie wichtig sind."
                 },
                 {
-                  icon: <LineChart className="h-6 w-6" />,
                   title: "Trend-Analysen",
                   description: "Erkennen Sie frühzeitig Trends und saisonale Muster, um Ihre Planung zu optimieren."
                 },
                 {
-                  icon: <Layers className="h-6 w-6" />,
                   title: "Exportfunktionen",
                   description: "Exportieren Sie Berichte in verschiedenen Formaten oder teilen Sie sie direkt mit Ihrem Team."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
-                  <div className="flex-shrink-0 h-14 w-14 rounded-lg bg-floral-400 flex items-center justify-center text-black">
-                    {feature.icon}
-                  </div>
                   <div className="text-left">
-                    <h3 className="text-lg font-semibold text-black mb-2">{feature.title}</h3>
+                    <h3 className="text-lg font-semibold text-black mb-2 pb-2 border-b border-apple">{feature.title}</h3>
                     <p className="text-base text-black">{feature.description}</p>
                   </div>
                 </div>
