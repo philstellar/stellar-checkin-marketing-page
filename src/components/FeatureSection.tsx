@@ -1,5 +1,4 @@
-
-import { Check, Monitor, ArrowRight, RefreshCw, Settings, Users, ExternalLink } from "lucide-react";
+import { Check, Monitor, ArrowRight, RefreshCw, Settings, Users, ExternalLink, Palette, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface FeatureSectionProps {
@@ -72,8 +71,6 @@ const FeatureSection = ({
     </section>
   );
 };
-
-// Pre-configured feature sections
 
 export const OnlineCheckinSection = () => {
   const features = [
@@ -150,6 +147,16 @@ export const EinstellungenSection = () => {
       icon: <Settings className="h-6 w-6" />,
       title: "Vollständig anpassbar",
       description: "Passen Sie das Erscheinungsbild und die Funktionen an Ihre Unternehmensanforderungen an."
+    },
+    {
+      icon: <Palette className="h-6 w-6" />,
+      title: "Anpassbar auf Ihr Design",
+      description: "Von Logo, über Fonts bis zu Farben - alles nach Ihrem Corporate Design anpassbar."
+    },
+    {
+      icon: <Globe className="h-6 w-6" />,
+      title: "Eigene URL",
+      description: "Whitelabeling für Sie - nutzen Sie Ihre eigene Domain für die Anmeldeseite."
     },
     {
       icon: <Users className="h-6 w-6" />,
