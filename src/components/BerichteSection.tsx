@@ -38,7 +38,10 @@ const BerichteSection = () => {
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
                   <div className="text-left">
-                    <h3 className="text-lg font-semibold text-black mb-2 pb-2 border-b border-apple">{feature.title}</h3>
+                    <h3 className="text-lg font-semibold text-black mb-2 pb-2">
+                      {feature.title}
+                      <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
+                    </h3>
                     <p className="text-base text-black">{feature.description}</p>
                   </div>
                 </div>
