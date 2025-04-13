@@ -91,14 +91,14 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
                   <div className="sib-input sib-form-block">
                     <div className="form__entry entry_block">
                       <div className="form__label-row flex flex-col items-center">
-                        <label className="entry__label mx-auto text-center" style={{ fontWeight: 700, fontSize: "16px", fontFamily: "Helvetica, sans-serif", color: "#3c4858" }} htmlFor="EMAIL" data-required="*">Enter your email address to subscribe</label>
+                        <label className="entry__label mx-auto text-center" style={{ fontWeight: 700, fontSize: "16px", fontFamily: "Helvetica, sans-serif", color: "#3c4858" }} htmlFor="EMAIL" data-required="*">E-mail hinterlegen und bald loslegen</label>
                         <div className="entry__field w-3/4 mx-auto mt-2">
                           <input className="input w-full" type="text" id="EMAIL" name="EMAIL" autoComplete="off" placeholder="EMAIL" data-required="true" required />
                         </div>
                       </div>
                       <label className="entry__error entry__error--primary mx-auto text-center" style={{ fontSize: "16px", fontFamily: "Helvetica, sans-serif", color: "#661d1d", backgroundColor: "#ffeded", borderRadius: "3px", borderColor: "#ff4949" }}>
                       </label>
-                      <label className="entry__specification mx-auto text-center block w-3/4" style={{ fontSize: "12px", fontFamily: "Helvetica, sans-serif", color: "#8390A4" }}>
+                      <label className="entry__specification mx-auto text-center block w-3/4 text-center" style={{ fontSize: "12px", fontFamily: "Helvetica, sans-serif", color: "#8390A4" }}>
                         Wir melden uns innerhalb von kürzester Zeit bei dir für weiter Infos zu unserem Produkt und einer Demo
                       </label>
                     </div>
