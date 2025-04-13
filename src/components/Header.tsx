@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, CheckCircle, ShoppingBag, Link, Shield, FileText, BarChart2, Settings, AlertTriangle } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,34 +56,62 @@ const Header = () => {
                 Checkin <ChevronDown className="ml-1 w-4 h-4" />
               </button>
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-20">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-20">
                   <a 
                     href="#online-checkin"
-                    className="block px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
-                    Online Checkin
+                    <CheckCircle className="mr-2 h-4 w-4" />
+                    Online Checkin - Gästeseite
+                  </a>
+                  <a 
+                    href="#zusatzservices"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    <ShoppingBag className="mr-2 h-4 w-4" />
+                    Zusatzservices verkaufen
                   </a>
                   <a 
                     href="#integrationen"
-                    className="block px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
+                    <Link className="mr-2 h-4 w-4" />
                     Integrationen
                   </a>
                   <a 
-                    href="#einstellungen"
-                    className="block px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    href="#versicherung"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
-                    Einstellungen
+                    <Shield className="mr-2 h-4 w-4" />
+                    Versicherung oder / oder Kaution
                   </a>
                   <a 
-                    href="#versicherung"
-                    className="block px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    href="#schadenabwicklung"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
-                    Versicherung
+                    <AlertTriangle className="mr-2 h-4 w-4" />
+                    Schadenabwicklung bei Gästeschäden
+                  </a>
+                  <a 
+                    href="#berichte"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    <BarChart2 className="mr-2 h-4 w-4" />
+                    Berichte und Analysen
+                  </a>
+                  <a 
+                    href="#einstellungen"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    <Settings className="mr-2 h-4 w-4" />
+                    Weitere Einstellungen
                   </a>
                 </div>
               )}
@@ -127,43 +155,80 @@ const Header = () => {
               <div className="pl-4">
                 <a 
                   href="#online-checkin"
-                  className="block py-2 text-gray-700 hover:text-stellar-600"
+                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsDropdownOpen(false);
                   }}
                 >
-                  Online Checkin
+                  <CheckCircle className="mr-2 h-4 w-4" />
+                  Online Checkin - Gästeseite
+                </a>
+                <a 
+                  href="#zusatzservices"
+                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <ShoppingBag className="mr-2 h-4 w-4" />
+                  Zusatzservices verkaufen
                 </a>
                 <a 
                   href="#integrationen"
-                  className="block py-2 text-gray-700 hover:text-stellar-600"
+                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsDropdownOpen(false);
                   }}
                 >
+                  <Link className="mr-2 h-4 w-4" />
                   Integrationen
                 </a>
                 <a 
-                  href="#einstellungen"
-                  className="block py-2 text-gray-700 hover:text-stellar-600"
+                  href="#versicherung"
+                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsDropdownOpen(false);
                   }}
                 >
-                  Einstellungen
+                  <Shield className="mr-2 h-4 w-4" />
+                  Versicherung oder / oder Kaution
                 </a>
                 <a 
-                  href="#versicherung"
-                  className="block py-2 text-gray-700 hover:text-stellar-600"
+                  href="#schadenabwicklung"
+                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsDropdownOpen(false);
                   }}
                 >
-                  Versicherung
+                  <AlertTriangle className="mr-2 h-4 w-4" />
+                  Schadenabwicklung bei Gästeschäden
+                </a>
+                <a 
+                  href="#berichte"
+                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <BarChart2 className="mr-2 h-4 w-4" />
+                  Berichte und Analysen
+                </a>
+                <a 
+                  href="#einstellungen"
+                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  <Settings className="mr-2 h-4 w-4" />
+                  Weitere Einstellungen
                 </a>
               </div>
             )}

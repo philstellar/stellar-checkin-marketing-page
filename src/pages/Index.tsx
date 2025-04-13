@@ -8,6 +8,9 @@ import {
   MoeglichkeitenSection
 } from "@/components/FeatureSection";
 import VersicherungSection from "@/components/VersicherungSection";
+import ZusatzservicesSection from "@/components/ZusatzservicesSection";
+import SchadenabwicklungSection from "@/components/SchadenabwicklungSection";
+import BerichteSection from "@/components/BerichteSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -18,9 +21,12 @@ const Index = () => {
       <main>
         <Hero />
         <OnlineCheckinSection />
+        <ZusatzservicesSection />
         <IntegrationenSection />
-        <EinstellungenSection />
         <VersicherungSection />
+        <SchadenabwicklungSection />
+        <BerichteSection />
+        <EinstellungenSection />
         <MoeglichkeitenSection />
         <ContactSection />
       </main>
