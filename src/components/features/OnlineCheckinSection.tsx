@@ -56,6 +56,7 @@ export const OnlineCheckinSection: React.FC = () => {
       image=""
       imageAlt="Online Checkin Lösung für Ferienwohnungen"
       bgColor="bg-gray-50"
+      fullWidth={true}
     />
   );
 };

@@ -13,6 +13,7 @@ export interface FeatureSectionProps {
   image?: string;
   imageAlt: string;
   bgColor?: string;
+  fullWidth?: boolean;
 }
 
 export const FeatureSection: React.FC<FeatureSectionProps> = ({
@@ -23,16 +24,17 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
   image,
   imageAlt,
   bgColor = 'bg-white',
+  fullWidth = false,
 }) => {
   return (
     <section id={id} className={`py-16 ${bgColor}`}>
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className={`grid grid-cols-1 ${!fullWidth && image ? 'lg:grid-cols-2' : ''} gap-12 items-center`}>
+          <div className={fullWidth ? 'max-w-full w-full' : ''}>
             <h2 className="text-3xl font-bold mb-4">{title}</h2>
             <p className="text-lg text-gray-600 mb-8">{description}</p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className={`grid grid-cols-1 ${fullWidth ? 'md:grid-cols-4' : 'md:grid-cols-2'} gap-6`}>
               {features.map((feature, index) => (
                 <div key={index} className="flex gap-4">
                   <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-stellar-100 flex items-center justify-center text-stellar-600">
@@ -47,7 +49,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
             </div>
           </div>
           
-          {image && (
+          {image && !fullWidth && (
             <div className="order-first lg:order-last">
               <img
                 src={image}
