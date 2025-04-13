@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Monitor, Check, RefreshCw, Settings } from 'lucide-react';
+import { Monitor, Check, RefreshCw, Settings, FileText, Shield, CalendarCheck, Mail } from 'lucide-react';
 import FeatureSection from './FeatureSection';
 
 export const OnlineCheckinSection: React.FC = () => {
@@ -24,6 +24,26 @@ export const OnlineCheckinSection: React.FC = () => {
       icon: <Settings className="h-6 w-6" />,
       title: "Individualisiere deinen Online Checkin",
       description: "Passe den Online Checkin nach deinen Bedürfnissen an und integriere ihn nahtlos in deine Apps."
+    },
+    {
+      icon: <FileText className="h-6 w-6" />,
+      title: "Digitale Meldescheine",
+      description: "Erfassen Sie Gästedaten digital und erfüllen Sie gesetzliche Meldepflichten ohne Papierformulare."
+    },
+    {
+      icon: <Shield className="h-6 w-6" />,
+      title: "Sichere Datenverarbeitung",
+      description: "Alle Daten werden SSL-verschlüsselt übertragen und auf deutschen Servern gespeichert."
+    },
+    {
+      icon: <CalendarCheck className="h-6 w-6" />,
+      title: "Automatisierte Prozesse",
+      description: "Reduzieren Sie manuelle Arbeitsschritte durch automatische Benachrichtigungen und Datenverarbeitung."
+    },
+    {
+      icon: <Mail className="h-6 w-6" />,
+      title: "E-Mail Kommunikation",
+      description: "Versenden Sie automatisierte E-Mails mit Check-in Informationen an Ihre Gäste."
     }
   ];
 
