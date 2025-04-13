@@ -49,7 +49,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
               {features.map((feature, index) => (
                 <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-lg font-semibold text-royal pb-2">
+                    <CardTitle className="text-lg font-semibold text-royal pb-2 text-left">
                       {feature.icon && <span className="mr-2">{feature.icon}</span>}
                       {feature.title}
                       <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
