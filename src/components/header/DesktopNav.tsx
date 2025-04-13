@@ -1,12 +1,21 @@
 
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronDown } from "lucide-react";
 import CTAButton from '../CTAButton';
+import FunktionenDropdown from './FunktionenDropdown';
 
 type DesktopNavProps = {
   handleSectionClick: (sectionId: string) => void;
 };
 
 const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <nav className="hidden md:flex items-center space-x-8">
       <Link 
@@ -15,6 +24,18 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
       >
         Home
       </Link>
+      <div className="relative">
+        <button
+          className="flex items-center text-royal hover:text-apple font-medium transition-colors"
+          onClick={toggleDropdown}
+        >
+          Funktionen <ChevronDown className="ml-1 w-4 h-4" />
+        </button>
+        <FunktionenDropdown 
+          isOpen={isDropdownOpen} 
+          handleSectionClick={handleSectionClick} 
+        />
+      </div>
       <button 
         onClick={() => handleSectionClick('kontakt')}
         className="text-royal hover:text-apple font-medium transition-colors"
