@@ -17,6 +17,10 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
   const handleHomeClick = () => {
     navigate('/');
     window.scrollTo({
@@ -43,6 +47,7 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
         <FunktionenDropdown 
           isOpen={isDropdownOpen} 
           handleSectionClick={handleSectionClick} 
+          onClose={closeDropdown}
         />
       </div>
       <button 

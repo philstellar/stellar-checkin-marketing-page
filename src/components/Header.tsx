@@ -30,6 +30,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const handleHomeClick = () => {
     // If not on home page, navigate to home
     if (location.pathname !== '/') {
@@ -93,6 +97,7 @@ const Header = () => {
         <MobileNav 
           isOpen={isMenuOpen} 
           handleSectionClick={handleSectionClick} 
+          onClose={closeMenu}
         />
       </div>
     </header>

@@ -12,9 +12,15 @@ type FunktionenDropdownProps = {
   isOpen: boolean;
   handleSectionClick: (sectionId: string) => void;
   isMobile?: boolean;
+  onClose?: () => void;
 };
 
-const FunktionenDropdown = ({ isOpen, handleSectionClick, isMobile = false }: FunktionenDropdownProps) => {
+const FunktionenDropdown = ({ 
+  isOpen, 
+  handleSectionClick, 
+  isMobile = false,
+  onClose 
+}: FunktionenDropdownProps) => {
   if (!isOpen) return null;
 
   const features = [
@@ -24,6 +30,13 @@ const FunktionenDropdown = ({ isOpen, handleSectionClick, isMobile = false }: Fu
     { title: "Zusatzservices", targetSection: "zusatzservices", icon: <Gift className="w-4 h-4" /> },
     { title: "Anpassungsmöglichkeiten", targetSection: "einstellungen", icon: <Sliders className="w-4 h-4" /> }
   ];
+
+  const handleItemClick = (targetSection: string) => {
+    handleSectionClick(targetSection);
+    if (onClose) {
+      onClose();
+    }
+  };
 
   return (
     <div 
@@ -37,7 +50,7 @@ const FunktionenDropdown = ({ isOpen, handleSectionClick, isMobile = false }: Fu
       {features.map((feature, index) => (
         <button
           key={index}
-          onClick={() => handleSectionClick(feature.targetSection)}
+          onClick={() => handleItemClick(feature.targetSection)}
           className={`
             ${isMobile 
               ? 'block w-full text-left py-1 text-royal-700 hover:text-apple flex items-center gap-2' 

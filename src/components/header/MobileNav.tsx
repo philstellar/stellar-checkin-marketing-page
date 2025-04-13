@@ -8,14 +8,26 @@ import FunktionenDropdown from './FunktionenDropdown';
 type MobileNavProps = {
   isOpen: boolean;
   handleSectionClick: (sectionId: string) => void;
+  onClose?: () => void;
 };
 
-const MobileNav = ({ isOpen, handleSectionClick }: MobileNavProps) => {
+const MobileNav = ({ isOpen, handleSectionClick, onClose }: MobileNavProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
+  const handleItemClick = (sectionId: string) => {
+    handleSectionClick(sectionId);
+    if (onClose) {
+      onClose();
+    }
   };
 
   const handleHomeClick = () => {
@@ -24,6 +36,9 @@ const MobileNav = ({ isOpen, handleSectionClick }: MobileNavProps) => {
       top: 0,
       behavior: 'smooth'
     });
+    if (onClose) {
+      onClose();
+    }
   };
 
   if (!isOpen) return null;
@@ -44,11 +59,12 @@ const MobileNav = ({ isOpen, handleSectionClick }: MobileNavProps) => {
       </button>
       <FunktionenDropdown 
         isOpen={isDropdownOpen} 
-        handleSectionClick={handleSectionClick} 
+        handleSectionClick={handleItemClick}
         isMobile={true}
+        onClose={closeDropdown}
       />
       <button
-        onClick={() => handleSectionClick('kontakt')}
+        onClick={() => handleItemClick('kontakt')}
         className="block w-full py-2 text-left text-royal hover:text-apple font-medium"
       >
         Kontakt
