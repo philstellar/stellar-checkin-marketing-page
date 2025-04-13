@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ChevronDown } from "lucide-react";
 import CTAButton from '../CTAButton';
 import FunktionenDropdown from './FunktionenDropdown';
@@ -11,19 +11,28 @@ type DesktopNavProps = {
 
 const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const handleHomeClick = () => {
+    navigate('/');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <nav className="hidden md:flex items-center space-x-8">
-      <Link 
-        to="/"
+      <button 
+        onClick={handleHomeClick}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         Home
-      </Link>
+      </button>
       <div className="relative">
         <button
           className="flex items-center text-royal hover:text-apple font-medium transition-colors"

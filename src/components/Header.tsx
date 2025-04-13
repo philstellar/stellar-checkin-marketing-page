@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
 import DesktopNav from './header/DesktopNav';
 import MobileNav from './header/MobileNav';
@@ -9,6 +9,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
   useEffect(() => {
@@ -29,16 +30,32 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleHomeClick = () => {
+    // If not on home page, navigate to home
+    if (location.pathname !== '/') {
+      navigate('/');
+    }
+    
+    // Always scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const handleSectionClick = (sectionId: string) => {
     setIsMenuOpen(false);
     
-    if (isHomePage) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      window.location.href = `/#${sectionId}`;
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first
+      navigate(`/#${sectionId}`);
+      return;
+    }
+
+    // On home page, scroll to section
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -51,13 +68,16 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
+            <button 
+              onClick={handleHomeClick} 
+              className="flex items-center"
+            >
               <img 
                 src="/lovable-uploads/f750405f-7b3f-4c7a-93d6-1181e247ee5f.png" 
                 alt="Stellar Checkin Logo" 
                 className="h-10"
               />
-            </Link>
+            </button>
           </div>
 
           <DesktopNav handleSectionClick={handleSectionClick} />

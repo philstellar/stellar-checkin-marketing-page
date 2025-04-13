@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ChevronDown } from "lucide-react";
 import CTAButton from '../CTAButton';
 import FunktionenDropdown from './FunktionenDropdown';
@@ -12,21 +12,30 @@ type MobileNavProps = {
 
 const MobileNav = ({ isOpen, handleSectionClick }: MobileNavProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleHomeClick = () => {
+    navigate('/');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   if (!isOpen) return null;
 
   return (
     <div className="md:hidden py-4 bg-white border-t">
-      <Link 
-        to="/"
-        className="block py-2 text-royal hover:text-apple font-medium"
+      <button 
+        onClick={handleHomeClick}
+        className="block w-full py-2 text-left text-royal hover:text-apple font-medium"
       >
         Home
-      </Link>
+      </button>
       <button
         className="flex items-center w-full py-2 text-royal hover:text-apple font-medium"
         onClick={toggleDropdown}
@@ -40,7 +49,7 @@ const MobileNav = ({ isOpen, handleSectionClick }: MobileNavProps) => {
       />
       <button
         onClick={() => handleSectionClick('kontakt')}
-        className="block py-2 text-royal hover:text-apple font-medium"
+        className="block w-full py-2 text-left text-royal hover:text-apple font-medium"
       >
         Kontakt
       </button>
