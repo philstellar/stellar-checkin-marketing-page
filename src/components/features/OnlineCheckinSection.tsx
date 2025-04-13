@@ -1,16 +1,27 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
 
 type FeatureCardProps = {
   title: string;
   description: string;
+  targetSection: string;
 };
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ 
   title, 
-  description
+  description,
+  targetSection
 }) => {
+  const handleClick = () => {
+    const section = document.getElementById(targetSection);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Card className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
       <CardHeader className="pb-2">
@@ -20,7 +31,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-4">
-        <p className="text-royal-700 text-left">{description}</p>
+        <p className="text-royal-700 text-left mb-4">{description}</p>
+        <Button 
+          variant="ghost" 
+          onClick={handleClick}
+          className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2"
+        >
+          Mehr erfahren <ArrowDown className="h-4 w-4" />
+        </Button>
       </CardContent>
     </Card>
   );
@@ -29,36 +47,34 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 export const OnlineCheckinSection: React.FC = () => {
   const features = [
     {
-      title: "Gästedaten aufnehmen",
-      description: "Definiere welche Daten genau aufgenommen werden sollen",
+      title: "Integrationen",
+      description: "Verbinden Sie unsere Lösung mit bestehenden Systemen wie PMS, Schlüsselsafes und mehr für optimierte Verwaltungsprozesse.",
+      targetSection: "integrationen"
     },
     {
-      title: "DSGVO-konforme Gästeverwaltung",
-      description: "Speichern und verarbeiten Sie Gästeinformationen sicher und rechtskonform.",
+      title: "Gästeversicherung",
+      description: "Bieten Sie eine moderne Alternative zur klassischen Kaution und generieren Sie zusätzliche Einnahmen durch Provisionen.",
+      targetSection: "versicherung"
     },
     {
-      title: "Automatische Gastinformationen",
-      description: "Informieren Sie Ihr Team automatisch über ankommende Gäste und deren Buchungsdetails.",
+      title: "Berichte & Analysen",
+      description: "Profitieren Sie von detaillierten Einblicken in Ihre Auslastung und Gästedaten für fundierte Geschäftsentscheidungen.",
+      targetSection: "berichte"
     },
     {
-      title: "Individualisiere deinen Online Checkin",
-      description: "Passe den Online Checkin nach deinen Bedürfnissen an und integriere ihn nahtlos in deine Apps.",
+      title: "Zusatzservices",
+      description: "Steigern Sie Ihren Umsatz mit zusätzlichen Angeboten im Check-in-Prozess wie Early Check-in oder Premium-Upgrades.",
+      targetSection: "zusatzservices"
     },
     {
-      title: "Digitale Meldescheine",
-      description: "Erfassen Sie Gästedaten digital und erfüllen Sie gesetzliche Meldepflichten ohne Papierformulare.",
+      title: "Anpassungsmöglichkeiten",
+      description: "Gestalten Sie das Check-in-Erlebnis individuell mit anpassbarem Branding und mehrsprachiger Oberfläche.",
+      targetSection: "einstellungen"
     },
     {
-      title: "Sichere Datenverarbeitung",
-      description: "Alle Daten werden SSL-verschlüsselt übertragen und auf deutschen Servern gespeichert.",
-    },
-    {
-      title: "Automatisierte Prozesse",
-      description: "Reduzieren Sie manuelle Arbeitsschritte durch automatische Benachrichtigungen und Datenverarbeitung.",
-    },
-    {
-      title: "E-Mail Kommunikation",
-      description: "Versenden Sie automatisierte E-Mails mit Check-in Informationen an Ihre Gäste.",
+      title: "Schadenabwicklung",
+      description: "Professionelle Abwicklung von Gästeschäden in Zusammenarbeit mit führenden Versicherern für reibungslosen Betrieb.",
+      targetSection: "schadenabwicklung"
     }
   ];
 
@@ -72,16 +88,17 @@ export const OnlineCheckinSection: React.FC = () => {
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
             Optimieren Sie Ihren Gäste-Empfang mit einer smarten, digitalen Lösung. 
-            Reduzieren Sie Verwaltungsaufwand und verbessern Sie das Ankommen Ihrer Feriengäste.
+            Erkunden Sie alle Features, die unsere Plattform zu bieten hat.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
               title={feature.title}
               description={feature.description}
+              targetSection={feature.targetSection}
             />
           ))}
         </div>
