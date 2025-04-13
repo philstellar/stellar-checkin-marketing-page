@@ -9,8 +9,8 @@ export const IntegrationenSection: React.FC = () => {
       description: "Nahtlose Anbindung an Ihr Property Management System für effiziente Prozesse."
     },
     {
-      title: "Schnittstellen zu Schlüsselsafes",
-      description: "Automatisierte Verwaltung von Zugangscodes für kontaktlosen Check-in."
+      title: "Kurtaxen",
+      description: "Automatische Kalkulation und Übertragung der Daten in relevante Systeme."
     },
     {
       title: "API für individuelle Lösungen",

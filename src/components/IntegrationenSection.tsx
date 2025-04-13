@@ -12,8 +12,8 @@ export const IntegrationenSection: React.FC = () => {
     },
     {
       icon: <Check className="h-6 w-6" />,
-      title: "Schnittstellen zu Schlüsselsafes",
-      description: "Automatisierte Verwaltung von Zugangscodes für kontaktlosen Check-in."
+      title: "Kurtaxen",
+      description: "Automatische Kalkulation und Übertragung der Daten in relevante Systeme."
     },
     {
       icon: <RefreshCw className="h-6 w-6" />,
