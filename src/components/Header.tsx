@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -30,6 +31,21 @@ const Header = () => {
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleSectionClick = (sectionId: string) => {
+    // Close both dropdowns
+    setIsMenuOpen(false);
+    setIsDropdownOpen(false);
+    
+    // Scroll to the section
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Add a small delay to allow for navigation to complete if on a different page
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
   };
 
   return (
@@ -66,62 +82,83 @@ const Header = () => {
               </button>
               {isDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-20">
-                  <Link 
-                    to="/#online-checkin"
+                  <a 
+                    href="/#online-checkin"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSectionClick('online-checkin');
+                    }}
                   >
                     <CheckCircle className="mr-2 h-4 w-4" />
                     Online Checkin - Gästeseite
-                  </Link>
-                  <Link 
-                    to="/#zusatzservices"
+                  </a>
+                  <a 
+                    href="/#zusatzservices"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSectionClick('zusatzservices');
+                    }}
                   >
                     <ShoppingBag className="mr-2 h-4 w-4" />
                     Zusatzservices verkaufen
-                  </Link>
-                  <Link 
-                    to="/#integrationen"
+                  </a>
+                  <a 
+                    href="/#integrationen"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSectionClick('integrationen');
+                    }}
                   >
                     <LinkIcon className="mr-2 h-4 w-4" />
                     Integrationen
-                  </Link>
-                  <Link 
-                    to="/#versicherung"
+                  </a>
+                  <a 
+                    href="/#versicherung"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSectionClick('versicherung');
+                    }}
                   >
                     <Shield className="mr-2 h-4 w-4" />
                     Versicherung oder / oder Kaution
-                  </Link>
-                  <Link 
-                    to="/#schadenabwicklung"
+                  </a>
+                  <a 
+                    href="/#schadenabwicklung"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSectionClick('schadenabwicklung');
+                    }}
                   >
                     <AlertTriangle className="mr-2 h-4 w-4" />
                     Schadenabwicklung bei Gästeschäden
-                  </Link>
-                  <Link 
-                    to="/#berichte"
+                  </a>
+                  <a 
+                    href="/#berichte"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSectionClick('berichte');
+                    }}
                   >
                     <BarChart2 className="mr-2 h-4 w-4" />
                     Berichte und Analysen
-                  </Link>
-                  <Link 
-                    to="/#einstellungen"
+                  </a>
+                  <a 
+                    href="/#einstellungen"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSectionClick('einstellungen');
+                    }}
                   >
                     <Settings className="mr-2 h-4 w-4" />
                     Weitere Einstellungen
-                  </Link>
+                  </a>
                 </div>
               )}
             </div>
@@ -161,83 +198,83 @@ const Header = () => {
             </button>
             {isDropdownOpen && (
               <div className="pl-4">
-                <Link 
-                  to="/#online-checkin"
+                <a 
+                  href="/#online-checkin"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    setIsDropdownOpen(false);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick('online-checkin');
                   }}
                 >
                   <CheckCircle className="mr-2 h-4 w-4" />
                   Online Checkin - Gästeseite
-                </Link>
-                <Link 
-                  to="/#zusatzservices"
+                </a>
+                <a 
+                  href="/#zusatzservices"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    setIsDropdownOpen(false);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick('zusatzservices');
                   }}
                 >
                   <ShoppingBag className="mr-2 h-4 w-4" />
                   Zusatzservices verkaufen
-                </Link>
-                <Link 
-                  to="/#integrationen"
+                </a>
+                <a 
+                  href="/#integrationen"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    setIsDropdownOpen(false);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick('integrationen');
                   }}
                 >
                   <LinkIcon className="mr-2 h-4 w-4" />
                   Integrationen
-                </Link>
-                <Link 
-                  to="/#versicherung"
+                </a>
+                <a 
+                  href="/#versicherung"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    setIsDropdownOpen(false);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick('versicherung');
                   }}
                 >
                   <Shield className="mr-2 h-4 w-4" />
                   Versicherung oder / oder Kaution
-                </Link>
-                <Link 
-                  to="/#schadenabwicklung"
+                </a>
+                <a 
+                  href="/#schadenabwicklung"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    setIsDropdownOpen(false);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick('schadenabwicklung');
                   }}
                 >
                   <AlertTriangle className="mr-2 h-4 w-4" />
                   Schadenabwicklung bei Gästeschäden
-                </Link>
-                <Link 
-                  to="/#berichte"
+                </a>
+                <a 
+                  href="/#berichte"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    setIsDropdownOpen(false);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick('berichte');
                   }}
                 >
                   <BarChart2 className="mr-2 h-4 w-4" />
                   Berichte und Analysen
-                </Link>
-                <Link 
-                  to="/#einstellungen"
+                </a>
+                <a 
+                  href="/#einstellungen"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    setIsDropdownOpen(false);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick('einstellungen');
                   }}
                 >
                   <Settings className="mr-2 h-4 w-4" />
                   Weitere Einstellungen
-                </Link>
+                </a>
               </div>
             )}
             <Link 
