@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,16 +63,16 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				stellar: {
-					50: '#f5f3ff',
-					100: '#ede9fe',
-					200: '#ddd6fe',
-					300: '#c4b5fd',
-					400: '#a78bfa',
-					500: '#8b5cf6',
-					600: '#7c3aed',
-					700: '#6d28d9',
-					800: '#5b21b6',
-					900: '#4c1d95',
+					50: '#f7fbd4',
+					100: '#f0f7b3',
+					200: '#e8f391',
+					300: '#e0ef70',
+					400: '#d8eb4e',
+					500: '#c5ea08',
+					600: '#b1d307',
+					700: '#9dbc06',
+					800: '#89a505',
+					900: '#758d04',
 				}
 			},
 			borderRadius: {

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -20,7 +19,6 @@ const Header = () => {
     };
   }, []);
 
-  // Close mobile menu and dropdown when changing routes
   useEffect(() => {
     setIsMenuOpen(false);
     setIsDropdownOpen(false);
@@ -43,12 +41,15 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-stellar-700">
-              Stellar <span className="text-stellar-500">Checkin</span>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/69cbcbf8-03a5-4c39-a023-9df42c0b60e3.png" 
+                alt="Stellar Checkin Logo" 
+                className="h-10"
+              />
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               to="/"
@@ -135,7 +136,6 @@ const Header = () => {
             </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-700"
             onClick={toggleMenu}
@@ -144,7 +144,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-4 bg-white border-t">
             <Link 
