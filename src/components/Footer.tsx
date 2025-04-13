@@ -1,4 +1,3 @@
-
 import { ArrowUp, FileText, ExternalLink } from "lucide-react";
 
 const Footer = () => {
@@ -14,7 +13,7 @@ const Footer = () => {
       <div className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold mb-4">Stellar <span className="text-stellar-400">Checkin</span></h2>
+            <h2 className="text-2xl font-bold mb-4">Stellar <span className="text-stellar-400">Tourism Innovations</span></h2>
             <p className="text-gray-400 mb-6 max-w-md">
               Unsere moderne Check-in-Lösung macht Schluss mit Papierkram und langen Warteschlangen. 
               Digitalisieren Sie Ihren Empfangsbereich noch heute.
@@ -84,7 +83,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Stellar Checkin GmbH. Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} Stellar Tourism Innovations GmbH. Alle Rechte vorbehalten.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">

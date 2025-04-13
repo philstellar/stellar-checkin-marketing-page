@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
@@ -54,7 +53,7 @@ const ContactSection = () => {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900">E-Mail</h3>
-                  <p className="mt-1 text-gray-500">info@stellar-checkin.de</p>
+                  <p className="mt-1 text-gray-500">info@stellar-trust.com</p>
                 </div>
               </div>
               
@@ -64,7 +63,7 @@ const ContactSection = () => {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900">Telefon</h3>
-                  <p className="mt-1 text-gray-500">+49 (0) 123 456789</p>
+                  <p className="mt-1 text-gray-500">+49 304 1738487</p>
                 </div>
               </div>
               
@@ -75,9 +74,9 @@ const ContactSection = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900">Adresse</h3>
                   <p className="mt-1 text-gray-500">
-                    Stellar GmbH<br />
-                    Musterstraße 123<br />
-                    10115 Berlin<br />
+                    Stellar Tourism Innovations GmbH<br />
+                    Immanuelkirchstraße 37<br />
+                    10405 Berlin<br />
                     Deutschland
                   </p>
                 </div>

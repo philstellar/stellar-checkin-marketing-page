@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -13,9 +12,9 @@ const Impressum = () => {
           <div className="prose prose-lg max-w-none">
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
-              Stellar Checkin GmbH<br />
-              Musterstraße 123<br />
-              10115 Berlin<br />
+              Stellar Tourism Innovations GmbH<br />
+              Immanuelkirchstraße 37<br />
+              10405 Berlin<br />
               Deutschland
             </p>
             
@@ -26,8 +25,8 @@ const Impressum = () => {
             
             <h2>Kontakt</h2>
             <p>
-              Telefon: +49 (0) 123 456789<br />
-              E-Mail: info@stellar-checkin.de
+              Telefon: +49 304 1738487<br />
+              E-Mail: info@stellar-trust.com
             </p>
             
             <h2>Registereintrag</h2>
