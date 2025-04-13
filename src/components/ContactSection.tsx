@@ -2,10 +2,11 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import CTAButton from './CTAButton';
+import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,23 +19,60 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here we would normally submit the form data to a server
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
     
-    toast({
-      title: "Nachricht gesendet!",
-      description: "Vielen Dank für Ihre Anfrage. Wir werden uns in Kürze bei Ihnen melden.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: ''
-    });
+    try {
+      // Email content preparation
+      const emailContent = `
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Unternehmen: ${formData.company}
+        Nachricht: ${formData.message}
+      `;
+
+      // Using formsubmit.co service to send the email
+      const response = await fetch("https://formsubmit.co/ajax/hello@stellar-trust.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: emailContent,
+          _subject: "Neue Kontaktanfrage von Stellar Checkin",
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Nachricht gesendet!",
+          description: "Vielen Dank für Ihre Anfrage. Wir werden uns in Kürze bei Ihnen melden.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: ''
+        });
+      } else {
+        throw new Error("Error sending message");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Fehler beim Senden",
+        description: "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -57,8 +95,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-royal mb-1">E-Mail</h3>
-                  <a href="mailto:info@stellar-trust.com" className="text-royal-700 hover:text-apple transition-colors">
-                    info@stellar-trust.com
+                  <a href="mailto:hello@stellar-trust.com" className="text-royal-700 hover:text-apple transition-colors">
+                    hello@stellar-trust.com
                   </a>
                 </div>
               </div>
@@ -146,9 +184,13 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <CTAButton type="submit" className="w-full bg-apple hover:bg-apple-600 text-white px-6 py-3 rounded-lg">
-                  Nachricht senden <Send className="ml-2 h-4 w-4" />
-                </CTAButton>
+                <Button 
+                  type="submit" 
+                  className="w-full bg-apple hover:bg-apple-600 text-white px-6 py-3 rounded-lg"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Wird gesendet..." : "Nachricht senden"} <Send className="ml-2 h-4 w-4" />
+                </Button>
               </div>
             </form>
           </div>
