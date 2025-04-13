@@ -53,9 +53,9 @@ const SchadenabwicklungSection = () => {
               <div className="flex items-center">
                 <span className="text-gray-700 mr-3">Partner:</span>
                 <img 
-                  src="https://www.hiscox.de/wp-content/themes/hiscox/images/logo-hiscox.svg" 
+                  src="/lovable-uploads/544730f1-d669-4595-af3c-737bdc61d29a.png" 
                   alt="Hiscox Logo" 
-                  className="h-8"
+                  className="h-10"
                 />
               </div>
             </div>
