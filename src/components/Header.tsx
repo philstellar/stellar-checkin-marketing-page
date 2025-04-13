@@ -2,7 +2,18 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, CheckCircle, ShoppingBag, Link as LinkIcon, Shield, BarChart2, Settings, AlertTriangle } from "lucide-react";
+import { 
+  Menu, 
+  X, 
+  ChevronDown, 
+  Monitor, 
+  LinkIcon, 
+  Shield, 
+  BarChart2, 
+  Settings, 
+  AlertTriangle,
+  ShoppingBag
+} from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -83,15 +94,15 @@ const Header = () => {
               {isDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-20">
                   <a 
-                    href="/#online-checkin"
+                    href="/#gaeste-voranmeldung"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={(e) => {
                       e.preventDefault();
-                      handleSectionClick('online-checkin');
+                      handleSectionClick('gaeste-voranmeldung');
                     }}
                   >
-                    <CheckCircle className="mr-2 h-4 w-4" />
-                    Online Checkin - Gästeseite
+                    <Monitor className="mr-2 h-4 w-4" />
+                    Gäste Voranmeldung
                   </a>
                   <a 
                     href="/#zusatzservices"
@@ -124,18 +135,7 @@ const Header = () => {
                     }}
                   >
                     <Shield className="mr-2 h-4 w-4" />
-                    Versicherung oder / oder Kaution
-                  </a>
-                  <a 
-                    href="/#schadenabwicklung"
-                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleSectionClick('schadenabwicklung');
-                    }}
-                  >
-                    <AlertTriangle className="mr-2 h-4 w-4" />
-                    Schadenabwicklung bei Gästeschäden
+                    Versicherung
                   </a>
                   <a 
                     href="/#berichte"
@@ -157,7 +157,7 @@ const Header = () => {
                     }}
                   >
                     <Settings className="mr-2 h-4 w-4" />
-                    Weitere Einstellungen
+                    Einstellungen
                   </a>
                 </div>
               )}
@@ -199,15 +199,15 @@ const Header = () => {
             {isDropdownOpen && (
               <div className="pl-4">
                 <a 
-                  href="/#online-checkin"
+                  href="/#gaeste-voranmeldung"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleSectionClick('online-checkin');
+                    handleSectionClick('gaeste-voranmeldung');
                   }}
                 >
-                  <CheckCircle className="mr-2 h-4 w-4" />
-                  Online Checkin - Gästeseite
+                  <Monitor className="mr-2 h-4 w-4" />
+                  Gäste Voranmeldung
                 </a>
                 <a 
                   href="/#zusatzservices"
@@ -240,18 +240,7 @@ const Header = () => {
                   }}
                 >
                   <Shield className="mr-2 h-4 w-4" />
-                  Versicherung oder / oder Kaution
-                </a>
-                <a 
-                  href="/#schadenabwicklung"
-                  className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSectionClick('schadenabwicklung');
-                  }}
-                >
-                  <AlertTriangle className="mr-2 h-4 w-4" />
-                  Schadenabwicklung bei Gästeschäden
+                  Versicherung
                 </a>
                 <a 
                   href="/#berichte"
@@ -273,7 +262,7 @@ const Header = () => {
                   }}
                 >
                   <Settings className="mr-2 h-4 w-4" />
-                  Weitere Einstellungen
+                  Einstellungen
                 </a>
               </div>
             )}
