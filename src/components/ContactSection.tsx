@@ -32,8 +32,8 @@ const ContactSection = () => {
         Nachricht: ${formData.message}
       `;
 
-      // Using formsubmit.co service to send the email
-      const response = await fetch("https://formsubmit.co/ajax/hello@stellar-trust.com", {
+      // Using formsubmit.co service with the activation string
+      const response = await fetch("https://formsubmit.co/4f8ed8dc6e198407f7647476b637eb77", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

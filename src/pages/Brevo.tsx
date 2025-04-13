@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -41,9 +40,8 @@ const Brevo = () => {
         Nachricht: ${formData.message}
       `;
 
-      // Using fetch to send an email - in a production environment, 
-      // you would typically use a backend service or email API
-      const response = await fetch("https://formsubmit.co/ajax/hello@stellar-trust.com", {
+      // Using FormSubmit with activation string
+      const response = await fetch("https://formsubmit.co/4f8ed8dc6e198407f7647476b637eb77", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
