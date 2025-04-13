@@ -21,11 +21,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <Card className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
       <CardHeader className="pb-2">
-        <div className="flex items-center gap-4">
-          <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal")}>
+        <div className="flex items-start gap-4">
+          <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal flex-shrink-0")}>
             {icon}
           </div>
-          <CardTitle className="text-lg font-semibold text-royal text-left">{title}</CardTitle>
+          <CardTitle className="text-lg font-semibold text-royal text-left mt-0.5">{title}</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="pt-4">

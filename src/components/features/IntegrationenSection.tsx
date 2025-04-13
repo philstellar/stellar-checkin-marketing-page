@@ -45,11 +45,11 @@ export const IntegrationenSection: React.FC = () => {
           {features.map((feature, index) => (
             <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
               <CardHeader className="pb-2">
-                <div className="flex items-center gap-4">
-                  <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal")}>
+                <div className="flex items-start gap-4">
+                  <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal flex-shrink-0")}>
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-lg font-semibold text-royal text-left">{feature.title}</CardTitle>
+                  <CardTitle className="text-lg font-semibold text-royal text-left mt-0.5">{feature.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="pt-4">
