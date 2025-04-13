@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,13 +6,13 @@ import { Link } from "react-router-dom";
 
 const Agb = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       <Header />
-      <main className="flex-grow pt-32 pb-16">
-        <div className="container-custom">
-          <h1 className="text-3xl md:text-4xl font-bold mb-8">Allgemeine Geschäftsbedingungen</h1>
+      <main className="flex-grow pt-32 pb-16 container-custom">
+        <div className="max-w-4xl mx-auto prose prose-lg">
+          <h1 className="text-3xl md:text-4xl font-bold mb-10 text-stellar-700">Allgemeine Geschäftsbedingungen</h1>
           
-          <div className="prose prose-lg max-w-none">
+          <div className="space-y-8">
             <p className="font-semibold mb-6">
               Für die Erbringung von Dienstleistungen durch die Stellar Tourism Innovations GmbH, Immanuelkirchstraße 37, 
               10405 Berlin, E-Mail: philipp@stellar-trust.com (im Folgenden „Auftragnehmer" genannt) an ihre Kunden 
@@ -75,7 +74,7 @@ const Agb = () => {
             
             <h2 className="text-xl font-bold mt-8 mb-4">3. Mitwirkungspflichten des Auftraggebers</h2>
             <p>
-              Der Auftraggeber ist verpflichtet, alle Informationen, Daten und sonstigen Inhalte, die für die Erfüllung der 
+              Der Auftraggeber ist verpflichtet, alle Informationen, Daten und sonstige Inhalte, die für die Erfüllung der 
               Leistung erforderlich sind, vollständig und richtig zur Verfügung zu stellen. Der Auftragnehmer ist in keiner 
               Weise für Verzögerungen und Verspätungen bei der Leistungserbringung verantwortlich, die auf eine verspätete 
               und notwendige Mitwirkung oder Zuarbeit des Kunden zurückzuführen sind; die Bestimmungen unter der Überschrift 
@@ -310,16 +309,16 @@ const Agb = () => {
             </p>
             
             <div className="mt-12 flex items-center justify-start gap-4">
-              <Link to="/datenschutz">
-                <Button variant="outline" className="flex items-center gap-2">
-                  <FileText className="h-4 w-4" />
-                  Datenschutzerklärung
-                </Button>
-              </Link>
               <Link to="/impressum">
-                <Button variant="outline" className="flex items-center gap-2">
+                <Button variant="outline" className="flex items-center gap-2 border-primary text-primary hover:bg-primary/5">
                   <FileText className="h-4 w-4" />
                   Impressum
+                </Button>
+              </Link>
+              <Link to="/datenschutz">
+                <Button variant="outline" className="flex items-center gap-2 border-primary text-primary hover:bg-primary/5">
+                  <FileText className="h-4 w-4" />
+                  Datenschutzerklärung
                 </Button>
               </Link>
             </div>

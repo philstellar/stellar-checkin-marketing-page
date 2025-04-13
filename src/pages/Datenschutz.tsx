@@ -1,25 +1,18 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { FileText, ArrowLeft } from "lucide-react";
+import { FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Datenschutz = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       <Header />
-      <main className="flex-grow pt-32 pb-16 bg-gray-50">
-        <div className="container-custom">
-          <div className="mb-8">
-            <Link to="/impressum" className="inline-flex items-center text-stellar-600 hover:text-stellar-700 mb-4">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Zurück zum Impressum
-            </Link>
-            <h1 className="text-3xl md:text-4xl font-bold text-stellar-700 mb-10">Datenschutzerklärung</h1>
-          </div>
+      <main className="flex-grow pt-32 pb-16 container-custom">
+        <div className="max-w-4xl mx-auto prose prose-lg">
+          <h1 className="text-3xl md:text-4xl font-bold text-stellar-700 mb-10">Datenschutzerklärung</h1>
           
-          <div className="max-w-4xl mx-auto">
+          <div className="space-y-8">
             <section className="mb-10">
               <h2 className="text-2xl font-bold mb-6 text-stellar-600">1. Datenschutz auf einen Blick</h2>
               
@@ -156,15 +149,21 @@ const Datenschutz = () => {
                 Bearbeitung deines Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
               </p>
             </section>
-            
-            <div className="mt-12">
-              <Link to="/impressum">
-                <Button variant="outline" className="flex items-center gap-2 border-primary text-primary hover:bg-primary/5">
-                  <FileText className="h-4 w-4" />
-                  Zum Impressum
-                </Button>
-              </Link>
-            </div>
+          </div>
+          
+          <div className="mt-12 flex items-center justify-start gap-4">
+            <Link to="/impressum">
+              <Button variant="outline" className="flex items-center gap-2 border-primary text-primary hover:bg-primary/5">
+                <FileText className="h-4 w-4" />
+                Impressum
+              </Button>
+            </Link>
+            <Link to="/agb">
+              <Button variant="outline" className="flex items-center gap-2 border-primary text-primary hover:bg-primary/5">
+                <FileText className="h-4 w-4" />
+                AGB
+              </Button>
+            </Link>
           </div>
         </div>
       </main>
