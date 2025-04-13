@@ -91,14 +91,13 @@ export const OnlineCheckinSection = () => {
       title="Digitale Gästevoranmeldung für Ferienwohnungen"
       description="Optimieren Sie Ihren Gäste-Empfang mit einer smarten, digitalen Lösung. Reduzieren Sie Verwaltungsaufwand und verbessern Sie das Ankommen Ihrer Feriengäste."
       features={features}
-      image="/lovable-uploads/80368f3d-e665-4922-ae52-be3ada6ee903.png"
+      image="/lovable-uploads/111d56d3-9959-4be1-ad72-3df35f92a489.png"
       imageAlt="Digitale Gästevoranmeldung für Ferienwohnungen"
       bgColor="bg-gray-50"
     />
   );
 };
 
-// Adding the missing exported sections
 export const IntegrationenSection = () => {
   const features = [
     {
@@ -129,7 +128,7 @@ export const IntegrationenSection = () => {
       title="Nahtlose Integrationen"
       description="Verbinden Sie unsere Lösung mit Ihren bestehenden Systemen und optimieren Sie Ihre gesamte Verwaltung."
       features={features}
-      image="/lovable-uploads/80368f3d-e665-4922-ae52-be3ada6ee903.png"
+      image="/lovable-uploads/7498575b-a9f0-44f1-b657-e059da50ab34.png"
       imageAlt="Systemintegrationen für Ferienwohnungen"
       bgColor="bg-white"
     />
@@ -166,7 +165,7 @@ export const EinstellungenSection = () => {
       title="Umfangreiche Anpassungsmöglichkeiten"
       description="Passen Sie die Checkin-Lösung individuell an Ihre Bedürfnisse und die Ihrer Feriengäste an."
       features={features}
-      image="/lovable-uploads/80368f3d-e665-4922-ae52-be3ada6ee903.png"
+      image="/lovable-uploads/8dfdd5e8-54ec-43bb-bf4b-c15845c051b9.png"
       imageAlt="Anpassungsmöglichkeiten für Ferienwohnungen"
       bgColor="bg-gray-50"
     />
@@ -203,7 +202,7 @@ export const MoeglichkeitenSection = () => {
       title="Erweiterte Möglichkeiten"
       description="Nutzen Sie die vielfältigen Funktionen, um das Erlebnis Ihrer Feriengäste zu verbessern und Ihre Verwaltung zu vereinfachen."
       features={features}
-      image="/lovable-uploads/80368f3d-e665-4922-ae52-be3ada6ee903.png"
+      image="/lovable-uploads/cf3c540d-5b62-4f28-a0b0-372f417ff304.png"
       imageAlt="Erweiterte Möglichkeiten für Ferienwohnungen"
       bgColor="bg-white"
     />
