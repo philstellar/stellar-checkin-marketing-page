@@ -7,7 +7,7 @@ const ZusatzservicesSection = () => {
     <section id="zusatzservices" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="md:order-2">
+          <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Zusatzservices verkaufen</h2>
             <p className="text-lg text-gray-700 mb-8">
               Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses zusätzliche 
@@ -53,7 +53,7 @@ const ZusatzservicesSection = () => {
             </div>
           </div>
           
-          <div className="md:order-1">
+          <div>
             <div className="rounded-lg overflow-hidden stellar-shadow">
               <img 
                 src="/lovable-uploads/041cad7c-59af-46f5-ab09-4404b53a1516.png"
