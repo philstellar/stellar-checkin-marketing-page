@@ -19,7 +19,7 @@ const Footer = () => {
           
           <div>
             <h3 className="text-lg font-semibold mb-3 text-white">Kontakt</h3>
-            <ul className="space-y-2 text-white">
+            <ul className="space-y-2 text-floral">
               <li>Stellar Tourism Innovations GmbH</li>
               <li>Immanuelkirchstraße 37</li>
               <li>10405 Berlin</li>
@@ -32,12 +32,12 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-3 text-white">Rechtliches</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/impressum" className="text-white hover:opacity-75 transition-opacity">
+                <Link to="/impressum" className="text-floral hover:text-apple transition-colors">
                   Impressum
                 </Link>
               </li>
               <li>
-                <Link to="/datenschutz" className="text-white hover:opacity-75 transition-opacity">
+                <Link to="/datenschutz" className="text-floral hover:text-apple transition-colors">
                   Datenschutzerklärung
                 </Link>
               </li>
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/20 mt-8 pt-8 text-center text-white">
+        <div className="border-t border-floral/20 mt-8 pt-8 text-center text-floral">
           <p>&copy; {new Date().getFullYear()} Stellar Tourism Innovations GmbH. Alle Rechte vorbehalten.</p>
         </div>
       </div>

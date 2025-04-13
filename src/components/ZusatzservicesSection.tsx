@@ -13,7 +13,7 @@ const ZusatzservicesSection = () => {
             Zusatzservices verkaufen
           </h2>
           <div className="h-1 w-24 bg-apple mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-royal-700 mb-12 max-w-3xl mx-auto">
             Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses zusätzliche 
             Services anbieten. Von Early Check-in bis zu Premium-Angeboten.
           </p>
@@ -36,17 +36,17 @@ const ZusatzservicesSection = () => {
                 description: "Generieren Sie durch den Verkauf von Zusatzleistungen und Upgrades wertvolle Zusatzeinnahmen."
               }
             ].map((feature, index) => (
-              <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200">
+              <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-4">
-                    <div className={cn("rounded-lg p-2.5 bg-[#eef1f8] text-royal")}>
+                    <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal")}>
                       {feature.icon}
                     </div>
                     <CardTitle className="text-lg font-semibold text-royal">{feature.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-4">
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-royal-700">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}

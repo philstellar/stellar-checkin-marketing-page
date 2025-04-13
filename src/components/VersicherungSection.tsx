@@ -6,14 +6,14 @@ import { cn } from "@/lib/utils";
 
 export const VersicherungSection = () => {
   return (
-    <section id="versicherung" className="section-padding bg-gray-50">
+    <section id="versicherung" className="section-padding bg-floral">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-royal mb-4">
             Gästeversicherung und Kaution automatisieren
           </h2>
           <div className="h-1 w-24 bg-apple mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-royal-700 mb-12 max-w-3xl mx-auto">
             Bieten Sie Ihren Gästen eine moderne Alternative zur klassischen Kaution. Mit unserer integrierten Versicherungslösung profitieren beide Seiten.
           </p>
           
@@ -35,17 +35,17 @@ export const VersicherungSection = () => {
                 description: "Bessere Absicherung als klassische Kautionen, da die Versicherung auch größere Schäden abdeckt."
               }
             ].map((feature, index) => (
-              <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200">
+              <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-4">
-                    <div className={cn("rounded-lg p-2.5 bg-[#eef1f8] text-royal")}>
+                    <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal")}>
                       {feature.icon}
                     </div>
                     <CardTitle className="text-lg font-semibold text-royal">{feature.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-4">
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-royal-700">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}

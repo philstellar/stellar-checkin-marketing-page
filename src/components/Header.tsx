@@ -83,13 +83,13 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               to="/"
-              className="text-gray-700 hover:text-stellar-600 font-medium transition-colors"
+              className="text-royal hover:text-apple font-medium transition-colors"
             >
               Home
             </Link>
             <div className="relative">
               <button
-                className="flex items-center text-gray-700 hover:text-stellar-600 font-medium transition-colors"
+                className="flex items-center text-royal hover:text-apple font-medium transition-colors"
                 onClick={toggleDropdown}
               >
                 Checkin <ChevronDown className="ml-1 w-4 h-4" />
@@ -97,42 +97,42 @@ const Header = () => {
               {isDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-20">
                   <button 
-                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    className="flex w-full items-center px-4 py-2 text-royal hover:bg-floral hover:text-apple"
                     onClick={() => handleSectionClick('gaeste-voranmeldung')}
                   >
                     <Monitor className="mr-2 h-4 w-4" />
                     Gäste Voranmeldung
                   </button>
                   <button 
-                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    className="flex w-full items-center px-4 py-2 text-royal hover:bg-floral hover:text-apple"
                     onClick={() => handleSectionClick('zusatzservices')}
                   >
                     <ShoppingBag className="mr-2 h-4 w-4" />
                     Zusatzservices verkaufen
                   </button>
                   <button 
-                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    className="flex w-full items-center px-4 py-2 text-royal hover:bg-floral hover:text-apple"
                     onClick={() => handleSectionClick('integrationen')}
                   >
                     <LinkIcon className="mr-2 h-4 w-4" />
                     Integrationen
                   </button>
                   <button 
-                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    className="flex w-full items-center px-4 py-2 text-royal hover:bg-floral hover:text-apple"
                     onClick={() => handleSectionClick('versicherung')}
                   >
                     <Shield className="mr-2 h-4 w-4" />
                     Versicherung
                   </button>
                   <button 
-                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    className="flex w-full items-center px-4 py-2 text-royal hover:bg-floral hover:text-apple"
                     onClick={() => handleSectionClick('berichte')}
                   >
                     <BarChart2 className="mr-2 h-4 w-4" />
                     Berichte und Analysen
                   </button>
                   <button 
-                    className="flex w-full items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
+                    className="flex w-full items-center px-4 py-2 text-royal hover:bg-floral hover:text-apple"
                     onClick={() => handleSectionClick('einstellungen')}
                   >
                     <Settings className="mr-2 h-4 w-4" />
@@ -143,19 +143,19 @@ const Header = () => {
             </div>
             <Link 
               to="/kontakt"
-              className="text-gray-700 hover:text-stellar-600 font-medium transition-colors"
+              className="text-royal hover:text-apple font-medium transition-colors"
             >
               Kontakt
             </Link>
             <Link to="/kontakt">
-              <Button variant="default" className="bg-stellar-600 hover:bg-stellar-700">
+              <Button variant="default" className="bg-apple hover:bg-apple-600">
                 Demo Anfragen
               </Button>
             </Link>
           </nav>
 
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-royal"
             onClick={toggleMenu}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -166,13 +166,13 @@ const Header = () => {
           <div className="md:hidden py-4 bg-white border-t">
             <Link 
               to="/"
-              className="block py-2 text-gray-700 hover:text-stellar-600 font-medium"
+              className="block py-2 text-royal hover:text-apple font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <button
-              className="flex items-center w-full py-2 text-gray-700 hover:text-stellar-600 font-medium"
+              className="flex items-center w-full py-2 text-royal hover:text-apple font-medium"
               onClick={toggleDropdown}
             >
               Checkin <ChevronDown className={`ml-1 w-4 h-4 ${isDropdownOpen ? 'transform rotate-180' : ''}`} />
@@ -180,42 +180,42 @@ const Header = () => {
             {isDropdownOpen && (
               <div className="pl-4">
                 <button
-                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  className="flex w-full items-center py-2 text-royal hover:text-apple"
                   onClick={() => handleSectionClick('gaeste-voranmeldung')}
                 >
                   <Monitor className="mr-2 h-4 w-4" />
                   Gäste Voranmeldung
                 </button>
                 <button
-                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  className="flex w-full items-center py-2 text-royal hover:text-apple"
                   onClick={() => handleSectionClick('zusatzservices')}
                 >
                   <ShoppingBag className="mr-2 h-4 w-4" />
                   Zusatzservices verkaufen
                 </button>
                 <button
-                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  className="flex w-full items-center py-2 text-royal hover:text-apple"
                   onClick={() => handleSectionClick('integrationen')}
                 >
                   <LinkIcon className="mr-2 h-4 w-4" />
                   Integrationen
                 </button>
                 <button
-                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  className="flex w-full items-center py-2 text-royal hover:text-apple"
                   onClick={() => handleSectionClick('versicherung')}
                 >
                   <Shield className="mr-2 h-4 w-4" />
                   Versicherung
                 </button>
                 <button
-                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  className="flex w-full items-center py-2 text-royal hover:text-apple"
                   onClick={() => handleSectionClick('berichte')}
                 >
                   <BarChart2 className="mr-2 h-4 w-4" />
                   Berichte und Analysen
                 </button>
                 <button
-                  className="flex w-full items-center py-2 text-gray-700 hover:text-stellar-600"
+                  className="flex w-full items-center py-2 text-royal hover:text-apple"
                   onClick={() => handleSectionClick('einstellungen')}
                 >
                   <Settings className="mr-2 h-4 w-4" />
@@ -225,7 +225,7 @@ const Header = () => {
             )}
             <Link 
               to="/kontakt"
-              className="block py-2 text-gray-700 hover:text-stellar-600 font-medium"
+              className="block py-2 text-royal hover:text-apple font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Kontakt
@@ -236,7 +236,7 @@ const Header = () => {
               className="block mt-4"
             >
               <Button 
-                className="w-full bg-stellar-600 hover:bg-stellar-700"
+                className="w-full bg-apple hover:bg-apple-600"
               >
                 Demo Anfragen
               </Button>

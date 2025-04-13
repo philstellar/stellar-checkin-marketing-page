@@ -19,17 +19,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
 }) => {
   return (
-    <Card className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200">
+    <Card className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
       <CardHeader className="pb-2">
         <div className="flex items-center gap-4">
-          <div className={cn("rounded-lg p-2.5 bg-[#eef1f8] text-[#0f2661]")}>
+          <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal")}>
             {icon}
           </div>
-          <CardTitle className="text-lg font-semibold text-stellar-600">{title}</CardTitle>
+          <CardTitle className="text-lg font-semibold text-royal">{title}</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="pt-4">
-        <p className="text-gray-600">{description}</p>
+        <p className="text-royal-700">{description}</p>
       </CardContent>
     </Card>
   );
@@ -80,14 +80,14 @@ export const OnlineCheckinSection: React.FC = () => {
   ];
 
   return (
-    <section id="gaeste-voranmeldung" className="py-16 bg-gray-50">
+    <section id="gaeste-voranmeldung" className="py-16 bg-floral">
       <div className="container-custom">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-4 relative inline-block text-stellar-600">
+          <h2 className="text-3xl font-bold mb-4 text-royal mx-auto">
             Auf Sie und ihre Gäste zugeschnitten
-            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-stellar-300"></div>
+            <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-royal-700 max-w-2xl mx-auto">
             Optimieren Sie Ihren Gäste-Empfang mit einer smarten, digitalen Lösung. 
             Reduzieren Sie Verwaltungsaufwand und verbessern Sie das Ankommen Ihrer Feriengäste.
           </p>

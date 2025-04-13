@@ -42,42 +42,42 @@ const ContactSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0f2661] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-royal mb-4">
               Kontaktieren Sie uns
             </h2>
-            <div className="h-1 w-24 bg-[#0f2661] mb-6 rounded-full"></div>
-            <p className="text-lg text-gray-700 mb-10 max-w-lg">
+            <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
+            <p className="text-lg text-royal-700 mb-10 max-w-lg">
               Haben Sie Fragen zu Stellar Checkin? Unser Team steht Ihnen gerne zur Verfügung.
             </p>
             
             <div className="space-y-8">
               <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-[#eef1f8] flex items-center justify-center text-[#0f2661]">
+                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">E-Mail</h3>
-                  <p className="text-gray-600">info@stellar-trust.com</p>
+                  <h3 className="text-lg font-semibold text-royal mb-1">E-Mail</h3>
+                  <p className="text-royal-700">info@stellar-trust.com</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-[#eef1f8] flex items-center justify-center text-[#0f2661]">
+                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Telefon</h3>
-                  <p className="text-gray-600">+49 304 1738487</p>
+                  <h3 className="text-lg font-semibold text-royal mb-1">Telefon</h3>
+                  <p className="text-royal-700">+49 304 1738487</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-[#eef1f8] flex items-center justify-center text-[#0f2661]">
+                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Adresse</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg font-semibold text-royal mb-1">Adresse</h3>
+                  <p className="text-royal-700">
                     Stellar Tourism Innovations GmbH<br />
                     Immanuelkirchstraße 37<br />
                     10405 Berlin<br />
@@ -91,7 +91,7 @@ const ContactSection = () => {
           <div className="bg-white p-8 rounded-xl shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-royal-700 mb-1">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -99,12 +99,12 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0f2661] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-apple focus:border-transparent"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">E-Mail</label>
+                <label htmlFor="email" className="block text-sm font-medium text-royal-700 mb-1">E-Mail</label>
                 <input
                   type="email"
                   id="email"
@@ -112,24 +112,24 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0f2661] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-apple focus:border-transparent"
                 />
               </div>
               
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Unternehmen</label>
+                <label htmlFor="company" className="block text-sm font-medium text-royal-700 mb-1">Unternehmen</label>
                 <input
                   type="text"
                   id="company"
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0f2661] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-apple focus:border-transparent"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Nachricht</label>
+                <label htmlFor="message" className="block text-sm font-medium text-royal-700 mb-1">Nachricht</label>
                 <textarea
                   id="message"
                   name="message"
@@ -137,12 +137,12 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0f2661] focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-apple focus:border-transparent resize-none"
                 />
               </div>
               
               <div>
-                <Button type="submit" className="w-full bg-[#0f2661] hover:bg-[#0a1d4d] text-white px-6 py-3 rounded-lg">
+                <Button type="submit" className="w-full bg-apple hover:bg-apple-600 text-white px-6 py-3 rounded-lg">
                   Nachricht senden <Send className="ml-2 h-4 w-4" />
                 </Button>
               </div>

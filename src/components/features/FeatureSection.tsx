@@ -34,30 +34,30 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
     <section id={id} className={`py-20 ${bgColor}`}>
       <div className="container-custom">
         <div className={`${centerTitle ? 'text-center mx-auto max-w-3xl' : ''} mb-10`}>
-          <h2 className={`text-3xl font-bold mb-4 text-stellar-600 ${centerTitle ? 'mx-auto' : ''}`}>
+          <h2 className={`text-3xl font-bold mb-4 text-royal ${centerTitle ? 'mx-auto' : ''}`}>
             {title}
             {centerTitle && (
               <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
             )}
           </h2>
-          <p className={`text-lg text-gray-600 ${centerTitle ? 'mx-auto max-w-2xl' : ''}`}>{description}</p>
+          <p className={`text-lg text-royal-700 ${centerTitle ? 'mx-auto max-w-2xl' : ''}`}>{description}</p>
         </div>
         
         <div className={`grid grid-cols-1 ${fullWidth ? 'md:grid-cols-4' : image ? 'lg:grid-cols-2' : ''} gap-8`}>
           <div className={fullWidth ? 'max-w-full w-full col-span-full' : ''}>
             <div className={`grid grid-cols-1 ${fullWidth ? 'md:grid-cols-4' : 'md:grid-cols-2'} gap-6`}>
               {features.map((feature, index) => (
-                <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200">
+                <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
                   <CardHeader className="pb-2">
                     <div className="flex items-center gap-4">
-                      <div className={cn("rounded-lg p-2.5 bg-[#eef1f8] text-royal")}>
+                      <div className={cn("rounded-lg p-2.5 bg-floral-400 text-royal")}>
                         {feature.icon}
                       </div>
                       <CardTitle className="text-lg font-semibold text-royal">{feature.title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-4">
-                    <p className="text-gray-600">{feature.description}</p>
+                    <p className="text-royal-700">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}
