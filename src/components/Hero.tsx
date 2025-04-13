@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
-              Digitale <span className="text-stellar-600">Check-in</span> Lösung für Ferienwohnungen
+              Die allumfassende digitale <span className="text-stellar-600">Check-in</span> Lösung für Ferienwohnungen
             </h1>
             <p className="text-lg text-gray-700 mb-8 max-w-lg">
               Optimieren Sie Ihre Gästeanmeldung für Ferienwohnungen mit unserem digitalen Check-in System. Schnell, sicher und effizient für Vermieter und Gäste.
@@ -54,3 +54,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
