@@ -25,11 +25,6 @@ const Hero = () => {
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
               </a>
-              <a href="/kontakt" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-stellar-600 text-stellar-600 hover:bg-stellar-50">
-                  Demo Video Ansehen
-                </Button>
-              </a>
             </div>
             <div className="mt-8 flex items-center">
               <div className="flex -space-x-2">
@@ -38,7 +33,7 @@ const Hero = () => {
                 <div className="w-8 h-8 rounded-full bg-stellar-500"></div>
               </div>
               <p className="ml-4 text-sm text-gray-600">
-                <span className="font-medium">500+ Unternehmen</span> nutzen Stellar Checkin
+                <span className="font-medium">Zeit sparen, mehr Umsatz generieren</span>
               </p>
             </div>
           </div>
@@ -64,3 +59,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
