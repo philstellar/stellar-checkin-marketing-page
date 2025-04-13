@@ -62,3 +62,4 @@ export const OnlineCheckinSection: React.FC = () => {
 };
 
 export default OnlineCheckinSection;
+
