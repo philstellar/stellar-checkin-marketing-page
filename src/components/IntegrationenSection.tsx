@@ -8,7 +8,7 @@ export const IntegrationenSection: React.FC = () => {
     {
       icon: <Monitor className="h-6 w-6" />,
       title: "PMS Integration",
-      description: "Nahtlose Anbindung an Ihr Property Management System für effiziente Prozesse."
+      description: "Nahtlose Anbindung an dein Property Management System für effiziente Prozesse."
     },
     {
       icon: <Check className="h-6 w-6" />,
@@ -18,7 +18,7 @@ export const IntegrationenSection: React.FC = () => {
     {
       icon: <RefreshCw className="h-6 w-6" />,
       title: "API für individuelle Lösungen",
-      description: "Flexible Schnittstellen für Integration in Ihre bestehende Systemlandschaft."
+      description: "Flexible Schnittstellen für Integration in deine bestehende Systemlandschaft."
     },
     {
       icon: <Clock className="h-6 w-6" />,

@@ -11,7 +11,7 @@ export const VersicherungSection = () => {
           </h2>
           <div className="h-1 w-24 bg-apple mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-royal-700 mb-12 max-w-3xl mx-auto">
-            Bieten Sie Ihren Gästen eine moderne Alternative zur klassischen Kaution. Mit unserer integrierten Versicherungslösung profitieren beide Seiten.
+            Biete deinen Gästen eine moderne Alternative zur klassischen Kaution. Mit unserer integrierten Versicherungslösung profitieren beide Seiten.
           </p>
           
           <div className="grid md:grid-cols-3 gap-6">
@@ -22,7 +22,7 @@ export const VersicherungSection = () => {
               },
               {
                 title: "Zusätzliche Einnahmequelle",
-                description: "Erhalten Sie Provisionen für jede abgeschlossene Versicherung - ein attraktiver Nebenverdienst."
+                description: "Erhalte Provisionen für jede abgeschlossene Versicherung - ein attraktiver Nebenverdienst."
               },
               {
                 title: "Umfassender Schutz",

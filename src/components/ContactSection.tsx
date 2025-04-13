@@ -50,7 +50,7 @@ const ContactSection = () => {
       if (response.ok) {
         toast({
           title: "Nachricht gesendet!",
-          description: "Vielen Dank für Ihre Anfrage. Wir werden uns in Kürze bei Ihnen melden.",
+          description: "Vielen Dank für deine Anfrage. Wir werden uns in Kürze bei dir melden.",
         });
         
         // Reset form
@@ -67,7 +67,7 @@ const ContactSection = () => {
       console.error("Error submitting form:", error);
       toast({
         title: "Fehler beim Senden",
-        description: "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.",
+        description: "Es gab ein Problem beim Senden deiner Nachricht. Bitte versuche es später erneut.",
         variant: "destructive",
       });
     } finally {
@@ -81,11 +81,11 @@ const ContactSection = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-royal mb-4">
-              Kontaktieren Sie uns
+              Kontaktiere uns
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-royal-700 mb-10 max-w-lg">
-              Haben Sie Fragen zu Stellar Checkin? Unser Team steht Ihnen gerne zur Verfügung.
+              Hast du Fragen zu Stellar Checkin? Unser Team steht dir gerne zur Verfügung.
             </p>
             
             <div className="space-y-8">

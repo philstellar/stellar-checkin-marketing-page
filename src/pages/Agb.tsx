@@ -184,8 +184,8 @@ const Agb = () => {
             </p>
             
             <p>
-              8.6 Käuferschutz wird wie folgt definiert: Als Buchender sind Sie dafür verantwortlich, nur über Wege zu buchen, 
-              die offiziell von der von Stellar zertifizierten Webseite anerkannt sind. Kommunizieren Sie nicht mit einer 
+              8.6 Käuferschutz wird wie folgt definiert: Als Buchender bist du dafür verantwortlich, nur über Wege zu buchen, 
+              die offiziell von der von Stellar zertifizierten Webseite anerkannt sind. Kommuniziere nicht mit einer 
               E-Mail-Adresse oder Telefonnummer, die nicht von uns verifiziert wurde. Wir tun unser Bestes, um alle Daten, die 
               uns zur Verfügung gestellt werden, zu überprüfen, um maximalen Schutz zu bieten.
             </p>
@@ -201,7 +201,7 @@ const Agb = () => {
             </ul>
             
             <p>
-              8.7 Bitte beachten Sie die Richtlinien unserer Versicherungsanbieter. Sie finden sie hier verlinkt. Die Stellar 
+              8.7 Bitte beachte die Richtlinien unserer Versicherungsanbieter. Du findest sie hier verlinkt. Die Stellar 
               Tourism Innovations GmbH verkauft nur Versicherungspolicen von Hiscox und ist selbst keine Versicherungsgesellschaft. 
               Die Schadensbearbeitung obliegt den Versicherungsanbietern und erfolgt gemäß deren Richtlinien. Ihre Richtlinien 
               sind jederzeit gültig. Angaben auf der Stellar-Website dienen nur zur Unterstützung und sind den Richtlinien stets 
@@ -268,8 +268,8 @@ const Agb = () => {
             
             <p>
               9.2 Weder wir noch eine andere Partei (unabhängig davon, ob sie an der Erstellung, Wartung oder Bereitstellung 
-              dieser Website beteiligt ist) haften für Verluste oder Schäden jeglicher Art, die Ihnen oder einem Dritten infolge 
-              Ihrer oder deren Nutzung unserer Website entstehen können. Dieser Ausschluss umfasst Service- oder Reparaturkosten 
+              dieser Website beteiligt ist) haften für Verluste oder Schäden jeglicher Art, die dir oder einem Dritten infolge 
+              deiner oder deren Nutzung unserer Website entstehen können. Dieser Ausschluss umfasst Service- oder Reparaturkosten 
               und, ohne Einschränkung, alle anderen direkten, indirekten oder Folgeschäden, unabhängig davon, ob sie aus unerlaubter 
               Handlung oder Vertrag oder anderweitig im Zusammenhang mit dieser Website entstehen.
             </p>
@@ -299,9 +299,9 @@ const Agb = () => {
             </p>
             
             <p>
-              Bitte finden Sie unsere DSGVO-Datenverarbeitungsvereinbarung im Login-Bereich. Sie stimmen zu, diese 
-              automatisch zu akzeptieren und zu unterzeichnen, bevor Sie die Software aktiv nutzen. Sie können sie auch hier 
-              auf Deutsch finden. Wenn Sie eine Übersetzung in Ihre jeweilige Sprache benötigen, lassen Sie es uns bitte wissen. 
+              Bitte finde unsere DSGVO-Datenverarbeitungsvereinbarung im Login-Bereich. Du stimmst zu, diese 
+              automatisch zu akzeptieren und zu unterzeichnen, bevor du die Software aktiv nutzt. Du kannst sie auch hier 
+              auf Deutsch finden. Wenn du eine Übersetzung in deine jeweilige Sprache benötigst, lass es uns bitte wissen. 
               Die deutsche Version ist stets maßgeblich, während die Übersetzungen im Zweifelsfall nur zur Veranschaulichung dienen.
             </p>
             

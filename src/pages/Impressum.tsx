@@ -66,11 +66,11 @@ const Impressum = () => {
             </p>
             
             <p>
-              Sehr geehrte Interessenten, vom Gesetzgeber sind wir gehalten, Ihnen eine Reihe Informationen über uns als Versicherungsvermittler zu geben. Damit diese Informationen für Sie von Nutzen sind, haben wir sie für Sie zusammengestellt und erläutert.
+              Sehr geehrte Interessenten, vom Gesetzgeber sind wir gehalten, dir eine Reihe Informationen über uns als Versicherungsvermittler zu geben. Damit diese Informationen für dich von Nutzen sind, haben wir sie für dich zusammengestellt und erläutert.
             </p>
             
             <p>
-              Erste Informationen als pdfs zum Download – Bitte beachten Sie den verlinkten Ordner
+              Erste Informationen als pdfs zum Download – Bitte beachte den verlinkten Ordner
             </p>
             
             <p>
@@ -86,7 +86,7 @@ const Impressum = () => {
             </p>
             
             <p>
-              Eingetragen ist die Stellar Tourism Innovations GmbH im Versicherungsvermittlerregister unter der Nummer D-6JBK-A27XW-21. Das können Sie gerne überprüfen, und zwar im Internet unter der Adresse:
+              Eingetragen ist die Stellar Tourism Innovations GmbH im Versicherungsvermittlerregister unter der Nummer D-6JBK-A27XW-21. Das kannst du gerne überprüfen, und zwar im Internet unter der Adresse:
             </p>
             
             <p>
@@ -109,7 +109,7 @@ const Impressum = () => {
             
             <h2>Beschwerden</h2>
             <p>
-              Bei Beschwerden über unsere Tätigkeit wenden Sie sich gerne an unsere Beschwerdestelle:<br />
+              Bei Beschwerden über unsere Tätigkeit wende dich gerne an unsere Beschwerdestelle:<br />
               E-Mail: <a href="mailto:complaint@stellar-trust.com" className="text-stellar-600 hover:underline">complaint@stellar-trust.com</a>
             </p>
             

@@ -6,7 +6,7 @@ export const IntegrationenSection: React.FC = () => {
   const features = [
     {
       title: "PMS Integration",
-      description: "Nahtlose Anbindung an Ihr Property Management System für effiziente Prozesse."
+      description: "Nahtlose Anbindung an dein Property Management System für effiziente Prozesse."
     },
     {
       title: "Kurtaxen",
@@ -14,7 +14,7 @@ export const IntegrationenSection: React.FC = () => {
     },
     {
       title: "API für individuelle Lösungen",
-      description: "Flexible Schnittstellen für Integration in Ihre bestehende Systemlandschaft."
+      description: "Flexible Schnittstellen für Integration in deine bestehende Systemlandschaft."
     },
     {
       title: "Anbindung an Zahlungssysteme",

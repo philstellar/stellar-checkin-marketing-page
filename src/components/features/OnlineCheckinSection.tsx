@@ -53,22 +53,22 @@ export const OnlineCheckinSection: React.FC = () => {
     },
     {
       title: "Gästeversicherung",
-      description: "Bieten Sie eine moderne Alternative zur klassischen Kaution und generieren Sie zusätzliche Einnahmen durch Provisionen.",
+      description: "Biete eine moderne Alternative zur klassischen Kaution und generiere zusätzliche Einnahmen durch Provisionen.",
       targetSection: "versicherung"
     },
     {
       title: "Berichte & Analysen",
-      description: "Profitieren Sie von detaillierten Einblicken in Ihre Auslastung und Gästedaten für fundierte Geschäftsentscheidungen.",
+      description: "Profitiere von detaillierten Einblicken in deine Auslastung und Gästedaten für fundierte Geschäftsentscheidungen.",
       targetSection: "berichte"
     },
     {
       title: "Zusatzservices",
-      description: "Steigern Sie Ihren Umsatz mit zusätzlichen Angeboten im Check-in-Prozess wie Early Check-in oder Premium-Upgrades.",
+      description: "Steigere deinen Umsatz mit zusätzlichen Angeboten im Check-in-Prozess wie Early Check-in oder Premium-Upgrades.",
       targetSection: "zusatzservices"
     },
     {
       title: "Anpassungsmöglichkeiten",
-      description: "Gestalten Sie das Check-in-Erlebnis individuell mit anpassbarem Branding und mehrsprachiger Oberfläche.",
+      description: "Gestalte das Check-in-Erlebnis individuell mit anpassbarem Branding und mehrsprachiger Oberfläche.",
       targetSection: "einstellungen"
     }
   ];
@@ -82,8 +82,8 @@ export const OnlineCheckinSection: React.FC = () => {
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            Optimieren Sie Ihren Gäste-Empfang mit einer smarten, digitalen Lösung. 
-            Erkunden Sie alle Features, die unsere Plattform zu bieten hat.
+            Optimiere deinen Gäste-Empfang mit einer smarten, digitalen Lösung. 
+            Erkunde alle Features, die unsere Plattform zu bieten hat.
           </p>
         </div>
         

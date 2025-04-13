@@ -11,15 +11,15 @@ const ZusatzservicesSection = () => {
             <div className="h-1 w-24 bg-apple mx-auto mb-6 rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 mb-12 max-w-3xl mx-auto">
-            Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses zusätzliche 
-            Services anbieten. Von Early Check-in bis zu Premium-Angeboten.
+            Steigere deinen Umsatz, indem du deinen Gästen während des Check-in-Prozesses zusätzliche 
+            Services anbietest. Von Early Check-in bis zu Premium-Angeboten.
           </p>
           
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 title: "Zusatzleistungen",
-                description: "Bieten Sie Extras wie Early Check-in, Late Check-out, Premium-Zimmer-Upgrades oder Frühstücksoptionen an."
+                description: "Biete Extras wie Early Check-in, Late Check-out, Premium-Zimmer-Upgrades oder Frühstücksoptionen an."
               },
               {
                 title: "Nahtlose Zahlungsabwicklung",
@@ -27,7 +27,7 @@ const ZusatzservicesSection = () => {
               },
               {
                 title: "Zusätzliche Einnahmequellen",
-                description: "Generieren Sie durch den Verkauf von Zusatzleistungen und Upgrades wertvolle Zusatzeinnahmen."
+                description: "Generiere durch den Verkauf von Zusatzleistungen und Upgrades wertvolle Zusatzeinnahmen."
               }
             ].map((feature, index) => (
               <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">

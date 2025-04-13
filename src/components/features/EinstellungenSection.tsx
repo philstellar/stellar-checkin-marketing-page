@@ -6,19 +6,19 @@ export const EinstellungenSection: React.FC = () => {
   const features = [
     {
       title: "Anpassbares Branding",
-      description: "Gestalten Sie das Check-in-Erlebnis im Look & Feel Ihrer Marke."
+      description: "Gestalte das Check-in-Erlebnis im Look & Feel deiner Marke."
     },
     {
       title: "Mehrsprachige Oberfläche",
-      description: "Bieten Sie Ihren internationalen Gästen eine Benutzeroberfläche in ihrer Sprache."
+      description: "Biete deinen internationalen Gästen eine Benutzeroberfläche in ihrer Sprache."
     },
     {
       title: "Individuelle Datenfelder",
-      description: "Erfassen Sie genau die Informationen, die für Ihre Ferienwohnung relevant sind."
+      description: "Erfasse genau die Informationen, die für deine Ferienwohnung relevant sind."
     },
     {
       title: "Zeitgesteuerte Automatisierungen",
-      description: "Legen Sie fest, wann Nachrichten und Erinnerungen an Ihre Gäste gesendet werden."
+      description: "Lege fest, wann Nachrichten und Erinnerungen an deine Gäste gesendet werden."
     }
   ];
 
@@ -31,7 +31,7 @@ export const EinstellungenSection: React.FC = () => {
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 mx-auto max-w-2xl">
-            Passen Sie die Checkin-Lösung individuell an Ihre Bedürfnisse und die Ihrer Feriengäste an.
+            Passe die Checkin-Lösung individuell an deine Bedürfnisse und die deiner Feriengäste an.
           </p>
         </div>
         

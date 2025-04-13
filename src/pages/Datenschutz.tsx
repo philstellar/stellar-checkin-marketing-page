@@ -24,9 +24,9 @@ const Datenschutz = () => {
             
             <h3>Allgemeine Hinweise</h3>
             <p>
-              Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, 
-              wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert 
-              werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text 
+              Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen personenbezogenen Daten passiert, 
+              wenn du unsere Website besuchst. Personenbezogene Daten sind alle Daten, mit denen du persönlich identifiziert 
+              werden kannst. Ausführliche Informationen zum Thema Datenschutz entnehmen du unserer unter diesem Text 
               aufgeführten Datenschutzerklärung.
             </p>
             
@@ -34,46 +34,46 @@ const Datenschutz = () => {
             <p>
               <strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br />
               Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten 
-              können Sie dem Impressum dieser Website entnehmen.
+              können du dem Impressum dieser Website entnehmen.
             </p>
             
             <p>
-              <strong>Wie erfassen wir Ihre Daten?</strong><br />
-              Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, 
-              die Sie in ein Kontaktformular eingeben.
+              <strong>Wie erfassen wir deine Daten?</strong><br />
+              Deine Daten werden zum einen dadurch erhoben, dass du uns diese mitteilst. Hierbei kann es sich z.B. um Daten handeln, 
+              die du in ein Kontaktformular eingibst.
             </p>
             
             <p>
               Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische 
               Daten (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, 
-              sobald Sie unsere Website betreten.
+              sobald du unsere Website betrittst.
             </p>
             
             <p>
-              <strong>Wofür nutzen wir Ihre Daten?</strong><br />
+              <strong>Wofür nutzen wir deine Daten?</strong><br />
               Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können 
-              zur Analyse Ihres Nutzerverhaltens verwendet werden.
+              zur Analyse deines Nutzerverhaltens verwendet werden.
             </p>
             
             <p>
-              <strong>Welche Rechte haben Sie bezüglich Ihrer Daten?</strong><br />
-              Sie haben jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten 
-              personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten 
-              zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum 
-              angegebenen Adresse an uns wenden. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+              <strong>Welche Rechte hast du bezüglich deiner Daten?</strong><br />
+              Du hast jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck deiner gespeicherten 
+              personenbezogenen Daten zu erhalten. Du hast außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten 
+              zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz kannst du dich jederzeit unter der im Impressum 
+              angegebenen Adresse an uns wenden. Des Weiteren steht dir ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
             </p>
             
             <h2>2. Allgemeine Hinweise und Pflichtinformationen</h2>
             
             <h3>Datenschutz</h3>
             <p>
-              Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen 
+              Die Betreiber dieser Seiten nehmen den Schutz deiner persönlichen Daten sehr ernst. Wir behandeln deine personenbezogenen 
               Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
             </p>
             
             <p>
-              Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, 
-              mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir 
+              Wenn du diese Website benutzt, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, 
+              mit denen du persönlich identifiziert werden kannst. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir 
               erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.
             </p>
             
@@ -104,9 +104,9 @@ const Datenschutz = () => {
               Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
             </p>
             
-            <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+            <h3>Widerruf deiner Einwilligung zur Datenverarbeitung</h3>
             <p>
-              Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits 
+              Viele Datenverarbeitungsvorgänge sind nur mit deiner ausdrücklichen Einwilligung möglich. Du kannst eine bereits 
               erteilte Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit 
               der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
             </p>
@@ -115,43 +115,43 @@ const Datenschutz = () => {
             
             <h3>Cookies</h3>
             <p>
-              Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und 
+              Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf deinem Rechner keinen Schaden an und 
               enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. 
-              Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert.
+              Cookies sind kleine Textdateien, die auf deinem Rechner abgelegt werden und die dein Browser speichert.
             </p>
             
             <p>
-              Die meisten der von uns verwendeten Cookies sind so genannte "Session-Cookies". Sie werden nach Ende Ihres Besuchs 
-              automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert bis Sie diese löschen. Diese Cookies 
-              ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.
+              Die meisten der von uns verwendeten Cookies sind so genannte "Session-Cookies". Sie werden nach Ende deines Besuchs 
+              automatisch gelöscht. Andere Cookies bleiben auf deinem Endgerät gespeichert bis du diese löschst. Diese Cookies 
+              ermöglichen es uns, deinen Browser beim nächsten Besuch wiederzuerkennen.
             </p>
             
             <p>
-              Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im 
-              Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische 
-              Löschen der Cookies beim Schließen des Browser aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität 
+              Du kannst deinen Browser so einstellen, dass du über das Setzen von Cookies informiert wirst und Cookies nur im 
+              Einzelfall erlaubst, die Annahme von Cookies für bestimmte Fälle oder generell ausschließt sowie das automatische 
+              Löschen der Cookies beim Schließen des Browser aktivierst. Bei der Deaktivierung von Cookies kann die Funktionalität 
               dieser Website eingeschränkt sein.
             </p>
             
             <h3>Anfrage per E-Mail, Telefon oder Fax</h3>
             <p>
-              Wenn Sie uns per E-Mail, Telefon oder Fax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden 
-              personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. 
-              Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+              Wenn du uns per E-Mail, Telefon oder Fax kontaktierst, wird deine Anfrage inklusive aller daraus hervorgehenden 
+              personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung deines Anliegens bei uns gespeichert und verarbeitet. 
+              Diese Daten geben wir nicht ohne deine Einwilligung weiter.
             </p>
             
             <p>
-              Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der 
+              Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit der 
               Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen 
               übrigen Fällen beruht die Verarbeitung auf unseren berechtigten Interessen an der effektiven Bearbeitung der an uns 
-              gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern 
+              gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern 
               diese abgefragt wurde.
             </p>
             
             <p>
-              Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, 
-              Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener 
-              Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
+              Die von dir an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis du uns zur Löschung aufforderst, 
+              deine Einwilligung zur Speicherung widerrufst oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener 
+              Bearbeitung deines Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
             </p>
             
             <div className="mt-12 flex items-center justify-start gap-4">

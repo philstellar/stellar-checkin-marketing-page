@@ -61,7 +61,7 @@ const Brevo = () => {
         // Success message
         toast({
           title: "Nachricht gesendet",
-          description: "Vielen Dank für Ihr Interesse! Wir werden uns in Kürze bei Ihnen melden.",
+          description: "Vielen Dank für dein Interesse! Wir werden uns in Kürze bei dir melden.",
         });
 
         // Reset form
@@ -79,7 +79,7 @@ const Brevo = () => {
       console.error("Error submitting form:", error);
       toast({
         title: "Fehler beim Senden",
-        description: "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.",
+        description: "Es gab ein Problem beim Senden deiner Nachricht. Bitte versuche es später erneut.",
         variant: "destructive",
       });
     } finally {
@@ -91,10 +91,10 @@ const Brevo = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Kontaktieren Sie uns
+          Kontaktiere uns
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Erfahren Sie mehr über unsere Stellar Checkin Lösungen
+          Erfahre mehr über unsere Stellar Checkin Lösungen
         </p>
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-600">
@@ -179,7 +179,7 @@ const Brevo = () => {
                   value={formData.message}
                   onChange={handleChange}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-stellar-500 focus:border-stellar-500 sm:text-sm"
-                  placeholder="Ihre Nachricht an uns..."
+                  placeholder="Deine Nachricht an uns..."
                 />
               </div>
             </div>
