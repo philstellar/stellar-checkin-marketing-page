@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-stellar-500 text-white py-12">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h2 className="text-2xl font-bold mb-4">Stellar <span className="text-stellar-400">Checkin</span></h2>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <img 
+              src="/lovable-uploads/69cbcbf8-03a5-4c39-a023-9df42c0b60e3.png" 
+              alt="Stellar Checkin Logo" 
+              className="h-10 mb-4"
+            />
+            <p className="text-gray-200 mb-4 max-w-md">
               Digitale Check-in Lösung für Ferienwohnungen - Optimieren Sie Ihre Gästeanmeldung mit unserem digitalen Check-in System.
             </p>
           </div>
