@@ -6,42 +6,42 @@ import FeatureSection from './FeatureSection';
 export const OnlineCheckinSection: React.FC = () => {
   const features = [
     {
-      icon: <Monitor className="h-6 w-6" />,
+      icon: <Monitor className="h-6 w-6 text-stellar-600" />,
       title: "Voranmeldung für Feriengäste",
       description: "Ermöglichen Sie Ihren Gästen eine einfache und schnelle Voranmeldung direkt von zu Hause aus."
     },
     {
-      icon: <Check className="h-6 w-6" />,
+      icon: <Check className="h-6 w-6 text-stellar-600" />,
       title: "DSGVO-konforme Gästeverwaltung",
       description: "Speichern und verarbeiten Sie Gästeinformationen sicher und rechtskonform."
     },
     {
-      icon: <RefreshCw className="h-6 w-6" />,
+      icon: <RefreshCw className="h-6 w-6 text-stellar-600" />,
       title: "Automatische Gastinformationen",
       description: "Informieren Sie Ihr Team automatisch über ankommende Gäste und deren Buchungsdetails."
     },
     {
-      icon: <Settings className="h-6 w-6" />,
+      icon: <Settings className="h-6 w-6 text-stellar-600" />,
       title: "Individualisiere deinen Online Checkin",
       description: "Passe den Online Checkin nach deinen Bedürfnissen an und integriere ihn nahtlos in deine Apps."
     },
     {
-      icon: <FileText className="h-6 w-6" />,
+      icon: <FileText className="h-6 w-6 text-stellar-600" />,
       title: "Digitale Meldescheine",
       description: "Erfassen Sie Gästedaten digital und erfüllen Sie gesetzliche Meldepflichten ohne Papierformulare."
     },
     {
-      icon: <Shield className="h-6 w-6" />,
+      icon: <Shield className="h-6 w-6 text-stellar-600" />,
       title: "Sichere Datenverarbeitung",
       description: "Alle Daten werden SSL-verschlüsselt übertragen und auf deutschen Servern gespeichert."
     },
     {
-      icon: <CalendarCheck className="h-6 w-6" />,
+      icon: <CalendarCheck className="h-6 w-6 text-stellar-600" />,
       title: "Automatisierte Prozesse",
       description: "Reduzieren Sie manuelle Arbeitsschritte durch automatische Benachrichtigungen und Datenverarbeitung."
     },
     {
-      icon: <Mail className="h-6 w-6" />,
+      icon: <Mail className="h-6 w-6 text-stellar-600" />,
       title: "E-Mail Kommunikation",
       description: "Versenden Sie automatisierte E-Mails mit Check-in Informationen an Ihre Gäste."
     }

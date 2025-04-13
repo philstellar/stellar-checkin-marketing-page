@@ -6,22 +6,22 @@ import FeatureSection from './FeatureSection';
 export const IntegrationenSection: React.FC = () => {
   const features = [
     {
-      icon: <Monitor className="h-6 w-6" />,
+      icon: <Monitor className="h-6 w-6 text-stellar-600" />,
       title: "PMS Integration",
       description: "Nahtlose Anbindung an Ihr Property Management System für effiziente Prozesse."
     },
     {
-      icon: <Check className="h-6 w-6" />,
+      icon: <Check className="h-6 w-6 text-stellar-600" />,
       title: "Schnittstellen zu Schlüsselsafes",
       description: "Automatisierte Verwaltung von Zugangscodes für kontaktlosen Check-in."
     },
     {
-      icon: <RefreshCw className="h-6 w-6" />,
+      icon: <RefreshCw className="h-6 w-6 text-stellar-600" />,
       title: "API für individuelle Lösungen",
       description: "Flexible Schnittstellen für Integration in Ihre bestehende Systemlandschaft."
     },
     {
-      icon: <Clock className="h-6 w-6" />,
+      icon: <Clock className="h-6 w-6 text-stellar-600" />,
       title: "Anbindung an Zahlungssysteme",
       description: "Integrierte Zahlungsabwicklung für Zusatzleistungen und Kautionen."
     }
