@@ -1,12 +1,14 @@
 
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, CheckCircle, ShoppingBag, Link, Shield, FileText, BarChart2, Settings, AlertTriangle } from "lucide-react";
+import { Menu, X, ChevronDown, CheckCircle, ShoppingBag, Link as LinkIcon, Shield, BarChart2, Settings, AlertTriangle } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +19,12 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Close mobile menu and dropdown when changing routes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsDropdownOpen(false);
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -35,19 +43,19 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold text-stellar-700">
+            <Link to="/" className="text-2xl font-bold text-stellar-700">
               Stellar <span className="text-stellar-500">Checkin</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#"
+            <Link 
+              to="/"
               className="text-gray-700 hover:text-stellar-600 font-medium transition-colors"
             >
               Home
-            </a>
+            </Link>
             <div className="relative">
               <button
                 className="flex items-center text-gray-700 hover:text-stellar-600 font-medium transition-colors"
@@ -57,71 +65,71 @@ const Header = () => {
               </button>
               {isDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-20">
-                  <a 
-                    href="#online-checkin"
+                  <Link 
+                    to="/#online-checkin"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     <CheckCircle className="mr-2 h-4 w-4" />
                     Online Checkin - Gästeseite
-                  </a>
-                  <a 
-                    href="#zusatzservices"
+                  </Link>
+                  <Link 
+                    to="/#zusatzservices"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     <ShoppingBag className="mr-2 h-4 w-4" />
                     Zusatzservices verkaufen
-                  </a>
-                  <a 
-                    href="#integrationen"
+                  </Link>
+                  <Link 
+                    to="/#integrationen"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
-                    <Link className="mr-2 h-4 w-4" />
+                    <LinkIcon className="mr-2 h-4 w-4" />
                     Integrationen
-                  </a>
-                  <a 
-                    href="#versicherung"
+                  </Link>
+                  <Link 
+                    to="/#versicherung"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     <Shield className="mr-2 h-4 w-4" />
                     Versicherung oder / oder Kaution
-                  </a>
-                  <a 
-                    href="#schadenabwicklung"
+                  </Link>
+                  <Link 
+                    to="/#schadenabwicklung"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     <AlertTriangle className="mr-2 h-4 w-4" />
                     Schadenabwicklung bei Gästeschäden
-                  </a>
-                  <a 
-                    href="#berichte"
+                  </Link>
+                  <Link 
+                    to="/#berichte"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     <BarChart2 className="mr-2 h-4 w-4" />
                     Berichte und Analysen
-                  </a>
-                  <a 
-                    href="#einstellungen"
+                  </Link>
+                  <Link 
+                    to="/#einstellungen"
                     className="flex items-center px-4 py-2 text-gray-700 hover:bg-stellar-50 hover:text-stellar-600"
                     onClick={() => setIsDropdownOpen(false)}
                   >
                     <Settings className="mr-2 h-4 w-4" />
                     Weitere Einstellungen
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
-            <a 
-              href="#kontakt"
+            <Link 
+              to="/kontakt"
               className="text-gray-700 hover:text-stellar-600 font-medium transition-colors"
             >
               Kontakt
-            </a>
+            </Link>
             <Button variant="default" className="bg-stellar-600 hover:bg-stellar-700">
               Demo Anfragen
             </Button>
@@ -139,12 +147,13 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-4 bg-white border-t">
-            <a 
-              href="#"
+            <Link 
+              to="/"
               className="block py-2 text-gray-700 hover:text-stellar-600 font-medium"
+              onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </a>
+            </Link>
             <button
               className="flex items-center w-full py-2 text-gray-700 hover:text-stellar-600 font-medium"
               onClick={toggleDropdown}
@@ -153,8 +162,8 @@ const Header = () => {
             </button>
             {isDropdownOpen && (
               <div className="pl-4">
-                <a 
-                  href="#online-checkin"
+                <Link 
+                  to="/#online-checkin"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
@@ -163,9 +172,9 @@ const Header = () => {
                 >
                   <CheckCircle className="mr-2 h-4 w-4" />
                   Online Checkin - Gästeseite
-                </a>
-                <a 
-                  href="#zusatzservices"
+                </Link>
+                <Link 
+                  to="/#zusatzservices"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
@@ -174,20 +183,20 @@ const Header = () => {
                 >
                   <ShoppingBag className="mr-2 h-4 w-4" />
                   Zusatzservices verkaufen
-                </a>
-                <a 
-                  href="#integrationen"
+                </Link>
+                <Link 
+                  to="/#integrationen"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsDropdownOpen(false);
                   }}
                 >
-                  <Link className="mr-2 h-4 w-4" />
+                  <LinkIcon className="mr-2 h-4 w-4" />
                   Integrationen
-                </a>
-                <a 
-                  href="#versicherung"
+                </Link>
+                <Link 
+                  to="/#versicherung"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
@@ -196,9 +205,9 @@ const Header = () => {
                 >
                   <Shield className="mr-2 h-4 w-4" />
                   Versicherung oder / oder Kaution
-                </a>
-                <a 
-                  href="#schadenabwicklung"
+                </Link>
+                <Link 
+                  to="/#schadenabwicklung"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
@@ -207,9 +216,9 @@ const Header = () => {
                 >
                   <AlertTriangle className="mr-2 h-4 w-4" />
                   Schadenabwicklung bei Gästeschäden
-                </a>
-                <a 
-                  href="#berichte"
+                </Link>
+                <Link 
+                  to="/#berichte"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
@@ -218,9 +227,9 @@ const Header = () => {
                 >
                   <BarChart2 className="mr-2 h-4 w-4" />
                   Berichte und Analysen
-                </a>
-                <a 
-                  href="#einstellungen"
+                </Link>
+                <Link 
+                  to="/#einstellungen"
                   className="flex items-center py-2 text-gray-700 hover:text-stellar-600"
                   onClick={() => {
                     setIsMenuOpen(false);
@@ -229,17 +238,20 @@ const Header = () => {
                 >
                   <Settings className="mr-2 h-4 w-4" />
                   Weitere Einstellungen
-                </a>
+                </Link>
               </div>
             )}
-            <a 
-              href="#kontakt"
+            <Link 
+              to="/kontakt"
               className="block py-2 text-gray-700 hover:text-stellar-600 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Kontakt
-            </a>
-            <Button className="w-full mt-4 bg-stellar-600 hover:bg-stellar-700">
+            </Link>
+            <Button 
+              className="w-full mt-4 bg-stellar-600 hover:bg-stellar-700"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Demo Anfragen
             </Button>
           </div>
