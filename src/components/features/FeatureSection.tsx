@@ -46,7 +46,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
             <div className={`grid grid-cols-1 ${fullWidth ? 'md:grid-cols-4' : 'md:grid-cols-2'} gap-6`}>
               {features.map((feature, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-stellar-100 flex items-center justify-center text-stellar-600">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-[#eef1f8] flex items-center justify-center text-[#0f2661]">
                     {feature.icon}
                   </div>
                   <div>

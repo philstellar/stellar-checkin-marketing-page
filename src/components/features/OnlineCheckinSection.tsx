@@ -22,7 +22,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     <Card className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200">
       <CardHeader className="pb-2">
         <div className="flex items-center gap-4">
-          <div className={cn("rounded-full p-2.5 bg-stellar-100 text-stellar-600")}>
+          <div className={cn("rounded-lg p-2.5 bg-[#eef1f8] text-[#0f2661]")}>
             {icon}
           </div>
           <CardTitle className="text-lg font-semibold text-stellar-600">{title}</CardTitle>

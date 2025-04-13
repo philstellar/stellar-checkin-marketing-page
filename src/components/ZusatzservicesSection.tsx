@@ -19,23 +19,23 @@ const ZusatzservicesSection = () => {
             <div className="space-y-6 max-w-3xl mx-auto">
               {[
                 {
-                  icon: <ShoppingBag className="h-6 w-6 text-stellar-600" />,
+                  icon: <ShoppingBag className="h-6 w-6" />,
                   title: "Zusatzleistungen",
                   description: "Bieten Sie Extras wie Early Check-in, Late Check-out, Premium-Zimmer-Upgrades oder Frühstücksoptionen an."
                 },
                 {
-                  icon: <CreditCard className="h-6 w-6 text-stellar-600" />,
+                  icon: <CreditCard className="h-6 w-6" />,
                   title: "Nahtlose Zahlungsabwicklung",
                   description: "Integrierte Zahlungsabwicklung mit allen gängigen Zahlungsmethoden direkt im Check-in-Prozess."
                 },
                 {
-                  icon: <DollarSign className="h-6 w-6 text-stellar-600" />,
+                  icon: <DollarSign className="h-6 w-6" />,
                   title: "Zusätzliche Einnahmequellen",
                   description: "Generieren Sie durch den Verkauf von Zusatzleistungen und Upgrades wertvolle Zusatzeinnahmen."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-center text-left gap-4">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-md bg-stellar-100 flex items-center justify-center text-stellar-600">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-[#eef1f8] flex items-center justify-center text-[#0f2661]">
                     {feature.icon}
                   </div>
                   <div>
@@ -61,4 +61,3 @@ const ZusatzservicesSection = () => {
 };
 
 export default ZusatzservicesSection;
-

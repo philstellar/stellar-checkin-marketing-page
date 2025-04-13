@@ -19,28 +19,28 @@ const BerichteSection = () => {
             <div className="space-y-6">
               {[
                 {
-                  icon: <BarChart2 className="h-6 w-6 text-stellar-600" />,
+                  icon: <BarChart2 className="h-6 w-6" />,
                   title: "Detaillierte Auswertungen",
                   description: "Erhalten Sie tiefe Einblicke in Buchungszahlen, Gästeherkunft, Aufenthaltsdauer und mehr."
                 },
                 {
-                  icon: <ChartPie className="h-6 w-6 text-stellar-600" />,
+                  icon: <ChartPie className="h-6 w-6" />,
                   title: "Personalisierbare Dashboards",
                   description: "Erstellen Sie maßgeschneiderte Dashboards, die genau die Kennzahlen anzeigen, die für Sie wichtig sind."
                 },
                 {
-                  icon: <LineChart className="h-6 w-6 text-stellar-600" />,
+                  icon: <LineChart className="h-6 w-6" />,
                   title: "Trend-Analysen",
                   description: "Erkennen Sie frühzeitig Trends und saisonale Muster, um Ihre Planung zu optimieren."
                 },
                 {
-                  icon: <Layers className="h-6 w-6 text-stellar-600" />,
+                  icon: <Layers className="h-6 w-6" />,
                   title: "Exportfunktionen",
                   description: "Exportieren Sie Berichte in verschiedenen Formaten oder teilen Sie sie direkt mit Ihrem Team."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-md bg-stellar-100 flex items-center justify-center text-stellar-600">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-[#eef1f8] flex items-center justify-center text-[#0f2661]">
                     {feature.icon}
                   </div>
                   <div className="ml-4">

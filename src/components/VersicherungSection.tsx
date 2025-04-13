@@ -17,23 +17,23 @@ export const VersicherungSection = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <CheckCircle className="h-6 w-6 text-stellar-600" />,
+                icon: <CheckCircle className="h-6 w-6" />,
                 title: "Schnellerer Check-in Prozess",
                 description: "Keine Kautionsabwicklung mehr notwendig, Gäste können sofort ihre Unterkunft beziehen."
               },
               {
-                icon: <CheckCircle className="h-6 w-6 text-stellar-600" />,
+                icon: <CheckCircle className="h-6 w-6" />,
                 title: "Zusätzliche Einnahmequelle",
                 description: "Erhalten Sie Provisionen für jede abgeschlossene Versicherung - ein attraktiver Nebenverdienst."
               },
               {
-                icon: <CheckCircle className="h-6 w-6 text-stellar-600" />,
+                icon: <CheckCircle className="h-6 w-6" />,
                 title: "Umfassender Schutz",
                 description: "Bessere Absicherung als klassische Kautionen, da die Versicherung auch größere Schäden abdeckt."
               }
             ].map((feature, index) => (
               <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm">
-                <div className="flex-shrink-0 h-12 w-12 rounded-md bg-stellar-100 flex items-center justify-center text-stellar-600 mb-4">
+                <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-[#eef1f8] flex items-center justify-center text-[#0f2661] mb-4 mx-auto">
                   {feature.icon}
                 </div>
                 <h3 className="text-lg font-medium text-gray-900 mb-2">{feature.title}</h3>

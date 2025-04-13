@@ -17,23 +17,23 @@ const SchadenabwicklungSection = () => {
             <div className="space-y-6">
               {[
                 {
-                  icon: <AlertTriangle className="h-6 w-6 text-stellar-600" />,
+                  icon: <AlertTriangle className="h-6 w-6" />,
                   title: "Schnelle Schadensmeldung",
                   description: "Einfache und schnelle Meldung von Schäden direkt über die Plattform mit nur wenigen Klicks."
                 },
                 {
-                  icon: <Check className="h-6 w-6 text-stellar-600" />,
+                  icon: <Check className="h-6 w-6" />,
                   title: "Professionelle Abwicklung",
                   description: "Versicherungsexperten von Hiscox übernehmen die Bewertung und Abwicklung der Schäden."
                 },
                 {
-                  icon: <Shield className="h-6 w-6 text-stellar-600" />,
+                  icon: <Shield className="h-6 w-6" />,
                   title: "Umfassender Schutz",
                   description: "Schutz vor finanziellen Verlusten durch Gästeschäden und gleichzeitig ein positives Gästeerlebnis."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-md bg-stellar-100 flex items-center justify-center text-stellar-600">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-[#eef1f8] flex items-center justify-center text-[#0f2661]">
                     {feature.icon}
                   </div>
                   <div className="ml-4">
