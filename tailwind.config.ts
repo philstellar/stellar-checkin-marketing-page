@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// New brand colors based on provided palette
 				pear: {
 					DEFAULT: '#c5ea08',
 					100: '#272e02',
@@ -101,16 +99,16 @@ export default {
 					900: '#fff2fa'
 				},
 				royal: {
-					DEFAULT: '#0f2661',
-					100: '#030813',
-					200: '#060f27',
-					300: '#09173a',
-					400: '#0c1f4e',
-					500: '#0f2661',
-					600: '#1a42a6',
-					700: '#3162df',
-					800: '#7596ea',
-					900: '#bacbf4'
+					DEFAULT: '#000000',
+					100: '#000000',
+					200: '#000000',
+					300: '#000000',
+					400: '#000000',
+					500: '#000000',
+					600: '#000000',
+					700: '#000000',
+					800: '#000000',
+					900: '#000000'
 				},
 				floral: {
 					DEFAULT: '#f9f8ef',
