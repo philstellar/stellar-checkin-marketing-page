@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -8,7 +7,7 @@ const Hero = () => {
 
   return (
     <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-stellar-50 to-white"></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-transparent to-transparent"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-in">
@@ -46,9 +45,9 @@ const Hero = () => {
           <div className="md:pl-8 animate-fade-in">
             <div className="relative group hover-scale transition-all duration-300">
               <img 
-                src="/lovable-uploads/7498575b-a9f0-44f1-b657-e059da50ab34.png" 
-                alt="Stellar Checkin Dashboard auf Tablets" 
-                className="w-full h-auto object-contain rounded-lg stellar-shadow z-10 relative"
+                src="/lovable-uploads/a027d0f2-291d-4ad3-8ca2-91eaadf168e6.png" 
+                alt="Stellar Checkin Dashboard auf Tablet" 
+                className="w-full h-auto object-contain rounded-lg z-10 relative"
               />
               <div className="absolute -bottom-3 -right-3 sm:-bottom-5 sm:-right-5 w-20 h-20 sm:w-24 sm:h-24 bg-stellar-600 rounded-lg flex items-center justify-center transform rotate-3 -z-0">
                 <span className="text-white font-bold text-lg sm:text-xl">Neu</span>
