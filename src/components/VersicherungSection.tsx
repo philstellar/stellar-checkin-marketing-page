@@ -25,17 +25,17 @@ export const VersicherungSection = () => {
             <div className="space-y-6">
               {[
                 {
-                  icon: <CheckCircle className="h-6 w-6" />,
+                  icon: <CheckCircle className="h-6 w-6 text-stellar-600" />,
                   title: "Schnellerer Check-in Prozess",
                   description: "Keine Kautionsabwicklung mehr notwendig, Gäste können sofort ihre Unterkunft beziehen."
                 },
                 {
-                  icon: <CheckCircle className="h-6 w-6" />,
+                  icon: <CheckCircle className="h-6 w-6 text-stellar-600" />,
                   title: "Zusätzliche Einnahmequelle",
                   description: "Erhalten Sie Provisionen für jede abgeschlossene Versicherung - ein attraktiver Nebenverdienst."
                 },
                 {
-                  icon: <CheckCircle className="h-6 w-6" />,
+                  icon: <CheckCircle className="h-6 w-6 text-stellar-600" />,
                   title: "Umfassender Schutz",
                   description: "Bessere Absicherung als klassische Kautionen, da die Versicherung auch größere Schäden abdeckt."
                 }
@@ -106,7 +106,7 @@ export const VersicherungSection = () => {
                 ].map((item, index) => (
                   <div key={index} className="grid grid-cols-3 gap-4 py-3 border-b border-gray-100">
                     <div className="text-left font-medium text-gray-700">{item.feature}</div>
-                    <div className="text-center text-green-600">{item.insurance}</div>
+                    <div className="text-center text-stellar-600">{item.insurance}</div>
                     <div className="text-center text-gray-600">{item.deposit}</div>
                   </div>
                 ))}

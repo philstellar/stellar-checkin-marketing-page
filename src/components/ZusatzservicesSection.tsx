@@ -17,17 +17,17 @@ const ZusatzservicesSection = () => {
             <div className="space-y-6">
               {[
                 {
-                  icon: <ShoppingBag className="h-6 w-6" />,
+                  icon: <ShoppingBag className="h-6 w-6 text-stellar-600" />,
                   title: "Zusatzleistungen",
                   description: "Bieten Sie Extras wie Early Check-in, Late Check-out, Premium-Zimmer-Upgrades oder Frühstücksoptionen an."
                 },
                 {
-                  icon: <CreditCard className="h-6 w-6" />,
+                  icon: <CreditCard className="h-6 w-6 text-stellar-600" />,
                   title: "Nahtlose Zahlungsabwicklung",
                   description: "Integrierte Zahlungsabwicklung mit allen gängigen Zahlungsmethoden direkt im Check-in-Prozess."
                 },
                 {
-                  icon: <DollarSign className="h-6 w-6" />,
+                  icon: <DollarSign className="h-6 w-6 text-stellar-600" />,
                   title: "Zusätzliche Einnahmequellen",
                   description: "Generieren Sie durch den Verkauf von Zusatzleistungen und Upgrades wertvolle Zusatzeinnahmen."
                 }

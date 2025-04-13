@@ -17,17 +17,17 @@ const SchadenabwicklungSection = () => {
             <div className="space-y-6">
               {[
                 {
-                  icon: <AlertTriangle className="h-6 w-6" />,
+                  icon: <AlertTriangle className="h-6 w-6 text-stellar-600" />,
                   title: "Schnelle Schadensmeldung",
                   description: "Einfache und schnelle Meldung von Schäden direkt über die Plattform mit nur wenigen Klicks."
                 },
                 {
-                  icon: <Check className="h-6 w-6" />,
+                  icon: <Check className="h-6 w-6 text-stellar-600" />,
                   title: "Professionelle Abwicklung",
                   description: "Versicherungsexperten von Hiscox übernehmen die Bewertung und Abwicklung der Schäden."
                 },
                 {
-                  icon: <Shield className="h-6 w-6" />,
+                  icon: <Shield className="h-6 w-6 text-stellar-600" />,
                   title: "Umfassender Schutz",
                   description: "Schutz vor finanziellen Verlusten durch Gästeschäden und gleichzeitig ein positives Gästeerlebnis."
                 }
