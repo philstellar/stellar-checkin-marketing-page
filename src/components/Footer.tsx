@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <img 
-              src="/lovable-uploads/69cbcbf8-03a5-4c39-a023-9df42c0b60e3.png" 
+              src="/lovable-uploads/f750405f-7b3f-4c7a-93d6-1181e247ee5f.png" 
               alt="Stellar Checkin Logo" 
               className="h-10 mb-4"
             />

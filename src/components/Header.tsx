@@ -73,7 +73,7 @@ const Header = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/69cbcbf8-03a5-4c39-a023-9df42c0b60e3.png" 
+                src="/lovable-uploads/f750405f-7b3f-4c7a-93d6-1181e247ee5f.png" 
                 alt="Stellar Checkin Logo" 
                 className="h-10"
               />
