@@ -1,11 +1,11 @@
 
 import { 
-  Monitor, 
   LinkIcon, 
   Shield, 
   BarChart2, 
   Settings, 
-  ShoppingBag
+  ShoppingBag,
+  Monitor
 } from "lucide-react";
 
 type FeatureDropdownProps = {
@@ -19,11 +19,11 @@ const FeatureDropdown = ({ isOpen, handleSectionClick, isMobile = false }: Featu
   
   const features = [
     { id: 'gaeste-voranmeldung', name: 'Gäste Voranmeldung', icon: Monitor },
-    { id: 'zusatzservices', name: 'Zusatzservices verkaufen', icon: ShoppingBag },
     { id: 'integrationen', name: 'Integrationen', icon: LinkIcon },
-    { id: 'versicherung', name: 'Versicherung', icon: Shield },
-    { id: 'berichte', name: 'Berichte und Analysen', icon: BarChart2 },
-    { id: 'einstellungen', name: 'Einstellungen', icon: Settings }
+    { id: 'versicherung', name: 'Gästeversicherung', icon: Shield },
+    { id: 'berichte', name: 'Berichte & Analysen', icon: BarChart2 },
+    { id: 'zusatzservices', name: 'Zusatzservices', icon: ShoppingBag },
+    { id: 'einstellungen', name: 'Anpassungsmöglichkeiten', icon: Settings }
   ];
 
   return (
