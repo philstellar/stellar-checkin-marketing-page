@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Monitor, Check, RefreshCw, Clock } from 'lucide-react';
-import FeatureSection from './FeatureSection';
+import { FeatureSection } from './features/FeatureSection';
 
 export const IntegrationenSection: React.FC = () => {
   const features = [

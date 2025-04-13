@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Monitor, Check, RefreshCw, Clock } from 'lucide-react';
-import FeatureSection from './FeatureSection';
+import { FeatureSection } from './FeatureSection';
 
 export const IntegrationenSection: React.FC = () => {
   const features = [
@@ -33,7 +33,7 @@ export const IntegrationenSection: React.FC = () => {
       title="Nahtlose Integrationen"
       description="Verbinden Sie unsere Lösung mit Ihren bestehenden Systemen und optimieren Sie Ihre gesamte Verwaltung."
       features={features}
-      image=""
+      image="/lovable-uploads/936b5262-a316-4ba0-bef3-9fbd48f5a494.png"
       imageAlt="Systemintegrationen für Ferienwohnungen"
       bgColor="bg-gray-50"
       centerTitle={true}
