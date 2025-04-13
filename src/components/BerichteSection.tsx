@@ -62,11 +62,11 @@ const BerichteSection = () => {
           </div>
           
           <div>
-            <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/baf0ce8b-0f9c-491e-bcda-60655db2dd38.png"
+                src="/lovable-uploads/15b2e3c0-296f-4d40-b578-c06b8a7b3cfa.png"
                 alt="Stellar Check-in Dashboard" 
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
