@@ -70,11 +70,6 @@ export const OnlineCheckinSection: React.FC = () => {
       title: "Anpassungsmöglichkeiten",
       description: "Gestalten Sie das Check-in-Erlebnis individuell mit anpassbarem Branding und mehrsprachiger Oberfläche.",
       targetSection: "einstellungen"
-    },
-    {
-      title: "Schadenabwicklung",
-      description: "Professionelle Abwicklung von Gästeschäden in Zusammenarbeit mit führenden Versicherern für reibungslosen Betrieb.",
-      targetSection: "schadenabwicklung"
     }
   ];
 
