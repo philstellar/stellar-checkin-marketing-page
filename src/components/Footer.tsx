@@ -1,5 +1,5 @@
 
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, FileText, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -35,7 +35,6 @@ const Footer = () => {
               <li><a href="#integrationen" className="text-gray-400 hover:text-white transition-colors">Integrationen</a></li>
               <li><a href="#einstellungen" className="text-gray-400 hover:text-white transition-colors">Einstellungen</a></li>
               <li><a href="#moeglichkeiten" className="text-gray-400 hover:text-white transition-colors">Möglichkeiten</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Preise</a></li>
             </ul>
           </div>
           
@@ -45,9 +44,36 @@ const Footer = () => {
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Über uns</a></li>
               <li><a href="#kontakt" className="text-gray-400 hover:text-white transition-colors">Kontakt</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Karriere</a></li>
-              <li><a href="/agb" className="text-gray-400 hover:text-white transition-colors">AGB</a></li>
-              <li><a href="/impressum" className="text-gray-400 hover:text-white transition-colors">Impressum</a></li>
-              <li><a href="/datenschutz" className="text-gray-400 hover:text-white transition-colors">Datenschutz</a></li>
+              <li>
+                <a 
+                  href="https://stellar-trust.com/de/agb/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors flex items-center"
+                >
+                  AGB <ExternalLink className="ml-1 h-3 w-3" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://stellar-trust.com/de/impressum/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors flex items-center"
+                >
+                  Impressum <ExternalLink className="ml-1 h-3 w-3" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://stellar-trust.com/de/datenschutz/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors flex items-center"
+                >
+                  Datenschutz <ExternalLink className="ml-1 h-3 w-3" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
