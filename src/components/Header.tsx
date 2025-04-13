@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
@@ -10,7 +9,6 @@ import {
   Shield, 
   BarChart2, 
   Settings, 
-  AlertTriangle,
   ShoppingBag
 } from "lucide-react";
 import CTAButton from './CTAButton';
@@ -46,18 +44,15 @@ const Header = () => {
   };
 
   const handleSectionClick = (sectionId: string) => {
-    // Close both dropdowns
     setIsMenuOpen(false);
     setIsDropdownOpen(false);
     
     if (isHomePage) {
-      // If already on home page, scroll to the section directly
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // If on another page, navigate to home with hash
       window.location.href = `/#${sectionId}`;
     }
   };
@@ -92,7 +87,7 @@ const Header = () => {
                 className="flex items-center text-royal hover:text-apple font-medium transition-colors"
                 onClick={toggleDropdown}
               >
-                Checkin <ChevronDown className="ml-1 w-4 h-4" />
+                Features <ChevronDown className="ml-1 w-4 h-4" />
               </button>
               {isDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-20">
@@ -141,12 +136,12 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <Link 
-              to="/kontakt"
+            <button 
+              onClick={() => handleSectionClick('kontakt')}
               className="text-royal hover:text-apple font-medium transition-colors"
             >
               Kontakt
-            </Link>
+            </button>
             <CTAButton variant="default" className="bg-apple hover:bg-apple-600">
               Demo Anfragen
             </CTAButton>
@@ -173,7 +168,7 @@ const Header = () => {
               className="flex items-center w-full py-2 text-royal hover:text-apple font-medium"
               onClick={toggleDropdown}
             >
-              Checkin <ChevronDown className={`ml-1 w-4 h-4 ${isDropdownOpen ? 'transform rotate-180' : ''}`} />
+              Features <ChevronDown className={`ml-1 w-4 h-4 ${isDropdownOpen ? 'transform rotate-180' : ''}`} />
             </button>
             {isDropdownOpen && (
               <div className="pl-4">
@@ -221,13 +216,12 @@ const Header = () => {
                 </button>
               </div>
             )}
-            <Link 
-              to="/kontakt"
+            <button
+              onClick={() => handleSectionClick('kontakt')}
               className="block py-2 text-royal hover:text-apple font-medium"
-              onClick={() => setIsMenuOpen(false)}
             >
               Kontakt
-            </Link>
+            </button>
             <div className="block mt-4">
               <CTAButton 
                 className="w-full bg-apple hover:bg-apple-600"
