@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-apple leading-tight mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4">
               Die allumfassende digitale <span className="text-apple">Check-in</span> Lösung für Ferienwohnungen
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg">
