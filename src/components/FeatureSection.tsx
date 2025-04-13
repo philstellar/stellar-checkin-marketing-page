@@ -1,3 +1,4 @@
+
 import { Check, Monitor, ArrowRight, RefreshCw, Settings, Users, ExternalLink, Palette, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -97,8 +98,8 @@ export const OnlineCheckinSection = () => {
       title="Online Check-in"
       description="Machen Sie Schluss mit Papierkram und langen Warteschlangen. Unser digitales Check-in-System ermöglicht Ihren Besuchern eine schnelle und einfache Anmeldung."
       features={features}
-      image="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-      imageAlt="Online Check-in auf einem Laptop"
+      image="/lovable-uploads/80368f3d-e665-4922-ae52-be3ada6ee903.png"
+      imageAlt="Online Check-in Prozess"
       bgColor="bg-gray-50"
     />
   );
