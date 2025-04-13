@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-royal text-white py-12">
+    <footer className="bg-gradient-to-br from-floral to-floral-400/20 text-white py-12">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
@@ -90,7 +90,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-royal-400/30 mt-10 pt-8 text-center">
-          <p className="text-floral-400">&copy; {new Date().getFullYear()} Stellar Tourism Innovations GmbH. Alle Rechte vorbehalten.</p>
+          <p className="text-royal-700">&copy; {new Date().getFullYear()} Stellar Tourism Innovations GmbH. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>
