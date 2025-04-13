@@ -24,6 +24,10 @@ const logos: LogoType[] = [
   {
     src: "/lovable-uploads/349e2cab-5eb3-4451-8d9e-0cdf5927f51b.png",
     alt: "Guesty"
+  },
+  {
+    src: "/lovable-uploads/876b6816-9063-4842-afc5-13e495761c7a.png",
+    alt: "Smoobu"
   }
 ];
 
