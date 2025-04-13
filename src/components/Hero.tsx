@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ExternalLink, PhoneCall } from "lucide-react";
+import { Rocket } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero = () => {
@@ -21,8 +21,8 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="/kontakt" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-stellar-600 hover:bg-stellar-700">
-                  Demo für Ferienwohnungen
-                  <PhoneCall className="ml-2 h-4 w-4" />
+                  jetzt registrieren
+                  <Rocket className="ml-2 h-4 w-4" />
                 </Button>
               </a>
             </div>
@@ -54,3 +54,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
