@@ -54,7 +54,7 @@ const ZusatzservicesSection = () => {
           </div>
           
           <div>
-            <div className="rounded-lg overflow-hidden stellar-shadow">
+            <div className="rounded-lg overflow-hidden stellar-shadow border-[5px] border-stellar-100">
               <img 
                 src="/lovable-uploads/041cad7c-59af-46f5-ab09-4404b53a1516.png"
                 alt="Zusatzleistungen" 
