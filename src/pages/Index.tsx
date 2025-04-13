@@ -9,7 +9,6 @@ import {
 } from "@/components/features";
 import VersicherungSection from "@/components/VersicherungSection";
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
-import SchadenabwicklungSection from "@/components/SchadenabwicklungSection";
 import BerichteSection from "@/components/BerichteSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -24,7 +23,6 @@ const Index = () => {
         <ZusatzservicesSection />
         <IntegrationenSection />
         <VersicherungSection />
-        <SchadenabwicklungSection />
         <BerichteSection />
         <EinstellungenSection />
         <MoeglichkeitenSection />
