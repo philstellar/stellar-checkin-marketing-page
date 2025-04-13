@@ -1,7 +1,5 @@
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
 
 export const VersicherungSection = () => {
   return (
@@ -43,14 +41,6 @@ export const VersicherungSection = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-          
-          <div className="mt-12">
-            <a href="/kontakt" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                Mehr erfahren <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
-            </a>
           </div>
         </div>
       </div>
