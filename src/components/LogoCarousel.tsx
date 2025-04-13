@@ -74,7 +74,7 @@ const LogoCarousel = () => {
     <section className="py-12 bg-gray-50">
       <div className="container-custom">
         <h3 className="text-xl md:text-2xl font-medium text-center text-gray-700 mb-8">
-          Vertrauen Sie auf starke Partnerschaften
+          Beispiele integrierter Partner
         </h3>
         
         <div className="overflow-hidden" ref={emblaRef}>
