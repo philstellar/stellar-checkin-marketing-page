@@ -8,11 +8,11 @@ const BerichteSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-royal mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Berichte und Analysen
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
-            <p className="text-lg text-royal-700 mb-8">
+            <p className="text-lg text-black mb-8">
               Gewinnen Sie wertvolle Einblicke in Ihre Geschäftsdaten mit unseren umfassenden Analyse-Tools 
               und personalisierbaren Dashboards.
             </p>
@@ -41,12 +41,12 @@ const BerichteSection = () => {
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
-                  <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
+                  <div className="flex-shrink-0 h-14 w-14 rounded-lg bg-floral-400 flex items-center justify-center text-black">
                     {feature.icon}
                   </div>
                   <div className="text-left">
-                    <h3 className="text-lg font-semibold text-royal mb-2">{feature.title}</h3>
-                    <p className="text-base text-royal-700">{feature.description}</p>
+                    <h3 className="text-lg font-semibold text-black mb-2">{feature.title}</h3>
+                    <p className="text-base text-black">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -54,7 +54,7 @@ const BerichteSection = () => {
             
             <div className="mt-10">
               <a href="/kontakt" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-royal hover:bg-royal-600 text-white px-6 py-2.5">
+                <Button className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
                   Dashboard Demo <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
               </a>
