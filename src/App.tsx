@@ -10,6 +10,8 @@ import Brevo from "./pages/Brevo";
 import NotFound from "./pages/NotFound";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import { BrevoFormProvider } from "./context/BrevoFormContext";
+import BrevoFormPopupWrapper from "./components/BrevoFormPopupWrapper";
 
 // This component scrolls to top when route changes
 const ScrollToTop = () => {
@@ -27,19 +29,22 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/kontakt" element={<Brevo />} />
-          <Route path="/impressum" element={<Impressum />} />
-          <Route path="/datenschutz" element={<Datenschutz />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <BrevoFormProvider>
+        <Toaster />
+        <Sonner />
+        <BrevoFormPopupWrapper />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/kontakt" element={<Brevo />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </BrevoFormProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

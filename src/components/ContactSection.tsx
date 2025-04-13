@@ -1,8 +1,8 @@
 
 import { useState } from 'react';
-import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import CTAButton from './CTAButton';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -146,9 +146,9 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <Button type="submit" className="w-full bg-apple hover:bg-apple-600 text-white px-6 py-3 rounded-lg">
+                <CTAButton type="submit" className="w-full bg-apple hover:bg-apple-600 text-white px-6 py-3 rounded-lg">
                   Nachricht senden <Send className="ml-2 h-4 w-4" />
-                </Button>
+                </CTAButton>
               </div>
             </form>
           </div>

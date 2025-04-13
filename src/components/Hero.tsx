@@ -1,7 +1,7 @@
 
-import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import CTAButton from "./CTAButton";
 
 const Hero = () => {
   const isMobile = useIsMobile();
@@ -19,12 +19,10 @@ const Hero = () => {
               Optimieren Sie Ihre Gästeanmeldung für Ferienwohnungen mit unserem digitalen Check-in System. Schnell, sicher und effizient für Vermieter und Gäste.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/kontakt" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-apple hover:bg-apple-600">
-                  jetzt registrieren
-                  <Rocket className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
+              <CTAButton size="lg" className="bg-apple hover:bg-apple-600">
+                jetzt registrieren
+                <Rocket className="ml-2 h-4 w-4" />
+              </CTAButton>
             </div>
             <div className="mt-8 flex items-center">
               <div className="flex -space-x-2">

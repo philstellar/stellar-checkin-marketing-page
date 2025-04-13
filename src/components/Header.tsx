@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Button } from "@/components/ui/button";
 import { 
   Menu, 
   X, 
@@ -14,6 +13,7 @@ import {
   AlertTriangle,
   ShoppingBag
 } from "lucide-react";
+import CTAButton from './CTAButton';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -147,11 +147,9 @@ const Header = () => {
             >
               Kontakt
             </Link>
-            <Link to="/kontakt">
-              <Button variant="default" className="bg-apple hover:bg-apple-600">
-                Demo Anfragen
-              </Button>
-            </Link>
+            <CTAButton variant="default" className="bg-apple hover:bg-apple-600">
+              Demo Anfragen
+            </CTAButton>
           </nav>
 
           <button
@@ -230,17 +228,13 @@ const Header = () => {
             >
               Kontakt
             </Link>
-            <Link 
-              to="/kontakt" 
-              onClick={() => setIsMenuOpen(false)}
-              className="block mt-4"
-            >
-              <Button 
+            <div className="block mt-4">
+              <CTAButton 
                 className="w-full bg-apple hover:bg-apple-600"
               >
                 Demo Anfragen
-              </Button>
-            </Link>
+              </CTAButton>
+            </div>
           </div>
         )}
       </div>
