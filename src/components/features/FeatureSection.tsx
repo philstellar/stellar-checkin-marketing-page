@@ -14,6 +14,7 @@ export interface FeatureSectionProps {
   imageAlt: string;
   bgColor?: string;
   fullWidth?: boolean;
+  reverse?: boolean;
 }
 
 export const FeatureSection: React.FC<FeatureSectionProps> = ({
@@ -25,12 +26,13 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
   imageAlt,
   bgColor = 'bg-white',
   fullWidth = false,
+  reverse = false,
 }) => {
   return (
     <section id={id} className={`py-16 ${bgColor}`}>
       <div className="container-custom">
         <div className={`grid grid-cols-1 ${!fullWidth && image ? 'lg:grid-cols-2' : ''} gap-12 items-center`}>
-          <div className={fullWidth ? 'max-w-full w-full' : ''}>
+          <div className={`${!fullWidth && image && reverse ? 'lg:order-2' : ''} ${fullWidth ? 'max-w-full w-full' : ''}`}>
             <h2 className="text-3xl font-bold mb-4">{title}</h2>
             <p className="text-lg text-gray-600 mb-8">{description}</p>
             
@@ -50,7 +52,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
           </div>
           
           {image && !fullWidth && (
-            <div className="order-first lg:order-last">
+            <div className={`${reverse ? 'lg:order-1' : 'order-first lg:order-last'}`}>
               <img
                 src={image}
                 alt={imageAlt}
