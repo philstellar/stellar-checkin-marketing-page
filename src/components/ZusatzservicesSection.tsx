@@ -6,17 +6,17 @@ const ZusatzservicesSection = () => {
   return (
     <section id="zusatzservices" className="section-padding bg-white">
       <div className="container-custom">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-stellar-600 mb-4 text-center">
+        <div className="grid md:grid-cols-1 gap-12 items-center text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-stellar-600 mb-4">
               Zusatzservices verkaufen
             </h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
+            <p className="text-lg text-gray-700 mb-8">
               Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses zusätzliche 
               Services anbieten. Von Early Check-in bis zu Premium-Angeboten.
             </p>
             
-            <div className="space-y-6">
+            <div className="space-y-6 max-w-3xl mx-auto">
               {[
                 {
                   icon: <ShoppingBag className="h-6 w-6 text-stellar-600" />,
@@ -34,11 +34,11 @@ const ZusatzservicesSection = () => {
                   description: "Generieren Sie durch den Verkauf von Zusatzleistungen und Upgrades wertvolle Zusatzeinnahmen."
                 }
               ].map((feature, index) => (
-                <div key={index} className="flex">
+                <div key={index} className="flex items-center text-left gap-4">
                   <div className="flex-shrink-0 h-12 w-12 rounded-md bg-stellar-100 flex items-center justify-center text-stellar-600">
                     {feature.icon}
                   </div>
-                  <div className="ml-4">
+                  <div>
                     <h3 className="text-lg font-medium text-gray-900">{feature.title}</h3>
                     <p className="mt-1 text-base text-gray-500">{feature.description}</p>
                   </div>
@@ -54,16 +54,6 @@ const ZusatzservicesSection = () => {
               </a>
             </div>
           </div>
-          
-          <div>
-            <div className="rounded-lg overflow-hidden stellar-shadow border-[5px] border-black">
-              <img 
-                src="/lovable-uploads/041cad7c-59af-46f5-ab09-4404b53a1516.png"
-                alt="Zusatzleistungen" 
-                className="w-full h-full object-cover bg-transparent"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -71,3 +61,4 @@ const ZusatzservicesSection = () => {
 };
 
 export default ZusatzservicesSection;
+
