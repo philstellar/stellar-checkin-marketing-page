@@ -14,7 +14,7 @@ export interface FeatureSectionProps {
   imageAlt: string;
   bgColor?: string;
   fullWidth?: boolean;
-  centerTitle?: boolean; // New optional prop
+  centerTitle?: boolean;
 }
 
 export const FeatureSection: React.FC<FeatureSectionProps> = ({
@@ -26,20 +26,22 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
   imageAlt,
   bgColor = 'bg-white',
   fullWidth = false,
-  centerTitle = false, // Default to false
+  centerTitle = false,
 }) => {
   return (
     <section id={id} className={`py-16 ${bgColor}`}>
       <div className="container-custom">
         <div className={`grid grid-cols-1 ${!fullWidth && image ? 'lg:grid-cols-2' : ''} gap-12 items-center`}>
           <div className={fullWidth ? 'max-w-full w-full' : ''}>
-            <h2 className={`text-3xl font-bold mb-4 text-stellar-600 ${centerTitle ? 'text-center' : ''} relative inline-block`}>
-              {title}
-              {centerTitle && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-stellar-300"></div>
-              )}
-            </h2>
-            <p className={`text-lg text-gray-600 mb-8 ${centerTitle ? 'text-center' : ''}`}>{description}</p>
+            <div className={`${centerTitle ? 'text-center mx-auto' : ''} mb-8`}>
+              <h2 className={`text-3xl font-bold mb-4 text-stellar-600 ${centerTitle ? 'inline-block relative mx-auto' : 'inline-block relative'}`}>
+                {title}
+                {centerTitle && (
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-stellar-300"></div>
+                )}
+              </h2>
+              <p className={`text-lg text-gray-600 ${centerTitle ? 'mx-auto' : ''}`}>{description}</p>
+            </div>
             
             <div className={`grid grid-cols-1 ${fullWidth ? 'md:grid-cols-4' : 'md:grid-cols-2'} gap-6`}>
               {features.map((feature, index) => (
