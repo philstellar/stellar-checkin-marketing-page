@@ -1,5 +1,9 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Impressum = () => {
   return (
@@ -58,6 +62,15 @@ const Impressum = () => {
             <p>
               Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
             </p>
+            
+            <div className="mt-12 flex items-center justify-start gap-4">
+              <Link to="/datenschutz">
+                <Button variant="outline" className="flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
+                  Datenschutzerklärung
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </main>
