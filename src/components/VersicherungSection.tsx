@@ -1,3 +1,4 @@
+
 import { Shield, Coins, CheckCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
@@ -15,7 +16,7 @@ export const VersicherungSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Gästeversicherung statt Kaution
+              Gästeversicherung und / oder Kaution automatisieren
             </h2>
             <p className="text-lg text-gray-700 mb-8">
               Bieten Sie Ihren Gästen eine moderne Alternative zur klassischen Kaution. Mit unserer integrierten Versicherungslösung profitieren beide Seiten.
