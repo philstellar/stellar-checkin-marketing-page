@@ -1,3 +1,4 @@
+
 import { UserCheck } from "lucide-react";
 import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
@@ -59,7 +60,7 @@ export const VersicherungSection = () => {
           <div>
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1170"
+                src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
                 alt="Versicherung und Kautionsabwicklung" 
                 className="w-full h-full object-cover"
               />

@@ -1,3 +1,4 @@
+
 import { UserCheck, Gift, CreditCard, TrendingUp } from "lucide-react";
 import CTAButton from "./CTAButton";
 
@@ -9,7 +10,7 @@ const ZusatzservicesSection = () => {
           <div className="order-first lg:order-last">
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1170"
+                src="/lovable-uploads/a581a6b1-fefa-4f87-9015-66cde382b503.png"
                 alt="Zusatzservices und Upselling" 
                 className="w-full h-full object-cover"
               />
