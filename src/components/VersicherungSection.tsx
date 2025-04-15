@@ -8,7 +8,7 @@ export const VersicherungSection = () => {
     <section id="versicherung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-last md:order-first">
+          <div className="order-first md:order-first">
             <div className="rounded-xl flex justify-center">
               <img 
                 src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
@@ -18,7 +18,7 @@ export const VersicherungSection = () => {
             </div>
           </div>
           
-          <div className="order-first md:order-last">
+          <div className="order-last md:order-last">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Kaution & Absicherung smart automatisieren
             </h2>

@@ -7,7 +7,7 @@ const ZusatzservicesSection = () => {
     <section id="zusatzservices" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-first md:order-last">
+          <div className="order-first md:order-first">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Zusatzleistungen verkaufen
             </h2>
@@ -57,7 +57,7 @@ const ZusatzservicesSection = () => {
             </div>
           </div>
           
-          <div className="order-last md:order-first">
+          <div className="order-last md:order-last">
             <div className="rounded-xl flex justify-center">
               <img 
                 src="/lovable-uploads/a581a6b1-fefa-4f87-9015-66cde382b503.png"
