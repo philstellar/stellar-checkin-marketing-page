@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { UserPlus, ArrowDown } from 'lucide-react';
+import { UserCheck, ArrowDown } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import CTAButton from "@/components/CTAButton";
@@ -107,7 +106,7 @@ export const OnlineCheckinSection: React.FC = () => {
         
         <div className="mt-12 text-center">
           <CTAButton className="bg-apple hover:bg-apple-600">
-            <UserPlus className="mr-2 h-4 w-4" /> Jetzt Registrieren
+            <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
           </CTAButton>
         </div>
       </div>

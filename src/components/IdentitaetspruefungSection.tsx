@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserPlus } from "lucide-react";
+import { UserCheck } from "lucide-react";
 import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
 import CTAButton from "./CTAButton";
 
@@ -52,7 +52,7 @@ const IdentitaetspruefungSection = () => {
             
             <div className="mt-10">
               <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                <UserPlus className="mr-2 h-4 w-4" /> Jetzt Registrieren
+                <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
               </CTAButton>
             </div>
           </div>
