@@ -59,11 +59,11 @@ const IdentitaetspruefungSection = () => {
           </div>
           
           <div className="order-last md:order-last">
-            <div className="rounded-xl">
+            <div className="rounded-xl flex justify-center">
               <img 
-                src="/lovable-uploads/5ecda5e9-325e-415f-b7eb-2d7f806af7bf.png"
+                src="/lovable-uploads/f65f2787-eee3-47c4-a728-74654f2e8651.png"
                 alt="Identitätsprüfung mit Stellar" 
-                className="w-full h-full object-contain bg-transparent"
+                className="w-4/5 h-auto object-contain bg-transparent"
               />
             </div>
           </div>

@@ -58,11 +58,11 @@ export const VersicherungSection = () => {
           </div>
           
           <div>
-            <div className="rounded-xl">
+            <div className="rounded-xl flex justify-center">
               <img 
                 src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
                 alt="Versicherung und Kautionsabwicklung" 
-                className="w-full h-full object-contain bg-transparent"
+                className="w-4/5 h-auto object-contain bg-transparent"
               />
             </div>
           </div>
