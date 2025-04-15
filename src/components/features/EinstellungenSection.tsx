@@ -28,6 +28,7 @@ export const EinstellungenSection: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 text-royal">
             Individualisierung
+            <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
             Gestalte das Check-in-Erlebnis individuell – mit deinem eigenen Branding und einer mehrsprachigen Oberfläche
