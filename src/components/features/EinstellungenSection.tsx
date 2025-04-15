@@ -1,4 +1,4 @@
-
+ler
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Palette, Globe, Settings } from 'lucide-react';
@@ -8,16 +8,16 @@ export const EinstellungenSection: React.FC = () => {
     {
       icon: <Palette className="h-8 w-8 text-apple" />,
       title: "Design & Branding",
-      description: "Passen Sie das Design ganz einfach an – mit Ihrem Logo und den Markenfarben."
+      description: "Passe das Design ganz einfach an – mit deinem Logo und deinen Markenfarben."
     },
     {
       icon: <Globe className="h-8 w-8 text-apple" />,
-      title: "Mehrsprachigkeit",
-      description: "Unterstützung für mehr als 20 Sprachen, für ein perfektes Erlebnis für Ihre internationalen Gäste."
+      title: "Sprachoptionen",
+      description: "Mehrsprachiger Check-in – damit sich internationale Gäste sofort zurechtfinden."
     },
     {
       icon: <Settings className="h-8 w-8 text-apple" />,
-      title: "Formularkonfiguration",
+      title: "Individueller Check-in",
       description: "Passe den Check-in-Prozess nach deinen Wünschen an und bestimme, welche Daten erfasst werden sollen."
     }
   ];
