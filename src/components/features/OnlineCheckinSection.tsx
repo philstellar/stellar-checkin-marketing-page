@@ -1,6 +1,8 @@
+
 import React from 'react';
-import { UserPlus } from 'lucide-react';
+import { UserPlus, ArrowDown } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import CTAButton from "@/components/CTAButton";
 
 type FeatureCardProps = {

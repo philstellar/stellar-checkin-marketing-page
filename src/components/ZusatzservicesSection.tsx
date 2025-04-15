@@ -1,4 +1,5 @@
-import { UserPlus } from "lucide-react";
+
+import { UserPlus, Gift, CreditCard, TrendingUp } from "lucide-react";
 import CTAButton from "./CTAButton";
 
 const ZusatzservicesSection = () => {
