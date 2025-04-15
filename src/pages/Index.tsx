@@ -10,6 +10,7 @@ import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 import VersicherungSection from "@/components/VersicherungSection";
 import IdentitaetspruefungSection from "@/components/IdentitaetspruefungSection";
 import LogoCarousel from "@/components/LogoCarousel";
+import PricingSection from "@/components/PricingSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -26,6 +27,7 @@ const Index = () => {
         <VersicherungSection />
         <IdentitaetspruefungSection />
         <EinstellungenSection />
+        <PricingSection />
         <ContactSection />
       </main>
       <Footer />

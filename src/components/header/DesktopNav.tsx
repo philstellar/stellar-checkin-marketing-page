@@ -51,6 +51,12 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
         />
       </div>
       <button 
+        onClick={() => handleSectionClick('preise')}
+        className="text-royal hover:text-apple font-medium transition-colors"
+      >
+        Preise
+      </button>
+      <button 
         onClick={() => handleSectionClick('kontakt')}
         className="text-royal hover:text-apple font-medium transition-colors"
       >

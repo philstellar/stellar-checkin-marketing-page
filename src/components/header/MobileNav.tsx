@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown } from "lucide-react";
@@ -62,6 +63,12 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose }: MobileNavProps) => {
         isMobile={true}
         onClose={closeDropdown}
       />
+      <button
+        onClick={() => handleItemClick('preise')}
+        className="block w-full py-2 text-left text-royal hover:text-apple font-medium"
+      >
+        Preise
+      </button>
       <button
         onClick={() => handleItemClick('kontakt')}
         className="block w-full py-2 text-left text-royal hover:text-apple font-medium"
