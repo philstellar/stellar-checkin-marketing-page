@@ -31,7 +31,7 @@ const ZusatzservicesSection = () => {
               {[
                 {
                   title: "Zusatzleistungen",
-                  description: "Biete Extras wie Early Check-in, Late Check-out, Premium-Zimmer-Upgrades oder Frühstücksoptionen an."
+                  description: "Biete deinen Gästen mehr – und steigere deinen Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepaketen oder besonderen Erlebnissen."
                 },
                 {
                   title: "Nahtlose Zahlungsabwicklung",
@@ -39,7 +39,7 @@ const ZusatzservicesSection = () => {
                 },
                 {
                   title: "Zusätzliche Einnahmequellen",
-                  description: "Generiere durch den Verkauf von Zusatzleistungen und Upgrades wertvolle Zusatzeinnahmen."
+                  description: "Erziele zusätzliche Einnahmen durch den gezielten Verkauf von Upgrades und Zusatzleistungen."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
