@@ -14,8 +14,7 @@ const IdentitaetspruefungSection = () => {
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-              In Partnerschaft mit Stripe bieten wir eine sichere und einfache Identitätsprüfung, 
-              die nur 2 Minuten dauert und für maximale Sicherheit und Vertrauen sorgt.
+             Schnelle und sichere Identitätsprüfung deiner Gäste – in nur 2 Minuten erledigt, für mehr Vertrauen und Schutz.
             </p>
             
             <div className="space-y-8">
@@ -23,7 +22,7 @@ const IdentitaetspruefungSection = () => {
                 {
                   icon: <ScanFace className="w-8 h-8 text-apple" />,
                   title: "Biometrische Verifikation",
-                  description: "Schnelle Gesichtserkennung mit Liveness-Check verhindert Betrug und stellt sicher, dass die Person real ist."
+                  description: "Schnelle Gesichtserkennung mit Liveness-Check – schützt vor Betrug und stellt sicher, dass Ausweis und Person echt sind."
                 },
                 {
                   icon: <Fingerprint className="w-8 h-8 text-apple" />,
