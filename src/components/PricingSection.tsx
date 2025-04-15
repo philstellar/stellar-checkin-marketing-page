@@ -126,29 +126,29 @@ const PricingSection = () => {
             
             <div className="space-y-4">
               {[{
-              text: "Gästemeldung an die Behörden *",
-              tooltip: tooltipDescriptions.digitaleGaestemeldung
-            }, "Kurtaxe – automatisch berechnet und abgerechnet", "Zusatzleistungen ohne Gebühren", "Individualisierter Check-in"].map((feature, index) => {
-              const isTooltipFeature = typeof feature === 'object';
-              const featureText = isTooltipFeature ? feature.text : feature;
-              const hasTooltip = featureText.includes("*");
-              return <div key={index} className="flex items-center">
-                    <Circle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                    <span className="text-royal-700">
-                      {featureText.replace(" *", "")}
-                      {hasTooltip && isTooltipFeature && <Tooltip>
-                          <TooltipTrigger asChild>
-                            <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                              <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
-                            </button>
-                          </TooltipTrigger>
-                          <TooltipContent className="max-w-xs text-sm">
-                            {feature.tooltip}
-                          </TooltipContent>
-                        </Tooltip>}
-                    </span>
-                  </div>;
-            })}
+                text: "Gästemeldung an die Behörden *",
+                tooltip: tooltipDescriptions.digitaleGaestemeldung
+              }, "Kurtaxe – automatisch berechnet und abgerechnet", "Zusatzleistungen ohne Gebühren", "Individualisierter Check-in"].map((feature, index) => {
+                const isTooltipFeature = typeof feature === 'object';
+                const featureText = isTooltipFeature ? feature.text : feature;
+                const hasTooltip = featureText.includes("*");
+                return <div key={index} className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
+                      <span className="text-royal-700">
+                        {featureText.replace(" *", "")}
+                        {hasTooltip && isTooltipFeature && <Tooltip>
+                            <TooltipTrigger asChild>
+                              <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                                <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                              </button>
+                            </TooltipTrigger>
+                            <TooltipContent className="max-w-xs text-sm">
+                              {feature.tooltip}
+                            </TooltipContent>
+                          </Tooltip>}
+                      </span>
+                    </div>;
+              })}
             </div>
           </div>
 
