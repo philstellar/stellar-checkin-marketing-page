@@ -28,7 +28,7 @@ export const VersicherungSection = () => {
                 },
                 {
                   title: "Umfassender Schutz",
-                  description: "Bessere Absicherung als klassische Kautionen, dank höherer Deckungssummen, und Absicherung "Neu für Alt" und gegen Mietausfall."
+                  description: "Bessere Absicherung als klassische Kautionen, dank höherer Deckungssummen, und Absicherung \"Neu für Alt\" und gegen Mietausfall."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
