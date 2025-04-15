@@ -9,7 +9,7 @@ const IdentitaetspruefungSection = () => {
     <section id="identitaetspruefung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="order-first md:order-first">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Identitätsprüfung
             </h2>
@@ -58,12 +58,12 @@ const IdentitaetspruefungSection = () => {
             </div>
           </div>
           
-          <div>
-            <div className="rounded-xl overflow-hidden shadow-lg">
+          <div className="order-last md:order-last">
+            <div className="rounded-xl">
               <img 
                 src="/lovable-uploads/5ecda5e9-325e-415f-b7eb-2d7f806af7bf.png"
                 alt="Identitätsprüfung mit Stellar" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-transparent"
               />
             </div>
           </div>
