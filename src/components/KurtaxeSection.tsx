@@ -2,48 +2,37 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
-const ZusatzservicesSection = () => {
+const KurtaxeSection = () => {
   return (
-    <section id="zusatzservices" className="section-padding bg-white">
+    <section id="kurtaxe" className="section-padding bg-floral">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-first lg:order-last">
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1170"
-                alt="Zusatzservices und Upselling" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          
-          <div className="order-last lg:order-first">
+          <div>
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Zusatzleistungen verkaufen
+              Kurtaxe & digitale Gästemeldung
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-              Steigere deinen Umsatz, indem du deinen Gästen während des Check-in-Prozesses zusätzliche 
-              Services anbietest. Von Early Check-in bis zu Premium-Angeboten.
+              Automatisiere die Erfassung und Verwaltung von Kurtaxen und Gästemeldungen zur Einhaltung lokaler Vorschriften.
             </p>
             
             <div className="space-y-8">
               {[
                 {
-                  title: "Zusatzleistungen",
-                  description: "Biete Extras wie Early Check-in, Late Check-out, Premium-Zimmer-Upgrades oder Frühstücksoptionen an."
+                  title: "Digitale Gästemeldung",
+                  description: "Erfassen Sie Meldescheine digital und lassen Sie diese direkt von Ihren Gästen ausfüllen."
                 },
                 {
-                  title: "Nahtlose Zahlungsabwicklung",
-                  description: "Integrierte Zahlungsabwicklung mit allen gängigen Zahlungsmethoden direkt im Check-in-Prozess."
+                  title: "Automatische Berechnung",
+                  description: "Kurtaxen werden automatisch berechnet und in Ihre Systeme übertragen."
                 },
                 {
-                  title: "Zusätzliche Einnahmequellen",
-                  description: "Generiere durch den Verkauf von Zusatzleistungen und Upgrades wertvolle Zusatzeinnahmen."
+                  title: "Behördenanbindung",
+                  description: "Direkte Übermittlung der Daten an die zuständigen Behörden gemäß lokaler Vorschriften."
                 },
                 {
-                  title: "Personalisierte Angebote",
-                  description: "Biete je nach Gästeprofil und Buchungsdetails individuell zugeschnittene Zusatzleistungen an."
+                  title: "Compliance-Sicherheit",
+                  description: "Sicherstellen der Einhaltung aller rechtlichen Anforderungen für Ihre Unterkunft."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
@@ -66,10 +55,20 @@ const ZusatzservicesSection = () => {
               </a>
             </div>
           </div>
+          
+          <div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1036"
+                alt="Digitale Gästemeldung und Kurtaxe" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default ZusatzservicesSection;
+export default KurtaxeSection;
