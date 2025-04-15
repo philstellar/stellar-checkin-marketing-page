@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Gift, CreditCard, TrendingUp } from "lucide-react";
 
 const ZusatzservicesSection = () => {
   return (
@@ -30,19 +30,25 @@ const ZusatzservicesSection = () => {
             <div className="space-y-8">
               {[
                 {
+                  icon: <Gift className="w-8 h-8 text-apple" />,
                   title: "Zusatzleistungen",
                   description: "Biete deinen Gästen mehr – und steigere deinen Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepaketen oder besonderen Erlebnissen."
                 },
                 {
+                  icon: <CreditCard className="w-8 h-8 text-apple" />,
                   title: "Nahtlose Zahlungsabwicklung",
                   description: "Integrierte Zahlungsabwicklung mit allen gängigen Zahlungsmethoden direkt im Check-in-Prozess."
                 },
                 {
+                  icon: <TrendingUp className="w-8 h-8 text-apple" />,
                   title: "Zusätzliche Einnahmequellen",
                   description: "Erziele zusätzliche Einnahmen durch den gezielten Verkauf von Upgrades und Zusatzleistungen."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
+                  <div className="shrink-0">
+                    {feature.icon}
+                  </div>
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-black mb-2 pb-2">
                       {feature.title}

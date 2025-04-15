@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, FileText, Calculator, Upload } from "lucide-react";
 
 const KurtaxeSection = () => {
   return (
@@ -19,19 +19,25 @@ const KurtaxeSection = () => {
             <div className="space-y-8">
               {[
                 {
+                  icon: <FileText className="w-8 h-8 text-apple" />,
                   title: "Digitale Gästemeldung",
                   description: "Erfasse Meldescheine digital – deine Gäste füllen alle Angaben einfach selbst aus."
                 },
                 {
+                  icon: <Calculator className="w-8 h-8 text-apple" />,
                   title: "Automatische Berechnung",
                   description: "Die Kurtaxe wird automatisch basierend auf den Angaben der Gäste berechnet und kann bequem direkt im Check-in bezahlt werden."
                 },
                 {
+                  icon: <Upload className="w-8 h-8 text-apple" />,
                   title: "Behördenanbindung",
                   description: "Direkte Übermittlung der Daten an die zuständigen Behörden über unsere Partner AVS und Ostseecard."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
+                  <div className="shrink-0">
+                    {feature.icon}
+                  </div>
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-black mb-2 pb-2">
                       {feature.title}

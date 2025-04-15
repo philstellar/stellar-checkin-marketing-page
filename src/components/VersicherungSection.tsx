@@ -1,10 +1,10 @@
 
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Shield, ShieldCheck, CreditCard } from "lucide-react";
 
 export const VersicherungSection = () => {
   return (
-    <section id="versicherung" className="section-padding bg-floral">
+    <section id="versicherung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -19,19 +19,25 @@ export const VersicherungSection = () => {
             <div className="space-y-8">
               {[
                 {
+                  icon: <CreditCard className="w-8 h-8 text-apple" />,
                   title: "Schnellerer Check-in Prozess",
                   description: "Keine Kautionsabwicklung mehr notwendig, weniger Aufwand für Sie und Ihre Gäste."
                 },
                 {
+                  icon: <Shield className="w-8 h-8 text-apple" />,
                   title: "Zusätzliche Einnahmequelle",
                   description: "Mit jeder Versicherung mitverdienen – ganz automatisch und ohne Mehraufwand."
                 },
                 {
+                  icon: <ShieldCheck className="w-8 h-8 text-apple" />,
                   title: "Umfassender Schutz",
                   description: "Bessere Absicherung als klassische Kautionen, dank höherer Deckungssummen, und Absicherung \"Neu für Alt\" und gegen Mietausfall."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
+                  <div className="shrink-0">
+                    {feature.icon}
+                  </div>
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-black mb-2 pb-2">
                       {feature.title}
