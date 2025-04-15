@@ -30,7 +30,7 @@ const PricingSection = () => {
             
             <div className="text-center mb-6">
               <div className="flex items-end justify-center">
-                <span className="text-4xl font-bold text-royal mr-2">ab 4</span>
+                <span className="text-4xl font-bold text-royal mr-2">5</span>
                 <div className="flex flex-col items-start">
                   <span className="text-xl text-royal">€/Monat</span>
                   <span className="text-sm text-royal-700">pro Objekt</span>
@@ -94,7 +94,7 @@ const PricingSection = () => {
             
             <div className="text-center mb-6">
               <div className="flex items-end justify-center">
-                <span className="text-4xl font-bold text-royal mr-2">8</span>
+                <span className="text-4xl font-bold text-royal mr-2">9</span>
                 <div className="flex flex-col items-start">
                   <span className="text-xl text-royal">€/Monat</span>
                   <span className="text-sm text-royal-700">pro Objekt</span>
