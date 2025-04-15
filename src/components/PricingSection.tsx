@@ -1,10 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Circle, ExternalLink, Info, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import CTAButton from "@/components/CTAButton";
-
 const PricingSection = () => {
   // Sample tooltip descriptions - these can be customized as needed
   const tooltipDescriptions = {
@@ -14,14 +12,14 @@ const PricingSection = () => {
     versicherung: "Die Versicherung ist für den Gast optional oder als Ersatz für die Kaution wählbar.",
     digitaleGaestemeldung: "Gästemeldungen werden automatisch und gesetzeskonform an die Behörden übermittelt."
   };
-
   const scrollToContact = () => {
     const contactSection = document.getElementById('kontakt');
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      contactSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   return <section id="preise" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
@@ -126,13 +124,13 @@ const PricingSection = () => {
             
             <div className="space-y-4">
               {[{
-                text: "Gästemeldung an die Behörden *",
-                tooltip: tooltipDescriptions.digitaleGaestemeldung
-              }, "Kurtaxe – automatisch berechnet und abgerechnet", "Zusatzleistungen ohne Gebühren", "Individualisierter Check-in"].map((feature, index) => {
-                const isTooltipFeature = typeof feature === 'object';
-                const featureText = isTooltipFeature ? feature.text : feature;
-                const hasTooltip = featureText.includes("*");
-                return <div key={index} className="flex items-center">
+              text: "Gästemeldung an die Behörden *",
+              tooltip: tooltipDescriptions.digitaleGaestemeldung
+            }, "Kurtaxe – automatisch berechnet und abgerechnet", "Zusatzleistungen ohne Gebühren", "Individualisierter Check-in"].map((feature, index) => {
+              const isTooltipFeature = typeof feature === 'object';
+              const featureText = isTooltipFeature ? feature.text : feature;
+              const hasTooltip = featureText.includes("*");
+              return <div key={index} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                       <span className="text-royal-700">
                         {featureText.replace(" *", "")}
@@ -148,13 +146,13 @@ const PricingSection = () => {
                           </Tooltip>}
                       </span>
                     </div>;
-              })}
+            })}
             </div>
           </div>
 
           {/* Enterprise Plan */}
           <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow bg-white">
-            <h3 className="text-2xl font-bold text-center text-royal mb-6">Über 50 Einheiten</h3>
+            <h3 className="text-2xl font-bold text-center text-royal mb-6">Über 100 Objekte</h3>
             
             <div className="text-center mb-6 flex flex-col justify-center items-center h-12">
               <p className="text-xl font-medium text-royal">Bitte fragen Sie unser</p>
@@ -162,11 +160,7 @@ const PricingSection = () => {
             </div>
             
             <div className="flex justify-center mb-8">
-              <Button 
-                variant="outline" 
-                className="border-2 border-royal text-royal hover:bg-royal-50"
-                onClick={scrollToContact}
-              >
+              <Button variant="outline" className="border-2 border-royal text-royal hover:bg-royal-50" onClick={scrollToContact}>
                 Vertrieb kontaktieren
               </Button>
             </div>
