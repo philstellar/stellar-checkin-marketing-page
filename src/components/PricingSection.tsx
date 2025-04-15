@@ -7,11 +7,11 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 const PricingSection = () => {
   // Sample tooltip descriptions - these can be customized as needed
   const tooltipDescriptions = {
-    zusatzleistungen: "Bieten Sie Ihren Gästen zusätzliche Services wie Parkplätze, Frühstück oder Haustierzuschläge direkt während des Check-ins an.",
-    identitaetsverifizierung: "Nutzen Sie unsere sichere Online-Identitätsprüfung zur Einhaltung gesetzlicher Bestimmungen und zur Betrugsprävention.",
-    kautionsmanagement: "Verwalten Sie Kautionen effizient und sicher. Bei Abreise wird die Kaution automatisch zurückerstattet, falls keine Schäden gemeldet werden.",
-    versicherung: "Bieten Sie Ihren Gästen optionale Versicherungen für Schäden oder andere Vorfälle während ihres Aufenthalts an.",
-    digitaleGaestemeldung: "Automatisierte digitale Gästemeldungen für Behörden, die rechtlichen Anforderungen entsprechen."
+    zusatzleistungen: "Im Basic-Paket fällt eine Gebühr von 5 % auf den Gesamtwert der vom Gast gebuchten Zusatzleistungen an.",
+    identitaetsverifizierung: "Die Biometrische Verifizierung ist optional und wird mit €1,50 pro Check-in berechnet.",
+    kautionsmanagement: "Im Basic-Paket fällt eine Gebühr von 1 % auf den Gesamtwert der Kaution an.",
+    versicherung: "Die Versicherung ist für den Gast optional oder als Ersatz für die Kaution wählbar.",
+    digitaleGaestemeldung: "Gästemeldungen werden automatisch und gesetzeskonform an die Behörden übermittelt."
   };
 
   return <section id="preise" className="section-padding bg-white">
@@ -56,7 +56,7 @@ const PricingSection = () => {
                 {text: "Zusatzleistungen *", tooltip: tooltipDescriptions.zusatzleistungen},
                 {text: "Identitätsverifizierung *", tooltip: tooltipDescriptions.identitaetsverifizierung},
                 {text: "Kautionsmanagement *", tooltip: tooltipDescriptions.kautionsmanagement},
-                {text: "Optionale Gästeversicherung *", tooltip: tooltipDescriptions.versicherung},
+                {text: "Gästeversicherung *", tooltip: tooltipDescriptions.versicherung},
                 "Zustimmung zum Beherbergungsvertrag"
               ].map((feature, index) => {
                 const isTooltipFeature = typeof feature === 'object';
