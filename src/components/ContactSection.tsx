@@ -51,6 +51,11 @@ const ContactSection = () => {
           title: "Nachricht gesendet!",
           description: "Vielen Dank für deine Anfrage. Wir werden uns in Kürze bei dir melden.",
         });
+
+          // fire conversion
+  gtag_report_conversion();
+
+        
         // Reset form
         setFormData({
           name: '',
