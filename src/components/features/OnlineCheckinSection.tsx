@@ -50,32 +50,32 @@ export const OnlineCheckinSection: React.FC = () => {
   const features = [
     {
       title: "Kurtaxe & digitale Gästemeldung",
-      description: "Automatisiere die Erfassung und Verwaltung von Kurtaxen und Gästemeldungen zur Einhaltung lokaler Vorschriften.",
+      description: "Erfasse Meldescheine, berechne die Kurtaxe und wickele Zahlungen automatisiert ab – schnell, sicher und bequem für deine Gäste.",
       targetSection: "kurtaxe"
     },
     {
       title: "Zusatzleistungen",
-      description: "Steigere deinen Umsatz mit zusätzlichen Angeboten im Check-in-Prozess wie Early Check-in oder Premium-Upgrades.",
+      description: "Biete deinen Gästen mehr – und steigere deinen Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepaketen oder besonderen Erlebnissen.",
       targetSection: "zusatzservices"
     },
     {
-      title: "Kautionsmanagement & Versicherung",
-      description: "Biete eine moderne Alternative zur klassischen Kaution und generiere zusätzliche Einnahmen durch Provisionen.",
+      title: "Kaution & Gästeversicherung",
+      description: "Automatisiere Kautionseinzug und -rückzahlung, biete deinen Gäste eine komfortable Alternative – und profitiere von zusätzlichen Provisionseinnahmen.",
       targetSection: "versicherung"
     },
     {
       title: "Identitätsprüfung",
-      description: "Erhöhe die Sicherheit durch einfache biometrische Identitätsprüfung in Partnerschaft mit Stripe.",
+      description: "Erhöhe die Sicherheit mit unserer einfachen und zuverlässigen biometrischen Identitätsprüfung.",
       targetSection: "identitaetspruefung"
     },
     {
       title: "Anpassungsmöglichkeiten",
-      description: "Gestalte das Check-in-Erlebnis individuell mit anpassbarem Branding und mehrsprachiger Oberfläche.",
+      description: "Gestalte das Check-in-Erlebnis individuell – mit deinem Branding und einer mehrsprachigen Benutzeroberfläche.",
       targetSection: "einstellungen"
     },
     {
       title: "Integration mit Ihrem PMS",
-      description: "Nahtlose Verbindung zu deiner bestehenden Property-Management-Software für einen reibungslosen Datenaustausch.",
+      description: "Nahtlose Anbindung an dein PMS oder Channel Manager – automatische Check-in-Einladungen, und alle Daten zentral verfügbar.",
       targetSection: "integrationen"
     }
   ];
@@ -89,7 +89,7 @@ export const OnlineCheckinSection: React.FC = () => {
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            Optimiere die Pre-Arrival Erfahrung für deine Kunden
+            Gestalte die Pre-Arrival-Erfahrung deiner Gäste noch angenehmer – mit einem reibungslosen und individuellen Erlebnis vor der Ankunft
           </p>
         </div>
         
