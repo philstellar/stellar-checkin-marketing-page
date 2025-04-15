@@ -31,7 +31,7 @@ const Hero = () => {
                 <div className="w-8 h-8 rounded-full bg-apple-500"></div>
               </div>
               <p className="ml-4 text-sm text-black">
-                <span className="font-medium">Einfach. Schnell. Für deine Ferienwohnung.</span>
+                <span className="font-medium">Einfach. Effizient. Für dich und deine Gäste.</span>
               </p>
             </div>
           </div>
