@@ -105,7 +105,7 @@ const PricingSection = () => {
             
             <div className="flex justify-center mb-8">
               <Link to="/kontakt">
-                <Button className="bg-royal hover:bg-royal-600 text-white">Vertrieb Kontaktieren</Button>
+                <Button className="bg-royal hover:bg-royal-600 text-white">Jetzt registrieren</Button>
               </Link>
             </div>
             
