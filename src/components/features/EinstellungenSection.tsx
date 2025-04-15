@@ -8,17 +8,17 @@ export const EinstellungenSection: React.FC = () => {
     {
       icon: <Palette className="h-6 w-6 text-apple" />,
       title: "Design & Branding",
-      description: "Passen Sie das Erscheinungsbild mit eigenen Farben, Logos und Schriftarten an Ihre Marke an."
+      description: "Passen Sie das Design ganz einfach an – mit Ihrem Logo und den Markenfarben."
     },
     {
       icon: <Globe className="h-6 w-6 text-apple" />,
       title: "Mehrsprachigkeit",
-      description: "Unterstützung für mehr als 20 Sprachen, damit alle Ihre internationalen Gäste ein reibungsloses Erlebnis haben."
+      description: "Unterstützung für mehr als 20 Sprachen, für ein perfektes Erlebnis für Ihre internationalen Gäste."
     },
     {
       icon: <Settings className="h-6 w-6 text-apple" />,
       title: "Formularkonfiguration",
-      description: "Definieren Sie selbst, welche Informationen erfasst werden sollen und gestalten Sie den Check-In-Prozess nach Ihren Wünschen."
+      description: "Passe den Check-in-Prozess nach deinen Wünschen an und bestimme, welche Daten erfasst werden sollen."
     }
   ];
 
@@ -31,7 +31,7 @@ export const EinstellungenSection: React.FC = () => {
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            Gestalten Sie das Check-in-Erlebnis individuell mit anpassbarem Branding und mehrsprachiger Oberfläche
+            Gestalte das Check-in-Erlebnis individuell – mit deinem eigenen Branding und einer mehrsprachigen Oberfläche
           </p>
         </div>
         
