@@ -57,7 +57,7 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
         Kontakt
       </button>
       <CTAButton variant="default" className="bg-apple hover:bg-apple-600">
-        Demo Anfragen
+        Jetzt registrieren
       </CTAButton>
     </nav>
   );

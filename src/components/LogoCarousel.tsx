@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { cn } from '@/lib/utils';
@@ -36,7 +35,6 @@ const logos: LogoType[] = [
   }
 ];
 
-// Double the logos to create a seamless infinite effect
 const extendedLogos = [...logos, ...logos];
 
 const LogoCarousel = () => {
@@ -87,12 +85,12 @@ const LogoCarousel = () => {
               <div 
                 key={index} 
                 className={cn(
-                  "flex-shrink-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 px-2"
+                  "flex-shrink-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 px-4"
                 )}
               >
                 <HoverCard>
                   <HoverCardTrigger asChild>
-                    <div className="h-16 md:h-20 flex items-center justify-center p-2 bg-transparent transition-all duration-300 cursor-pointer">
+                    <div className="h-24 md:h-32 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer">
                       <div className="w-full h-full flex items-center justify-center">
                         <img
                           src={logo.src}
@@ -117,4 +115,3 @@ const LogoCarousel = () => {
 };
 
 export default LogoCarousel;
-

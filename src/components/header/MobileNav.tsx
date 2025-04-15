@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown } from "lucide-react";
@@ -73,7 +72,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose }: MobileNavProps) => {
         <CTAButton 
           className="w-full bg-apple hover:bg-apple-600"
         >
-          Demo Anfragen
+          Jetzt registrieren
         </CTAButton>
       </div>
     </div>
