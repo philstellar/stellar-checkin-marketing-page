@@ -120,9 +120,9 @@ const PricingSection = () => {
             
             <div className="space-y-4">
               {[
-                {text: "Digitale Gästemeldung *", tooltip: tooltipDescriptions.digitaleGaestemeldung},
-                "Kurtaxe (Berechnung & Abrechnung)", 
-                "Zusatzleistungen ohne Gebühren", 
+                {text: "Gästemeldung an die Behörden *", tooltip: tooltipDescriptions.digitaleGaestemeldung},
+                "Kurtaxe – automatisch berechnet und abgerechnet", 
+                "Zusatzleistungen ohne Gebühren",
                 "Individualisierter Check-in"
               ].map((feature, index) => {
                 const isTooltipFeature = typeof feature === 'object';
