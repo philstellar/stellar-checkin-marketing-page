@@ -10,7 +10,7 @@ const PricingSection = () => {
           </h2>
           <div className="h-1 w-24 bg-apple mb-6 mx-auto rounded-full"></div>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            Finden Sie das passende Paket für Ihre Anforderungen und steigern Sie die Effizienz Ihrer Gästeverwaltung.
+            Finde das passende Paket für deine Anforderungen.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ const PricingSection = () => {
             </div>
             
             <div className="space-y-4">
-              {["Online check-in", "Dokumentenscanner", "Polizeiliche Registrierung", "PMS-Integrationen", "Kautionen *", "Zahlungen *", "Personalisierte Erfahrungen", "Mietvereinbarungen", "Benutzerdefinierte E-Mails"].map((feature, index) => <div key={index} className="flex items-center">
+              {["Online check-in", "Individualisierbare Gästeanmeldung", "PMS-Integrationen", "Zusatzleistungen *", "Identitätsverifizierung *", "Kautionsmanagement *", "Optionale Gästeversicherung *", "Zustimmung zum Beherbergungsvertrag"].map((feature, index) => <div key={index} className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">
                     {feature}
@@ -79,7 +79,7 @@ const PricingSection = () => {
             </div>
             
             <div className="space-y-4">
-              {["Identitätsverifizierungn", "Fernzugang", "Touristensteuer", "Branded Guest App"].map((feature, index) => <div key={index} className="flex items-center">
+              {["Digitale Gästemeldung *", "Kurtaxe (Berechnung & Abrechnung)", "Zusatzleistungen ohne Gebühren", "Individualisierter Check-in"].map((feature, index) => <div key={index} className="flex items-center">
                   <Circle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{feature}</span>
                 </div>)}
