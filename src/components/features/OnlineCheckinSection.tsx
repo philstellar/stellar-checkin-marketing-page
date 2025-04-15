@@ -23,19 +23,19 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   };
 
   return (
-    <Card className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
+    <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
       <CardHeader className="pb-2">
         <CardTitle className="text-lg font-semibold text-royal pb-2">
           {title}
           <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-4">
-        <p className="text-royal-700 text-left mb-4">{description}</p>
+      <CardContent className="pt-4 flex-grow flex flex-col">
+        <p className="text-royal-700 text-left mb-4 flex-grow">{description}</p>
         <Button 
           variant="ghost" 
           onClick={handleClick}
-          className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2"
+          className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2 mt-auto"
         >
           Mehr erfahren <ArrowDown className="h-4 w-4" />
         </Button>

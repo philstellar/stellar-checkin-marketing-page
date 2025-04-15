@@ -29,10 +29,6 @@ export const VersicherungSection = () => {
                 {
                   title: "Umfassender Schutz",
                   description: "Bessere Absicherung als klassische Kautionen, da die Versicherung auch größere Schäden abdeckt."
-                },
-                {
-                  title: "Einfache Schadenabwicklung",
-                  description: "Im Schadensfall übernimmt die Versicherung die komplette Abwicklung und Erstattung."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">

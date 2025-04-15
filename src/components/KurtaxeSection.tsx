@@ -29,10 +29,6 @@ const KurtaxeSection = () => {
                 {
                   title: "Behördenanbindung",
                   description: "Direkte Übermittlung der Daten an die zuständigen Behörden gemäß lokaler Vorschriften."
-                },
-                {
-                  title: "Compliance-Sicherheit",
-                  description: "Sicherstellen der Einhaltung aller rechtlichen Anforderungen für Ihre Unterkunft."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">

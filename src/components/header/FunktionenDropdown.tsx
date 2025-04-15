@@ -5,7 +5,8 @@ import {
   ShieldCheck, 
   BarChart3, 
   Gift, 
-  Sliders 
+  Sliders,
+  FileText
 } from "lucide-react";
 
 type FunktionenDropdownProps = {
@@ -24,11 +25,12 @@ const FunktionenDropdown = ({
   if (!isOpen) return null;
 
   const features = [
-    { title: "Integrationen", targetSection: "integrationen", icon: <Cable className="w-4 h-4" /> },
-    { title: "Gästeversicherung", targetSection: "versicherung", icon: <ShieldCheck className="w-4 h-4" /> },
+    { title: "Kurtaxe & digitale Gästemeldung", targetSection: "kurtaxe", icon: <FileText className="w-4 h-4" /> },
+    { title: "Zusatzleistungen", targetSection: "zusatzservices", icon: <Gift className="w-4 h-4" /> },
+    { title: "Kautionsmanagement & Versicherung", targetSection: "versicherung", icon: <ShieldCheck className="w-4 h-4" /> },
     { title: "Berichte & Analysen", targetSection: "berichte", icon: <BarChart3 className="w-4 h-4" /> },
-    { title: "Zusatzservices", targetSection: "zusatzservices", icon: <Gift className="w-4 h-4" /> },
-    { title: "Anpassungsmöglichkeiten", targetSection: "einstellungen", icon: <Sliders className="w-4 h-4" /> }
+    { title: "Anpassungsmöglichkeiten", targetSection: "einstellungen", icon: <Sliders className="w-4 h-4" /> },
+    { title: "Integration mit Ihrem PMS", targetSection: "integrationen", icon: <Cable className="w-4 h-4" /> }
   ];
 
   const handleItemClick = (targetSection: string) => {
@@ -43,7 +45,7 @@ const FunktionenDropdown = ({
       className={`
         ${isMobile 
           ? 'pl-4 space-y-2 mb-2' 
-          : 'absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg z-50 py-2'
+          : 'absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg z-50 py-2'
         }
       `}
     >

@@ -40,10 +40,6 @@ const ZusatzservicesSection = () => {
                 {
                   title: "Zusätzliche Einnahmequellen",
                   description: "Generiere durch den Verkauf von Zusatzleistungen und Upgrades wertvolle Zusatzeinnahmen."
-                },
-                {
-                  title: "Personalisierte Angebote",
-                  description: "Biete je nach Gästeprofil und Buchungsdetails individuell zugeschnittene Zusatzleistungen an."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
