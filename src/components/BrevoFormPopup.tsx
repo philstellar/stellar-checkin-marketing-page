@@ -91,7 +91,7 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
                   <div className="sib-input sib-form-block">
                     <div className="form__entry entry_block">
                       <div className="form__label-row flex flex-col items-center">
-                        <label className="entry__label mx-auto text-center" style={{ fontWeight: 700, fontSize: "16px", fontFamily: "Helvetica, sans-serif", color: "#3c4858" }} htmlFor="EMAIL" data-required="*">E-mail hinterlegen und bald loslegen</label>
+                        <label className="entry__label mx-auto text-center" style={{ fontWeight: 700, fontSize: "16px", fontFamily: "Helvetica, sans-serif", color: "#3c4858" }} htmlFor="EMAIL" data-required="*">Trage deine E-Mail ein und starte in Kürze</label>
                         <div className="entry__field w-3/4 mx-auto mt-2">
                           <input className="input w-full" type="text" id="EMAIL" name="EMAIL" autoComplete="off" placeholder="EMAIL" data-required="true" required />
                         </div>
