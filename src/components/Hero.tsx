@@ -16,7 +16,7 @@ const Hero = () => {
               Die umfassende digitale <span className="text-apple">Check-in</span> Lösung für Ferienwohnungen
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg">
-              Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie von der Kurtaxe über die Gästemeldung bis zum Verkauf von Zusatzleistungen.<br /> 
+              Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie von der Kurtaxe über die Gästemeldung bis zum Verkauf von Zusatzleistungen.<br /><br /> 
               Weniger Aufwand, mehr Umsatz – und ein Check-in, der Gäste begeistert.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
