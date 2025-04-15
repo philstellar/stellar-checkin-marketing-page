@@ -61,7 +61,8 @@ const Brevo = () => {
           title: "Nachricht gesendet",
           description: "Vielen Dank für dein Interesse! Wir werden uns in Kürze bei dir melden.",
         });
-
+        // fire conversion
+  gtag_report_conversion();
         // Reset form
         setFormData({
           name: "",
