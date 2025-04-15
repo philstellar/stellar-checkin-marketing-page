@@ -60,7 +60,7 @@ export const OnlineCheckinSection: React.FC = () => {
     },
     {
       title: "Kaution & Gästeversicherung",
-      description: "Automatisiere Kautionseinzug und -rückzahlung, biete deinen Gäste eine komfortable Alternative – und profitiere von zusätzlichen Provisionseinnahmen.",
+      description: "Automatisiere Kautionseinzug und -rückzahlung, oder biete deinen Gäste eine komfortable Alternative – und profitiere von zusätzlichen Provisionseinnahmen.",
       targetSection: "versicherung"
     },
     {
