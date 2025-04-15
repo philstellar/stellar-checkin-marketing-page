@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Shield, ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
+import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
+import CTAButton from "./CTAButton";
 
 const IdentitaetspruefungSection = () => {
   return (
-    <section id="identitaetspruefung" className="section-padding bg-floral">
+    <section id="identitaetspruefung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -51,11 +51,9 @@ const IdentitaetspruefungSection = () => {
             </div>
             
             <div className="mt-10">
-              <a href="/kontakt" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                  Mehr erfahren <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
+              <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
+                Jetzt Registrieren
+              </CTAButton>
             </div>
           </div>
           
