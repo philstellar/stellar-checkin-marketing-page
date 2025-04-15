@@ -14,6 +14,7 @@ import PricingSection from "@/components/PricingSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import IntegrationenSection from "@/components/features/IntegrationenSection";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
           <ZusatzservicesSection />
           <VersicherungSection />
           <IdentitaetspruefungSection />
+          <IntegrationenSection />
           <EinstellungenSection />
           <PricingSection />
           <ContactSection />
