@@ -9,26 +9,26 @@ export const VersicherungSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Gästeversicherung und Kaution automatisieren
+              Kaution automatisieren und eine komfortable Alternative anbieten.
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-              Biete deinen Gästen eine moderne Alternative zur klassischen Kaution. Mit unserer integrierten Versicherungslösung profitieren beide Seiten.
+              Automatisiere Kautionseinzug und -rückzahlung, oder biete deinen Gäste eine komfortable Alternative – und profitiere von zusätzlichen Provisionseinnahmen.
             </p>
             
             <div className="space-y-8">
               {[
                 {
                   title: "Schnellerer Check-in Prozess",
-                  description: "Keine Kautionsabwicklung mehr notwendig, Gäste können sofort ihre Unterkunft beziehen."
+                  description: "Keine Kautionsabwicklung mehr notwendig, weniger Aufwand für Sie und Ihre Gäste."
                 },
                 {
                   title: "Zusätzliche Einnahmequelle",
-                  description: "Erhalte Provisionen für jede abgeschlossene Versicherung - ein attraktiver Nebenverdienst."
+                  description: "Mit jeder Versicherung mitverdienen – ganz automatisch und ohne Mehraufwand."
                 },
                 {
                   title: "Umfassender Schutz",
-                  description: "Bessere Absicherung als klassische Kautionen, da die Versicherung auch größere Schäden abdeckt."
+                  description: "Bessere Absicherung als klassische Kautionen, dank höherer Deckungssummen, und Absicherung "Neu für Alt" und gegen Mietausfall."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
