@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Database, Plug, Link, ServerCog } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
@@ -47,7 +46,7 @@ export const IntegrationenSection: React.FC = () => {
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-              Ob Integration mit Smoobu, Beds24 oder anderen Systemen - wir verbinden die Plattformen nahtlos für einen optimierten Workflow.
+              Ob Integration mit Smoobu, Guesty, Hostaway, Lodgify, Beds24 oder anderen führenden Systemen - wir verbinden Ihr PMS für einen optimierten Workflow.
             </p>
             
             <div className="space-y-8">
