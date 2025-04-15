@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Palette, Globe, Settings } from 'lucide-react';
@@ -26,7 +27,7 @@ export const EinstellungenSection: React.FC = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 text-royal">
-            Anpassungsmöglichkeiten
+            Individualisierung
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
             Gestalte das Check-in-Erlebnis individuell – mit deinem eigenen Branding und einer mehrsprachigen Oberfläche
