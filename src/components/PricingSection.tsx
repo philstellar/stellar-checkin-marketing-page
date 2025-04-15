@@ -17,11 +17,11 @@ const PricingSection = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Basic Plan */}
           <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow bg-white">
-            <h3 className="text-2xl font-bold text-center text-royal mb-6">Starter</h3>
+            <h3 className="text-2xl font-bold text-center text-royal mb-6">Basic</h3>
             
             <div className="text-center mb-6">
               <div className="flex items-end justify-center">
-                <span className="text-4xl font-bold text-royal mr-2">0</span>
+                <span className="text-4xl font-bold text-royal mr-2">ab 2</span>
                 <div className="flex flex-col items-start">
                   <span className="text-xl text-royal">€/Monat</span>
                   <span className="text-sm text-royal-700">pro Objekt</span>
@@ -97,9 +97,7 @@ const PricingSection = () => {
             
             <div className="flex justify-center mb-8">
               <Link to="/kontakt">
-                <Button variant="outline" className="border-2 border-royal text-royal hover:bg-royal-50">
-                  Kontakt Vertrieb
-                </Button>
+                <Button variant="outline" className="border-2 border-royal text-royal hover:bg-royal-50">Vertrieb kontaktieren</Button>
               </Link>
             </div>
             
