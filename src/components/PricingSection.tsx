@@ -1,7 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Circle, ExternalLink, Info, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import CTAButton from "@/components/CTAButton";
+
 const PricingSection = () => {
   // Sample tooltip descriptions - these can be customized as needed
   const tooltipDescriptions = {
@@ -11,6 +14,14 @@ const PricingSection = () => {
     versicherung: "Die Versicherung ist für den Gast optional oder als Ersatz für die Kaution wählbar.",
     digitaleGaestemeldung: "Gästemeldungen werden automatisch und gesetzeskonform an die Behörden übermittelt."
   };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('kontakt');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return <section id="preise" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
@@ -40,9 +51,9 @@ const PricingSection = () => {
             </div>
             
             <div className="flex justify-center mb-8">
-              <Link to="/kontakt">
-                <Button variant="outline" className="border-2 border-royal text-royal hover:bg-royal-50">Jetzt registrieren</Button>
-              </Link>
+              <CTAButton variant="outline" className="border-2 border-royal text-royal hover:bg-royal-50">
+                Jetzt registrieren
+              </CTAButton>
             </div>
             
             <div className="space-y-4">
@@ -104,9 +115,9 @@ const PricingSection = () => {
             </div>
             
             <div className="flex justify-center mb-8">
-              <Link to="/kontakt">
-                <Button className="bg-royal hover:bg-royal-600 text-white">Jetzt registrieren</Button>
-              </Link>
+              <CTAButton className="bg-royal hover:bg-royal-600 text-white">
+                Jetzt registrieren
+              </CTAButton>
             </div>
             
             <div className="mb-6">
@@ -151,9 +162,13 @@ const PricingSection = () => {
             </div>
             
             <div className="flex justify-center mb-8">
-              <Link to="/kontakt">
-                <Button variant="outline" className="border-2 border-royal text-royal hover:bg-royal-50">Vertrieb kontaktieren</Button>
-              </Link>
+              <Button 
+                variant="outline" 
+                className="border-2 border-royal text-royal hover:bg-royal-50"
+                onClick={scrollToContact}
+              >
+                Vertrieb kontaktieren
+              </Button>
             </div>
             
             <div className="space-y-4">
