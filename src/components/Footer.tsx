@@ -14,7 +14,7 @@ const Footer = () => {
               className="h-10 mb-4"
             />
             <p className="text-black mb-6 max-w-md">
-              Digitale Gästeanmeldung für Ferienwohnungen – schnell, sicher, papierlosm.
+              Digitale Gästeanmeldung für Ferienwohnungen – schnell, sicher, papierlos.
             </p>
           </div>
           
