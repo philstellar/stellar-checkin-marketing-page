@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -75,7 +74,7 @@ export const OnlineCheckinSection: React.FC = () => {
       targetSection: "einstellungen"
     },
     {
-      title: "Integration mit Ihrem PMS",
+      title: "Integration mit den führenden PMS",
       description: "Nahtlose Anbindung an dein PMS oder Channel Manager – automatische Check-in-Einladungen, und alle erhobenen Daten zentral verfügbar.",
       targetSection: "integrationen"
     }
@@ -86,7 +85,7 @@ export const OnlineCheckinSection: React.FC = () => {
       <div className="container-custom">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4 text-royal mx-auto">
-            Unser Check-in: Mehr Umsatz, Weniger Aufwand
+            Stellar Check-in: <br /> Mehr Umsatz, Weniger Aufwand
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">

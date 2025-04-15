@@ -1,6 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, Calculator, Upload } from "lucide-react";
+import CTAButton from "@/components/CTAButton";
 
 const KurtaxeSection = () => {
   return (
@@ -50,11 +50,9 @@ const KurtaxeSection = () => {
             </div>
             
             <div className="mt-10">
-              <a href="/kontakt" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                  Mehr erfahren <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
+              <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
+                Jetzt Registrieren
+              </CTAButton>
             </div>
           </div>
           
