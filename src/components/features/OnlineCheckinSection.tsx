@@ -75,7 +75,7 @@ export const OnlineCheckinSection: React.FC = () => {
     },
     {
       title: "Integration mit Ihrem PMS",
-      description: "Nahtlose Anbindung an dein PMS oder Channel Manager – automatische Check-in-Einladungen, und alle Daten zentral verfügbar.",
+      description: "Nahtlose Anbindung an dein PMS oder Channel Manager – automatische Check-in-Einladungen, und alle erhobenen Daten zentral verfügbar.",
       targetSection: "integrationen"
     }
   ];
@@ -85,11 +85,11 @@ export const OnlineCheckinSection: React.FC = () => {
       <div className="container-custom">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4 text-royal mx-auto">
-            Mehr Umsatz, Weniger Aufwand - Unser Check-in
+            Unser Check-in: Mehr Umsatz, Weniger Aufwand
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            Gestalte die Pre-Arrival-Erfahrung deiner Gäste noch angenehmer – mit einem reibungslosen und individuellen Erlebnis vor der Ankunft
+            Verbessere das Gästeerlebnis vor der Anreise – und nutze zusätzliches Umsatzpotenzial
           </p>
         </div>
         
