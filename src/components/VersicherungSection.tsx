@@ -4,7 +4,7 @@ import { ExternalLink, Shield, ShieldCheck, CreditCard } from "lucide-react";
 
 export const VersicherungSection = () => {
   return (
-    <section id="versicherung" className="section-padding bg-white">
+    <section id="versicherung" className="section-padding bg-floral">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
