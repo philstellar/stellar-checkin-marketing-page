@@ -104,8 +104,7 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
         Vielen Dank für deine Anmeldung!
       </h2>
       <p className="text-gray-600 mb-6">
-        Ein Mitglied unseres Vertriebsteams wird sich in Kürze mit dir in Verbindung setzen.
-        Wir freuen uns darauf, dir bei deinem Check-in Prozess zu helfen.
+        Wir melden uns so schnell wie möglich persönlich bei dir
       </p>
       <button 
         onClick={onClose}
@@ -156,7 +155,7 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
                   />
                 </div>
                 <div className="sib-form-block text-center mb-6" style={{ fontSize: "32px", fontWeight: 700, fontFamily: "Helvetica, sans-serif", color: "#3C4858", backgroundColor: "transparent" }}>
-                  <p>Fülle das Formular aus und erstelle dein kostenloses Konto</p>
+                  <p>Kostenlos registrieren</p>
                 </div>
                 
                 <div id="error-message" className="sib-form-message-panel" style={{ fontSize: "16px", textAlign: "center", fontFamily: "Helvetica, sans-serif", color: "#661d1d", backgroundColor: "#ffeded", borderRadius: "3px", borderColor: "#ff4949", maxWidth: "540px", margin: "0 auto", display: "none" }}>
