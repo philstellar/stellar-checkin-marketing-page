@@ -143,7 +143,7 @@ const PricingSection = () => {
 
           {/* Enterprise Plan */}
           <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow bg-white">
-            <h3 className="text-2xl font-bold text-center text-royal mb-6">Über 100 Einheiten</h3>
+            <h3 className="text-2xl font-bold text-center text-royal mb-6">Über 50 Einheiten</h3>
             
             <div className="text-center mb-6 flex flex-col justify-center items-center h-12">
               <p className="text-xl font-medium text-royal">Bitte fragen Sie unser</p>
