@@ -3,7 +3,7 @@ import React from 'react';
 import { 
   Cable, 
   ShieldCheck, 
-  BarChart3, 
+  Fingerprint, 
   Gift, 
   Sliders,
   FileText
@@ -28,7 +28,7 @@ const FunktionenDropdown = ({
     { title: "Kurtaxe & digitale Gästemeldung", targetSection: "kurtaxe", icon: <FileText className="w-4 h-4" /> },
     { title: "Zusatzleistungen", targetSection: "zusatzservices", icon: <Gift className="w-4 h-4" /> },
     { title: "Kautionsmanagement & Versicherung", targetSection: "versicherung", icon: <ShieldCheck className="w-4 h-4" /> },
-    { title: "Berichte & Analysen", targetSection: "berichte", icon: <BarChart3 className="w-4 h-4" /> },
+    { title: "Identitätsprüfung", targetSection: "identitaetspruefung", icon: <Fingerprint className="w-4 h-4" /> },
     { title: "Anpassungsmöglichkeiten", targetSection: "einstellungen", icon: <Sliders className="w-4 h-4" /> },
     { title: "Integration mit Ihrem PMS", targetSection: "integrationen", icon: <Cable className="w-4 h-4" /> }
   ];

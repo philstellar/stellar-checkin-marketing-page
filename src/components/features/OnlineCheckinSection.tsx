@@ -30,15 +30,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-4 flex-grow flex flex-col">
-        <p className="text-royal-700 text-left mb-4 flex-grow">{description}</p>
-        <Button 
-          variant="ghost" 
-          onClick={handleClick}
-          className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2 mt-auto"
-        >
-          Mehr erfahren <ArrowDown className="h-4 w-4" />
-        </Button>
+      <CardContent className="pt-4 flex-grow flex flex-col justify-between">
+        <p className="text-royal-700 text-left mb-6">{description}</p>
+        <div className="mt-auto">
+          <Button 
+            variant="ghost" 
+            onClick={handleClick}
+            className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2"
+          >
+            Mehr erfahren <ArrowDown className="h-4 w-4" />
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );
@@ -49,7 +51,7 @@ export const OnlineCheckinSection: React.FC = () => {
     {
       title: "Kurtaxe & digitale Gästemeldung",
       description: "Automatisiere die Erfassung und Verwaltung von Kurtaxen und Gästemeldungen zur Einhaltung lokaler Vorschriften.",
-      targetSection: "integrationen"
+      targetSection: "kurtaxe"
     },
     {
       title: "Zusatzleistungen",
@@ -62,9 +64,9 @@ export const OnlineCheckinSection: React.FC = () => {
       targetSection: "versicherung"
     },
     {
-      title: "Berichte & Analysen",
-      description: "Profitiere von detaillierten Einblicken in deine Auslastung und Gästedaten für fundierte Geschäftsentscheidungen.",
-      targetSection: "berichte"
+      title: "Identitätsprüfung",
+      description: "Erhöhe die Sicherheit durch einfache biometrische Identitätsprüfung in Partnerschaft mit Stripe.",
+      targetSection: "identitaetspruefung"
     },
     {
       title: "Anpassungsmöglichkeiten",
