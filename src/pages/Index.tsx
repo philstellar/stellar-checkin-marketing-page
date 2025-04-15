@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import { 
   OnlineCheckinSection,
-  IntegrationenSection,
   EinstellungenSection
 } from "@/components/features";
 import KurtaxeSection from "@/components/KurtaxeSection";
@@ -21,13 +20,12 @@ const Index = () => {
       <main>
         <Hero />
         <OnlineCheckinSection />
+        <LogoCarousel />
         <KurtaxeSection />
         <ZusatzservicesSection />
         <VersicherungSection />
         <BerichteSection />
         <EinstellungenSection />
-        <IntegrationenSection />
-        <LogoCarousel />
         <ContactSection />
       </main>
       <Footer />

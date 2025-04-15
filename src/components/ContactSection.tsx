@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
@@ -52,8 +51,6 @@ const ContactSection = () => {
           title: "Nachricht gesendet!",
           description: "Vielen Dank für deine Anfrage. Wir werden uns in Kürze bei dir melden.",
         });
-          // fire conversion
-  gtag_report_conversion();
         // Reset form
         setFormData({
           name: '',
