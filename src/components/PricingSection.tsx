@@ -1,17 +1,8 @@
-
 import { Button } from "@/components/ui/button";
-import { 
-  CheckCircle, 
-  Circle, 
-  ExternalLink, 
-  Info, 
-  HelpCircle 
-} from "lucide-react";
+import { CheckCircle, Circle, ExternalLink, Info, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const PricingSection = () => {
-  return (
-    <section id="preise" className="section-padding bg-white">
+  return <section id="preise" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-royal mb-4">
@@ -26,49 +17,33 @@ const PricingSection = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Basic Plan */}
           <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow bg-white">
-            <h3 className="text-2xl font-bold text-center text-royal mb-6">Grundpreis</h3>
+            <h3 className="text-2xl font-bold text-center text-royal mb-6">Starter</h3>
             
             <div className="text-center mb-6">
               <div className="flex items-end justify-center">
-                <span className="text-4xl font-bold text-royal mr-2">4</span>
+                <span className="text-4xl font-bold text-royal mr-2">0</span>
                 <div className="flex flex-col items-start">
                   <span className="text-xl text-royal">€/Monat</span>
-                  <span className="text-sm text-royal-700">pro Eigenschaft</span>
+                  <span className="text-sm text-royal-700">pro Objekt</span>
                 </div>
               </div>
-              <p className="text-royal-700 mt-2 text-sm">4€/Monat für 1 Eigenschaft</p>
+              
             </div>
             
             <div className="flex justify-center mb-8">
               <Link to="/kontakt">
-                <Button variant="outline" className="border-2 border-royal text-royal hover:bg-royal-50">
-                  Erste Schritte
-                </Button>
+                <Button variant="outline" className="border-2 border-royal text-royal hover:bg-royal-50">Jetzt registrieren</Button>
               </Link>
             </div>
             
             <div className="space-y-4">
-              {[
-                "Online check-in",
-                "Dokumentenscanner",
-                "Polizeiliche Registrierung",
-                "PMS-Integrationen",
-                "Kautionen *",
-                "Zahlungen *",
-                "Personalisierte Erfahrungen",
-                "Mietvereinbarungen",
-                "Benutzerdefinierte E-Mails"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center">
+              {["Online check-in", "Dokumentenscanner", "Polizeiliche Registrierung", "PMS-Integrationen", "Kautionen *", "Zahlungen *", "Personalisierte Erfahrungen", "Mietvereinbarungen", "Benutzerdefinierte E-Mails"].map((feature, index) => <div key={index} className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">
                     {feature}
-                    {feature.includes("*") && (
-                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block ml-1" />
-                    )}
+                    {feature.includes("*") && <HelpCircle className="w-4 h-4 text-royal-700 inline-block ml-1" />}
                   </span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
@@ -84,13 +59,13 @@ const PricingSection = () => {
             
             <div className="text-center mb-6">
               <div className="flex items-end justify-center">
-                <span className="text-4xl font-bold text-royal mr-2">4</span>
+                <span className="text-4xl font-bold text-royal mr-2">8</span>
                 <div className="flex flex-col items-start">
                   <span className="text-xl text-royal">€/Monat</span>
-                  <span className="text-sm text-royal-700">pro Eigenschaft</span>
+                  <span className="text-sm text-royal-700">pro Objekt</span>
                 </div>
               </div>
-              <p className="text-royal-700 mt-2 text-sm">4€/Monat für 1 Eigenschaft</p>
+              
             </div>
             
             <div className="flex justify-center mb-8">
@@ -106,17 +81,10 @@ const PricingSection = () => {
             </div>
             
             <div className="space-y-4">
-              {[
-                "Identitätsverifizierungn",
-                "Fernzugang",
-                "Touristensteuer",
-                "Branded Guest App"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center">
+              {["Identitätsverifizierungn", "Fernzugang", "Touristensteuer", "Branded Guest App"].map((feature, index) => <div key={index} className="flex items-center">
                   <Circle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
@@ -138,15 +106,10 @@ const PricingSection = () => {
             </div>
             
             <div className="space-y-4">
-              {[
-                "API-Anbindung",
-                "Mehr als 100 Objekte"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center">
+              {["API-Anbindung", "Mehr als 100 Objekte"].map((feature, index) => <div key={index} className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -158,8 +121,6 @@ const PricingSection = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PricingSection;
