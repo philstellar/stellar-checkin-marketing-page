@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserPlus } from 'lucide-react';
+import { UserCheck } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
 import CTAButton from "./CTAButton";
 
@@ -21,7 +21,7 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600">
-                <UserPlus className="mr-2 h-4 w-4" /> Jetzt Registrieren
+                <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
               </CTAButton>
             </div>
             <div className="mt-8 flex items-center">
