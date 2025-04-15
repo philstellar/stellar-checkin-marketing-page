@@ -1,199 +1,82 @@
-
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, MapPin } from 'lucide-react';
 
-const ContactSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Email content preparation
-      const emailContent = `
-        Name: ${formData.name}
-        Email: ${formData.email}
-        Unternehmen: ${formData.company}
-        Nachricht: ${formData.message}
-      `;
-
-      // Using formsubmit.co service with the activation string
-      const response = await fetch("https://formsubmit.co/4f8ed8dc6e198407f7647476b637eb77", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: emailContent,
-          _subject: "Neue Kontaktanfrage von Stellar Checkin",
-        }),
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Nachricht gesendet!",
-          description: "Vielen Dank für deine Anfrage. Wir werden uns in Kürze bei dir melden.",
-        });
-          // fire conversion
-  gtag_report_conversion();
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          message: ''
-        });
-      } else {
-        throw new Error("Error sending message");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast({
-        title: "Fehler beim Senden",
-        description: "Es gab ein Problem beim Senden deiner Nachricht. Bitte versuche es später erneut.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
+const ContactSection: React.FC = () => {
   return (
-    <section id="kontakt" className="section-padding bg-white">
+    <section id="kontakt" className="py-24 bg-floral">
       <div className="container-custom">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-royal mb-4">
-              Kontaktiere uns
+            <h2 className="text-3xl font-bold text-royal mb-6">
+              Kontaktieren Sie uns
+              <div className="mt-2 h-1 w-24 bg-apple rounded-full"></div>
             </h2>
-            <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
-            <p className="text-lg text-royal-700 mb-10 max-w-lg">
-              Hast du Fragen zu Stellar Checkin? Unser Team steht dir gerne zur Verfügung.
+            <p className="text-lg text-royal-700 mb-8">
+              Haben Sie Fragen oder wünschen Sie eine persönliche Beratung? 
+              Füllen Sie einfach das Formular aus oder kontaktieren Sie uns direkt.
             </p>
             
-            <div className="space-y-8">
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
-                  <Mail className="h-6 w-6" />
-                </div>
+            <form onSubmit={(e) => { e.preventDefault(); }} action="#" className="space-y-4">
+              <div>
+                <Input type="text" placeholder="Name" className="border-gray-300 rounded-md shadow-sm focus:border-apple focus:ring-apple" />
+              </div>
+              <div>
+                <Input type="email" placeholder="E-Mail" className="border-gray-300 rounded-md shadow-sm focus:border-apple focus:ring-apple" />
+              </div>
+              <div>
+                <Textarea placeholder="Nachricht" rows={4} className="border-gray-300 rounded-md shadow-sm focus:border-apple focus:ring-apple" />
+              </div>
+              <Button type="submit" className="w-full bg-apple text-white hover:bg-apple-600">
+                Nachricht senden
+              </Button>
+            </form>
+          </div>
+          
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <h3 className="text-xl font-semibold text-royal mb-4">
+              Unsere Kontaktdaten
+            </h3>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Mail className="text-apple h-5 w-5" />
                 <div>
-                  <h3 className="text-lg font-semibold text-royal mb-1">E-Mail</h3>
-                  <a href="mailto:hello@stellar-trust.com" className="text-royal-700 hover:text-apple transition-colors">
-                    hello@stellar-trust.com
-                  </a>
+                  <p className="text-royal-700 font-medium">E-Mail:</p>
+                  <a href="mailto:info@example.com" className="text-apple-600 hover:underline">info@example.com</a>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
-                  <Phone className="h-6 w-6" />
-                </div>
+              <div className="flex items-center gap-3">
+                <Phone className="text-apple h-5 w-5" />
                 <div>
-                  <h3 className="text-lg font-semibold text-royal mb-1">Telefon</h3>
-                  <a href="tel:+4930417384870" className="text-royal-700 hover:text-apple transition-colors">
-                    +49 304 1738487
-                  </a>
+                  <p className="text-royal-700 font-medium">Telefon:</p>
+                  <a href="tel:+49123456789" className="text-apple-600 hover:underline">+49 123 456789</a>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
-                  <MapPin className="h-6 w-6" />
-                </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="text-apple h-5 w-5" />
                 <div>
-                  <h3 className="text-lg font-semibold text-royal mb-1">Adresse</h3>
-                  <p className="text-royal-700">
-                    Stellar Tourism Innovations GmbH<br />
-                    Immanuelkirchstraße 37<br />
-                    10405 Berlin<br />
-                    Deutschland
-                  </p>
+                  <p className="text-royal-700 font-medium">Adresse:</p>
+                  <p className="text-royal-700">Musterstraße 123, 12345 Musterstadt</p>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-royal-700 mb-1">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-apple focus:border-transparent"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-royal-700 mb-1">E-Mail</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-apple focus:border-transparent"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-royal-700 mb-1">Unternehmen</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-apple focus:border-transparent"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-royal-700 mb-1">Nachricht</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-apple focus:border-transparent resize-none"
-                />
-              </div>
-              
-              <div>
-                <Button 
-                  type="submit" 
-                  className="w-full bg-apple hover:bg-apple-600 text-white px-6 py-3 rounded-lg"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Wird gesendet..." : "Nachricht senden"} <Send className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </form>
+            
+            <div className="mt-6">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.973494279158!2d2.29204434848855!3d48.85837008089161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e9!2sEiffel%20Tower!5e0!3m2!1sen!2sus!4v1672489158247!5m2!1sen!2sus" 
+                width="100%" 
+                height="300" 
+                style={{border:0}} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps Location"
+                className="rounded-md"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

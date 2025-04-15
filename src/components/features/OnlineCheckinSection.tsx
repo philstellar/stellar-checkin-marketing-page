@@ -49,7 +49,7 @@ export const OnlineCheckinSection: React.FC = () => {
     {
       title: "Kurtaxe & digitale Gästemeldung",
       description: "Automatisiere die Erfassung und Verwaltung von Kurtaxen und Gästemeldungen zur Einhaltung lokaler Vorschriften.",
-      targetSection: "integrationen"
+      targetSection: "kurtaxe"
     },
     {
       title: "Zusatzleistungen",

@@ -3,12 +3,13 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import { 
   OnlineCheckinSection,
-  IntegrationenSection,
-  EinstellungenSection
+  KurtaxeSection,
+  ZusatzleistungenSection,
+  KautionSection,
+  BerichteSection,
+  AnpassungenSection,
+  IntegrationenSection
 } from "@/components/features";
-import VersicherungSection from "@/components/VersicherungSection";
-import ZusatzservicesSection from "@/components/ZusatzservicesSection";
-import BerichteSection from "@/components/BerichteSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -20,12 +21,13 @@ const Index = () => {
       <main>
         <Hero />
         <OnlineCheckinSection />
+        <KurtaxeSection />
+        <ZusatzleistungenSection />
+        <KautionSection />
+        <BerichteSection />
+        <AnpassungenSection />
         <IntegrationenSection />
         <LogoCarousel />
-        <VersicherungSection />
-        <BerichteSection />
-        <ZusatzservicesSection />
-        <EinstellungenSection />
         <ContactSection />
       </main>
       <Footer />
