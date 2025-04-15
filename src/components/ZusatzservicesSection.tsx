@@ -8,11 +8,11 @@ const ZusatzservicesSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-first lg:order-last">
-            <div className="rounded-xl overflow-hidden shadow-lg">
+            <div className="rounded-xl">
               <img 
                 src="/lovable-uploads/a581a6b1-fefa-4f87-9015-66cde382b503.png"
                 alt="Zusatzservices und Upselling" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-transparent"
               />
             </div>
           </div>
