@@ -13,22 +13,25 @@ import LogoCarousel from "@/components/LogoCarousel";
 import PricingSection from "@/components/PricingSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main>
-        <Hero />
-        <OnlineCheckinSection />
-        <LogoCarousel />
-        <KurtaxeSection />
-        <ZusatzservicesSection />
-        <VersicherungSection />
-        <IdentitaetspruefungSection />
-        <EinstellungenSection />
-        <PricingSection />
-        <ContactSection />
+        <TooltipProvider>
+          <Hero />
+          <OnlineCheckinSection />
+          <LogoCarousel />
+          <KurtaxeSection />
+          <ZusatzservicesSection />
+          <VersicherungSection />
+          <IdentitaetspruefungSection />
+          <EinstellungenSection />
+          <PricingSection />
+          <ContactSection />
+        </TooltipProvider>
       </main>
       <Footer />
     </div>

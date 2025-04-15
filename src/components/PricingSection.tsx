@@ -1,7 +1,19 @@
+
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Circle, ExternalLink, Info, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+
 const PricingSection = () => {
+  // Sample tooltip descriptions - these can be customized as needed
+  const tooltipDescriptions = {
+    zusatzleistungen: "Bieten Sie Ihren Gästen zusätzliche Services wie Parkplätze, Frühstück oder Haustierzuschläge direkt während des Check-ins an.",
+    identitaetsverifizierung: "Nutzen Sie unsere sichere Online-Identitätsprüfung zur Einhaltung gesetzlicher Bestimmungen und zur Betrugsprävention.",
+    kautionsmanagement: "Verwalten Sie Kautionen effizient und sicher. Bei Abreise wird die Kaution automatisch zurückerstattet, falls keine Schäden gemeldet werden.",
+    versicherung: "Bieten Sie Ihren Gästen optionale Versicherungen für Schäden oder andere Vorfälle während ihres Aufenthalts an.",
+    digitaleGaestemeldung: "Automatisierte digitale Gästemeldungen für Behörden, die rechtlichen Anforderungen entsprechen."
+  };
+
   return <section id="preise" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
@@ -37,13 +49,41 @@ const PricingSection = () => {
             </div>
             
             <div className="space-y-4">
-              {["Online check-in", "Individualisierbare Gästeanmeldung", "PMS-Integrationen", "Zusatzleistungen *", "Identitätsverifizierung *", "Kautionsmanagement *", "Optionale Gästeversicherung *", "Zustimmung zum Beherbergungsvertrag"].map((feature, index) => <div key={index} className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                  <span className="text-royal-700">
-                    {feature}
-                    {feature.includes("*") && <HelpCircle className="w-4 h-4 text-royal-700 inline-block ml-1" />}
-                  </span>
-                </div>)}
+              {[
+                "Online check-in", 
+                "Individualisierbare Gästeanmeldung", 
+                "PMS-Integrationen", 
+                {text: "Zusatzleistungen *", tooltip: tooltipDescriptions.zusatzleistungen},
+                {text: "Identitätsverifizierung *", tooltip: tooltipDescriptions.identitaetsverifizierung},
+                {text: "Kautionsmanagement *", tooltip: tooltipDescriptions.kautionsmanagement},
+                {text: "Optionale Gästeversicherung *", tooltip: tooltipDescriptions.versicherung},
+                "Zustimmung zum Beherbergungsvertrag"
+              ].map((feature, index) => {
+                const isTooltipFeature = typeof feature === 'object';
+                const featureText = isTooltipFeature ? feature.text : feature;
+                const hasTooltip = featureText.includes("*");
+                
+                return (
+                  <div key={index} className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
+                    <span className="text-royal-700">
+                      {featureText.replace(" *", "")}
+                      {hasTooltip && isTooltipFeature && (
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                              <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                            </button>
+                          </TooltipTrigger>
+                          <TooltipContent className="max-w-xs text-sm">
+                            {feature.tooltip}
+                          </TooltipContent>
+                        </Tooltip>
+                      )}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -79,10 +119,37 @@ const PricingSection = () => {
             </div>
             
             <div className="space-y-4">
-              {["Digitale Gästemeldung *", "Kurtaxe (Berechnung & Abrechnung)", "Zusatzleistungen ohne Gebühren", "Individualisierter Check-in"].map((feature, index) => <div key={index} className="flex items-center">
-                  <Circle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                  <span className="text-royal-700">{feature}</span>
-                </div>)}
+              {[
+                {text: "Digitale Gästemeldung *", tooltip: tooltipDescriptions.digitaleGaestemeldung},
+                "Kurtaxe (Berechnung & Abrechnung)", 
+                "Zusatzleistungen ohne Gebühren", 
+                "Individualisierter Check-in"
+              ].map((feature, index) => {
+                const isTooltipFeature = typeof feature === 'object';
+                const featureText = isTooltipFeature ? feature.text : feature;
+                const hasTooltip = featureText.includes("*");
+                
+                return (
+                  <div key={index} className="flex items-center">
+                    <Circle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
+                    <span className="text-royal-700">
+                      {featureText.replace(" *", "")}
+                      {hasTooltip && isTooltipFeature && (
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                              <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                            </button>
+                          </TooltipTrigger>
+                          <TooltipContent className="max-w-xs text-sm">
+                            {feature.tooltip}
+                          </TooltipContent>
+                        </Tooltip>
+                      )}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
