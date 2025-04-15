@@ -20,15 +20,15 @@ const KurtaxeSection = () => {
               {[
                 {
                   title: "Digitale Gästemeldung",
-                  description: "Erfassen Sie Meldescheine digital und lassen Sie diese direkt von Ihren Gästen ausfüllen."
+                  description: "Erfasse Meldescheine digital – deine Gäste füllen alle Angaben einfach selbst aus."
                 },
                 {
                   title: "Automatische Berechnung",
-                  description: "Kurtaxen werden automatisch berechnet und in Ihre Systeme übertragen."
+                  description: "Die Kurtaxe wird automatisch basierend auf den Angaben der Gäste berechnet und kann bequem direkt im Check-in bezahlt werden."
                 },
                 {
                   title: "Behördenanbindung",
-                  description: "Direkte Übermittlung der Daten an die zuständigen Behörden gemäß lokaler Vorschriften."
+                  description: "Direkte Übermittlung der Daten an die zuständigen Behörden über unsere Partner AVS und Ostseecard."
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
