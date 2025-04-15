@@ -24,7 +24,7 @@ const ZusatzservicesSection = () => {
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
               Steigere deinen Umsatz, indem du deinen Gästen während des Check-in-Prozesses zusätzliche 
-              Services anbietest. Von Early Check-in bis zu Premium-Angeboten.
+              Services anbietest.
             </p>
             
             <div className="space-y-8">
