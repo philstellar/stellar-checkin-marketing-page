@@ -8,7 +8,17 @@ export const VersicherungSection = () => {
     <section id="versicherung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="order-last md:order-first">
+            <div className="rounded-xl flex justify-center">
+              <img 
+                src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
+                alt="Versicherung und Kautionsabwicklung" 
+                className="w-4/5 h-auto object-contain bg-transparent"
+              />
+            </div>
+          </div>
+          
+          <div className="order-first md:order-last">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Kaution & Absicherung smart automatisieren
             </h2>
@@ -54,16 +64,6 @@ export const VersicherungSection = () => {
               <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
                 <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
               </CTAButton>
-            </div>
-          </div>
-          
-          <div>
-            <div className="rounded-xl flex justify-center">
-              <img 
-                src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
-                alt="Versicherung und Kautionsabwicklung" 
-                className="w-4/5 h-auto object-contain bg-transparent"
-              />
             </div>
           </div>
         </div>

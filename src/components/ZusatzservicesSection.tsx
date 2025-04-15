@@ -7,16 +7,6 @@ const ZusatzservicesSection = () => {
     <section id="zusatzservices" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-last md:order-first">
-            <div className="rounded-xl flex justify-center">
-              <img 
-                src="/lovable-uploads/a581a6b1-fefa-4f87-9015-66cde382b503.png"
-                alt="Zusatzservices und Upselling" 
-                className="w-4/5 h-auto object-contain bg-transparent"
-              />
-            </div>
-          </div>
-          
           <div className="order-first md:order-last">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Zusatzleistungen verkaufen
@@ -64,6 +54,16 @@ const ZusatzservicesSection = () => {
               <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
                 <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
               </CTAButton>
+            </div>
+          </div>
+          
+          <div className="order-last md:order-first">
+            <div className="rounded-xl flex justify-center">
+              <img 
+                src="/lovable-uploads/a581a6b1-fefa-4f87-9015-66cde382b503.png"
+                alt="Zusatzservices und Upselling" 
+                className="w-4/5 h-auto object-contain bg-transparent"
+              />
             </div>
           </div>
         </div>
