@@ -1,4 +1,3 @@
-ler
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Palette, Globe, Settings } from 'lucide-react';
