@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
@@ -35,12 +34,9 @@ const Header = () => {
   };
 
   const handleHomeClick = () => {
-    // If not on home page, navigate to home
     if (location.pathname !== '/') {
       navigate('/');
     }
-    
-    // Always scroll to top
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -51,12 +47,10 @@ const Header = () => {
     setIsMenuOpen(false);
     
     if (location.pathname !== '/') {
-      // If not on home page, navigate to home first
       navigate(`/#${sectionId}`);
       return;
     }
 
-    // On home page, scroll to section
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -77,7 +71,7 @@ const Header = () => {
               className="flex items-center"
             >
               <img 
-                src="/lovable-uploads/f750405f-7b3f-4c7a-93d6-1181e247ee5f.png" 
+                src="/lovable-uploads/stellar-checkin-logo.png" 
                 alt="Stellar Checkin Logo" 
                 className="h-10"
               />
