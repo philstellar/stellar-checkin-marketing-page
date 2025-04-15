@@ -1,6 +1,5 @@
-
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
-import { X } from "lucide-react";
+import { X, Mail } from "lucide-react";
 import { useEffect } from "react";
 
 interface BrevoFormPopupProps {
@@ -10,17 +9,14 @@ interface BrevoFormPopupProps {
 
 const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
   useEffect(() => {
-    // Add Brevo scripts when the component mounts
     const script = document.createElement("script");
     script.defer = true;
     script.src = "https://sibforms.com/forms/end-form/build/main.js";
     
-    // Only add the script once
     if (!document.querySelector('script[src="https://sibforms.com/forms/end-form/build/main.js"]')) {
       document.body.appendChild(script);
     }
 
-    // Setup required variables for Brevo
     window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
     window.LOCALE = 'en';
     window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Leider sind die bereitgestellten Infos ungültig";
@@ -37,7 +33,6 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     window.AUTOHIDE = Boolean(0);
 
     return () => {
-      // Cleanup if needed
     };
   }, []);
 
@@ -46,6 +41,19 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
       <DialogContent className="p-0 max-w-[580px] border-none bg-transparent">
         <div className="sib-form" style={{ textAlign: "center" }}>
           <div id="sib-form-container" className="sib-form-container">
+            <div style={{ padding: "8px 0" }}>
+              <div className="flex justify-center mb-4">
+                <Mail 
+                  className="text-apple-500" 
+                  size={48} 
+                  strokeWidth={1.5}
+                />
+              </div>
+              <div className="sib-form-block text-center" style={{ fontSize: "32px", fontWeight: 700, fontFamily: "Helvetica, sans-serif", color: "#3C4858", backgroundColor: "transparent" }}>
+                <p>Fülle das Formular aus und erstelle dein kostenloses Konto</p>
+              </div>
+            </div>
+            <div></div>
             <div id="error-message" className="sib-form-message-panel" style={{ fontSize: "16px", textAlign: "center", fontFamily: "Helvetica, sans-serif", color: "#661d1d", backgroundColor: "#ffeded", borderRadius: "3px", borderColor: "#ff4949", maxWidth: "540px", margin: "0 auto" }}>
               <div className="sib-form-message-panel__text sib-form-message-panel__text--center">
                 <svg viewBox="0 0 512 512" className="sib-icon sib-notification__icon">
