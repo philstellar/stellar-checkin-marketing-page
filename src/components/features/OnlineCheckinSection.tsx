@@ -47,12 +47,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 export const OnlineCheckinSection: React.FC = () => {
   const features = [
     {
-      title: "Integrationen",
-      description: "Ob Integration in das PMS, Kurtaxensysten (z.B. AVS), wir vernetzen die Systeme",
+      title: "Kurtaxe & digitale Gästemeldung",
+      description: "Automatisiere die Erfassung und Verwaltung von Kurtaxen und Gästemeldungen zur Einhaltung lokaler Vorschriften.",
       targetSection: "integrationen"
     },
     {
-      title: "Gästeversicherung",
+      title: "Zusatzleistungen",
+      description: "Steigere deinen Umsatz mit zusätzlichen Angeboten im Check-in-Prozess wie Early Check-in oder Premium-Upgrades.",
+      targetSection: "zusatzservices"
+    },
+    {
+      title: "Kautionsmanagement & Versicherung",
       description: "Biete eine moderne Alternative zur klassischen Kaution und generiere zusätzliche Einnahmen durch Provisionen.",
       targetSection: "versicherung"
     },
@@ -62,14 +67,14 @@ export const OnlineCheckinSection: React.FC = () => {
       targetSection: "berichte"
     },
     {
-      title: "Zusatzservices",
-      description: "Steigere deinen Umsatz mit zusätzlichen Angeboten im Check-in-Prozess wie Early Check-in oder Premium-Upgrades.",
-      targetSection: "zusatzservices"
-    },
-    {
       title: "Anpassungsmöglichkeiten",
       description: "Gestalte das Check-in-Erlebnis individuell mit anpassbarem Branding und mehrsprachiger Oberfläche.",
       targetSection: "einstellungen"
+    },
+    {
+      title: "Integration mit Ihrem PMS",
+      description: "Nahtlose Verbindung zu deiner bestehenden Property-Management-Software für einen reibungslosen Datenaustausch.",
+      targetSection: "integrationen"
     }
   ];
 
@@ -78,12 +83,11 @@ export const OnlineCheckinSection: React.FC = () => {
       <div className="container-custom">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4 text-royal mx-auto">
-            Alles was ein Online Checkin benötigt
+            Mehr Umsatz, Weniger Aufwand - Unser Check-in
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            Optimiere deinen Gäste-Empfang mit einer smarten, digitalen Lösung. 
-            Erkunde alle Features, die unsere Plattform zu bieten hat.
+            Optimiere die Pre-Arrival Erfahrung für deine Kunden
           </p>
         </div>
         
