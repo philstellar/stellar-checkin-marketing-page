@@ -1,7 +1,6 @@
 import React from 'react';
+import { UserPlus } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 
 type FeatureCardProps = {
@@ -106,7 +105,7 @@ export const OnlineCheckinSection: React.FC = () => {
         
         <div className="mt-12 text-center">
           <CTAButton className="bg-apple hover:bg-apple-600">
-            Jetzt Registrieren
+            <UserPlus className="mr-2 h-4 w-4" /> Jetzt Registrieren
           </CTAButton>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, Calculator, Upload } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
+import { UserPlus } from "lucide-react";
 
 const KurtaxeSection = () => {
   return (
@@ -51,7 +52,7 @@ const KurtaxeSection = () => {
             
             <div className="mt-10">
               <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                Jetzt Registrieren
+                <UserPlus className="mr-2 h-4 w-4" /> Jetzt Registrieren
               </CTAButton>
             </div>
           </div>

@@ -1,10 +1,10 @@
-
+import { UserPlus } from "lucide-react";
 import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
 
 export const VersicherungSection = () => {
   return (
-    <section id="versicherung" className="section-padding bg-floral">
+    <section id="versicherung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -51,7 +51,7 @@ export const VersicherungSection = () => {
             
             <div className="mt-10">
               <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                Jetzt Registrieren
+                <UserPlus className="mr-2 h-4 w-4" /> Jetzt Registrieren
               </CTAButton>
             </div>
           </div>

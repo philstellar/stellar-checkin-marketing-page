@@ -1,5 +1,4 @@
-
-import { ExternalLink, Gift, CreditCard, TrendingUp } from "lucide-react";
+import { UserPlus } from "lucide-react";
 import CTAButton from "./CTAButton";
 
 const ZusatzservicesSection = () => {
@@ -62,7 +61,7 @@ const ZusatzservicesSection = () => {
             
             <div className="mt-10">
               <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                Jetzt Registrieren
+                <UserPlus className="mr-2 h-4 w-4" /> Jetzt Registrieren
               </CTAButton>
             </div>
           </div>
