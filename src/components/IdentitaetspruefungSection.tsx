@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { UserCheck } from "lucide-react";
 import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
@@ -60,8 +61,8 @@ const IdentitaetspruefungSection = () => {
           <div>
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000"
-                alt="Identitätsprüfung mit Stripe" 
+                src="/lovable-uploads/5ecda5e9-325e-415f-b7eb-2d7f806af7bf.png"
+                alt="Identitätsprüfung mit Stellar" 
                 className="w-full h-full object-cover"
               />
             </div>
