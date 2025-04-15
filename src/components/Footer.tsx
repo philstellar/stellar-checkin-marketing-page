@@ -14,7 +14,7 @@ const Footer = () => {
               className="h-10 mb-4"
             />
             <p className="text-black mb-6 max-w-md">
-              Digitale Check-in Lösung für Ferienwohnungen - Optimieren Sie Ihre Gästeanmeldung mit unserem digitalen Check-in System.
+              Digitale Gästeanmeldung für Ferienwohnungen – schnell, sicher, papierlosm.
             </p>
           </div>
           
