@@ -1,9 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Circle, ExternalLink, Info, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-
 const PricingSection = () => {
   // Sample tooltip descriptions - these can be customized as needed
   const tooltipDescriptions = {
@@ -13,7 +11,6 @@ const PricingSection = () => {
     versicherung: "Die Versicherung ist für den Gast optional oder als Ersatz für die Kaution wählbar.",
     digitaleGaestemeldung: "Gästemeldungen werden automatisch und gesetzeskonform an die Behörden übermittelt."
   };
-
   return <section id="preise" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
@@ -49,27 +46,27 @@ const PricingSection = () => {
             </div>
             
             <div className="space-y-4">
-              {[
-                "Online check-in", 
-                "Individualisierbare Gästeanmeldung", 
-                "PMS-Integrationen", 
-                {text: "Zusatzleistungen *", tooltip: tooltipDescriptions.zusatzleistungen},
-                {text: "Identitätsverifizierung *", tooltip: tooltipDescriptions.identitaetsverifizierung},
-                {text: "Kautionsmanagement *", tooltip: tooltipDescriptions.kautionsmanagement},
-                {text: "Gästeversicherung *", tooltip: tooltipDescriptions.versicherung},
-                "Zustimmung zum Beherbergungsvertrag"
-              ].map((feature, index) => {
-                const isTooltipFeature = typeof feature === 'object';
-                const featureText = isTooltipFeature ? feature.text : feature;
-                const hasTooltip = featureText.includes("*");
-                
-                return (
-                  <div key={index} className="flex items-center">
+              {["Online check-in", "Individualisierbare Gästeanmeldung", "PMS-Integrationen", {
+              text: "Zusatzleistungen *",
+              tooltip: tooltipDescriptions.zusatzleistungen
+            }, {
+              text: "Identitätsverifizierung *",
+              tooltip: tooltipDescriptions.identitaetsverifizierung
+            }, {
+              text: "Kautionsmanagement *",
+              tooltip: tooltipDescriptions.kautionsmanagement
+            }, {
+              text: "Gästeversicherung *",
+              tooltip: tooltipDescriptions.versicherung
+            }, "Zustimmung zum Beherbergungsvertrag"].map((feature, index) => {
+              const isTooltipFeature = typeof feature === 'object';
+              const featureText = isTooltipFeature ? feature.text : feature;
+              const hasTooltip = featureText.includes("*");
+              return <div key={index} className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                     <span className="text-royal-700">
                       {featureText.replace(" *", "")}
-                      {hasTooltip && isTooltipFeature && (
-                        <Tooltip>
+                      {hasTooltip && isTooltipFeature && <Tooltip>
                           <TooltipTrigger asChild>
                             <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                               <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
@@ -78,12 +75,10 @@ const PricingSection = () => {
                           <TooltipContent className="max-w-xs text-sm">
                             {feature.tooltip}
                           </TooltipContent>
-                        </Tooltip>
-                      )}
+                        </Tooltip>}
                     </span>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
           </div>
 
@@ -95,7 +90,7 @@ const PricingSection = () => {
               </div>
             </div>
             
-            <h3 className="text-2xl font-bold text-center text-royal mb-6">Benutzerdefiniert</h3>
+            <h3 className="text-2xl font-bold text-center text-royal mb-6">Erweitert</h3>
             
             <div className="text-center mb-6">
               <div className="flex items-end justify-center">
@@ -119,23 +114,18 @@ const PricingSection = () => {
             </div>
             
             <div className="space-y-4">
-              {[
-                {text: "Gästemeldung an die Behörden *", tooltip: tooltipDescriptions.digitaleGaestemeldung},
-                "Kurtaxe – automatisch berechnet und abgerechnet", 
-                "Zusatzleistungen ohne Gebühren",
-                "Individualisierter Check-in"
-              ].map((feature, index) => {
-                const isTooltipFeature = typeof feature === 'object';
-                const featureText = isTooltipFeature ? feature.text : feature;
-                const hasTooltip = featureText.includes("*");
-                
-                return (
-                  <div key={index} className="flex items-center">
+              {[{
+              text: "Gästemeldung an die Behörden *",
+              tooltip: tooltipDescriptions.digitaleGaestemeldung
+            }, "Kurtaxe – automatisch berechnet und abgerechnet", "Zusatzleistungen ohne Gebühren", "Individualisierter Check-in"].map((feature, index) => {
+              const isTooltipFeature = typeof feature === 'object';
+              const featureText = isTooltipFeature ? feature.text : feature;
+              const hasTooltip = featureText.includes("*");
+              return <div key={index} className="flex items-center">
                     <Circle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                     <span className="text-royal-700">
                       {featureText.replace(" *", "")}
-                      {hasTooltip && isTooltipFeature && (
-                        <Tooltip>
+                      {hasTooltip && isTooltipFeature && <Tooltip>
                           <TooltipTrigger asChild>
                             <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                               <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
@@ -144,18 +134,16 @@ const PricingSection = () => {
                           <TooltipContent className="max-w-xs text-sm">
                             {feature.tooltip}
                           </TooltipContent>
-                        </Tooltip>
-                      )}
+                        </Tooltip>}
                     </span>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
           </div>
 
           {/* Enterprise Plan */}
           <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow bg-white">
-            <h3 className="text-2xl font-bold text-center text-royal mb-6">Unternehmen</h3>
+            <h3 className="text-2xl font-bold text-center text-royal mb-6">Über 100 Einheiten</h3>
             
             <div className="text-center mb-6 flex flex-col justify-center items-center h-12">
               <p className="text-xl font-medium text-royal">Bitte fragen Sie unser</p>
