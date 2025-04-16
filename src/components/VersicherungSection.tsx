@@ -1,3 +1,4 @@
+
 import { UserCheck } from "lucide-react";
 import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
@@ -17,7 +18,7 @@ export const VersicherungSection = () => {
           
           <div className="order-last md:order-last">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Kaution & Absicherung smart automatisieren
+              Versicherung und Kaution clever automatisieren
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
