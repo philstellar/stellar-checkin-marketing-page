@@ -7,7 +7,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTranslation } from "@/hooks/use-translation";
 
 export default function LanguageSelector() {
   const { language, setLanguage } = useLanguage();
@@ -21,9 +20,8 @@ export default function LanguageSelector() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center gap-1 text-royal hover:text-apple transition-colors">
+      <DropdownMenuTrigger className="flex items-center text-royal hover:text-apple transition-colors">
         <Globe className="h-4 w-4" />
-        <span className="uppercase">{language}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setLanguage('de')} className={language === 'de' ? "bg-gray-100" : ""}>
