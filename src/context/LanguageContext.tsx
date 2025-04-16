@@ -68,15 +68,12 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     
     // Update URL if needed
     const currentLanguage = getLanguageFromPath(location.pathname);
-    const pathWithoutLanguage = location.pathname
-      .split('/')
-      .filter((part, index) => index !== 1 || (part !== 'en' && part !== 'es' && part !== 'it'))
-      .join('/');
     
     if (newLanguage === 'de') {
       // For German, remove language prefix
       if (currentLanguage) {
-        navigate(pathWithoutLanguage);
+        const newPath = location.pathname.replace(`/${currentLanguage}`, '');
+        navigate(newPath || '/');
       }
     } else {
       // For other languages, add/update language prefix
@@ -86,8 +83,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
         navigate(newPath);
       } else {
         // Add language prefix
-        const parts = pathWithoutLanguage.split('/').filter(Boolean);
-        const newPath = `/${newLanguage}${pathWithoutLanguage}`;
+        const newPath = `/${newLanguage}${location.pathname === '/' ? '' : location.pathname}`;
         navigate(newPath);
       }
     }

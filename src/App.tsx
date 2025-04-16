@@ -13,9 +13,9 @@ import BrevoFormPopupWrapper from './components/BrevoFormPopupWrapper';
 
 const App = () => {
   return (
-    <LanguageProvider>
-      <BrevoFormProvider>
-        <Router>
+    <Router>
+      <LanguageProvider>
+        <BrevoFormProvider>
           <Routes>
             {/* Default routes (German) */}
             <Route path="/" element={<Index />} />
@@ -47,9 +47,9 @@ const App = () => {
           </Routes>
           <BrevoFormPopupWrapper />
           <Toaster />
-        </Router>
-      </BrevoFormProvider>
-    </LanguageProvider>
+        </BrevoFormProvider>
+      </LanguageProvider>
+    </Router>
   );
 };
 

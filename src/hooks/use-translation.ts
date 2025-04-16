@@ -23,7 +23,14 @@ export function useTranslation() {
   const currentLanguage = getLanguageFromPath();
   
   const t = (key: string) => {
-    return get(translations[currentLanguage], key) || get(translations.en, key) || key;
+    try {
+      return get(translations[currentLanguage], key) || 
+             get(translations.en, key) || 
+             key;
+    } catch (error) {
+      console.error(`Translation error for key: ${key}`, error);
+      return key;
+    }
   };
   
   return { t, language: currentLanguage };
