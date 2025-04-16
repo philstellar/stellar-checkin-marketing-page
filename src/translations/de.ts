@@ -1,8 +1,7 @@
-
 export const de = {
   // Header
   navigation: {
-    home: "Home",  // Changed from "Startseite" to "Home"
+    home: "Home",  // Explicitly set to "Home"
     features: "Funktionen",
     pricing: "Preise",
     contact: "Kontakt",
