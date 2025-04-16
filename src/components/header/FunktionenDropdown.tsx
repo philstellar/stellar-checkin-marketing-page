@@ -25,12 +25,13 @@ const FunktionenDropdown = ({
   if (!isOpen) return null;
 
   const features = [
-    { title: "Kurtaxe & digitale Gästemeldung", targetSection: "kurtaxe", icon: <FileText className="w-4 h-4" /> },
-    { title: "Zusatzleistungen", targetSection: "zusatzservices", icon: <Gift className="w-4 h-4" /> },
+    { title: "Online Check-in", targetSection: "online-checkin", icon: <FileText className="w-4 h-4" /> },
+    { title: "Kurtaxe & Gästemeldung", targetSection: "kurtaxe", icon: <Gift className="w-4 h-4" /> },
+    { title: "Zusatzservices", targetSection: "zusatzservices", icon: <Cable className="w-4 h-4" /> },
     { title: "Kautionsmanagement & Versicherung", targetSection: "versicherung", icon: <ShieldCheck className="w-4 h-4" /> },
     { title: "Identitätsprüfung", targetSection: "identitaetspruefung", icon: <Fingerprint className="w-4 h-4" /> },
-    { title: "Anpassungsmöglichkeiten", targetSection: "einstellungen", icon: <Sliders className="w-4 h-4" /> },
-    { title: "Integration mit Ihrem PMS", targetSection: "integrationen", icon: <Cable className="w-4 h-4" /> }
+    { title: "Individualisierung", targetSection: "einstellungen", icon: <Sliders className="w-4 h-4" /> },
+    { title: "Integrationen", targetSection: "integrationen", icon: <Cable className="w-4 h-4" /> }
   ];
 
   const handleItemClick = (targetSection: string) => {
