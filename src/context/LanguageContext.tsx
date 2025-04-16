@@ -2,7 +2,7 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Define available languages
-export type Language = 'en' | 'it';
+export type Language = 'de' | 'en' | 'it';
 
 // Define the context type
 type LanguageContextType = {
@@ -12,7 +12,7 @@ type LanguageContextType = {
 
 // Create the context with default values
 const LanguageContext = createContext<LanguageContextType>({
-  language: 'en',
+  language: 'de',
   setLanguage: () => {},
 });
 
@@ -21,13 +21,13 @@ export const useLanguage = () => useContext(LanguageContext);
 
 // Create the provider component
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Try to get saved language from localStorage, default to 'en'
+  // Try to get saved language from localStorage, default to 'de'
   const getSavedLanguage = (): Language => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('language');
-      return (saved as Language) || 'en';
+      return (saved as Language) || 'de';
     }
-    return 'en';
+    return 'de';
   };
   
   const [language, setLanguage] = useState<Language>(getSavedLanguage());

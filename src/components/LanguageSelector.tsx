@@ -14,6 +14,7 @@ export default function LanguageSelector() {
 
   // Map language codes to full names
   const languageNames = {
+    de: "Deutsch",
     en: "English",
     it: "Italiano"
   };
@@ -25,6 +26,9 @@ export default function LanguageSelector() {
         <span className="uppercase">{language}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => setLanguage('de')} className={language === 'de' ? "bg-gray-100" : ""}>
+          Deutsch
+        </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setLanguage('en')} className={language === 'en' ? "bg-gray-100" : ""}>
           English
         </DropdownMenuItem>
