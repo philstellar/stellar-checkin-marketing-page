@@ -4,15 +4,23 @@ export const navigationDE = {
   features: "Funktionen",
   pricing: "Preise",
   contact: "Kontakt",
-  register: "Jetzt Registrieren"
+  register: "Jetzt Registrieren",
+  legal: "Rechtliches",
+  imprint: "Impressum", 
+  privacyPolicy: "Datenschutz",
+  termsAndConditions: "AGB"
 };
 
 export const navigationEN = {
   home: "Home",
   features: "Features",
   pricing: "Pricing",
-  contact: "Contact",
-  register: "Register Now"
+  contact: "Contact", 
+  register: "Register Now",
+  legal: "Legal",
+  imprint: "Imprint",
+  privacyPolicy: "Privacy Policy", 
+  termsAndConditions: "Terms and Conditions"
 };
 
 export const navigationIT = {
@@ -20,13 +28,21 @@ export const navigationIT = {
   features: "Funzionalità",
   pricing: "Prezzi",
   contact: "Contatti",
-  register: "Registrati Ora"
+  register: "Registrati Ora",
+  legal: "Legale",
+  imprint: "Impressum",
+  privacyPolicy: "Informativa sulla Privacy", 
+  termsAndConditions: "Termini e Condizioni"
 };
 
 export const navigationES = {
-  home: "Home",
+  home: "Home", 
   features: "Características",
   pricing: "Precios",
   contact: "Contacto",
-  register: "Registrarse Ahora"
+  register: "Registrarse Ahora",
+  legal: "Legal",
+  imprint: "Aviso Legal",
+  privacyPolicy: "Política de Privacidad", 
+  termsAndConditions: "Términos y Condiciones"
 };
