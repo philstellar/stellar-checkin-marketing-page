@@ -41,12 +41,12 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="md:pl-8 flex items-center justify-center">
-            <div className="relative group w-full max-w-[800px]">
+          <div className="md:pl-0 w-full h-full flex items-center justify-center">
+            <div className="w-full h-full">
               <img 
                 src="/lovable-uploads/681057b0-11ff-4042-8e39-ca84be63c8d2.png" 
                 alt="Stellar Online Check-in Interface" 
-                className="w-full h-auto object-contain rounded-lg z-10 relative transform scale-100 mx-auto"
+                className="w-full h-auto object-contain rounded-lg"
                 width="2000"
                 height="1400"
                 loading="eager"
@@ -54,7 +54,7 @@ const Hero = () => {
                 style={{ 
                   aspectRatio: "2000/1400",
                   maxWidth: "100%",
-                  contentVisibility: "auto"
+                  objectFit: "contain"
                 }}
               />
             </div>
@@ -66,4 +66,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
