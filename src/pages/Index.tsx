@@ -21,18 +21,38 @@ const Index = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main>
+        {/* Critical rendering path - these components load immediately */}
         <Hero />
         <OnlineCheckinSection />
-        <LogoCarousel />
         
-        <Suspense fallback={<div className="h-40 flex items-center justify-center">Loading...</div>}>
+        {/* Logo carousel loads after critical elements */}
+        <Suspense fallback={<div className="h-20 bg-floral"></div>}>
+          <LogoCarousel />
+        </Suspense>
+        
+        {/* Non-critical sections lazy loaded with separate suspense boundaries */}
+        <Suspense fallback={<div className="h-20 bg-white"></div>}>
           <KurtaxeSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-20 bg-floral-100"></div>}>
           <ZusatzservicesSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-20 bg-white"></div>}>
           <VersicherungSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-20 bg-floral-100"></div>}>
           <IdentitaetspruefungSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-20 bg-white"></div>}>
           <IntegrationenSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-20 bg-floral-100"></div>}>
           <EinstellungenSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-20 bg-white"></div>}>
           <PricingSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-20 bg-floral-100"></div>}>
           <ContactSection />
         </Suspense>
       </main>

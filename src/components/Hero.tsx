@@ -51,6 +51,10 @@ const Hero = () => {
                 height="350"
                 loading="eager"
                 fetchPriority="high"
+                style={{ 
+                  aspectRatio: "500/350",
+                  contentVisibility: "auto"
+                }}
               />
             </div>
           </div>
