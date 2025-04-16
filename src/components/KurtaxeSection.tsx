@@ -10,11 +10,11 @@ const KurtaxeSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Kurtaxe & digitale Gästemeldung
+              Digitale Gästemeldung, Erfassung von Bettensteuern, Kurtaxe etc.
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-              Automatisiere die Erfassung und Verwaltung von Kurtaxen und Gästemeldungen zur Einhaltung lokaler Vorschriften.
+              Automatisiere die Erfassung und Verwaltung von Gästemeldungen, Bettensteuern und Kurtaxen zur Einhaltung lokaler Vorschriften.
             </p>
             
             <div className="space-y-8">
