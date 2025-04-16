@@ -44,15 +44,15 @@ const Hero = () => {
           <div className="md:pl-0 w-full h-full flex items-center justify-center">
             <div className="w-full h-full">
               <img 
-                src="/lovable-uploads/681057b0-11ff-4042-8e39-ca84be63c8d2.png" 
+                src="/lovable-uploads/ff8a3a50-21d0-4e53-98f4-3265e363fe55.png" 
                 alt="Stellar Online Check-in Interface" 
                 className="w-full h-auto object-contain rounded-lg"
-                width="2000"
-                height="1400"
+                width="1080"
+                height="2160"
                 loading="eager"
                 fetchPriority="high"
                 style={{ 
-                  aspectRatio: "2000/1400",
+                  aspectRatio: "1080/2160",
                   maxWidth: "100%",
                   objectFit: "contain"
                 }}
