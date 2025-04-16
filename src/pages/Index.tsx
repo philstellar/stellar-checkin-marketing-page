@@ -3,7 +3,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import { 
   OnlineCheckinSection,
-  EinstellungenSection
+  EinstellungenSection,
+  IntegrationenSection
 } from "@/components/features";
 import KurtaxeSection from "@/components/KurtaxeSection";
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
@@ -14,7 +15,6 @@ import PricingSection from "@/components/PricingSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import IntegrationenSection from "@/components/features/IntegrationenSection";
 
 const Index = () => {
   return (
