@@ -1,4 +1,3 @@
-
 import { UserCheck } from "lucide-react";
 import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
@@ -8,14 +7,12 @@ export const VersicherungSection = () => {
     <section id="versicherung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-first md:order-first">
-            <div className="rounded-xl flex justify-center">
-              <img 
-                src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
-                alt="Versicherung und Kautionsabwicklung" 
-                className="w-4/5 h-auto object-contain bg-transparent"
-              />
-            </div>
+          <div className="order-first md:order-first flex justify-center">
+            <img 
+              src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
+              alt="Versicherung und Kautionsabwicklung" 
+              className="w-3/5 h-auto object-contain bg-transparent"
+            />
           </div>
           
           <div className="order-last md:order-last">

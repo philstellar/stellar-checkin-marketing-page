@@ -1,4 +1,3 @@
-
 import { UserCheck, Gift, CreditCard, TrendingUp } from "lucide-react";
 import CTAButton from "./CTAButton";
 
@@ -57,14 +56,12 @@ const ZusatzservicesSection = () => {
             </div>
           </div>
           
-          <div className="order-last md:order-last">
-            <div className="rounded-xl flex justify-center">
-              <img 
-                src="/lovable-uploads/a581a6b1-fefa-4f87-9015-66cde382b503.png"
-                alt="Zusatzservices und Upselling" 
-                className="w-4/5 h-auto object-contain bg-transparent"
-              />
-            </div>
+          <div className="order-last md:order-last flex justify-center">
+            <img 
+              src="/lovable-uploads/a581a6b1-fefa-4f87-9015-66cde382b503.png"
+              alt="Zusatzservices und Upselling" 
+              className="w-3/5 h-auto object-contain bg-transparent"
+            />
           </div>
         </div>
       </div>

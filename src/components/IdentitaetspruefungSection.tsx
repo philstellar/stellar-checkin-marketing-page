@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { UserCheck } from "lucide-react";
 import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
@@ -58,14 +57,12 @@ const IdentitaetspruefungSection = () => {
             </div>
           </div>
           
-          <div className="order-last md:order-last">
-            <div className="rounded-xl flex justify-center">
-              <img 
-                src="/lovable-uploads/f65f2787-eee3-47c4-a728-74654f2e8651.png"
-                alt="Identitätsprüfung mit Stellar" 
-                className="w-4/5 h-auto object-contain bg-transparent"
-              />
-            </div>
+          <div className="order-last md:order-last flex justify-center">
+            <img 
+              src="/lovable-uploads/f65f2787-eee3-47c4-a728-74654f2e8651.png"
+              alt="Identitätsprüfung mit Stellar" 
+              className="w-3/5 h-auto object-contain bg-transparent"
+            />
           </div>
         </div>
       </div>

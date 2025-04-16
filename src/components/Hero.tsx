@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { UserCheck } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -41,7 +42,7 @@ const Hero = () => {
               <img 
                 src="/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png" 
                 alt="Stellar Online Check-in Interface" 
-                className="w-full h-auto object-contain rounded-lg z-10 relative transform scale-110"
+                className="w-4/5 h-auto object-contain rounded-lg z-10 relative transform scale-105 mx-auto"
               />
             </div>
           </div>

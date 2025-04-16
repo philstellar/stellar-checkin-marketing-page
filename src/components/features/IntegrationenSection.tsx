@@ -30,14 +30,12 @@ export const IntegrationenSection: React.FC = () => {
     <section id="integrationen" className="section-padding bg-gray-50">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-first md:order-first">
-            <div className="rounded-xl flex justify-center">
-              <img 
-                src="/lovable-uploads/80368f3d-e665-4922-ae52-be3ada6ee903.png"
-                alt="Systemintegrationen für Ferienwohnungen" 
-                className="w-4/5 h-auto object-contain bg-transparent"
-              />
-            </div>
+          <div className="order-first md:order-first flex justify-center">
+            <img 
+              src="/lovable-uploads/80368f3d-e665-4922-ae52-be3ada6ee903.png"
+              alt="Systemintegrationen für Ferienwohnungen" 
+              className="w-3/5 h-auto object-contain bg-transparent"
+            />
           </div>
           
           <div className="order-last md:order-last">
