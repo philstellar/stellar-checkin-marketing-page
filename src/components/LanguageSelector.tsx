@@ -15,7 +15,8 @@ export default function LanguageSelector() {
   const languageNames = {
     de: "Deutsch",
     en: "English",
-    it: "Italiano"
+    it: "Italiano",
+    es: "Español"
   };
 
   return (
@@ -32,6 +33,9 @@ export default function LanguageSelector() {
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setLanguage('it')} className={language === 'it' ? "bg-gray-100" : ""}>
           Italiano
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setLanguage('es')} className={language === 'es' ? "bg-gray-100" : ""}>
+          Español
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

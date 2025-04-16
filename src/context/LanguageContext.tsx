@@ -2,7 +2,7 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Define available languages
-export type Language = 'de' | 'en' | 'it';
+export type Language = 'de' | 'en' | 'it' | 'es';
 
 // Define the context type
 type LanguageContextType = {

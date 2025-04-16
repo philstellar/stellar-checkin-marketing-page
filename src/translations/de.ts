@@ -1,78 +1,27 @@
+
+import { navigationDE } from './modules/navigation';
+import { heroDE } from './modules/hero';
+import { featuresDE } from './modules/features';
+import { partnersDE } from './modules/partners';
+import { kurtaxeDE } from './modules/kurtaxe';
+
+// Import other modules as they are created
+
 export const de = {
   // Header
-  navigation: {
-    home: "Home",  // Explicitly set to "Home"
-    features: "Funktionen",
-    pricing: "Preise",
-    contact: "Kontakt",
-    register: "Jetzt Registrieren"
-  },
+  navigation: navigationDE,
   
   // Hero
-  hero: {
-    headline1: "Die umfassende digitale ",
-    headline2: "Check-in",
-    headline3: " Lösung für Ferienunterkünfte",
-    subheadline: "Automatisieren Sie den gesamten Check-in-Prozess für Ihre Ferienimmobilie.",
-    subheadline2: "Weniger Arbeit, mehr Umsatz – und ein Check-in, der Gäste begeistert.",
-    cta: "Jetzt Registrieren",
-    tagline: "Einfach. Effizient. Für Sie und Ihre Gäste."
-  },
+  hero: heroDE,
   
   // Features
-  features: {
-    title: "Stellar Check-in",
-    subtitle: "Verbessern Sie das Gästeerlebnis vor der Anreise und steigern Sie Ihren Umsatz",
-    kurtaxe: {
-      title: "Kurtaxe & digitale Gästeregistrierung",
-      description: "Erfassen Sie Meldescheine, berechnen Sie Kurtaxe und wickeln Sie Zahlungen automatisch ab – schnell, sicher und bequem für Ihre Gäste."
-    },
-    zusatzleistungen: {
-      title: "Zusatzleistungen",
-      description: "Bieten Sie Ihren Gästen mehr – und steigern Sie Ihren Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepakete oder besondere Erlebnisse."
-    },
-    kaution: {
-      title: "Kaution & Gästeversicherung",
-      description: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung, oder bieten Sie Ihren Gästen eine bequeme Alternative – und profitieren Sie von zusätzlichen Provisionseinnahmen."
-    },
-    identity: {
-      title: "Identitätsprüfung",
-      description: "Erhöhen Sie die Sicherheit mit unserer einfachen und zuverlässigen biometrischen Identitätsprüfung."
-    },
-    custom: {
-      title: "Anpassungsmöglichkeiten",
-      description: "Personalisieren Sie das Check-in-Erlebnis – mit Ihrem Branding und einer mehrsprachigen Benutzeroberfläche."
-    },
-    integration: {
-      title: "Integration mit führenden PMS",
-      description: "Nahtlose Anbindung an Ihr PMS oder Channel-Manager – automatische Check-in-Einladungen und alle gesammelten Daten zentral verfügbar."
-    },
-    moreBtn: "Mehr erfahren"
-  },
+  features: featuresDE,
 
   // Partners Section
-  partners: {
-    title: "Einige unserer Partner"
-  },
+  partners: partnersDE,
 
   // Kurtaxe Section
-  kurtaxe: {
-    title: "Digitale Gästeregistrierung, Erhebung von Kurtaxe, Tourismusabgaben, etc.",
-    subtitle: "Automatisieren Sie die Erfassung und Verwaltung von Gästeregistrierungen, Kurtaxe und Tourismusabgaben, um lokale Vorschriften einzuhalten.",
-    digitalRegistration: {
-      title: "Digitale Gästeregistrierung",
-      description: "Erfassen Sie Meldescheine digital – Ihre Gäste füllen alle Angaben einfach selbst aus."
-    },
-    automaticCalculation: {
-      title: "Automatische Berechnung",
-      description: "Kurtaxe wird automatisch anhand der Gästedaten berechnet und kann direkt während des Check-ins bequem bezahlt werden."
-    },
-    authorities: {
-      title: "Behördenanbindung",
-      description: "Direkte Übermittlung der Daten an die zuständigen Behörden durch unsere Partner AVS und Ostseecard."
-    },
-    cta: "Jetzt Registrieren"
-  },
+  kurtaxe: kurtaxeDE,
 
   // Zusatzservices Section
   zusatzservices: {

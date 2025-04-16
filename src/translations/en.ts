@@ -1,79 +1,24 @@
+import { navigationEN } from './modules/navigation';
+import { heroEN } from './modules/hero';
+import { featuresEN } from './modules/features';
+import { partnersEN } from './modules/partners';
+import { kurtaxeEN } from './modules/kurtaxe';
 
 export const en = {
   // Header
-  navigation: {
-    home: "Home",
-    features: "Features",
-    pricing: "Pricing",
-    contact: "Contact",
-    register: "Register Now"
-  },
+  navigation: navigationEN,
   
   // Hero
-  hero: {
-    headline1: "The comprehensive digital ",
-    headline2: "Check-in",
-    headline3: " solution for holiday rentals",
-    subheadline: "Automate the entire check-in process for your vacation rental property.",
-    subheadline2: "Less work, more revenue – and a check-in that delights guests.",
-    cta: "Register Now",
-    tagline: "Simple. Efficient. For you and your guests."
-  },
+  hero: heroEN,
   
   // Features
-  features: {
-    title: "Stellar Check-in",
-    subtitle: "Improve the guest experience before arrival and increase your revenue",
-    kurtaxe: {
-      title: "Tourist tax & digital guest registration",
-      description: "Collect registration forms, calculate tourist tax, and process payments automatically – quickly, securely, and conveniently for your guests."
-    },
-    zusatzleistungen: {
-      title: "Additional services",
-      description: "Offer your guests more – and increase your revenue with add-on services like early check-in, linen packages, or special experiences."
-    },
-    kaution: {
-      title: "Deposit & guest insurance",
-      description: "Automate deposit collection and refunds, or offer your guests a convenient alternative – and benefit from additional commission income."
-    },
-    identity: {
-      title: "Identity verification",
-      description: "Increase security with our simple and reliable biometric identity verification."
-    },
-    custom: {
-      title: "Customization options",
-      description: "Personalize the check-in experience – with your branding and a multilingual user interface."
-    },
-    integration: {
-      title: "Integration with leading PMS",
-      description: "Seamless connection to your PMS or channel manager – automatic check-in invitations, and all collected data centrally available."
-    },
-    moreBtn: "Learn more"
-  },
+  features: featuresEN,
 
   // Partners Section
-  partners: {
-    title: "Some of our partners"
-  },
+  partners: partnersEN,
 
   // Kurtaxe Section
-  kurtaxe: {
-    title: "Digital Guest Registration, Collection of City Taxes, Tourist Taxes, etc.",
-    subtitle: "Automate the collection and management of guest registrations, city taxes, and tourist taxes to comply with local regulations.",
-    digitalRegistration: {
-      title: "Digital Guest Registration",
-      description: "Capture registration forms digitally – your guests simply fill in all details themselves."
-    },
-    automaticCalculation: {
-      title: "Automatic Calculation",
-      description: "Tourist tax is automatically calculated based on guest information and can be conveniently paid directly during check-in."
-    },
-    authorities: {
-      title: "Authority Connection",
-      description: "Direct transmission of data to the relevant authorities through our partners AVS and Ostseecard."
-    },
-    cta: "Register Now"
-  },
+  kurtaxe: kurtaxeEN,
 
   // Zusatzservices Section
   zusatzservices: {

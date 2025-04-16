@@ -1,78 +1,24 @@
+import { navigationIT } from './modules/navigation';
+import { heroIT } from './modules/hero';
+import { featuresIT } from './modules/features';
+import { partnersIT } from './modules/partners';
+import { kurtaxeIT } from './modules/kurtaxe';
+
 export const it = {
   // Header
-  navigation: {
-    home: "Home",
-    features: "Funzionalità",
-    pricing: "Prezzi",
-    contact: "Contatti",
-    register: "Registrati Ora"
-  },
+  navigation: navigationIT,
   
   // Hero
-  hero: {
-    headline1: "La soluzione digitale completa per il ",
-    headline2: "Check-in",
-    headline3: " degli appartamenti vacanza",
-    subheadline: "Automatizza l'intero processo di check-in della tua struttura vacanziera.",
-    subheadline2: "Meno lavoro, più guadagni – e un check-in che entusiasma gli ospiti.",
-    cta: "Registrati Ora",
-    tagline: "Semplice. Efficiente. Per te e i tuoi ospiti."
-  },
+  hero: heroIT,
   
   // Features
-  features: {
-    title: "Stellar Check-in",
-    subtitle: "Migliora l'esperienza degli ospiti prima dell'arrivo e aumenta i tuoi guadagni",
-    kurtaxe: {
-      title: "Tassa di soggiorno e registrazione digitale degli ospiti",
-      description: "Raccogli i dati degli ospiti, calcola la tassa di soggiorno e gestisci i pagamenti automaticamente – in modo veloce, sicuro e comodo per i tuoi ospiti."
-    },
-    zusatzleistungen: {
-      title: "Servizi aggiuntivi",
-      description: "Offri di più ai tuoi ospiti – e aumenta i tuoi guadagni con servizi aggiuntivi come il check-in anticipato, pacchetti biancheria o esperienze speciali."
-    },
-    kaution: {
-      title: "Deposito cauzionale e assicurazione ospiti",
-      description: "Automatizza la raccolta e la restituzione dei depositi, o offri ai tuoi ospiti un'alternativa comoda – e beneficia di commissioni aggiuntive."
-    },
-    identity: {
-      title: "Verifica dell'identità",
-      description: "Aumenta la sicurezza con la nostra verifica biometrica dell'identità semplice e affidabile."
-    },
-    custom: {
-      title: "Opzioni di personalizzazione",
-      description: "Personalizza l'esperienza di check-in – con il tuo marchio e un'interfaccia multilingue."
-    },
-    integration: {
-      title: "Integrazione con i principali PMS",
-      description: "Connessione perfetta con il tuo PMS o channel manager – inviti automatici al check-in e tutti i dati raccolti disponibili centralmente."
-    },
-    moreBtn: "Scopri di più"
-  },
+  features: featuresIT,
 
   // Partners Section
-  partners: {
-    title: "Alcuni dei nostri partner"
-  },
+  partners: partnersIT,
 
   // Kurtaxe Section
-  kurtaxe: {
-    title: "Registrazione Digitale degli Ospiti, Riscossione di Tasse di Soggiorno, ecc.",
-    subtitle: "Automatizza la raccolta e la gestione delle registrazioni degli ospiti, delle tasse di soggiorno per conformarti alle normative locali.",
-    digitalRegistration: {
-      title: "Registrazione Digitale Ospiti",
-      description: "Cattura i moduli di registrazione digitalmente – i tuoi ospiti compilano tutti i dettagli da soli."
-    },
-    automaticCalculation: {
-      title: "Calcolo Automatico",
-      description: "La tassa di soggiorno viene calcolata automaticamente in base alle informazioni degli ospiti e può essere comodamente pagata durante il check-in."
-    },
-    authorities: {
-      title: "Connessione con le Autorità",
-      description: "Trasmissione diretta dei dati alle autorità competenti attraverso i nostri partner AVS e Ostseecard."
-    },
-    cta: "Registrati Ora"
-  },
+  kurtaxe: kurtaxeIT,
 
   // Zusatzservices Section
   zusatzservices: {
