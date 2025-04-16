@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Palette, Globe, Settings } from 'lucide-react';
@@ -8,7 +7,7 @@ export const EinstellungenSection: React.FC = () => {
     {
       icon: <Palette className="h-8 w-8 text-apple" />,
       title: "Design & Branding",
-      description: "Passe das Design ganz einfach an – mit deinem Logo und deinen Markenfarben."
+      description: "Passe das Design ganz einfach an – mit deinem Logo, deinen Markenfarben, deiner URL."
     },
     {
       icon: <Globe className="h-8 w-8 text-apple" />,
