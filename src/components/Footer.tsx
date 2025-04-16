@@ -2,9 +2,16 @@
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { language } = useLanguage();
+  
+  // Helper function to get the correct URL prefix based on language
+  const getUrlPrefix = () => {
+    return language === 'de' ? '' : `/${language}`;
+  };
   
   return (
     <footer className="bg-gradient-to-br from-floral to-floral-400/20 py-12">
@@ -26,19 +33,19 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="/impressum" className="flex items-center text-black hover:text-apple transition-colors">
+                  <Link to={`${getUrlPrefix()}/impressum`} className="flex items-center text-black hover:text-apple transition-colors">
                     <ExternalLink className="h-5 w-5 text-apple mr-2" />
                     {t('footer.imprint')}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/datenschutz" className="flex items-center text-black hover:text-apple transition-colors">
+                  <Link to={`${getUrlPrefix()}/datenschutz`} className="flex items-center text-black hover:text-apple transition-colors">
                     <ExternalLink className="h-5 w-5 text-apple mr-2" />
                     {t('footer.privacy')}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/agb" className="flex items-center text-black hover:text-apple transition-colors">
+                  <Link to={`${getUrlPrefix()}/agb`} className="flex items-center text-black hover:text-apple transition-colors">
                     <ExternalLink className="h-5 w-5 text-apple mr-2" />
                     {t('footer.terms')}
                   </Link>
