@@ -49,14 +49,16 @@ export const IntegrationenSection: React.FC = () => {
     }
   ];
 
-  // Double the logos to ensure smooth looping
-  const extendedLogos = [...pmsLogos, ...pmsLogos];
+  // Triple the logos to ensure smooth looping and full visibility
+  const extendedLogos = [...pmsLogos, ...pmsLogos, ...pmsLogos];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     dragFree: true,
     containScroll: "keepSnaps",
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    startIndex: pmsLogos.length, // Start from the middle set to ensure full visibility
+    align: 'start'
   });
 
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
@@ -74,7 +76,11 @@ export const IntegrationenSection: React.FC = () => {
 
   useEffect(() => {
     if (emblaApi) {
-      startAutoplay();
+      // Give a small delay to ensure proper initialization
+      setTimeout(() => {
+        startAutoplay();
+      }, 100);
+      
       emblaApi.on('pointerDown', stopAutoplay);
       emblaApi.on('settle', startAutoplay);
     }

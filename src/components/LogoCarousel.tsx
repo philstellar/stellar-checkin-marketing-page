@@ -36,8 +36,8 @@ const logos: LogoType[] = [
   }
 ];
 
-// Double the logos to ensure smooth looping
-const extendedLogos = [...logos, ...logos];
+// Triple the logos to ensure smooth looping and full visibility
+const extendedLogos = [...logos, ...logos, ...logos];
 
 const LogoCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -45,7 +45,9 @@ const LogoCarousel = () => {
     dragFree: true,
     containScroll: "keepSnaps",
     slidesToScroll: 1,
-    direction: 'rtl' // Set to right-to-left for movement from right to left
+    direction: 'rtl', // Set to right-to-left for movement from right to left
+    startIndex: logos.length, // Start from the middle set to ensure full visibility
+    align: 'start'
   });
 
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
@@ -63,7 +65,11 @@ const LogoCarousel = () => {
 
   useEffect(() => {
     if (emblaApi) {
-      startAutoplay();
+      // Give a small delay to ensure proper initialization
+      setTimeout(() => {
+        startAutoplay();
+      }, 100);
+      
       emblaApi.on('pointerDown', stopAutoplay);
       emblaApi.on('settle', startAutoplay);
     }
