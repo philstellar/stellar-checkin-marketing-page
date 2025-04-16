@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { UserCheck } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -9,7 +8,9 @@ const Hero = () => {
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
 
   // Headline text
-  const headlineText = "Die umfassende digitale Check-in Lösung für Ferienwohnungen";
+  const headlineText = "Die umfassende digitale ";
+  const highlightedWord = "Check-in";
+  const restOfText = " Lösung für Ferienwohnungen";
   
   useEffect(() => {
     // Set animation complete after a short delay
@@ -28,6 +29,8 @@ const Hero = () => {
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4">
               {headlineText}
+              <span style={{ color: 'rgb(164 195 9)' }}>{highlightedWord}</span>
+              {restOfText}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg">
               Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie.<br /><br /> 
