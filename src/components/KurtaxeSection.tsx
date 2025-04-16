@@ -4,23 +4,26 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Calculator, Upload } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 import { UserCheck } from "lucide-react";
+import { useTranslation } from "@/hooks/use-translation";
 
 const KurtaxeSection = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
       icon: <FileText className="h-8 w-8 text-apple" />,
-      title: "Digitale Gästemeldung",
-      description: "Erfasse Meldescheine digital – deine Gäste füllen alle Angaben einfach selbst aus."
+      title: t('kurtaxe.digitalRegistration.title'),
+      description: t('kurtaxe.digitalRegistration.description')
     },
     {
       icon: <Calculator className="h-8 w-8 text-apple" />,
-      title: "Automatische Berechnung",
-      description: "Die Kurtaxe wird automatisch basierend auf den Angaben der Gäste berechnet und kann bequem direkt im Check-in bezahlt werden."
+      title: t('kurtaxe.automaticCalculation.title'),
+      description: t('kurtaxe.automaticCalculation.description')
     },
     {
       icon: <Upload className="h-8 w-8 text-apple" />,
-      title: "Behördenanbindung",
-      description: "Direkte Übermittlung der Daten an die zuständigen Behörden über unsere Partner AVS und Ostseecard."
+      title: t('kurtaxe.authorities.title'),
+      description: t('kurtaxe.authorities.description')
     }
   ];
 
@@ -29,11 +32,11 @@ const KurtaxeSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 text-royal">
-            Digitale Gästemeldung, Erfassung von Bettensteuern, Kurtaxe etc.
+            {t('kurtaxe.title')}
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            Automatisiere die Erfassung und Verwaltung von Gästemeldungen, Bettensteuern und Kurtaxen zur Einhaltung lokaler Vorschriften.
+            {t('kurtaxe.subtitle')}
           </p>
         </div>
         
@@ -57,7 +60,7 @@ const KurtaxeSection = () => {
         
         <div className="mt-10 text-center">
           <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-            <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
+            <UserCheck className="mr-2 h-4 w-4" /> {t('kurtaxe.cta')}
           </CTAButton>
         </div>
       </div>

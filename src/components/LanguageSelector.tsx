@@ -7,9 +7,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useTranslation } from "@/hooks/use-translation";
 
 export default function LanguageSelector() {
   const { language, setLanguage } = useLanguage();
+
+  // Map language codes to full names
+  const languageNames = {
+    en: "English",
+    it: "Italiano"
+  };
 
   return (
     <DropdownMenu>

@@ -1,38 +1,40 @@
 
 import { UserCheck, Gift, CreditCard, TrendingUp } from "lucide-react";
 import CTAButton from "./CTAButton";
+import { useTranslation } from "@/hooks/use-translation";
 
 const ZusatzservicesSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="zusatzservices" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-first">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Zusatzleistungen verkaufen
+              {t('zusatzservices.title')}
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-              Steigere deinen Umsatz, indem du deinen Gästen während des Check-in-Prozesses zusätzliche 
-              Services anbietest.
+              {t('zusatzservices.subtitle')}
             </p>
             
             <div className="space-y-8">
               {[
                 {
                   icon: <Gift className="w-8 h-8 text-apple" />,
-                  title: "Zusatzleistungen",
-                  description: "Biete deinen Gästen mehr – und steigere deinen Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepaketen oder besonderen Erlebnissen."
+                  title: t('zusatzservices.additionalServices.title'),
+                  description: t('zusatzservices.additionalServices.description')
                 },
                 {
                   icon: <CreditCard className="w-8 h-8 text-apple" />,
-                  title: "Nahtlose Zahlungsabwicklung",
-                  description: "Integrierte Zahlungsabwicklung mit allen gängigen Zahlungsmethoden direkt im Check-in-Prozess."
+                  title: t('zusatzservices.payment.title'),
+                  description: t('zusatzservices.payment.description')
                 },
                 {
                   icon: <TrendingUp className="w-8 h-8 text-apple" />,
-                  title: "Zusätzliche Einnahmequellen",
-                  description: "Erziele zusätzliche Einnahmen durch den gezielten Verkauf von Upgrades und Zusatzleistungen."
+                  title: t('zusatzservices.revenue.title'),
+                  description: t('zusatzservices.revenue.description')
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
@@ -52,7 +54,7 @@ const ZusatzservicesSection = () => {
             
             <div className="mt-10">
               <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
+                <UserCheck className="mr-2 h-4 w-4" /> {t('zusatzservices.cta')}
               </CTAButton>
             </div>
           </div>

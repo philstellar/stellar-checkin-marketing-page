@@ -3,15 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { UserCheck } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
 import CTAButton from "./CTAButton";
+import { useTranslation } from "@/hooks/use-translation";
 
 const Hero = () => {
   const isMobile = useIsMobile();
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
-
-  // Headline text
-  const headlineText = "Die umfassende digitale ";
-  const highlightedWord = "Check-in";
-  const restOfText = " Lösung für Ferienwohnungen";
+  const { t } = useTranslation();
   
   useEffect(() => {
     // Set animation complete after a short delay
@@ -29,17 +26,17 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4">
-              {headlineText}
-              <span style={{ color: 'rgb(164 195 9)' }}>{highlightedWord}</span>
-              {restOfText}
+              {t('hero.headline1')}
+              <span style={{ color: 'rgb(164 195 9)' }}>{t('hero.headline2')}</span>
+              {t('hero.headline3')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg">
-              Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie.<br /><br /> 
-              Weniger Aufwand, mehr Umsatz – und ein Check-in, der Gäste begeistert.
+              {t('hero.subheadline')}<br /><br /> 
+              {t('hero.subheadline2')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600">
-                <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
+                <UserCheck className="mr-2 h-4 w-4" /> {t('hero.cta')}
               </CTAButton>
             </div>
             <div className="mt-8 flex items-center">
@@ -49,7 +46,7 @@ const Hero = () => {
                 <div className="w-8 h-8 rounded-full bg-apple-500"></div>
               </div>
               <p className="ml-4 text-sm text-black">
-                <span className="font-medium">Einfach. Effizient. Für dich und deine Gäste.</span>
+                <span className="font-medium">{t('hero.tagline')}</span>
               </p>
             </div>
           </div>

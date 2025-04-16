@@ -3,37 +3,40 @@ import React from 'react';
 import { UserCheck } from "lucide-react";
 import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
 import CTAButton from "./CTAButton";
+import { useTranslation } from "@/hooks/use-translation";
 
 const IdentitaetspruefungSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="identitaetspruefung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-first">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Identitätsprüfung
+              {t('identity.title')}
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-             Schnelle und sichere Identitätsprüfung deiner Gäste – in nur 2 Minuten erledigt, für mehr Vertrauen und Schutz.
+             {t('identity.subtitle')}
             </p>
             
             <div className="space-y-8">
               {[
                 {
                   icon: <ScanFace className="w-8 h-8 text-apple" />,
-                  title: "Biometrische Verifikation",
-                  description: "Schnelle Gesichtserkennung mit Liveness-Check – schützt vor Betrug und stellt sicher, dass Ausweis und Person echt sind."
+                  title: t('identity.biometric.title'),
+                  description: t('identity.biometric.description')
                 },
                 {
                   icon: <Fingerprint className="w-8 h-8 text-apple" />,
-                  title: "Ausweisüberprüfung",
-                  description: "Automatische Validierung von Ausweisdokumenten durch moderne KI-Technologie in Sekundenschnelle."
+                  title: t('identity.document.title'),
+                  description: t('identity.document.description')
                 },
                 {
                   icon: <ShieldCheck className="w-8 h-8 text-apple" />,
-                  title: "Datenschutzkonforme Lösung",
-                  description: "Alle Daten werden sicher verarbeitet und gemäß DSGVO-Standards geschützt und nur für die Verifikation verwendet."
+                  title: t('identity.privacy.title'),
+                  description: t('identity.privacy.description')
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
@@ -53,7 +56,7 @@ const IdentitaetspruefungSection = () => {
             
             <div className="mt-10">
               <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
+                <UserCheck className="mr-2 h-4 w-4" /> {t('identity.cta')}
               </CTAButton>
             </div>
           </div>

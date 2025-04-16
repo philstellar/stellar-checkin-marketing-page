@@ -1,9 +1,12 @@
+
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/hooks/use-translation";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -48,8 +51,8 @@ const ContactSection = () => {
 
       if (response.ok) {
         toast({
-          title: "Nachricht gesendet!",
-          description: "Vielen Dank für deine Anfrage. Wir werden uns in Kürze bei dir melden.",
+          title: t('contact.success'),
+          description: t('contact.successDesc'),
         });
 
           // fire conversion
@@ -69,8 +72,8 @@ const ContactSection = () => {
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
-        title: "Fehler beim Senden",
-        description: "Es gab ein Problem beim Senden deiner Nachricht. Bitte versuche es später erneut.",
+        title: t('contact.error'),
+        description: t('contact.errorDesc'),
         variant: "destructive",
       });
     } finally {
@@ -84,11 +87,11 @@ const ContactSection = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-royal mb-4">
-              Kontaktiere uns
+              {t('contact.title')}
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-royal-700 mb-10 max-w-lg">
-              Hast du Fragen zu Stellar Checkin? Unser Team steht dir gerne zur Verfügung.
+              {t('contact.subtitle')}
             </p>
             
             <div className="space-y-8">
@@ -97,7 +100,7 @@ const ContactSection = () => {
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-royal mb-1">E-Mail</h3>
+                  <h3 className="text-lg font-semibold text-royal mb-1">{t('contact.email')}</h3>
                   <a href="mailto:hello@stellar-trust.com" className="text-royal-700 hover:text-apple transition-colors">
                     hello@stellar-trust.com
                   </a>
@@ -109,7 +112,7 @@ const ContactSection = () => {
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-royal mb-1">Telefon</h3>
+                  <h3 className="text-lg font-semibold text-royal mb-1">{t('contact.phone')}</h3>
                   <a href="tel:+4930417384870" className="text-royal-700 hover:text-apple transition-colors">
                     +49 304 1738487
                   </a>
@@ -121,7 +124,7 @@ const ContactSection = () => {
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-royal mb-1">Adresse</h3>
+                  <h3 className="text-lg font-semibold text-royal mb-1">{t('contact.address')}</h3>
                   <p className="text-royal-700">
                     Stellar Tourism Innovations GmbH<br />
                     Immanuelkirchstraße 37<br />
@@ -136,7 +139,7 @@ const ContactSection = () => {
           <div className="bg-white p-8 rounded-xl shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-royal-700 mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-royal-700 mb-1">{t('contact.formName')}</label>
                 <input
                   type="text"
                   id="name"
@@ -149,7 +152,7 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-royal-700 mb-1">E-Mail</label>
+                <label htmlFor="email" className="block text-sm font-medium text-royal-700 mb-1">{t('contact.formEmail')}</label>
                 <input
                   type="email"
                   id="email"
@@ -162,7 +165,7 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-royal-700 mb-1">Unternehmen</label>
+                <label htmlFor="company" className="block text-sm font-medium text-royal-700 mb-1">{t('contact.formCompany')}</label>
                 <input
                   type="text"
                   id="company"
@@ -174,7 +177,7 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-royal-700 mb-1">Nachricht</label>
+                <label htmlFor="message" className="block text-sm font-medium text-royal-700 mb-1">{t('contact.formMessage')}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -192,7 +195,7 @@ const ContactSection = () => {
                   className="w-full bg-apple hover:bg-apple-600 text-white px-6 py-3 rounded-lg"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Wird gesendet..." : "Nachricht senden"} <Send className="ml-2 h-4 w-4" />
+                  {isSubmitting ? t('contact.formSending') : t('contact.formSend')} <Send className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </form>
