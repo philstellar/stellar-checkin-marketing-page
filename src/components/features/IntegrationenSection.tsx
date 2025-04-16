@@ -2,6 +2,8 @@
 import React from 'react';
 import { Database, Plug, Link, ServerCog } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { cn } from "@/lib/utils";
 
 export const IntegrationenSection: React.FC = () => {
   const features = [
@@ -27,17 +29,59 @@ export const IntegrationenSection: React.FC = () => {
     }
   ];
 
+  const pmsLogos = [
+    {
+      src: "/lovable-uploads/876b6816-9063-4842-afc5-13e495761c7a.png",
+      alt: "Smoobu"
+    },
+    {
+      src: "/lovable-uploads/349e2cab-5eb3-4451-8d9e-0cdf5927f51b.png",
+      alt: "Guesty"
+    },
+    {
+      src: "/lovable-uploads/4d73a118-7cc1-4e3f-bf33-dec5ec07b93c.png",
+      alt: "Beds24"
+    },
+    {
+      src: "/lovable-uploads/dc32a014-5de5-41d8-b177-4489d94576f7.png",
+      alt: "Hostfully"
+    }
+  ];
+
   return (
     <section id="integrationen" className="section-padding bg-gray-50">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             Integration mit Ihrem PMS
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
-          <p className="text-lg text-black max-w-3xl mx-auto">
+          <p className="text-lg text-black max-w-3xl mx-auto mb-10">
             Ob Integration mit Smoobu, Guesty, Hostaway, Lodgify, Beds24 oder anderen führenden Systemen - wir verbinden Ihr PMS für einen optimierten Workflow.
           </p>
+          
+          {/* Logo Grid */}
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
+            {pmsLogos.map((logo, index) => (
+              <HoverCard key={index}>
+                <HoverCardTrigger asChild>
+                  <div className="h-20 w-32 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        className="max-w-full max-h-full object-contain transition-all duration-300"
+                        style={{ aspectRatio: '1/1' }}
+                      />
+                    </div>
+                  </div>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-auto p-2 text-center text-sm">
+                  {logo.alt}
+                </HoverCardContent>
+              </HoverCard>
+            ))}
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
