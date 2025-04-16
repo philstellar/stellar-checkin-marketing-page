@@ -8,18 +8,17 @@ const Hero = () => {
   const isMobile = useIsMobile();
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
 
-  // Headline text split into an array of characters
+  // Headline text
   const headlineText = "Die umfassende digitale Check-in Lösung für Ferienwohnungen";
-  const headlineTextArray = headlineText.split('');
   
   useEffect(() => {
-    // Set animation complete after enough time for all letters to animate
+    // Set animation complete after a short delay
     const timer = setTimeout(() => {
       setIsAnimationComplete(true);
-    }, headlineTextArray.length * 50 + 500); // Enough time for all letters to animate
+    }, 500);
     
     return () => clearTimeout(timer);
-  }, [headlineTextArray.length]);
+  }, []);
 
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
@@ -27,19 +26,8 @@ const Hero = () => {
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 overflow-hidden">
-              {headlineTextArray.map((letter, index) => (
-                <span 
-                  key={`letter-${index}`}
-                  className={`inline-block ${letter === ' ' ? 'mr-1' : ''}`}
-                  style={{
-                    animation: `fadeInLetter 0.05s both ${index * 0.05}s`,
-                    opacity: 0,
-                  }}
-                >
-                  {letter === ' ' ? '\u00A0' : letter}
-                </span>
-              ))}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4">
+              {headlineText}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg">
               Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie.<br /><br /> 
