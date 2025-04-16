@@ -68,20 +68,21 @@ const LogoCarousel = () => {
 
   useEffect(() => {
     if (emblaApi) {
-      // Give a small delay to ensure proper initialization
-      setTimeout(() => {
+      // Delayed start to ensure proper initialization but not impact initial page load
+      const timer = setTimeout(() => {
         startAutoplay();
-      }, 100);
+      }, 2000);
       
       emblaApi.on('pointerDown', stopAutoplay);
       emblaApi.on('settle', startAutoplay);
+      
+      return () => {
+        clearTimeout(timer);
+        stopAutoplay();
+        emblaApi?.off('pointerDown', stopAutoplay);
+        emblaApi?.off('settle', startAutoplay);
+      };
     }
-    
-    return () => {
-      stopAutoplay();
-      emblaApi?.off('pointerDown', stopAutoplay);
-      emblaApi?.off('settle', startAutoplay);
-    };
   }, [emblaApi]);
 
   return (
@@ -110,6 +111,9 @@ const LogoCarousel = () => {
                               alt={logo.alt}
                               className="max-w-full max-h-full object-contain transition-all duration-300"
                               style={{ aspectRatio: '1/1' }}
+                              width="80"
+                              height="80"
+                              loading="lazy"
                             />
                           </div>
                         </div>

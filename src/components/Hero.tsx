@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { UserCheck } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
 import CTAButton from "./CTAButton";
@@ -7,24 +7,14 @@ import { useTranslation } from "@/hooks/use-translation";
 
 const Hero = () => {
   const isMobile = useIsMobile();
-  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const { t } = useTranslation();
   
-  useEffect(() => {
-    // Set animation complete after a short delay
-    const timer = setTimeout(() => {
-      setIsAnimationComplete(true);
-    }, 500);
-    
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="animate-fade-in">
+          <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4">
               {t('hero.headline1')}
               <span style={{ color: 'rgb(164 195 9)' }}>{t('hero.headline2')}</span>
@@ -51,12 +41,16 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="md:pl-8 animate-fade-in">
+          <div className="md:pl-8">
             <div className="relative group hover-scale transition-all duration-300">
               <img 
                 src="/lovable-uploads/681057b0-11ff-4042-8e39-ca84be63c8d2.png" 
                 alt="Stellar Online Check-in Interface" 
                 className="w-4/5 h-auto object-contain rounded-lg z-10 relative transform scale-105 mx-auto"
+                width="500"
+                height="350"
+                loading="eager"
+                fetchpriority="high"
               />
             </div>
           </div>
