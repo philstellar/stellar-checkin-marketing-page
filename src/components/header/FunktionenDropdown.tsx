@@ -1,70 +1,96 @@
 
-import React from 'react';
-import { 
-  Cable, 
-  ShieldCheck, 
-  Fingerprint, 
-  Gift, 
-  Sliders,
-  FileText
-} from "lucide-react";
+import { useEffect, useRef } from 'react';
+import { useTranslation } from '@/hooks/use-translation';
 
 type FunktionenDropdownProps = {
   isOpen: boolean;
   handleSectionClick: (sectionId: string) => void;
-  isMobile?: boolean;
-  onClose?: () => void;
+  onClose: () => void;
 };
 
-const FunktionenDropdown = ({ 
-  isOpen, 
-  handleSectionClick, 
-  isMobile = false,
-  onClose 
-}: FunktionenDropdownProps) => {
-  if (!isOpen) return null;
+const FunktionenDropdown = ({ isOpen, handleSectionClick, onClose }: FunktionenDropdownProps) => {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
-  const features = [
-    { title: "Online Check-in", targetSection: "online-checkin", icon: <FileText className="w-4 h-4" /> },
-    { title: "Kurtaxe & Gästemeldung", targetSection: "kurtaxe", icon: <Gift className="w-4 h-4" /> },
-    { title: "Zusatzservices", targetSection: "zusatzservices", icon: <Cable className="w-4 h-4" /> },
-    { title: "Kautionsmanagement & Versicherung", targetSection: "versicherung", icon: <ShieldCheck className="w-4 h-4" /> },
-    { title: "Identitätsprüfung", targetSection: "identitaetspruefung", icon: <Fingerprint className="w-4 h-4" /> },
-    { title: "Individualisierung", targetSection: "einstellungen", icon: <Sliders className="w-4 h-4" /> },
-    { title: "Integrationen", targetSection: "integrationen", icon: <Cable className="w-4 h-4" /> }
-  ];
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
 
-  const handleItemClick = (targetSection: string) => {
-    handleSectionClick(targetSection);
-    if (onClose) {
-      onClose();
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
     }
-  };
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
 
   return (
     <div 
-      className={`
-        ${isMobile 
-          ? 'pl-4 space-y-2 mb-2' 
-          : 'absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg z-50 py-2'
-        }
-      `}
+      ref={dropdownRef}
+      className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-md py-2 z-50"
     >
-      {features.map((feature, index) => (
-        <button
-          key={index}
-          onClick={() => handleItemClick(feature.targetSection)}
-          className={`
-            ${isMobile 
-              ? 'block w-full text-left py-1 text-royal-700 hover:text-apple flex items-center gap-2' 
-              : 'block w-full text-left px-4 py-2 text-sm text-royal-700 hover:bg-gray-50 hover:text-apple flex items-center gap-2'
-            }
-          `}
+      <div className="space-y-1">
+        <button 
+          onClick={() => {
+            handleSectionClick('kurtaxe');
+            onClose();
+          }}
+          className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
         >
-          {feature.icon}
-          {feature.title}
+          {t('features.kurtaxe.title')}
         </button>
-      ))}
+        <button 
+          onClick={() => {
+            handleSectionClick('zusatzservices');
+            onClose();
+          }}
+          className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
+        >
+          {t('features.zusatzleistungen.title')}
+        </button>
+        <button 
+          onClick={() => {
+            handleSectionClick('versicherung');
+            onClose();
+          }}
+          className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
+        >
+          {t('features.kaution.title')}
+        </button>
+        <button 
+          onClick={() => {
+            handleSectionClick('identitaetspruefung');
+            onClose();
+          }}
+          className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
+        >
+          {t('features.identity.title')}
+        </button>
+        <button 
+          onClick={() => {
+            handleSectionClick('einstellungen');
+            onClose();
+          }}
+          className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
+        >
+          {t('features.custom.title')}
+        </button>
+        <button 
+          onClick={() => {
+            handleSectionClick('integrationen');
+            onClose();
+          }}
+          className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
+        >
+          {t('features.integration.title')}
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,258 @@
+
+export const en = {
+  // Header
+  navigation: {
+    home: "Home",
+    features: "Features",
+    pricing: "Pricing",
+    contact: "Contact",
+    register: "Register Now"
+  },
+  
+  // Hero
+  hero: {
+    headline1: "The comprehensive digital ",
+    headline2: "Check-in",
+    headline3: " solution for holiday rentals",
+    subheadline: "Automate the entire check-in process for your vacation rental property.",
+    subheadline2: "Less work, more revenue – and a check-in that delights guests.",
+    cta: "Register Now",
+    tagline: "Simple. Efficient. For you and your guests."
+  },
+  
+  // Features
+  features: {
+    title: "Stellar Check-in",
+    subtitle: "Improve the guest experience before arrival and increase your revenue",
+    kurtaxe: {
+      title: "Tourist tax & digital guest registration",
+      description: "Collect registration forms, calculate tourist tax, and process payments automatically – quickly, securely, and conveniently for your guests."
+    },
+    zusatzleistungen: {
+      title: "Additional services",
+      description: "Offer your guests more – and increase your revenue with add-on services like early check-in, linen packages, or special experiences."
+    },
+    kaution: {
+      title: "Deposit & guest insurance",
+      description: "Automate deposit collection and refunds, or offer your guests a convenient alternative – and benefit from additional commission income."
+    },
+    identity: {
+      title: "Identity verification",
+      description: "Increase security with our simple and reliable biometric identity verification."
+    },
+    custom: {
+      title: "Customization options",
+      description: "Personalize the check-in experience – with your branding and a multilingual user interface."
+    },
+    integration: {
+      title: "Integration with leading PMS",
+      description: "Seamless connection to your PMS or channel manager – automatic check-in invitations, and all collected data centrally available."
+    },
+    moreBtn: "Learn more"
+  },
+
+  // Kurtaxe Section
+  kurtaxe: {
+    title: "Digital Guest Registration, Collection of City Taxes, Tourist Taxes, etc.",
+    subtitle: "Automate the collection and management of guest registrations, city taxes, and tourist taxes to comply with local regulations.",
+    digitalRegistration: {
+      title: "Digital Guest Registration",
+      description: "Capture registration forms digitally – your guests simply fill in all details themselves."
+    },
+    automaticCalculation: {
+      title: "Automatic Calculation",
+      description: "Tourist tax is automatically calculated based on guest information and can be conveniently paid directly during check-in."
+    },
+    authorities: {
+      title: "Authority Connection",
+      description: "Direct transmission of data to the relevant authorities through our partners AVS and Ostseecard."
+    },
+    cta: "Register Now"
+  },
+
+  // Zusatzservices Section
+  zusatzservices: {
+    title: "Sell Additional Services",
+    subtitle: "Increase your revenue by offering additional services to your guests during the check-in process.",
+    additionalServices: {
+      title: "Additional Services",
+      description: "Offer your guests more – and increase your revenue with add-on services like early check-in, linen packages, or special experiences."
+    },
+    payment: {
+      title: "Seamless Payment Processing",
+      description: "Integrated payment processing with all common payment methods directly in the check-in process."
+    },
+    revenue: {
+      title: "Additional Revenue Streams",
+      description: "Generate additional income through targeted sales of upgrades and add-on services."
+    },
+    cta: "Register Now"
+  },
+
+  // Versicherung Section
+  versicherung: {
+    title: "Cleverly Automate Insurance and Deposits",
+    subtitle: "Automate deposit collection and refunds, or offer your guests a convenient alternative – and benefit from additional commission income.",
+    process: {
+      title: "Faster Check-in Process",
+      description: "No more deposit handling, less work for you and your guests."
+    },
+    income: {
+      title: "Additional Income Source",
+      description: "Earn commission with every insurance policy – automatically and without extra effort."
+    },
+    protection: {
+      title: "Comprehensive Protection",
+      description: "Better protection than traditional deposits, thanks to higher coverage amounts, \"new for old\" coverage, and protection against rental loss."
+    },
+    cta: "Register Now"
+  },
+
+  // Identitaetspruefung Section
+  identity: {
+    title: "Identity Verification",
+    subtitle: "Quick and secure identity verification of your guests – completed in just 2 minutes, for more trust and protection.",
+    biometric: {
+      title: "Biometric Verification",
+      description: "Fast facial recognition with liveness check – protects against fraud and ensures that ID and person are genuine."
+    },
+    document: {
+      title: "ID Document Verification",
+      description: "Automatic validation of ID documents through modern AI technology in seconds."
+    },
+    privacy: {
+      title: "Privacy-Compliant Solution",
+      description: "All data is processed securely and protected according to GDPR standards and only used for verification."
+    },
+    cta: "Register Now"
+  },
+
+  // Integrationen Section
+  integration: {
+    title: "Integration with Your PMS",
+    subtitle: "Whether integrating with Smoobu, Guesty, Hostaway, Lodgify, Beds24, or other leading systems - we connect your PMS for an optimized workflow.",
+    pms: {
+      title: "PMS Integration",
+      description: "Seamless connection to your Property Management System for efficient data synchronization."
+    },
+    api: {
+      title: "API Interfaces",
+      description: "Open API for custom integrations and individual adaptations."
+    },
+    payment: {
+      title: "Payment Systems",
+      description: "Direct connection to leading payment providers like Stripe and PayPal."
+    },
+    webhooks: {
+      title: "Webhooks",
+      description: "Event-based notifications for real-time updates in your systems."
+    },
+    cta: "Discover Integrations"
+  },
+
+  // Einstellungen Section
+  settings: {
+    title: "Customization",
+    subtitle: "Personalize the check-in experience – with your own branding and a multilingual interface",
+    design: {
+      title: "Design & Branding",
+      description: "Easily customize the design – with your logo, your brand colors, your URL."
+    },
+    language: {
+      title: "Language Options",
+      description: "Multilingual check-in – so international guests can find their way immediately."
+    },
+    custom: {
+      title: "Custom Check-in",
+      description: "Customize the check-in process according to your wishes and determine which data should be collected."
+    }
+  },
+
+  // Pricing Section
+  pricing: {
+    title: "Our Prices",
+    subtitle: "Find the right package for your requirements.",
+    basic: {
+      title: "Basic",
+      price: "5",
+      unit: "€/month",
+      per: "per property",
+      cta: "Register Now",
+      additionalServices: "Additional Services *",
+      additionalServicesDesc: "In the Basic package, a fee of 5% is charged on the total value of additional services booked by the guest.",
+      identityVerification: "Identity Verification *",
+      identityVerificationDesc: "Biometric verification is optional and is charged at €1.50 per check-in.",
+      depositManagement: "Deposit Management *",
+      depositManagementDesc: "In the Basic package, a fee of 1% is charged on the total value of the deposit.",
+      insurance: "Guest Insurance *",
+      insuranceDesc: "Insurance is optional for the guest or can be chosen as a replacement for the deposit.",
+      digitalGuestRegistration: "Guest Registration to Authorities *",
+      digitalGuestRegistrationDesc: "Guest registrations are automatically and legally submitted to the authorities.",
+      features: [
+        "Online check-in",
+        "Customizable guest registration",
+        "PMS Integrations",
+        "Additional Services *",
+        "Identity Verification *",
+        "Deposit Management *",
+        "Guest Insurance *",
+        "Acceptance of Accommodation Agreement"
+      ]
+    },
+    advanced: {
+      title: "Advanced",
+      price: "9",
+      unit: "€/month",
+      per: "per property",
+      popular: "Most popular",
+      cta: "Register Now",
+      plusBasic: "Everything in Basic plus selected add-ons:",
+      features: [
+        "Guest Registration to Authorities *",
+        "Tourist Tax – automatically calculated and settled",
+        "Additional services without fees",
+        "Customized check-in"
+      ]
+    },
+    enterprise: {
+      title: "Over 100 Properties",
+      contact: "Please ask our",
+      contactTeam: "sales team",
+      cta: "Contact Sales",
+      features: [
+        "API Connection",
+        "More than 100 properties"
+      ]
+    },
+    disclaimer: "All prices are subject to applicable VAT"
+  },
+
+  // Contact Section
+  contact: {
+    title: "Contact Us",
+    subtitle: "Do you have questions about Stellar Checkin? Our team is happy to help.",
+    email: "E-Mail",
+    phone: "Phone",
+    address: "Address",
+    formName: "Name",
+    formEmail: "E-Mail",
+    formCompany: "Company",
+    formMessage: "Message",
+    formSend: "Send Message",
+    formSending: "Sending...",
+    success: "Message sent!",
+    successDesc: "Thank you for your inquiry. We will get back to you shortly.",
+    error: "Error sending",
+    errorDesc: "There was a problem sending your message. Please try again later."
+  },
+
+  // Footer
+  footer: {
+    tagline: "Digital guest registration for vacation rentals – fast, secure, paperless.",
+    legal: "Legal",
+    imprint: "Imprint",
+    privacy: "Privacy Policy",
+    terms: "Terms and Conditions",
+    copyright: "All rights reserved."
+  }
+};

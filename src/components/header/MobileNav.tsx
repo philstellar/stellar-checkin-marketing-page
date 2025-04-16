@@ -1,34 +1,28 @@
 
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import CTAButton from '../CTAButton';
-import FunktionenDropdown from './FunktionenDropdown';
+import LanguageSelector from '../LanguageSelector';
+import { useTranslation } from '@/hooks/use-translation';
 
 type MobileNavProps = {
-  isOpen: boolean;
   handleSectionClick: (sectionId: string) => void;
-  onClose?: () => void;
   isScrolled: boolean;
 };
 
-const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNavProps) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const MobileNav = ({ handleSectionClick, isScrolled }: MobileNavProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
-  const closeDropdown = () => {
-    setIsDropdownOpen(false);
-  };
-
-  const handleItemClick = (sectionId: string) => {
+  const handleMenuItemClick = (sectionId: string) => {
     handleSectionClick(sectionId);
-    if (onClose) {
-      onClose();
-    }
+    setIsOpen(false);
   };
 
   const handleHomeClick = () => {
@@ -37,52 +31,98 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
       top: 0,
       behavior: 'smooth'
     });
-    if (onClose) {
-      onClose();
-    }
+    setIsOpen(false);
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className={`md:hidden py-4 ${isScrolled ? 'bg-white' : 'bg-white shadow-lg'} border-t`}>
-      <button 
-        onClick={handleHomeClick}
-        className="block w-full py-2 text-left text-royal hover:text-apple font-medium"
-      >
-        Home
+    <div className="md:hidden">
+      <button onClick={toggleMenu} aria-label="Toggle menu" className="text-royal hover:text-apple">
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
-      <button
-        className="flex items-center w-full py-2 text-royal hover:text-apple font-medium"
-        onClick={toggleDropdown}
-      >
-        Funktionen <ChevronDown className={`ml-1 w-4 h-4 ${isDropdownOpen ? 'transform rotate-180' : ''}`} />
-      </button>
-      <FunktionenDropdown 
-        isOpen={isDropdownOpen} 
-        handleSectionClick={handleItemClick}
-        isMobile={true}
-        onClose={closeDropdown}
-      />
-      <button
-        onClick={() => handleItemClick('preise')}
-        className="block w-full py-2 text-left text-royal hover:text-apple font-medium"
-      >
-        Preise
-      </button>
-      <button
-        onClick={() => handleItemClick('kontakt')}
-        className="block w-full py-2 text-left text-royal hover:text-apple font-medium"
-      >
-        Kontakt
-      </button>
-      <div className="block mt-4">
-        <CTAButton 
-          className="w-full bg-apple hover:bg-apple-600"
-        >
-          Jetzt registrieren
-        </CTAButton>
-      </div>
+      
+      {isOpen && (
+        <div className={`fixed inset-0 z-50 ${isScrolled ? 'bg-white' : 'bg-floral'}`}>
+          <div className="flex justify-end p-6">
+            <button onClick={toggleMenu} aria-label="Close menu" className="text-royal hover:text-apple">
+              <X size={24} />
+            </button>
+          </div>
+          
+          <div className="flex flex-col items-center space-y-6 p-6">
+            <button 
+              onClick={handleHomeClick}
+              className="text-xl text-royal hover:text-apple font-medium transition-colors"
+            >
+              {t('navigation.home')}
+            </button>
+            
+            <div className="space-y-4">
+              <p className="text-lg font-medium text-royal">{t('navigation.features')}:</p>
+              <div className="space-y-3 pl-4">
+                <button 
+                  onClick={() => handleMenuItemClick('kurtaxe')}
+                  className="block text-royal-700 hover:text-apple transition-colors"
+                >
+                  {t('features.kurtaxe.title')}
+                </button>
+                <button 
+                  onClick={() => handleMenuItemClick('zusatzservices')}
+                  className="block text-royal-700 hover:text-apple transition-colors"
+                >
+                  {t('features.zusatzleistungen.title')}
+                </button>
+                <button 
+                  onClick={() => handleMenuItemClick('versicherung')}
+                  className="block text-royal-700 hover:text-apple transition-colors"
+                >
+                  {t('features.kaution.title')}
+                </button>
+                <button 
+                  onClick={() => handleMenuItemClick('identitaetspruefung')}
+                  className="block text-royal-700 hover:text-apple transition-colors"
+                >
+                  {t('features.identity.title')}
+                </button>
+                <button 
+                  onClick={() => handleMenuItemClick('einstellungen')}
+                  className="block text-royal-700 hover:text-apple transition-colors"
+                >
+                  {t('features.custom.title')}
+                </button>
+                <button 
+                  onClick={() => handleMenuItemClick('integrationen')}
+                  className="block text-royal-700 hover:text-apple transition-colors"
+                >
+                  {t('features.integration.title')}
+                </button>
+              </div>
+            </div>
+            
+            <button 
+              onClick={() => handleMenuItemClick('preise')}
+              className="text-xl text-royal hover:text-apple font-medium transition-colors"
+            >
+              {t('navigation.pricing')}
+            </button>
+            
+            <button 
+              onClick={() => handleMenuItemClick('kontakt')}
+              className="text-xl text-royal hover:text-apple font-medium transition-colors"
+            >
+              {t('navigation.contact')}
+            </button>
+            
+            <LanguageSelector />
+            
+            <CTAButton 
+              variant="default" 
+              className="bg-apple hover:bg-apple-600 w-full justify-center mt-8"
+            >
+              {t('navigation.register')}
+            </CTAButton>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

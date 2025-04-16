@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { ChevronDown } from "lucide-react";
 import CTAButton from '../CTAButton';
 import FunktionenDropdown from './FunktionenDropdown';
+import LanguageSelector from '../LanguageSelector';
+import { useTranslation } from '@/hooks/use-translation';
 
 type DesktopNavProps = {
   handleSectionClick: (sectionId: string) => void;
@@ -12,6 +14,7 @@ type DesktopNavProps = {
 const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -35,14 +38,14 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
         onClick={handleHomeClick}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
-        Home
+        {t('navigation.home')}
       </button>
       <div className="relative">
         <button
           className="flex items-center text-royal hover:text-apple font-medium transition-colors"
           onClick={toggleDropdown}
         >
-          Funktionen <ChevronDown className="ml-1 w-4 h-4" />
+          {t('navigation.features')} <ChevronDown className="ml-1 w-4 h-4" />
         </button>
         <FunktionenDropdown 
           isOpen={isDropdownOpen} 
@@ -54,16 +57,17 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
         onClick={() => handleSectionClick('preise')}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
-        Preise
+        {t('navigation.pricing')}
       </button>
       <button 
         onClick={() => handleSectionClick('kontakt')}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
-        Kontakt
+        {t('navigation.contact')}
       </button>
+      <LanguageSelector />
       <CTAButton variant="default" className="bg-apple hover:bg-apple-600">
-        Jetzt registrieren
+        {t('navigation.register')}
       </CTAButton>
     </nav>
   );
