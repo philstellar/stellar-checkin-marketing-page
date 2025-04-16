@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, Calculator, Upload, UserCheck } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
@@ -7,7 +8,7 @@ const KurtaxeSection = () => {
     <section id="kurtaxe" className="section-padding bg-floral">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="order-2 md:order-1">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Kurtaxe & digitale Gästemeldung
             </h2>
@@ -56,7 +57,7 @@ const KurtaxeSection = () => {
             </div>
           </div>
           
-          <div>
+          <div className="order-1 md:order-2">
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
                 src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1036"

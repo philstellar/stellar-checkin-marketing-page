@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { UserCheck } from "lucide-react";
 import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
@@ -8,7 +9,7 @@ const IdentitaetspruefungSection = () => {
     <section id="identitaetspruefung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-first md:order-first">
+          <div className="order-2 md:order-first">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Identitätsprüfung
             </h2>
@@ -57,7 +58,7 @@ const IdentitaetspruefungSection = () => {
             </div>
           </div>
           
-          <div className="order-last md:order-last flex justify-center">
+          <div className="order-1 md:order-last flex justify-center">
             <img 
               src="/lovable-uploads/f65f2787-eee3-47c4-a728-74654f2e8651.png"
               alt="Identitätsprüfung mit Stellar" 
