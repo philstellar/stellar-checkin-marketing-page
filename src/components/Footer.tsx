@@ -10,7 +10,7 @@ const Footer = () => {
   
   // Helper function to get the correct URL prefix based on language
   const getUrlPrefix = () => {
-    return language === 'de' ? '' : `/${language}`;
+    return `/${language}`;
   };
   
   return (

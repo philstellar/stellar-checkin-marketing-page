@@ -25,7 +25,7 @@ const getLanguageFromPath = (path: string): Language | null => {
   const parts = path.split('/').filter(Boolean);
   const firstPart = parts[0];
   
-  if (firstPart === 'en' || firstPart === 'es' || firstPart === 'it') {
+  if (firstPart === 'de' || firstPart === 'en' || firstPart === 'es' || firstPart === 'it') {
     return firstPart;
   }
   
@@ -69,22 +69,18 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     // Update URL if needed
     const currentLanguage = getLanguageFromPath(location.pathname);
     
-    if (newLanguage === 'de') {
-      // For German, remove language prefix
-      if (currentLanguage) {
-        const newPath = location.pathname.replace(`/${currentLanguage}`, '');
-        navigate(newPath || '/');
-      }
+    if (currentLanguage) {
+      // Replace existing language prefix
+      const newPath = location.pathname.replace(`/${currentLanguage}`, `/${newLanguage}`);
+      navigate(newPath);
     } else {
-      // For other languages, add/update language prefix
-      if (currentLanguage) {
-        // Replace existing language prefix
-        const newPath = location.pathname.replace(`/${currentLanguage}`, `/${newLanguage}`);
-        navigate(newPath);
+      // Path has no language prefix, add it
+      // For root path, just add the language
+      if (location.pathname === '/') {
+        navigate(`/${newLanguage}`);
       } else {
-        // Add language prefix
-        const newPath = `/${newLanguage}${location.pathname === '/' ? '' : location.pathname}`;
-        navigate(newPath);
+        // For other paths, add language prefix
+        navigate(`/${newLanguage}${location.pathname}`);
       }
     }
   };

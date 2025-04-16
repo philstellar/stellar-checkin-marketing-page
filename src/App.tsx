@@ -17,26 +17,37 @@ const App = () => {
       <LanguageProvider>
         <BrevoFormProvider>
           <Routes>
-            {/* Default routes (German) */}
+            {/* Default root route - German */}
             <Route path="/" element={<Index />} />
+            
+            {/* Explicit German routes */}
+            <Route path="/de" element={<Index />} />
+            <Route path="/de/impressum" element={<Impressum />} />
+            <Route path="/de/datenschutz" element={<Datenschutz />} />
+            <Route path="/de/agb" element={<Agb />} />
+            <Route path="/de/brevo" element={<Brevo />} />
+            
+            {/* Default routes without language prefix (for backward compatibility) */}
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/agb" element={<Agb />} />
             <Route path="/brevo" element={<Brevo />} />
             
-            {/* Language-specific routes */}
+            {/* Spanish routes */}
             <Route path="/es" element={<Index />} />
             <Route path="/es/impressum" element={<Impressum />} />
             <Route path="/es/datenschutz" element={<Datenschutz />} />
             <Route path="/es/agb" element={<Agb />} />
             <Route path="/es/brevo" element={<Brevo />} />
             
+            {/* English routes */}
             <Route path="/en" element={<Index />} />
             <Route path="/en/impressum" element={<Impressum />} />
             <Route path="/en/datenschutz" element={<Datenschutz />} />
             <Route path="/en/agb" element={<Agb />} />
             <Route path="/en/brevo" element={<Brevo />} />
             
+            {/* Italian routes */}
             <Route path="/it" element={<Index />} />
             <Route path="/it/impressum" element={<Impressum />} />
             <Route path="/it/datenschutz" element={<Datenschutz />} />
