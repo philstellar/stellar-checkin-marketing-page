@@ -20,13 +20,17 @@ const LanguageContext = createContext<LanguageContextType>({
 export const useLanguage = () => useContext(LanguageContext);
 
 // Create the provider component
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // Try to get saved language from localStorage, default to 'en'
-  const savedLanguage = typeof window !== 'undefined' 
-    ? (localStorage.getItem('language') as Language) || 'en'
-    : 'en';
+  const getSavedLanguage = (): Language => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('language');
+      return (saved as Language) || 'en';
+    }
+    return 'en';
+  };
   
-  const [language, setLanguage] = useState<Language>(savedLanguage);
+  const [language, setLanguage] = useState<Language>(getSavedLanguage());
 
   // Update language and save to localStorage
   const handleSetLanguage = (newLanguage: Language) => {
