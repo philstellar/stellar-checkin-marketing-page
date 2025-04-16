@@ -11,6 +11,17 @@ import { LanguageProvider } from './context/LanguageContext';
 import { BrevoFormProvider } from './context/BrevoFormContext';
 import BrevoFormPopupWrapper from './components/BrevoFormPopupWrapper';
 
+// Import translated legal pages
+import ImpressumEN from './pages/legal/ImpressumEN';
+import ImpressumES from './pages/legal/ImpressumES';
+import ImpressumIT from './pages/legal/ImpressumIT';
+import DatenschutzEN from './pages/legal/DatenschutzEN';
+import DatenschutzES from './pages/legal/DatenschutzES';
+import DatenschutzIT from './pages/legal/DatenschutzIT';
+import AgbEN from './pages/legal/AgbEN';
+import AgbES from './pages/legal/AgbES';
+import AgbIT from './pages/legal/AgbIT';
+
 const App = () => {
   return (
     <Router>
@@ -35,23 +46,23 @@ const App = () => {
             
             {/* Spanish routes */}
             <Route path="/es" element={<Index />} />
-            <Route path="/es/impressum" element={<Impressum />} />
-            <Route path="/es/datenschutz" element={<Datenschutz />} />
-            <Route path="/es/agb" element={<Agb />} />
+            <Route path="/es/impressum" element={<ImpressumES />} />
+            <Route path="/es/datenschutz" element={<DatenschutzES />} />
+            <Route path="/es/agb" element={<AgbES />} />
             <Route path="/es/brevo" element={<Brevo />} />
             
             {/* English routes */}
             <Route path="/en" element={<Index />} />
-            <Route path="/en/impressum" element={<Impressum />} />
-            <Route path="/en/datenschutz" element={<Datenschutz />} />
-            <Route path="/en/agb" element={<Agb />} />
+            <Route path="/en/impressum" element={<ImpressumEN />} />
+            <Route path="/en/datenschutz" element={<DatenschutzEN />} />
+            <Route path="/en/agb" element={<AgbEN />} />
             <Route path="/en/brevo" element={<Brevo />} />
             
             {/* Italian routes */}
             <Route path="/it" element={<Index />} />
-            <Route path="/it/impressum" element={<Impressum />} />
-            <Route path="/it/datenschutz" element={<Datenschutz />} />
-            <Route path="/it/agb" element={<Agb />} />
+            <Route path="/it/impressum" element={<ImpressumIT />} />
+            <Route path="/it/datenschutz" element={<DatenschutzIT />} />
+            <Route path="/it/agb" element={<AgbIT />} />
             <Route path="/it/brevo" element={<Brevo />} />
             
             <Route path="*" element={<NotFound />} />
