@@ -47,12 +47,12 @@ const Hero = () => {
                 src="/lovable-uploads/681057b0-11ff-4042-8e39-ca84be63c8d2.png" 
                 alt="Stellar Online Check-in Interface" 
                 className="w-full h-auto object-contain rounded-lg z-10 relative transform scale-105 mx-auto"
-                width="1000"
-                height="700"
+                width="1500"
+                height="1050"
                 loading="eager"
                 fetchPriority="high"
                 style={{ 
-                  aspectRatio: "1000/700",
+                  aspectRatio: "1500/1050",
                   contentVisibility: "auto"
                 }}
               />
