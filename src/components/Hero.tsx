@@ -40,18 +40,6 @@ const Hero = () => {
                   {letter === ' ' ? '\u00A0' : letter}
                 </span>
               ))}
-              <style jsx>{`
-                @keyframes fadeInLetter {
-                  0% {
-                    opacity: 0;
-                    transform: translateY(10px);
-                  }
-                  100% {
-                    opacity: 1;
-                    transform: translateY(0);
-                  }
-                }
-              `}</style>
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg">
               Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie.<br /><br /> 
