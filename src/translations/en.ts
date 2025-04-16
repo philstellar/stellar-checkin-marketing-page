@@ -51,6 +51,11 @@ export const en = {
     moreBtn: "Learn more"
   },
 
+  // Partners Section
+  partners: {
+    title: "Some of our partners"
+  },
+
   // Kurtaxe Section
   kurtaxe: {
     title: "Digital Guest Registration, Collection of City Taxes, Tourist Taxes, etc.",

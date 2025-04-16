@@ -1,4 +1,3 @@
-
 export const it = {
   // Header
   navigation: {
@@ -49,6 +48,11 @@ export const it = {
       description: "Connessione perfetta con il tuo PMS o channel manager – inviti automatici al check-in e tutti i dati raccolti disponibili centralmente."
     },
     moreBtn: "Scopri di più"
+  },
+
+  // Partners Section
+  partners: {
+    title: "Alcuni dei nostri partner"
   },
 
   // Kurtaxe Section

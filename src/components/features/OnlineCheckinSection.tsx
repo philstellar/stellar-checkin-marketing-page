@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { UserCheck, ArrowDown } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import CTAButton from "@/components/CTAButton";
+import { useTranslation } from "@/hooks/use-translation";
 
 type FeatureCardProps = {
   title: string;
@@ -15,6 +17,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
   targetSection
 }) => {
+  const { t } = useTranslation();
+  
   const handleClick = () => {
     const section = document.getElementById(targetSection);
     if (section) {
@@ -38,7 +42,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             onClick={handleClick}
             className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2"
           >
-            Mehr erfahren <ArrowDown className="h-4 w-4" />
+            {t('features.moreBtn')} <ArrowDown className="h-4 w-4" />
           </Button>
         </div>
       </CardContent>
@@ -47,35 +51,37 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 };
 
 export const OnlineCheckinSection: React.FC = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
-      title: "Kurtaxe & digitale Gästemeldung",
-      description: "Erfasse Meldescheine, berechne die Kurtaxe und wickele Zahlungen automatisiert ab – schnell, sicher und bequem für deine Gäste.",
+      title: t('features.kurtaxe.title'),
+      description: t('features.kurtaxe.description'),
       targetSection: "kurtaxe"
     },
     {
-      title: "Zusatzleistungen",
-      description: "Biete deinen Gästen mehr – und steigere deinen Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepaketen oder besonderen Erlebnissen.",
+      title: t('features.zusatzleistungen.title'),
+      description: t('features.zusatzleistungen.description'),
       targetSection: "zusatzservices"
     },
     {
-      title: "Kaution & Gästeversicherung",
-      description: "Automatisiere Kautionseinzug und -rückzahlung, oder biete deinen Gäste eine komfortable Alternative – und profitiere von zusätzlichen Provisionseinnahmen.",
+      title: t('features.kaution.title'),
+      description: t('features.kaution.description'),
       targetSection: "versicherung"
     },
     {
-      title: "Identitätsprüfung",
-      description: "Erhöhe die Sicherheit mit unserer einfachen und zuverlässigen biometrischen Identitätsprüfung.",
+      title: t('features.identity.title'),
+      description: t('features.identity.description'),
       targetSection: "identitaetspruefung"
     },
     {
-      title: "Anpassungsmöglichkeiten",
-      description: "Gestalte das Check-in-Erlebnis individuell – mit deinem Branding und einer mehrsprachigen Benutzeroberfläche.",
+      title: t('features.custom.title'),
+      description: t('features.custom.description'),
       targetSection: "einstellungen"
     },
     {
-      title: "Integration mit den führenden PMS",
-      description: "Nahtlose Anbindung an dein PMS oder Channel Manager – automatische Check-in-Einladungen, und alle erhobenen Daten zentral verfügbar.",
+      title: t('features.integration.title'),
+      description: t('features.integration.description'),
       targetSection: "integrationen"
     }
   ];
@@ -85,11 +91,11 @@ export const OnlineCheckinSection: React.FC = () => {
       <div className="container-custom">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4 text-royal mx-auto">
-            Stellar Check-in
+            {t('features.title')}
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            Verbessere das Gästeerlebnis vor der Anreise und steigere deinen Umsatz
+            {t('features.subtitle')}
           </p>
         </div>
         
@@ -106,7 +112,7 @@ export const OnlineCheckinSection: React.FC = () => {
         
         <div className="mt-12 text-center">
           <CTAButton className="bg-apple hover:bg-apple-600">
-            <UserCheck className="mr-2 h-4 w-4" /> Jetzt Registrieren
+            <UserCheck className="mr-2 h-4 w-4" /> {t('navigation.register')}
           </CTAButton>
         </div>
       </div>

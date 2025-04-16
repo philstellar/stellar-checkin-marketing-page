@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import useEmblaCarousel from 'embla-carousel-react';
+import { useTranslation } from "@/hooks/use-translation";
 
 const logos = [
   {
@@ -34,6 +35,7 @@ const logos = [
 const extendedLogos = [...logos, ...logos, ...logos];
 
 const LogoCarousel = () => {
+  const { t } = useTranslation();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     dragFree: true,
@@ -79,7 +81,7 @@ const LogoCarousel = () => {
       <div className="container-custom">
         <div className="text-center mb-8">
           <h3 className="text-xl md:text-2xl font-medium text-center text-gray-700 mb-8">
-            Einige unserer Partner
+            {t('partners.title')}
           </h3>
           
           {/* Logo Carousel */}

@@ -3,30 +3,32 @@ import React, { useEffect, useRef } from 'react';
 import { Database, Plug, Link, ServerCog } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { cn } from "@/lib/utils";
 import useEmblaCarousel from 'embla-carousel-react';
+import { useTranslation } from "@/hooks/use-translation";
 
 export const IntegrationenSection: React.FC = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
       icon: <Database className="w-8 h-8 text-apple" />,
-      title: "PMS Integration",
-      description: "Nahtlose Anbindung an dein Property Management System für effiziente Datensynchronisation."
+      title: t('integration.pms.title'),
+      description: t('integration.pms.description')
     },
     {
       icon: <Plug className="w-8 h-8 text-apple" />,
-      title: "API Schnittstellen",
-      description: "Offene API für maßgeschneiderte Integrationen und individuelle Anpassungen."
+      title: t('integration.api.title'),
+      description: t('integration.api.description')
     },
     {
       icon: <Link className="w-8 h-8 text-apple" />,
-      title: "Zahlungssysteme",
-      description: "Direktanbindung an führende Zahlungsanbieter wie Stripe und PayPal."
+      title: t('integration.payment.title'),
+      description: t('integration.payment.description')
     },
     {
       icon: <ServerCog className="w-8 h-8 text-apple" />,
-      title: "Webhooks",
-      description: "Ereignisbasierte Benachrichtigungen für Echtzeit-Updates in deinen Systemen."
+      title: t('integration.webhooks.title'),
+      description: t('integration.webhooks.description')
     }
   ];
 
@@ -97,11 +99,11 @@ export const IntegrationenSection: React.FC = () => {
       <div className="container-custom">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-            Integration mit Ihrem PMS
+            {t('integration.title')}
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-black max-w-3xl mx-auto mb-10">
-            Ob Integration mit Smoobu, Guesty, Hostaway, Lodgify, Beds24 oder anderen führenden Systemen - wir verbinden Ihr PMS für einen optimierten Workflow.
+            {t('integration.subtitle')}
           </p>
           
           {/* Logo Carousel */}
@@ -154,7 +156,7 @@ export const IntegrationenSection: React.FC = () => {
         
         <div className="mt-12 text-center">
           <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-            Integrationen entdecken
+            {t('integration.cta')}
           </CTAButton>
         </div>
       </div>

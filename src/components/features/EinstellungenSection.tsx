@@ -1,23 +1,27 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Palette, Globe, Settings } from 'lucide-react';
+import { useTranslation } from "@/hooks/use-translation";
 
 export const EinstellungenSection: React.FC = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
       icon: <Palette className="h-8 w-8 text-apple" />,
-      title: "Design & Branding",
-      description: "Passe das Design ganz einfach an – mit deinem Logo, deinen Markenfarben, deiner URL."
+      title: t('settings.design.title'),
+      description: t('settings.design.description')
     },
     {
       icon: <Globe className="h-8 w-8 text-apple" />,
-      title: "Sprachoptionen",
-      description: "Mehrsprachiger Check-in – damit sich internationale Gäste sofort zurechtfinden."
+      title: t('settings.language.title'),
+      description: t('settings.language.description')
     },
     {
       icon: <Settings className="h-8 w-8 text-apple" />,
-      title: "Individueller Check-in",
-      description: "Passe den Check-in-Prozess nach deinen Wünschen an und bestimme, welche Daten erfasst werden sollen."
+      title: t('settings.custom.title'),
+      description: t('settings.custom.description')
     }
   ];
 
@@ -26,11 +30,11 @@ export const EinstellungenSection: React.FC = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 text-royal">
-            Individualisierung
+            {t('settings.title')}
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            Gestalte das Check-in-Erlebnis individuell – mit deinem eigenen Branding und einer mehrsprachigen Oberfläche
+            {t('settings.subtitle')}
           </p>
         </div>
         
