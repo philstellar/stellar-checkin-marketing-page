@@ -50,7 +50,7 @@ const Hero = () => {
                 width="500"
                 height="350"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </div>
           </div>
