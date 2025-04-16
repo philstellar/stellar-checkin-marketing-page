@@ -46,13 +46,13 @@ const Hero = () => {
               <img 
                 src="/lovable-uploads/681057b0-11ff-4042-8e39-ca84be63c8d2.png" 
                 alt="Stellar Online Check-in Interface" 
-                className="w-full h-auto object-contain rounded-lg z-10 relative transform scale-105 mx-auto"
-                width="1500"
-                height="1050"
+                className="w-full h-auto object-contain rounded-lg z-10 relative transform scale-110 mx-auto"
+                width="2000"
+                height="1400"
                 loading="eager"
                 fetchPriority="high"
                 style={{ 
-                  aspectRatio: "1500/1050",
+                  aspectRatio: "2000/1400",
                   contentVisibility: "auto"
                 }}
               />
