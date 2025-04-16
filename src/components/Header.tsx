@@ -61,7 +61,7 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white stellar-shadow' : 'bg-transparent'
+        isScrolled || isMenuOpen ? 'bg-white stellar-shadow' : 'bg-transparent'
       }`}
     >
       <div className="container-custom">
@@ -93,6 +93,7 @@ const Header = () => {
           isOpen={isMenuOpen} 
           handleSectionClick={handleSectionClick} 
           onClose={closeMenu}
+          isScrolled={isScrolled}
         />
       </div>
     </header>

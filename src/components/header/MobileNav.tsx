@@ -9,9 +9,10 @@ type MobileNavProps = {
   isOpen: boolean;
   handleSectionClick: (sectionId: string) => void;
   onClose?: () => void;
+  isScrolled: boolean;
 };
 
-const MobileNav = ({ isOpen, handleSectionClick, onClose }: MobileNavProps) => {
+const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNavProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -44,7 +45,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose }: MobileNavProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden py-4 bg-white border-t">
+    <div className={`md:hidden py-4 ${isScrolled ? 'bg-white' : 'bg-white shadow-lg'} border-t`}>
       <button 
         onClick={handleHomeClick}
         className="block w-full py-2 text-left text-royal hover:text-apple font-medium"
