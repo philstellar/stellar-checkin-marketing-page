@@ -1,5 +1,24 @@
 
-# Disallow all robots from indexing any content
+# Disallow all crawlers from indexing the entire site
 User-agent: *
 Disallow: /
 
+# Explicitly block Google
+User-agent: Googlebot
+Disallow: /
+
+# Explicitly block Google Image
+User-agent: Googlebot-Image
+Disallow: /
+
+# Explicitly block Google Mobile
+User-agent: Googlebot-Mobile
+Disallow: /
+
+# Explicitly block Google AdSense
+User-agent: Mediapartners-Google
+Disallow: /
+
+# Explicitly block Google Ads
+User-agent: AdsBot-Google
+Disallow: /
