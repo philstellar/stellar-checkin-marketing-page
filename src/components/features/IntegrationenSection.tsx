@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Database, Plug, Link, ServerCog } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { cn } from "@/lib/utils";
+import useEmblaCarousel from 'embla-carousel-react';
 
 export const IntegrationenSection: React.FC = () => {
   const features = [
@@ -48,6 +49,43 @@ export const IntegrationenSection: React.FC = () => {
     }
   ];
 
+  // Double the logos to ensure smooth looping
+  const extendedLogos = [...pmsLogos, ...pmsLogos];
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    dragFree: true,
+    containScroll: "keepSnaps",
+    slidesToScroll: 1
+  });
+
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayRef.current = setInterval(() => {
+      if (emblaApi) emblaApi.scrollNext();
+    }, 3000);
+  };
+
+  const stopAutoplay = () => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+  };
+
+  useEffect(() => {
+    if (emblaApi) {
+      startAutoplay();
+      emblaApi.on('pointerDown', stopAutoplay);
+      emblaApi.on('settle', startAutoplay);
+    }
+    
+    return () => {
+      stopAutoplay();
+      emblaApi?.off('pointerDown', stopAutoplay);
+      emblaApi?.off('settle', startAutoplay);
+    };
+  }, [emblaApi]);
+
   return (
     <section id="integrationen" className="section-padding bg-gray-50">
       <div className="container-custom">
@@ -60,27 +98,36 @@ export const IntegrationenSection: React.FC = () => {
             Ob Integration mit Smoobu, Guesty, Hostaway, Lodgify, Beds24 oder anderen führenden Systemen - wir verbinden Ihr PMS für einen optimierten Workflow.
           </p>
           
-          {/* Logo Grid */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
-            {pmsLogos.map((logo, index) => (
-              <HoverCard key={index}>
-                <HoverCardTrigger asChild>
-                  <div className="h-20 w-32 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
-                    <div className="w-full h-full flex items-center justify-center">
-                      <img
-                        src={logo.src}
-                        alt={logo.alt}
-                        className="max-w-full max-h-full object-contain transition-all duration-300"
-                        style={{ aspectRatio: '1/1' }}
-                      />
-                    </div>
+          {/* Logo Carousel */}
+          <div className="mb-12">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                {extendedLogos.map((logo, index) => (
+                  <div 
+                    key={index} 
+                    className="flex-shrink-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 px-4"
+                  >
+                    <HoverCard>
+                      <HoverCardTrigger asChild>
+                        <div className="h-20 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
+                          <div className="w-full h-full flex items-center justify-center">
+                            <img
+                              src={logo.src}
+                              alt={logo.alt}
+                              className="max-w-full max-h-full object-contain transition-all duration-300"
+                              style={{ aspectRatio: '1/1' }}
+                            />
+                          </div>
+                        </div>
+                      </HoverCardTrigger>
+                      <HoverCardContent className="w-auto p-2 text-center text-sm">
+                        {logo.alt}
+                      </HoverCardContent>
+                    </HoverCard>
                   </div>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-auto p-2 text-center text-sm">
-                  {logo.alt}
-                </HoverCardContent>
-              </HoverCard>
-            ))}
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         

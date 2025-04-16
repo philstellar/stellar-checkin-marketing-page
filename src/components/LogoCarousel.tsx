@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { cn } from '@/lib/utils';
@@ -35,6 +36,7 @@ const logos: LogoType[] = [
   }
 ];
 
+// Double the logos to ensure smooth looping
 const extendedLogos = [...logos, ...logos];
 
 const LogoCarousel = () => {
@@ -42,7 +44,8 @@ const LogoCarousel = () => {
     loop: true,
     dragFree: true,
     containScroll: "keepSnaps",
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    direction: 'rtl' // Set to right-to-left for movement from right to left
   });
 
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
@@ -51,7 +54,7 @@ const LogoCarousel = () => {
     stopAutoplay();
     autoplayRef.current = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 3000);
+    }, 2500); // Slightly faster than the IntegrationenSection carousel
   };
 
   const stopAutoplay = () => {
