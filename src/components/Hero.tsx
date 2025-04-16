@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { UserCheck } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -56,7 +57,7 @@ const Hero = () => {
           <div className="md:pl-8 animate-fade-in">
             <div className="relative group hover-scale transition-all duration-300">
               <img 
-                src="/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png" 
+                src="/lovable-uploads/681057b0-11ff-4042-8e39-ca84be63c8d2.png" 
                 alt="Stellar Online Check-in Interface" 
                 className="w-4/5 h-auto object-contain rounded-lg z-10 relative transform scale-105 mx-auto"
               />
