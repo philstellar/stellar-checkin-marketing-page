@@ -19,7 +19,7 @@ export function useTranslation() {
       if (pathParts.length > 0) {
         const firstPart = pathParts[0];
         if (['en', 'es', 'it', 'de'].includes(firstPart)) {
-          return firstPart;
+          return firstPart as 'en' | 'es' | 'it' | 'de';
         }
       }
       return language;
@@ -31,14 +31,15 @@ export function useTranslation() {
     console.debug('useTranslation: useLocation not available, using language from context');
   }
   
-  const t = (key: string) => {
+  const t = (key: string, fallback?: string) => {
     try {
       return get(translations[currentLanguage], key) || 
              get(translations.en, key) || 
+             fallback || 
              key;
     } catch (error) {
       console.error(`Translation error for key: ${key}`, error);
-      return key;
+      return fallback || key;
     }
   };
   
