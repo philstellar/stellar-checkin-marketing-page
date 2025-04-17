@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Award, Star, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
