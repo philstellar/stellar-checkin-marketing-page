@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
-import { BadgeCheck, UserCheck } from 'lucide-react';
+import { UserCheck } from 'lucide-react';
 import Header from '../Header';
 import Footer from '../Footer';
 import CTAButton from '../CTAButton';
@@ -41,7 +41,13 @@ const TrustBadgePage = () => {
               </div>
             </div>
             <div className="order-1 md:order-last flex justify-center">
-              <BadgeCheck className="w-3/5 h-auto text-apple opacity-90" />
+              <img 
+                src="/lovable-uploads/3098a042-bbb0-4607-b03f-beb60fdc911d.png"
+                alt="Stellar Trust Badge Preview"
+                className="w-full h-auto object-contain max-w-[800px]"
+                loading="eager"
+                fetchPriority="high"
+              />
             </div>
           </div>
         </div>
