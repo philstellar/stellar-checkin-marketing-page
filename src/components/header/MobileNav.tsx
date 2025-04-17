@@ -55,25 +55,65 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.3 }}
               >
-                {[
-                  { id: 'kurtaxe', title: t('features.kurtaxe.title') },
-                  { id: 'zusatzservices', title: t('features.zusatzleistungen.title') },
-                  { id: 'versicherung', title: t('features.kaution.title') },
-                  { id: 'identitaetspruefung', title: t('features.identity.title') },
-                  { id: 'einstellungen', title: t('features.custom.title') },
-                  { id: 'integrationen', title: t('features.integration.title') }
-                ].map((item, index) => (
-                  <motion.button 
-                    key={item.id}
-                    onClick={() => handleMenuItemClick(item.id)}
-                    className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
-                    initial={{ x: -10, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 + (index * 0.05), duration: 0.3 }}
-                  >
-                    {item.title}
-                  </motion.button>
-                ))}
+                <motion.button 
+                  onClick={() => handleMenuItemClick('kurtaxe')}
+                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
+                >
+                  {t('kurtaxe.title')}
+                </motion.button>
+                
+                <motion.button 
+                  onClick={() => handleMenuItemClick('zusatzservices')}
+                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.25, duration: 0.3 }}
+                >
+                  {t('zusatzservices.title')}
+                </motion.button>
+                
+                <motion.button 
+                  onClick={() => handleMenuItemClick('versicherung')}
+                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.3 }}
+                >
+                  {t('versicherung.title')}
+                </motion.button>
+                
+                <motion.button 
+                  onClick={() => handleMenuItemClick('identitaetspruefung')}
+                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.35, duration: 0.3 }}
+                >
+                  {t('identity.title')}
+                </motion.button>
+                
+                <motion.button 
+                  onClick={() => handleMenuItemClick('einstellungen')}
+                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.3 }}
+                >
+                  {t('settings.title')}
+                </motion.button>
+                
+                <motion.button 
+                  onClick={() => handleMenuItemClick('integrationen')}
+                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.45, duration: 0.3 }}
+                >
+                  {t('integration.title')}
+                </motion.button>
               </motion.div>
             </div>
             
