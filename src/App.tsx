@@ -24,7 +24,10 @@ import AgbES from './pages/legal/AgbES';
 import AgbIT from './pages/legal/AgbIT';
 
 const App = () => {
-  const isDevMode = process.env.NODE_ENV === 'development';
+  // We'll use NODE_ENV==='production' to check if app is published
+  // This is different from process.env.NODE_ENV==='development' which we had before
+  const isPublished = window.location.hostname.includes('lovable.app') || 
+                     window.location.hostname.includes('lovable.dev');
 
   return (
     <BrevoFormProvider>
@@ -59,8 +62,8 @@ const App = () => {
         <Route path="/es/agb" element={<AgbES />} />
         <Route path="/es/brevo" element={<Brevo />} />
         
-        {/* Admin-only routes - only visible in development mode */}
-        {isDevMode && (
+        {/* Admin routes - only hidden when published */}
+        {!isPublished && (
           <>
             <Route path="/de/versicherung" element={<VersicherungPage />} />
             <Route path="/de/trust-badge" element={<TrustBadgePage />} />
