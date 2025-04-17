@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award } from 'lucide-react';
+import { Award, Star, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
@@ -26,6 +26,36 @@ const Erfolgsgeschichten = () => {
       alt: "Luxury Hideaway",
       width: 170
     }
+  ];
+
+  const testimonials = [
+    {
+      company: "Hof Liebeneck",
+      name: "Mario Schilling",
+      rating: 5.0,
+      ratings: 28,
+      properties: 4,
+      joinedYear: 2024,
+      quote: "Gäste davon zu überzeugen, direkt auf unserer Website zu buchen, war immer eine Herausforderung. Seitdem wir das Stellar Trust Badge auf unserer Website anzeigen, das unsere Airbnb- und Booking.com-Bewertungen aggregiert, sehen wir bereits einen Anstieg der Buchungen.\n\nAußerdem habe ich ein viel besseres Gefühl bei Buchungen von Gästen, die ich noch nicht kenne, seit ich ihnen die Wahl zwischen einer Kaution und der Gästeschadenversicherung von Stellar anbieten kann.",
+    },
+    {
+      company: "Plau Lagoons",
+      name: "Ralf Kramer",
+      rating: 4.7,
+      ratings: 12,
+      properties: 10,
+      joinedYear: 2024,
+      quote: "Mehr Direktbuchungen zu bekommen, war für uns in letzter Zeit super wichtig – nicht nur, um den Umsatz zu steigern, sondern auch, um persönlicher mit unseren Gästen zu interagieren, zum Beispiel mit Grußkarten oder speziellen Angeboten.\n\nAber uns war schnell klar: Eine schöne Website allein reicht nicht. Wir brauchten etwas, das unseren Gästen zusätzlich Sicherheit gibt. Genau da kam das Stellar Trust Badge ins Spiel.",
+    },
+    {
+      company: "Favorent",
+      name: "Volker Rantz",
+      rating: 5.0,
+      ratings: null,
+      properties: null,
+      joinedYear: null,
+      quote: "Die tägliche Gästeschadenversicherung ist für uns ein echter Gamechanger – sowohl als einzigartiges Verkaufsargument zur Gewinnung neuer Agenturkunden als auch zur Vereinfachung unserer Kautionsverwaltung.\n\nWir konnten die Reibungspunkte zwischen uns als Agentur, den Eigentümern und den Gästen erheblich reduzieren.",
+    },
   ];
 
   return (
@@ -73,19 +103,60 @@ const Erfolgsgeschichten = () => {
           </div>
         </div>
       </section>
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-12">
             <Award className="h-8 w-8 text-apple" />
-            <h1 className="text-3xl font-bold text-royal inline-block relative">
+            <h2 className="text-3xl font-bold text-royal inline-block relative">
               Erfolgsgeschichten
               <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-apple rounded-full"></div>
-            </h1>
+            </h2>
           </div>
-          <div className="prose max-w-none">
-            <p className="text-lg text-royal-700 mb-6">
-              Entdecken Sie die Erfolgsgeschichten unserer zufriedenen Kunden...
-            </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="p-8 bg-white hover:shadow-lg transition-shadow duration-300">
+                <div className="flex flex-col h-full">
+                  <div className="mb-6">
+                    <h3 className="text-xl font-semibold mb-2 text-royal">{testimonial.company}</h3>
+                    <p className="text-gray-600 mb-6 whitespace-pre-line">{testimonial.quote}</p>
+                  </div>
+                  
+                  <div className="mt-auto">
+                    <div className="flex items-center gap-2 mb-2">
+                      {testimonial.rating && (
+                        <>
+                          <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                          <span className="font-semibold">{testimonial.rating}</span>
+                          {testimonial.ratings && (
+                            <span className="text-gray-500">({testimonial.ratings} Bewertungen)</span>
+                          )}
+                        </>
+                      )}
+                    </div>
+                    
+                    <div className="flex items-center text-sm text-gray-600 gap-4">
+                      <div className="flex items-center gap-1">
+                        <User className="h-4 w-4" />
+                        <span>{testimonial.name}</span>
+                      </div>
+                      {testimonial.properties && (
+                        <div className="flex items-center gap-1">
+                          <Home className="h-4 w-4" />
+                          <span>{testimonial.properties} Unterkünfte</span>
+                        </div>
+                      )}
+                    </div>
+                    
+                    {testimonial.joinedYear && (
+                      <div className="text-sm text-gray-500 mt-2">
+                        Kunde seit {testimonial.joinedYear}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
