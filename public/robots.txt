@@ -23,6 +23,8 @@ Allow: /
 User-agent: AdsBot-Google
 Allow: /
 
+# Reference to sitemap
+Sitemap: https://stellar-checkin.com/sitemap.xml
+
 # Set crawl delay to be friendly to servers
 Crawl-delay: 10
-

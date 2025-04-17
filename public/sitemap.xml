@@ -1,0 +1,93 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage URLs with language alternatives -->
+  <url>
+    <loc>https://stellar-checkin.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/"/>
+  </url>
+
+  <!-- German URLs -->
+  <url>
+    <loc>https://stellar-checkin.com/de/impressum</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/impressum"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/impressum"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/impressum"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/de/datenschutz</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/datenschutz"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/de/agb</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/agb"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/agb"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/agb"/>
+  </url>
+
+  <!-- English URLs -->
+  <url>
+    <loc>https://stellar-checkin.com/en/impressum</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/datenschutz</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/agb</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Italian URLs -->
+  <url>
+    <loc>https://stellar-checkin.com/it/impressum</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/datenschutz</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/agb</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Spanish URLs -->
+  <url>
+    <loc>https://stellar-checkin.com/es/impressum</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/datenschutz</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/agb</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

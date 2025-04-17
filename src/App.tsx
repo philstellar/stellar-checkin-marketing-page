@@ -26,43 +26,37 @@ const App = () => {
   return (
     <BrevoFormProvider>
       <Routes>
-        {/* Default root route - German */}
-        <Route path="/" element={<Index />} />
+        {/* Language-specific routes with consistent URL structure */}
+        <Route path="/:lang?" element={<Index />} />
+        <Route path="/:lang/legal/imprint" element={<Navigate to="/:lang/impressum" replace />} />
+        <Route path="/:lang/legal/privacy" element={<Navigate to="/:lang/datenschutz" replace />} />
+        <Route path="/:lang/legal/terms" element={<Navigate to="/:lang/agb" replace />} />
         
-        {/* Explicit German routes */}
-        <Route path="/de" element={<Index />} />
+        {/* German routes */}
         <Route path="/de/impressum" element={<Impressum />} />
         <Route path="/de/datenschutz" element={<Datenschutz />} />
         <Route path="/de/agb" element={<Agb />} />
         <Route path="/de/brevo" element={<Brevo />} />
         
-        {/* Default routes without language prefix (for backward compatibility) */}
-        <Route path="/impressum" element={<Impressum />} />
-        <Route path="/datenschutz" element={<Datenschutz />} />
-        <Route path="/agb" element={<Agb />} />
-        <Route path="/brevo" element={<Brevo />} />
-        
-        {/* Spanish routes */}
-        <Route path="/es" element={<Index />} />
-        <Route path="/es/impressum" element={<ImpressumES />} />
-        <Route path="/es/datenschutz" element={<DatenschutzES />} />
-        <Route path="/es/agb" element={<AgbES />} />
-        <Route path="/es/brevo" element={<Brevo />} />
-        
         {/* English routes */}
-        <Route path="/en" element={<Index />} />
         <Route path="/en/impressum" element={<ImpressumEN />} />
         <Route path="/en/datenschutz" element={<DatenschutzEN />} />
         <Route path="/en/agb" element={<AgbEN />} />
         <Route path="/en/brevo" element={<Brevo />} />
         
         {/* Italian routes */}
-        <Route path="/it" element={<Index />} />
         <Route path="/it/impressum" element={<ImpressumIT />} />
         <Route path="/it/datenschutz" element={<DatenschutzIT />} />
         <Route path="/it/agb" element={<AgbIT />} />
         <Route path="/it/brevo" element={<Brevo />} />
         
+        {/* Spanish routes */}
+        <Route path="/es/impressum" element={<ImpressumES />} />
+        <Route path="/es/datenschutz" element={<DatenschutzES />} />
+        <Route path="/es/agb" element={<AgbES />} />
+        <Route path="/es/brevo" element={<Brevo />} />
+        
+        {/* Catch-all for 404 */}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <BrevoFormPopupWrapper />
