@@ -1,4 +1,3 @@
-
 export const featuresDE = {
   title: "Stellar Check-in",
   subtitle: "Verbessern Sie das Gästeerlebnis vor der Anreise und steigern Sie Ihren Umsatz",
@@ -19,7 +18,7 @@ export const featuresDE = {
     description: "Erhöhen Sie die Sicherheit mit unserer einfachen und zuverlässigen biometrischen Identitätsprüfung."
   },
   custom: {
-    title: "Anpassungsmöglichkeiten",
+    title: "Individualisierung",
     description: "Personalisieren Sie das Check-in-Erlebnis – mit Ihrem Branding und einer mehrsprachigen Benutzeroberfläche."
   },
   integration: {
