@@ -1,11 +1,33 @@
-
 import React from 'react';
 import { Award } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Hero from '@/components/Hero';
+import { Card } from '@/components/ui/card';
 
 const Erfolgsgeschichten = () => {
+  const testimonialLogos = [
+    {
+      src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
+      alt: "Hof Liebeneck Osterspai",
+      width: 180
+    },
+    {
+      src: "/lovable-uploads/5ed06b20-0365-4348-b2b0-31574211bc35.png",
+      alt: "Homeby",
+      width: 160
+    },
+    {
+      src: "/lovable-uploads/800ababe-141e-40a9-aa0f-2e8d2519b7ef.png",
+      alt: "Favorent",
+      width: 150
+    },
+    {
+      src: "/lovable-uploads/fd96b10c-36ff-4492-a020-f47f221d8d39.png",
+      alt: "Luxury Hideaway",
+      width: 170
+    }
+  ];
+
   return (
     <>
       <Header />
@@ -29,6 +51,25 @@ const Erfolgsgeschichten = () => {
                 loading="eager"
               />
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-12 text-royal">
+            Unsere zufriedenen Kunden
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
+            {testimonialLogos.map((logo, index) => (
+              <Card key={index} className="flex items-center justify-center p-6 hover:shadow-lg transition-shadow duration-300 w-full bg-white border-none">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  style={{ width: logo.width ? `${logo.width}px` : 'auto', height: 'auto' }}
+                  className="object-contain"
+                />
+              </Card>
+            ))}
           </div>
         </div>
       </section>
