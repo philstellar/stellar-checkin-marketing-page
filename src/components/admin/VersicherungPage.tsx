@@ -9,6 +9,7 @@ import InsurancePricing from './InsurancePricing';
 import InsuranceDetails from './InsuranceDetails';
 import InsuranceFAQ from './InsuranceFAQ';
 import InsuranceComparisonTable from './InsuranceComparisonTable';
+import LogoCarousel from '../LogoCarousel';
 
 const VersicherungPage = () => {
   const { t } = useTranslation();
@@ -105,7 +106,10 @@ const VersicherungPage = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="flex items-center gap-3 mb-8">
           <Shield className="h-8 w-8 text-apple" />
-          <h1 className="text-3xl font-bold text-royal">{t('navigation.insurance')}</h1>
+          <h1 className="text-3xl font-bold text-royal inline-block relative">
+            {t('navigation.insurance')}
+            <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-apple rounded-full"></div>
+          </h1>
         </div>
         
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
@@ -141,9 +145,9 @@ const VersicherungPage = () => {
           </div>
 
           <div className="bg-white rounded-xl p-8 mb-8 shadow-sm">
-            <h2 className="text-2xl font-bold text-royal mb-8 relative inline-block">
+            <h2 className="text-2xl font-bold text-royal mb-8 inline-block relative">
               {t('insurance.benefits.title')}
-              <div className="absolute bottom-0 left-0 w-2/3 h-1 bg-apple rounded-full transform -translate-y-2"></div>
+              <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-apple rounded-full"></div>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((benefit, index) => (
@@ -161,9 +165,9 @@ const VersicherungPage = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      
+        <LogoCarousel />
+      </div>
 
       <section className="py-16 bg-white">
         <div className="container-custom">
