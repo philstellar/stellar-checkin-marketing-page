@@ -13,6 +13,11 @@ const Footer = () => {
     return `/${language}`;
   };
   
+  // Helper function to scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
   return (
     <footer className="bg-gradient-to-br from-floral to-floral-400/20 py-12">
       <div className="container-custom">
@@ -33,19 +38,31 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to={`${getUrlPrefix()}/impressum`} className="flex items-center text-black hover:text-apple transition-colors">
+                  <Link 
+                    to={`${getUrlPrefix()}/impressum`} 
+                    className="flex items-center text-black hover:text-apple transition-colors"
+                    onClick={scrollToTop}
+                  >
                     <ExternalLink className="h-5 w-5 text-apple mr-2" />
                     {t('footer.imprint')}
                   </Link>
                 </li>
                 <li>
-                  <Link to={`${getUrlPrefix()}/datenschutz`} className="flex items-center text-black hover:text-apple transition-colors">
+                  <Link 
+                    to={`${getUrlPrefix()}/datenschutz`} 
+                    className="flex items-center text-black hover:text-apple transition-colors"
+                    onClick={scrollToTop}
+                  >
                     <ExternalLink className="h-5 w-5 text-apple mr-2" />
                     {t('footer.privacy')}
                   </Link>
                 </li>
                 <li>
-                  <Link to={`${getUrlPrefix()}/agb`} className="flex items-center text-black hover:text-apple transition-colors">
+                  <Link 
+                    to={`${getUrlPrefix()}/agb`} 
+                    className="flex items-center text-black hover:text-apple transition-colors"
+                    onClick={scrollToTop}
+                  >
                     <ExternalLink className="h-5 w-5 text-apple mr-2" />
                     {t('footer.terms')}
                   </Link>
