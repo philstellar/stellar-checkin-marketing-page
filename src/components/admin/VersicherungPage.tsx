@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
-import { Shield, UserCheck, CalendarCheck, Percent, Plus, Link, ShieldCheck, FileCheck } from 'lucide-react';
+import { Shield, UserCheck, CalendarCheck, Percent, Plus, Link, ShieldCheck, FileCheck, Book, ShieldPlus, Clock, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import Header from '../Header';
 import Footer from '../Footer';
@@ -40,7 +40,30 @@ const VersicherungPage = () => {
       title: t('insurance.benefits.list.5'),
     },
   ];
-  
+
+  const addInsuranceFeatures = [
+    {
+      icon: <Book className="h-6 w-6 text-apple" />,
+      title: "Synchronisiere deine Buchungen",
+      description: "Richte die Logik ein, die am besten zu deinem Unternehmen passt."
+    },
+    {
+      icon: <ShieldPlus className="h-6 w-6 text-apple" />,
+      title: "Wähle die richtige Deckungssumme",
+      description: "Sichere dich bei jeder erfolgreichen Buchung ab."
+    },
+    {
+      icon: <Clock className="h-6 w-6 text-apple" />,
+      title: "Online Check-in Integration",
+      description: "Lass deine Gäste zwischen Versicherung und Kaution wählen."
+    },
+    {
+      icon: <CheckCircle className="h-6 w-6 text-apple" />,
+      title: "Peace of Mind",
+      description: "Für Agenturen, Eigentümer und ihre Gäste."
+    }
+  ];
+
   return (
     <>
       <Header />
@@ -144,15 +167,35 @@ const VersicherungPage = () => {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-royal">
+            <h2 className="text-3xl font-bold mb-4 text-royal relative inline-block">
               {t('insurance.addInsurance.title')}
+              <div className="absolute bottom-0 left-0 w-2/3 h-1 bg-apple rounded-full transform -translate-y-2"></div>
             </h2>
             <p className="text-lg text-royal-700 mb-8">
               {t('insurance.addInsurance.description')}
             </p>
-            <CTAButton className="bg-apple hover:bg-apple-600">
-              {t('insurance.addInsurance.cta')}
-            </CTAButton>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+              {addInsuranceFeatures.map((feature, index) => (
+                <Card key={index} className="group hover:shadow-md transition-all duration-300 border border-gray-100">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4 group-hover:transform group-hover:translate-x-2 transition-transform duration-300">
+                      <div className="mt-1 bg-floral rounded-lg p-2 group-hover:bg-apple/10 transition-colors duration-300">
+                        {feature.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-royal mb-2">{feature.title}</h3>
+                        <p className="text-royal-700">{feature.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-12">
+              <CTAButton className="bg-apple hover:bg-apple-600">
+                {t('insurance.addInsurance.cta')}
+              </CTAButton>
+            </div>
           </div>
           
           <InsuranceFeatures />
