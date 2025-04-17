@@ -14,7 +14,7 @@ export function useTranslation() {
     const location = useLocation();
     
     // Extract language from URL path if possible
-    const getLanguageFromPath = (): string => {
+    const getLanguageFromPath = () => {
       const pathParts = location.pathname.split('/').filter(Boolean);
       if (pathParts.length > 0) {
         const firstPart = pathParts[0];
