@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
-import { UserCheck } from 'lucide-react';
+import { UserCheck, BadgeCheck } from 'lucide-react';
 import Header from '../Header';
 import Footer from '../Footer';
 import CTAButton from '../CTAButton';
