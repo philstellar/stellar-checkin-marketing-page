@@ -1,3 +1,4 @@
+
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,12 +18,9 @@ const SchadenabwicklungSection = () => {
             
             <div className="mb-8 flex justify-start">
               <img 
-                src="https://stellar-trust.com/wp-content/uploads/2025/03/Logo_Hiscox.png" 
+                src="/lovable-uploads/078c9766-fb89-443d-b1bb-21897d1d1dce.png" 
                 alt="Hiscox Logo" 
                 className="h-16 w-auto object-contain" 
-                onError={(e) => {
-                  e.currentTarget.src = "/lovable-uploads/544730f1-d669-4595-af3c-737bdc61d29a.png";
-                }}
               />
             </div>
             
@@ -63,12 +61,9 @@ const SchadenabwicklungSection = () => {
               <div className="flex items-center">
                 <span className="text-royal-700 mr-3">Partner:</span>
                 <img 
-                  src="https://stellar-trust.com/wp-content/uploads/2025/03/Logo_Hiscox.png" 
+                  src="/lovable-uploads/078c9766-fb89-443d-b1bb-21897d1d1dce.png" 
                   alt="Hiscox Logo" 
                   className="h-10"
-                  onError={(e) => {
-                    e.currentTarget.src = "/lovable-uploads/544730f1-d669-4595-af3c-737bdc61d29a.png";
-                  }}
                 />
               </div>
             </div>
