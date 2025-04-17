@@ -42,6 +42,9 @@ const InsurancePricing = () => {
           </TableBody>
         </Table>
       </div>
+      <p className="text-center text-lg text-royal-700 mt-6">
+        Mit unserem Pay-per-Night-Modell zahlst du nur, wenn du Gäste hast. Und du kannst jederzeit kündigen.
+      </p>
     </div>
   );
 };
