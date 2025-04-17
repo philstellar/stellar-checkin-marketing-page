@@ -36,14 +36,29 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
     }
   }, []);
 
+  const disableGoogleAnalytics = () => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.dataLayer = [];
+      // Disable Google Analytics tracking
+      window.gtag('js', new Date());
+      window.gtag('config', 'AW-16898170225', { 'allow_ad_personalization_signals': false });
+    }
+  };
+
+  const enableGoogleAnalytics = () => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      // Re-enable Google Analytics tracking
+      window.gtag('js', new Date());
+      window.gtag('config', 'AW-16898170225');
+    }
+  };
+
   const acceptCookies = () => {
     setConsentStatus('accepted');
     localStorage.setItem('cookieConsent', 'accepted');
     
-    // Enable analytics/tracking scripts here
-    if (typeof window !== 'undefined' && window.gtag) {
-      console.log('Analytics enabled - user accepted cookies');
-    }
+    // Enable analytics/tracking scripts
+    enableGoogleAnalytics();
     
     toast({
       title: "Cookies accepted",
@@ -56,15 +71,12 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
     setConsentStatus('rejected');
     localStorage.setItem('cookieConsent', 'rejected');
     
-    // Disable analytics/tracking scripts here
-    if (typeof window !== 'undefined' && window.gtag) {
-      console.log('Analytics disabled - user rejected cookies');
-      // You would typically add code here to disable tracking
-    }
+    // Disable analytics/tracking scripts
+    disableGoogleAnalytics();
     
     toast({
       title: "Cookies rejected",
-      description: "You've chosen to reject cookies. Only essential cookies will be used.",
+      description: "You've chosen to reject non-essential cookies. Only essential services will be used.",
       duration: 3000,
     });
   };

@@ -29,8 +29,8 @@ const CookieBanner = () => {
               <div className="flex-grow">
                 <h2 className="text-lg font-medium text-gray-900">Cookie Consent</h2>
                 <p className="text-sm text-gray-600 mt-1">
-                  This website uses cookies to enhance your browsing experience and provide personalized services. 
-                  You can choose to accept or reject non-essential cookies.
+                  This website uses various cookies to enhance your browsing experience, provide personalized services, 
+                  and analyze website traffic. You can choose to accept or reject non-essential cookies.
                 </p>
               </div>
             </div>
@@ -49,7 +49,8 @@ const CookieBanner = () => {
                     <div>
                       <h3 className="font-medium text-gray-900">Essential Cookies</h3>
                       <p className="text-gray-600">
-                        These cookies are necessary for the website to function properly and cannot be disabled.
+                        Necessary cookies help make a website usable by enabling basic functions like page navigation 
+                        and access to secure areas of the website. These cookies cannot be disabled.
                       </p>
                     </div>
                   </div>
@@ -57,10 +58,21 @@ const CookieBanner = () => {
                   <div className="flex items-start gap-2">
                     <Info className="h-5 w-5 text-royal flex-shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-medium text-gray-900">Analytics Cookies</h3>
+                      <h3 className="font-medium text-gray-900">Analytics and Performance Cookies</h3>
                       <p className="text-gray-600">
                         These cookies help us understand how visitors interact with our website, 
-                        helping us improve our services and user experience.
+                        track website performance, and provide insights through Google Analytics and Google Tag Manager.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <Info className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-medium text-gray-900">Advertising and Marketing Cookies</h3>
+                      <p className="text-gray-600">
+                        These cookies are used to deliver personalized advertisements and track ad performance 
+                        through platforms like Google Ads and conversion tracking.
                       </p>
                     </div>
                   </div>
@@ -84,7 +96,7 @@ const CookieBanner = () => {
                   onClick={rejectCookies}
                   className="border-royal text-royal hover:bg-royal/5 w-full sm:w-auto"
                 >
-                  Reject All
+                  Reject Non-Essential
                 </Button>
                 <Button 
                   onClick={acceptCookies}
