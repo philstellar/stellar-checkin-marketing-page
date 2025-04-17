@@ -28,13 +28,31 @@ export default function LanguageSelector({ variant = 'default' }: LanguageSelect
   // Icon-only variant for mobile header
   if (variant === 'icon-only') {
     return (
-      <Button 
-        variant="ghost" 
-        size="icon" 
-        className="md:hidden text-royal hover:bg-transparent"
-      >
-        <Globe className="h-5 w-5" />
-      </Button>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="md:hidden text-royal hover:bg-transparent"
+          >
+            <Globe className="h-5 w-5" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="bg-white">
+          <DropdownMenuItem onClick={() => setLanguage('de')} className={language === 'de' ? "bg-gray-100" : ""}>
+            Deutsch
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setLanguage('en')} className={language === 'en' ? "bg-gray-100" : ""}>
+            English
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setLanguage('it')} className={language === 'it' ? "bg-gray-100" : ""}>
+            Italiano
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setLanguage('es')} className={language === 'es' ? "bg-gray-100" : ""}>
+            Español
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     );
   }
 
@@ -47,7 +65,7 @@ export default function LanguageSelector({ variant = 'default' }: LanguageSelect
           <SelectTrigger className="w-24 h-8 text-xs min-w-0 px-2 border-none bg-transparent">
             <SelectValue placeholder={language} />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="bg-white">
             <SelectItem value="de">Deutsch</SelectItem>
             <SelectItem value="en">English</SelectItem>
             <SelectItem value="it">Italiano</SelectItem>
@@ -63,9 +81,9 @@ export default function LanguageSelector({ variant = 'default' }: LanguageSelect
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center gap-1.5 text-royal hover:text-apple transition-colors">
         <Globe className="h-4 w-4" />
-        {isMobile && <span className="text-xs uppercase font-medium">{language}</span>}
+        {language && <span className="text-xs uppercase font-medium">{language}</span>}
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" className="bg-white">
         <DropdownMenuItem onClick={() => setLanguage('de')} className={language === 'de' ? "bg-gray-100" : ""}>
           Deutsch
         </DropdownMenuItem>

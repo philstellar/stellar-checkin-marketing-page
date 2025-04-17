@@ -1,9 +1,9 @@
+
 import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import { motion, AnimatePresence } from "framer-motion";
-import LanguageSelector from '../LanguageSelector';
 
 type MobileNavProps = {
   isOpen: boolean;
@@ -39,9 +39,6 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             >
               <X size={24} />
             </button>
-            <div className="mr-2">
-              <LanguageSelector />
-            </div>
           </div>
           
           <motion.div 
