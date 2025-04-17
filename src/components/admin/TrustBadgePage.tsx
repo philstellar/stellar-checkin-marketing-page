@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { UserCheck, BadgeCheck, Star, Shield, Globe2 } from 'lucide-react';
@@ -6,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from '../Header';
 import Footer from '../Footer';
 import CTAButton from '../CTAButton';
+import TrustBadgeFAQ from './TrustBadgeFAQ';
 
 const TrustBadgePage = () => {
   const { t } = useTranslation();
@@ -119,6 +119,8 @@ const TrustBadgePage = () => {
           </div>
         </div>
       </section>
+      
+      <TrustBadgeFAQ />
       
       <Footer />
     </>
