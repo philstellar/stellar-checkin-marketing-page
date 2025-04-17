@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
 import DesktopNav from './header/DesktopNav';
 import MobileNav from './header/MobileNav';
+import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -90,15 +91,19 @@ const Header = () => {
             </button>
           </div>
 
-          <DesktopNav handleSectionClick={handleSectionClick} />
-
-          <button
-            className="md:hidden text-royal p-2 hover:bg-muted/70 rounded-md transition-colors"
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-4">
+            <div className="md:hidden">
+              <LanguageSelector />
+            </div>
+            <DesktopNav handleSectionClick={handleSectionClick} />
+            <button
+              className="md:hidden text-royal p-2 hover:bg-muted/70 rounded-md transition-colors"
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         <MobileNav 

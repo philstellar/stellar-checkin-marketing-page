@@ -1,8 +1,6 @@
-
 import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
-import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from '@/hooks/use-translation';
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -92,10 +90,6 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               >
                 {t('navigation.contact')}
               </button>
-            </div>
-            
-            <div className="mt-4 w-full flex justify-start">
-              <LanguageSelector />
             </div>
             
             <CTAButton 
