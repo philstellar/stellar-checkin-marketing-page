@@ -24,22 +24,8 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
     setIsDropdownOpen(false);
   };
 
-  const handleHomeClick = () => {
-    navigate('/');
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
   return (
     <nav className="hidden md:flex items-center space-x-8">
-      <button 
-        onClick={handleHomeClick}
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
-        {t('navigation.home')}
-      </button>
       <div className="relative">
         <button
           className="flex items-center text-royal hover:text-apple font-medium transition-colors"

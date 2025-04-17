@@ -22,15 +22,6 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
     onClose();
   };
 
-  const handleHomeClick = () => {
-    navigate('/');
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-    onClose();
-  };
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -56,14 +47,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1, duration: 0.3 }}
-          >
-            <button 
-              onClick={handleHomeClick}
-              className="text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left w-full"
-            >
-              {t('navigation.home')}
-            </button>
-            
+          >            
             <div className="w-full">
               <p className="text-lg font-medium text-royal mb-3 px-2 text-left">{t('navigation.features')}:</p>
               <motion.div 
