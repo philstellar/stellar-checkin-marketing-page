@@ -1,6 +1,7 @@
 
 import { useLanguage } from '@/context/LanguageContext';
 import { Globe } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,17 +17,26 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-export default function LanguageSelector() {
+type LanguageSelectorProps = {
+  variant?: 'default' | 'icon-only';
+};
+
+export default function LanguageSelector({ variant = 'default' }: LanguageSelectorProps) {
   const { language, setLanguage } = useLanguage();
   const isMobile = useIsMobile();
 
-  // Map language codes to full names
-  const languageNames = {
-    de: "Deutsch",
-    en: "English",
-    it: "Italiano",
-    es: "Español"
-  };
+  // Icon-only variant for mobile header
+  if (variant === 'icon-only') {
+    return (
+      <Button 
+        variant="ghost" 
+        size="icon" 
+        className="md:hidden text-royal hover:bg-transparent"
+      >
+        <Globe className="h-5 w-5" />
+      </Button>
+    );
+  }
 
   // Use native-like select for mobile devices
   if (isMobile) {

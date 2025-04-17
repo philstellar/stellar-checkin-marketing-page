@@ -1,8 +1,10 @@
+
 import { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
 import DesktopNav from './header/DesktopNav';
 import MobileNav from './header/MobileNav';
+import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -90,6 +92,9 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-4">
+            <div className="md:hidden">
+              <LanguageSelector variant="icon-only" />
+            </div>
             <DesktopNav handleSectionClick={handleSectionClick} />
             <button
               className="md:hidden text-royal p-2 hover:bg-muted/70 rounded-md transition-colors"
