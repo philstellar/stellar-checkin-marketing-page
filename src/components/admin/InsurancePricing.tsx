@@ -7,9 +7,9 @@ const InsurancePricing = () => {
   const { t } = useTranslation();
   
   return (
-    <div>
-      <div className="rounded-lg border bg-white">
-        <Table>
+    <div className="w-full">
+      <div className="rounded-lg border bg-white w-full">
+        <Table className="w-full">
           <TableHeader>
             <TableRow>
               <TableHead className="w-[300px] font-bold text-black text-left">
