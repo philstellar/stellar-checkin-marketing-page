@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Shield, Star, User, Home, Mail } from 'lucide-react';
 import Header from '@/components/Header';
@@ -15,7 +14,7 @@ const UeberUns = () => {
       reviews: 167,
       properties: 2,
       joined: 2024,
-      image: "/lovable-uploads/67a0f10e-22a5-4ff9-aaad-70774f9b4b70.png"
+      image: "/lovable-uploads/362fce74-9778-463e-96c2-4cf10fa15296.png"
     },
     {
       name: "Milan Plogsties",
@@ -24,7 +23,7 @@ const UeberUns = () => {
       reviews: 25,
       properties: 1,
       joined: 2024,
-      image: "/lovable-uploads/298b0c47-79e5-4167-957b-91aa9a4b4dfd.png"
+      image: "/lovable-uploads/67a0f10e-22a5-4ff9-aaad-70774f9b4b70.png"
     },
     {
       name: "Ralf Kramer",
@@ -33,7 +32,7 @@ const UeberUns = () => {
       reviews: 166,
       properties: 10,
       joined: 2024,
-      image: "/lovable-uploads/362fce74-9778-463e-96c2-4cf10fa15296.png"
+      image: "/lovable-uploads/298b0c47-79e5-4167-957b-91aa9a4b4dfd.png"
     }
   ];
 
