@@ -1,4 +1,3 @@
-
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import Index from './pages/Index';
@@ -12,6 +11,9 @@ import BrevoFormPopupWrapper from './components/BrevoFormPopupWrapper';
 import CookieBanner from './components/CookieBanner';
 import VersicherungPage from './components/admin/VersicherungPage';
 import TrustBadgePage from './components/admin/TrustBadgePage';
+import UeberUns from './pages/UeberUns';
+import Erfolgsgeschichten from './pages/Erfolgsgeschichten';
+import FAQ from './pages/FAQ';
 
 // Import translated legal pages
 import ImpressumEN from './pages/legal/ImpressumEN';
@@ -25,8 +27,6 @@ import AgbES from './pages/legal/AgbES';
 import AgbIT from './pages/legal/AgbIT';
 
 const App = () => {
-  // We'll use NODE_ENV==='production' to check if app is published
-  // This is different from process.env.NODE_ENV==='development' which we had before
   const isPublished = window.location.hostname.includes('lovable.app') || 
                      window.location.hostname.includes('lovable.dev');
 
@@ -62,6 +62,15 @@ const App = () => {
         <Route path="/es/datenschutz" element={<DatenschutzES />} />
         <Route path="/es/agb" element={<AgbES />} />
         <Route path="/es/brevo" element={<Brevo />} />
+        
+        {/* New German pages - only available in development */}
+        {!isPublished && (
+          <>
+            <Route path="/de/ueber-uns" element={<UeberUns />} />
+            <Route path="/de/erfolgsgeschichten" element={<Erfolgsgeschichten />} />
+            <Route path="/de/faq" element={<FAQ />} />
+          </>
+        )}
         
         {/* Insurance and Trust Badge routes - available regardless of publish status */}
         <Route path="/de/versicherung" element={<VersicherungPage />} />

@@ -9,7 +9,11 @@ export const navigationDE = {
   privacyPolicy: "Datenschutz",
   termsAndConditions: "AGB",
   insurance: "Versicherung",
-  trustBadge: "Trust Badge"
+  trustBadge: "Trust Badge",
+  aboutStellar: "Über Stellar",
+  aboutUs: "Über uns",
+  successStories: "Erfolgsgeschichten",
+  faq: "FAQ"
 };
 
 export const navigationEN = {
