@@ -10,6 +10,7 @@ import Brevo from './pages/Brevo';
 import { LanguageProvider } from './context/LanguageContext';
 import { BrevoFormProvider } from './context/BrevoFormContext';
 import BrevoFormPopupWrapper from './components/BrevoFormPopupWrapper';
+import CookieBanner from './components/CookieBanner';
 
 // Import translated legal pages
 import ImpressumEN from './pages/legal/ImpressumEN';
@@ -68,6 +69,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <BrevoFormPopupWrapper />
+          <CookieBanner />
           <Toaster />
         </BrevoFormProvider>
       </LanguageProvider>
