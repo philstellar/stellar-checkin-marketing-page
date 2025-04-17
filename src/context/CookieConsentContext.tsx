@@ -29,54 +29,65 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
   const { toast } = useToast();
 
   useEffect(() => {
-    // Check if user has already made a choice
     const savedConsent = localStorage.getItem('cookieConsent');
     if (savedConsent) {
       setConsentStatus(savedConsent as ConsentStatus);
     }
   }, []);
 
-  const disableGoogleAnalytics = () => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.dataLayer = [];
-      // Disable Google Analytics tracking
+  const clearAllCookies = () => {
+    // Remove all cookies
+    document.cookie.split(";").forEach((c) => {
+      document.cookie = c
+        .replace(/^ +/, "")
+        .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+  };
+
+  const disableAnalytics = () => {
+    // Opt out of Google Analytics tracking
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function() {};
+      
+      // Disable personalized ads and tracking
       window.gtag('js', new Date());
-      window.gtag('config', 'AW-16898170225', { 'allow_ad_personalization_signals': false });
+      window.gtag('config', 'AW-16898170225', {
+        'allow_ad_personalization_signals': false,
+        'anonymize_ip': true
+      });
     }
   };
 
-  const enableGoogleAnalytics = () => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      // Re-enable Google Analytics tracking
+  const enableAnalytics = () => {
+    if (typeof window !== 'undefined') {
       window.gtag('js', new Date());
       window.gtag('config', 'AW-16898170225');
     }
   };
 
   const acceptCookies = () => {
+    clearAllCookies(); // Clear existing cookies first
+    enableAnalytics();
     setConsentStatus('accepted');
     localStorage.setItem('cookieConsent', 'accepted');
     
-    // Enable analytics/tracking scripts
-    enableGoogleAnalytics();
-    
     toast({
-      title: "Cookies accepted",
-      description: "Thank you for accepting cookies. Your preferences have been saved.",
+      title: "Cookies Accepted",
+      description: "All cookies and tracking have been enabled.",
       duration: 3000,
     });
   };
 
   const rejectCookies = () => {
+    clearAllCookies(); // Remove all existing cookies
+    disableAnalytics();
     setConsentStatus('rejected');
     localStorage.setItem('cookieConsent', 'rejected');
     
-    // Disable analytics/tracking scripts
-    disableGoogleAnalytics();
-    
     toast({
-      title: "Cookies rejected",
-      description: "You've chosen to reject non-essential cookies. Only essential services will be used.",
+      title: "Cookies Rejected",
+      description: "Non-essential cookies and tracking have been disabled.",
       duration: 3000,
     });
   };
