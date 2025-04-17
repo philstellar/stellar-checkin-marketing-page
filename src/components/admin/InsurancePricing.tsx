@@ -42,9 +42,6 @@ const InsurancePricing = () => {
           </TableBody>
         </Table>
       </div>
-      <p className="text-center text-lg text-royal-700 mt-6">
-        {t('insurance.features.flexibility')}
-      </p>
     </div>
   );
 };
