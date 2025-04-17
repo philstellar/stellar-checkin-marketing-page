@@ -14,10 +14,15 @@ type MobileNavProps = {
 
 const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNavProps) => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
 
   const handleMenuItemClick = (sectionId: string) => {
     handleSectionClick(sectionId);
+    onClose();
+  };
+  
+  const handleNavigation = (path: string) => {
+    navigate(`/${currentLanguage}/${path}`);
     onClose();
   };
 
@@ -131,6 +136,42 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               >
                 {t('navigation.contact')}
               </button>
+            </div>
+            
+            <div className="w-full border-t border-muted pt-5 mt-3">
+              <p className="text-lg font-medium text-royal mb-3 px-2 text-left">{t('navigation.legal')}</p>
+              <div className="space-y-2">
+                <button 
+                  onClick={() => handleNavigation('impressum')}
+                  className="block w-full text-left px-3 py-2 text-royal-700 hover:text-apple transition-colors hover:bg-muted rounded-md"
+                >
+                  {t('navigation.imprint')}
+                </button>
+                <button 
+                  onClick={() => handleNavigation('datenschutz')}
+                  className="block w-full text-left px-3 py-2 text-royal-700 hover:text-apple transition-colors hover:bg-muted rounded-md"
+                >
+                  {t('navigation.privacyPolicy')}
+                </button>
+                <button 
+                  onClick={() => handleNavigation('agb')}
+                  className="block w-full text-left px-3 py-2 text-royal-700 hover:text-apple transition-colors hover:bg-muted rounded-md"
+                >
+                  {t('navigation.termsAndConditions')}
+                </button>
+                <button 
+                  onClick={() => handleNavigation('versicherung')}
+                  className="block w-full text-left px-3 py-2 text-royal-700 hover:text-apple transition-colors hover:bg-muted rounded-md"
+                >
+                  {t('navigation.insurance')}
+                </button>
+                <button 
+                  onClick={() => handleNavigation('trust-badge')}
+                  className="block w-full text-left px-3 py-2 text-royal-700 hover:text-apple transition-colors hover:bg-muted rounded-md"
+                >
+                  {t('navigation.trustBadge')}
+                </button>
+              </div>
             </div>
             
             <CTAButton 

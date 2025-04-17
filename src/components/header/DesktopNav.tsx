@@ -6,22 +6,34 @@ import CTAButton from '../CTAButton';
 import FunktionenDropdown from './FunktionenDropdown';
 import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from '@/hooks/use-translation';
+import LegalDropdown from './LegalDropdown';
 
 type DesktopNavProps = {
   handleSectionClick: (sectionId: string) => void;
 };
 
 const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isFeaturesDropdownOpen, setIsFeaturesDropdownOpen] = useState(false);
+  const [isLegalDropdownOpen, setIsLegalDropdownOpen] = useState(false);
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleFeaturesDropdown = () => {
+    setIsFeaturesDropdownOpen(!isFeaturesDropdownOpen);
+    if (isLegalDropdownOpen) setIsLegalDropdownOpen(false);
   };
 
-  const closeDropdown = () => {
-    setIsDropdownOpen(false);
+  const toggleLegalDropdown = () => {
+    setIsLegalDropdownOpen(!isLegalDropdownOpen);
+    if (isFeaturesDropdownOpen) setIsFeaturesDropdownOpen(false);
+  };
+
+  const closeFeaturesDropdown = () => {
+    setIsFeaturesDropdownOpen(false);
+  };
+
+  const closeLegalDropdown = () => {
+    setIsLegalDropdownOpen(false);
   };
 
   return (
@@ -29,14 +41,14 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
       <div className="relative">
         <button
           className="flex items-center text-royal hover:text-apple font-medium transition-colors"
-          onClick={toggleDropdown}
+          onClick={toggleFeaturesDropdown}
         >
           {t('navigation.features')} <ChevronDown className="ml-1 w-4 h-4" />
         </button>
         <FunktionenDropdown 
-          isOpen={isDropdownOpen} 
+          isOpen={isFeaturesDropdownOpen} 
           handleSectionClick={handleSectionClick} 
-          onClose={closeDropdown}
+          onClose={closeFeaturesDropdown}
         />
       </div>
       <button 
@@ -51,6 +63,19 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
       >
         {t('navigation.contact')}
       </button>
+      <div className="relative">
+        <button
+          className="flex items-center text-royal hover:text-apple font-medium transition-colors"
+          onClick={toggleLegalDropdown}
+        >
+          {t('navigation.legal')} <ChevronDown className="ml-1 w-4 h-4" />
+        </button>
+        <LegalDropdown
+          isOpen={isLegalDropdownOpen}
+          onClose={closeLegalDropdown}
+          currentLanguage={currentLanguage}
+        />
+      </div>
       <LanguageSelector />
       <CTAButton variant="default" className="bg-apple hover:bg-apple-600">
         {t('navigation.register')}
