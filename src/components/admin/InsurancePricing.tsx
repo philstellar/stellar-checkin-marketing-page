@@ -7,30 +7,36 @@ const InsurancePricing = () => {
   const { t } = useTranslation();
   
   return (
-    <div className="overflow-x-auto">
+    <div className="rounded-lg border bg-white">
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>{t('insurance.pricing.coverage')}</TableHead>
-            <TableHead>€ 5.000</TableHead>
-            <TableHead>€ 10.000</TableHead>
-            <TableHead>€ 50.000</TableHead>
+            <TableHead className="w-[300px] font-bold text-black">
+              {t('insurance.pricing.coverage')}
+            </TableHead>
+            <TableHead className="text-center font-bold text-black">€ 5.000</TableHead>
+            <TableHead className="text-center font-bold text-black">€ 10.000</TableHead>
+            <TableHead className="text-center font-bold text-black">€ 50.000</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell>{t('insurance.pricing.pricePerNight')}</TableCell>
-            <TableCell>€ 2,82</TableCell>
-            <TableCell>€ 3,62</TableCell>
-            <TableCell>€ 4,91</TableCell>
+            <TableCell className="font-medium">{t('insurance.pricing.pricePerNight')}</TableCell>
+            <TableCell className="text-center">€ 2,82</TableCell>
+            <TableCell className="text-center">€ 3,62</TableCell>
+            <TableCell className="text-center">€ 4,91</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>{t('insurance.pricing.coverageDetails')}</TableCell>
-            <TableCell colSpan={3}>{t('insurance.pricing.inventoryDamage')}</TableCell>
+            <TableCell className="font-medium">{t('insurance.pricing.coverageDetails')}</TableCell>
+            <TableCell colSpan={3} className="text-center">
+              {t('insurance.pricing.inventoryDamage')}
+            </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>{t('insurance.pricing.guestRecourse')}</TableCell>
-            <TableCell colSpan={3}>{t('insurance.pricing.intentionalDamage')}</TableCell>
+            <TableCell className="font-medium">{t('insurance.pricing.guestRecourse')}</TableCell>
+            <TableCell colSpan={3} className="text-center">
+              {t('insurance.pricing.intentionalDamage')}
+            </TableCell>
           </TableRow>
         </TableBody>
       </Table>
