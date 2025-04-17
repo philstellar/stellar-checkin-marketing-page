@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { Award, Star, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import useEmblaCarousel from 'embla-carousel-react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Card } from "@/components/ui/card";
 
 const Erfolgsgeschichten = () => {
   const testimonialLogos = [
@@ -195,3 +197,4 @@ const Erfolgsgeschichten = () => {
 };
 
 export default Erfolgsgeschichten;
+
