@@ -1,10 +1,12 @@
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Shield, UserCheck } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
 import Header from '../Header';
 import Footer from '../Footer';
 import CTAButton from '../CTAButton';
+import InsuranceFeatures from './InsuranceFeatures';
+import InsurancePricing from './InsurancePricing';
+import InsuranceDetails from './InsuranceDetails';
 
 const VersicherungPage = () => {
   const { t } = useTranslation();
@@ -12,6 +14,7 @@ const VersicherungPage = () => {
   return (
     <>
       <Header />
+      
       <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20"></div>
         <div className="container-custom relative z-10">
@@ -98,6 +101,58 @@ const VersicherungPage = () => {
           </div>
         </div>
       </div>
+
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-royal">
+              {t('insurance.addInsurance.title')}
+            </h2>
+            <p className="text-lg text-royal-700 mb-8">
+              {t('insurance.addInsurance.description')}
+            </p>
+            <CTAButton className="bg-apple hover:bg-apple-600">
+              {t('insurance.addInsurance.cta')}
+            </CTAButton>
+          </div>
+          
+          <InsuranceFeatures />
+        </div>
+      </section>
+
+      <section className="py-16 bg-floral">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-royal">
+              {t('insurance.partner.title')}
+            </h2>
+            <p className="text-lg text-royal-700">
+              {t('insurance.partner.description')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-royal text-center">
+              {t('insurance.shortTerm.title')}
+            </h2>
+            <p className="text-lg text-royal-700 text-center mb-8">
+              {t('insurance.shortTerm.description')}
+            </p>
+            <InsurancePricing />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-floral">
+        <div className="container-custom">
+          <InsuranceDetails />
+        </div>
+      </section>
+      
       <Footer />
     </>
   );

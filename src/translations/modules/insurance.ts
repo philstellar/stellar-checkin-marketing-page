@@ -34,6 +34,63 @@ export const insuranceDE = {
       2: "Weltweiter Service",
       3: "24/7 Schadensmeldung"
     }
+  },
+  addInsurance: {
+    title: "Versicherung zu deinen Buchungen hinzufügen",
+    description: "Richte die Logik ein, die am besten zu deinem Unternehmen passt. Synchronisiere deine Buchungen, wähle die richtige Deckungssumme und sichere dich bei jeder erfolgreichen Buchung ab. ODER lass deine Gäste zahlen, indem du ihnen beim Online-Check-in die Wahl zwischen unserer Gästeschadenversicherung und einer Kaution lässt. Peace of Mind für Agenturen, Eigentümer und ihre Gäste.",
+    cta: "Jetzt kostenlos loslegen"
+  },
+  features: {
+    classicInsurance: "Klassische Hausratsversicherung",
+    noLiability: "Keine Gästehaftung für versehentliche Schäden",
+    allChannels: "Buchungen über alle Kanäle (inkl. Direktbuchungen)",
+    petDamage: "Schutz bei Schäden durch Haustiere",
+    rentalLoss: "Schutz bei Mietausfall",
+    commercialDamage: "Schäden während gewerblicher Vermietung",
+    payPerNight: "Pay-per-Night-Modell für maximale Flexibilität",
+    flexibility: "Mit unserem Pay-per-Night-Modell zahlst du nur, wenn du Gäste hast. Und du kannst jederzeit kündigen."
+  },
+  partner: {
+    title: "Partner eines führenden Versicherers",
+    description: "Hiscox ist ein international renommierter Spezialversicherer mit über 100 Jahren Erfahrung, hoher Finanzstärke und 95% Kundenzufriedenheit in Deutschland."
+  },
+  shortTerm: {
+    title: "Speziell für die Kurzzeitvermietung",
+    description: "Unsere Gästeschadenversicherung ist speziell für Eigentümer und Gastgeber entwickelt – mit umfassendem Schutz für gewerbliche Vermietung, Mietausfall, zusätzlichen Reinigungsaufwand, Schutz bei Haustierschäden und mehr."
+  },
+  pricing: {
+    coverage: "Maximale Deckungssumme",
+    pricePerNight: "Preis pro Nacht (plus Versicherungssteuer)",
+    coverageDetails: "Deckung (SB €100)",
+    inventoryDamage: "Schäden an Inventar und Gebäuden zum Wiederbeschaffungswert",
+    guestRecourse: "Gäste-Regress",
+    intentionalDamage: "Nur bei vorsätzlicher Beschädigung"
+  },
+  details: {
+    furniture: {
+      title: "Mobiliar und Gebäude",
+      description: "Wir versichern versehentliche und böswillige Schäden an deinem Eigentum durch Gäste oder deren Gäste. Auch Diebstahlschäden sind versichert"
+    },
+    newForOld: {
+      title: "Neu für Alt",
+      description: "Wir entschädigen auf Basis des Wiederbeschaffungswertes. Das heißt, du bekommst im Schadensfall neu für alt"
+    },
+    rentalLoss: {
+      title: "Mietausfall",
+      description: "Wenn ein versicherter Schaden dich daran hindert, dein Eigentum zu vermieten, erstatten wir dir die entgangenen Mieteinnahmen*"
+    },
+    petDamage: {
+      title: "Schäden durch Haustiere",
+      description: "Unsere Versicherung deckt auch Schäden ab, die durch Haustiere der Gäste verursacht werden"
+    },
+    cleaning: {
+      title: "Zusätzlicher Reinigungsaufwand",
+      description: "Wir erstatten die Kosten für eine zusätzliche Reinigung zur Entfernung von Flecken und Rauchgeruch"
+    },
+    art: {
+      title: "Kunst & Wertsachen",
+      description: "Wir schützen alle Kunstwerke oder Wertgegenstände, die als Einrichtungsgegenstände verwendet werden"
+    }
   }
 };
 
