@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
 import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from '@/hooks/use-translation';
+import { motion, AnimatePresence } from "framer-motion";
 
 type MobileNavProps = {
   isOpen: boolean;
@@ -30,90 +31,99 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
     onClose();
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className={`fixed inset-0 z-50 ${isScrolled ? 'bg-white' : 'bg-floral'}`}>
-      <div className="flex justify-end p-6">
-        <button onClick={onClose} aria-label="Close menu" className="text-royal hover:text-apple">
-          <X size={24} />
-        </button>
-      </div>
-      
-      <div className="flex flex-col items-center space-y-6 p-6">
-        <button 
-          onClick={handleHomeClick}
-          className="text-xl text-royal hover:text-apple font-medium transition-colors"
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div 
+          className={`fixed inset-0 z-50 ${isScrolled ? 'bg-white' : 'bg-floral'}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
         >
-          {t('navigation.home')}
-        </button>
-        
-        <div className="space-y-4">
-          <p className="text-lg font-medium text-royal">{t('navigation.features')}:</p>
-          <div className="space-y-3 pl-4">
+          <div className="flex justify-end p-4">
             <button 
-              onClick={() => handleMenuItemClick('kurtaxe')}
-              className="block text-royal-700 hover:text-apple transition-colors"
+              onClick={onClose} 
+              aria-label="Close menu" 
+              className="p-2 rounded-full text-royal hover:text-apple bg-muted transition-all"
             >
-              {t('features.kurtaxe.title')}
-            </button>
-            <button 
-              onClick={() => handleMenuItemClick('zusatzservices')}
-              className="block text-royal-700 hover:text-apple transition-colors"
-            >
-              {t('features.zusatzleistungen.title')}
-            </button>
-            <button 
-              onClick={() => handleMenuItemClick('versicherung')}
-              className="block text-royal-700 hover:text-apple transition-colors"
-            >
-              {t('features.kaution.title')}
-            </button>
-            <button 
-              onClick={() => handleMenuItemClick('identitaetspruefung')}
-              className="block text-royal-700 hover:text-apple transition-colors"
-            >
-              {t('features.identity.title')}
-            </button>
-            <button 
-              onClick={() => handleMenuItemClick('einstellungen')}
-              className="block text-royal-700 hover:text-apple transition-colors"
-            >
-              {t('features.custom.title')}
-            </button>
-            <button 
-              onClick={() => handleMenuItemClick('integrationen')}
-              className="block text-royal-700 hover:text-apple transition-colors"
-            >
-              {t('features.integration.title')}
+              <X size={24} />
             </button>
           </div>
-        </div>
-        
-        <button 
-          onClick={() => handleMenuItemClick('preise')}
-          className="text-xl text-royal hover:text-apple font-medium transition-colors"
-        >
-          {t('navigation.pricing')}
-        </button>
-        
-        <button 
-          onClick={() => handleMenuItemClick('kontakt')}
-          className="text-xl text-royal hover:text-apple font-medium transition-colors"
-        >
-          {t('navigation.contact')}
-        </button>
-        
-        <LanguageSelector />
-        
-        <CTAButton 
-          variant="default" 
-          className="bg-apple hover:bg-apple-600 w-full justify-center mt-8"
-        >
-          {t('navigation.register')}
-        </CTAButton>
-      </div>
-    </div>
+          
+          <motion.div 
+            className="flex flex-col items-center space-y-7 p-6 pt-2 max-h-[calc(100vh-80px)] overflow-y-auto"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
+          >
+            <button 
+              onClick={handleHomeClick}
+              className="text-xl text-royal hover:text-apple font-medium transition-colors py-2"
+            >
+              {t('navigation.home')}
+            </button>
+            
+            <div className="w-full">
+              <p className="text-lg font-medium text-royal mb-3 px-2">{t('navigation.features')}:</p>
+              <motion.div 
+                className="space-y-3 rounded-lg bg-muted/50 p-3"
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                {[
+                  { id: 'kurtaxe', title: t('features.kurtaxe.title') },
+                  { id: 'zusatzservices', title: t('features.zusatzleistungen.title') },
+                  { id: 'versicherung', title: t('features.kaution.title') },
+                  { id: 'identitaetspruefung', title: t('features.identity.title') },
+                  { id: 'einstellungen', title: t('features.custom.title') },
+                  { id: 'integrationen', title: t('features.integration.title') }
+                ].map((item, index) => (
+                  <motion.button 
+                    key={item.id}
+                    onClick={() => handleMenuItemClick(item.id)}
+                    className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
+                    initial={{ x: -10, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 + (index * 0.05), duration: 0.3 }}
+                  >
+                    {item.title}
+                  </motion.button>
+                ))}
+              </motion.div>
+            </div>
+            
+            <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
+              <button 
+                onClick={() => handleMenuItemClick('preise')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-center"
+              >
+                {t('navigation.pricing')}
+              </button>
+              
+              <button 
+                onClick={() => handleMenuItemClick('kontakt')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-center"
+              >
+                {t('navigation.contact')}
+              </button>
+            </div>
+            
+            <div className="mt-4 w-full">
+              <LanguageSelector />
+            </div>
+            
+            <CTAButton 
+              variant="default" 
+              className="bg-apple hover:bg-apple-600 w-full justify-center mt-5"
+            >
+              {t('navigation.register')}
+            </CTAButton>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

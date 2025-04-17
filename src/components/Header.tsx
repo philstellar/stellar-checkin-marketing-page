@@ -26,6 +26,17 @@ const Header = () => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -82,8 +93,9 @@ const Header = () => {
           <DesktopNav handleSectionClick={handleSectionClick} />
 
           <button
-            className="md:hidden text-royal"
+            className="md:hidden text-royal p-2 hover:bg-muted/70 rounded-md transition-colors"
             onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
