@@ -33,7 +33,12 @@ export function useTranslation() {
   
   const t = (key: string, fallback?: string) => {
     try {
-      return get(translations[currentLanguage], key) || 
+      // Add some debugging to help identify translation issues
+      console.debug(`Translation requested for key: ${key}, language: ${currentLanguage}`);
+      const translated = get(translations[currentLanguage], key);
+      console.debug(`Translation result: ${translated}`);
+      
+      return translated || 
              get(translations.en, key) || 
              fallback || 
              key;
