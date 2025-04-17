@@ -8,6 +8,7 @@ import InsuranceFeatures from './InsuranceFeatures';
 import InsurancePricing from './InsurancePricing';
 import InsuranceDetails from './InsuranceDetails';
 import InsuranceFAQ from './InsuranceFAQ';
+import InsuranceComparisonTable from './InsuranceComparisonTable';
 import { Card, CardContent } from "@/components/ui/card";
 
 const VersicherungPage = () => {
@@ -85,6 +86,11 @@ const VersicherungPage = () => {
           <p className="text-lg text-royal-700 mb-6">
             {t('insurance.introduction')}
           </p>
+          
+          <div className="mb-12">
+            <InsuranceComparisonTable />
+          </div>
+
           <div className="bg-gray-50 p-6 rounded-lg mb-8">
             <h2 className="text-2xl font-bold text-royal mb-4">{t('insurance.benefits.title')}</h2>
             <ul className="list-disc pl-6 space-y-2 text-royal-700">
