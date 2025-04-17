@@ -1,8 +1,6 @@
-
 export const insuranceDE = {
   headline1: "Gästeschäden ",
   headline2: "versichern",
-  headline3: "",
   content: "Umfassende Versicherungslösungen für Ihre Ferienunterkünfte. Schützen Sie Ihr Eigentum und bieten Sie Ihren Gästen zusätzliche Sicherheit.",
   introduction: "Automatisieren Sie die Kautionsabwicklung und -rückerstattung oder bieten Sie Ihren Gästen eine bequeme Alternative – und profitieren Sie von zusätzlichen Provisionseinnahmen.",
   section1: {

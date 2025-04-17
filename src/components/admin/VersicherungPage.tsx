@@ -20,7 +20,6 @@ const VersicherungPage = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
                 {t('insurance.headline1')}
                 <span style={{ color: 'rgb(164 195 9)' }}>{t('insurance.headline2')}</span>
-                {t('insurance.headline3')}
               </h1>
               <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
                 {t('insurance.introduction')}
