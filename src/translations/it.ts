@@ -1,9 +1,10 @@
-
 import { navigationIT } from './modules/navigation';
 import { heroIT } from './modules/hero';
 import { featuresIT } from './modules/features';
 import { partnersIT } from './modules/partners';
 import { kurtaxeIT } from './modules/kurtaxe';
+import { insuranceIT } from './modules/insurance';
+import { trustBadgeIT } from './modules/trustBadge';
 
 export const it = {
   // Header

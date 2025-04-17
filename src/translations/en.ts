@@ -1,9 +1,10 @@
-
 import { navigationEN } from './modules/navigation';
 import { heroEN } from './modules/hero';
 import { featuresEN } from './modules/features';
 import { partnersEN } from './modules/partners';
 import { kurtaxeEN } from './modules/kurtaxe';
+import { insuranceEN } from './modules/insurance';
+import { trustBadgeEN } from './modules/trustBadge';
 
 export const en = {
   // Header
@@ -257,5 +258,7 @@ export const en = {
     privacy: "Privacy Policy",
     terms: "Terms and Conditions",
     copyright: "All rights reserved."
-  }
+  },
+  insurance: insuranceEN,
+  trustBadge: trustBadgeEN,
 };

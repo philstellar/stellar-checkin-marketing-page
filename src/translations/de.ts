@@ -1,9 +1,10 @@
-
 import { navigationDE } from './modules/navigation';
 import { heroDE } from './modules/hero';
 import { featuresDE } from './modules/features';
 import { partnersDE } from './modules/partners';
 import { kurtaxeDE } from './modules/kurtaxe';
+import { insuranceDE } from './modules/insurance';
+import { trustBadgeDE } from './modules/trustBadge';
 
 export const de = {
   // Header
@@ -257,5 +258,7 @@ export const de = {
     privacy: "Datenschutz",
     terms: "AGB",
     copyright: "Alle Rechte vorbehalten."
-  }
+  },
+  insurance: insuranceDE,
+  trustBadge: trustBadgeDE,
 };
