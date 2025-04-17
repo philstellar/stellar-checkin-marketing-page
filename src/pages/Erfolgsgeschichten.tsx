@@ -28,6 +28,11 @@ const Erfolgsgeschichten = () => {
       src: "/lovable-uploads/fd96b10c-36ff-4492-a020-f47f221d8d39.png",
       alt: "Luxury Hideaway",
       width: 170
+    },
+    {
+      src: "/lovable-uploads/404c2219-9b9a-4ebd-b8ec-aea63d21d6d7.png",
+      alt: "Plau Lagoons",
+      width: 160
     }
   ];
 
@@ -197,4 +202,3 @@ const Erfolgsgeschichten = () => {
 };
 
 export default Erfolgsgeschichten;
-
