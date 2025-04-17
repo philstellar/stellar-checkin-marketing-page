@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
-import { Shield, UserCheck } from 'lucide-react';
+import { Shield, UserCheck, CalendarCheck, Percent, Plus, Link, ShieldCheck, FileCheck } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
 import Header from '../Header';
 import Footer from '../Footer';
 import CTAButton from '../CTAButton';
@@ -9,10 +10,36 @@ import InsurancePricing from './InsurancePricing';
 import InsuranceDetails from './InsuranceDetails';
 import InsuranceFAQ from './InsuranceFAQ';
 import InsuranceComparisonTable from './InsuranceComparisonTable';
-import { Card, CardContent } from "@/components/ui/card";
 
 const VersicherungPage = () => {
   const { t } = useTranslation();
+  
+  const benefits = [
+    {
+      icon: <CalendarCheck className="h-6 w-6 text-apple" />,
+      title: t('insurance.benefits.list.0'),
+    },
+    {
+      icon: <Percent className="h-6 w-6 text-apple" />,
+      title: t('insurance.benefits.list.1'),
+    },
+    {
+      icon: <Plus className="h-6 w-6 text-apple" />,
+      title: t('insurance.benefits.list.2'),
+    },
+    {
+      icon: <Link className="h-6 w-6 text-apple" />,
+      title: t('insurance.benefits.list.3'),
+    },
+    {
+      icon: <ShieldCheck className="h-6 w-6 text-apple" />,
+      title: t('insurance.benefits.list.4'),
+    },
+    {
+      icon: <FileCheck className="h-6 w-6 text-apple" />,
+      title: t('insurance.benefits.list.5'),
+    },
+  ];
   
   return (
     <>
@@ -91,21 +118,25 @@ const VersicherungPage = () => {
             <InsuranceComparisonTable />
           </div>
 
-          <div className="bg-gray-50 p-6 rounded-lg mb-8">
-            <h2 className="text-2xl font-bold text-royal mb-4">{t('insurance.benefits.title')}</h2>
-            <ul className="list-disc pl-6 space-y-2 text-royal-700">
-              {Array.from({ length: 6 }).map((_, index) => (
-                <li key={index}>{t(`insurance.benefits.list.${index}`)}</li>
+          <div className="bg-white rounded-xl p-8 mb-8 shadow-sm">
+            <h2 className="text-2xl font-bold text-royal mb-8 relative inline-block">
+              {t('insurance.benefits.title')}
+              <div className="absolute bottom-0 left-0 w-2/3 h-1 bg-apple rounded-full transform -translate-y-2"></div>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <Card key={index} className="group hover:shadow-md transition-all duration-300 border border-gray-100">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4 group-hover:transform group-hover:translate-x-2 transition-transform duration-300">
+                      <div className="mt-1 bg-floral rounded-lg p-2 group-hover:bg-apple/10 transition-colors duration-300">
+                        {benefit.icon}
+                      </div>
+                      <p className="text-royal-700 font-medium">{benefit.title}</p>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
-            </ul>
-          </div>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-bold text-royal mb-4">{t('insurance.features.title')}</h2>
-            <ul className="list-disc pl-6 space-y-2 text-royal-700">
-              {Array.from({ length: 4 }).map((_, index) => (
-                <li key={index}>{t(`insurance.features.list.${index}`)}</li>
-              ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -150,7 +181,7 @@ const VersicherungPage = () => {
 
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto mb-12">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-royal text-center">
               {t('insurance.shortTerm.title')}
             </h2>
