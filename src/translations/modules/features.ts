@@ -1,3 +1,4 @@
+
 export const featuresDE = {
   title: "Stellar Check-in",
   subtitle: "Verbessern Sie das Gästeerlebnis vor der Anreise und steigern Sie Ihren Umsatz",

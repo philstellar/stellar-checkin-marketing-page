@@ -42,7 +42,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             onClick={handleClick}
             className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2"
           >
-            {t('features.moreBtn')} <ArrowDown className="h-4 w-4" />
+            {t('featuresEN.moreBtn')} <ArrowDown className="h-4 w-4" />
           </Button>
         </div>
       </CardContent>
