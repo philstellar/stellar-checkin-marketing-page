@@ -134,9 +134,16 @@ const VersicherungPage = () => {
             <h2 className="text-3xl font-bold mb-4 text-royal">
               {t('insurance.partner.title')}
             </h2>
-            <p className="text-lg text-royal-700">
+            <p className="text-lg text-royal-700 mb-6">
               {t('insurance.partner.description')}
             </p>
+            <div className="flex flex-col items-center justify-center">
+              <img 
+                src="/lovable-uploads/4112f872-c0e5-45c5-be3d-732062b4c014.png" 
+                alt="Hiscox Logo" 
+                className="h-24 w-auto object-contain mb-4" 
+              />
+            </div>
           </div>
         </div>
       </section>

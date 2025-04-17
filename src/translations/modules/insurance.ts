@@ -184,7 +184,7 @@ export const insuranceIT = {
   },
   section2: {
     title: "Fonte di Reddito Aggiuntiva",
-    content: "Guadagna commissioni con ogni polizza assicurativa – automaticamente e senza sforzo aggiuntivo."
+    content: "Guadagna commissioni con ogni póliza assicurativa – automaticamente e senza sforzo aggiuntivo."
   },
   section3: {
     title: "Protezione Completa",
@@ -194,7 +194,7 @@ export const insuranceIT = {
     title: "I Tuoi Vantaggi",
     list: {
       0: "Elaborazione automatizzata dell'assicurazione durante il check-in",
-      1: "Commissione automatica con ogni polizza assicurativa",
+      1: "Commissione automatica con ogni póliza assicurativa",
       2: "Nessuno sforzo aggiuntivo richiesto",
       3: "Integrazione con il tuo Sistema di Gestione Proprietà",
       4: "Protezione contro le perdite di affitto",
