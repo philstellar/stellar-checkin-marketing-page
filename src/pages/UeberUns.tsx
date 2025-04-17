@@ -14,7 +14,8 @@ const UeberUns = () => {
       rating: 4.9,
       reviews: 167,
       properties: 2,
-      joined: 2024
+      joined: 2024,
+      image: "/lovable-uploads/67a0f10e-22a5-4ff9-aaad-70774f9b4b70.png"
     },
     {
       name: "Milan Plogsties",
@@ -22,7 +23,8 @@ const UeberUns = () => {
       rating: 5.0,
       reviews: 25,
       properties: 1,
-      joined: 2024
+      joined: 2024,
+      image: "/lovable-uploads/298b0c47-79e5-4167-957b-91aa9a4b4dfd.png"
     },
     {
       name: "Ralf Kramer",
@@ -30,7 +32,8 @@ const UeberUns = () => {
       rating: 4.7,
       reviews: 166,
       properties: 10,
-      joined: 2024
+      joined: 2024,
+      image: "/lovable-uploads/362fce74-9778-463e-96c2-4cf10fa15296.png"
     }
   ];
 
@@ -107,7 +110,14 @@ const UeberUns = () => {
               <Card key={index} className="overflow-hidden">
                 <CardContent className="p-6">
                   <div className="flex flex-col gap-4">
-                    <h3 className="text-xl font-bold">{member.name}</h3>
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-16 h-16 rounded-full object-cover"
+                      />
+                      <h3 className="text-xl font-bold">{member.name}</h3>
+                    </div>
                     <p className="text-gray-600 whitespace-pre-line">{member.bio}</p>
                     <div className="flex items-center gap-2 text-apple">
                       <Star className="h-5 w-5 fill-current" />
@@ -137,4 +147,3 @@ const UeberUns = () => {
 };
 
 export default UeberUns;
-
