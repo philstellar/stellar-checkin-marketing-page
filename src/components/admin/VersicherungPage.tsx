@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Shield, UserCheck } from 'lucide-react';
@@ -7,6 +8,7 @@ import CTAButton from '../CTAButton';
 import InsuranceFeatures from './InsuranceFeatures';
 import InsurancePricing from './InsurancePricing';
 import InsuranceDetails from './InsuranceDetails';
+import { Card, CardContent } from "@/components/ui/card";
 
 const VersicherungPage = () => {
   const { t } = useTranslation();

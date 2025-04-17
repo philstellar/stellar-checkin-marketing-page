@@ -26,7 +26,7 @@ export const insuranceDE = {
       5: "Professionelle Schadenabwicklung"
     }
   },
-  features: {
+  featuresList: {
     title: "Produktmerkmale",
     list: {
       0: "Deckungssumme bis zu 10.000 EUR",
@@ -120,7 +120,7 @@ export const insuranceEN = {
       5: "Professional claims handling"
     }
   },
-  features: {
+  featuresList: {
     title: "Product Features",
     list: {
       0: "Coverage up to 10,000 EUR",
@@ -157,7 +157,7 @@ export const insuranceIT = {
       5: "Gestione professionale dei sinistri"
     }
   },
-  features: {
+  featuresList: {
     title: "Caratteristiche del Prodotto",
     list: {
       0: "Copertura fino a 10.000 EUR",
@@ -194,7 +194,7 @@ export const insuranceES = {
       5: "Gestión profesional de reclamaciones"
     }
   },
-  features: {
+  featuresList: {
     title: "Características del Producto",
     list: {
       0: "Cobertura hasta 10.000 EUR",
