@@ -48,7 +48,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             transition={{ delay: 0.1, duration: 0.3 }}
           >
             <div className="w-full">
-              <p className="text-lg font-medium text-royal mb-3 px-2 text-left">{t('navigation.features')}:</p>
+              <p className="text-lg font-medium text-royal mb-3 px-2 text-left">{t('navigation.features')}</p>
               <motion.div 
                 className="space-y-3 rounded-lg bg-muted/50 p-3 w-full"
                 initial={{ y: -10, opacity: 0 }}
