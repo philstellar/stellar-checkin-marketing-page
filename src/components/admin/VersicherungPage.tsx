@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
-import { Shield, UserCheck, CalendarCheck, Percent, Plus, Link, ShieldCheck, FileCheck, Book, ShieldPlus, Clock, CheckCircle } from 'lucide-react';
+import { Shield, UserCheck, CalendarCheck, Percent, Plus, Link, ShieldCheck, FileCheck, Book, ShieldPlus, Clock, CheckCircle, XCircle } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import Header from '../Header';
 import Footer from '../Footer';
