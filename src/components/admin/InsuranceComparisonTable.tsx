@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import {
@@ -71,21 +70,21 @@ const InsuranceComparisonTable = () => {
               <img 
                 src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2024/11/stellar_tourism_innovations_gmbh_logo.jpeg" 
                 alt="Stellar" 
-                className="h-12 w-auto mx-auto object-contain my-4" 
+                className="h-12 w-auto mx-auto object-contain my-4 rounded-lg" 
               />
             </TableHead>
             <TableHead className="text-center">
               <img 
                 src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2025/03/Airbnb-1.png" 
                 alt="Airbnb" 
-                className="h-12 w-auto mx-auto object-contain my-4" 
+                className="h-12 w-auto mx-auto object-contain my-4 rounded-lg" 
               />
             </TableHead>
             <TableHead className="text-center">
               <img 
                 src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2025/03/Booking.com_-1.png" 
                 alt="Booking.com" 
-                className="h-12 w-auto mx-auto object-contain my-4" 
+                className="h-12 w-auto mx-auto object-contain my-4 rounded-lg" 
               />
             </TableHead>
             <TableHead className="text-center font-bold text-black">Klassische Hausrats&#8203;versicherung</TableHead>
