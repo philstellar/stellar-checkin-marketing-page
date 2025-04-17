@@ -1,3 +1,4 @@
+
 import { navigationIT } from './modules/navigation';
 import { heroIT } from './modules/hero';
 import { featuresIT } from './modules/features';
@@ -14,7 +15,8 @@ export const it = {
   // Features
   features: {
     title: "Check-in",
-    subtitle: "Digitalizza il tuo processo di check-in – veloce, sicuro e senza carta."
+    subtitle: "Digitalizza il tuo processo di check-in – veloce, sicuro e senza carta.",
+    moreBtn: "Scopri di più"
   },
 
   // Partners Section

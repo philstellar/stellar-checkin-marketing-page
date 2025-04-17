@@ -1,10 +1,9 @@
+
 import { navigationDE } from './modules/navigation';
 import { heroDE } from './modules/hero';
 import { featuresDE } from './modules/features';
 import { partnersDE } from './modules/partners';
 import { kurtaxeDE } from './modules/kurtaxe';
-
-// Import other modules as they are created
 
 export const de = {
   // Header
@@ -16,7 +15,8 @@ export const de = {
   // Features
   features: {
     title: "Check-in",
-    subtitle: "Digitalisieren Sie Ihren Check-in-Prozess – schnell, sicher und paperless."
+    subtitle: "Digitalisieren Sie Ihren Check-in-Prozess – schnell, sicher und paperless.",
+    moreBtn: "Mehr erfahren"
   },
 
   // Partners Section

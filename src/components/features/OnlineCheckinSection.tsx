@@ -26,6 +26,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     }
   };
 
+  console.log("Translation key for moreBtn:", 'featuresEN.moreBtn', t('featuresEN.moreBtn'));
+
   return (
     <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
       <CardHeader className="pb-2">
@@ -42,7 +44,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             onClick={handleClick}
             className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2"
           >
-            {t('featuresEN.moreBtn')} <ArrowDown className="h-4 w-4" />
+            {t('features.moreBtn') || "Learn more"} <ArrowDown className="h-4 w-4" />
           </Button>
         </div>
       </CardContent>

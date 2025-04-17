@@ -33,10 +33,30 @@ export function useTranslation() {
   
   const t = (key: string, fallback?: string) => {
     try {
-      // Add some debugging to help identify translation issues
-      console.debug(`Translation requested for key: ${key}, language: ${currentLanguage}`);
+      // For debugging the specific issue with "moreBtn"
+      if (key.includes('moreBtn')) {
+        console.log(`Attempting to translate key: ${key}, language: ${currentLanguage}`);
+        console.log(`Translation structure:`, translations[currentLanguage]);
+        
+        const translated = get(translations[currentLanguage], key);
+        console.log(`Translation result for ${key}: "${translated}"`);
+        
+        // Try to get translations at specific paths for debugging
+        const featuresSection = get(translations[currentLanguage], 'features');
+        console.log('Features section:', featuresSection);
+        
+        if (featuresSection && typeof featuresSection === 'object') {
+          console.log('Direct moreBtn access:', featuresSection.moreBtn);
+        }
+        
+        return translated || 
+               get(translations.en, key) || 
+               fallback || 
+               key;
+      }
+      
+      // Regular translation flow
       const translated = get(translations[currentLanguage], key);
-      console.debug(`Translation result: ${translated}`);
       
       return translated || 
              get(translations.en, key) || 

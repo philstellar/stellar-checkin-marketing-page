@@ -1,3 +1,4 @@
+
 import { navigationES } from './modules/navigation';
 import { heroES } from './modules/hero';
 import { featuresES } from './modules/features';
@@ -14,7 +15,8 @@ export const es = {
   // Features
   features: {
     title: "Check-in",
-    subtitle: "Digitalice su proceso de check-in – rápido, seguro y sin papel."
+    subtitle: "Digitalice su proceso de check-in – rápido, seguro y sin papel.",
+    moreBtn: "Más información"
   },
 
   // Partners Section
