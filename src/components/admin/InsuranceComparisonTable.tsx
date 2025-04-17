@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import {
@@ -87,7 +88,9 @@ const InsuranceComparisonTable = () => {
                 className="h-12 w-auto mx-auto object-contain my-4 rounded-lg" 
               />
             </TableHead>
-            <TableHead className="text-center font-bold text-black">Klassische Hausrats&#8203;versicherung</TableHead>
+            <TableHead className="text-center font-bold text-black">
+              Klassische<br />Hausratsversicherung
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
