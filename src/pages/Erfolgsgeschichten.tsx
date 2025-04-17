@@ -51,6 +51,7 @@ const Erfolgsgeschichten = () => {
     {
       company: "Hof Liebeneck",
       name: "Mario Schilling",
+      image: "/lovable-uploads/66faf0b3-a82d-417b-94b6-b850f4b79501.png",
       rating: 5.0,
       ratings: 28,
       properties: 4,
@@ -60,6 +61,7 @@ const Erfolgsgeschichten = () => {
     {
       company: "Plau Lagoons",
       name: "Ralf Kramer",
+      image: "/lovable-uploads/cda4c627-8961-489c-b264-d970daf26bed.png",
       rating: 4.7,
       ratings: 12,
       properties: 10,
@@ -69,6 +71,7 @@ const Erfolgsgeschichten = () => {
     {
       company: "Favorent",
       name: "Volker Rantz",
+      image: "/lovable-uploads/a102adcb-3320-4135-9d3c-f32ae16a0bd4.png",
       rating: 5.0,
       ratings: null,
       properties: null,
@@ -154,7 +157,17 @@ const Erfolgsgeschichten = () => {
               <Card key={index} className="p-8 bg-white hover:shadow-lg transition-shadow duration-300">
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
-                    <h3 className="text-xl font-semibold mb-2 text-royal">{testimonial.company}</h3>
+                    <div className="flex items-center gap-4 mb-4">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-16 h-16 rounded-full object-cover"
+                      />
+                      <div>
+                        <h3 className="text-xl font-semibold mb-1 text-royal">{testimonial.company}</h3>
+                        <p className="text-gray-600">{testimonial.name}</p>
+                      </div>
+                    </div>
                     <p className="text-gray-600 mb-6 whitespace-pre-line">{testimonial.quote}</p>
                   </div>
                   
