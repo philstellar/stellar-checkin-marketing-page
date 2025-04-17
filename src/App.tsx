@@ -1,3 +1,4 @@
+
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import Index from './pages/Index';
@@ -44,6 +45,9 @@ const App = () => {
         <Route path="/de/datenschutz" element={<Datenschutz />} />
         <Route path="/de/agb" element={<Agb />} />
         <Route path="/de/brevo" element={<Brevo />} />
+        <Route path="/de/ueber-uns" element={<UeberUns />} />
+        <Route path="/de/erfolgsgeschichten" element={<Erfolgsgeschichten />} />
+        <Route path="/de/faq" element={<FAQ />} />
         
         {/* English routes */}
         <Route path="/en/impressum" element={<ImpressumEN />} />
@@ -62,15 +66,6 @@ const App = () => {
         <Route path="/es/datenschutz" element={<DatenschutzES />} />
         <Route path="/es/agb" element={<AgbES />} />
         <Route path="/es/brevo" element={<Brevo />} />
-        
-        {/* New German pages - only available in development */}
-        {!isPublished && (
-          <>
-            <Route path="/de/ueber-uns" element={<UeberUns />} />
-            <Route path="/de/erfolgsgeschichten" element={<Erfolgsgeschichten />} />
-            <Route path="/de/faq" element={<FAQ />} />
-          </>
-        )}
         
         {/* Insurance and Trust Badge routes - available regardless of publish status */}
         <Route path="/de/versicherung" element={<VersicherungPage />} />

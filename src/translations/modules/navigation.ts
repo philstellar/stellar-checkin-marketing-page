@@ -1,3 +1,4 @@
+
 export const navigationDE = {
   home: "Home",
   features: "Check-in",
@@ -27,7 +28,11 @@ export const navigationEN = {
   privacyPolicy: "Privacy Policy", 
   termsAndConditions: "Terms and Conditions",
   insurance: "Insurance",
-  trustBadge: "Trust Badge"
+  trustBadge: "Trust Badge",
+  aboutStellar: "About Stellar",
+  aboutUs: "About Us",
+  successStories: "Success Stories",
+  faq: "FAQ"
 };
 
 export const navigationIT = {
@@ -41,7 +46,11 @@ export const navigationIT = {
   privacyPolicy: "Informativa sulla Privacy", 
   termsAndConditions: "Termini e Condizioni",
   insurance: "Assicurazione",
-  trustBadge: "Trust Badge"
+  trustBadge: "Trust Badge",
+  aboutStellar: "Chi Siamo",
+  aboutUs: "Su di Noi",
+  successStories: "Storie di Successo",
+  faq: "FAQ"
 };
 
 export const navigationES = {
@@ -55,5 +64,9 @@ export const navigationES = {
   privacyPolicy: "Política de Privacidad", 
   termsAndConditions: "Términos y Condiciones",
   insurance: "Seguro",
-  trustBadge: "Trust Badge"
+  trustBadge: "Trust Badge",
+  aboutStellar: "Sobre Stellar",
+  aboutUs: "Sobre Nosotros",
+  successStories: "Historias de Éxito",
+  faq: "Preguntas Frecuentes"
 };
