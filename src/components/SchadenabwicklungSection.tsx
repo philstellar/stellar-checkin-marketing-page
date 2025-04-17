@@ -16,6 +16,15 @@ const SchadenabwicklungSection = () => {
               um eine reibungslose und professionelle Abwicklung von Gästeschäden zu gewährleisten.
             </p>
             
+            {/* Add Hiscox logo below the description */}
+            <div className="mb-8 flex justify-start">
+              <img 
+                src="https://stellar-trust.com/wp-content/uploads/2025/03/Logo_Hiscox.png" 
+                alt="Hiscox Logo" 
+                className="h-16 w-auto object-contain" 
+              />
+            </div>
+            
             <div className="space-y-6">
               {[
                 {
