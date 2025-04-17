@@ -43,18 +43,6 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
           onClose={closeFeaturesDropdown}
         />
       </div>
-      <button 
-        onClick={() => handleSectionClick('preise')}
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
-        {t('navigation.pricing')}
-      </button>
-      <button 
-        onClick={() => handleSectionClick('kontakt')}
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
-        {t('navigation.contact')}
-      </button>
       <button
         onClick={() => handleNavigation('versicherung')}
         className="text-royal hover:text-apple font-medium transition-colors"
@@ -66,6 +54,18 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         {t('navigation.trustBadge')}
+      </button>
+      <button 
+        onClick={() => handleSectionClick('preise')}
+        className="text-royal hover:text-apple font-medium transition-colors"
+      >
+        {t('navigation.pricing')}
+      </button>
+      <button 
+        onClick={() => handleSectionClick('kontakt')}
+        className="text-royal hover:text-apple font-medium transition-colors"
+      >
+        {t('navigation.contact')}
       </button>
       <LanguageSelector />
       <CTAButton variant="default" className="bg-apple hover:bg-apple-600">

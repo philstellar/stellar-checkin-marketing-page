@@ -123,31 +123,31 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
               <button 
-                onClick={() => handleMenuItemClick('preise')}
+                onClick={() => handleNavigation('versicherung')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+              >
+                {t('navigation.insurance')}
+              </button>
+              
+              <button 
+                onClick={() => handleNavigation('trust-badge')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+              >
+                {t('navigation.trustBadge')}
+              </button>
+
+              <button 
+                onClick={() => handleSectionClick('preise')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.pricing')}
               </button>
               
               <button 
-                onClick={() => handleMenuItemClick('kontakt')}
+                onClick={() => handleSectionClick('kontakt')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.contact')}
-              </button>
-
-              <button 
-                onClick={() => handleNavigation('versicherung')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.insurance')}
-              </button>
-
-              <button 
-                onClick={() => handleNavigation('trust-badge')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.trustBadge')}
               </button>
             </div>
             
