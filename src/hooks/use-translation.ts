@@ -13,7 +13,7 @@ export function useTranslation() {
     const pathParts = location.pathname.split('/').filter(Boolean);
     if (pathParts.length > 0) {
       const firstPart = pathParts[0];
-      if (['en', 'es', 'it'].includes(firstPart)) {
+      if (['en', 'es', 'it', 'de'].includes(firstPart)) {
         return firstPart;
       }
     }

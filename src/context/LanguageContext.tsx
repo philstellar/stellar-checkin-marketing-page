@@ -34,28 +34,34 @@ const getLanguageFromPath = (path: string): Language | null => {
 
 // Create the provider component
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  // Initialize with default language
+  const [language, setLanguageState] = useState<Language>('de');
+  
+  // Get router hooks safely inside the component
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Try to get language from URL, then localStorage, default to 'de'
-  const initializeLanguage = (): Language => {
-    const urlLanguage = getLanguageFromPath(location.pathname);
-    
-    if (urlLanguage) {
-      return urlLanguage;
-    }
-    
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('language');
-      if (saved === 'de' || saved === 'en' || saved === 'es' || saved === 'it') {
-        return saved;
+  // Initialize language on mount, considering URL and localStorage
+  useEffect(() => {
+    const initializeLanguage = (): Language => {
+      const urlLanguage = getLanguageFromPath(location.pathname);
+      
+      if (urlLanguage) {
+        return urlLanguage;
       }
-    }
+      
+      if (typeof window !== 'undefined') {
+        const saved = localStorage.getItem('language');
+        if (saved === 'de' || saved === 'en' || saved === 'es' || saved === 'it') {
+          return saved;
+        }
+      }
+      
+      return 'de';
+    };
     
-    return 'de';
-  };
-  
-  const [language, setLanguageState] = useState<Language>(initializeLanguage());
+    setLanguageState(initializeLanguage());
+  }, [location.pathname]);
 
   // Update language, save to localStorage, and update URL
   const handleSetLanguage = (newLanguage: Language) => {
@@ -92,7 +98,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
       setLanguageState(urlLanguage);
       localStorage.setItem('language', urlLanguage);
     }
-  }, [location.pathname]);
+  }, [location.pathname, language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
