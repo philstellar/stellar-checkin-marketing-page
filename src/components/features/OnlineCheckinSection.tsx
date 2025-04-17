@@ -56,32 +56,32 @@ export const OnlineCheckinSection: React.FC = () => {
   const features = [
     {
       title: t('kurtaxe.title'),
-      description: t('kurtaxe.description'),
+      description: t('kurtaxe.subtitle'),
       targetSection: "kurtaxe"
     },
     {
       title: t('zusatzservices.title'),
-      description: t('zusatzservices.description'),
+      description: t('zusatzservices.subtitle'),
       targetSection: "zusatzservices"
     },
     {
       title: t('versicherung.title'),
-      description: t('versicherung.description'),
+      description: t('versicherung.subtitle'),
       targetSection: "versicherung"
     },
     {
       title: t('identity.title'),
-      description: t('identity.description'),
+      description: t('identity.subtitle'),
       targetSection: "identitaetspruefung"
     },
     {
       title: t('settings.title'),
-      description: t('settings.description'),
+      description: t('settings.subtitle'),
       targetSection: "einstellungen"
     },
     {
       title: t('integration.title'),
-      description: t('integration.description'),
+      description: t('integration.subtitle'),
       targetSection: "integrationen"
     }
   ];
