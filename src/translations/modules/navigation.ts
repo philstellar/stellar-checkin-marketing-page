@@ -1,7 +1,7 @@
 
 export const navigationDE = {
   home: "Home",
-  features: "Funktionen",
+  features: "Check-in", // Updated from "Funktionen"
   pricing: "Preise",
   contact: "Kontakt",
   register: "Jetzt Registrieren",
@@ -13,7 +13,7 @@ export const navigationDE = {
 
 export const navigationEN = {
   home: "Home",
-  features: "Features",
+  features: "Check-in", // Updated from "Features"
   pricing: "Pricing",
   contact: "Contact", 
   register: "Register Now",
@@ -25,7 +25,7 @@ export const navigationEN = {
 
 export const navigationIT = {
   home: "Home",
-  features: "Funzionalità",
+  features: "Check-in", // Updated from "Funzionalità"
   pricing: "Prezzi",
   contact: "Contatti",
   register: "Registrati Ora",
@@ -37,7 +37,7 @@ export const navigationIT = {
 
 export const navigationES = {
   home: "Home", 
-  features: "Características",
+  features: "Check-in", // Updated from "Características"
   pricing: "Precios",
   contact: "Contacto",
   register: "Registrarse Ahora",

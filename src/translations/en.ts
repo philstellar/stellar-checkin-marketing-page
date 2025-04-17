@@ -12,7 +12,10 @@ export const en = {
   hero: heroEN,
   
   // Features
-  features: featuresEN,
+  features: {
+    title: "Check-in",
+    subtitle: "Digitize your check-in process – fast, secure, and paperless."
+  },
 
   // Partners Section
   partners: partnersEN,
@@ -63,7 +66,7 @@ export const en = {
     provider: "Provider",
     duration: "Duration",
     showDetails: "Show Details",
-    hideDetails: "Hide Details",
+    hideDetails: "Details ausblenden",
     acceptAll: "Accept All",
     rejectNonEssential: "Reject Non-Essential"
   },

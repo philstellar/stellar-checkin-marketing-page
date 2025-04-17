@@ -12,7 +12,10 @@ export const it = {
   hero: heroIT,
   
   // Features
-  features: featuresIT,
+  features: {
+    title: "Check-in",
+    subtitle: "Digitalizza il tuo processo di check-in – veloce, sicuro e senza carta."
+  },
 
   // Partners Section
   partners: partnersIT,

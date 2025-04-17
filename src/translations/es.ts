@@ -1,4 +1,3 @@
-
 import { navigationES } from './modules/navigation';
 import { heroES } from './modules/hero';
 import { featuresES } from './modules/features';
@@ -13,7 +12,10 @@ export const es = {
   hero: heroES,
   
   // Features
-  features: featuresES,
+  features: {
+    title: "Check-in",
+    subtitle: "Digitalice su proceso de check-in – rápido, seguro y sin papel."
+  },
 
   // Partners Section
   partners: partnersES,
