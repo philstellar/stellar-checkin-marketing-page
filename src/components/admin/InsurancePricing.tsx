@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -29,7 +30,8 @@ const InsurancePricing = () => {
             <TableRow>
               <TableCell className="font-medium text-left">{t('insurance.pricing.coverageDetails')}</TableCell>
               <TableCell colSpan={3} className="text-left">
-                {t('insurance.pricing.inventoryDamage')}
+                {t('insurance.pricing.inventoryDamageFirstLine')}<br />
+                {t('insurance.pricing.inventoryDamageSecondLine')}
               </TableCell>
             </TableRow>
             <TableRow>

@@ -1,4 +1,3 @@
-
 export const insuranceDE = {
   headline1: "Gästeschäden ",
   headline2: "versichern",
@@ -62,7 +61,9 @@ export const insuranceDE = {
   pricing: {
     coverage: "Maximale Deckungssumme",
     pricePerNight: "Preis pro Nacht (plus Versicherungssteuer)",
-    coverageDetails: "Deckung (SB €100 / SB €0 mit €100 min)",
+    coverageDetails: "Deckung",
+    inventoryDamageFirstLine: "(SB €100",
+    inventoryDamageSecondLine: "/ SB €0 mit €100 min)",
     inventoryDamage: "Schäden an Inventar und Gebäuden zum Wiederbeschaffungswert",
     guestRecourse: "Gäste-Regress",
     intentionalDamage: "Nur bei vorsätzlicher Beschädigung"
