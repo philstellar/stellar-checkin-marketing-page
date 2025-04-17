@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import { motion, AnimatePresence } from "framer-motion";
+import LanguageSelector from '../LanguageSelector';
 
 type MobileNavProps = {
   isOpen: boolean;
@@ -30,7 +31,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <div className="flex justify-end p-4">
+          <div className="flex justify-between items-center p-4">
             <button 
               onClick={onClose} 
               aria-label="Close menu" 
@@ -38,6 +39,9 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             >
               <X size={24} />
             </button>
+            <div className="mr-2">
+              <LanguageSelector />
+            </div>
           </div>
           
           <motion.div 
@@ -45,7 +49,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1, duration: 0.3 }}
-          >            
+          >
             <div className="w-full">
               <p className="text-lg font-medium text-royal mb-3 px-2 text-left">{t('navigation.features')}:</p>
               <motion.div 
