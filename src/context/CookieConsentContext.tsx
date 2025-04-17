@@ -41,7 +41,7 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
     localStorage.setItem('cookieConsent', 'accepted');
     
     // Enable analytics/tracking scripts here
-    if (window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag) {
       console.log('Analytics enabled - user accepted cookies');
     }
     
@@ -57,7 +57,7 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
     localStorage.setItem('cookieConsent', 'rejected');
     
     // Disable analytics/tracking scripts here
-    if (window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag) {
       console.log('Analytics disabled - user rejected cookies');
       // You would typically add code here to disable tracking
     }
