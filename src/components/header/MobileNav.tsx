@@ -52,22 +52,22 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
           </div>
           
           <motion.div 
-            className="flex flex-col items-center space-y-7 p-6 pt-2 max-h-[calc(100vh-80px)] overflow-y-auto"
+            className="flex flex-col items-start space-y-7 p-6 pt-2 max-h-[calc(100vh-80px)] overflow-y-auto"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1, duration: 0.3 }}
           >
             <button 
               onClick={handleHomeClick}
-              className="text-xl text-royal hover:text-apple font-medium transition-colors py-2"
+              className="text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left w-full"
             >
               {t('navigation.home')}
             </button>
             
             <div className="w-full">
-              <p className="text-lg font-medium text-royal mb-3 px-2">{t('navigation.features')}:</p>
+              <p className="text-lg font-medium text-royal mb-3 px-2 text-left">{t('navigation.features')}:</p>
               <motion.div 
-                className="space-y-3 rounded-lg bg-muted/50 p-3"
+                className="space-y-3 rounded-lg bg-muted/50 p-3 w-full"
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.3 }}
@@ -97,20 +97,20 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
               <button 
                 onClick={() => handleMenuItemClick('preise')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-center"
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.pricing')}
               </button>
               
               <button 
                 onClick={() => handleMenuItemClick('kontakt')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-center"
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.contact')}
               </button>
             </div>
             
-            <div className="mt-4 w-full">
+            <div className="mt-4 w-full flex justify-start">
               <LanguageSelector />
             </div>
             
