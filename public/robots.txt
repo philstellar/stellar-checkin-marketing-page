@@ -1,24 +1,28 @@
 
-# Disallow all crawlers from indexing the entire site
+# Allow all crawlers to index the site
 User-agent: *
-Disallow: /
+Allow: /
 
-# Explicitly block Google
+# Allow Google specifically
 User-agent: Googlebot
-Disallow: /
+Allow: /
 
-# Explicitly block Google Image
+# Allow Google Image
 User-agent: Googlebot-Image
-Disallow: /
+Allow: /
 
-# Explicitly block Google Mobile
+# Allow Google Mobile
 User-agent: Googlebot-Mobile
-Disallow: /
+Allow: /
 
-# Explicitly block Google AdSense
+# Allow Google AdSense
 User-agent: Mediapartners-Google
-Disallow: /
+Allow: /
 
-# Explicitly block Google Ads
+# Allow Google Ads
 User-agent: AdsBot-Google
-Disallow: /
+Allow: /
+
+# Set crawl delay to be friendly to servers
+Crawl-delay: 10
+
