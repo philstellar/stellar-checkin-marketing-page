@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Shield, UserCheck } from 'lucide-react';
@@ -8,6 +7,7 @@ import CTAButton from '../CTAButton';
 import InsuranceFeatures from './InsuranceFeatures';
 import InsurancePricing from './InsurancePricing';
 import InsuranceDetails from './InsuranceDetails';
+import InsuranceFAQ from './InsuranceFAQ';
 import { Card, CardContent } from "@/components/ui/card";
 
 const VersicherungPage = () => {
@@ -152,6 +152,12 @@ const VersicherungPage = () => {
       <section className="py-16 bg-floral">
         <div className="container-custom">
           <InsuranceDetails />
+        </div>
+      </section>
+      
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <InsuranceFAQ />
         </div>
       </section>
       

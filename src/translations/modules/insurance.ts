@@ -91,6 +91,28 @@ export const insuranceDE = {
       title: "Kunst & Wertsachen",
       description: "Wir schützen alle Kunstwerke oder Wertgegenstände, die als Einrichtungsgegenstände verwendet werden"
     }
+  },
+  faq: {
+    airbnb: {
+      question: "Brauche ich eure Gästeschadenversicherung, obwohl ich auf AirBnb oder Booking.com gelistet bin?",
+      answer: "Ja, obwohl Plattformen wie Airbnb und Booking.com ihren eigenen Schutz bieten, haben beide ihre Tücken und Grenzen. AirCover von Airbnb ist kein Versicherungsprodukt und wird die Gäste immer mit einbeziehen und sie auffordern, für Schäden zu zahlen. Nur wenn der Gast sich weigert zu zahlen, kann AirCover den Schaden übernehmen. Die Meldung eines Schadens an Airbnb birgt daher immer das Risiko von Streitigkeiten mit den Gästen, die die Verantwortung abstreiten oder eine negative Bewertung hinterlassen könnten. Außerdem deckt AirCover nur entgangene Einnahmen aus bestätigten Airbnb-Buchungen ab, sodass Gastgeber, die auf mehreren Plattformen anbieten, mit Stornierungskosten und entgangenen Einnahmen dastehen. Das Schadensprogramm von Booking.com erleichtert lediglich die Schadensregulierung mit deinen Gästen, und nur, wenn du es speziell eingerichtet hast. Das Schadensprogramm ist in der EU auf 300 € begrenzt. Dieser Betrag wird während des Buchungsvorgangs angezeigt und kann sich negativ auf deine Buchungskonversion oder dein Suchranking auswirken."
+    },
+    repeat: {
+      question: "Kann die Gästeschadenversicherung zu Wiederholungsbuchungen beitragen?",
+      answer: "Wiederkehrende Gäste schätzen Beständigkeit und Zuverlässigkeit bei ihren Urlaubserlebnissen. Durch den Abschluss einer Ferienhausversicherung können Hausverwalter und Gastgeber ihren Gästen zusätzliche Sicherheit und Gewissheit bieten. Die Gäste wissen es zu schätzen, dass sie nach ihrem Aufenthalt nicht von unerwarteten Gebühren oder Kosten überrascht werden. Sollte ein Gast während seines Aufenthalts einen Schaden verursachen, läuft die Schadensregulierung in der Regel ohne Einbezug des Gastes ab, d.h. es gibt keine negativen Interaktionen mit dem Gast und er hat insgesamt einen besseren Aufenthalt. Durch das Angebot einer Ferienhausversicherung für eine Reservierung können Agenturen und Gastgeber Vertrauen und Loyalität bei ihren wiederkehrenden Gästen aufbauen, was letztendlich zu mehr Wiederholungsbuchungen und positiven Bewertungen führt."
+    },
+    deposit: {
+      question: "Soll ich die Gäste um eine Kaution bitten?",
+      answer: "Eine Kaution kann eine finanzielle Absicherung für den Fall sein, dass das Haus während des Aufenthalts deiner Gäste beschädigt wird. Außerdem sorgt sie dafür, dass die Gäste während ihres Aufenthalts besser auf das Haus aufpassen, da sie die Kaution in voller Höhe zurückerhalten wollen und deshalb besonders darauf achten, das Haus in einem guten Zustand zu hinterlassen. Im Allgemeinen vermeiden Gäste jedoch oftmals Angebote, die die Hinterlegung einer Kautionen erfordern, da sie das Geld vorübergehend binden und bei kleinen Problemen zu Abzügen führen können. Wenn du dich für die Stellar-Gastschadenversicherung entscheidest, kannst du Kautionen ganz vermeiden oder deinen Gästen eine bequeme Alternative anbieten. Da mögliche Ansprüche in der Regel ohne Beteiligung der Gäste abgewickelt werden, kannst du Streitigkeiten mit den Gästen vermeiden – für mehr Wiederholungsbuchungen und mehr 5-Sterne-Bewertungen."
+    },
+    coverage: {
+      question: "Was deckt eure Versicherung ab?",
+      answer: "Unsere Ferienhausversicherung wurde speziell für die individuellen Bedürfnisse von Kurzzeitvermietern und -eigentümern entwickelt. Dabei umfasst sie eine umfassende und kritische Deckung für die folgenden relevanten Fälle: Unbeabsichtigte sowie böswillige Schäden an deinem Eigentum (zum Wiederbeschaffungswert), sodass du keine finanziellen Verluste erleidest. Gästeschaden aufgrund von Diebstahl, der unerwartet auftreten kann und Vermieter vor finanzielle Herausforderungen stellt. Einkommensverluste durch gedeckte Schäden, die deine Mietausfälle minimieren und für finanzielle Stabilität sorgen. Zusätzliche Reinigungskosten für die aufwendige Entfernung von Flecken, die von Gästen hinterlassen wurden und über die normale Reinigung hinausgehen. Effektiver Schutz vor Schäden durch Haustiere, damit du sorgenfrei an Tierhalter vermieten kannst, ohne das Risiko hoher Reparaturkosten einzugehen."
+    },
+    cost: {
+      question: "Was kostet mich die Gästeschadenversicherung?",
+      answer: "Unsere Gastschadensversicherung beginnt bei 2,8 € pro Nacht und variiert je nach Höhe der Deckung. Details findest du in deinem Stellar-Konto. Die Kosten für die Versicherung können auch vom Gast getragen werden, als Alternative zur Kaution. Um sicherzustellen, dass die Versicherung alle Aufenthalte in deinen Unterkünften abdeckt, kannst du in den Einstellungen festlegen, dass du die Versicherung selbst bezahlst und die Kosten in den Mietpreis einbeziehst."
+    }
   }
 };
 
@@ -127,6 +149,28 @@ export const insuranceEN = {
       1: "New-for-old compensation",
       2: "Worldwide service",
       3: "24/7 claims reporting"
+    }
+  },
+  faq: {
+    airbnb: {
+      question: "Do I need your guest damage insurance if I'm listed on AirBnb or Booking.com?",
+      answer: "Yes, although platforms like Airbnb and Booking.com offer their own protection, both have their pitfalls and limitations. Airbnb's AirCover is not an insurance product and will always involve guests and ask them to pay for damages. Only if the guest refuses to pay can AirCover cover the damage. Reporting damage to Airbnb therefore always risks disputes with guests who deny responsibility or leave negative reviews. Additionally, AirCover only covers lost revenue from confirmed Airbnb bookings, so hosts who list on multiple platforms are left with cancellation costs and lost revenue. Booking.com's damage program only facilitates damage resolution with your guests, and only if you've specifically set it up. The damage program is limited to €300 in the EU. This amount is displayed during the booking process and can negatively impact your booking conversion or search ranking."
+    },
+    repeat: {
+      question: "Can guest damage insurance contribute to repeat bookings?",
+      answer: "Returning guests value consistency and reliability in their vacation experiences. By taking out vacation rental insurance, property managers and hosts can provide their guests with additional security and peace of mind. Guests appreciate not being surprised by unexpected fees or costs after their stay. If a guest causes damage during their stay, the claims process usually proceeds without involving the guest, meaning there are no negative interactions with the guest and they have an overall better stay. By offering vacation rental insurance for a reservation, agencies and hosts can build trust and loyalty with their repeat guests, ultimately leading to more repeat bookings and positive reviews."
+    },
+    deposit: {
+      question: "Should I ask guests for a deposit?",
+      answer: "A deposit can be financial security in case the house is damaged during your guests' stay. It also ensures that guests take better care of the house during their stay as they want to receive their deposit back in full and therefore pay special attention to leaving the house in good condition. However, guests generally often avoid offers that require deposits as they temporarily tie up money and can lead to deductions for minor issues. If you choose Stellar guest damage insurance, you can avoid deposits altogether or offer your guests a convenient alternative. Since potential claims are usually handled without guest involvement, you can avoid disputes with guests - for more repeat bookings and more 5-star reviews."
+    },
+    coverage: {
+      question: "What does your insurance cover?",
+      answer: "Our vacation rental insurance was specifically designed for the individual needs of short-term landlords and owners. It includes comprehensive and critical coverage for the following relevant cases: Unintentional and malicious damage to your property (at replacement value), so you don't suffer financial losses. Guest damage due to theft, which can occur unexpectedly and poses financial challenges for landlords. Income losses through covered damages, which minimize your rental losses and ensure financial stability. Additional cleaning costs for the extensive removal of stains left by guests that go beyond normal cleaning. Effective protection against damage caused by pets, so you can rent to pet owners worry-free without risking high repair costs."
+    },
+    cost: {
+      question: "How much does the guest damage insurance cost?",
+      answer: "Our guest damage insurance starts at €2.8 per night and varies depending on the level of coverage. You can find details in your Stellar account. The cost of insurance can also be borne by the guest as an alternative to the deposit. To ensure that insurance covers all stays in your accommodations, you can specify in the settings that you pay for the insurance yourself and include the costs in the rental price."
     }
   }
 };
