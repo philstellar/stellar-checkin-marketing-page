@@ -62,7 +62,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.3 }}
                 >
-                  {t('features.kurtaxe.title')}
+                  {t('kurtaxe.title')}
                 </motion.button>
                 
                 <motion.button 
@@ -72,7 +72,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.25, duration: 0.3 }}
                 >
-                  {t('features.zusatzleistungen.title')}
+                  {t('zusatzservices.title')}
                 </motion.button>
                 
                 <motion.button 
@@ -82,7 +82,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.3 }}
                 >
-                  {t('features.kaution.title')}
+                  {t('versicherung.title')}
                 </motion.button>
                 
                 <motion.button 
@@ -92,7 +92,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.35, duration: 0.3 }}
                 >
-                  {t('features.identity.title')}
+                  {t('identity.title')}
                 </motion.button>
                 
                 <motion.button 
@@ -102,7 +102,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.3 }}
                 >
-                  {t('features.custom.title')}
+                  {t('settings.title')}
                 </motion.button>
                 
                 <motion.button 
@@ -112,7 +112,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.45, duration: 0.3 }}
                 >
-                  {t('features.integration.title')}
+                  {t('integration.title')}
                 </motion.button>
               </motion.div>
             </div>

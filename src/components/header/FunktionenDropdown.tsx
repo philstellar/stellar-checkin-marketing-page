@@ -43,7 +43,7 @@ const FunktionenDropdown = ({ isOpen, handleSectionClick, onClose }: FunktionenD
           }}
           className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
         >
-          {t('features.kurtaxe.title')}
+          {t('kurtaxe.title')}
         </button>
         <button 
           onClick={() => {
@@ -52,7 +52,7 @@ const FunktionenDropdown = ({ isOpen, handleSectionClick, onClose }: FunktionenD
           }}
           className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
         >
-          {t('features.zusatzleistungen.title')}
+          {t('zusatzservices.title')}
         </button>
         <button 
           onClick={() => {
@@ -61,7 +61,7 @@ const FunktionenDropdown = ({ isOpen, handleSectionClick, onClose }: FunktionenD
           }}
           className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
         >
-          {t('features.kaution.title')}
+          {t('versicherung.title')}
         </button>
         <button 
           onClick={() => {
@@ -70,7 +70,7 @@ const FunktionenDropdown = ({ isOpen, handleSectionClick, onClose }: FunktionenD
           }}
           className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
         >
-          {t('features.identity.title')}
+          {t('identity.title')}
         </button>
         <button 
           onClick={() => {
@@ -79,7 +79,7 @@ const FunktionenDropdown = ({ isOpen, handleSectionClick, onClose }: FunktionenD
           }}
           className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
         >
-          {t('features.custom.title')}
+          {t('settings.title')}
         </button>
         <button 
           onClick={() => {
@@ -88,7 +88,7 @@ const FunktionenDropdown = ({ isOpen, handleSectionClick, onClose }: FunktionenD
           }}
           className="w-full text-left px-4 py-2 text-royal-700 hover:bg-floral-50 hover:text-apple transition-colors"
         >
-          {t('features.integration.title')}
+          {t('integration.title')}
         </button>
       </div>
     </div>
