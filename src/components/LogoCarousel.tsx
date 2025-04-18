@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useMemo } from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import useEmblaCarousel from 'embla-carousel-react';
@@ -41,16 +42,16 @@ const logos = [
 const LogoCarousel = () => {
   const { t } = useTranslation();
   
-  const logos = useMemo(() => logos, []);
+  const staticLogos = useMemo(() => logos, []);
   
-  const extendedLogos = useMemo(() => [...logos, ...logos, ...logos], [logos]);
+  const extendedLogos = useMemo(() => [...staticLogos, ...staticLogos, ...staticLogos], [staticLogos]);
   
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     dragFree: true,
     containScroll: "keepSnaps",
     slidesToScroll: 1,
-    startIndex: logos.length,
+    startIndex: staticLogos.length,
     align: 'start'
   });
 
@@ -70,14 +71,14 @@ const LogoCarousel = () => {
       { threshold: 0.1 }
     );
 
-    const carouselElement = emblaRef.current;
-    if (carouselElement) {
-      observer.observe(carouselElement);
+    // Fix: using a more reliable way to reference the DOM element
+    if (emblaRef && emblaRef.current) {
+      observer.observe(emblaRef.current);
     }
 
     return () => {
-      if (carouselElement) {
-        observer.unobserve(carouselElement);
+      if (emblaRef && emblaRef.current) {
+        observer.unobserve(emblaRef.current);
       }
       stopAutoplay();
     };

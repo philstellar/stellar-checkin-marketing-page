@@ -5,6 +5,8 @@ import Hero from "@/components/Hero";
 import { OnlineCheckinSection } from "@/components/features";
 import LogoCarousel from "@/components/LogoCarousel";
 import Footer from "@/components/Footer";
+// Import ZusatzservicesSection directly instead of lazy-loading it
+import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 
 // Custom loading component for better user experience
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
@@ -12,14 +14,14 @@ const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
 );
 
 // Lazy load non-critical sections with properly named chunks
-const KurtaxeSection = lazy(() => import(/* webpackChunkName: "kurtaxe-section" */ "@/components/KurtaxeSection"));
-const ZusatzservicesSection = lazy(() => import(/* webpackChunkName: "zusatzservices-section" */ "@/components/ZusatzservicesSection"));
-const VersicherungSection = lazy(() => import(/* webpackChunkName: "versicherung-section" */ "@/components/VersicherungSection"));
-const IdentitaetspruefungSection = lazy(() => import(/* webpackChunkName: "identitaetspruefung-section" */ "@/components/IdentitaetspruefungSection"));
-const IntegrationenSection = lazy(() => import(/* webpackChunkName: "integrationen-section" */ "@/components/features/IntegrationenSection"));
-const EinstellungenSection = lazy(() => import(/* webpackChunkName: "einstellungen-section" */ "@/components/features/EinstellungenSection"));
-const PricingSection = lazy(() => import(/* webpackChunkName: "pricing-section" */ "@/components/PricingSection"));
-const ContactSection = lazy(() => import(/* webpackChunkName: "contact-section" */ "@/components/ContactSection"));
+const KurtaxeSection = lazy(() => import("@/components/KurtaxeSection"));
+// Remove the problematic import and use direct import above
+const VersicherungSection = lazy(() => import("@/components/VersicherungSection"));
+const IdentitaetspruefungSection = lazy(() => import("@/components/IdentitaetspruefungSection"));
+const IntegrationenSection = lazy(() => import("@/components/features/IntegrationenSection"));
+const EinstellungenSection = lazy(() => import("@/components/features/EinstellungenSection"));
+const PricingSection = lazy(() => import("@/components/PricingSection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
 
 const Index = () => {
   return (
@@ -39,9 +41,10 @@ const Index = () => {
         <Suspense fallback={<SectionLoader />}>
           <KurtaxeSection />
         </Suspense>
-        <Suspense fallback={<SectionLoader bg="bg-floral-100" />}>
-          <ZusatzservicesSection />
-        </Suspense>
+        
+        {/* Load ZusatzservicesSection directly instead of using Suspense */}
+        <ZusatzservicesSection />
+        
         <Suspense fallback={<SectionLoader />}>
           <VersicherungSection />
         </Suspense>
