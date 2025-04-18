@@ -6,7 +6,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import CTAButton from '../CTAButton';
 import TrustBadgeFAQ from './TrustBadgeFAQ';
-import { TrustBadgeLevels } from '@/components/TrustBadgeLevels';
+import TrustBadgeCertificates from './TrustBadgeCertificates';
 
 const TrustBadgePage = () => {
   const { t } = useTranslation();
@@ -120,6 +120,14 @@ const TrustBadgePage = () => {
           </div>
         </div>
       </section>
+      
+      <TrustBadgeCertificates />
+      
+      <div className="text-center py-16 bg-white">
+        <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
+          <UserCheck className="mr-2 h-4 w-4" /> {t('trustBadge.cta')}
+        </CTAButton>
+      </div>
       
       <TrustBadgeFAQ />
       

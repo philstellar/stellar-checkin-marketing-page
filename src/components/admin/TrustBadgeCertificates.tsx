@@ -1,0 +1,61 @@
+
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const certificates = [
+  {
+    id: 1,
+    src: "/lovable-uploads/a87e68a9-df58-447c-b9bf-d197457953f3.png",
+    alt: "Trust Badge Certificate 1"
+  },
+  {
+    id: 2,
+    src: "/lovable-uploads/05f1c849-d684-4052-8971-994a0c72e9d6.png",
+    alt: "Trust Badge Certificate 2"
+  },
+  {
+    id: 3,
+    src: "/lovable-uploads/df315b16-7211-46de-adf8-952b9517f932.png",
+    alt: "Trust Badge Certificate 3"
+  },
+  {
+    id: 4,
+    src: "/lovable-uploads/36636722-b73c-4517-b0b4-8f86fa601011.png",
+    alt: "Trust Badge Certificate 4"
+  }
+];
+
+const TrustBadgeCertificates = () => {
+  return (
+    <div className="py-16 bg-white">
+      <div className="container-custom">
+        <p className="text-lg text-royal-700 mb-12 text-center">
+          {/* This text will be translated through the translation system */}
+          Für weitere Details können deine Gäste auf eine von Stellar gehostete Zertifikatsseite klicken, die Informationen über dich, deine verifizierten Unterkünfte und den Stellar Trust Badge enthält
+        </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {certificates.map((cert, index) => (
+            <motion.div
+              key={cert.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.3,
+                ease: "easeOut"
+              }}
+            >
+              <img
+                src={cert.src}
+                alt={cert.alt}
+                className="w-full h-auto rounded-[5px] shadow-lg"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TrustBadgeCertificates;
