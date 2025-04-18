@@ -1,4 +1,3 @@
-
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
@@ -25,9 +24,9 @@ const Footer = () => {
             <img 
               src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" 
               alt="Stellar Logo" 
-              className="h-10 mb-4 w-auto object-contain"
-              width="120"
-              height="40"
+              className="h-8 mb-4 w-auto object-contain"
+              width="96"
+              height="32"
               loading="lazy"
             />
             <p className="text-black mb-6 max-w-md">

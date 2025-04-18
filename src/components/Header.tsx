@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
@@ -87,9 +86,9 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" 
                 alt="Stellar Logo" 
-                className="h-10 w-auto object-contain"
-                width="120"
-                height="40"
+                className="h-8 w-auto object-contain"
+                width="96"
+                height="32"
               />
             </button>
           </div>
