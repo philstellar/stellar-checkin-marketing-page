@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
@@ -84,7 +85,7 @@ const Header = () => {
               className="flex items-center"
             >
               <img 
-                src="/lovable-uploads/stellar-checkin-logo.png" 
+                src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" 
                 alt="Stellar Logo" 
                 className="h-10 w-auto object-contain"
                 width="120"
