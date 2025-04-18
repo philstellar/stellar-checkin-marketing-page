@@ -18,6 +18,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     onClose();
   };
 

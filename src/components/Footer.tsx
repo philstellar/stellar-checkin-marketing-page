@@ -12,7 +12,7 @@ const Footer = () => {
     return `/${language}`;
   };
   
-  const scrollToTop = () => {
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   
@@ -38,7 +38,7 @@ const Footer = () => {
                 <Link 
                   to={`${getUrlPrefix()}/ueber-uns`} 
                   className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={scrollToTop}
+                  onClick={handleNavigation}
                 >
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.aboutUs')}
@@ -48,7 +48,7 @@ const Footer = () => {
                 <Link 
                   to={`${getUrlPrefix()}/erfolgsgeschichten`} 
                   className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={scrollToTop}
+                  onClick={handleNavigation}
                 >
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.successStories')}
@@ -58,7 +58,7 @@ const Footer = () => {
                 <Link 
                   to={`${getUrlPrefix()}/faq`} 
                   className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={scrollToTop}
+                  onClick={handleNavigation}
                 >
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.faq')}
@@ -74,7 +74,7 @@ const Footer = () => {
                 <Link 
                   to={`${getUrlPrefix()}/impressum`} 
                   className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={scrollToTop}
+                  onClick={handleNavigation}
                 >
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('footer.imprint')}
@@ -84,7 +84,7 @@ const Footer = () => {
                 <Link 
                   to={`${getUrlPrefix()}/datenschutz`} 
                   className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={scrollToTop}
+                  onClick={handleNavigation}
                 >
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('footer.privacy')}
@@ -94,7 +94,7 @@ const Footer = () => {
                 <Link 
                   to={`${getUrlPrefix()}/agb`} 
                   className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={scrollToTop}
+                  onClick={handleNavigation}
                 >
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('footer.terms')}

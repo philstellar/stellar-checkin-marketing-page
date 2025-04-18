@@ -15,6 +15,7 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
