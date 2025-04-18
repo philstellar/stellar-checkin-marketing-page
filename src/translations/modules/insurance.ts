@@ -1,3 +1,4 @@
+
 export const insuranceDE = {
   title: "Versicherung und Kaution clever automatisieren",
   introduction: "Bieten Sie Ihren Gästen eine optionale Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
@@ -30,7 +31,31 @@ export const insuranceDE = {
   },
   details: {
     title: "Details zur Versicherung",
-    content: "Die Versicherung deckt Schäden bis zu [Betrag] ab und gilt für den gesamten Aufenthalt."
+    content: "Die Versicherung deckt Schäden bis zu [Betrag] ab und gilt für den gesamten Aufenthalt.",
+    furniture: {
+      title: "Möbel & Einrichtung",
+      description: "Umfassender Schutz für alle Möbel und Einrichtungsgegenstände in Ihrer Unterkunft."
+    },
+    newForOld: {
+      title: "Neu für Alt",
+      description: "Bei einem Schaden wird der Neuwert erstattet, nicht der Zeitwert."
+    },
+    rentalLoss: {
+      title: "Mietausfall",
+      description: "Schutz vor Verdienstausfällen bei Schäden, die zu Buchungsausfällen führen."
+    },
+    petDamage: {
+      title: "Tierschäden",
+      description: "Auch Schäden durch Haustiere sind abgedeckt."
+    },
+    cleaning: {
+      title: "Reinigungskosten",
+      description: "Außergewöhnliche Reinigungskosten werden übernommen."
+    },
+    art: {
+      title: "Kunst & Wertgegenstände",
+      description: "Auch wertvolle Gegenstände und Kunstwerke sind geschützt."
+    }
   },
   faq: {
     title: "Häufige Fragen",
@@ -47,7 +72,27 @@ export const insuranceDE = {
         question: "Was kostet die Versicherung?",
         answer: "Die Kosten für die Versicherung betragen [Betrag] pro Nacht."
       }
-    ]
+    ],
+    airbnb: {
+      question: "Funktioniert das auch mit Airbnb?",
+      answer: "Ja, unsere Versicherungslösung ist vollständig mit Airbnb und anderen Buchungsplattformen kompatibel."
+    },
+    repeat: {
+      question: "Sind Stammgäste auch versichert?",
+      answer: "Ja, sowohl Neukunden als auch Stammgäste können die Versicherung abschließen."
+    },
+    deposit: {
+      question: "Kann ich trotzdem eine Kaution verlangen?",
+      answer: "Sie können wählen, ob Sie eine Kaution, eine Versicherung oder beides anbieten möchten."
+    },
+    coverage: {
+      question: "Was ist alles versichert?",
+      answer: "Die Versicherung deckt Schäden an Möbeln, Elektronik, Wänden, Böden und allen Einrichtungsgegenständen ab. Auch Mietausfälle sind abgedeckt."
+    },
+    cost: {
+      question: "Was kostet die Versicherung?",
+      answer: "Die Versicherung kostet den Gast typischerweise zwischen 3-5% des Buchungswertes und ersetzt die Kaution."
+    }
   },
   comparison: {
     title: "Vergleich",
@@ -96,7 +141,31 @@ export const insuranceEN = {
   },
   details: {
     title: "Insurance Details",
-    content: "The insurance covers damages up to [amount] and is valid for the entire stay."
+    content: "The insurance covers damages up to [amount] and is valid for the entire stay.",
+    furniture: {
+      title: "Furniture & Furnishings",
+      description: "Comprehensive protection for all furniture and furnishings in your accommodation."
+    },
+    newForOld: {
+      title: "New for Old",
+      description: "In case of damage, the replacement value is reimbursed, not the current value."
+    },
+    rentalLoss: {
+      title: "Rental Loss",
+      description: "Protection against loss of income due to damages that lead to booking cancellations."
+    },
+    petDamage: {
+      title: "Pet Damages",
+      description: "Damages caused by pets are also covered."
+    },
+    cleaning: {
+      title: "Cleaning Costs",
+      description: "Extraordinary cleaning costs are covered."
+    },
+    art: {
+      title: "Art & Valuables",
+      description: "Valuable items and artwork are also protected."
+    }
   },
   faq: {
     title: "Frequently Asked Questions",
@@ -113,7 +182,27 @@ export const insuranceEN = {
         question: "How much does the insurance cost?",
         answer: "The cost of the insurance is [amount] per night."
       }
-    ]
+    ],
+    airbnb: {
+      question: "Does it work with Airbnb?",
+      answer: "Yes, our insurance solution is fully compatible with Airbnb and other booking platforms."
+    },
+    repeat: {
+      question: "Are regular guests also insured?",
+      answer: "Yes, both new customers and regular guests can purchase the insurance."
+    },
+    deposit: {
+      question: "Can I still require a deposit?",
+      answer: "You can choose whether to offer a deposit, insurance, or both."
+    },
+    coverage: {
+      question: "What is covered?",
+      answer: "The insurance covers damage to furniture, electronics, walls, floors, and all furnishings. Rental losses are also covered."
+    },
+    cost: {
+      question: "How much does the insurance cost?",
+      answer: "The insurance typically costs the guest between 3-5% of the booking value and replaces the deposit."
+    }
   },
   comparison: {
     title: "Comparison",
@@ -162,7 +251,31 @@ export const insuranceES = {
   },
   details: {
     title: "Detalles del seguro",
-    content: "El seguro cubre los daños hasta [importe] y es válido para toda la estancia."
+    content: "El seguro cubre los daños hasta [importe] y es válido para toda la estancia.",
+    furniture: {
+      title: "Muebles y Mobiliario",
+      description: "Protección integral para todos los muebles y mobiliario de su alojamiento."
+    },
+    newForOld: {
+      title: "Nuevo por Viejo",
+      description: "En caso de daño, se reembolsa el valor de reposición, no el valor actual."
+    },
+    rentalLoss: {
+      title: "Pérdida de Alquiler",
+      description: "Protección contra la pérdida de ingresos debido a daños que provocan cancelaciones de reservas."
+    },
+    petDamage: {
+      title: "Daños por Mascotas",
+      description: "También están cubiertos los daños causados por mascotas."
+    },
+    cleaning: {
+      title: "Costes de Limpieza",
+      description: "Se cubren los costes de limpieza extraordinarios."
+    },
+    art: {
+      title: "Arte y Objetos de Valor",
+      description: "También están protegidos los objetos de valor y las obras de arte."
+    }
   },
   faq: {
     title: "Preguntas frecuentes",
@@ -179,7 +292,27 @@ export const insuranceES = {
         question: "¿Cuánto cuesta el seguro?",
         answer: "El coste del seguro es de [importe] por noche."
       }
-    ]
+    ],
+    airbnb: {
+      question: "¿Funciona con Airbnb?",
+      answer: "Sí, nuestra solución de seguro es totalmente compatible con Airbnb y otras plataformas de reserva."
+    },
+    repeat: {
+      question: "¿Los huéspedes habituales también están asegurados?",
+      answer: "Sí, tanto los nuevos clientes como los huéspedes habituales pueden contratar el seguro."
+    },
+    deposit: {
+      question: "¿Puedo seguir exigiendo un depósito?",
+      answer: "Puede elegir si ofrecer un depósito, un seguro o ambos."
+    },
+    coverage: {
+      question: "¿Qué está cubierto?",
+      answer: "El seguro cubre daños a muebles, electrónica, paredes, suelos y todo el mobiliario. También están cubiertas las pérdidas de alquiler."
+    },
+    cost: {
+      question: "¿Cuánto cuesta el seguro?",
+      answer: "El seguro suele costar al huésped entre el 3-5% del valor de la reserva y sustituye al depósito."
+    }
   },
   comparison: {
     title: "Comparación",
@@ -228,7 +361,31 @@ export const insuranceIT = {
   },
   details: {
     title: "Dettagli dell'assicurazione",
-    content: "L'assicurazione copre i danni fino a [importo] ed è valida per l'intero soggiorno."
+    content: "L'assicurazione copre i danni fino a [importo] ed è valida per l'intero soggiorno.",
+    furniture: {
+      title: "Mobili e Arredamento",
+      description: "Protezione completa per tutti i mobili e l'arredamento del tuo alloggio."
+    },
+    newForOld: {
+      title: "Nuovo per Vecchio",
+      description: "In caso di danno, viene rimborsato il valore di sostituzione, non il valore attuale."
+    },
+    rentalLoss: {
+      title: "Perdita di Affitto",
+      description: "Protezione contro la perdita di reddito dovuta a danni che portano a cancellazioni di prenotazioni."
+    },
+    petDamage: {
+      title: "Danni da Animali",
+      description: "Sono coperti anche i danni causati da animali domestici."
+    },
+    cleaning: {
+      title: "Costi di Pulizia",
+      description: "Sono coperti i costi di pulizia straordinari."
+    },
+    art: {
+      title: "Arte e Oggetti di Valore",
+      description: "Sono protetti anche oggetti di valore e opere d'arte."
+    }
   },
   faq: {
     title: "Domande frequenti",
@@ -245,7 +402,27 @@ export const insuranceIT = {
         question: "Quanto costa l'assicurazione?",
         answer: "Il costo dell'assicurazione è di [importo] a notte."
       }
-    ]
+    ],
+    airbnb: {
+      question: "Funziona con Airbnb?",
+      answer: "Sì, la nostra soluzione assicurativa è completamente compatibile con Airbnb e altre piattaforme di prenotazione."
+    },
+    repeat: {
+      question: "Anche gli ospiti abituali sono assicurati?",
+      answer: "Sì, sia i nuovi clienti che gli ospiti abituali possono acquistare l'assicurazione."
+    },
+    deposit: {
+      question: "Posso ancora richiedere un deposito?",
+      answer: "Puoi scegliere se offrire un deposito, un'assicurazione o entrambi."
+    },
+    coverage: {
+      question: "Cosa è coperto?",
+      answer: "L'assicurazione copre i danni a mobili, elettronica, pareti, pavimenti e tutti gli arredi. Sono coperte anche le perdite di affitto."
+    },
+    cost: {
+      question: "Quanto costa l'assicurazione?",
+      answer: "L'assicurazione in genere costa all'ospite tra il 3-5% del valore della prenotazione e sostituisce il deposito."
+    }
   },
   comparison: {
     title: "Confronto",

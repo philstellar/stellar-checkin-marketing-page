@@ -258,5 +258,8 @@ export const it = {
     privacy: "Informativa sulla Privacy",
     terms: "Termini e Condizioni",
     copyright: "Tutti i diritti riservati."
-  }
+  },
+
+  insurance: insuranceIT,
+  trustBadge: trustBadgeIT
 };
