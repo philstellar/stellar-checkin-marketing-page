@@ -1,4 +1,3 @@
-
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
@@ -23,7 +22,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <img 
-              src="/lovable-uploads/b7e186f9-35f5-415a-8e48-5d4f4fff7e25.png" 
+              src="/lovable-uploads/219dff13-4a67-42c3-9f46-a554998a84b6.png" 
               alt="Stellar Logo" 
               className="h-10 mb-4"
               width="120"
@@ -44,7 +43,6 @@ const Footer = () => {
                   className="flex items-center text-black hover:text-apple transition-colors"
                   onClick={handleNavigation}
                   onMouseEnter={() => {
-                    // Prefetch the page on hover
                     const link = document.createElement('link');
                     link.rel = 'prefetch';
                     link.href = `${getUrlPrefix()}/ueber-uns`;
