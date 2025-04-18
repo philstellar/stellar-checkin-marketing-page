@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Shield, UserCheck, CalendarCheck, Percent, Plus, Link, ShieldCheck, FileCheck, Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -79,7 +78,7 @@ const VersicherungPage = () => {
                 <span style={{ color: 'rgb(164 195 9)' }}>Kautionen managen</span>
               </h1>
               <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-                {t('insurance.introduction')}
+                Bieten Sie Ihren Gästen eine optionale Versicherung an und profitieren Sie von zusätzlichen Einnahmen.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
