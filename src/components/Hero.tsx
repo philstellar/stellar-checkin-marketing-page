@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 import { UserCheck } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
 import CTAButton from "./CTAButton";
@@ -48,6 +48,8 @@ const Hero = () => {
               className="w-3/5 h-auto object-contain bg-transparent"
               loading="eager"
               fetchPriority="high"
+              width="500"
+              height="400"
             />
           </div>
         </div>
@@ -56,4 +58,5 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+// Use memo to prevent unnecessary re-renders
+export default memo(Hero);

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
 import DesktopNav from './header/DesktopNav';
@@ -12,15 +13,17 @@ const Header = () => {
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
+  // Optimize scroll handler with useCallback to prevent unnecessary re-renders
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 10);
+  }, []);
+
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -86,6 +89,8 @@ const Header = () => {
                 src="/lovable-uploads/7e69374e-dab4-4fb4-8bef-f366fd75291e.png" 
                 alt="Stellar Logo" 
                 className="h-10"
+                width="120"
+                height="40"
               />
             </button>
           </div>

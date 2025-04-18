@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +8,19 @@
     <meta name="description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Gästemeldung, Kurtaxe, Zusatzleistungen und mehr." />
     <meta name="author" content="Stellar Checkin" />
     <link rel="icon" href="/lovable-uploads/47b42a33-5a74-48ad-aa33-ad6bb2ec41cf.png" type="image/png" />
+    <link rel="preconnect" href="https://assets.brevo.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://assets.brevo.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/lovable-uploads/7e69374e-dab4-4fb4-8bef-f366fd75291e.png" as="image" />
+    <link rel="preload" href="/lovable-uploads/ff8a3a50-21d0-4e53-98f4-3265e363fe55.png" as="image" />
+    <link rel="preload" href="/fonts/Aeonik-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Aeonik-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Aeonik-Bold.woff2" as="font" type="font/woff2" crossorigin />
 
     <meta property="og:title" content="Stellar Checkin - Digitale Check-in Lösung für Ferienwohnungen" />
     <meta property="og:description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Gästemeldung, Kurtaxe, Zusatzleistungen und mehr." />
@@ -20,107 +34,47 @@
     <meta name="twitter:description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Weniger Aufwand, mehr Umsatz." />
     <meta name="twitter:image" content="/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png" />
     
-    <!-- Brevo Form Styles -->
+    <!-- Brevo Form Styles - minified -->
     <style>
-      @font-face {
-        font-display: block;
-        font-family: Roboto;
-        src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-      }
-
-      @font-face {
-        font-display: fallback;
-        font-family: Roboto;
-        font-weight: 600;
-        src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-      }
-
-      @font-face {
-        font-display: fallback;
-        font-family: Roboto;
-        font-weight: 700;
-        src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-      }
-
-      #sib-container input:-ms-input-placeholder {
-        text-align: left;
-        font-family: Helvetica, sans-serif;
-        color: #c0ccda;
-      }
-
-      #sib-container input::placeholder {
-        text-align: left;
-        font-family: Helvetica, sans-serif;
-        color: #c0ccda;
-      }
-
-      #sib-container textarea::placeholder {
-        text-align: left;
-        font-family: Helvetica, sans-serif;
-        color: #c0ccda;
-      }
-
-      #sib-container a {
-        text-decoration: underline;
-        color: #2BB2FC;
-      }
-      
-      /* CSS for Brevo Form */
-      .input--hidden {
-        display: none;
-      }
-      
-      .sib-form-block__button {
-        background-color: #a4c309 !important; /* Update to match your website's colors */
-      }
-      
-      .sib-form-block__button:hover {
-        background-color: #93af08 !important; /* Slightly darker on hover */
-      }
+      @font-face{font-display:block;font-family:Roboto;src:url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")}@font-face{font-display:fallback;font-family:Roboto;font-weight:600;src:url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")}@font-face{font-display:fallback;font-family:Roboto;font-weight:700;src:url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")}#sib-container input:-ms-input-placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container input::placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container textarea::placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container a{text-decoration:underline;color:#2BB2FC}.input--hidden{display:none}.sib-form-block__button{background-color:#a4c309!important}.sib-form-block__button:hover{background-color:#93af08!important}
     </style>
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16898170225"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Async load Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16898170225"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16898170225');
+    </script>
 
-  gtag('config', 'AW-16898170225');
-</script>
-
-    <!-- Event snippet for Page View Stellar Checkin conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-16898170225/0RydCISEsrgaEPG61vk-',
-      'value': 1.0,
-      'currency': 'EUR'
-  });
-</script>
-
-    <!-- Event snippet for Submitted Form Stellar Checkin conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-16898170225/iMqhCLSyvrgaEPG61vk-',
-      'value': 1.0,
-      'currency': 'EUR',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-    
+    <!-- Event snippet with defer for better performance -->
+    <script defer>
+      window.addEventListener('load', function() {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16898170225/0RydCISEsrgaEPG61vk-',
+            'value': 1.0,
+            'currency': 'EUR'
+        });
+      });
+      
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16898170225/iMqhCLSyvrgaEPG61vk-',
+            'value': 1.0,
+            'currency': 'EUR',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
   </head>
-
   
   <body>
     <div id="root"></div>

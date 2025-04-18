@@ -1,4 +1,5 @@
 
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
@@ -25,6 +26,9 @@ const Footer = () => {
               src="/lovable-uploads/7e69374e-dab4-4fb4-8bef-f366fd75291e.png" 
               alt="Stellar Logo" 
               className="h-10 mb-4"
+              width="120"
+              height="40"
+              loading="lazy"
             />
             <p className="text-black mb-6 max-w-md">
               {t('footer.tagline')}
@@ -39,6 +43,14 @@ const Footer = () => {
                   to={`${getUrlPrefix()}/ueber-uns`} 
                   className="flex items-center text-black hover:text-apple transition-colors"
                   onClick={handleNavigation}
+                  onMouseEnter={() => {
+                    // Prefetch the page on hover
+                    const link = document.createElement('link');
+                    link.rel = 'prefetch';
+                    link.href = `${getUrlPrefix()}/ueber-uns`;
+                    link.as = 'document';
+                    document.head.appendChild(link);
+                  }}
                 >
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.aboutUs')}
@@ -112,4 +124,5 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+// Use memo to prevent unnecessary re-renders
+export default memo(Footer);
