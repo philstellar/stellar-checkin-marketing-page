@@ -1,8 +1,11 @@
 
 import { useEffect, useRef, useMemo } from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import useEmblaCarousel from 'embla-carousel-react';
+import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
 import { useTranslation } from "@/hooks/use-translation";
+
+// Define the correct type for emblaRef to support .current property
+type EmblaCarouselType = UseEmblaCarouselType[0];
 
 const logos = [
   {
@@ -71,16 +74,20 @@ const LogoCarousel = () => {
       { threshold: 0.1 }
     );
 
-    // Fix the TypeScript error by checking if emblaRef exists before accessing current
-    const emblaNode = emblaRef.current;
-    if (emblaNode) {
-      observer.observe(emblaNode);
+    // Using a type guard to properly check if the emblaRef.current is an element
+    if (emblaRef && typeof emblaRef === 'object') {
+      const emblaNode = emblaRef as unknown as { current: Element | null };
+      if (emblaNode.current) {
+        observer.observe(emblaNode.current);
+        
+        return () => {
+          observer.unobserve(emblaNode.current as Element);
+          stopAutoplay();
+        };
+      }
     }
 
     return () => {
-      if (emblaNode) {
-        observer.unobserve(emblaNode);
-      }
       stopAutoplay();
     };
   }, [emblaRef]);
