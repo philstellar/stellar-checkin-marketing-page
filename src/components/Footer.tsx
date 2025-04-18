@@ -22,8 +22,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <img 
-              src="/lovable-uploads/a34ddbd3-e92e-4559-9779-95177352609e.png" 
-              alt="Stellar Checkin Logo" 
+              src="/lovable-uploads/7e69374e-dab4-4fb4-8bef-f366fd75291e.png" 
+              alt="Stellar Logo" 
               className="h-10 mb-4"
             />
             <p className="text-black mb-6 max-w-md">
