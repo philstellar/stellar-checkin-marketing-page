@@ -6,6 +6,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import CTAButton from '../CTAButton';
 import TrustBadgeFAQ from './TrustBadgeFAQ';
+import { TrustBadgeLevels } from '@/components/TrustBadgeLevels';
 
 const TrustBadgePage = () => {
   const { t } = useTranslation();

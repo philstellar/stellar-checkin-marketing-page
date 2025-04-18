@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useEffect, useRef } from 'react';
 import { Award, Star, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -36,15 +37,6 @@ const testimonialLogos = [
 
 const extendedLogos = [...testimonialLogos, ...testimonialLogos, ...testimonialLogos];
 
-const [emblaRef, emblaApi] = useEmblaCarousel({
-  loop: true,
-  dragFree: true,
-  containScroll: "keepSnaps",
-  slidesToScroll: 1,
-  startIndex: testimonialLogos.length,
-  align: 'start'
-});
-
 const testimonials = [
   {
     company: "Hof Liebeneck",
@@ -79,6 +71,14 @@ const testimonials = [
 ];
 
 const Erfolgsgeschichten = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    dragFree: true,
+    containScroll: "keepSnaps",
+    slidesToScroll: 1,
+    align: 'start'
+  });
+  
   return (
     <>
       <Header />
