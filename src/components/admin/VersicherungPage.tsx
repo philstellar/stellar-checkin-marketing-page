@@ -179,12 +179,6 @@ const VersicherungPage = () => {
               {t('insurance.shortTerm.description')}
             </p>
             <InsurancePricing />
-            
-            <div className="mt-8 text-center">
-              <p className="text-lg text-royal-700">
-                {t('insurance.flexibility')}
-              </p>
-            </div>
           </div>
         </div>
       </section>
