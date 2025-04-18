@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { UserCheck } from 'lucide-react';
+import { UserCheck, Shield } from 'lucide-react';
 import CTAButton from '../../CTAButton';
 
 interface HeroSectionProps {
