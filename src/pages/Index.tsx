@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import { OnlineCheckinSection } from "@/components/features";
 import LogoCarousel from "@/components/LogoCarousel";
 import Footer from "@/components/Footer";
-// Import ZusatzservicesSection directly instead of lazy-loading it
+// Import ZusatzservicesSection directly to prevent dynamic import issues
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 
 // Custom loading component for better user experience
@@ -15,7 +15,6 @@ const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
 
 // Lazy load non-critical sections with properly named chunks
 const KurtaxeSection = lazy(() => import("@/components/KurtaxeSection"));
-// Remove the problematic import and use direct import above
 const VersicherungSection = lazy(() => import("@/components/VersicherungSection"));
 const IdentitaetspruefungSection = lazy(() => import("@/components/IdentitaetspruefungSection"));
 const IntegrationenSection = lazy(() => import("@/components/features/IntegrationenSection"));
@@ -37,13 +36,12 @@ const Index = () => {
           <LogoCarousel />
         </Suspense>
         
-        {/* Non-critical sections lazy loaded with separate suspense boundaries */}
+        {/* Load ZusatzservicesSection directly without Suspense */}
+        <ZusatzservicesSection />
+        
         <Suspense fallback={<SectionLoader />}>
           <KurtaxeSection />
         </Suspense>
-        
-        {/* Load ZusatzservicesSection directly instead of using Suspense */}
-        <ZusatzservicesSection />
         
         <Suspense fallback={<SectionLoader />}>
           <VersicherungSection />

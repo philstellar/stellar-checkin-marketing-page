@@ -71,14 +71,15 @@ const LogoCarousel = () => {
       { threshold: 0.1 }
     );
 
-    // Fix: using a more reliable way to reference the DOM element
-    if (emblaRef && emblaRef.current) {
-      observer.observe(emblaRef.current);
+    // Fix the TypeScript error by checking if emblaRef exists before accessing current
+    const emblaNode = emblaRef.current;
+    if (emblaNode) {
+      observer.observe(emblaNode);
     }
 
     return () => {
-      if (emblaRef && emblaRef.current) {
-        observer.unobserve(emblaRef.current);
+      if (emblaNode) {
+        observer.unobserve(emblaNode);
       }
       stopAutoplay();
     };
