@@ -86,9 +86,9 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" 
                 alt="Stellar Logo" 
-                className="h-8 w-auto object-contain"
-                width="96"
-                height="32"
+                className="h-6 w-auto object-contain"
+                width="72"
+                height="24"
               />
             </button>
           </div>
