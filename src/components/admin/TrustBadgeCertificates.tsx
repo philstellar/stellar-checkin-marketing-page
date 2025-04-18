@@ -69,7 +69,7 @@ const TrustBadgeCertificates = () => {
             <img
               src={selectedImage}
               alt="Certificate Full View"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain rounded-[5px]"
             />
           )}
         </DialogContent>
