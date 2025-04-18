@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -93,6 +92,18 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                     className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
                   >
                     {t('identity.title')}
+                  </button>
+                  <button 
+                    onClick={() => handleSectionClick('einstellungen')}
+                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
+                  >
+                    {t('settings.title')}
+                  </button>
+                  <button 
+                    onClick={() => handleSectionClick('integrationen')}
+                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
+                  >
+                    {t('integration.title')}
                   </button>
                 </div>
               </div>

@@ -54,6 +54,12 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
           <DropdownMenuItem onClick={() => handleSectionClick('identitaetspruefung')}>
             {t('identity.title')}
           </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => handleSectionClick('einstellungen')}>
+            {t('settings.title')}
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => handleSectionClick('integrationen')}>
+            {t('integration.title')}
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
 
