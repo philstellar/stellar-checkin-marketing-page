@@ -2,7 +2,6 @@
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { DollarSign } from 'lucide-react';
 
 const InsurancePricing = () => {
   const { t } = useTranslation();
@@ -45,8 +44,7 @@ const InsurancePricing = () => {
         </Table>
       </div>
       <div className="flex items-center text-center text-lg text-royal-700 mt-6">
-        <DollarSign className="mr-3 text-apple" size={24} />
-        <p>{t('insurance.features.flexibility')}</p>
+        <p>Mit unserem Pay-per-Night-Modell zahlst du nur, wenn du Gäste hast. Und du kannst jederzeit kündigen.</p>
       </div>
     </div>
   );
