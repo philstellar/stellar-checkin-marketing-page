@@ -5,81 +5,80 @@ import Footer from '@/components/Footer';
 import useEmblaCarousel from 'embla-carousel-react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Card } from "@/components/ui/card";
-import { TrustBadgeLevels } from '@/components/TrustBadgeLevels';
+
+const testimonialLogos = [
+  {
+    src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
+    alt: "Hof Liebeneck Osterspai",
+    width: 180
+  },
+  {
+    src: "/lovable-uploads/5ed06b20-0365-4348-b2b0-31574211bc35.png",
+    alt: "Homeby",
+    width: 160
+  },
+  {
+    src: "/lovable-uploads/800ababe-141e-40a9-aa0f-2e8d2519b7ef.png",
+    alt: "Favorent",
+    width: 150
+  },
+  {
+    src: "/lovable-uploads/fd96b10c-36ff-4492-a020-f47f221d8d39.png",
+    alt: "Luxury Hideaway",
+    width: 170
+  },
+  {
+    src: "/lovable-uploads/404c2219-9b9a-4ebd-b8ec-aea63d21d6d7.png",
+    alt: "Plau Lagoons",
+    width: 160
+  }
+];
+
+const extendedLogos = [...testimonialLogos, ...testimonialLogos, ...testimonialLogos];
+
+const [emblaRef, emblaApi] = useEmblaCarousel({
+  loop: true,
+  dragFree: true,
+  containScroll: "keepSnaps",
+  slidesToScroll: 1,
+  startIndex: testimonialLogos.length,
+  align: 'start'
+});
+
+const testimonials = [
+  {
+    company: "Hof Liebeneck",
+    name: "Mario Schilling",
+    image: "/lovable-uploads/66faf0b3-a82d-417b-94b6-b850f4b79501.png",
+    rating: 5.0,
+    ratings: 28,
+    properties: 4,
+    joinedYear: 2024,
+    quote: "Gäste davon zu überzeugen, direkt auf unserer Website zu buchen, war immer eine Herausforderung. Seitdem wir das Stellar Trust Badge auf unserer Website anzeigen, das unsere Airbnb- und Booking.com-Bewertungen aggregiert, sehen wir bereits einen Anstieg der Buchungen.\n\nAußerdem habe ich ein viel besseres Gefühl bei Buchungen von Gästen, die ich noch nicht kenne, seit ich ihnen die Wahl zwischen einer Kaution und der Gästeschadenversicherung von Stellar anbieten kann.",
+  },
+  {
+    company: "Plau Lagoons",
+    name: "Ralf Kramer",
+    image: "/lovable-uploads/cda4c627-8961-489c-b264-d970daf26bed.png",
+    rating: 4.7,
+    ratings: 12,
+    properties: 10,
+    joinedYear: 2024,
+    quote: "Mehr Direktbuchungen zu bekommen, war für uns in letzter Zeit super wichtig – nicht nur, um den Umsatz zu steigern, sondern auch, um persönlicher mit unseren Gästen zu interagieren, zum Beispiel mit Grußkarten oder speziellen Angeboten.\n\nAber uns war schnell klar: Eine schöne Website allein reicht nicht. Wir brauchten etwas, das unseren Gästen zusätzlich Sicherheit gibt. Genau da kam das Stellar Trust Badge ins Spiel.",
+  },
+  {
+    company: "Favorent",
+    name: "Volker Rantz",
+    image: "/lovable-uploads/a102adcb-3320-4135-9d3c-f32ae16a0bd4.png",
+    rating: 5.0,
+    ratings: null,
+    properties: null,
+    joinedYear: null,
+    quote: "Die tägliche Gästeschadenversicherung ist für uns ein echter Gamechanger – sowohl als einzigartiges Verkaufsargument zur Gewinnung neuer Agenturkunden als auch zur Vereinfachung unserer Kautionsverwaltung.\n\nWir konnten die Reibungspunkte zwischen uns als Agentur, den Eigentümern und den Gästen erheblich reduzieren.",
+  },
+];
 
 const Erfolgsgeschichten = () => {
-  const testimonialLogos = [
-    {
-      src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
-      alt: "Hof Liebeneck Osterspai",
-      width: 180
-    },
-    {
-      src: "/lovable-uploads/5ed06b20-0365-4348-b2b0-31574211bc35.png",
-      alt: "Homeby",
-      width: 160
-    },
-    {
-      src: "/lovable-uploads/800ababe-141e-40a9-aa0f-2e8d2519b7ef.png",
-      alt: "Favorent",
-      width: 150
-    },
-    {
-      src: "/lovable-uploads/fd96b10c-36ff-4492-a020-f47f221d8d39.png",
-      alt: "Luxury Hideaway",
-      width: 170
-    },
-    {
-      src: "/lovable-uploads/404c2219-9b9a-4ebd-b8ec-aea63d21d6d7.png",
-      alt: "Plau Lagoons",
-      width: 160
-    }
-  ];
-
-  const extendedLogos = [...testimonialLogos, ...testimonialLogos, ...testimonialLogos];
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    dragFree: true,
-    containScroll: "keepSnaps",
-    slidesToScroll: 1,
-    startIndex: testimonialLogos.length,
-    align: 'start'
-  });
-
-  const testimonials = [
-    {
-      company: "Hof Liebeneck",
-      name: "Mario Schilling",
-      image: "/lovable-uploads/66faf0b3-a82d-417b-94b6-b850f4b79501.png",
-      rating: 5.0,
-      ratings: 28,
-      properties: 4,
-      joinedYear: 2024,
-      quote: "Gäste davon zu überzeugen, direkt auf unserer Website zu buchen, war immer eine Herausforderung. Seitdem wir das Stellar Trust Badge auf unserer Website anzeigen, das unsere Airbnb- und Booking.com-Bewertungen aggregiert, sehen wir bereits einen Anstieg der Buchungen.\n\nAußerdem habe ich ein viel besseres Gefühl bei Buchungen von Gästen, die ich noch nicht kenne, seit ich ihnen die Wahl zwischen einer Kaution und der Gästeschadenversicherung von Stellar anbieten kann.",
-    },
-    {
-      company: "Plau Lagoons",
-      name: "Ralf Kramer",
-      image: "/lovable-uploads/cda4c627-8961-489c-b264-d970daf26bed.png",
-      rating: 4.7,
-      ratings: 12,
-      properties: 10,
-      joinedYear: 2024,
-      quote: "Mehr Direktbuchungen zu bekommen, war für uns in letzter Zeit super wichtig – nicht nur, um den Umsatz zu steigern, sondern auch, um persönlicher mit unseren Gästen zu interagieren, zum Beispiel mit Grußkarten oder speziellen Angeboten.\n\nAber uns war schnell klar: Eine schöne Website allein reicht nicht. Wir brauchten etwas, das unseren Gästen zusätzlich Sicherheit gibt. Genau da kam das Stellar Trust Badge ins Spiel.",
-    },
-    {
-      company: "Favorent",
-      name: "Volker Rantz",
-      image: "/lovable-uploads/a102adcb-3320-4135-9d3c-f32ae16a0bd4.png",
-      rating: 5.0,
-      ratings: null,
-      properties: null,
-      joinedYear: null,
-      quote: "Die tägliche Gästeschadenversicherung ist für uns ein echter Gamechanger – sowohl als einzigartiges Verkaufsargument zur Gewinnung neuer Agenturkunden als auch zur Vereinfachung unserer Kautionsverwaltung.\n\nWir konnten die Reibungspunkte zwischen uns als Agentur, den Eigentümern und den Gästen erheblich reduzieren.",
-    },
-  ];
-
   return (
     <>
       <Header />
@@ -209,7 +208,6 @@ const Erfolgsgeschichten = () => {
           </div>
         </div>
       </section>
-      <TrustBadgeLevels />
       <Footer />
     </>
   );
