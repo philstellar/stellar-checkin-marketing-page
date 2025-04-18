@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Brush, BanknoteEuro, Paintbrush, PawPrint } from 'lucide-react';
+import { Brush, Banknote, Paintbrush, PawPrint } from 'lucide-react';
 
 const InsurancePricing = () => {
   return (
@@ -61,7 +60,7 @@ const InsurancePricing = () => {
             </TableRow>
             <TableRow>
               <TableCell className="text-center">
-                <BanknoteEuro className="h-6 w-6 mx-auto mb-2" />
+                <Banknote className="h-6 w-6 mx-auto mb-2" />
               </TableCell>
               <TableCell colSpan={2} className="align-middle">
                 Mietausfall bis zu 5.000 € (oder 21 Tage)
