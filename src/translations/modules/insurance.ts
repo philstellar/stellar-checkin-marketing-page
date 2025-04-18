@@ -1,6 +1,6 @@
 export const insuranceDE = {
   title: "Versicherung und Kaution clever automatisieren",
-  introduction: "Bieten Sie Ihren Gästen eine optionale Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
+  introduction: "",
   section1: {
     title: "Warum eine Versicherung?",
     content: "Eine Versicherung schützt Sie vor unerwarteten Schäden und Ausfällen."
