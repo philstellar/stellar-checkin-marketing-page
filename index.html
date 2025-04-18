@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,20 +7,20 @@
     <meta name="description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Gästemeldung, Kurtaxe, Zusatzleistungen und mehr." />
     <meta name="author" content="Stellar Checkin" />
     <link rel="icon" href="/lovable-uploads/47b42a33-5a74-48ad-aa33-ad6bb2ec41cf.png" type="image/png" />
-    <link rel="preconnect" href="https://assets.brevo.com" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="dns-prefetch" href="https://assets.brevo.com" />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    
+    <!-- Resource hints for external domains -->
+    <link rel="preconnect" href="https://assets.brevo.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="/lovable-uploads/7e69374e-dab4-4fb4-8bef-f366fd75291e.png" as="image" />
-    <link rel="preload" href="/lovable-uploads/ff8a3a50-21d0-4e53-98f4-3265e363fe55.png" as="image" />
+    <link rel="preload" href="/lovable-uploads/7e69374e-dab4-4fb4-8bef-f366fd75291e.png" as="image" fetchpriority="high" />
+    <link rel="preload" href="/lovable-uploads/ff8a3a50-21d0-4e53-98f4-3265e363fe55.png" as="image" fetchpriority="high" />
     <link rel="preload" href="/fonts/Aeonik-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Aeonik-Medium.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Aeonik-Bold.woff2" as="font" type="font/woff2" crossorigin />
 
+    <!-- Meta tags -->
     <meta property="og:title" content="Stellar Checkin - Digitale Check-in Lösung für Ferienwohnungen" />
     <meta property="og:description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Gästemeldung, Kurtaxe, Zusatzleistungen und mehr." />
     <meta property="og:type" content="website" />
@@ -40,16 +39,17 @@
     </style>
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
-    <!-- Async load Google Tag Manager -->
+    <!-- Load analytics asynchronously -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16898170225"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-16898170225');
+      gtag('config', 'AW-16898170225', { 'send_page_view': false });
+      gtag('event', 'page_view');
     </script>
 
-    <!-- Event snippet with defer for better performance -->
+    <!-- Defer non-critical scripts -->
     <script defer>
       window.addEventListener('load', function() {
         gtag('event', 'conversion', {
