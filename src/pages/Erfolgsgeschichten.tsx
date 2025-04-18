@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import useEmblaCarousel from 'embla-carousel-react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Card } from "@/components/ui/card";
+import { TrustBadgeLevels } from '@/components/TrustBadgeLevels';
 
 const Erfolgsgeschichten = () => {
   const testimonialLogos = [
@@ -208,6 +209,7 @@ const Erfolgsgeschichten = () => {
           </div>
         </div>
       </section>
+      <TrustBadgeLevels />
       <Footer />
     </>
   );
