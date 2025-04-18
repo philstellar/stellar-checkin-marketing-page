@@ -6,6 +6,11 @@ import { X } from "lucide-react";
 
 const certificates = [
   {
+    id: 1,
+    src: "/lovable-uploads/a87e68a9-df58-447c-b9bf-d197457953f3.png",
+    alt: "Trust Badge Certificate 1"
+  },
+  {
     id: 4,
     src: "/lovable-uploads/36636722-b73c-4517-b0b4-8f86fa601011.png",
     alt: "Trust Badge Certificate 4"
@@ -19,11 +24,6 @@ const certificates = [
     id: 3,
     src: "/lovable-uploads/df315b16-7211-46de-adf8-952b9517f932.png",
     alt: "Trust Badge Certificate 3"
-  },
-  {
-    id: 1,
-    src: "/lovable-uploads/a87e68a9-df58-447c-b9bf-d197457953f3.png",
-    alt: "Trust Badge Certificate 1"
   }
 ];
 
