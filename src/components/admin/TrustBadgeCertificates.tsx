@@ -16,14 +16,14 @@ const certificates = [
     alt: "Trust Badge Certificate 4"
   },
   {
-    id: 2,
-    src: "/lovable-uploads/df315b16-7211-46de-adf8-952b9517f932.png",
-    alt: "Trust Badge Certificate 3"
-  },
-  {
     id: 3,
     src: "/lovable-uploads/05f1c849-d684-4052-8971-994a0c72e9d6.png",
     alt: "Trust Badge Certificate 2"
+  },
+  {
+    id: 2,
+    src: "/lovable-uploads/df315b16-7211-46de-adf8-952b9517f932.png",
+    alt: "Trust Badge Certificate 3"
   }
 ];
 
