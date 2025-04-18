@@ -25,7 +25,7 @@ export const trustBadgeDE = {
     level2: "Zweite Ebene: Erklärt Gästen, warum sie dir vertrauen können, einschließlich einer detaillierten Bewertungsübersicht.",
     level3: "Für weitere Details können deine Gäste auf eine von Stellar gehostete Zertifikatsseite klicken, die Informationen über dich, deine verifizierten Unterkünfte und den Stellar Trust Badge enthält"
   },
-  cta: "Füge jetzt ganz einfach dein persönliches Zertifikat hinzu",
+  cta: "Jetzt Trust Badge für eigene Webseite generieren",
   faq: {
     certification: {
       question: "Wie lasse ich mich bei Stellar zertifizieren?",
