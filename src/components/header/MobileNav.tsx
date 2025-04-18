@@ -62,12 +62,40 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             animate="visible"
           >
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
-              <button 
-                onClick={() => handleSectionClick('features')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.features')}
-              </button>
+              <div className="space-y-2">
+                <button 
+                  onClick={() => handleSectionClick('features')}
+                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                >
+                  {t('navigation.features')}
+                </button>
+                <div className="pl-4 space-y-2">
+                  <button 
+                    onClick={() => handleSectionClick('kurtaxe')}
+                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
+                  >
+                    {t('kurtaxe.title')}
+                  </button>
+                  <button 
+                    onClick={() => handleSectionClick('zusatzservices')}
+                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
+                  >
+                    {t('zusatzservices.title')}
+                  </button>
+                  <button 
+                    onClick={() => handleSectionClick('versicherung')}
+                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
+                  >
+                    {t('versicherung.title')}
+                  </button>
+                  <button 
+                    onClick={() => handleSectionClick('identitaetspruefung')}
+                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
+                  >
+                    {t('identity.title')}
+                  </button>
+                </div>
+              </div>
               
               <button 
                 onClick={() => handleNavigation('versicherung')}
@@ -111,5 +139,4 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   );
 };
 
-// Use memo to prevent unnecessary re-renders
 export default memo(MobileNav);
