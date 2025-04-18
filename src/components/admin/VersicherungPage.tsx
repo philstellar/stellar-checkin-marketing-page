@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
-import { Shield, UserCheck, CalendarCheck, Percent, Plus, Link, ShieldCheck, FileCheck, Book, ShieldPlus, Clock, CheckCircle, XCircle } from 'lucide-react';
+import { Shield, UserCheck, CalendarCheck, Percent, Plus, Link, ShieldCheck, FileCheck, Book, ShieldPlus, Clock, CheckCircle, XCircle, Wallet } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import Header from '../Header';
 import Footer from '../Footer';
@@ -61,6 +61,11 @@ const VersicherungPage = () => {
       icon: <CheckCircle className="h-6 w-6 text-apple" />,
       title: "Peace of Mind",
       description: "Für Agenturen, Eigentümer und ihre Gäste."
+    },
+    {
+      icon: <Wallet className="h-6 w-6 text-apple" />,
+      title: "Kautionen als Option",
+      description: "Biete deinen Gästen die Wahl zwischen Versicherung und traditioneller Kaution."
     }
   ];
 
@@ -74,8 +79,8 @@ const VersicherungPage = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
-                {t('insurance.headline1')}
-                <span style={{ color: 'rgb(164 195 9)' }}>{t('insurance.headline2')}</span>
+                Versicherungen und{' '}
+                <span style={{ color: 'rgb(164 195 9)' }}>Kautionen managen</span>
               </h1>
               <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
                 {t('insurance.introduction')}
