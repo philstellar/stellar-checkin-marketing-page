@@ -151,10 +151,10 @@ const VersicherungPage = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((benefit, index) => (
-                <Card key={index} className="group hover:shadow-md transition-all duration-300 border border-gray-100">
+                <Card key={index} className="border border-gray-100">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-4 group-hover:transform group-hover:translate-x-2 transition-transform duration-300">
-                      <div className="mt-1 bg-floral rounded-lg p-2 group-hover:bg-apple/10 transition-colors duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="mt-1 bg-floral rounded-lg p-2">
                         {benefit.icon}
                       </div>
                       <p className="text-royal-700 font-medium">{benefit.title}</p>
