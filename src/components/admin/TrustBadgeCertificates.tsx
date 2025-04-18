@@ -33,9 +33,6 @@ const TrustBadgeCertificates = () => {
   return (
     <div className="py-16 bg-white">
       <div className="container-custom">
-        <p className="text-lg text-royal-700 mb-12 text-center">
-          Für weitere Details können deine Gäste auf eine von Stellar gehostete Zertifikatsseite klicken, die Informationen über dich, deine verifizierten Unterkünfte und den Stellar Trust Badge enthält
-        </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {certificates.map((cert, index) => (
             <motion.div
