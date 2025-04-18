@@ -19,6 +19,7 @@ type DesktopNavProps = {
 const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
   const navigate = useNavigate();
   const { t, currentLanguage } = useTranslation();
+  const isProduction = window.location.hostname === 'stellar-checkin.com';
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
@@ -63,20 +64,25 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      <button
-        onClick={() => handleNavigation('versicherung')}
-        onMouseEnter={() => handleMouseEnter('versicherung')}
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
-        {t('navigation.insurance')}
-      </button>
-      <button
-        onClick={() => handleNavigation('trust-badge')}
-        onMouseEnter={() => handleMouseEnter('trust-badge')}
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
-        {t('navigation.trustBadge')}
-      </button>
+      {!isProduction && (
+        <>
+          <button
+            onClick={() => handleNavigation('versicherung')}
+            onMouseEnter={() => handleMouseEnter('versicherung')}
+            className="text-royal hover:text-apple font-medium transition-colors"
+          >
+            {t('navigation.insurance')}
+          </button>
+          <button
+            onClick={() => handleNavigation('trust-badge')}
+            onMouseEnter={() => handleMouseEnter('trust-badge')}
+            className="text-royal hover:text-apple font-medium transition-colors"
+          >
+            {t('navigation.trustBadge')}
+          </button>
+        </>
+      )}
+      
       <button 
         onClick={() => handleSectionClick('preise')}
         className="text-royal hover:text-apple font-medium transition-colors"

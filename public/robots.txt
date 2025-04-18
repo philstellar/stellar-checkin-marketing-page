@@ -3,9 +3,21 @@
 User-agent: *
 Allow: /
 
+# Disallow specific pages
+Disallow: /*/versicherung
+Disallow: /*/trust-badge
+Disallow: /*/ueber-uns
+Disallow: /*/erfolgsgeschichten
+Disallow: /*/faq
+
 # Allow Google specifically
 User-agent: Googlebot
 Allow: /
+Disallow: /*/versicherung
+Disallow: /*/trust-badge
+Disallow: /*/ueber-uns
+Disallow: /*/erfolgsgeschichten
+Disallow: /*/faq
 
 # Allow Google Image
 User-agent: Googlebot-Image

@@ -7,6 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 const Footer = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
+  const isProduction = window.location.hostname === 'stellar-checkin.com';
   
   const getUrlPrefix = () => {
     return `/${language}`;
@@ -19,7 +20,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-floral to-floral-400/20 py-12">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <img 
               src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" 
@@ -34,48 +35,43 @@ const Footer = () => {
             </p>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/ueber-uns`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                  onMouseEnter={() => {
-                    const link = document.createElement('link');
-                    link.rel = 'prefetch';
-                    link.href = `${getUrlPrefix()}/ueber-uns`;
-                    link.as = 'document';
-                    document.head.appendChild(link);
-                  }}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('navigation.aboutUs')}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/erfolgsgeschichten`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('navigation.successStories')}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/faq`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('navigation.faq')}
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {!isProduction && (
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link 
+                    to={`${getUrlPrefix()}/ueber-uns`} 
+                    className="flex items-center text-black hover:text-apple transition-colors"
+                    onClick={handleNavigation}
+                  >
+                    <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                    {t('navigation.aboutUs')}
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to={`${getUrlPrefix()}/erfolgsgeschichten`} 
+                    className="flex items-center text-black hover:text-apple transition-colors"
+                    onClick={handleNavigation}
+                  >
+                    <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                    {t('navigation.successStories')}
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to={`${getUrlPrefix()}/faq`} 
+                    className="flex items-center text-black hover:text-apple transition-colors"
+                    onClick={handleNavigation}
+                  >
+                    <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                    {t('navigation.faq')}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
           
           <div>
             <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
