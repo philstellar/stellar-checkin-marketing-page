@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -15,11 +16,6 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const navigate = useNavigate();
   const { t, currentLanguage } = useTranslation();
 
-  const handleMenuItemClick = (sectionId: string) => {
-    handleSectionClick(sectionId);
-    onClose();
-  };
-  
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
     onClose();
@@ -51,77 +47,14 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1, duration: 0.3 }}
           >
-            <div className="w-full">
-              <p className="text-lg font-medium text-royal mb-3 px-2 text-left">{t('navigation.features')}</p>
-              <motion.div 
-                className="space-y-3 rounded-lg bg-muted/50 p-3 w-full"
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.3 }}
-              >
-                <motion.button 
-                  onClick={() => handleMenuItemClick('kurtaxe')}
-                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.2, duration: 0.3 }}
-                >
-                  {t('kurtaxe.title')}
-                </motion.button>
-                
-                <motion.button 
-                  onClick={() => handleMenuItemClick('zusatzservices')}
-                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.25, duration: 0.3 }}
-                >
-                  {t('zusatzservices.title')}
-                </motion.button>
-                
-                <motion.button 
-                  onClick={() => handleMenuItemClick('versicherung')}
-                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.3 }}
-                >
-                  {t('versicherung.title')}
-                </motion.button>
-                
-                <motion.button 
-                  onClick={() => handleMenuItemClick('identitaetspruefung')}
-                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.35, duration: 0.3 }}
-                >
-                  {t('identity.title')}
-                </motion.button>
-                
-                <motion.button 
-                  onClick={() => handleMenuItemClick('einstellungen')}
-                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 0.3 }}
-                >
-                  {t('settings.title')}
-                </motion.button>
-                
-                <motion.button 
-                  onClick={() => handleMenuItemClick('integrationen')}
-                  className="block w-full text-left text-royal-700 hover:text-apple transition-colors px-3 py-2 rounded-md hover:bg-muted"
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.45, duration: 0.3 }}
-                >
-                  {t('integration.title')}
-                </motion.button>
-              </motion.div>
-            </div>
-            
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
+              <button 
+                onClick={() => handleSectionClick('features')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+              >
+                {t('navigation.features')}
+              </button>
+              
               <button 
                 onClick={() => handleNavigation('versicherung')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
