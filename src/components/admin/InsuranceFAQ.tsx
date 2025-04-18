@@ -20,15 +20,15 @@ const InsuranceFAQ = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-8 text-royal text-center">FAQ</h2>
-      <Accordion type="single" collapsible>
+    <div className="w-full max-w-full px-4 sm:px-6 lg:px-8">
+      <h2 className="text-3xl font-bold mb-8 text-royal text-left">FAQ</h2>
+      <Accordion type="single" collapsible className="w-full">
         {faqs.map((faq, index) => (
           <AccordionItem key={index} value={`item-${index}`}>
             <AccordionTrigger className="text-left text-lg font-semibold text-royal">
               {t(`insurance.faq.${faq}.question`)}
             </AccordionTrigger>
-            <AccordionContent className="text-royal-700">
+            <AccordionContent className="text-royal-700 text-left">
               {t(`insurance.faq.${faq}.answer`)}
             </AccordionContent>
           </AccordionItem>
