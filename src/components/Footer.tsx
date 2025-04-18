@@ -1,3 +1,4 @@
+
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
@@ -22,7 +23,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <img 
-              src="/lovable-uploads/7e69374e-dab4-4fb4-8bef-f366fd75291e.png" 
+              src="/lovable-uploads/b7e186f9-35f5-415a-8e48-5d4f4fff7e25.png" 
               alt="Stellar Logo" 
               className="h-10 mb-4"
               width="120"
@@ -123,5 +124,4 @@ const Footer = () => {
   );
 };
 
-// Use memo to prevent unnecessary re-renders
 export default memo(Footer);

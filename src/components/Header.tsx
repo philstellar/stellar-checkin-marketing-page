@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
@@ -13,7 +12,6 @@ const Header = () => {
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
-  // Optimize scroll handler with useCallback to prevent unnecessary re-renders
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 10);
   }, []);
@@ -86,7 +84,7 @@ const Header = () => {
               className="flex items-center"
             >
               <img 
-                src="/lovable-uploads/7e69374e-dab4-4fb4-8bef-f366fd75291e.png" 
+                src="/lovable-uploads/b7e186f9-35f5-415a-8e48-5d4f4fff7e25.png" 
                 alt="Stellar Logo" 
                 className="h-10"
                 width="120"
@@ -122,4 +120,3 @@ const Header = () => {
 };
 
 export default Header;
-
