@@ -22,9 +22,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <img 
-              src="/lovable-uploads/219dff13-4a67-42c3-9f46-a554998a84b6.png" 
+              src="/lovable-uploads/stellar-checkin-logo.png" 
               alt="Stellar Logo" 
-              className="h-10 mb-4"
+              className="h-10 mb-4 w-auto object-contain"
               width="120"
               height="40"
               loading="lazy"
