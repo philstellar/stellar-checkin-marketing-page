@@ -58,11 +58,6 @@ const VersicherungPage = () => {
       description: "Lass deine Gäste zwischen Versicherung und Kaution wählen."
     },
     {
-      icon: <CheckCircle className="h-6 w-6 text-apple" />,
-      title: "Peace of Mind",
-      description: "Für Agenturen, Eigentümer und ihre Gäste."
-    },
-    {
       icon: <Wallet className="h-6 w-6 text-apple" />,
       title: "Kautionen als Option",
       description: "Biete deinen Gästen die Wahl zwischen Versicherung und traditioneller Kaution."
