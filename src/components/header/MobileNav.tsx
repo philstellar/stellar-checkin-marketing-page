@@ -1,3 +1,4 @@
+
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -12,7 +13,6 @@ type MobileNavProps = {
   isScrolled: boolean;
 };
 
-// Menu animation variants
 const menuVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 0.2 } },
@@ -59,101 +59,61 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             <button 
               onClick={onClose} 
               aria-label="Close menu" 
-              className="p-2 rounded-full text-royal hover:text-apple bg-muted transition-all"
+              className="p-2 rounded-full text-royal hover:text-apple hover:bg-lavender/10 transition-all"
             >
               <X size={24} />
             </button>
           </div>
           
           <motion.div 
-            className="flex flex-col items-start space-y-7 p-6 pt-2 max-h-[calc(100vh-80px)] overflow-y-auto"
+            className="flex flex-col items-start space-y-4 p-6 pt-2"
             variants={contentVariants}
             initial="hidden"
             animate="visible"
           >
-            <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
+            <div className="w-full border-t border-muted pt-5 space-y-2">
               {!isProduction && (
                 <button 
                   onClick={() => handleNavigation('home')}
-                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                  className="block w-full text-lg text-royal hover:text-apple hover:bg-lavender/10 transition-all py-3 px-4 rounded-md text-left"
                 >
                   {t('navigation.home')}
                 </button>
               )}
 
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <button 
-                  onClick={() => handleSectionClick('features')}
-                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                  onClick={() => handleSectionClick('kurtaxe')}
+                  className="block w-full text-lg text-royal hover:text-apple hover:bg-lavender/10 transition-all py-3 px-4 rounded-md text-left"
                 >
-                  {t('navigation.features')}
+                  {t('kurtaxe.title')}
                 </button>
-                <div className="pl-4 space-y-2">
-                  <button 
-                    onClick={() => handleSectionClick('kurtaxe')}
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('kurtaxe.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('zusatzservices')}
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('zusatzservices.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('versicherung')}
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('versicherung.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('identitaetspruefung')}
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('identity.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('einstellungen')}
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('settings.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('integrationen')}
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('integration.title')}
-                  </button>
-                </div>
+                <button 
+                  onClick={() => handleSectionClick('zusatzservices')}
+                  className="block w-full text-lg text-royal hover:text-apple hover:bg-lavender/10 transition-all py-3 px-4 rounded-md text-left"
+                >
+                  {t('zusatzservices.title')}
+                </button>
+                <button 
+                  onClick={() => handleSectionClick('identitaetspruefung')}
+                  className="block w-full text-lg text-royal hover:text-apple hover:bg-lavender/10 transition-all py-3 px-4 rounded-md text-left"
+                >
+                  {t('identity.title')}
+                </button>
               </div>
               
               <button 
-                onClick={() => handleNavigation('versicherung')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                onClick={() => handleNavigation('trust-badge')}
+                className="block w-full text-lg text-royal hover:text-apple hover:bg-lavender/10 transition-all py-3 px-4 rounded-md text-left"
               >
-                {t('navigation.insurance')}
+                Trust Badge
               </button>
               
-              <button 
-                onClick={() => handleNavigation('trust-badge')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.trustBadge')}
-              </button>
-
               <button 
                 onClick={() => handleSectionNavigation('preise')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                className="block w-full text-lg text-royal hover:text-apple hover:bg-lavender/10 transition-all py-3 px-4 rounded-md text-left"
               >
                 {t('navigation.pricing')}
-              </button>
-              
-              <button 
-                onClick={() => handleSectionNavigation('kontakt')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.contact')}
               </button>
             </div>
             
