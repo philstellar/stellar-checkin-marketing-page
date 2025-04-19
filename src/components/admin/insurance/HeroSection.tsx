@@ -18,8 +18,8 @@ const HeroSection = ({ t }: HeroSectionProps) => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik"
               style={{ contentVisibility: 'auto' }}
             >
-              Versicherungen und{' '}
-              <span style={{ color: 'rgb(164 195 9)' }}>Kautionen managen</span>
+              <span className="text-apple">Versicherungen</span> und{' '}
+              <span className="text-apple">Kautionen</span> managen
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               Bieten Sie Ihren Gästen eine optionale Versicherung an und profitieren Sie von zusätzlichen Einnahmen.
