@@ -7,8 +7,8 @@ import get from 'lodash.get';
 export const useTranslation = () => {
   const { language } = useContext(LanguageContext);
   
-  const t = (key: string) => {
-    const value = get(translations[language], key);
+  const t = (key: string, params?: Record<string, string>) => {
+    let value = get(translations[language], key);
     
     if (process.env.NODE_ENV === 'development') {
       console.info(`Translation result for ${key}: "${value}"`);
@@ -16,6 +16,13 @@ export const useTranslation = () => {
     
     if (!value) {
       return key;
+    }
+    
+    // Replace parameters in the translation string if provided
+    if (params) {
+      Object.entries(params).forEach(([param, replacement]) => {
+        value = value.replace(`{{${param}}}`, replacement);
+      });
     }
     
     return value;
