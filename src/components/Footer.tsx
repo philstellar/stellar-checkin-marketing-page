@@ -22,6 +22,7 @@ const Footer = () => {
     <footer className="bg-gradient-to-br from-floral to-floral-400/20 py-12">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Column 1: Logo and Tagline */}
           <div>
             <img 
               src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" 
@@ -36,6 +37,7 @@ const Footer = () => {
             </p>
           </div>
           
+          {/* Column 2: About Stellar - Only visible in non-production */}
           {!isProduction && (
             <div>
               <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
@@ -74,6 +76,7 @@ const Footer = () => {
             </div>
           )}
           
+          {/* Column 3: Legal - Spans 2 columns in production mode */}
           <div className={isProduction ? "md:col-span-2" : ""}>
             <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
             <ul className="space-y-3">
