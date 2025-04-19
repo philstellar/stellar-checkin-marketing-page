@@ -1,3 +1,4 @@
+
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -5,9 +6,11 @@ import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from '@/hooks/use-translation';
 import { ChevronDown } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+
 type DesktopNavProps = {
   handleSectionClick: (sectionId: string) => void;
 };
+
 const DesktopNav = ({
   handleSectionClick
 }: DesktopNavProps) => {
@@ -18,6 +21,7 @@ const DesktopNav = ({
     currentLanguage
   } = useTranslation();
   const isProduction = window.location.hostname === 'stellar-checkin.com';
+
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
     window.scrollTo({
@@ -25,6 +29,7 @@ const DesktopNav = ({
       behavior: 'smooth'
     });
   };
+
   const handleSectionNavigation = (sectionId: string) => {
     if (location.pathname !== '/') {
       navigate('/', {
@@ -45,6 +50,7 @@ const DesktopNav = ({
     link.as = 'document';
     document.head.appendChild(link);
   };
+
   return <nav className="hidden md:flex items-center space-x-8">
       {!isProduction && <button onClick={() => handleNavigation('home')} className="text-royal hover:text-apple font-medium transition-colors">
           {t('navigation.home')}
@@ -55,23 +61,23 @@ const DesktopNav = ({
           {t('navigation.features')}
           <ChevronDown className="h-4 w-4" />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="bg-white">
-          <DropdownMenuItem onClick={() => handleSectionClick('kurtaxe')} className="G\xE4steregistrierung, Kurtaxe, Tourismusabgaben\n\nbitte den text \xE4ndern">
+        <DropdownMenuContent className="bg-white z-50">
+          <DropdownMenuItem onClick={() => handleSectionClick('kurtaxe')} className="cursor-pointer">
             {t('kurtaxe.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('zusatzservices')}>
+          <DropdownMenuItem onClick={() => handleSectionClick('zusatzservices')} className="cursor-pointer">
             {t('zusatzservices.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('versicherung')}>
+          <DropdownMenuItem onClick={() => handleSectionClick('versicherung')} className="cursor-pointer">
             {t('versicherung.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('identitaetspruefung')}>
+          <DropdownMenuItem onClick={() => handleSectionClick('identitaetspruefung')} className="cursor-pointer">
             {t('identity.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('einstellungen')}>
+          <DropdownMenuItem onClick={() => handleSectionClick('einstellungen')} className="cursor-pointer">
             {t('settings.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('integrationen')}>
+          <DropdownMenuItem onClick={() => handleSectionClick('integrationen')} className="cursor-pointer">
             {t('integration.title')}
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -98,4 +104,5 @@ const DesktopNav = ({
       </CTAButton>
     </nav>;
 };
+
 export default memo(DesktopNav);
