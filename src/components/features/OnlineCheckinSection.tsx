@@ -26,6 +26,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     }
   };
 
+  console.log("Translation key for moreBtn:", 'featuresEN.moreBtn', t('featuresEN.moreBtn'));
+
   return (
     <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
       <CardHeader className="pb-2">
@@ -42,7 +44,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             onClick={handleClick}
             className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2"
           >
-            {typeof t('features.moreBtn') === 'string' ? t('features.moreBtn') : "Learn more"} <ArrowDown className="h-4 w-4" />
+            {t('features.moreBtn') || "Learn more"} <ArrowDown className="h-4 w-4" />
           </Button>
         </div>
       </CardContent>
@@ -91,11 +93,11 @@ export const OnlineCheckinSection: React.FC = () => {
       <div className="container-custom">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4 text-royal mx-auto">
-            {typeof t('features.title') === 'string' ? t('features.title') : 'Check-in'}
+            {t('features.title')}
             <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
           </h2>
           <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            {typeof t('features.subtitle') === 'string' ? t('features.subtitle') : 'Digitize your check-in process'}
+            {t('features.subtitle')}
           </p>
         </div>
         

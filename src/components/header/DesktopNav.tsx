@@ -35,60 +35,85 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
     }
   };
 
+  // Pre-load some critical routes on hover
+  const handleMouseEnter = (path: string) => {
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = `/${currentLanguage}/${path}`;
+    link.as = 'document';
+    document.head.appendChild(link);
+  };
+
   return (
     <nav className="hidden md:flex items-center space-x-8">
       {!isProduction && (
         <button
           onClick={() => handleNavigation('home')}
-          className="text-royal hover:text-apple font-medium transition-colors hover:bg-lavender/10 px-3 py-2 rounded-md"
+          className="text-royal hover:text-apple font-medium transition-colors"
         >
           {t('navigation.home')}
         </button>
       )}
 
       <DropdownMenu>
-        <DropdownMenuTrigger className="text-royal hover:text-apple font-medium transition-colors outline-none flex items-center gap-1 hover:bg-lavender/10 px-3 py-2 rounded-md">
-          {t('features')}
+        <DropdownMenuTrigger className="text-royal hover:text-apple font-medium transition-colors outline-none flex items-center gap-1">
+          {t('navigation.features')}
           <ChevronDown className="h-4 w-4" />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="bg-white w-56">
-          <DropdownMenuItem 
-            onClick={() => handleSectionClick('kurtaxe')}
-            className="hover:bg-lavender/10"
-          >
+        <DropdownMenuContent className="bg-white">
+          <DropdownMenuItem onClick={() => handleSectionClick('kurtaxe')}>
             {t('kurtaxe.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem 
-            onClick={() => handleSectionClick('zusatzservices')}
-            className="hover:bg-lavender/10"
-          >
+          <DropdownMenuItem onClick={() => handleSectionClick('zusatzservices')}>
             {t('zusatzservices.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem 
-            onClick={() => handleSectionClick('identitaetspruefung')}
-            className="hover:bg-lavender/10"
-          >
+          <DropdownMenuItem onClick={() => handleSectionClick('versicherung')}>
+            {t('versicherung.title')}
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => handleSectionClick('identitaetspruefung')}>
             {t('identity.title')}
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => handleSectionClick('einstellungen')}>
+            {t('settings.title')}
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => handleSectionClick('integrationen')}>
+            {t('integration.title')}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
 
-      <button
-        onClick={() => handleNavigation('trust-badge')}
-        className="text-royal hover:text-apple font-medium transition-colors hover:bg-lavender/10 px-3 py-2 rounded-md"
-      >
-        Trust Badge
-      </button>
+      {!isProduction && (
+        <>
+          <button
+            onClick={() => handleNavigation('versicherung')}
+            onMouseEnter={() => handleMouseEnter('versicherung')}
+            className="text-royal hover:text-apple font-medium transition-colors"
+          >
+            {t('navigation.insurance')}
+          </button>
+          <button
+            onClick={() => handleNavigation('trust-badge')}
+            onMouseEnter={() => handleMouseEnter('trust-badge')}
+            className="text-royal hover:text-apple font-medium transition-colors"
+          >
+            {t('navigation.trustBadge')}
+          </button>
+        </>
+      )}
       
       <button 
         onClick={() => handleSectionNavigation('preise')}
-        className="text-royal hover:text-apple font-medium transition-colors hover:bg-lavender/10 px-3 py-2 rounded-md"
+        className="text-royal hover:text-apple font-medium transition-colors"
       >
         {t('navigation.pricing')}
       </button>
-
+      <button 
+        onClick={() => handleSectionNavigation('kontakt')}
+        className="text-royal hover:text-apple font-medium transition-colors"
+      >
+        {t('navigation.contact')}
+      </button>
       <LanguageSelector />
-      
       <CTAButton variant="default" className="bg-apple hover:bg-apple-600">
         {t('navigation.register')}
       </CTAButton>

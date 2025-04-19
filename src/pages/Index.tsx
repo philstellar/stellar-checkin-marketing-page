@@ -7,7 +7,6 @@ import LogoCarousel from "@/components/LogoCarousel";
 import Footer from "@/components/Footer";
 // Import ZusatzservicesSection directly to prevent dynamic import issues
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
-import LanguageSuggestionDialog from "@/components/LanguageSuggestionDialog";
 
 // Custom loading component for better user experience
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
@@ -64,7 +63,6 @@ const Index = () => {
         </Suspense>
       </main>
       <Footer />
-      <LanguageSuggestionDialog />
     </div>
   );
 };
