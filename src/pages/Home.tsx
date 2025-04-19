@@ -7,6 +7,7 @@ import ProductsSection from '@/components/home/ProductsSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
 import CTASection from '@/components/home/CTASection';
 import LogoCarousel from '@/components/LogoCarousel';
+import LanguageSuggestionDialog from '@/components/LanguageSuggestionDialog';
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         <CTASection />
       </main>
       <Footer />
+      <LanguageSuggestionDialog />
     </div>
   );
 };

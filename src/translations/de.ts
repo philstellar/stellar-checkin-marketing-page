@@ -5,6 +5,7 @@ import { partnersDE } from './modules/partners';
 import { kurtaxeDE } from './modules/kurtaxe';
 import { insuranceDE } from './modules/insurance';
 import { trustBadgeDE } from './modules/trustBadge';
+import { languageSuggestionDE } from './modules/languageSuggestion';
 
 export const de = {
   // Header
@@ -261,4 +262,5 @@ export const de = {
   },
   insurance: insuranceDE,
   trustBadge: trustBadgeDE,
+  languageSuggestion: languageSuggestionDE,
 };
