@@ -1,3 +1,4 @@
+
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
@@ -20,7 +21,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-floral to-floral-400/20 py-12">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <img 
               src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" 
@@ -73,7 +74,7 @@ const Footer = () => {
             </div>
           )}
           
-          <div>
+          <div className={isProduction ? "md:col-span-2" : ""}>
             <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
             <ul className="space-y-3">
               <li>
@@ -119,3 +120,4 @@ const Footer = () => {
 };
 
 export default memo(Footer);
+
