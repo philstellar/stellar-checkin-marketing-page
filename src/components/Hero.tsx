@@ -18,8 +18,7 @@ const Hero = () => {
             <h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik" 
               style={{ 
-                contentVisibility: 'auto',
-                fontDisplay: 'swap'
+                contentVisibility: 'auto'
               }}
             >
               {t('hero.headline1')}
