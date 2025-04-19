@@ -1,4 +1,3 @@
-
 export const insuranceDE = {
   title: "Versicherung und Kaution clever automatisieren",
   introduction: "", // Keep this empty for the main page
@@ -17,12 +16,12 @@ export const insuranceDE = {
   benefits: {
     title: "Ihre Vorteile im Überblick",
     list: [
-      "Schutz vor Schäden",
-      "Zusätzliche Einnahmen",
-      "Einfache Abwicklung",
-      "Flexible Optionen",
-      "Hohe Akzeptanz",
-      "Rechtliche Sicherheit"
+      "Schutz vor Schäden: Umfassender Versicherungsschutz deckt unerwartete Schäden an Ihrer Unterkunft ab und minimiert Ihr finanzielles Risiko.",
+      "Zusätzliche Einnahmen: Verdienen Sie Provisionen für jede abgeschlossene Versicherung, ohne zusätzlichen Aufwand.",
+      "Einfache Abwicklung: Automatisierter Prozess reduziert Verwaltungsaufwand und vereinfacht die Schadensregulierung.",
+      "Flexible Optionen: Gäste können zwischen Versicherung und traditioneller Kaution wählen, was die Buchungsfreundlichkeit erhöht.",
+      "Hohe Akzeptanz: Gäste schätzen die Sicherheit und Transparenz einer optionalen Versicherung während des Check-ins.",
+      "Rechtliche Sicherheit: Professionelle Versicherungslösung minimiert rechtliche Risiken und bietet Schutz für Vermieter."
     ]
   },
   shortTerm: {
