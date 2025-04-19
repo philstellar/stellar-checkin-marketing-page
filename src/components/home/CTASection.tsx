@@ -3,9 +3,16 @@ import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import CTAButton from '@/components/CTAButton';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/context/LanguageContext';
 
 const CTASection = () => {
   const navigate = useNavigate();
+  const { language } = useLanguage();
+  
+  const handleNavigation = (path: string) => {
+    navigate(`/${language}/${path}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   
   return (
     <section className="py-16 bg-white">
@@ -28,7 +35,7 @@ const CTASection = () => {
             <Button 
               variant="outline"
               size="lg"
-              onClick={() => navigate('/de/ueber-uns')}
+              onClick={() => handleNavigation('ueber-uns')}
               className="font-aeonik"
             >
               Über uns
