@@ -56,19 +56,26 @@ const Header = () => {
     });
   };
 
-  const handleSectionClick = (sectionId: string) => {
-    setIsMenuOpen(false);
-    
-    if (location.pathname !== '/') {
-      navigate(`/#${sectionId}`);
-      return;
-    }
-
+  const handleSectionClick = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      setIsMenuOpen(false);
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    // Handle navigation state when coming from another page
+    const state = location.state as { scrollTo?: string };
+    if (state?.scrollTo) {
+      const element = document.getElementById(state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Clean up the state to prevent scrolling on subsequent renders
+        navigate(location.pathname, { replace: true, state: {} });
+      }
+    }
+  }, [location, navigate]);
 
   return (
     <header 

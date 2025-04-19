@@ -1,6 +1,5 @@
-
 import { memo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
 import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from '@/hooks/use-translation';
@@ -18,12 +17,21 @@ type DesktopNavProps = {
 
 const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { t, currentLanguage } = useTranslation();
   const isProduction = window.location.hostname === 'stellar-checkin.com';
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSectionNavigation = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
+    } else {
+      handleSectionClick(sectionId);
+    }
   };
 
   // Pre-load some critical routes on hover
@@ -84,13 +92,13 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
       )}
       
       <button 
-        onClick={() => handleSectionClick('preise')}
+        onClick={() => handleSectionNavigation('preise')}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         {t('navigation.pricing')}
       </button>
       <button 
-        onClick={() => handleSectionClick('kontakt')}
+        onClick={() => handleSectionNavigation('kontakt')}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         {t('navigation.contact')}

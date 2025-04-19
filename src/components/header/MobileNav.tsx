@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
@@ -26,11 +26,21 @@ const contentVariants = {
 
 const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNavProps) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { t, currentLanguage } = useTranslation();
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    onClose();
+  };
+
+  const handleSectionNavigation = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
+    } else {
+      handleSectionClick(sectionId);
+    }
     onClose();
   };
 
@@ -123,14 +133,14 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               </button>
 
               <button 
-                onClick={() => handleSectionClick('preise')}
+                onClick={() => handleSectionNavigation('preise')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.pricing')}
               </button>
               
               <button 
-                onClick={() => handleSectionClick('kontakt')}
+                onClick={() => handleSectionNavigation('kontakt')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.contact')}
