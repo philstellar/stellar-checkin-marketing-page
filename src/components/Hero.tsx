@@ -15,7 +15,13 @@ const Hero = () => {
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
+            <h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik" 
+              style={{ 
+                contentVisibility: 'auto',
+                fontDisplay: 'swap'
+              }}
+            >
               {t('hero.headline1')}
               <span style={{ color: 'rgb(164 195 9)' }}>{t('hero.headline2')}</span>
               {t('hero.headline3')}

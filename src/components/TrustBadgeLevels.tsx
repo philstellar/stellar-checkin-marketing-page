@@ -29,6 +29,7 @@ const images = [
 export const TrustBadgeLevels = () => {
   const { t } = useTranslation();
   const [currentImage, setCurrentImage] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -36,6 +37,21 @@ export const TrustBadgeLevels = () => {
     }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(timer);
+  }, []);
+
+  // Preload images
+  useEffect(() => {
+    const imagePromises = images.map(img => {
+      return new Promise((resolve) => {
+        const image = new Image();
+        image.src = img.src;
+        image.onload = resolve;
+      });
+    });
+
+    Promise.all(imagePromises).then(() => {
+      setIsLoaded(true);
+    });
   }, []);
 
   return (
@@ -59,18 +75,26 @@ export const TrustBadgeLevels = () => {
         </div>
         
         <div className="relative h-[600px] w-full rounded-lg overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentImage}
-              src={images[currentImage].src}
-              alt={images[currentImage].alt}
-              className="absolute inset-0 w-full h-full object-contain rounded-lg"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            />
-          </AnimatePresence>
+          {isLoaded ? (
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentImage}
+                src={images[currentImage].src}
+                alt={images[currentImage].alt}
+                className="absolute inset-0 w-full h-full object-contain rounded-lg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                loading="eager"
+                decoding="async"
+              />
+            </AnimatePresence>
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+              <div className="w-12 h-12 border-4 border-apple border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
         </div>
       </div>
     </div>
