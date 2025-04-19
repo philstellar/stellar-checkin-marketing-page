@@ -28,6 +28,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const navigate = useNavigate();
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
+  const isProduction = window.location.hostname === 'stellar-checkin.com';
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
@@ -71,6 +72,15 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             animate="visible"
           >
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
+              {!isProduction && (
+                <button 
+                  onClick={() => handleNavigation('home')}
+                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                >
+                  {t('navigation.home')}
+                </button>
+              )}
+
               <div className="space-y-2">
                 <button 
                   onClick={() => handleSectionClick('features')}

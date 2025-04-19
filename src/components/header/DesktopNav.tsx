@@ -1,3 +1,4 @@
+
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -45,6 +46,15 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
 
   return (
     <nav className="hidden md:flex items-center space-x-8">
+      {!isProduction && (
+        <button
+          onClick={() => handleNavigation('home')}
+          className="text-royal hover:text-apple font-medium transition-colors"
+        >
+          {t('navigation.home')}
+        </button>
+      )}
+
       <DropdownMenu>
         <DropdownMenuTrigger className="text-royal hover:text-apple font-medium transition-colors outline-none flex items-center gap-1">
           {t('navigation.features')}
