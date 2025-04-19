@@ -1,35 +1,37 @@
-
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
 import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from '@/hooks/use-translation';
 import { ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 type DesktopNavProps = {
   handleSectionClick: (sectionId: string) => void;
 };
-
-const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
+const DesktopNav = ({
+  handleSectionClick
+}: DesktopNavProps) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { t, currentLanguage } = useTranslation();
+  const {
+    t,
+    currentLanguage
+  } = useTranslation();
   const isProduction = window.location.hostname === 'stellar-checkin.com';
-
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
-
   const handleSectionNavigation = (sectionId: string) => {
     if (location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: sectionId } });
+      navigate('/', {
+        state: {
+          scrollTo: sectionId
+        }
+      });
     } else {
       handleSectionClick(sectionId);
     }
@@ -43,17 +45,10 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
     link.as = 'document';
     document.head.appendChild(link);
   };
-
-  return (
-    <nav className="hidden md:flex items-center space-x-8">
-      {!isProduction && (
-        <button
-          onClick={() => handleNavigation('home')}
-          className="text-royal hover:text-apple font-medium transition-colors"
-        >
+  return <nav className="hidden md:flex items-center space-x-8">
+      {!isProduction && <button onClick={() => handleNavigation('home')} className="text-royal hover:text-apple font-medium transition-colors">
           {t('navigation.home')}
-        </button>
-      )}
+        </button>}
 
       <DropdownMenu>
         <DropdownMenuTrigger className="text-royal hover:text-apple font-medium transition-colors outline-none flex items-center gap-1">
@@ -61,7 +56,7 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
           <ChevronDown className="h-4 w-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-white">
-          <DropdownMenuItem onClick={() => handleSectionClick('kurtaxe')}>
+          <DropdownMenuItem onClick={() => handleSectionClick('kurtaxe')} className="G\xE4steregistrierung, Kurtaxe, Tourismusabgaben\n\nbitte den text \xE4ndern">
             {t('kurtaxe.title')}
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => handleSectionClick('zusatzservices')}>
@@ -82,43 +77,25 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {!isProduction && (
-        <>
-          <button
-            onClick={() => handleNavigation('versicherung')}
-            onMouseEnter={() => handleMouseEnter('versicherung')}
-            className="text-royal hover:text-apple font-medium transition-colors"
-          >
+      {!isProduction && <>
+          <button onClick={() => handleNavigation('versicherung')} onMouseEnter={() => handleMouseEnter('versicherung')} className="text-royal hover:text-apple font-medium transition-colors">
             {t('navigation.insurance')}
           </button>
-          <button
-            onClick={() => handleNavigation('trust-badge')}
-            onMouseEnter={() => handleMouseEnter('trust-badge')}
-            className="text-royal hover:text-apple font-medium transition-colors"
-          >
+          <button onClick={() => handleNavigation('trust-badge')} onMouseEnter={() => handleMouseEnter('trust-badge')} className="text-royal hover:text-apple font-medium transition-colors">
             {t('navigation.trustBadge')}
           </button>
-        </>
-      )}
+        </>}
       
-      <button 
-        onClick={() => handleSectionNavigation('preise')}
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
+      <button onClick={() => handleSectionNavigation('preise')} className="text-royal hover:text-apple font-medium transition-colors">
         {t('navigation.pricing')}
       </button>
-      <button 
-        onClick={() => handleSectionNavigation('kontakt')}
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
+      <button onClick={() => handleSectionNavigation('kontakt')} className="text-royal hover:text-apple font-medium transition-colors">
         {t('navigation.contact')}
       </button>
       <LanguageSelector />
       <CTAButton variant="default" className="bg-apple hover:bg-apple-600">
         {t('navigation.register')}
       </CTAButton>
-    </nav>
-  );
+    </nav>;
 };
-
 export default memo(DesktopNav);
