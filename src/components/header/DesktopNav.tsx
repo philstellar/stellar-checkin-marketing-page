@@ -1,4 +1,3 @@
-
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -16,10 +15,7 @@ const DesktopNav = ({
 }: DesktopNavProps) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const {
-    t,
-    currentLanguage
-  } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
   const isProduction = window.location.hostname === 'stellar-checkin.com';
 
   const handleNavigation = (path: string) => {
@@ -42,7 +38,6 @@ const DesktopNav = ({
     }
   };
 
-  // Pre-load some critical routes on hover
   const handleMouseEnter = (path: string) => {
     const link = document.createElement('link');
     link.rel = 'prefetch';
@@ -51,7 +46,8 @@ const DesktopNav = ({
     document.head.appendChild(link);
   };
 
-  return <nav className="hidden md:flex items-center space-x-8">
+  return (
+    <nav className="hidden md:flex items-center space-x-8">
       {!isProduction && <button onClick={() => handleNavigation('home')} className="text-royal hover:text-apple font-medium transition-colors">
           {t('navigation.home')}
         </button>}
@@ -62,23 +58,35 @@ const DesktopNav = ({
           <ChevronDown className="h-4 w-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-white shadow-md z-50">
-          <DropdownMenuItem onClick={() => handleSectionClick('kurtaxe')} className="cursor-pointer hover:bg-slate-100">
-            {t('kurtaxe.title')}
+          <DropdownMenuItem asChild>
+            <a href="/#kurtaxe" className="cursor-pointer hover:bg-slate-100 w-full">
+              {t('kurtaxe.title')}
+            </a>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('zusatzservices')} className="cursor-pointer hover:bg-slate-100">
-            {t('zusatzservices.title')}
+          <DropdownMenuItem asChild>
+            <a href="/#zusatzservices" className="cursor-pointer hover:bg-slate-100 w-full">
+              {t('zusatzservices.title')}
+            </a>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('versicherung')} className="cursor-pointer hover:bg-slate-100">
-            {t('versicherung.title')}
+          <DropdownMenuItem asChild>
+            <a href="/#versicherung" className="cursor-pointer hover:bg-slate-100 w-full">
+              {t('versicherung.title')}
+            </a>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('identitaetspruefung')} className="cursor-pointer hover:bg-slate-100">
-            {t('identity.title')}
+          <DropdownMenuItem asChild>
+            <a href="/#identitaetspruefung" className="cursor-pointer hover:bg-slate-100 w-full">
+              {t('identity.title')}
+            </a>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('einstellungen')} className="cursor-pointer hover:bg-slate-100">
-            {t('settings.title')}
+          <DropdownMenuItem asChild>
+            <a href="/#einstellungen" className="cursor-pointer hover:bg-slate-100 w-full">
+              {t('settings.title')}
+            </a>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('integrationen')} className="cursor-pointer hover:bg-slate-100">
-            {t('integration.title')}
+          <DropdownMenuItem asChild>
+            <a href="/#integrationen" className="cursor-pointer hover:bg-slate-100 w-full">
+              {t('integration.title')}
+            </a>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -91,7 +99,7 @@ const DesktopNav = ({
             {t('navigation.trustBadge')}
           </button>
         </>}
-      
+
       <button onClick={() => handleSectionNavigation('preise')} className="text-royal hover:text-apple font-medium transition-colors">
         {t('navigation.pricing')}
       </button>
@@ -102,7 +110,8 @@ const DesktopNav = ({
       <CTAButton variant="default" className="bg-apple hover:bg-apple-600">
         {t('navigation.register')}
       </CTAButton>
-    </nav>;
+    </nav>
+  );
 };
 
 export default memo(DesktopNav);

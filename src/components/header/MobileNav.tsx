@@ -1,4 +1,3 @@
-
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -87,49 +86,46 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               )}
 
               <div className="space-y-2">
-                <button 
-                  onClick={() => {}}
-                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-                >
+                <div className="block w-full text-xl text-royal font-medium py-2 text-left">
                   {t('navigation.features')}
-                </button>
+                </div>
                 <div className="pl-4 space-y-2">
-                  <button 
-                    onClick={() => handleSectionClick('kurtaxe')}
+                  <a 
+                    href="/#kurtaxe"
                     className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
                   >
                     {t('kurtaxe.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('zusatzservices')}
+                  </a>
+                  <a 
+                    href="/#zusatzservices"
                     className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
                   >
                     {t('zusatzservices.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('versicherung')}
+                  </a>
+                  <a 
+                    href="/#versicherung"
                     className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
                   >
                     {t('versicherung.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('identitaetspruefung')}
+                  </a>
+                  <a 
+                    href="/#identitaetspruefung"
                     className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
                   >
                     {t('identity.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('einstellungen')}
+                  </a>
+                  <a 
+                    href="/#einstellungen"
                     className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
                   >
                     {t('settings.title')}
-                  </button>
-                  <button 
-                    onClick={() => handleSectionClick('integrationen')}
+                  </a>
+                  <a 
+                    href="/#integrationen"
                     className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
                   >
                     {t('integration.title')}
-                  </button>
+                  </a>
                 </div>
               </div>
               
