@@ -29,6 +29,9 @@ const AgbEN = lazy(() => import('./pages/legal/AgbEN'));
 const AgbES = lazy(() => import('./pages/legal/AgbES'));
 const AgbIT = lazy(() => import('./pages/legal/AgbIT'));
 
+// Lazy load the new Home page
+const Home = lazy(() => import('./pages/Home'));
+
 // Loading fallback component
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -44,6 +47,9 @@ const App = () => {
     <BrevoFormProvider>
       <Suspense fallback={<PageLoader />}>
         <Routes>
+          {/* Add the new home route before other routes */}
+          <Route path="/de/home" element={<Home />} />
+          
           {/* Language-specific routes with consistent URL structure */}
           <Route path="/:lang?" element={<Index />} />
           <Route path="/:lang/legal/imprint" element={<Navigate to="/:lang/impressum" replace />} />
