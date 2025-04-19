@@ -2,6 +2,7 @@
 export const featuresDE = {
   title: "Stellar Check-in",
   subtitle: "Verbessern Sie das Gästeerlebnis vor der Anreise und steigern Sie Ihren Umsatz",
+  moreBtn: "Mehr erfahren",
   kurtaxe: {
     title: "Kurtaxe & digitale Gästeregistrierung",
     description: "Erfassen Sie Meldescheine, berechnen Sie Kurtaxe und wickeln Sie Zahlungen automatisch ab – schnell, sicher und bequem für Ihre Gäste."
@@ -25,13 +26,13 @@ export const featuresDE = {
   integration: {
     title: "Integration mit führenden PMS",
     description: "Nahtlose Anbindung an Ihr PMS oder Channel-Manager – automatische Check-in-Einladungen und alle gesammelten Daten zentral verfügbar."
-  },
-  moreBtn: "Mehr erfahren"
+  }
 };
 
 export const featuresEN = {
   title: "Stellar Check-in",
   subtitle: "Improve the guest experience before arrival and increase your revenue",
+  moreBtn: "Learn more",
   kurtaxe: {
     title: "Tourist tax & digital guest registration",
     description: "Collect registration forms, calculate tourist tax, and process payments automatically – quickly, securely, and conveniently for your guests."
@@ -55,13 +56,13 @@ export const featuresEN = {
   integration: {
     title: "Integration with leading PMS",
     description: "Seamless connection to your PMS or channel manager – automatic check-in invitations, and all collected data centrally available."
-  },
-  moreBtn: "Learn more"
+  }
 };
 
 export const featuresIT = {
   title: "Stellar Check-in",
   subtitle: "Migliora l'esperienza degli ospiti prima dell'arrivo e aumenta i tuoi guadagni",
+  moreBtn: "Scopri di più",
   kurtaxe: {
     title: "Tassa di soggiorno e registrazione digitale degli ospiti",
     description: "Raccogli i dati degli ospiti, calcola la tassa di soggiorno e gestisci i pagamenti automaticamente – in modo veloce, sicuro e comodo per i tuoi ospiti."
@@ -85,13 +86,13 @@ export const featuresIT = {
   integration: {
     title: "Integrazione con i principali PMS",
     description: "Connessione perfetta con il tuo PMS o channel manager – inviti automatici al check-in e tutti i dati raccolti disponibili centralmente."
-  },
-  moreBtn: "Scopri di più"
+  }
 };
 
 export const featuresES = {
   title: "Stellar Check-in",
   subtitle: "Mejore la experiencia del huésped antes de la llegada y aumente sus ingresos",
+  moreBtn: "Más información",
   kurtaxe: {
     title: "Tasa turística y registro digital de huéspedes",
     description: "Recopile formularios de registro, calcule la tasa turística y procese los pagos automáticamente – de forma rápida, segura y conveniente para sus huéspedes."
@@ -115,6 +116,5 @@ export const featuresES = {
   integration: {
     title: "Integración con los principales PMS",
     description: "Conexión perfecta con su PMS o channel manager – invitaciones automáticas de check-in y todos los datos recopilados disponibles centralmente."
-  },
-  moreBtn: "Más información"
+  }
 };
