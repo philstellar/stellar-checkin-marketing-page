@@ -61,23 +61,23 @@ const DesktopNav = ({
           {t('navigation.features')}
           <ChevronDown className="h-4 w-4" />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="bg-white z-50">
-          <DropdownMenuItem onClick={() => handleSectionClick('kurtaxe')} className="cursor-pointer">
+        <DropdownMenuContent className="bg-white shadow-md z-50">
+          <DropdownMenuItem onClick={() => handleSectionClick('kurtaxe')} className="cursor-pointer hover:bg-slate-100">
             {t('kurtaxe.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('zusatzservices')} className="cursor-pointer">
+          <DropdownMenuItem onClick={() => handleSectionClick('zusatzservices')} className="cursor-pointer hover:bg-slate-100">
             {t('zusatzservices.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('versicherung')} className="cursor-pointer">
+          <DropdownMenuItem onClick={() => handleSectionClick('versicherung')} className="cursor-pointer hover:bg-slate-100">
             {t('versicherung.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('identitaetspruefung')} className="cursor-pointer">
+          <DropdownMenuItem onClick={() => handleSectionClick('identitaetspruefung')} className="cursor-pointer hover:bg-slate-100">
             {t('identity.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('einstellungen')} className="cursor-pointer">
+          <DropdownMenuItem onClick={() => handleSectionClick('einstellungen')} className="cursor-pointer hover:bg-slate-100">
             {t('settings.title')}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSectionClick('integrationen')} className="cursor-pointer">
+          <DropdownMenuItem onClick={() => handleSectionClick('integrationen')} className="cursor-pointer hover:bg-slate-100">
             {t('integration.title')}
           </DropdownMenuItem>
         </DropdownMenuContent>

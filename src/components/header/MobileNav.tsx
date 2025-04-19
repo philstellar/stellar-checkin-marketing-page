@@ -5,6 +5,7 @@ import CTAButton from '../CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import { motion, AnimatePresence } from "framer-motion";
 import { memo } from "react";
+import LanguageSelector from '../LanguageSelector';
 
 type MobileNavProps = {
   isOpen: boolean;
@@ -57,6 +58,9 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
           exit="exit"
         >
           <div className="flex justify-between items-center p-4">
+            <div className="flex items-center gap-2">
+              <LanguageSelector variant="icon-only" />
+            </div>
             <button 
               onClick={onClose} 
               aria-label="Close menu" 
@@ -84,7 +88,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
 
               <div className="space-y-2">
                 <button 
-                  onClick={() => handleSectionClick('features')}
+                  onClick={() => {}}
                   className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
                 >
                   {t('navigation.features')}
