@@ -1,5 +1,5 @@
 
-import { UserCheck, ArrowRight } from 'lucide-react';
+import { UserCheck, ArrowRight, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import CTAButton from '@/components/CTAButton';
 import { Button } from '@/components/ui/button';
