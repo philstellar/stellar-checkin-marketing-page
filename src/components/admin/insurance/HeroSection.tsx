@@ -15,7 +15,7 @@ const HeroSection = ({ t }: HeroSectionProps) => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik"
               style={{ contentVisibility: 'auto' }}
             >
               <span className="text-apple">Versicherungen</span> und{' '}
