@@ -1,11 +1,9 @@
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Award, Star, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import useEmblaCarousel from 'embla-carousel-react';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Card } from "@/components/ui/card";
+import LogoCarouselAutoplay from '@/components/LogoCarouselAutoplay';
 
 const testimonialLogos = [
   {
@@ -45,8 +43,6 @@ const testimonialLogos = [
   }
 ];
 
-const extendedLogos = [...testimonialLogos, ...testimonialLogos, ...testimonialLogos];
-
 const testimonials = [
   {
     company: "Hof Liebeneck",
@@ -81,14 +77,6 @@ const testimonials = [
 ];
 
 const Erfolgsgeschichten = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    dragFree: true,
-    containScroll: "keepSnaps",
-    slidesToScroll: 1,
-    align: 'start'
-  });
-  
   return (
     <>
       <Header />
@@ -120,35 +108,7 @@ const Erfolgsgeschichten = () => {
           <h2 className="text-2xl md:text-3xl font-semibold text-center mb-12 text-royal">
             Unsere zufriedenen Kunden
           </h2>
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
-              {extendedLogos.map((logo, index) => (
-                <div 
-                  key={index} 
-                  className="flex-shrink-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 px-4"
-                >
-                  <HoverCard>
-                    <HoverCardTrigger asChild>
-                      <div className="h-20 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
-                        <div className="w-full h-full flex items-center justify-center">
-                          <img
-                            src={logo.src}
-                            alt={logo.alt}
-                            style={{ width: logo.width ? `${logo.width}px` : 'auto', height: 'auto' }}
-                            className="max-w-full max-h-full object-contain"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </HoverCardTrigger>
-                    <HoverCardContent className="w-auto p-2 text-center text-sm">
-                      {logo.alt}
-                    </HoverCardContent>
-                  </HoverCard>
-                </div>
-              ))}
-            </div>
-          </div>
+          <LogoCarouselAutoplay logos={testimonialLogos} />
         </div>
       </section>
       <section className="py-16 bg-gray-50">

@@ -2,12 +2,12 @@ import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { UserCheck, BadgeCheck, Star, Shield, Globe2 } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import Header from '../Header';
 import Footer from '../Footer';
 import CTAButton from '../CTAButton';
 import TrustBadgeFAQ from './TrustBadgeFAQ';
 import TrustBadgeCertificates from './TrustBadgeCertificates';
+import LogoCarouselAutoplay from '../LogoCarouselAutoplay';
 
 const testimonialLogos = [
   {
@@ -46,8 +46,6 @@ const testimonialLogos = [
     width: 160
   }
 ];
-
-const extendedLogos = [...testimonialLogos, ...testimonialLogos, ...testimonialLogos];
 
 const TrustBadgePage = () => {
   const { t } = useTranslation();
@@ -95,35 +93,7 @@ const TrustBadgePage = () => {
           <h2 className="text-2xl md:text-3xl font-semibold text-center mb-12 text-royal">
             {t('partners.title')}
           </h2>
-          <div className="overflow-hidden">
-            <div className="flex">
-              {extendedLogos.map((logo, index) => (
-                <div 
-                  key={index} 
-                  className="flex-shrink-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 px-4"
-                >
-                  <HoverCard>
-                    <HoverCardTrigger asChild>
-                      <div className="h-20 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
-                        <div className="w-full h-full flex items-center justify-center">
-                          <img
-                            src={logo.src}
-                            alt={logo.alt}
-                            style={{ width: logo.width ? `${logo.width}px` : 'auto', height: 'auto' }}
-                            className="max-w-full max-h-full object-contain"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </HoverCardTrigger>
-                    <HoverCardContent className="w-auto p-2 text-center text-sm">
-                      {logo.alt}
-                    </HoverCardContent>
-                  </HoverCard>
-                </div>
-              ))}
-            </div>
-          </div>
+          <LogoCarouselAutoplay logos={testimonialLogos} />
         </div>
       </section>
 
