@@ -32,6 +32,16 @@ const testimonialLogos = [
     src: "/lovable-uploads/404c2219-9b9a-4ebd-b8ec-aea63d21d6d7.png",
     alt: "Plau Lagoons",
     width: 160
+  },
+  {
+    src: "/lovable-uploads/3f0f71e5-0006-4019-9e50-f5c4354ed3fe.png",
+    alt: "Berlin Mitte Experience",
+    width: 180
+  },
+  {
+    src: "/lovable-uploads/9451653b-0793-4645-8889-3222d4c98e84.png",
+    alt: "Fairienglück",
+    width: 160
   }
 ];
 

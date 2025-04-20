@@ -7,6 +7,7 @@ import Footer from '../Footer';
 import CTAButton from '../CTAButton';
 import TrustBadgeFAQ from './TrustBadgeFAQ';
 import TrustBadgeCertificates from './TrustBadgeCertificates';
+import LogoCarousel from '../LogoCarousel';
 
 const TrustBadgePage = () => {
   const { t } = useTranslation();
@@ -45,6 +46,19 @@ const TrustBadgePage = () => {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Logo Carousel Section */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-royal">
+              {t('partners.title')}
+              <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
+            </h2>
+          </div>
+          <LogoCarousel />
         </div>
       </section>
 
