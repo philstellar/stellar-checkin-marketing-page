@@ -28,9 +28,19 @@ const LogoCarouselAutoplay = ({ logos }: LogoCarouselAutoplayProps) => {
 
   const startAutoplay = () => {
     stopAutoplay();
-    autoplayRef.current = setInterval(() => {
-      if (emblaApi) emblaApi.scrollNext();
-    }, 1000);  // Reduced from 3000 to 1000 milliseconds
+    if (emblaApi) {
+      const scroll = () => {
+        const engine = emblaApi.internalEngine();
+        const location = engine.location.get();
+        const target = location + 1;
+        engine.location.set(target);
+        engine.target.set(target);
+        engine.scrollLooper.loop();
+        engine.translate.to(target);
+      };
+
+      autoplayRef.current = setInterval(scroll, 50); // Smaller interval for smoother animation
+    }
   };
 
   const stopAutoplay = () => {
