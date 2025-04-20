@@ -30,7 +30,7 @@ const LogoCarouselAutoplay = ({ logos }: LogoCarouselAutoplayProps) => {
     stopAutoplay();
     autoplayRef.current = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 3000);
+    }, 1000);  // Reduced from 3000 to 1000 milliseconds
   };
 
   const stopAutoplay = () => {
