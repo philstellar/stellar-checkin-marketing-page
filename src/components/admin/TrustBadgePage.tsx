@@ -2,12 +2,52 @@ import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { UserCheck, BadgeCheck, Star, Shield, Globe2 } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import Header from '../Header';
 import Footer from '../Footer';
 import CTAButton from '../CTAButton';
 import TrustBadgeFAQ from './TrustBadgeFAQ';
 import TrustBadgeCertificates from './TrustBadgeCertificates';
-import LogoCarousel from '../LogoCarousel';
+
+const testimonialLogos = [
+  {
+    src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
+    alt: "Hof Liebeneck Osterspai",
+    width: 180
+  },
+  {
+    src: "/lovable-uploads/5ed06b20-0365-4348-b2b0-31574211bc35.png", 
+    alt: "Homeby",
+    width: 160
+  },
+  {
+    src: "/lovable-uploads/800ababe-141e-40a9-aa0f-2e8d2519b7ef.png",
+    alt: "Favorent",
+    width: 150
+  },
+  {
+    src: "/lovable-uploads/fd96b10c-36ff-4492-a020-f47f221d8d39.png",
+    alt: "Luxury Hideaway",
+    width: 170
+  },
+  {
+    src: "/lovable-uploads/404c2219-9b9a-4ebd-b8ec-aea63d21d6d7.png",
+    alt: "Plau Lagoons",
+    width: 160
+  },
+  {
+    src: "/lovable-uploads/3f0f71e5-0006-4019-9e50-f5c4354ed3fe.png",
+    alt: "Berlin Mitte Experience",
+    width: 180
+  },
+  {
+    src: "/lovable-uploads/9451653b-0793-4645-8889-3222d4c98e84.png",
+    alt: "Fairienglück",
+    width: 160
+  }
+];
+
+const extendedLogos = [...testimonialLogos, ...testimonialLogos, ...testimonialLogos];
 
 const TrustBadgePage = () => {
   const { t } = useTranslation();
@@ -52,13 +92,38 @@ const TrustBadgePage = () => {
       {/* Logo Carousel Section */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-royal">
-              {t('partners.title')}
-              <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
-            </h2>
+          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-12 text-royal">
+            {t('partners.title')}
+          </h2>
+          <div className="overflow-hidden">
+            <div className="flex">
+              {extendedLogos.map((logo, index) => (
+                <div 
+                  key={index} 
+                  className="flex-shrink-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 px-4"
+                >
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <div className="h-20 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
+                        <div className="w-full h-full flex items-center justify-center">
+                          <img
+                            src={logo.src}
+                            alt={logo.alt}
+                            style={{ width: logo.width ? `${logo.width}px` : 'auto', height: 'auto' }}
+                            className="max-w-full max-h-full object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-auto p-2 text-center text-sm">
+                      {logo.alt}
+                    </HoverCardContent>
+                  </HoverCard>
+                </div>
+              ))}
+            </div>
           </div>
-          <LogoCarousel />
         </div>
       </section>
 
