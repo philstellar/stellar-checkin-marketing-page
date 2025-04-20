@@ -32,14 +32,14 @@ const LogoCarouselAutoplay = ({ logos }: LogoCarouselAutoplayProps) => {
       const scroll = () => {
         const engine = emblaApi.internalEngine();
         const location = engine.location.get();
-        const target = location - 1; // Changed from + to - for reverse direction
+        const target = location - 1;
         engine.location.set(target);
         engine.target.set(target);
-        engine.scrollLooper.loop(target); // Added target parameter
+        engine.scrollLooper.loop(target);
         engine.translate.to(target);
       };
 
-      autoplayRef.current = setInterval(scroll, 50);
+      autoplayRef.current = setInterval(scroll, 20); // Decreased from 50ms to 20ms for faster scrolling
     }
   };
 
@@ -96,3 +96,4 @@ const LogoCarouselAutoplay = ({ logos }: LogoCarouselAutoplayProps) => {
 };
 
 export default LogoCarouselAutoplay;
+
