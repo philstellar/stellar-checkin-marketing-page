@@ -8,50 +8,40 @@ import CTAButton from '../CTAButton';
 import TrustBadgeFAQ from './TrustBadgeFAQ';
 import TrustBadgeCertificates from './TrustBadgeCertificates';
 import LogoCarouselAutoplay from '../LogoCarouselAutoplay';
-
-const testimonialLogos = [
-  {
-    src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
-    alt: "Hof Liebeneck Osterspai",
-    width: 180
-  },
-  {
-    src: "/lovable-uploads/5ed06b20-0365-4348-b2b0-31574211bc35.png", 
-    alt: "Homeby",
-    width: 160
-  },
-  {
-    src: "/lovable-uploads/800ababe-141e-40a9-aa0f-2e8d2519b7ef.png",
-    alt: "Favorent",
-    width: 150
-  },
-  {
-    src: "/lovable-uploads/fd96b10c-36ff-4492-a020-f47f221d8d39.png",
-    alt: "Luxury Hideaway",
-    width: 170
-  },
-  {
-    src: "/lovable-uploads/404c2219-9b9a-4ebd-b8ec-aea63d21d6d7.png",
-    alt: "Plau Lagoons",
-    width: 160
-  },
-  {
-    src: "/lovable-uploads/3f0f71e5-0006-4019-9e50-f5c4354ed3fe.png",
-    alt: "Berlin Mitte Experience",
-    width: 180
-  },
-  {
-    src: "/lovable-uploads/9451653b-0793-4645-8889-3222d4c98e84.png",
-    alt: "Fairienglück",
-    width: 160
-  }
-];
-
+const testimonialLogos = [{
+  src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
+  alt: "Hof Liebeneck Osterspai",
+  width: 180
+}, {
+  src: "/lovable-uploads/5ed06b20-0365-4348-b2b0-31574211bc35.png",
+  alt: "Homeby",
+  width: 160
+}, {
+  src: "/lovable-uploads/800ababe-141e-40a9-aa0f-2e8d2519b7ef.png",
+  alt: "Favorent",
+  width: 150
+}, {
+  src: "/lovable-uploads/fd96b10c-36ff-4492-a020-f47f221d8d39.png",
+  alt: "Luxury Hideaway",
+  width: 170
+}, {
+  src: "/lovable-uploads/404c2219-9b9a-4ebd-b8ec-aea63d21d6d7.png",
+  alt: "Plau Lagoons",
+  width: 160
+}, {
+  src: "/lovable-uploads/3f0f71e5-0006-4019-9e50-f5c4354ed3fe.png",
+  alt: "Berlin Mitte Experience",
+  width: 180
+}, {
+  src: "/lovable-uploads/9451653b-0793-4645-8889-3222d4c98e84.png",
+  alt: "Fairienglück",
+  width: 160
+}];
 const TrustBadgePage = () => {
-  const { t } = useTranslation();
-  
-  return (
-    <>
+  const {
+    t
+  } = useTranslation();
+  return <>
       <Header />
       
       {/* Hero Section */}
@@ -62,7 +52,9 @@ const TrustBadgePage = () => {
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
                 {t('trustBadge.headline1')}
-                <span style={{ color: 'rgb(164 195 9)' }}>{t('trustBadge.headline2')}</span>
+                <span style={{
+                color: 'rgb(164 195 9)'
+              }}>{t('trustBadge.headline2')}</span>
                 {t('trustBadge.headline3')}
               </h1>
               <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
@@ -75,13 +67,7 @@ const TrustBadgePage = () => {
               </div>
             </div>
             <div className="order-1 md:order-last flex justify-center">
-              <img 
-                src="/lovable-uploads/3098a042-bbb0-4607-b03f-beb60fdc911d.png"
-                alt="Trust Badge Preview"
-                className="w-full h-auto object-contain max-w-[800px]"
-                loading="eager"
-                fetchPriority="high"
-              />
+              <img src="/lovable-uploads/3098a042-bbb0-4607-b03f-beb60fdc911d.png" alt="Trust Badge Preview" className="w-full h-auto object-contain max-w-[800px]" loading="eager" fetchPriority="high" />
             </div>
           </div>
         </div>
@@ -90,9 +76,7 @@ const TrustBadgePage = () => {
       {/* Logo Carousel Section */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-12 text-royal">
-            {t('partners.title')}
-          </h2>
+          
           <LogoCarouselAutoplay logos={testimonialLogos} />
         </div>
       </section>
@@ -181,8 +165,6 @@ const TrustBadgePage = () => {
       <TrustBadgeFAQ />
       
       <Footer />
-    </>
-  );
+    </>;
 };
-
 export default TrustBadgePage;
