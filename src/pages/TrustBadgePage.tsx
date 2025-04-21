@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { UserCheck, BadgeCheck, Star, Shield, Globe2 } from 'lucide-react';
@@ -98,7 +99,7 @@ const TrustBadgePage = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-white">
               <CardContent className="p-6">
-                <Shield className="h-8 w-8 text-[#0EA5E9] mb-4" />
+                <Shield className="h-8 w-8 text-apple mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-royal">{t('trustBadge.trust.title')}</h3>
                 <p className="text-royal-700">{t('trustBadge.trust.description')}</p>
               </CardContent>
@@ -106,7 +107,7 @@ const TrustBadgePage = () => {
 
             <Card className="bg-white">
               <CardContent className="p-6">
-                <Star className="h-8 w-8 text-[#0EA5E9] mb-4" />
+                <Star className="h-8 w-8 text-apple mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-royal">{t('trustBadge.reviews.title')}</h3>
                 <p className="text-royal-700">{t('trustBadge.reviews.description')}</p>
               </CardContent>
@@ -114,7 +115,7 @@ const TrustBadgePage = () => {
 
             <Card className="bg-white">
               <CardContent className="p-6">
-                <Globe2 className="h-8 w-8 text-[#0EA5E9] mb-4" />
+                <Globe2 className="h-8 w-8 text-apple mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-royal">{t('trustBadge.reviews.stats')}</h3>
                 <p className="text-royal-700">{t('trustBadge.reviews.importance')}</p>
               </CardContent>
