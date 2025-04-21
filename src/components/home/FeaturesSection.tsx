@@ -23,11 +23,8 @@ const features = [{
 const FeaturesSection = () => {
   return (
     <section className="py-16 bg-floral/10 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-apple/5 rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-royal/5 rounded-full filter blur-3xl"></div>
-      
       <div className="container-custom">
-        <div className="text-center mb-12" data-aos="fade-up">
+        <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-royal text-center font-aeonik">
             Ihre Vorteile
           </h2>
@@ -41,21 +38,18 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="h-full transition-all duration-500 hover:shadow-lg border border-gray-200 bg-white group hover:-translate-y-2"
-              data-aos="fade-up" 
-              data-aos-delay={index * 100}
+              className="h-full border border-gray-200 bg-white"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-floral-100 opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-lg"></div>
-              <CardHeader className="pb-2 relative z-10">
-                <div className={`${feature.color} w-12 h-12 rounded-full flex items-center justify-center mb-4 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-md`}>
+              <CardHeader className="pb-2">
+                <div className={`${feature.color} w-12 h-12 rounded-full flex items-center justify-center mb-4`}>
                   {feature.icon}
                 </div>
-                <CardTitle className="text-lg font-semibold text-royal pb-2 text-left font-aeonik group-hover:text-apple transition-colors duration-300">
+                <CardTitle className="text-lg font-semibold text-royal pb-2 text-left font-aeonik">
                   {feature.title}
-                  <div className="mt-1 h-1 w-[30%] bg-apple rounded-full transition-all duration-300 group-hover:w-[50%]"></div>
+                  <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-4 relative z-10">
+              <CardContent className="pt-4">
                 <p className="text-royal-700 text-left font-aeonik">{feature.description}</p>
               </CardContent>
             </Card>
