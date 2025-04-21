@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Info, HelpCircle } from "lucide-react";
 import {
@@ -9,11 +8,11 @@ import {
 } from "@/components/ui/tooltip";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
+import HeadingWithLine from "@/components/HeadingWithLine";
 
 const PricingSection = () => {
   const { t } = useTranslation();
   
-  // Sample tooltip descriptions from translation file
   const tooltipDescriptions = {
     zusatzleistungen: t('pricing.basic.additionalServicesDesc'),
     identitaetsverifizierung: t('pricing.basic.identityVerificationDesc'),
@@ -34,16 +33,12 @@ const PricingSection = () => {
   return (
     <section id="preise" className="section-padding bg-white">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-royal mb-4">
-            {t('pricing.title')}
-          </h2>
-          <div className="h-1 w-24 bg-apple mb-6 mx-auto rounded-full"></div>
-          <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            {t('pricing.subtitle')}
-          </p>
-        </div>
-
+        <HeadingWithLine
+          title={t('pricing.title')}
+          subtitle={t('pricing.subtitle')}
+          align="center"
+        />
+        
         <div className="grid md:grid-cols-3 gap-8">
           {/* Basic Plan */}
           <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow bg-white">

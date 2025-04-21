@@ -1,7 +1,7 @@
-
 import { UserCheck, Gift, CreditCard, TrendingUp } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
+import { HeadingWithLine } from "@/components/ui/heading-with-line";
 
 const ZusatzservicesSection = () => {
   const { t } = useTranslation();
@@ -11,13 +11,10 @@ const ZusatzservicesSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-first">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              {t('zusatzservices.title')}
-            </h2>
-            <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
-            <p className="text-lg text-black mb-8">
-              {t('zusatzservices.subtitle')}
-            </p>
+            <HeadingWithLine
+              title={t('zusatzservices.title')}
+              subtitle={t('zusatzservices.subtitle')}
+            />
             
             <div className="space-y-8">
               {[

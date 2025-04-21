@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Calculator, Upload } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 import { UserCheck } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
+import { HeadingWithLine } from "@/components/ui/heading-with-line";
 
 const KurtaxeSection = () => {
   const { t } = useTranslation();
@@ -30,15 +30,11 @@ const KurtaxeSection = () => {
   return (
     <section id="kurtaxe" className="py-20 bg-floral">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-royal">
-            {t('kurtaxe.title')}
-            <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
-          </h2>
-          <p className="text-lg text-royal-700 max-w-2xl mx-auto">
-            {t('kurtaxe.subtitle')}
-          </p>
-        </div>
+        <HeadingWithLine
+          title={t('kurtaxe.title')}
+          subtitle={t('kurtaxe.subtitle')}
+          align="center"
+        />
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {features.map((feature, index) => (

@@ -1,8 +1,8 @@
-
 import { Shield, CalendarCheck, Award, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { HeadingWithLine } from "@/components/ui/heading-with-line";
 
 const products = [
   {
@@ -34,15 +34,11 @@ const ProductsSection = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-royal text-center font-aeonik">
-            Unsere Produkte
-          </h2>
-          <p className="text-lg text-royal-700 text-center mb-8 max-w-2xl mx-auto font-aeonik">
-            Entdecken Sie unsere Lösungen für eine optimale Gästeverwaltung und mehr Vertrauen in Ihrer Ferienunterkunft.
-          </p>
-          <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
-        </div>
+        <HeadingWithLine
+          title="Unsere Produkte"
+          subtitle="Entdecken Sie unsere Lösungen für eine optimale Gästeverwaltung und mehr Vertrauen in Ihrer Ferienunterkunft."
+          align="center"
+        />
         
         <div className="grid md:grid-cols-3 gap-8">
           {products.map((product, index) => (
