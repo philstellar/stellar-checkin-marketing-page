@@ -14,6 +14,7 @@ interface LogoCarouselAutoplayProps {
 }
 
 const LogoCarouselAutoplay = ({ logos }: LogoCarouselAutoplayProps) => {
+  // Triple the logos array for smooth infinite scrolling
   const extendedLogos = [...logos, ...logos, ...logos];
   
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -39,7 +40,7 @@ const LogoCarouselAutoplay = ({ logos }: LogoCarouselAutoplayProps) => {
         engine.translate.to(target);
       };
 
-      autoplayRef.current = setInterval(scroll, 20); // Decreased from 50ms to 20ms for faster scrolling
+      autoplayRef.current = setInterval(scroll, 20); // Faster scrolling for smoother animation
     }
   };
 
@@ -96,4 +97,3 @@ const LogoCarouselAutoplay = ({ logos }: LogoCarouselAutoplayProps) => {
 };
 
 export default LogoCarouselAutoplay;
-
