@@ -14,7 +14,7 @@ const UeberUns = () => {
       reviews: 167,
       properties: 2,
       joined: 2024,
-      image: "/lovable-uploads/362fce74-9778-463e-96c2-4cf10fa15296.png"
+      image: "/lovable-uploads/a4c197e8-9f89-4408-abc5-217c19594def.png"
     },
     {
       name: "Milan Plogsties",
