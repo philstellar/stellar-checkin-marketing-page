@@ -43,7 +43,7 @@ const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik"
             style={{ contentVisibility: 'auto' }}
           >
-            Stellar - <span style={{ color: 'rgb(164 195 9)' }}>Online Checkin</span>, Versicherungen und Trust Badge
+            Stellar Trust: Rundum abgesichert - Vertrauen schaffen, Schäden vermeiden, Online einchecken
           </h1>
           <p className="text-lg text-black mb-8 max-w-2xl mx-auto font-aeonik">
             Die ultimative 360 Grad Lösung für Vertrauen und Sicherheit
