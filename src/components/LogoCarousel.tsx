@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import useEmblaCarousel from 'embla-carousel-react';
@@ -53,16 +52,14 @@ const LogoCarousel = () => {
     stopAutoplay();
     if (emblaApi) {
       const scroll = () => {
-        const engine = emblaApi.internalEngine();
-        const location = engine.location.get();
-        const target = location - 1;
-        engine.location.set(target);
-        engine.target.set(target);
-        engine.scrollLooper.loop(target);
-        engine.translate.to(target);
+        if (!emblaApi.canScrollNext()) {
+          emblaApi.scrollTo(0);
+        } else {
+          emblaApi.scrollNext();
+        }
       };
 
-      autoplayRef.current = setInterval(scroll, 20);
+      autoplayRef.current = setInterval(scroll, 3000);
     }
   };
 
