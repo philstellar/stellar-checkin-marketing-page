@@ -32,7 +32,7 @@ const UeberUns = () => {
       reviews: 166,
       properties: 10,
       joined: 2024,
-      image: "/lovable-uploads/298b0c47-79e5-4167-957b-91aa9a4b4dfd.png"
+      image: "/lovable-uploads/ec49196e-b150-4532-9f94-780fc83bea5a.png"
     }
   ];
 
