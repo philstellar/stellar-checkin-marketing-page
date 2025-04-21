@@ -67,7 +67,7 @@ const testimonials = [
   {
     company: "Favorent",
     name: "Volker Rantz",
-    image: "/lovable-uploads/a102adcb-3320-4135-9d3c-f32ae16a0bd4.png",
+    image: "/lovable-uploads/d7825600-e22b-4fa5-a960-fb33e4dd0d9d.png",
     rating: 5.0,
     ratings: 13600,
     properties: 700,
