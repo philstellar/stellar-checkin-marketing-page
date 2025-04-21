@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -92,7 +93,9 @@ const HeroSection = () => {
             <div className="w-8 h-8 rounded-full bg-apple-500"></div>
           </div>
           <p className="ml-4 text-sm text-black font-aeonik">
-            <span className="font-medium">Bereits über 1.000 zufriedene Gastgeber</span>
+            <Link to="/de/erfolgsgeschichten" className="font-medium hover:text-apple transition-colors">
+              Hier geht es zu den Referenzen
+            </Link>
           </p>
         </div>
       </div>
