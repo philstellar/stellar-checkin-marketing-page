@@ -6,17 +6,20 @@ const features = [
   {
     title: 'Digitalisierung',
     description: 'Vollständige Digitalisierung aller Gästeprozesse für einen reibungslosen Ablauf.',
-    icon: <CalendarCheck className="h-6 w-6 text-apple" />
+    icon: <CalendarCheck className="h-6 w-6" />,
+    color: 'bg-apple'
   },
   {
     title: 'Zeitersparnis',
     description: 'Automatisierte Abläufe sparen Ihnen und Ihren Gästen wertvolle Zeit.',
-    icon: <Shield className="h-6 w-6 text-apple" />
+    icon: <Shield className="h-6 w-6" />,
+    color: 'bg-royal'
   },
   {
     title: 'Sicherheit',
     description: 'Erhöhen Sie die Sicherheit durch verifizierte Gäste und transparente Prozesse.',
-    icon: <Award className="h-6 w-6 text-apple" />
+    icon: <Award className="h-6 w-6" />,
+    color: 'bg-floral'
   }
 ];
 
@@ -38,8 +41,10 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
               <CardHeader className="pb-2">
+                <div className={`${feature.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
+                  {React.cloneElement(feature.icon, { className: "h-6 w-6 text-white" })}
+                </div>
                 <CardTitle className="text-lg font-semibold text-royal pb-2 text-left font-aeonik">
-                  {feature.icon && <span className="mr-2">{feature.icon}</span>}
                   {feature.title}
                   <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
                 </CardTitle>
