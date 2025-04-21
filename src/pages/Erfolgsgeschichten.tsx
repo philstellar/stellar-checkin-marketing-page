@@ -74,6 +74,36 @@ const testimonials = [
     joinedYear: null,
     quote: "Die tägliche Gästeschadenversicherung ist für uns ein echter Gamechanger – sowohl als einzigartiges Verkaufsargument zur Gewinnung neuer Agenturkunden als auch zur Vereinfachung unserer Kautionsverwaltung.\n\nWir konnten die Reibungspunkte zwischen uns als Agentur, den Eigentümern und den Gästen erheblich reduzieren.",
   },
+  {
+    company: "Fairienglück",
+    name: "Sarah Wagner",
+    image: "/lovable-uploads/f49ae289-5dbb-4a52-bdaa-86cd9ce6f6c1.png",
+    rating: 4.9,
+    ratings: 22,
+    properties: 6,
+    joinedYear: 2024,
+    quote: "Als kleine Ferienhaus-Vermieterin war es für mich immer eine Herausforderung, Gäste von der Buchung direkt auf meiner Website zu überzeugen. Stellar Checkin hat das komplett verändert. Das Trust Badge gibt meinen potenziellen Gästen sofort das Vertrauen, das sie brauchen.\n\nDie Identitätsprüfung und die Möglichkeit, eine Gästeschadenversicherung anzubieten, haben meine Buchungssicherheit massiv erhöht.",
+  },
+  {
+    company: "Berlin Mitte Experience",
+    name: "Michael Schmidt",
+    image: "/lovable-uploads/5ecda5e9-325e-415f-b7eb-2d7f806af7bf.png",
+    rating: 4.8,
+    ratings: 35,
+    properties: 8,
+    joinedYear: 2024,
+    quote: "Als Gastgeber mit mehreren Unterkünften in Berlin Mitte war der Verwaltungsaufwand für Kautionen und Gästeregistrierungen immer ein Zeitfresser. Mit Stellar Checkin habe ich diese Prozesse komplett digitalisiert und automatisiert.\n\nBesonders beeindruckt bin ich von der nahtlosen Integration mit unserem Property Management System und der Möglichkeit, Zusatzleistungen direkt im Check-in-Prozess zu verkaufen.",
+  },
+  {
+    company: "Homeby",
+    name: "Elena Müller",
+    image: "/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png",
+    rating: 5.0,
+    ratings: 18,
+    properties: 12,
+    joinedYear: 2024,
+    quote: "Als Immobilienmanagement-Unternehmen mussten wir ständig zwischen verschiedenen Systemen wechseln. Stellar Checkin hat unsere gesamten Check-in-Prozesse vereinfacht und digitalisiert.\n\nDie Möglichkeit, Gästedaten automatisch zu erfassen, Versicherungen anzubieten und Zusatzleistungen zu verkaufen, hat unsere Effizienz und Umsätze deutlich gesteigert.",
+  }
 ];
 
 const Erfolgsgeschichten = () => {
