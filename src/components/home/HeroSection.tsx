@@ -1,4 +1,3 @@
-
 import { UserCheck, Shield, Award, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import CTAButton from '@/components/CTAButton';
@@ -43,10 +42,10 @@ const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik"
             style={{ contentVisibility: 'auto' }}
           >
-            Stellar 360° <span style={{ color: 'rgb(164 195 9)' }}>Rundumlösung</span>
+            Stellar - <span style={{ color: 'rgb(164 195 9)' }}>Online Checkin</span>, Versicherungen und Trust Badge
           </h1>
           <p className="text-lg text-black mb-8 max-w-2xl mx-auto font-aeonik">
-            Vertrauen, Transparenz, Fairness und Sicherheit zwischen Gastgebern und Gästen. Die umfassende digitale Lösung für Ihre Ferienunterkunft.
+            Die ultimative 360 Grad Lösung für Vertrauen und Sicherheit
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
