@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { UserCheck } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
@@ -15,9 +16,11 @@ const HeroSection = () => {
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
               Rundum abgesichert:{' '}&nbsp;&nbsp;
-              <span className="text-apple">Vertrauen</span> schaffen, 
-              <span className="text-apple">Schäden</span> absichern, 
-              <span className="text-apple">Checkin</span> automatisieren
+              Vertrauen schaffen
+              <br />
+              Schäden vermeiden
+              <br />
+              Checkin automatisieren
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               Die ultimative 360 Grad Lösung für Vertrauen und Sicherheit
