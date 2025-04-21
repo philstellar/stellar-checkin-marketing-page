@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Award, Star, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card } from "@/components/ui/card";
 import LogoCarouselAutoplay from '@/components/LogoCarouselAutoplay';
+import CTAButton from '@/components/CTAButton';
 
 const testimonialLogos = [
   {
@@ -128,6 +128,14 @@ const Erfolgsgeschichten = () => {
               <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
                 Erfahren Sie, wie Vermieter und Gastgeber mit Stellar Checkin ihre Prozesse optimieren und ihren Erfolg steigern.
               </p>
+              <div className="mb-8">
+                <CTAButton 
+                  size="lg" 
+                  className="bg-apple hover:bg-apple-600 text-white font-aeonik"
+                >
+                  Jetzt registrieren
+                </CTAButton>
+              </div>
             </div>
             <div className="order-1 md:order-last flex justify-center">
               <img 
