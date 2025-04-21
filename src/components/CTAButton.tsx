@@ -10,7 +10,11 @@ const CTAButton = ({ children, ...props }: CTAButtonProps) => {
   const { openForm } = useBrevoForm();
 
   return (
-    <Button onClick={openForm} {...props}>
+    <Button 
+      onClick={openForm} 
+      className={`rounded-cta ${props.className || ''}`} 
+      {...props}
+    >
       {children}
     </Button>
   );
