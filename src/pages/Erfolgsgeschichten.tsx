@@ -47,7 +47,7 @@ const testimonials = [
   {
     company: "Hof Liebeneck",
     name: "Mario Schilling",
-    image: "/lovable-uploads/66faf0b3-a82d-417b-94b6-b850f4b79501.png",
+    image: "/lovable-uploads/7ac2f1b9-71b4-4955-b98d-10b23cd137a4.png",
     rating: 5.0,
     ratings: 28,
     properties: 4,
