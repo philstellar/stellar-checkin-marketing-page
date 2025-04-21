@@ -8,6 +8,7 @@ import CTAButton from '../components/CTAButton';
 import TrustBadgeFAQ from '../components/admin/TrustBadgeFAQ';
 import TrustBadgeCertificates from '../components/admin/TrustBadgeCertificates';
 import LogoCarouselAutoplay from '../components/LogoCarouselAutoplay';
+
 const testimonialLogos = [{
   src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
   alt: "Hof Liebeneck Osterspai",
@@ -37,11 +38,12 @@ const testimonialLogos = [{
   alt: "Fairienglück",
   width: 160
 }];
+
 const TrustBadgePage = () => {
-  const {
-    t
-  } = useTranslation();
-  return <>
+  const { t } = useTranslation();
+  
+  return (
+    <>
       <Header />
       
       {/* Hero Section */}
@@ -98,7 +100,7 @@ const TrustBadgePage = () => {
               <CardContent className="p-6">
                 <Shield className="h-8 w-8 text-[#0EA5E9] mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-royal">{t('trustBadge.trust.title')}</h3>
-                <p className="text-royal-700">{t('trustBadge.trust.description')</p>
+                <p className="text-royal-700">{t('trustBadge.trust.description')}</p>
               </CardContent>
             </Card>
 
@@ -165,6 +167,8 @@ const TrustBadgePage = () => {
       <TrustBadgeFAQ />
       
       <Footer />
-    </>;
+    </>
+  );
 };
+
 export default TrustBadgePage;
