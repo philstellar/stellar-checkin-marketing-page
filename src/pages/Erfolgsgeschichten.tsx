@@ -86,8 +86,8 @@ const testimonials = [
   },
   {
     company: "Berlin Mitte Experience",
-    name: "Michael Schmidt",
-    image: "/lovable-uploads/5ecda5e9-325e-415f-b7eb-2d7f806af7bf.png",
+    name: "Philipp Reuter",
+    image: "/lovable-uploads/321ff530-1491-4b9c-b977-7111d0710385.png",
     rating: 4.8,
     ratings: 35,
     properties: 8,
