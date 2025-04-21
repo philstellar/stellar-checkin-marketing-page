@@ -69,9 +69,9 @@ const testimonials = [
     name: "Volker Rantz",
     image: "/lovable-uploads/a102adcb-3320-4135-9d3c-f32ae16a0bd4.png",
     rating: 5.0,
-    ratings: null,
-    properties: null,
-    joinedYear: null,
+    ratings: 13600,
+    properties: 700,
+    joinedYear: 2024,
     quote: "Die tägliche Gästeschadenversicherung ist für uns ein echter Gamechanger – sowohl als einzigartiges Verkaufsargument zur Gewinnung neuer Agenturkunden als auch zur Vereinfachung unserer Kautionsverwaltung.\n\nWir konnten die Reibungspunkte zwischen uns als Agentur, den Eigentümern und den Gästen erheblich reduzieren.",
   },
   {
