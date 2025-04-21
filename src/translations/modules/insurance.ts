@@ -7,7 +7,7 @@ export const insuranceDE = {
   },
   section2: {
     title: "Wie funktioniert es?",
-    content: "Ihre Gäste können während des Check-ins eine Versicherung abschließen."
+    content: "Ihre Gäste können während des Check-ins eine Versicherung abschließen. Oder buchen Sie die Versicherung selbst - nur für die Tage mit Buchungen."
   },
   section3: {
     title: "Ihre Vorteile",
