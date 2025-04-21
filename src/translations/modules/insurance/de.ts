@@ -16,12 +16,12 @@ export const insuranceDE = {
   benefits: {
     title: "Die Vorteile der Versicherung im Überblick",
     list: [
-      "Schneller Check-in ohne Kautionsabwicklung",
-      "Zusätzliche Einnahmequelle durch Provisionen",
-      "Höhere Deckungssummen als bei Kautionen",
-      "Nahtlose Integration in den Check-in-Prozess",
-      "Umfassender Schutz für Vermieter und Gäste",
-      "Automatische Abwicklung im Schadensfall"
+      "Beschleunigen Sie den Check-in-Prozess durch den Wegfall zeitaufwändiger Kautionsabwicklung. Ihre Gäste können direkt bei der Ankunft entspannen, ohne sich um Bargeld oder Kreditkartenautorisierungen kümmern zu müssen.",
+      "Generieren Sie zusätzliche Einnahmen durch attraktive Provisionen bei jeder Versicherungsbuchung. Ein passives Einkommen, das sich automatisch mit jeder Buchung aufbaut.",
+      "Profitieren Sie von deutlich höheren Deckungssummen im Vergleich zu traditionellen Kautionen. Die Versicherung bietet einen umfassenderen finanziellen Schutz für Ihre Immobilie und Ausstattung.",
+      "Genießen Sie eine vollständig automatisierte Integration in Ihren bestehenden Check-in-Prozess. Die Versicherung wird nahtlos in den Buchungsablauf eingebunden, ohne zusätzlichen Verwaltungsaufwand.",
+      "Sichern Sie sich und Ihre Gäste umfassend ab - von Sachschäden über Diebstahl bis hin zu unvorhergesehenen Ereignissen. Ein Rundum-Schutz, der beide Seiten beruhigt.",
+      "Erleben Sie eine reibungslose, automatisierte Schadensabwicklung ohne direkte Konfrontation mit dem Gast. Schnelle Bearbeitung und faire Entschädigung im Schadensfall."
     ]
   },
   shortTerm: {
