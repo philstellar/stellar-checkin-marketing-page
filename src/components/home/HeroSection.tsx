@@ -1,15 +1,11 @@
-
 import React from 'react';
 import { UserCheck } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-
 const HeroSection = () => {
   const navigate = useNavigate();
-  
-  return (
-    <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
+  return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -43,20 +39,10 @@ const HeroSection = () => {
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
-            <img 
-              src="/lovable-uploads/ff8a3a50-21d0-4e53-98f4-3265e363fe55.png" 
-              alt="Stellar Online Check-in Interface" 
-              className="w-3/5 h-auto object-contain bg-transparent"
-              loading="eager"
-              fetchPriority="high"
-              width="500"
-              height="400"
-            />
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
