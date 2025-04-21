@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
-import HeadingWithLine from "@/components/HeadingWithLine";
+import { HeadingWithLine } from "@/components/ui/heading-with-line";
 
 const PricingSection = () => {
   const { t } = useTranslation();
