@@ -30,7 +30,10 @@ const initializeAOS = () => {
           } else if (animation === 'fade-left') {
             element.classList.add('animate-slide-in');
           }
-          element.style.opacity = '1';
+          // Fix: Properly cast element to HTMLElement before accessing style property
+          if (element instanceof HTMLElement) {
+            element.style.opacity = '1';
+          }
         }, parseInt(delay));
         
         observer.unobserve(element);
@@ -42,7 +45,10 @@ const initializeAOS = () => {
   const elements = document.querySelectorAll('[data-aos]');
   
   elements.forEach(element => {
-    element.style.opacity = '0';
+    // Fix: Properly cast element to HTMLElement before accessing style property
+    if (element instanceof HTMLElement) {
+      element.style.opacity = '0';
+    }
     observer.observe(element);
   });
 };
