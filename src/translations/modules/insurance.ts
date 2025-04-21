@@ -7,7 +7,7 @@ export const insuranceDE = {
   },
   section2: {
     title: "Wie funktioniert es?",
-    content: "Absolute Abdeckung gegen Gästeschäden, Kautionen vermeiden. Sie erhalten Provisionen für jede abgeschlossene Versicherung."
+    content: "Durch Gäste verursachte Schäden sind in regulären Policen nicht abgedeckt. Eine Versicherung schützt Sie vor unerwarteten Schäden und Ausfällen."
   },
   section3: {
     title: "Ihre Vorteile",
@@ -72,7 +72,7 @@ export const insuranceDE = {
     },
     coverage: {
       question: "Was deckt eure Versicherung ab?",
-      answer: "Unsere Ferienhausversicherung wurde speziell für die individuellen Bedürfnisse von Kurzzeitvermietern und -eigentümern entwickelt. Dabei umfasst sie eine umfassende und kritische Deckung für die folgenden relevanten Fälle:\n\nUnbeabsichtigte sowie böswillige Schäden an deinem Eigentum (zum Wiederbeschaffungswert), sodass du keine finanziellen Verluste erleidest.\nGästeschaden aufgrund von Diebstahl, der unerwartet auftreten kann und Vermieter vor finanzielle Herausforderungen stellt.\nEinkommensverluste durch gedeckte Schäden, die deine Mietausfälle minimieren und für finanzielle Stabilität sorgen.\nZusätzliche Reinigungskosten für die aufwendige Entfernung von Flecken, die von Gästen hinterlassen wurden und über die normale Reinigung hinausgehen.\nEffektiver Schutz vor Schäden durch Haustiere, damit du sorgenfrei an Tierhalter vermieten kannst, ohne das Risiko hoher Reparaturkosten einzugehen."
+      answer: "Unsere Ferienhausversicherung wurde speziell für die individuellen Bedürfnisse von Kurzzeitvermietern und -eigentümern entwickelt. Dabei umfasst sie eine umfassende und kritische Deckung für die folgenden relevanten Fälle:\n\nUnbeabsichtigte sowie böswillige Schäden an deinem Eigentum (zum Wiederbeschaffungswert), sodass du keine finanziellen Verluste erleidest.\nGästeschaden aufgrund von Diebstahl, der unerwartet auftreten kann und Vermieter vor finanzielle Herausforderungen stellt.\nEinkommensverluste durch gedeckte Schäden, die deine Mietausfälle minimieren und für finanzielle Stabilität sorgen.\nZusätzliche Reinigungskosten für die aufwendige Entfernung von Flecken, die von Gästen hinterlassen wurden und über die normale Reinigung hinausgehen.\nEffektiver Schutz vor Schäden durch Haustiere, damit du sorgenfrei an Tierhalter vermieten kannst, ohne das Risiko hoher Reparaturkosten zu eingehen."
     },
     cost: {
       question: "Was kostet mich die Gästeschadenversicherung?",
