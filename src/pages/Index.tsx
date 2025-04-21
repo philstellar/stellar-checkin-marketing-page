@@ -1,19 +1,18 @@
 
 import React, { lazy, Suspense, memo } from 'react';
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { PartnersSection } from "@/components/sections/PartnersSection";
 import { OnlineCheckinSection } from "@/components/features";
-import LogoCarousel from "@/components/LogoCarousel";
 import Footer from "@/components/Footer";
-// Import ZusatzservicesSection directly to prevent dynamic import issues
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 
-// Custom loading component for better user experience
+// Custom loading component
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
   <div className={`${height} ${bg} animate-pulse rounded-md`}></div>
 );
 
-// Lazy load non-critical sections with properly named chunks
+// Lazy load non-critical sections
 const KurtaxeSection = lazy(() => import("@/components/KurtaxeSection"));
 const VersicherungSection = lazy(() => import("@/components/VersicherungSection"));
 const IdentitaetspruefungSection = lazy(() => import("@/components/IdentitaetspruefungSection"));
@@ -27,16 +26,9 @@ const Index = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main>
-        {/* Critical rendering path - these components load immediately */}
-        <Hero />
+        <HeroSection />
         <OnlineCheckinSection />
-        
-        {/* Logo carousel loads after critical elements */}
-        <Suspense fallback={<SectionLoader bg="bg-floral" />}>
-          <LogoCarousel />
-        </Suspense>
-        
-        {/* Load ZusatzservicesSection directly without Suspense */}
+        <PartnersSection />
         <ZusatzservicesSection />
         
         <Suspense fallback={<SectionLoader />}>
@@ -46,18 +38,23 @@ const Index = () => {
         <Suspense fallback={<SectionLoader />}>
           <VersicherungSection />
         </Suspense>
+        
         <Suspense fallback={<SectionLoader bg="bg-floral-100" />}>
           <IdentitaetspruefungSection />
         </Suspense>
+        
         <Suspense fallback={<SectionLoader />}>
           <IntegrationenSection />
         </Suspense>
+        
         <Suspense fallback={<SectionLoader bg="bg-floral-100" />}>
           <EinstellungenSection />
         </Suspense>
+        
         <Suspense fallback={<SectionLoader />}>
           <PricingSection />
         </Suspense>
+        
         <Suspense fallback={<SectionLoader bg="bg-floral-100" />}>
           <ContactSection />
         </Suspense>
@@ -67,5 +64,4 @@ const Index = () => {
   );
 };
 
-// Use memo to prevent unnecessary re-renders
 export default memo(Index);
