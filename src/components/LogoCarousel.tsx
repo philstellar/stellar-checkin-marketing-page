@@ -86,9 +86,16 @@ const LogoCarousel = () => {
   }, [emblaApi]);
 
   return (
-    <div className="py-16 bg-white">
+    <div className="py-16 bg-white relative" data-aos="fade-up">
       <div className="container-custom">
-        <div className="overflow-hidden" ref={emblaRef}>
+        <div className="mb-10 text-center">
+          <h2 className="text-2xl font-bold mb-4 text-royal inline-block relative">
+            Unsere Partner
+            <div className="mt-2 h-1 w-20 bg-apple rounded-full mx-auto"></div>
+          </h2>
+        </div>
+        
+        <div className="overflow-hidden rounded-xl bg-floral-100/30 p-6 shadow-inner" ref={emblaRef}>
           <div className="flex">
             {extendedLogos.map((logo, index) => (
               <div 
@@ -98,18 +105,18 @@ const LogoCarousel = () => {
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <div className="h-20 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
-                      <div className="w-full h-full flex items-center justify-center">
+                      <div className="w-full h-full flex items-center justify-center filter hover:drop-shadow-md">
                         <img
                           src={logo.src}
                           alt={logo.alt}
                           style={{ width: logo.width ? `${logo.width}px` : 'auto', height: 'auto' }}
-                          className="max-w-full max-h-full object-contain"
+                          className="max-w-full max-h-full object-contain transition-all duration-300"
                           loading="lazy"
                         />
                       </div>
                     </div>
                   </HoverCardTrigger>
-                  <HoverCardContent className="w-auto p-2 text-center text-sm">
+                  <HoverCardContent className="w-auto p-2 text-center text-sm bg-white/90 backdrop-blur-sm border border-apple/20">
                     {logo.alt}
                   </HoverCardContent>
                 </HoverCard>
@@ -123,4 +130,3 @@ const LogoCarousel = () => {
 };
 
 export default LogoCarousel;
-
