@@ -23,7 +23,7 @@ const UeberUns = () => {
       reviews: 25,
       properties: 1,
       joined: 2024,
-      image: "/lovable-uploads/67a0f10e-22a5-4ff9-aaad-70774f9b4b70.png"
+      image: "/lovable-uploads/892b5bc5-bbb1-43f3-81f3-3913b8ca3db6.png"
     },
     {
       name: "Ralf Kramer",
