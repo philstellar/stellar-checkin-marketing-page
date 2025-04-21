@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Award, Star, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
@@ -53,6 +54,7 @@ const testimonials = [
     properties: 4,
     joinedYear: 2024,
     quote: "Gäste davon zu überzeugen, direkt auf unserer Website zu buchen, war immer eine Herausforderung. Seitdem wir das Stellar Trust Badge auf unserer Website anzeigen, das unsere Airbnb- und Booking.com-Bewertungen aggregiert, sehen wir bereits einen Anstieg der Buchungen.\n\nAußerdem habe ich ein viel besseres Gefühl bei Buchungen von Gästen, die ich noch nicht kenne, seit ich ihnen die Wahl zwischen einer Kaution und der Gästeschadenversicherung von Stellar anbieten kann.",
+    website: "https://www.liebeneck.com/"
   },
   {
     company: "Plau Lagoons",
@@ -63,6 +65,7 @@ const testimonials = [
     properties: 10,
     joinedYear: 2024,
     quote: "Mehr Direktbuchungen zu bekommen, war für uns in letzter Zeit super wichtig – nicht nur, um den Umsatz zu steigern, sondern auch, um persönlicher mit unseren Gästen zu interagieren, zum Beispiel mit Grußkarten oder speziellen Angeboten.\n\nAber uns war schnell klar: Eine schöne Website allein reicht nicht. Wir brauchten etwas, das unseren Gästen zusätzlich Sicherheit gibt. Genau da kam das Stellar Trust Badge ins Spiel.",
+    website: "https://www.plau-lagoons.de"
   },
   {
     company: "Favorent",
@@ -73,6 +76,7 @@ const testimonials = [
     properties: 700,
     joinedYear: 2024,
     quote: "Die tägliche Gästeschadenversicherung ist für uns ein echter Gamechanger – sowohl als einzigartiges Verkaufsargument zur Gewinnung neuer Agenturkunden als auch zur Vereinfachung unserer Kautionsverwaltung.\n\nWir konnten die Reibungspunkte zwischen uns als Agentur, den Eigentümern und den Gästen erheblich reduzieren.",
+    website: "https://favorent.de/"
   },
   {
     company: "Fairienglück",
@@ -83,6 +87,7 @@ const testimonials = [
     properties: 6,
     joinedYear: 2024,
     quote: "Als kleine Ferienhaus-Vermieterin war es für mich immer eine Herausforderung, Gäste von der Buchung direkt auf meiner Website zu überzeugen. Stellar Checkin hat das komplett verändert. Das Trust Badge gibt meinen potenziellen Gästen sofort das Vertrauen, das sie brauchen.\n\nDie Identitätsprüfung und die Möglichkeit, eine Gästeschadenversicherung anzubieten, haben meine Buchungssicherheit massiv erhöht.",
+    website: "https://www.fairienglueck.de/"
   },
   {
     company: "Berlin Mitte Experience",
@@ -93,6 +98,7 @@ const testimonials = [
     properties: 8,
     joinedYear: 2024,
     quote: "Als Gastgeber mit mehreren Unterkünften in Berlin Mitte war der Verwaltungsaufwand für Kautionen und Gästeregistrierungen immer ein Zeitfresser. Mit Stellar Checkin habe ich diese Prozesse komplett digitalisiert und automatisiert.\n\nBesonders beeindruckt bin ich von der nahtlosen Integration mit unserem Property Management System und der Möglichkeit, Zusatzleistungen direkt im Check-in-Prozess zu verkaufen.",
+    website: "https://berlin-mitte.homes/de"
   },
   {
     company: "Homeby",
@@ -103,6 +109,7 @@ const testimonials = [
     properties: 12,
     joinedYear: 2024,
     quote: "Als Immobilienmanagement-Unternehmen mussten wir ständig zwischen verschiedenen Systemen wechseln. Stellar Checkin hat unsere gesamten Check-in-Prozesse vereinfacht und digitalisiert.\n\nDie Möglichkeit, Gästedaten automatisch zu erfassen, Versicherungen anzubieten und Zusatzleistungen zu verkaufen, hat unsere Effizienz und Umsätze deutlich gesteigert.",
+    website: "https://homeby.it"
   }
 ];
 
@@ -163,7 +170,16 @@ const Erfolgsgeschichten = () => {
                         className="w-16 h-16 rounded-full object-cover"
                       />
                       <div>
-                        <h3 className="text-xl font-semibold mb-1 text-royal">{testimonial.company}</h3>
+                        <h3 className="text-xl font-semibold mb-1 text-royal">
+                          <a 
+                            href={testimonial.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-apple transition-colors"
+                          >
+                            {testimonial.company}
+                          </a>
+                        </h3>
                         <p className="text-gray-600">{testimonial.name}</p>
                       </div>
                     </div>
