@@ -76,8 +76,8 @@ const testimonials = [
   },
   {
     company: "Fairienglück",
-    name: "Sarah Wagner",
-    image: "/lovable-uploads/f49ae289-5dbb-4a52-bdaa-86cd9ce6f6c1.png",
+    name: "Christopher Redenz",
+    image: "/lovable-uploads/d642b640-6f64-4b66-a4d4-263a5d6f288c.png",
     rating: 4.9,
     ratings: 22,
     properties: 6,
