@@ -23,7 +23,21 @@ export const useTranslation = () => {
       if (!value || value === key) {
         console.warn(`[Translation WARNING] Missing translation for key: "${key}" in language "${language}"`);
         // Log the structure to help debug
+        console.debug(`Translation value type: ${typeof value}`);
         console.debug(`Available paths in ${language}:`, Object.keys(translations[language]));
+        
+        // Output parent keys to help find structure issues
+        const keyParts = key.split('.');
+        let currentPath = '';
+        for (let i = 0; i < keyParts.length; i++) {
+          currentPath = currentPath ? `${currentPath}.${keyParts[i]}` : keyParts[i];
+          const currentValue = get(translations[language], currentPath);
+          console.debug(`Path "${currentPath}" in ${language}:`, currentValue);
+          
+          if (currentValue && typeof currentValue === 'object') {
+            console.debug(`Available keys at "${currentPath}":`, Object.keys(currentValue));
+          }
+        }
         
         // Try to find the path in other languages to help debug
         const otherLanguages = Object.keys(translations).filter(lang => lang !== language);
@@ -31,27 +45,6 @@ export const useTranslation = () => {
           const valueInOtherLang = get(translations[lang], key);
           if (valueInOtherLang && valueInOtherLang !== key) {
             console.debug(`[Translation DEBUG] Key "${key}" exists in "${lang}" with value: "${valueInOtherLang}"`);
-          }
-        }
-        
-        // Show the nested path structure to help with debugging
-        const keyParts = key.split('.');
-        let currentPath = '';
-        let currentObject = translations[language];
-        
-        for (const part of keyParts) {
-          currentPath = currentPath ? `${currentPath}.${part}` : part;
-          const nested = get(translations[language], currentPath);
-          
-          if (nested) {
-            console.debug(`[Translation DEBUG] Found path "${currentPath}" in ${language}`);
-            if (typeof nested === 'object') {
-              console.debug(`[Translation DEBUG] Available nested keys at "${currentPath}":`, Object.keys(nested));
-              currentObject = nested;
-            }
-          } else {
-            console.debug(`[Translation DEBUG] Path "${currentPath}" not found in ${language}`);
-            break;
           }
         }
       }

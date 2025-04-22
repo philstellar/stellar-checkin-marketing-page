@@ -14,17 +14,19 @@ export const en = {
   hero: heroEN,
   
   // Features
-  features: {
-    title: "Check-in",
-    subtitle: "Digitize your check-in process – fast, secure, and paperless.",
-    moreBtn: "Learn more"
-  },
+  features: featuresEN,
 
   // Partners Section
   partners: partnersEN,
 
   // Kurtaxe Section
   kurtaxe: kurtaxeEN,
+
+  // Insurance Section
+  insurance: insuranceEN,
+
+  // Trust Badge
+  trustBadge: trustBadgeEN,
 
   // Cookies Section
   cookies: {
@@ -260,92 +262,8 @@ export const en = {
     terms: "Terms and Conditions",
     copyright: "All rights reserved."
   },
-  insurance: {
-    title: "Cleverly Automate Insurance and Deposits",
-    introduction: "Offer your guests optional insurance and benefit from additional income.",
-    section1: {
-      title: "Faster Check-in Process",
-      content: "No more deposit handling, less work for you and your guests."
-    },
-    section2: {
-      title: "Additional Income Source",
-      content: "Earn commission with every insurance policy – automatically and without extra effort."
-    },
-    section3: {
-      title: "Comprehensive Protection",
-      content: "Better protection than traditional deposits, thanks to higher coverage amounts, \"new for old\" coverage, and protection against rental loss."
-    },
-    benefits: {
-      title: "The Benefits of Insurance at a Glance",
-      list: [
-        "Speed up the check-in process by eliminating time-consuming deposit handling. Your guests can unwind immediately upon arrival without worrying about cash or card authorizations.",
-        "Generate extra income through attractive commissions with every insurance booking. A passive income stream that grows automatically with each reservation.",
-        "Benefit from significantly higher coverage compared to traditional deposits. The insurance offers broader financial security for your property and furnishings.",
-        "Experience seamless integration into your existing check-in flow. Insurance is embedded into the reservation process automatically with no added admin burden.",
-        "Comprehensive protection for you and your guests—from property damage and theft to unexpected events. A peace-of-mind solution for both parties.",
-        "Benefit from smooth, automated damage processing with no need to confront guests directly. Fast handling and fair compensation in case of claims."
-      ]
-    },
-    shortTerm: {
-      title: "Short-term Rental Insurance",
-      description: "Flexible insurance solutions for your holiday rental—tailored to your needs."
-    },
-    details: {
-      furniture: {
-        title: "Furniture & Furnishings",
-        description: "Comprehensive protection for your furniture and furnishings."
-      },
-      newForOld: {
-        title: "New for Old",
-        description: "In case of damage, you receive the new replacement value for affected items."
-      },
-      rentalLoss: {
-        title: "Rental Loss",
-        description: "Protection against lost rental income due to property damage."
-      },
-      petDamage: {
-        title: "Pet Damage",
-        description: "Coverage against damage caused by guests’ pets."
-      },
-      cleaning: {
-        title: "Cleaning",
-        description: "Covers the costs of extraordinary cleaning jobs."
-      },
-      art: {
-        title: "Art & Decor",
-        description: "Insurance cover for art objects and decorative elements."
-      }
-    },
-    faq: {
-      airbnb: {
-        question: "Do I need your guest insurance even if I list on Airbnb or Booking.com?",
-        answer:
-          "Yes—even though platforms like Airbnb and Booking.com provide some coverage, there are significant limitations. Airbnb's AirCover is not traditional insurance and always involves the guest, asking them to pay for damages. Only if the guest refuses does AirCover come into play. This can lead to conflict with guests, negative reviews, and is limited to Airbnb bookings. Booking.com's deposit program merely facilitates disputes with guests and is capped at €300 in the EU, potentially affecting your ranking or conversion. Our insurance operates independently and without those guest-facing issues."
-      },
-      repeat: {
-        question: "Can guest damage insurance boost repeat bookings?",
-        answer:
-          "Repeat guests appreciate consistency and reliability. By providing insurance, managers and hosts demonstrate extra care, and guests know they won’t face surprise charges or hidden fees. Claims are generally settled without guest involvement, ensuring a positive experience and encouraging loyalty and better reviews."
-      },
-      deposit: {
-        question: "Should I still ask for a deposit?",
-        answer:
-          "Deposits can offer financial security and encourage careful treatment of your property. However, guests often avoid properties requiring deposits, due to the hassle and risk of deductions. With our guest damage insurance, you can skip deposits completely or present it as a convenience option. Claims are normally settled directly, avoiding guest disputes and helping drive more repeat bookings and 5-star reviews."
-      },
-      coverage: {
-        question: "What does your insurance cover?",
-        answer:
-          "Our short-term rental insurance is custom-built for property managers and owners—a robust solution for these scenarios: Accidental and malicious property damage (with replacement value), guest theft, loss of income due to covered damages, extra cleaning costs for damage beyond normal wear-and-tear, pet damage, and more."
-      },
-      cost: {
-        question: "What does guest damage insurance cost?",
-        answer:
-          "Our guest damage insurance starts at €2.80 per night—pricing depends on the chosen coverage. Details are in your Stellar account. You can choose to pay or pass costs to the guest as a deposit replacement. To ensure every stay is protected, you can cover the fee yourself and bundle it into your rates."
-      }
-    }
-  },
-  trustBadge: trustBadgeEN,
 
+  // Brevo Popup
   brevoPopup: {
     invalidEmailTitle: "Invalid email",
     invalidEmailDesc: "Please enter a valid email address.",
