@@ -1,24 +1,11 @@
+
 # Allow all crawlers to index the site
 User-agent: *
 Allow: /
 
-# Disallow specific pages
-Disallow: /*/versicherung
-Disallow: /*/trust-badge
-Disallow: /*/ueber-uns
-Disallow: /*/erfolgsgeschichten
-Disallow: /*/faq
-Disallow: /*/home
-
 # Allow Google specifically
 User-agent: Googlebot
 Allow: /
-Disallow: /*/versicherung
-Disallow: /*/trust-badge
-Disallow: /*/ueber-uns
-Disallow: /*/erfolgsgeschichten
-Disallow: /*/faq
-Disallow: /*/home
 
 # Allow Google Image
 User-agent: Googlebot-Image
@@ -44,3 +31,4 @@ Crawl-delay: 10
 
 # Instructions for page rendering
 Cache-Control: max-age=3600
+
