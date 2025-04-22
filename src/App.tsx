@@ -96,6 +96,11 @@ const App = () => {
           <Route path="/it/trust-badge" element={<TrustBadgePage />} />
           <Route path="/es/trust-badge" element={<TrustBadgePage />} />
           
+          {/* Add redirect for /en/versicherung to /en/insurance */}
+          <Route path="/en/versicherung" element={<Navigate to="/en/insurance" replace />} />
+          <Route path="/it/versicherung" element={<Navigate to="/it/assicurazione" replace />} />
+          <Route path="/es/versicherung" element={<Navigate to="/es/seguro" replace />} />
+          
           {/* Catch-all for 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>

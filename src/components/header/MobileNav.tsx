@@ -1,3 +1,4 @@
+
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -30,6 +31,26 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
   const isProduction = window.location.hostname === 'stellar-checkin.com';
+
+  // Map paths to their language-specific URLs
+  const getLocalizedPath = (basePath: string) => {
+    const pathMap: Record<string, Record<string, string>> = {
+      'versicherung': {
+        'de': 'versicherung',
+        'en': 'insurance',
+        'it': 'assicurazione',
+        'es': 'seguro'
+      },
+      'trust-badge': {
+        'de': 'trust-badge',
+        'en': 'trust-badge',
+        'it': 'trust-badge',
+        'es': 'trust-badge'
+      }
+    };
+    
+    return pathMap[basePath]?.[currentLanguage] || basePath;
+  };
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
@@ -130,14 +151,14 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               </div>
               
               <button 
-                onClick={() => handleNavigation('versicherung')}
+                onClick={() => handleNavigation(getLocalizedPath('versicherung'))}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.insurance')}
               </button>
               
               <button 
-                onClick={() => handleNavigation('trust-badge')}
+                onClick={() => handleNavigation(getLocalizedPath('trust-badge'))}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.trustBadge')}

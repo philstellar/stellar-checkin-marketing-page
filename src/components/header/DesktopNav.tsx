@@ -1,3 +1,4 @@
+
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -46,6 +47,26 @@ const DesktopNav = ({
     document.head.appendChild(link);
   };
 
+  // Map paths to their language-specific URLs
+  const getLocalizedPath = (basePath: string) => {
+    const pathMap: Record<string, Record<string, string>> = {
+      'versicherung': {
+        'de': 'versicherung',
+        'en': 'insurance',
+        'it': 'assicurazione',
+        'es': 'seguro'
+      },
+      'trust-badge': {
+        'de': 'trust-badge',
+        'en': 'trust-badge',
+        'it': 'trust-badge',
+        'es': 'trust-badge'
+      }
+    };
+    
+    return pathMap[basePath]?.[currentLanguage] || basePath;
+  };
+
   return (
     <nav className="hidden md:flex items-center space-x-8">
       {!isProduction && <button onClick={() => handleNavigation('home')} className="text-royal hover:text-apple font-medium transition-colors">
@@ -92,10 +113,18 @@ const DesktopNav = ({
       </DropdownMenu>
 
       {!isProduction && <>
-          <button onClick={() => handleNavigation('versicherung')} onMouseEnter={() => handleMouseEnter('versicherung')} className="text-royal hover:text-apple font-medium transition-colors">
+          <button 
+            onClick={() => handleNavigation(getLocalizedPath('versicherung'))} 
+            onMouseEnter={() => handleMouseEnter(getLocalizedPath('versicherung'))} 
+            className="text-royal hover:text-apple font-medium transition-colors"
+          >
             {t('navigation.insurance')}
           </button>
-          <button onClick={() => handleNavigation('trust-badge')} onMouseEnter={() => handleMouseEnter('trust-badge')} className="text-royal hover:text-apple font-medium transition-colors">
+          <button 
+            onClick={() => handleNavigation(getLocalizedPath('trust-badge'))} 
+            onMouseEnter={() => handleMouseEnter(getLocalizedPath('trust-badge'))} 
+            className="text-royal hover:text-apple font-medium transition-colors"
+          >
             {t('navigation.trustBadge')}
           </button>
         </>}
