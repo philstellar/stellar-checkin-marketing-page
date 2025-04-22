@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useTranslation } from "@/hooks/use-translation";
 import { Brush, Image, FileText, PawPrint } from "lucide-react";
