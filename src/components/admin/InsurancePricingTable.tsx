@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useTranslation } from "@/hooks/use-translation";
 import { Brush, Image, FileText, PawPrint } from "lucide-react";
@@ -81,10 +82,9 @@ const InsurancePricingTable = () => {
                     </div>
                   )}
                 </div>
-                <div className="grid grid-cols-3 gap-2 text-center w-full">
-                  <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
-                  <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
-                  <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
+                {/* Now show description ONCE in a single, full-width cell—no grid, no repetition */}
+                <div className="p-2 bg-gray-50 rounded text-center">
+                  {formatValue(rows[i]?.description)}
                 </div>
               </div>
             ))}
@@ -164,3 +164,4 @@ const InsurancePricingTable = () => {
 };
 
 export default InsurancePricingTable;
+
