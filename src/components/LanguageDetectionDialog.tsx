@@ -1,4 +1,3 @@
-
 import { useNavigate } from 'react-router-dom';
 import {
   Dialog,
@@ -18,8 +17,14 @@ export const LanguageDetectionDialog = () => {
     
     if (detectedLanguage) {
       const currentPath = window.location.pathname;
-      const newPath = currentPath.replace(/^\/(?:de|en|fr|es)?/, `/${detectedLanguage}`);
-      navigate(newPath || `/${detectedLanguage}`);
+      const currentLang = getCurrentPathLanguage();
+      
+      if (currentLang) {
+        const newPath = currentPath.replace(`/${currentLang}`, `/${detectedLanguage}`);
+        navigate(newPath);
+      } else {
+        navigate(`/${detectedLanguage}${currentPath}`);
+      }
     }
   };
 
@@ -41,7 +46,7 @@ export const LanguageDetectionDialog = () => {
 
   return (
     <Dialog open={shouldShowPopup} onOpenChange={setShouldShowPopup}>
-      <DialogContent className="sm:max-w-md bg-white"> {/* Added bg-white to make background non-transparent */}
+      <DialogContent className="sm:max-w-md bg-white">
         <div className="flex flex-col space-y-4">
           <div className="space-y-2 text-center sm:text-left">
             <p className="text-lg">

@@ -2,6 +2,7 @@
 import React from "react";
 import { useTranslation } from "@/hooks/use-translation";
 import { Brush, Image, FileText, PawPrint } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Helper for value formatting
 const formatValue = (value?: string) =>
@@ -14,6 +15,7 @@ const IconCell = ({ icon }: { icon: React.ReactNode }) => (
 
 const InsurancePricingTable = () => {
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
   const header = t("insurance.pricing.header") as any;
   const rows = t("insurance.pricing.rows") as any[];
 
@@ -37,6 +39,54 @@ const InsurancePricingTable = () => {
     t("insurance.pricing.rows.3.label") ||
     "Additional coverage\n(up to)";
 
+  // Mobile optimized view
+  if (isMobile) {
+    return (
+      <div className="bg-white rounded-xl shadow p-4 mb-6">
+        <h3 className="text-xl font-semibold mb-4">{header.coverage}</h3>
+        
+        {/* Price per night */}
+        <div className="mb-6">
+          <div className="font-medium border-b pb-2 mb-2">{rows[0]?.label}</div>
+          <div className="grid grid-cols-3 gap-2 text-center">
+            <div className="p-2 bg-gray-50 rounded">{rows[0]?.value1}</div>
+            <div className="p-2 bg-gray-50 rounded">{rows[0]?.value2}</div>
+            <div className="p-2 bg-gray-50 rounded">{rows[0]?.value3}</div>
+          </div>
+        </div>
+        
+        {/* Coverage & Recourse */}
+        {[1, 2].map((i) => (
+          <div key={i} className="mb-6">
+            <div className="font-medium border-b pb-2 mb-2">{rows[i]?.label}</div>
+            <div className="p-2 bg-gray-50 rounded text-center">
+              {formatValue(rows[i]?.description)}
+            </div>
+          </div>
+        ))}
+        
+        {/* Additional Coverage Section */}
+        <div className="mb-6">
+          <div className="font-medium border-b pb-2 mb-4">{ADDITIONAL_COVERAGE_LABEL}</div>
+          
+          {[3, 4, 5, 6].map((i) => (
+            <div key={i} className="mb-4 last:mb-0">
+              <div className="flex items-center mb-2">
+                {rowIcons[i] && <div className="mr-2">{rowIcons[i]}</div>}
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-center">
+                <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
+                <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
+                <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop view (original table)
   return (
     <div className="bg-white rounded-xl shadow p-4 md:p-8 mb-6 overflow-x-auto">
       <table className="w-full text-[15px]">
@@ -105,4 +155,3 @@ const InsurancePricingTable = () => {
 };
 
 export default InsurancePricingTable;
-
