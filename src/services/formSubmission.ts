@@ -12,19 +12,19 @@ interface FormData {
 export const submitContactForm = async (formData: FormData) => {
   console.log('Contact form submission, adding to Brevo:', formData.email);
   
-  // First, try to add the contact to Brevo via our proxy
+  // First, try to add the contact to Brevo directly
   try {
     const response = await addContactToBrevo(formData.email);
-    console.log('Brevo proxy response:', response);
+    console.log('Brevo API response:', response);
     
     // Handle non-success responses
     if (!response.ok && response.status !== 201) {
       const errorData = await response.json().catch(() => ({}));
-      console.error("Brevo proxy error:", errorData);
+      console.error("Brevo API error:", errorData);
       // We'll continue with form submission even if Brevo fails
     }
   } catch (error) {
-    console.error("Failed to add contact to Brevo via proxy:", error);
+    console.error("Failed to add contact to Brevo:", error);
     // We'll continue with form submission even if Brevo fails
   }
   

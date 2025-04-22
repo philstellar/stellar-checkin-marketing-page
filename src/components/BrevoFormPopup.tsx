@@ -1,3 +1,4 @@
+
 import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { X, Mail, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -27,7 +28,7 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     setEmail(e.target.value);
   };
 
-  // Handle form submission with proxy API call
+  // Handle form submission with direct API call
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -43,13 +44,22 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     setIsSubmitting(true);
     
     try {
-      console.log('BrevoFormPopup: Submitting email to Brevo via proxy:', email);
-      const response = await addContactToBrevo(email);
-      console.log('BrevoFormPopup: Proxy submission response status:', response.status);
+      // Log client IP for debugging
+      try {
+        const ipResponse = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipResponse.json();
+        console.log('Client IP address:', ipData.ip);
+      } catch (ipError) {
+        console.error('Error getting IP address:', ipError);
+      }
       
-      // Handle proxy response
+      console.log('BrevoFormPopup: Submitting email to Brevo directly:', email);
+      const response = await addContactToBrevo(email);
+      console.log('BrevoFormPopup: Brevo API response status:', response.status);
+      
+      // Handle API response
       if (response.ok || response.status === 201 || response.status === 204) {
-        console.log('BrevoFormPopup: Contact successfully submitted via proxy');
+        console.log('BrevoFormPopup: Contact successfully added to Brevo');
         setIsSubmitted(true);
         toast({
           title: "Erfolgreich!",
@@ -66,10 +76,10 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
           console.error("Error reporting conversion:", error);
         }
       } else {
-        // Handle error from proxy
+        // Handle error from API
         const data = await response.json().catch(() => ({}));
-        console.error('BrevoFormPopup: Proxy error response:', data);
-        throw new Error('Failed to add contact via proxy: ' + (data?.message || 'Unknown error'));
+        console.error('BrevoFormPopup: Brevo API error response:', data);
+        throw new Error('Failed to add contact to Brevo: ' + (data?.message || 'Unknown error'));
       }
     } catch (error) {
       console.error('BrevoFormPopup: Error submitting form:', error);
