@@ -41,7 +41,7 @@ export const LanguageDetectionDialog = () => {
 
   return (
     <Dialog open={shouldShowPopup} onOpenChange={setShouldShowPopup}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md bg-white"> {/* Added bg-white to make background non-transparent */}
         <div className="flex flex-col space-y-4">
           <div className="space-y-2 text-center sm:text-left">
             <p className="text-lg">
