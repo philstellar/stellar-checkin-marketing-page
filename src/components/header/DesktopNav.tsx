@@ -61,13 +61,6 @@ const DesktopNav = ({
           {t('navigation.home')}
         </button>
       )}
-      <button 
-        onClick={() => handleNavigation('versicherung')} 
-        onMouseEnter={() => handleMouseEnter('versicherung')} 
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
-        {t('navigation.insurance')}
-      </button>
 
       <DropdownMenu>
         <DropdownMenuTrigger className="text-royal hover:text-apple font-medium transition-colors outline-none flex items-center gap-1">
@@ -107,6 +100,14 @@ const DesktopNav = ({
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+      
+      <button 
+        onClick={() => handleNavigation('versicherung')} 
+        onMouseEnter={() => handleMouseEnter('versicherung')} 
+        className="text-royal hover:text-apple font-medium transition-colors"
+      >
+        {t('navigation.insurance')}
+      </button>
 
       {/* Show Trust Badge in non-production */}
       {!isProduction && (
@@ -134,4 +135,3 @@ const DesktopNav = ({
 };
 
 export default memo(DesktopNav);
-

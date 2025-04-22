@@ -9,12 +9,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useTranslation } from '@/hooks/use-translation';
 
-interface InsuranceComparisonTableProps {
-  t: (key: string) => string;
-}
-
-const InsuranceComparisonTable = ({ t }: InsuranceComparisonTableProps) => {
+const InsuranceComparisonTable = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
       name: t('insurance.comparison.rows.0'),

@@ -2,12 +2,11 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield } from 'lucide-react';
+import { useTranslation } from '@/hooks/use-translation';
 
-interface OverviewCardsProps {
-  t: (key: string) => string;
-}
-
-const OverviewCards = ({ t }: OverviewCardsProps) => {
+const OverviewCards = () => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <div className="flex items-center gap-3 mb-8">

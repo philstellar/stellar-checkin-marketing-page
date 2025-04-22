@@ -77,7 +77,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             animate="visible"
           >
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
-              {/* Always show Home and Trust Badge except production */}
+              {/* Always show Home in non-production */}
               {!isProduction && (
                 <button 
                   onClick={() => handleNavigation('home')}
@@ -86,13 +86,6 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                   {t('navigation.home')}
                 </button>
               )}
-
-              <button 
-                onClick={() => handleNavigation('versicherung')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.insurance')}
-              </button>
 
               <div className="space-y-2">
                 <div className="block w-full text-xl text-royal font-medium py-2 text-left">
@@ -137,6 +130,13 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                   </a>
                 </div>
               </div>
+
+              <button 
+                onClick={() => handleNavigation('versicherung')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+              >
+                {t('navigation.insurance')}
+              </button>
               
               {/* Trust Badge link in non-production */}
               {!isProduction && (
@@ -177,4 +177,3 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
 };
 
 export default memo(MobileNav);
-

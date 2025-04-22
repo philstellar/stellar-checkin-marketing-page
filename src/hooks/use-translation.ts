@@ -15,14 +15,29 @@ export const useTranslation = () => {
 
     let value = get(translations[language], key);
     
-    // Debug output in development
+    // Enhanced debug output in development
     if (process.env.NODE_ENV === 'development') {
-      console.info(`Translation result for ${key}: "${value}"`);
+      console.debug(`[Translation] Key: "${key}", Language: "${language}", Result: "${value}"`);
+      
+      // If translation is missing or shows the key itself
+      if (!value || value === key) {
+        console.warn(`[Translation WARNING] Missing translation for key: "${key}" in language "${language}"`);
+        // Log the structure to help debug
+        console.debug(`Available paths in ${language}:`, Object.keys(translations[language]));
+        
+        // Try to find the path in other languages to help debug
+        const otherLanguages = Object.keys(translations).filter(lang => lang !== language);
+        for (const lang of otherLanguages) {
+          const valueInOtherLang = get(translations[lang], key);
+          if (valueInOtherLang && valueInOtherLang !== key) {
+            console.debug(`[Translation DEBUG] Key "${key}" exists in "${lang}" with value: "${valueInOtherLang}"`);
+          }
+        }
+      }
     }
     
     // If translation is missing, return the key as fallback
     if (!value) {
-      console.warn(`Missing translation for key: ${key} in language ${language}`);
       return key;
     }
     

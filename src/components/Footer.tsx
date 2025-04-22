@@ -70,7 +70,7 @@ const Footer = () => {
                   {t('navigation.faq')}
                 </Link>
               </li>
-              {/* Removed Insurance Link from Footer */}
+              {/* Insurance link has been removed from Footer */}
             </ul>
           </div>
           
@@ -121,4 +121,3 @@ const Footer = () => {
 };
 
 export default memo(Footer);
-
