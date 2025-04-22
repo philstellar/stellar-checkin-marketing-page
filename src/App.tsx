@@ -1,3 +1,4 @@
+
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -84,14 +85,15 @@ const App = () => {
           <Route path="/es/agb" element={<AgbES />} />
           <Route path="/es/brevo" element={<Brevo />} />
           
-          {/* Insurance and Trust Badge routes - available regardless of publish status */}
+          {/* Insurance and Trust Badge routes for all languages */}
           <Route path="/de/versicherung" element={<VersicherungPage />} />
-          <Route path="/de/trust-badge" element={<TrustBadgePage />} />
           <Route path="/en/insurance" element={<VersicherungPage />} />
-          <Route path="/en/trust-badge" element={<TrustBadgePage />} />
           <Route path="/it/assicurazione" element={<VersicherungPage />} />
-          <Route path="/it/trust-badge" element={<TrustBadgePage />} />
           <Route path="/es/seguro" element={<VersicherungPage />} />
+          
+          <Route path="/de/trust-badge" element={<TrustBadgePage />} />
+          <Route path="/en/trust-badge" element={<TrustBadgePage />} />
+          <Route path="/it/trust-badge" element={<TrustBadgePage />} />
           <Route path="/es/trust-badge" element={<TrustBadgePage />} />
           
           {/* Catch-all for 404 */}
