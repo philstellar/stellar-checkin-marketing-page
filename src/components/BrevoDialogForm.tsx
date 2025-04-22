@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { Mail } from "lucide-react";
+import { Mail, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { addContactToBrevo } from "@/services/brevoService";
 import { useTranslation } from "@/hooks/use-translation";
@@ -93,6 +94,14 @@ const BrevoDialogForm = ({ onSuccess, onClose }: BrevoDialogFormProps) => {
 
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-[540px] relative">
+      <button 
+        onClick={onClose}
+        className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none z-10"
+        aria-label={t("brevoPopup.closeBtn", { defaultValue: "Schließen" })}
+      >
+        <X className="h-4 w-4" />
+      </button>
+
       <div className="flex justify-center mb-4">
         <Mail className="text-apple-500" size={48} strokeWidth={1.5} />
       </div>
