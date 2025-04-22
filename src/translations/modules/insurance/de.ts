@@ -13,6 +13,57 @@ export const insuranceDE = {
     title: "Umfassender Schutz",
     content: "Besserer Schutz als herkömmliche Kautionen, dank höherer Deckungssummen, \"Neu für Alt\"-Deckung und Schutz vor Mietausfall."
   },
+  comparison: {
+    headline: "Versicherungs- und Kautionsmanagement",
+    header: {
+      feature: "In der Versicherung enthalten",
+      classic: "Klassische\nHausratsversicherung"
+    },
+    rows: [
+      "Keine Gästehaftung für versehentliche Schäden",
+      "Buchungen über alle Kanäle (inkl. Direktbuchungen)",
+      "Schutz bei Schäden durch Haustiere",
+      "Schutz bei Mietausfall",
+      "Schäden während gewerblicher Vermietung"
+    ]
+  },
+  pricing: {
+    header: {
+      coverage: "Maximale Deckungssumme",
+      amount1: "€ 5.000",
+      amount2: "€ 10.000",
+      amount3: "€ 50.000"
+    },
+    rows: [
+      {
+        label: "Preis pro Nacht\n(plus Versicherungssteuer)",
+        value1: "€ 2,82",
+        value2: "€ 3,62",
+        value3: "€ 4,91"
+      },
+      {
+        label: "Deckung (SB €100)",
+        description: "Schäden an Inventar und Gebäuden zum Wiederbeschaffungswert"
+      },
+      {
+        label: "Gäste-Regress",
+        description: "Nur bei vorsätzlicher Beschädigung"
+      },
+      {
+        label: "Zusätzliche Abdeckung\n(bis zu)",
+        description: "Zusätzliche Reinigungskosten bis zu € 1.000"
+      },
+      {
+        description: "Kunstwerke und Wertsachen bis zu € 10.000"
+      },
+      {
+        description: "Mietausfall bis zu € 5.000 (oder 21 Tage)"
+      },
+      {
+        description: "Durch Haustiere verursachte Schäden bis zu € 5.000"
+      }
+    ]
+  },
   benefits: {
     title: "Die Vorteile der Versicherung im Überblick",
     list: [

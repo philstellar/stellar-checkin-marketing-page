@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -44,7 +43,7 @@ const VersicherungPage = () => {
 
         <div className="prose max-w-none">
           <div className="mb-12">
-            <InsuranceComparisonTable />
+            <InsuranceComparisonTable t={t} />
           </div>
           
           <BenefitsSection t={t} />
@@ -62,7 +61,7 @@ const VersicherungPage = () => {
             <p className="text-lg text-royal-700 text-center mb-8">
               {t('insurance.shortTerm.description')}
             </p>
-            <InsurancePricing />
+            <InsurancePricing t={t} />
           </div>
         </div>
       </section>

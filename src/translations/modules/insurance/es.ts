@@ -1,4 +1,3 @@
-
 export const insuranceES = {
   title: "Automatice de Forma Inteligente el Seguro y los Depósitos",
   introduction: "Ofrezca a sus huéspedes un seguro opcional y benefíciese de ingresos adicionales.",
@@ -13,6 +12,57 @@ export const insuranceES = {
   section3: {
     title: "Sus ventajas",
     content: "Recibe comisiones por cada póliza de seguro contratada."
+  },
+  comparison: {
+    headline: "Gestión de Seguros y Depósitos",
+    header: {
+      feature: "Incluido en el seguro",
+      classic: "Seguro de hogar clásico"
+    },
+    rows: [
+      "Sin responsabilidad del huésped por daños accidentales",
+      "Reservas en todos los canales (incluidas reservas directas)",
+      "Cobertura por daños de mascotas",
+      "Cobertura por pérdida de alquiler",
+      "Cobertura de daños en alquileres comerciales"
+    ]
+  },
+  pricing: {
+    header: {
+      coverage: "Cobertura máxima",
+      amount1: "€5.000",
+      amount2: "€10.000",
+      amount3: "€50.000"
+    },
+    rows: [
+      {
+        label: "Precio por noche\n(más impuestos del seguro)",
+        value1: "€2,82",
+        value2: "€3,62",
+        value3: "€4,91"
+      },
+      {
+        label: "Cobertura (franquicia €100)",
+        description: "Daños a inventario e inmuebles al valor de reposición"
+      },
+      {
+        label: "Recurso contra huéspedes",
+        description: "Solo en caso de daño intencionado"
+      },
+      {
+        label: "Cobertura adicional\n(hasta)",
+        description: "Costes adicionales de limpieza hasta €1.000"
+      },
+      {
+        description: "Obras de arte y objetos de valor hasta €10.000"
+      },
+      {
+        description: "Pérdida de alquiler hasta €5.000 (o 21 días)"
+      },
+      {
+        description: "Daños causados por mascotas hasta €5.000"
+      }
+    ]
   },
   benefits: {
     title: "Los Beneficios del Seguro de un Vistazo",

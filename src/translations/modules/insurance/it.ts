@@ -1,4 +1,3 @@
-
 export const insuranceIT = {
   title: "Automatizza in Modo Intelligente Assicurazione e Depositi",
   introduction: "Offri ai tuoi ospiti un'assicurazione facoltativa e beneficia di entrate aggiuntive.",
@@ -13,6 +12,57 @@ export const insuranceIT = {
   section3: {
     title: "I tuoi vantaggi",
     content: "Ricevi commissioni per ogni polizza assicurativa acquistata."
+  },
+  comparison: {
+    headline: "Gestione Assicurazione e Depositi",
+    header: {
+      feature: "Incluso nell'assicurazione",
+      classic: "Polizza casa\nclassica"
+    },
+    rows: [
+      "Nessuna responsabilità dell'ospite per danni accidentali",
+      "Prenotazioni su tutti i canali (anche dirette)",
+      "Copertura danni da animali domestici",
+      "Copertura perdita d’affitto",
+      "Copertura danni per locazioni commerciali"
+    ]
+  },
+  pricing: {
+    header: {
+      coverage: "Massimale assicurativo",
+      amount1: "€5.000",
+      amount2: "€10.000",
+      amount3: "€50.000"
+    },
+    rows: [
+      {
+        label: "Prezzo per notte\n(più tasse assicurative)",
+        value1: "€2,82",
+        value2: "€3,62",
+        value3: "€4,91"
+      },
+      {
+        label: "Copertura (franchigia €100)",
+        description: "Danni a inventario e immobili al valore di sostituzione"
+      },
+      {
+        label: "Rivalza sull’ospite",
+        description: "Solo in caso di danno intenzionale"
+      },
+      {
+        label: "Coperture aggiuntive\n(fino a)",
+        description: "Spese di pulizia straordinaria fino a €1.000"
+      },
+      {
+        description: "Opere d’arte e oggetti di valore fino a €10.000"
+      },
+      {
+        description: "Perdita d’affitto fino a €5.000 (o 21 giorni)"
+      },
+      {
+        description: "Danni da animali domestici fino a €5.000"
+      }
+    ]
   },
   benefits: {
     title: "I Vantaggi dell'Assicurazione in Breve",

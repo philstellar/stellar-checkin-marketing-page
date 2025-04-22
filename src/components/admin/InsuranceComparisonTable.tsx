@@ -10,38 +10,42 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const InsuranceComparisonTable = () => {
+interface InsuranceComparisonTableProps {
+  t: (key: string) => string;
+}
+
+const InsuranceComparisonTable = ({ t }: InsuranceComparisonTableProps) => {
   const features = [
     {
-      name: "Keine Gästehaftung für versehentliche Schäden",
+      name: t('insurance.comparison.rows.0'),
       stellar: true,
       airbnb: false,
       booking: false,
       classic: false,
     },
     {
-      name: "Buchungen über alle Kanäle (inkl. Direktbuchungen)",
+      name: t('insurance.comparison.rows.1'),
       stellar: true,
       airbnb: false,
       booking: false,
       classic: false,
     },
     {
-      name: "Schutz bei Schäden durch Haustiere",
+      name: t('insurance.comparison.rows.2'),
       stellar: true,
       airbnb: true,
       booking: false,
       classic: false,
     },
     {
-      name: "Schutz bei Mietausfall",
+      name: t('insurance.comparison.rows.3'),
       stellar: true,
       airbnb: false,
       booking: false,
       classic: false,
     },
     {
-      name: "Schäden während gewerblicher Vermietung",
+      name: t('insurance.comparison.rows.4'),
       stellar: true,
       airbnb: true,
       booking: false,
@@ -66,7 +70,7 @@ const InsuranceComparisonTable = () => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[300px] font-bold text-black">In der Versicherung enthalten</TableHead>
+            <TableHead className="w-[300px] font-bold text-black">{t('insurance.comparison.header.feature')}</TableHead>
             <TableHead className="text-center">
               <img 
                 src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2024/11/stellar_tourism_innovations_gmbh_logo.jpeg" 
@@ -89,7 +93,7 @@ const InsuranceComparisonTable = () => {
               />
             </TableHead>
             <TableHead className="text-center font-bold text-black">
-              Klassische<br />Hausratsversicherung
+              {t('insurance.comparison.header.classic')}
             </TableHead>
           </TableRow>
         </TableHeader>
