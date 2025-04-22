@@ -1,3 +1,4 @@
+
 import { navigationEN } from './modules/navigation';
 import { heroEN } from './modules/hero';
 import { featuresEN } from './modules/features';
@@ -5,7 +6,6 @@ import { partnersEN } from './modules/partners';
 import { kurtaxeEN } from './modules/kurtaxe';
 import { insuranceEN } from './modules/insurance';
 import { trustBadgeEN } from './modules/trustBadge';
-import { languageSuggestionEN } from './modules/languageSuggestion';
 
 export const en = {
   // Header
@@ -262,5 +262,4 @@ export const en = {
   },
   insurance: insuranceEN,
   trustBadge: trustBadgeEN,
-  languageSuggestion: languageSuggestionEN,
 };

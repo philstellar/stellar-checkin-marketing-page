@@ -1,3 +1,4 @@
+
 import { navigationES } from './modules/navigation';
 import { heroES } from './modules/hero';
 import { featuresES } from './modules/features';
@@ -5,7 +6,6 @@ import { partnersES } from './modules/partners';
 import { kurtaxeES } from './modules/kurtaxe';
 import { insuranceES } from './modules/insurance';
 import { trustBadgeES } from './modules/trustBadge';
-import { languageSuggestionES } from './modules/languageSuggestion';
 
 export const es = {
   // Header
@@ -215,5 +215,4 @@ export const es = {
 
   insurance: insuranceES,
   trustBadge: trustBadgeES,
-  languageSuggestion: languageSuggestionES,
 };
