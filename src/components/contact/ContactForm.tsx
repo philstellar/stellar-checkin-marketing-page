@@ -150,7 +150,7 @@ const ContactForm = () => {
       <div>
         <Button 
           type="submit" 
-          className="w-full bg-apple hover:bg-apple-600 text-white px-6 py-3 rounded-lg"
+          className="w-full bg-apple hover:bg-apple-600 text-black px-6 py-3 rounded-[5px]"
           disabled={isSubmitting}
         >
           {isSubmitting ? t('contact.formSending') : t('contact.formSend')} <Send className="ml-2 h-4 w-4" />
