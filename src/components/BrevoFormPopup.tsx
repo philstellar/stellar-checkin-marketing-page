@@ -1,4 +1,3 @@
-
 import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { X, Mail, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -28,7 +27,7 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     setEmail(e.target.value);
   };
 
-  // Handle form submission with direct API call
+  // Handle form submission with proxy API call
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -44,13 +43,13 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     setIsSubmitting(true);
     
     try {
-      console.log('BrevoFormPopup: Submitting email to Brevo:', email);
+      console.log('BrevoFormPopup: Submitting email to Brevo via proxy:', email);
       const response = await addContactToBrevo(email);
-      console.log('BrevoFormPopup: Submission response status:', response.status);
+      console.log('BrevoFormPopup: Proxy submission response status:', response.status);
       
-      // Handle different response statuses
+      // Handle proxy response
       if (response.ok || response.status === 201 || response.status === 204) {
-        console.log('BrevoFormPopup: Contact successfully added to Brevo');
+        console.log('BrevoFormPopup: Contact successfully submitted via proxy');
         setIsSubmitted(true);
         toast({
           title: "Erfolgreich!",
@@ -66,39 +65,17 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
         } catch (error) {
           console.error("Error reporting conversion:", error);
         }
-      } else if (response.status === 400) {
-        // If response is 400, it might be an existing contact which is fine
+      } else {
+        // Handle error from proxy
         const data = await response.json().catch(() => ({}));
-        console.log('BrevoFormPopup: Brevo 400 response data:', data);
-        
-        // If it's just that the contact already exists, we consider it a success
-        if (data?.message?.includes('Contact already exist')) {
-          console.log('BrevoFormPopup: Contact already exists, treating as success');
-          setIsSubmitted(true);
-          toast({
-            title: "Erfolgreich!",
-            description: "Vielen Dank für deine Anmeldung! Wir melden uns in Kürze bei dir.",
-          });
-          
-          // Fire conversion tracking if it exists
-          try {
-            if (typeof window.gtag_report_conversion === 'function') {
-              window.gtag_report_conversion();
-              console.log('Conversion tracking fired');
-            }
-          } catch (error) {
-            console.error("Error reporting conversion:", error);
-          }
-          return;
-        }
-        
-        throw new Error('Failed to add contact to Brevo: ' + (data?.message || 'Unknown error'));
+        console.error('BrevoFormPopup: Proxy error response:', data);
+        throw new Error('Failed to add contact via proxy: ' + (data?.message || 'Unknown error'));
       }
     } catch (error) {
       console.error('BrevoFormPopup: Error submitting form:', error);
       toast({
         title: "Fehler",
-        description: "Es gab ein Problem bei der Anmeldung. Bitte versuche es später noch einmal.",
+        description: "Es gab ein Problem bei der Anmeldung. Wir haben deine Anfrage erhalten und werden uns manuell bei dir melden.",
         variant: "destructive",
       });
     } finally {
