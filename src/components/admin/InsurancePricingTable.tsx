@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useTranslation } from "@/hooks/use-translation";
 import { Brush, Image, FileText, PawPrint } from "lucide-react";
@@ -65,17 +64,20 @@ const InsurancePricingTable = () => {
     t("insurance.pricing.rows.3.label") ||
     "Additional coverage\n(up to)";
 
-  // Simpler mobile version: always fully stacked, no grids, NO horizontal scroll risk
+  // Nicer, denser UX for mobile
   if (isMobile) {
     return (
       <section className="w-full px-2">
         <article className="bg-white rounded-xl shadow px-0 py-0 mb-6 w-full">
-          <h3 className="text-xl font-semibold mb-4 px-4 pt-4 text-left">{header.coverage}</h3>
+          <h3 className="text-[1.1rem] sm:text-xl font-semibold mb-3 px-4 pt-4 text-left leading-tight">
+            {header.coverage}
+          </h3>
 
           {/* 1. Price per night, stacked */}
-          <div className="mb-6 px-4">
-            <div className="font-medium border-b pb-2 mb-2">{rows[0]?.label}</div>
-            {/* Stack options row by row, not side by side */}
+          <div className="mb-5 px-3 sm:px-4">
+            <div className="font-medium border-b border-gray-200 pb-1 mb-2 text-gray-700 text-[0.98rem] sm:text-base">
+              {rows[0]?.label}
+            </div>
             {[
               { amount: header.amount1, val: rows[0]?.value1 },
               { amount: header.amount2, val: rows[0]?.value2 },
@@ -85,10 +87,10 @@ const InsurancePricingTable = () => {
                 className="flex flex-row items-center gap-2 mb-2 last:mb-0"
                 key={idx}
               >
-                <span className="flex-shrink-0 w-auto min-w-0 font-semibold bg-gray-100 px-2 py-1 rounded text-xs text-gray-700">
+                <span className="flex-shrink-0 w-auto min-w-0 font-semibold bg-gray-100 px-2 py-[3px] rounded text-xs text-gray-700">
                   {col.amount}
                 </span>
-                <span className="flex-grow text-center p-2 bg-gray-50 rounded text-[15px]">
+                <span className="flex-grow text-left p-2 bg-gray-50 rounded text-[0.98rem] sm:text-base">
                   {col.val}
                 </span>
               </div>
@@ -97,43 +99,51 @@ const InsurancePricingTable = () => {
 
           {/* 2. Coverage & Recourse */}
           {[1, 2].map((i) => (
-            <div key={i} className="mb-6 px-4">
-              <div className="font-medium border-b pb-2 mb-2">{rows[i]?.label}</div>
-              <div className="p-2 bg-gray-50 rounded text-left text-[15px]">
+            <div key={i} className="mb-5 px-3 sm:px-4">
+              <div className="font-medium border-b border-gray-200 pb-1 mb-2 text-gray-700 text-[0.98rem] sm:text-base">
+                {rows[i]?.label}
+              </div>
+              <div className="p-2 bg-gray-50 rounded text-left text-[0.96rem] sm:text-[1rem] text-gray-700 leading-snug">
                 {formatValue(rows[i]?.description)}
               </div>
             </div>
           ))}
 
-          {/* 3. Additional Coverage, all as individual vertical cards */}
-          <div className="mb-6 px-4">
-            <div className="font-medium border-b pb-2 mb-4 whitespace-pre-line">
+          {/* 3. Additional Coverage, as vertical "cards" with icon left */}
+          <div className="mb-5 px-3 sm:px-4">
+            <div className="font-medium border-b border-gray-200 pb-1 mb-4 whitespace-pre-line text-gray-700 text-[0.98rem] sm:text-base">
               {ADDITIONAL_COVERAGE_LABEL}
             </div>
-            {[3, 4, 5, 6].map((i) => (
-              <div key={i} className="mb-4 last:mb-0 rounded-md bg-gray-25">
-                <div className="flex items-center gap-2 mb-2">
+            <div className="flex flex-col gap-3">
+              {[3, 4, 5, 6].map((i) => (
+                <div key={i}
+                  className="flex flex-row items-start gap-3 bg-gray-50 rounded-md py-3 px-2 shadow-sm"
+                >
                   {rowIcons[i] && (
-                    <span className="inline-flex items-center justify-center mr-1">
+                    <span className="inline-flex items-center justify-center pt-[2px]">
                       {React.cloneElement(rowIcons[i] as React.ReactElement, {
-                        className: "h-6 w-6 text-black rounded-[5px] bg-gray-200"
+                        className:"h-5 w-5 min-w-[1.35rem] text-black rounded-[5px] bg-gray-200"
                       })}
                     </span>
                   )}
-                  <span className="text-base font-medium text-gray-700">{rows[i]?.label}</span>
+                  <div className="flex flex-col">
+                    <span className="text-[0.98rem] sm:text-base font-medium text-gray-700 mb-1">
+                      {rows[i]?.label}
+                    </span>
+                    <span className="text-[0.96rem] sm:text-[1rem] text-gray-700 leading-snug">
+                      {formatValue(rows[i]?.description)}
+                    </span>
+                  </div>
                 </div>
-                <div className="p-2 bg-gray-50 rounded text-[15px]">
-                  {formatValue(rows[i]?.description)}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </article>
       </section>
     );
   }
 
-  // Desktop view (original table, now full width)
+  // Desktop/tablet (unchanged)
   return (
     <div className="w-full px-[15px]">
       <div className="bg-white rounded-xl shadow p-4 md:p-8 mb-6 w-full overflow-x-auto">
