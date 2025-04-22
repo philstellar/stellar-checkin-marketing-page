@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { BrevoFormProvider } from './context/BrevoFormContext';
 import BrevoFormPopupWrapper from './components/BrevoFormPopupWrapper';
 import CookieBanner from './components/CookieBanner';
+import { LanguageDetectionDialog } from './components/LanguageDetectionDialog';
 
 // Lazy load all pages for better initial load performance
 const Index = lazy(() => import('./pages/Index'));
@@ -99,6 +100,7 @@ const App = () => {
       </Suspense>
       <BrevoFormPopupWrapper />
       <CookieBanner />
+      <LanguageDetectionDialog />
       <Toaster />
     </BrevoFormProvider>
   );
