@@ -44,7 +44,6 @@ const InsurancePricingTable = () => {
   const header = t("insurance.pricing.header") as any;
   const rows = t("insurance.pricing.rows") as any[];
 
-  // fallback if translations are broken
   if (!header || !rows) return null;
 
   // Icons for detailed coverage
@@ -58,13 +57,12 @@ const InsurancePricingTable = () => {
     <PawPrint className="h-6 w-6 text-black rounded-[5px]" />, // Pet damage
   ];
 
-  // Text for the new heading cell that covers additional coverage (up to)
   const ADDITIONAL_COVERAGE_LABEL =
     rows[3]?.label ||
     t("insurance.pricing.rows.3.label") ||
     "Additional coverage\n(up to)";
 
-  // Nicer, denser UX for mobile
+  // --------- Revised Mobile Table -----------
   if (isMobile) {
     return (
       <section className="w-full px-2">
@@ -74,63 +72,84 @@ const InsurancePricingTable = () => {
           </h3>
 
           {/* 1. Price per night, stacked */}
-          <div className="mb-5 px-3 sm:px-4">
-            <div className="font-medium border-b border-gray-200 pb-1 mb-2 text-gray-700 text-[0.98rem] sm:text-base">
+          <div className="mb-3 px-3 sm:px-4">
+            <div className="font-medium border-b border-gray-200 pb-1 mb-1 text-gray-700 text-[1.02rem] sm:text-base">
               {rows[0]?.label}
             </div>
-            {[
-              { amount: header.amount1, val: rows[0]?.value1 },
-              { amount: header.amount2, val: rows[0]?.value2 },
-              { amount: header.amount3, val: rows[0]?.value3 },
-            ].map((col, idx) => (
-              <div
-                className="flex flex-row items-center gap-2 mb-2 last:mb-0"
-                key={idx}
-              >
-                <span className="flex-shrink-0 w-auto min-w-0 font-semibold bg-gray-100 px-2 py-[3px] rounded text-xs text-gray-700">
-                  {col.amount}
+            <div className="flex flex-col gap-2">
+              {[
+                { amount: header.amount1, val: rows[0]?.value1 },
+                { amount: header.amount2, val: rows[0]?.value2 },
+                { amount: header.amount3, val: rows[0]?.value3 },
+              ].map((col, idx) => (
+                <div
+                  className="flex flex-row items-center gap-2"
+                  key={idx}
+                >
+                  <span className="flex-shrink-0 font-semibold bg-gray-100 px-2.5 py-1 rounded text-sm text-gray-900 min-w-[64px] text-center">
+                    {col.amount}
+                  </span>
+                  <span className="flex-grow text-left px-2 py-2 bg-gray-50 rounded text-[1rem] text-gray-700">
+                    {col.val}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* NEW: Maximum Coverage Row */}
+          <div className="mb-3 px-3 sm:px-4">
+            <div className="font-medium border-b border-gray-200 pb-1 mb-1 text-gray-700 text-[1.02rem] sm:text-base">
+              {t("insurance.pricing.header.maximumCoverage") || "Maximum Coverage"}
+            </div>
+            <div className="flex flex-row gap-2 mt-2 mb-1">
+              {[header.amount1, header.amount2, header.amount3].map((amount, idx) => (
+                <span
+                  key={amount}
+                  className="flex-shrink-0 font-semibold bg-gray-100 px-2.5 py-1 rounded text-sm text-gray-900 min-w-[64px] text-center"
+                >
+                  {amount}
                 </span>
-                <span className="flex-grow text-left p-2 bg-gray-50 rounded text-[0.98rem] sm:text-base">
-                  {col.val}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* 2. Coverage & Recourse */}
           {[1, 2].map((i) => (
-            <div key={i} className="mb-5 px-3 sm:px-4">
-              <div className="font-medium border-b border-gray-200 pb-1 mb-2 text-gray-700 text-[0.98rem] sm:text-base">
+            <div key={i} className="mb-3 px-3 sm:px-4">
+              <div className="font-medium border-b border-gray-200 pb-1 mb-1 text-gray-700 text-[1.02rem] sm:text-base">
                 {rows[i]?.label}
               </div>
-              <div className="p-2 bg-gray-50 rounded text-left text-[0.96rem] sm:text-[1rem] text-gray-700 leading-snug">
+              <div className="px-2 py-2 bg-gray-50 rounded text-left text-[0.98rem] sm:text-[1.06rem] text-gray-700 leading-snug">
                 {formatValue(rows[i]?.description)}
               </div>
             </div>
           ))}
 
           {/* 3. Additional Coverage, as vertical "cards" with icon left */}
-          <div className="mb-5 px-3 sm:px-4">
-            <div className="font-medium border-b border-gray-200 pb-1 mb-4 whitespace-pre-line text-gray-700 text-[0.98rem] sm:text-base">
+          <div className="mb-3 px-3 sm:px-4">
+            <div className="font-medium border-b border-gray-200 pb-1 mb-2 whitespace-pre-line text-gray-700 text-[1.02rem] sm:text-base">
               {ADDITIONAL_COVERAGE_LABEL}
             </div>
             <div className="flex flex-col gap-3">
               {[3, 4, 5, 6].map((i) => (
-                <div key={i}
+                <div
+                  key={i}
                   className="flex flex-row items-start gap-3 bg-gray-50 rounded-md py-3 px-2 shadow-sm"
                 >
                   {rowIcons[i] && (
                     <span className="inline-flex items-center justify-center pt-[2px]">
                       {React.cloneElement(rowIcons[i] as React.ReactElement, {
-                        className:"h-5 w-5 min-w-[1.35rem] text-black rounded-[5px] bg-gray-200"
+                        className:
+                          "h-5 w-5 min-w-[1.35rem] text-black rounded-[5px] bg-gray-200"
                       })}
                     </span>
                   )}
                   <div className="flex flex-col">
-                    <span className="text-[0.98rem] sm:text-base font-medium text-gray-700 mb-1">
+                    <span className="text-[0.99rem] sm:text-base font-medium text-gray-700 mb-0.5">
                       {rows[i]?.label}
                     </span>
-                    <span className="text-[0.96rem] sm:text-[1rem] text-gray-700 leading-snug">
+                    <span className="text-[0.96rem] sm:text-[1.01rem] text-gray-700 leading-snug">
                       {formatValue(rows[i]?.description)}
                     </span>
                   </div>
@@ -143,7 +162,6 @@ const InsurancePricingTable = () => {
     );
   }
 
-  // Desktop/tablet (unchanged)
   return (
     <div className="w-full px-[15px]">
       <div className="bg-white rounded-xl shadow p-4 md:p-8 mb-6 w-full overflow-x-auto">
