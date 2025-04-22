@@ -70,10 +70,10 @@ export const addContactToBrevo = async (
       listIds,
       updateEnabled: true,
       attributes: {
-        REGISTRATION_PAGE: source.url,
-        REGISTRATION_CTA: source.cta,
-        REGISTRATION_DATE: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD for better Brevo display
-        ...(registrationCountry && { REGISTRATION_COUNTRY: registrationCountry })
+        URL: source.url,
+        CTA: source.cta,
+        DATE: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD for better Brevo display
+        ...(registrationCountry && { COUNTRY: registrationCountry })
       }
     };
 
