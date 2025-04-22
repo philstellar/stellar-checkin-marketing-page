@@ -67,13 +67,32 @@ const InsurancePricingTable = () => {
     return (
       <section className="w-full px-2">
         <article className="bg-white rounded-xl shadow px-0 py-0 mb-6 w-full">
-          <h3 className="text-[1.1rem] sm:text-xl font-semibold mb-3 px-4 pt-4 text-left leading-tight">
+          <h3 className="text-[1.13rem] sm:text-[1.27rem] font-semibold mb-3 px-4 pt-4 text-left leading-tight">
             {header.coverage}
           </h3>
 
-          {/* 1. Price per night, stacked */}
+          {/* Add: Maximum Coverage – above price row, styled as a small table header */}
+          <div className="mb-0.5 px-3 sm:px-4">
+            <div className="w-full flex flex-row gap-2 items-end justify-start">
+              <span className="text-[0.97rem] sm:text-[1.09rem] font-semibold text-gray-700 pb-1">
+                {t("insurance.pricing.header.maximumCoverage") || "Maximum Coverage"}
+              </span>
+            </div>
+            <div className="flex flex-row gap-2 mt-1 mb-2">
+              {[header.amount1, header.amount2, header.amount3].map((amount, idx) => (
+                <span
+                  key={amount}
+                  className="flex-shrink-0 font-semibold bg-gray-100 px-2.5 py-1 rounded text-sm text-gray-900 min-w-[64px] text-center text-[1.07rem] sm:text-[1.12rem]"
+                >
+                  {amount}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* 1. Price per night, stacked (use same style for amounts!) */}
           <div className="mb-3 px-3 sm:px-4">
-            <div className="font-medium border-b border-gray-200 pb-1 mb-1 text-gray-700 text-[1.02rem] sm:text-base">
+            <div className="font-medium border-b border-gray-200 pb-1 mb-1 text-gray-700 text-[1.04rem] sm:text-base">
               {rows[0]?.label}
             </div>
             <div className="flex flex-col gap-2">
@@ -86,10 +105,10 @@ const InsurancePricingTable = () => {
                   className="flex flex-row items-center gap-2"
                   key={idx}
                 >
-                  <span className="flex-shrink-0 font-semibold bg-gray-100 px-2.5 py-1 rounded text-sm text-gray-900 min-w-[64px] text-center">
+                  <span className="flex-shrink-0 font-semibold bg-gray-100 px-2.5 py-1 rounded text-sm text-gray-900 min-w-[64px] text-center text-[1.07rem] sm:text-[1.12rem]">
                     {col.amount}
                   </span>
-                  <span className="flex-grow text-left px-2 py-2 bg-gray-50 rounded text-[1rem] text-gray-700">
+                  <span className="flex-grow text-left px-2 py-2 bg-gray-50 rounded text-[0.99rem] text-gray-700">
                     {col.val}
                   </span>
                 </div>
@@ -97,27 +116,10 @@ const InsurancePricingTable = () => {
             </div>
           </div>
 
-          {/* NEW: Maximum Coverage Row */}
-          <div className="mb-3 px-3 sm:px-4">
-            <div className="font-medium border-b border-gray-200 pb-1 mb-1 text-gray-700 text-[1.02rem] sm:text-base">
-              {t("insurance.pricing.header.maximumCoverage") || "Maximum Coverage"}
-            </div>
-            <div className="flex flex-row gap-2 mt-2 mb-1">
-              {[header.amount1, header.amount2, header.amount3].map((amount, idx) => (
-                <span
-                  key={amount}
-                  className="flex-shrink-0 font-semibold bg-gray-100 px-2.5 py-1 rounded text-sm text-gray-900 min-w-[64px] text-center"
-                >
-                  {amount}
-                </span>
-              ))}
-            </div>
-          </div>
-
           {/* 2. Coverage & Recourse */}
           {[1, 2].map((i) => (
             <div key={i} className="mb-3 px-3 sm:px-4">
-              <div className="font-medium border-b border-gray-200 pb-1 mb-1 text-gray-700 text-[1.02rem] sm:text-base">
+              <div className="font-medium border-b border-gray-200 pb-1 mb-1 text-gray-700 text-[1.01rem] sm:text-[1.09rem]">
                 {rows[i]?.label}
               </div>
               <div className="px-2 py-2 bg-gray-50 rounded text-left text-[0.98rem] sm:text-[1.06rem] text-gray-700 leading-snug">
@@ -128,7 +130,7 @@ const InsurancePricingTable = () => {
 
           {/* 3. Additional Coverage, as vertical "cards" with icon left */}
           <div className="mb-3 px-3 sm:px-4">
-            <div className="font-medium border-b border-gray-200 pb-1 mb-2 whitespace-pre-line text-gray-700 text-[1.02rem] sm:text-base">
+            <div className="font-medium border-b border-gray-200 pb-1 mb-2 whitespace-pre-line text-gray-700 text-[1.01rem] sm:text-base">
               {ADDITIONAL_COVERAGE_LABEL}
             </div>
             <div className="flex flex-col gap-3">
@@ -141,15 +143,15 @@ const InsurancePricingTable = () => {
                     <span className="inline-flex items-center justify-center pt-[2px]">
                       {React.cloneElement(rowIcons[i] as React.ReactElement, {
                         className:
-                          "h-5 w-5 min-w-[1.35rem] text-black rounded-[5px] bg-gray-200"
+                          "h-5 w-5 min-w-[1.3rem] text-black rounded-[5px] bg-gray-200"
                       })}
                     </span>
                   )}
                   <div className="flex flex-col">
-                    <span className="text-[0.99rem] sm:text-base font-medium text-gray-700 mb-0.5">
+                    <span className="text-[0.98rem] sm:text-base font-medium text-gray-700 mb-0.5">
                       {rows[i]?.label}
                     </span>
-                    <span className="text-[0.96rem] sm:text-[1.01rem] text-gray-700 leading-snug">
+                    <span className="text-[0.955rem] sm:text-[1.01rem] text-gray-700 leading-snug">
                       {formatValue(rows[i]?.description)}
                     </span>
                   </div>
