@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useTranslation } from "@/hooks/use-translation";
 import { Brush, Image, FileText, PawPrint } from "lucide-react";
@@ -45,27 +46,27 @@ const InsurancePricingTable = () => {
         <tbody>
           {/* Price per night */}
           <tr className="border-t">
-            <td className="p-4 align-middle">{formatValue(rows[0]?.label)}</td>
+            <td className="p-4 text-left align-middle">{formatValue(rows[0]?.label)}</td>
             <td className="p-4 align-middle text-center">{rows[0]?.value1}</td>
             <td className="p-4 align-middle text-center">{rows[0]?.value2}</td>
             <td className="p-4 align-middle text-center">{rows[0]?.value3}</td>
           </tr>
           {/* Coverage */}
           <tr className="border-t">
-            <td className="p-4 align-middle">{formatValue(rows[1]?.label)}</td>
+            <td className="p-4 text-left align-middle">{formatValue(rows[1]?.label)}</td>
             <td className="p-4 align-middle text-center" colSpan={3}>{formatValue(rows[1]?.description)}</td>
           </tr>
           {/* Recourse */}
           <tr className="border-t">
-            <td className="p-4 align-middle">{formatValue(rows[2]?.label)}</td>
+            <td className="p-4 text-left align-middle">{formatValue(rows[2]?.label)}</td>
             <td className="p-4 align-middle text-center" colSpan={3}>{formatValue(rows[2]?.description)}</td>
           </tr>
           {/* Additional Coverage */}
-          {/* We handle each additional row (icon + coverage per column) */}
           {[3,4,5,6].map((i) => (
             <tr key={i} className="border-t">
-              <td className="p-4 align-middle">
+              <td className="p-4 text-left align-middle flex items-center justify-start">
                 {rowIcons[i] ? <IconCell icon={rowIcons[i]} /> : null}
+                {formatValue(rows[i]?.label)}
               </td>
               {/* Fill coverage description in correct column */}
               {[0,1,2].map((col) => (
