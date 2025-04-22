@@ -19,7 +19,7 @@ const extractLanguageFromPath = (): string => {
 export const submitContactForm = async (formData: FormData) => {
   console.log('Contact form submission, adding to Brevo:', formData.email);
 
-  // Always send url, cta, message, and language to Brevo
+  // Always send url, cta, message, company, and language to Brevo
   const language = extractLanguageFromPath();
 
   try {
@@ -31,6 +31,7 @@ export const submitContactForm = async (formData: FormData) => {
         cta: 'Contact Form',
         message: formData.message,
         language,
+        company: formData.company, // <-- ADD company here
       }
     );
     console.log('Brevo API response:', response);

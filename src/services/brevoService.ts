@@ -56,6 +56,7 @@ function extractLanguageFromUrl(url: string): string {
  *    cta - description of CTA
  *    message - (optional) message body for MESSAGE field
  *    language - (optional) extracted from the URL
+ *    company - (optional) for Brevo COMPANY attribute
  * @returns Promise with the API response
  */
 export const addContactToBrevo = async (
@@ -65,12 +66,14 @@ export const addContactToBrevo = async (
     url: string,
     cta: string,
     message?: string,
-    language?: string
+    language?: string,
+    company?: string
   } = {
     url: window.location.href,
     cta: 'Registration Popup',
     message: undefined,
-    language: extractLanguageFromUrl(window.location.href)
+    language: extractLanguageFromUrl(window.location.href),
+    company: undefined
   }
 ): Promise<Response> => {
   try {
@@ -103,6 +106,7 @@ export const addContactToBrevo = async (
         DATE: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD
         ...(registrationCountry && { COUNTRY: registrationCountry }),
         ...(source.message && { MESSAGE: source.message }),
+        ...(source.company && { COMPANY: source.company }), // <-- Add COMPANY attribute if present
         LANGUAGE: language,
       }
     };
