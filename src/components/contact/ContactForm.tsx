@@ -4,12 +4,14 @@ import { Send } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
+import { submitContactForm } from "@/services/formSubmission";
 
 type FormData = {
   name: string;
   email: string;
   company: string;
   message: string;
+  privacy: boolean;
 };
 
 const ContactForm = () => {
@@ -20,12 +22,16 @@ const ContactForm = () => {
     name: '',
     email: '',
     company: '',
-    message: ''
+    message: '',
+    privacy: true // Adding default privacy value
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target as HTMLInputElement;
+    setFormData(prev => ({ 
+      ...prev, 
+      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value 
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -33,26 +39,8 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      const emailContent = `
-        Name: ${formData.name}
-        Email: ${formData.email}
-        Unternehmen: ${formData.company}
-        Nachricht: ${formData.message}
-      `;
-
-      const response = await fetch("https://formsubmit.co/4f8ed8dc6e198407f7647476b637eb77", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: emailContent,
-          _subject: "Neue Kontaktanfrage von Stellar Checkin",
-        }),
-      });
+      // Use the submitContactForm service which handles both Brevo and email forwarding
+      const response = await submitContactForm(formData);
 
       if (response.ok) {
         toast({
@@ -60,14 +48,22 @@ const ContactForm = () => {
           description: t('contact.successDesc'),
         });
 
-        // fire conversion
-        gtag_report_conversion();
+        // fire conversion if available
+        try {
+          if (typeof window.gtag_report_conversion === 'function') {
+            window.gtag_report_conversion();
+            console.log('Conversion tracking fired');
+          }
+        } catch (error) {
+          console.error("Error reporting conversion:", error);
+        }
         
         setFormData({
           name: '',
           email: '',
           company: '',
-          message: ''
+          message: '',
+          privacy: true
         });
       } else {
         throw new Error("Error sending message");
@@ -135,6 +131,20 @@ const ContactForm = () => {
           rows={4}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-apple focus:border-transparent resize-none"
         />
+      </div>
+      
+      <div>
+        <label className="flex items-center">
+          <input
+            type="checkbox"
+            name="privacy"
+            checked={formData.privacy}
+            onChange={handleChange}
+            required
+            className="mr-2 h-4 w-4 text-apple border-gray-300 rounded focus:ring-apple"
+          />
+          <span className="text-sm text-gray-700">{t('contact.formPrivacy')}</span>
+        </label>
       </div>
       
       <div>

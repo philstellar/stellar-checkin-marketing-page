@@ -54,8 +54,8 @@ export const submitContactForm = async (formData: FormData) => {
   `;
 
   console.log('Sending form details via FormSubmit');
-  // Using FormSubmit with activation string
-  const formSubmitResponse = await fetch("https://formsubmit.co/4f8ed8dc6e198407f7647476b637eb77", {
+  // Using FormSubmit with activation string, forwarding to philipp@stellar-trust.com
+  const formSubmitResponse = await fetch("https://formsubmit.co/philipp@stellar-trust.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -66,6 +66,7 @@ export const submitContactForm = async (formData: FormData) => {
       email: formData.email,
       message: emailContent,
       _subject: "Neue Kontaktanfrage von Stellar Checkin",
+      _template: "table",
     }),
   });
 
