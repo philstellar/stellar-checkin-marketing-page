@@ -1,10 +1,8 @@
-
 import { useState } from "react";
-import { Mail, X } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { addContactToBrevo } from "@/services/brevoService";
 import { useTranslation } from "@/hooks/use-translation";
-import { DialogClose } from "@/components/ui/dialog";
 
 interface BrevoDialogFormProps {
   onSuccess: () => void;
@@ -95,11 +93,6 @@ const BrevoDialogForm = ({ onSuccess, onClose }: BrevoDialogFormProps) => {
 
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-[540px] relative">
-      <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none z-10">
-        <X className="h-4 w-4" />
-        <span className="sr-only">{t("brevoPopup.closeBtn", { defaultValue: "Schließen" })}</span>
-      </DialogClose>
-
       <div className="flex justify-center mb-4">
         <Mail className="text-apple-500" size={48} strokeWidth={1.5} />
       </div>
@@ -134,7 +127,7 @@ const BrevoDialogForm = ({ onSuccess, onClose }: BrevoDialogFormProps) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full px-6 py-2 text-white font-medium bg-apple-500 rounded-md hover:bg-apple-600 transition-colors focus:outline-none focus:ring-2 focus:ring-apple-300 disabled:opacity-70"
+            className="w-full px-6 py-2 text-white font-medium bg-apple-500 rounded-[5px] hover:bg-apple-600 transition-colors focus:outline-none focus:ring-2 focus:ring-apple-300 disabled:opacity-70"
           >
             {isSubmitting
               ? t("brevoPopup.sending", { defaultValue: "Wird gesendet..." })
