@@ -13,8 +13,34 @@ const IconCell = ({ icon }: { icon: React.ReactNode }) => (
   <div className="flex items-center justify-center">{icon}</div>
 );
 
+// Debug: Warn if overflow exists
+function useOverflowDebug() {
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const check = () => {
+      const docWidth = document.documentElement.offsetWidth;
+      for (const el of Array.from(document.body.querySelectorAll("*"))) {
+        if ((el as HTMLElement).scrollWidth > docWidth) {
+          // Only warn for visible elements
+          if (
+            (el as HTMLElement).offsetWidth > 0 &&
+            (el as HTMLElement).scrollWidth - (el as HTMLElement).offsetWidth > 4
+          ) {
+            console.warn("[Insurance Table] Horizontal overflow detected for element:", el);
+            break;
+          }
+        }
+      }
+    };
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+}
+
 const InsurancePricingTable = () => {
   const { t } = useTranslation();
+  useOverflowDebug();
   const isMobile = useIsMobile();
   const header = t("insurance.pricing.header") as any;
   const rows = t("insurance.pricing.rows") as any[];
@@ -39,58 +65,71 @@ const InsurancePricingTable = () => {
     t("insurance.pricing.rows.3.label") ||
     "Additional coverage\n(up to)";
 
-  // Remove containers, make full width, and ensure 2px mobile, 15px desktop margin for the table itself!
+  // Simpler mobile version: always fully stacked, no grids, NO horizontal scroll risk
   if (isMobile) {
     return (
-      <div className="w-full px-[2px]">
-        <div className="bg-white rounded-xl shadow p-0 mb-6 w-full">
-          <h3 className="text-xl font-semibold mb-4 px-4 pt-4">{header.coverage}</h3>
+      <section className="w-full px-2">
+        <article className="bg-white rounded-xl shadow px-0 py-0 mb-6 w-full">
+          <h3 className="text-xl font-semibold mb-4 px-4 pt-4 text-left">{header.coverage}</h3>
 
-          {/* Price per night */}
+          {/* 1. Price per night, stacked */}
           <div className="mb-6 px-4">
             <div className="font-medium border-b pb-2 mb-2">{rows[0]?.label}</div>
-            <div className="grid grid-cols-3 gap-2 text-center w-full">
-              <div className="p-2 bg-gray-50 rounded">{rows[0]?.value1}</div>
-              <div className="p-2 bg-gray-50 rounded">{rows[0]?.value2}</div>
-              <div className="p-2 bg-gray-50 rounded">{rows[0]?.value3}</div>
-            </div>
+            {/* Stack options row by row, not side by side */}
+            {[
+              { amount: header.amount1, val: rows[0]?.value1 },
+              { amount: header.amount2, val: rows[0]?.value2 },
+              { amount: header.amount3, val: rows[0]?.value3 },
+            ].map((col, idx) => (
+              <div
+                className="flex flex-row items-center gap-2 mb-2 last:mb-0"
+                key={idx}
+              >
+                <span className="flex-shrink-0 w-auto min-w-0 font-semibold bg-gray-100 px-2 py-1 rounded text-xs text-gray-700">
+                  {col.amount}
+                </span>
+                <span className="flex-grow text-center p-2 bg-gray-50 rounded text-[15px]">
+                  {col.val}
+                </span>
+              </div>
+            ))}
           </div>
 
-          {/* Coverage & Recourse */}
+          {/* 2. Coverage & Recourse */}
           {[1, 2].map((i) => (
             <div key={i} className="mb-6 px-4">
               <div className="font-medium border-b pb-2 mb-2">{rows[i]?.label}</div>
-              <div className="p-2 bg-gray-50 rounded text-center">
+              <div className="p-2 bg-gray-50 rounded text-left text-[15px]">
                 {formatValue(rows[i]?.description)}
               </div>
             </div>
           ))}
 
-          {/* Additional Coverage Section */}
+          {/* 3. Additional Coverage, all as individual vertical cards */}
           <div className="mb-6 px-4">
-            <div className="font-medium border-b pb-2 mb-4">{ADDITIONAL_COVERAGE_LABEL}</div>
-
+            <div className="font-medium border-b pb-2 mb-4 whitespace-pre-line">
+              {ADDITIONAL_COVERAGE_LABEL}
+            </div>
             {[3, 4, 5, 6].map((i) => (
-              <div key={i} className="mb-4 last:mb-0">
-                <div className="flex items-center mb-2">
+              <div key={i} className="mb-4 last:mb-0 rounded-md bg-gray-25">
+                <div className="flex items-center gap-2 mb-2">
                   {rowIcons[i] && (
-                    <div className="mr-2">
-                      {/* Force 5px rounded corners on mobile */}
+                    <span className="inline-flex items-center justify-center mr-1">
                       {React.cloneElement(rowIcons[i] as React.ReactElement, {
                         className: "h-6 w-6 text-black rounded-[5px] bg-gray-200"
                       })}
-                    </div>
+                    </span>
                   )}
+                  <span className="text-base font-medium text-gray-700">{rows[i]?.label}</span>
                 </div>
-                {/* Now show description ONCE in a single, full-width cell—no grid, no repetition */}
-                <div className="p-2 bg-gray-50 rounded text-center">
+                <div className="p-2 bg-gray-50 rounded text-[15px]">
                   {formatValue(rows[i]?.description)}
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </div>
+        </article>
+      </section>
     );
   }
 
@@ -164,4 +203,3 @@ const InsurancePricingTable = () => {
 };
 
 export default InsurancePricingTable;
-
