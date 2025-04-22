@@ -6,8 +6,8 @@
 // Brevo API key (this is a publishable key used for the frontend)
 const BREVO_API_KEY = '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';
 
-// Default list ID for Brevo - update this with your actual list ID
-const DEFAULT_LIST_ID = 2; // Replace with your actual list ID
+// Default list ID for Brevo - updated to the correct list ID
+const DEFAULT_LIST_ID = 11; // Updated to the provided list ID
 
 /**
  * Add a contact to Brevo list
