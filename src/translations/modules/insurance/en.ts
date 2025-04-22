@@ -24,7 +24,7 @@ export const insuranceEN = {
       "No guest liability for accidental damages",
       "Bookings across all channels (incl. direct bookings)",
       "Pet damage protection",
-      "Rental loss protection",
+      "Rental loss protection", 
       "Commercial rental damage protection"
     ]
   },
