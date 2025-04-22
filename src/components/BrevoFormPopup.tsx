@@ -56,7 +56,8 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
         undefined,
         {
           url: window.location.href,
-          cta: 'Registration Popup'
+          cta: 'Registration Popup',
+          message: undefined // Add the missing message property
         }
       );
       console.log('BrevoFormPopup: Brevo API response status:', response.status);
