@@ -17,10 +17,15 @@ const DEFAULT_LIST_ID = 11;
  */
 export const addContactToBrevo = async (
   email: string, 
-  listIds: number[] = [DEFAULT_LIST_ID]
+  listIds: number[] = [DEFAULT_LIST_ID],
+  source = {
+    url: window.location.href,
+    cta: 'Registration Popup'
+  }
 ): Promise<Response> => {
   try {
     console.log('Adding contact to Brevo directly:', email, 'to lists:', listIds);
+    console.log('Registration source:', source);
     
     // Log the request origin to help identify IP
     try {
@@ -35,7 +40,12 @@ export const addContactToBrevo = async (
     const payload = {
       email,
       listIds,
-      updateEnabled: true, // Updates existing contact if email already exists
+      updateEnabled: true,
+      attributes: {
+        REGISTRATION_PAGE: source.url,
+        REGISTRATION_CTA: source.cta,
+        REGISTRATION_DATE: new Date().toISOString()
+      }
     };
     
     console.log('Sending payload to Brevo API:', JSON.stringify(payload));
@@ -63,3 +73,4 @@ export const addContactToBrevo = async (
     throw error;
   }
 };
+

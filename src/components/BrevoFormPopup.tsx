@@ -16,7 +16,6 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Reset submission state when the popup is opened again
     if (isOpen) {
       setIsSubmitted(false);
       setEmail("");
@@ -27,7 +26,6 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     setEmail(e.target.value);
   };
 
-  // Handle form submission with direct API call
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -43,7 +41,6 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     setIsSubmitting(true);
     
     try {
-      // Log client IP for debugging
       try {
         const ipResponse = await fetch('https://api.ipify.org?format=json');
         const ipData = await ipResponse.json();
@@ -53,10 +50,16 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
       }
       
       console.log('BrevoFormPopup: Submitting email to Brevo directly:', email);
-      const response = await addContactToBrevo(email);
+      const response = await addContactToBrevo(
+        email,
+        undefined,
+        {
+          url: window.location.href,
+          cta: 'Registration Popup'
+        }
+      );
       console.log('BrevoFormPopup: Brevo API response status:', response.status);
       
-      // Handle API response
       if (response.ok || response.status === 201 || response.status === 204) {
         console.log('BrevoFormPopup: Contact successfully added to Brevo');
         setIsSubmitted(true);
@@ -65,7 +68,6 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
           description: "Vielen Dank für deine Anmeldung! Wir melden uns in Kürze bei dir.",
         });
         
-        // Fire conversion tracking if it exists
         try {
           if (typeof window.gtag_report_conversion === 'function') {
             window.gtag_report_conversion();
@@ -75,7 +77,6 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
           console.error("Error reporting conversion:", error);
         }
       } else {
-        // Handle error from API
         const data = await response.json().catch(() => ({}));
         console.error('BrevoFormPopup: Brevo API error response:', data);
         throw new Error('Failed to add contact to Brevo: ' + (data?.message || 'Unknown error'));
@@ -92,7 +93,6 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     }
   };
 
-  // Thank you message to display after successful submission
   const ThankYouMessage = () => (
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-[540px] text-center">
       <div className="flex justify-center mb-6">
@@ -103,7 +103,7 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
         />
       </div>
       <h2 className="text-2xl font-bold text-gray-800 mb-4">
-        Vielen Dank für deine Anmeldung!
+        Vielen Dank f��r deine Anmeldung!
       </h2>
       <p className="text-gray-600 mb-6">
         Wir melden uns so schnell wie möglich persönlich bei dir

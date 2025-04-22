@@ -14,7 +14,14 @@ export const submitContactForm = async (formData: FormData) => {
   
   // First, try to add the contact to Brevo directly
   try {
-    const response = await addContactToBrevo(formData.email);
+    const response = await addContactToBrevo(
+      formData.email,
+      undefined,
+      {
+        url: window.location.href,
+        cta: 'Contact Form'
+      }
+    );
     console.log('Brevo API response:', response);
     
     // Handle non-success responses
@@ -54,3 +61,4 @@ export const submitContactForm = async (formData: FormData) => {
   console.log('FormSubmit response:', formSubmitResponse);
   return formSubmitResponse;
 };
+
