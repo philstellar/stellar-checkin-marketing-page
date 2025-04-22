@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -62,7 +63,36 @@ const VersicherungPage = () => {
             <p className="text-lg text-royal-700 text-center mb-8">
               {t('insurance.shortTerm.description')}
             </p>
-            <InsurancePricingTable />
+            {/* Responsive wrapper for full width and margin */}
+            <div className="w-full" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+              <div className="w-full" style={{
+                marginLeft: '15px',
+                marginRight: '15px',
+                maxWidth: 'calc(100% - 30px)',
+              }}
+              // Inline responsive for mobile: 2px margin
+              >
+                <div
+                  className="w-full"
+                  style={{
+                    marginLeft: '2px',
+                    marginRight: '2px',
+                    maxWidth: 'calc(100% - 4px)',
+                  }}
+                >
+                  <div
+                    className="w-full"
+                    style={
+                      window.innerWidth < 768
+                        ? { marginLeft: '2px', marginRight: '2px', maxWidth: 'calc(100% - 4px)' }
+                        : { marginLeft: '15px', marginRight: '15px', maxWidth: 'calc(100% - 30px)' }
+                    }
+                  >
+                    <InsurancePricingTable />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -85,3 +115,4 @@ const VersicherungPage = () => {
 };
 
 export default VersicherungPage;
+
