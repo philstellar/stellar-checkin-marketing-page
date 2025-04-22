@@ -29,7 +29,7 @@ export const kurtaxeEN = {
   },
   authorities: {
     title: "Authority Connection",
-    description: "Direct transmission of data to the relevant authorities through our partners AVS and Ostseecard."
+    description: "Direct transmission of data to the relevant authorities in almost all of Europe. Plus Colombia, Turkey and Dubai."
   },
   cta: "Register Now"
 };
