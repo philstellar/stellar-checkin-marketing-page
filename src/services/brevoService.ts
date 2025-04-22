@@ -20,6 +20,16 @@ export const addContactToBrevo = async (
   listIds: number[] = [DEFAULT_LIST_ID]
 ): Promise<Response> => {
   try {
+    console.log('Adding contact to Brevo:', email, 'to lists:', listIds);
+    
+    const payload = {
+      email,
+      listIds,
+      updateEnabled: true, // Updates existing contact if email already exists
+    };
+    
+    console.log('Sending payload to Brevo API:', JSON.stringify(payload));
+    
     const response = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
@@ -27,14 +37,15 @@ export const addContactToBrevo = async (
         'api-key': BREVO_API_KEY,
         'Accept': 'application/json'
       },
-      body: JSON.stringify({
-        email,
-        listIds,
-        updateEnabled: true, // Updates existing contact if email already exists
-      }),
+      body: JSON.stringify(payload),
     });
     
     console.log('Brevo API response status:', response.status);
+    
+    // Log more details about the response
+    const responseData = await response.clone().json().catch(() => null);
+    console.log('Brevo API response data:', responseData);
+    
     return response;
   } catch (error) {
     console.error('Error adding contact to Brevo:', error);

@@ -34,10 +34,14 @@ const Brevo = () => {
     setIsSubmitting(true);
 
     try {
+      console.log('Contact form submission, adding to Brevo:', formData.email);
       // First, try to add the contact to Brevo
       const response = await addContactToBrevo(formData.email);
+      console.log('Brevo API response:', response);
       
       if (!response.ok && response.status !== 201 && response.status !== 400) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Brevo API error:", errorData);
         throw new Error("Error adding contact to Brevo");
       }
       
@@ -49,6 +53,7 @@ const Brevo = () => {
         Nachricht: ${formData.message}
       `;
 
+      console.log('Sending form details via FormSubmit');
       // Using FormSubmit with activation string
       const formSubmitResponse = await fetch("https://formsubmit.co/4f8ed8dc6e198407f7647476b637eb77", {
         method: "POST",
@@ -64,6 +69,8 @@ const Brevo = () => {
         }),
       });
 
+      console.log('FormSubmit response:', formSubmitResponse);
+
       if (formSubmitResponse.ok) {
         // Success message
         toast({
@@ -74,6 +81,7 @@ const Brevo = () => {
         try {
           if (typeof gtag_report_conversion === 'function') {
             gtag_report_conversion();
+            console.log('Conversion tracking fired');
           }
         } catch (error) {
           console.error("Error reporting conversion:", error);

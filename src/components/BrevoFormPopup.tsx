@@ -44,14 +44,23 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     setIsSubmitting(true);
     
     try {
+      console.log('Submitting email to Brevo:', email);
       const response = await addContactToBrevo(email);
+      console.log('Submission response:', response);
       
       if (response.ok || response.status === 201) {
+        console.log('Contact successfully added to Brevo');
         setIsSubmitted(true);
+        toast({
+          title: "Success!",
+          description: "Vielen Dank für deine Anmeldung! Wir melden uns in Kürze bei dir.",
+        });
+        
         // Fire conversion tracking if it exists
         try {
           if (typeof gtag_report_conversion === 'function') {
             gtag_report_conversion();
+            console.log('Conversion tracking fired');
           }
         } catch (error) {
           console.error("Error reporting conversion:", error);
@@ -60,9 +69,16 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
         // If response is 400, it might be an existing contact which is fine
         if (response.status === 400) {
           const data = await response.json();
+          console.log('Brevo 400 response data:', data);
+          
           // If it's just that the contact already exists, we consider it a success
           if (data?.message?.includes('Contact already exist')) {
+            console.log('Contact already exists, treating as success');
             setIsSubmitted(true);
+            toast({
+              title: "Success!",
+              description: "Vielen Dank für deine Anmeldung! Wir melden uns in Kürze bei dir.",
+            });
             return;
           }
         }
