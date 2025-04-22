@@ -65,7 +65,7 @@ export const kurtaxeES = {
   },
   authorities: {
     title: "Conexión con Autoridades",
-    description: "Transmisión directa de datos a las autoridades competentes a través de nuestros socios AVS y Ostseecard."
+    description: "Transmisión directa de datos a las autoridades competentes a través de Policía Nacional, Guardia Civil, SES Hospedajes, Mossos d'Esquadra."
   },
   cta: "Registrarse Ahora"
 };
