@@ -19,6 +19,12 @@ export const useTranslation = () => {
     if (process.env.NODE_ENV === 'development') {
       console.debug(`[Translation] Key: "${key}", Language: "${language}", Result: "${value}"`);
       
+      // Additional debug info for insurance comparison keys
+      if (key.startsWith('insurance.comparison')) {
+        console.debug(`[Translation DEBUG] Insurance comparison key "${key}" in "${language}":`, value);
+        console.debug(`[Translation DEBUG] Full insurance translations:`, translations[language].insurance);
+      }
+      
       // If translation is missing or shows the key itself
       if (!value || value === key) {
         console.warn(`[Translation WARNING] Missing translation for key: "${key}" in language "${language}"`);
