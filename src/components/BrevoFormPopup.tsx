@@ -1,4 +1,3 @@
-
 import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { X, Mail, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -95,7 +94,7 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
   };
 
   const ThankYouMessage = () => (
-    <div className="bg-white p-8 rounded-lg shadow-lg max-w-[540px] text-center">
+    <div className="bg-white p-8 rounded-lg shadow-lg max-w-[540px] text-center w-full">
       <div className="flex justify-center mb-6">
         <CheckCircle 
           className="text-apple-500" 
@@ -120,7 +119,10 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="p-0 max-w-[580px] border-none bg-transparent" aria-describedby="dialog-description">
+      <DialogContent 
+        className="p-0 max-w-[580px] border-none bg-white" 
+        aria-describedby="dialog-description"
+      >
         <span id="dialog-description" className="sr-only">
           Brevo Formular zur Erstellung eines kostenlosen Kontos
         </span>
