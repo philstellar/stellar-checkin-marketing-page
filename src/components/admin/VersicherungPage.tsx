@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -11,10 +12,10 @@ import LogoCarousel from '../LogoCarousel';
 import HeroSection from './insurance/HeroSection';
 import BenefitsSection from './insurance/BenefitsSection';
 import OverviewCards from './insurance/OverviewCards';
+
 const VersicherungPage = () => {
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
+  
   const addInsuranceFeatures = [{
     icon: <Book className="h-6 w-6 text-apple" />,
     title: "Synchronisiere deine Buchungen",
@@ -32,9 +33,11 @@ const VersicherungPage = () => {
     title: "Kautionen als Option",
     description: "Biete deinen Gästen die Wahl zwischen Versicherung und traditioneller Kaution."
   }];
-  return <>
+  
+  return (
+    <>
       <Header />
-      <HeroSection t={t} />
+      <HeroSection />
       
       <div className="container mx-auto px-4 py-[30px]">
         <OverviewCards t={t} />
@@ -77,6 +80,8 @@ const VersicherungPage = () => {
       </section>
       
       <Footer />
-    </>;
+    </>
+  );
 };
+
 export default VersicherungPage;

@@ -2,12 +2,11 @@
 import React from 'react';
 import { UserCheck, Shield } from 'lucide-react';
 import CTAButton from '../../CTAButton';
+import { useTranslation } from '@/hooks/use-translation';
 
-interface HeroSectionProps {
-  t: (key: string) => string;
-}
-
-const HeroSection = ({ t }: HeroSectionProps) => {
+const HeroSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20"></div>
@@ -18,11 +17,10 @@ const HeroSection = ({ t }: HeroSectionProps) => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik"
               style={{ contentVisibility: 'auto' }}
             >
-              <span className="text-apple">Versicherungen</span> und{' '}
-              <span className="text-apple">Kautionen</span> managen
+              {t('insurance.title')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-              Bieten Sie Ihren Gästen eine optionale Versicherung an und profitieren Sie von zusätzlichen Einnahmen.
+              {t('insurance.introduction')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
