@@ -1,11 +1,26 @@
 
 import { InputHTMLAttributes } from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from '@/hooks/use-translation';
 
 interface PrivacyCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   checked: boolean;
 }
 
 const PrivacyCheckbox = ({ checked, onChange, ...props }: PrivacyCheckboxProps) => {
+  const { t } = useTranslation();
+  
+  const privacyText = t('contact.formPrivacy', {
+    link: (text) => (
+      <Link 
+        to="/de/datenschutz" 
+        className="text-stellar-600 hover:text-stellar-500 underline"
+      >
+        {text}
+      </Link>
+    )
+  });
+
   return (
     <div className="flex items-center">
       <input
@@ -19,10 +34,7 @@ const PrivacyCheckbox = ({ checked, onChange, ...props }: PrivacyCheckboxProps) 
         {...props}
       />
       <label htmlFor="privacy" className="ml-2 block text-sm text-gray-900">
-        Ich akzeptiere die{" "}
-        <a href="/datenschutz" className="text-stellar-600 hover:text-stellar-500">
-          Datenschutzerklärung
-        </a>
+        {privacyText}
       </label>
     </div>
   );
