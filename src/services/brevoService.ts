@@ -64,6 +64,7 @@ export const addContactToBrevo = async (
     }
 
     // Create payload with UPDATEENABLED set to true to update existing contacts
+    // Make sure attribute names are uppercase and follow Brevo's naming conventions
     const payload = {
       email,
       listIds,
@@ -71,7 +72,7 @@ export const addContactToBrevo = async (
       attributes: {
         REGISTRATION_PAGE: source.url,
         REGISTRATION_CTA: source.cta,
-        REGISTRATION_DATE: new Date().toISOString(),
+        REGISTRATION_DATE: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD for better Brevo display
         ...(registrationCountry && { REGISTRATION_COUNTRY: registrationCountry })
       }
     };
@@ -101,4 +102,3 @@ export const addContactToBrevo = async (
     throw error;
   }
 };
-
