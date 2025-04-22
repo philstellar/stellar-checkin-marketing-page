@@ -25,10 +25,10 @@ const InsurancePricingTable = () => {
     null, // Price row - no icon
     null, // Coverage (text only)
     null, // Recourse - no icon
-    <Brush className="h-6 w-6 text-black rounded-md" />, // Additional cleaning
-    <Image className="h-6 w-6 text-black rounded-md" />, // Art & Valuables
-    <FileText className="h-6 w-6 text-black rounded-md" />, // Rental loss
-    <PawPrint className="h-6 w-6 text-black rounded-md" />, // Pet damage
+    <Brush className="h-6 w-6 text-black rounded-[5px]" />, // Additional cleaning
+    <Image className="h-6 w-6 text-black rounded-[5px]" />, // Art & Valuables
+    <FileText className="h-6 w-6 text-black rounded-[5px]" />, // Rental loss
+    <PawPrint className="h-6 w-6 text-black rounded-[5px]" />, // Pet damage
   ];
 
   // Text for the new heading cell that covers additional coverage (up to)
@@ -105,3 +105,4 @@ const InsurancePricingTable = () => {
 };
 
 export default InsurancePricingTable;
+
