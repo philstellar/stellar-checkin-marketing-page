@@ -1,4 +1,3 @@
-
 import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { X, Mail, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -22,6 +21,12 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
       setEmail("");
     }
   }, [isOpen]);
+
+  const extractLanguageFromPath = (): string => {
+    const path = window.location.pathname;
+    const match = path.match(/^\/(de|en|es|it)(\/|$)/);
+    return match ? match[1] : 'de';
+  };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -51,14 +56,17 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
       }
       
       console.log('BrevoFormPopup: Submitting email to Brevo directly:', email);
+      const language = extractLanguageFromPath();
+      const sourceForBrevo = {
+        url: window.location.href,
+        cta: 'Registration Popup',
+        message: undefined,
+        language
+      };
       const response = await addContactToBrevo(
         email,
         undefined,
-        {
-          url: window.location.href,
-          cta: 'Registration Popup',
-          message: undefined // Add the missing message property
-        }
+        sourceForBrevo
       );
       console.log('BrevoFormPopup: Brevo API response status:', response.status);
       

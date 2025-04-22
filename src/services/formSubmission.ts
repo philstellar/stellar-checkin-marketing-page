@@ -9,10 +9,19 @@ interface FormData {
   privacy: boolean;
 }
 
+// Helper to extract language from path
+const extractLanguageFromPath = (): string => {
+  const path = window.location.pathname;
+  const match = path.match(/^\/(de|en|es|it)(\/|$)/);
+  return match ? match[1] : 'de';
+};
+
 export const submitContactForm = async (formData: FormData) => {
   console.log('Contact form submission, adding to Brevo:', formData.email);
 
-  // First, try to add the contact to Brevo directly
+  // Always send url, cta, message, and language to Brevo
+  const language = extractLanguageFromPath();
+
   try {
     const response = await addContactToBrevo(
       formData.email,
@@ -20,8 +29,8 @@ export const submitContactForm = async (formData: FormData) => {
       {
         url: window.location.href,
         cta: 'Contact Form',
-        // Pass MESSAGE as an additional custom attribute for Brevo
         message: formData.message,
+        language,
       }
     );
     console.log('Brevo API response:', response);

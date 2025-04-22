@@ -34,22 +34,43 @@ async function getCountryByIp(): Promise<string | undefined> {
 }
 
 /**
+ * Helper to extract the language from a URL path; defaults to 'de'.
+ */
+function extractLanguageFromUrl(url: string): string {
+  try {
+    const path = new URL(url).pathname;
+    const langMatch = path.match(/^\/(de|en|es|it)(\/|$)/);
+    if (langMatch) return langMatch[1];
+    return 'de';
+  } catch {
+    return 'de';
+  }
+}
+
+/**
  * Add a contact to Brevo list via direct API call
  * @param email Contact email address
  * @param listIds Optional array of list IDs (uses default if not provided)
- * @param source Optional object that can include:
+ * @param source Object including:
  *    url - current page
  *    cta - description of CTA
  *    message - (optional) message body for MESSAGE field
+ *    language - (optional) extracted from the URL
  * @returns Promise with the API response
  */
 export const addContactToBrevo = async (
   email: string,
   listIds: number[] = [DEFAULT_LIST_ID],
-  source = {
+  source: {
+    url: string,
+    cta: string,
+    message?: string,
+    language?: string
+  } = {
     url: window.location.href,
     cta: 'Registration Popup',
-    message: undefined as string | undefined
+    message: undefined,
+    language: extractLanguageFromUrl(window.location.href)
   }
 ): Promise<Response> => {
   try {
@@ -68,6 +89,8 @@ export const addContactToBrevo = async (
       console.error('Could not determine registration country:', error);
     }
 
+    const language = source.language || extractLanguageFromUrl(source.url);
+
     // Create payload with UPDATEENABLED set to true to update existing contacts
     // Make sure attribute names are uppercase and follow Brevo's naming conventions
     const payload = {
@@ -76,10 +99,11 @@ export const addContactToBrevo = async (
       updateEnabled: true,
       attributes: {
         URL: source.url,
-        CTA: source.cta,
-        DATE: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD for better Brevo display
+        CTA: `${source.cta} | ${source.url}`,
+        DATE: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD
         ...(registrationCountry && { COUNTRY: registrationCountry }),
-        ...(source.message && { MESSAGE: source.message })
+        ...(source.message && { MESSAGE: source.message }),
+        LANGUAGE: language,
       }
     };
 
