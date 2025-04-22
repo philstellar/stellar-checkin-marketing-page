@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useTranslation } from "@/hooks/use-translation";
 import { Brush, Image, FileText, PawPrint } from "lucide-react";
@@ -24,10 +25,10 @@ const InsurancePricingTable = () => {
     null, // Price row - no icon
     null, // Coverage (text only)
     null, // Recourse - no icon
-    <Brush className="h-6 w-6 text-black" />, // Additional cleaning (replaced Broom with Brush)
-    <Image className="h-6 w-6 text-black" />, // Art & Valuables
-    <FileText className="h-6 w-6 text-black" />, // Rental loss
-    <PawPrint className="h-6 w-6 text-black" />, // Pet damage
+    <Brush className="h-6 w-6 text-black rounded-md" />, // Additional cleaning
+    <Image className="h-6 w-6 text-black rounded-md" />, // Art & Valuables
+    <FileText className="h-6 w-6 text-black rounded-md" />, // Rental loss
+    <PawPrint className="h-6 w-6 text-black rounded-md" />, // Pet damage
   ];
 
   // Text for the new heading cell that covers additional coverage (up to)
