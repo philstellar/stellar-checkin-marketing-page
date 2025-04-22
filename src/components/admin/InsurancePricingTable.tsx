@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useTranslation } from "@/hooks/use-translation";
 import { Brush, Image, FileText, PawPrint } from "lucide-react";
@@ -130,7 +129,7 @@ const InsurancePricingTable = () => {
               <td></td>
               <td className="p-4 align-middle text-center" colSpan={3}>{formatValue(rows[2]?.description)}</td>
             </tr>
-            {/* Additional Coverage: rows 3,4,5,6 (4 rows, index 3-6) */}
+            {/* Additional Coverage: rows 3–6 */}
             {[3, 4, 5, 6].map((i, idx) => (
               <tr key={i} className="border-t">
                 {idx === 0 && (
@@ -151,14 +150,8 @@ const InsurancePricingTable = () => {
                     </div>
                   ) : null}
                 </td>
-                {/* Each of the next three columns: up to X € or description */}
-                <td className="p-4 align-middle text-center">
-                  {formatValue(rows[i]?.description || "")}
-                </td>
-                <td className="p-4 align-middle text-center">
-                  {formatValue(rows[i]?.description || "")}
-                </td>
-                <td className="p-4 align-middle text-center">
+                {/* Merged cell: cover all 3 amount columns */}
+                <td className="p-4 align-middle text-center" colSpan={3}>
                   {formatValue(rows[i]?.description || "")}
                 </td>
               </tr>
