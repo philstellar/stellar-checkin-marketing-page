@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -32,6 +31,88 @@ const getLanguageFromPath = (path: string): Language | null => {
   return null;
 };
 
+// Language-specific path mapping
+const pathMappings: Record<string, Record<Language, string>> = {
+  'versicherung': {
+    'de': 'versicherung',
+    'en': 'insurance',
+    'it': 'assicurazione',
+    'es': 'seguro'
+  },
+  'insurance': {
+    'de': 'versicherung',
+    'en': 'insurance',
+    'it': 'assicurazione',
+    'es': 'seguro'
+  },
+  'assicurazione': {
+    'de': 'versicherung',
+    'en': 'insurance',
+    'it': 'assicurazione',
+    'es': 'seguro'
+  },
+  'seguro': {
+    'de': 'versicherung',
+    'en': 'insurance',
+    'it': 'assicurazione',
+    'es': 'seguro'
+  },
+  'trust-badge': {
+    'de': 'trust-badge',
+    'en': 'trust-badge',
+    'it': 'trust-badge',
+    'es': 'trust-badge'
+  },
+  'impressum': {
+    'de': 'impressum',
+    'en': 'impressum',
+    'it': 'impressum',
+    'es': 'impressum'
+  },
+  'datenschutz': {
+    'de': 'datenschutz',
+    'en': 'datenschutz',
+    'it': 'datenschutz',
+    'es': 'datenschutz'
+  },
+  'agb': {
+    'de': 'agb',
+    'en': 'agb',
+    'it': 'agb',
+    'es': 'agb'
+  },
+  'brevo': {
+    'de': 'brevo',
+    'en': 'brevo',
+    'it': 'brevo',
+    'es': 'brevo'
+  },
+  'home': {
+    'de': 'home',
+    'en': 'home',
+    'it': 'home',
+    'es': 'home'
+  },
+  'ueber-uns': {
+    'de': 'ueber-uns',
+    'en': 'ueber-uns',
+    'it': 'ueber-uns',
+    'es': 'ueber-uns'
+  },
+  'erfolgsgeschichten': {
+    'de': 'erfolgsgeschichten',
+    'en': 'erfolgsgeschichten',
+    'it': 'erfolgsgeschichten',
+    'es': 'erfolgsgeschichten'
+  },
+  'faq': {
+    'de': 'faq',
+    'en': 'faq',
+    'it': 'faq',
+    'es': 'faq'
+  }
+};
+
 // Create the provider component
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // Initialize with default language
@@ -63,6 +144,31 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     setLanguageState(initializeLanguage());
   }, [location.pathname]);
 
+  // Maps current path to localized path
+  const getLocalizedPath = (currentPath: string, newLanguage: Language): string => {
+    // Extract current language and path components
+    const pathParts = currentPath.split('/').filter(Boolean);
+    const currentLanguage = getLanguageFromPath(currentPath);
+    
+    if (!currentLanguage || pathParts.length <= 1) {
+      // If no language in path or just language with no page, return simple language path
+      return `/${newLanguage}`;
+    }
+    
+    // Get the page path (after language)
+    const pagePath = pathParts[1];
+    const restOfPath = pathParts.slice(2).join('/');
+    
+    // Check if this page has language-specific mappings
+    if (pathMappings[pagePath] && pathMappings[pagePath][newLanguage]) {
+      const localizedPage = pathMappings[pagePath][newLanguage];
+      return restOfPath ? `/${newLanguage}/${localizedPage}/${restOfPath}` : `/${newLanguage}/${localizedPage}`;
+    }
+    
+    // If no mapping exists, keep the same page name
+    return restOfPath ? `/${newLanguage}/${pagePath}/${restOfPath}` : `/${newLanguage}/${pagePath}`;
+  };
+
   // Update language, save to localStorage, and update URL
   const handleSetLanguage = (newLanguage: Language) => {
     setLanguageState(newLanguage);
@@ -72,23 +178,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
       localStorage.setItem('language', newLanguage);
     }
     
-    // Update URL if needed
-    const currentLanguage = getLanguageFromPath(location.pathname);
-    
-    if (currentLanguage) {
-      // Replace existing language prefix
-      const newPath = location.pathname.replace(`/${currentLanguage}`, `/${newLanguage}`);
-      navigate(newPath);
-    } else {
-      // Path has no language prefix, add it
-      // For root path, just add the language
-      if (location.pathname === '/') {
-        navigate(`/${newLanguage}`);
-      } else {
-        // For other paths, add language prefix
-        navigate(`/${newLanguage}${location.pathname}`);
-      }
-    }
+    // Update URL based on current path
+    const newPath = getLocalizedPath(location.pathname, newLanguage);
+    navigate(newPath);
   };
 
   // Effect to update language when URL changes
