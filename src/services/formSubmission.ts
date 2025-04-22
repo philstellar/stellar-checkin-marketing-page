@@ -11,7 +11,7 @@ interface FormData {
 
 export const submitContactForm = async (formData: FormData) => {
   console.log('Contact form submission, adding to Brevo:', formData.email);
-  
+
   // First, try to add the contact to Brevo directly
   try {
     const response = await addContactToBrevo(
@@ -19,11 +19,13 @@ export const submitContactForm = async (formData: FormData) => {
       undefined,
       {
         url: window.location.href,
-        cta: 'Contact Form'
+        cta: 'Contact Form',
+        // Pass MESSAGE as an additional custom attribute for Brevo
+        message: formData.message,
       }
     );
     console.log('Brevo API response:', response);
-    
+
     // Handle non-success responses
     if (!response.ok && response.status !== 201) {
       const errorData = await response.json().catch(() => ({}));
@@ -34,7 +36,7 @@ export const submitContactForm = async (formData: FormData) => {
     console.error("Failed to add contact to Brevo:", error);
     // We'll continue with form submission even if Brevo fails
   }
-  
+
   const emailContent = `
     Name: ${formData.name}
     Email: ${formData.email}

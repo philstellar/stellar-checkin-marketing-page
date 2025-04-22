@@ -37,14 +37,19 @@ async function getCountryByIp(): Promise<string | undefined> {
  * Add a contact to Brevo list via direct API call
  * @param email Contact email address
  * @param listIds Optional array of list IDs (uses default if not provided)
+ * @param source Optional object that can include:
+ *    url - current page
+ *    cta - description of CTA
+ *    message - (optional) message body for MESSAGE field
  * @returns Promise with the API response
  */
 export const addContactToBrevo = async (
-  email: string, 
+  email: string,
   listIds: number[] = [DEFAULT_LIST_ID],
   source = {
     url: window.location.href,
-    cta: 'Registration Popup'
+    cta: 'Registration Popup',
+    message: undefined as string | undefined
   }
 ): Promise<Response> => {
   try {
@@ -73,7 +78,8 @@ export const addContactToBrevo = async (
         URL: source.url,
         CTA: source.cta,
         DATE: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD for better Brevo display
-        ...(registrationCountry && { COUNTRY: registrationCountry })
+        ...(registrationCountry && { COUNTRY: registrationCountry }),
+        ...(source.message && { MESSAGE: source.message })
       }
     };
 
