@@ -13,8 +13,8 @@ const PrivacyCheckbox = ({ checked, onChange, ...props }: PrivacyCheckboxProps) 
   const privacyText = t('contact.formPrivacy', {
     link: (text) => (
       <Link 
-        to="/de/datenschutz" 
-        className="text-stellar-600 hover:text-stellar-500 underline"
+        to={`/${t('currentLanguage')}/datenschutz`} 
+        className="text-stellar-600 hover:text-stellar-500 underline font-medium"
       >
         {text}
       </Link>

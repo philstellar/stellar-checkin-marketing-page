@@ -8,6 +8,11 @@ export const useTranslation = () => {
   const { language } = useContext(LanguageContext);
   
   const t = (key: string, params?: Record<string, string | ((text: string) => React.ReactNode)>) => {
+    // Special handling for current language
+    if (key === 'currentLanguage') {
+      return language;
+    }
+
     let value = get(translations[language], key);
     
     if (process.env.NODE_ENV === 'development') {
