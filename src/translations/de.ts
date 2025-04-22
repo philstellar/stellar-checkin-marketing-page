@@ -258,4 +258,24 @@ export const de = {
   },
   insurance: insuranceDE,
   trustBadge: trustBadgeDE,
+
+  brevoPopup: {
+    invalidEmailTitle: "Ungültige E-Mail",
+    invalidEmailDesc: "Bitte gib eine gültige E-Mail-Adresse ein.",
+    errorTitle: "Fehler",
+    errorDesc: "Es gab ein Problem bei der Anmeldung. Wir haben deine Anfrage erhalten und werden uns manuell bei dir melden.",
+    successTitle: "Erfolgreich!",
+    successDesc: "Vielen Dank für deine Anmeldung! Wir melden uns in Kürze bei dir.",
+    thankYouTitle: "Vielen Dank für deine Anmeldung!",
+    thankYouDesc: "Wir melden uns so schnell wie möglich persönlich bei dir",
+    closeBtn: "Schließen",
+    a11yDescription: "Brevo Formular zur Erstellung eines kostenlosen Kontos",
+    dialogTitle: "Kostenloses Konto erstellen",
+    title: "Kostenlos registrieren",
+    emailPrompt: "Bitte trage deine geschäftliche E-Mail ein",
+    emailPlaceholder: "deine@email.de",
+    infoText: "In Kürze erhältst du von uns weitere Infos und den Registrierungslink",
+    sending: "Wird gesendet...",
+    cta: "Jetzt registrieren"
+  }
 };
