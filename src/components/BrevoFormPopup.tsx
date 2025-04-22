@@ -134,7 +134,7 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
       <DialogContent
         className="p-0 max-w-[580px] border-none bg-white"
         aria-describedby="dialog-description"
-        hideCloseButton // this prop prevents the Radix close button from rendering outside
+        hideCloseButton // Using our newly added prop
       >
         <span id="dialog-description" className="sr-only">
           {t("brevoPopup.a11yDescription", { defaultValue: "Brevo Formular zur Erstellung eines kostenlosen Kontos" })}
@@ -200,4 +200,3 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
 };
 
 export default BrevoFormPopup;
-
