@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useTranslation } from "@/hooks/use-translation";
-import { Broom, Image, FileText, PawPrint } from "lucide-react";
+import { Brush, Image, FileText, PawPrint } from "lucide-react";
 
 const formatValue = (value?: string) =>
   value ? (
@@ -26,7 +26,7 @@ const InsurancePricingTable = () => {
     null, // Price row - no icon
     null, // Coverage (text only)
     null, // Recourse - no icon
-    <Broom className="h-6 w-6 text-black" />, // Additional cleaning
+    <Brush className="h-6 w-6 text-black" />, // Additional cleaning (replaced Broom with Brush)
     <Image className="h-6 w-6 text-black" />, // Art & Valuables
     <FileText className="h-6 w-6 text-black" />, // Rental loss
     <PawPrint className="h-6 w-6 text-black" />, // Pet damage
