@@ -15,11 +15,14 @@ export const useTranslation = () => {
 
     let value = get(translations[language], key);
     
+    // Debug output in development
     if (process.env.NODE_ENV === 'development') {
       console.info(`Translation result for ${key}: "${value}"`);
     }
     
+    // If translation is missing, return the key as fallback
     if (!value) {
+      console.warn(`Missing translation for key: ${key} in language ${language}`);
       return key;
     }
     
