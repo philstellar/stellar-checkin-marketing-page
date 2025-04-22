@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -8,6 +7,7 @@ import InsurancePricing from './InsurancePricing';
 import InsuranceDetails from './InsuranceDetails';
 import InsuranceFAQ from './InsuranceFAQ';
 import InsuranceComparisonTable from './InsuranceComparisonTable';
+import InsurancePricingTable from './InsurancePricingTable';
 import LogoCarousel from '../LogoCarousel';
 import HeroSection from './insurance/HeroSection';
 import BenefitsSection from './insurance/BenefitsSection';
@@ -62,7 +62,7 @@ const VersicherungPage = () => {
             <p className="text-lg text-royal-700 text-center mb-8">
               {t('insurance.shortTerm.description')}
             </p>
-            <InsurancePricing />
+            <InsurancePricingTable />
           </div>
         </div>
       </section>
