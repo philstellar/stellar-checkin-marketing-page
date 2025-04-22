@@ -1,4 +1,3 @@
-
 import { navigationEN } from './modules/navigation';
 import { heroEN } from './modules/hero';
 import { featuresEN } from './modules/features';
@@ -243,6 +242,7 @@ export const en = {
     formEmail: "E-Mail",
     formCompany: "Company",
     formMessage: "Message",
+    formPrivacy: "I have read and accept the privacy policy",
     formSend: "Send Message",
     formSending: "Sending...",
     success: "Message sent!",

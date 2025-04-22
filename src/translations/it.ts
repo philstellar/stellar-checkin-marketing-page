@@ -1,4 +1,3 @@
-
 import { navigationIT } from './modules/navigation';
 import { heroIT } from './modules/hero';
 import { featuresIT } from './modules/features';
@@ -243,6 +242,7 @@ export const it = {
     formEmail: "E-Mail",
     formCompany: "Azienda",
     formMessage: "Messaggio",
+    formPrivacy: "Ho letto e accetto l'informativa sulla privacy",
     formSend: "Invia Messaggio",
     formSending: "Invio in corso...",
     success: "Messaggio inviato!",

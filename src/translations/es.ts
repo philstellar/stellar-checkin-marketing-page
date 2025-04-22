@@ -1,4 +1,3 @@
-
 import { navigationES } from './modules/navigation';
 import { heroES } from './modules/hero';
 import { featuresES } from './modules/features';
@@ -195,6 +194,7 @@ export const es = {
     formEmail: "E-Mail",
     formCompany: "Empresa",
     formMessage: "Mensaje",
+    formPrivacy: "He leído y acepto la política de privacidad",
     formSend: "Enviar Mensaje",
     formSending: "Enviando...",
     success: "¡Mensaje enviado!",
