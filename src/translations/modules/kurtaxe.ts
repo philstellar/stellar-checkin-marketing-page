@@ -1,4 +1,3 @@
-
 export const kurtaxeDE = {
   title: "Digitale Gästeregistrierung, Erhebung von Kurtaxe, Tourismusabgaben, etc.",
   subtitle: "Automatisieren Sie die Erfassung und Verwaltung von Gästeregistrierungen, Kurtaxe und Tourismusabgaben, um lokale Vorschriften einzuhalten.",
@@ -48,7 +47,7 @@ export const kurtaxeIT = {
   },
   authorities: {
     title: "Connessione con le Autorità",
-    description: "Trasmissione diretta dei dati alle autorità competenti attraverso i nostri partner AVS e Ostseecard."
+    description: "Trasmissione diretta dei dati alle autorità competenti attraverso i nostri partner Alloggiati Web e ISTAT."
   },
   cta: "Registrati Ora"
 };
