@@ -42,13 +42,13 @@ const InsurancePricingTable = () => {
   // Mobile optimized view
   if (isMobile) {
     return (
-      <div className="bg-white rounded-xl shadow p-4 mb-6">
-        <h3 className="text-xl font-semibold mb-4">{header.coverage}</h3>
+      <div className="bg-white rounded-xl shadow p-0 mb-6 w-full">
+        <h3 className="text-xl font-semibold mb-4 px-4 pt-4">{header.coverage}</h3>
         
         {/* Price per night */}
-        <div className="mb-6">
+        <div className="mb-6 px-4">
           <div className="font-medium border-b pb-2 mb-2">{rows[0]?.label}</div>
-          <div className="grid grid-cols-3 gap-2 text-center">
+          <div className="grid grid-cols-3 gap-2 text-center w-full">
             <div className="p-2 bg-gray-50 rounded">{rows[0]?.value1}</div>
             <div className="p-2 bg-gray-50 rounded">{rows[0]?.value2}</div>
             <div className="p-2 bg-gray-50 rounded">{rows[0]?.value3}</div>
@@ -57,7 +57,7 @@ const InsurancePricingTable = () => {
         
         {/* Coverage & Recourse */}
         {[1, 2].map((i) => (
-          <div key={i} className="mb-6">
+          <div key={i} className="mb-6 px-4">
             <div className="font-medium border-b pb-2 mb-2">{rows[i]?.label}</div>
             <div className="p-2 bg-gray-50 rounded text-center">
               {formatValue(rows[i]?.description)}
@@ -66,15 +66,22 @@ const InsurancePricingTable = () => {
         ))}
         
         {/* Additional Coverage Section */}
-        <div className="mb-6">
+        <div className="mb-6 px-4">
           <div className="font-medium border-b pb-2 mb-4">{ADDITIONAL_COVERAGE_LABEL}</div>
           
           {[3, 4, 5, 6].map((i) => (
             <div key={i} className="mb-4 last:mb-0">
               <div className="flex items-center mb-2">
-                {rowIcons[i] && <div className="mr-2">{rowIcons[i]}</div>}
+                {rowIcons[i] && (
+                  <div className="mr-2">
+                    {/* Force 5px rounded corners on mobile */}
+                    {React.cloneElement(rowIcons[i] as React.ReactElement, {
+                      className: "h-6 w-6 text-black rounded-[5px] bg-gray-200"
+                    })}
+                  </div>
+                )}
               </div>
-              <div className="grid grid-cols-3 gap-2 text-center">
+              <div className="grid grid-cols-3 gap-2 text-center w-full">
                 <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
                 <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
                 <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
@@ -86,10 +93,10 @@ const InsurancePricingTable = () => {
     );
   }
 
-  // Desktop view (original table)
+  // Desktop view (original table, now full width within container)
   return (
-    <div className="bg-white rounded-xl shadow p-4 md:p-8 mb-6 overflow-x-auto">
-      <table className="w-full text-[15px]">
+    <div className="bg-white rounded-xl shadow p-4 md:p-8 mb-6 w-full overflow-x-auto">
+      <table className="w-full text-[15px] min-w-[600px]">
         <thead>
           <tr>
             <th className="text-left w-[260px] p-4 font-semibold text-lg align-bottom">{header.coverage}</th>
@@ -129,12 +136,17 @@ const InsurancePricingTable = () => {
                   rowSpan={4}
                   style={{ verticalAlign: "top" }}
                 >
-                  {/* Keep line break formatting if present */}
                   {formatValue(ADDITIONAL_COVERAGE_LABEL)}
                 </td>
               )}
               <td className="p-4 align-middle text-center">
-                {rowIcons[i] ? <IconCell icon={rowIcons[i]} /> : null}
+                {rowIcons[i] ? (
+                  <div className="inline-block rounded-[5px] bg-gray-200 p-[2px]">
+                    {React.cloneElement(rowIcons[i] as React.ReactElement, {
+                      className: "h-6 w-6 text-black rounded-[5px]",
+                    })}
+                  </div>
+                ) : null}
               </td>
               {/* Each of the next three columns: up to X € or description */}
               <td className="p-4 align-middle text-center">
