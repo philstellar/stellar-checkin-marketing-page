@@ -15,11 +15,7 @@ export const de = {
   hero: heroDE,
   
   // Features
-  features: {
-    title: "Check-in",
-    subtitle: "Digitalisieren Sie Ihren Check-in-Prozess – schnell, sicher und paperless.",
-    moreBtn: "Mehr erfahren"
-  },
+  features: featuresDE,
 
   // Partners Section
   partners: partnersDE,

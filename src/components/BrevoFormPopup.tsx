@@ -1,3 +1,4 @@
+
 import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { X, Mail, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -103,7 +104,7 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
         />
       </div>
       <h2 className="text-2xl font-bold text-gray-800 mb-4">
-        Vielen Dank f��r deine Anmeldung!
+        Vielen Dank für deine Anmeldung!
       </h2>
       <p className="text-gray-600 mb-6">
         Wir melden uns so schnell wie möglich persönlich bei dir

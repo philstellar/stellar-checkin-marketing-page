@@ -61,4 +61,3 @@ export const submitContactForm = async (formData: FormData) => {
   console.log('FormSubmit response:', formSubmitResponse);
   return formSubmitResponse;
 };
-
