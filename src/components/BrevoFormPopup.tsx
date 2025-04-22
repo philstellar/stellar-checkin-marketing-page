@@ -34,8 +34,8 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     
     if (!email || !email.includes('@')) {
       toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
+        title: "Ungültige E-Mail",
+        description: "Bitte gib eine gültige E-Mail-Adresse ein.",
         variant: "destructive",
       });
       return;
@@ -44,52 +44,61 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
     setIsSubmitting(true);
     
     try {
-      console.log('Submitting email to Brevo:', email);
+      console.log('BrevoFormPopup: Submitting email to Brevo:', email);
       const response = await addContactToBrevo(email);
-      console.log('Submission response:', response);
+      console.log('BrevoFormPopup: Submission response status:', response.status);
       
-      if (response.ok || response.status === 201) {
-        console.log('Contact successfully added to Brevo');
+      // Handle different response statuses
+      if (response.ok || response.status === 201 || response.status === 204) {
+        console.log('BrevoFormPopup: Contact successfully added to Brevo');
         setIsSubmitted(true);
         toast({
-          title: "Success!",
+          title: "Erfolgreich!",
           description: "Vielen Dank für deine Anmeldung! Wir melden uns in Kürze bei dir.",
         });
         
         // Fire conversion tracking if it exists
         try {
-          if (typeof gtag_report_conversion === 'function') {
-            gtag_report_conversion();
+          if (typeof window.gtag_report_conversion === 'function') {
+            window.gtag_report_conversion();
             console.log('Conversion tracking fired');
           }
         } catch (error) {
           console.error("Error reporting conversion:", error);
         }
-      } else {
+      } else if (response.status === 400) {
         // If response is 400, it might be an existing contact which is fine
-        if (response.status === 400) {
-          const data = await response.json();
-          console.log('Brevo 400 response data:', data);
+        const data = await response.json().catch(() => ({}));
+        console.log('BrevoFormPopup: Brevo 400 response data:', data);
+        
+        // If it's just that the contact already exists, we consider it a success
+        if (data?.message?.includes('Contact already exist')) {
+          console.log('BrevoFormPopup: Contact already exists, treating as success');
+          setIsSubmitted(true);
+          toast({
+            title: "Erfolgreich!",
+            description: "Vielen Dank für deine Anmeldung! Wir melden uns in Kürze bei dir.",
+          });
           
-          // If it's just that the contact already exists, we consider it a success
-          if (data?.message?.includes('Contact already exist')) {
-            console.log('Contact already exists, treating as success');
-            setIsSubmitted(true);
-            toast({
-              title: "Success!",
-              description: "Vielen Dank für deine Anmeldung! Wir melden uns in Kürze bei dir.",
-            });
-            return;
+          // Fire conversion tracking if it exists
+          try {
+            if (typeof window.gtag_report_conversion === 'function') {
+              window.gtag_report_conversion();
+              console.log('Conversion tracking fired');
+            }
+          } catch (error) {
+            console.error("Error reporting conversion:", error);
           }
+          return;
         }
         
-        throw new Error('Failed to add contact to Brevo');
+        throw new Error('Failed to add contact to Brevo: ' + (data?.message || 'Unknown error'));
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('BrevoFormPopup: Error submitting form:', error);
       toast({
-        title: "Error",
-        description: "There was a problem adding your email. Please try again later.",
+        title: "Fehler",
+        description: "Es gab ein Problem bei der Anmeldung. Bitte versuche es später noch einmal.",
         variant: "destructive",
       });
     } finally {

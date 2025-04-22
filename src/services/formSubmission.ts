@@ -11,14 +11,21 @@ interface FormData {
 
 export const submitContactForm = async (formData: FormData) => {
   console.log('Contact form submission, adding to Brevo:', formData.email);
-  // First, try to add the contact to Brevo
-  const response = await addContactToBrevo(formData.email);
-  console.log('Brevo API response:', response);
   
-  if (!response.ok && response.status !== 201 && response.status !== 400) {
-    const errorData = await response.json().catch(() => ({}));
-    console.error("Brevo API error:", errorData);
-    throw new Error("Error adding contact to Brevo");
+  // First, try to add the contact to Brevo
+  try {
+    const response = await addContactToBrevo(formData.email);
+    console.log('Brevo API response:', response);
+    
+    // Handle non-success responses, but allow 400 if it's just that the contact already exists
+    if (!response.ok && response.status !== 201 && response.status !== 400) {
+      const errorData = await response.json().catch(() => ({}));
+      console.error("Brevo API error:", errorData);
+      throw new Error("Error adding contact to Brevo");
+    }
+  } catch (error) {
+    console.error("Failed to add contact to Brevo:", error);
+    // We'll continue with form submission even if Brevo fails
   }
   
   const emailContent = `
