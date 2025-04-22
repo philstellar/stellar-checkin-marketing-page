@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useTranslation } from "@/hooks/use-translation";
 import { Brush, Image, FileText, PawPrint } from "lucide-react";
@@ -45,21 +46,33 @@ const InsurancePricingTable = () => {
         <div className="bg-white rounded-xl shadow p-0 mb-6 w-full">
           <h3 className="text-xl font-semibold mb-4 px-4 pt-4">{header.coverage}</h3>
 
+          {/* Coverage header, sits above nightly price grid */}
+          <div className="mb-2 px-4">
+            <div className="font-semibold text-base text-gray-700 mb-2">{header.coverage}</div>
+          </div>
+          {/* Maximum coverage amounts (above price grid, single row, visually strong) */}
+          <div className="mb-2 px-4">
+            <div className="grid grid-cols-3 gap-2 text-center w-full">
+              <div className="text-sm font-medium text-gray-700">{header.amount1}</div>
+              <div className="text-sm font-medium text-gray-700">{header.amount2}</div>
+              <div className="text-sm font-medium text-gray-700">{header.amount3}</div>
+            </div>
+          </div>
           {/* Price per night */}
           <div className="mb-6 px-4">
-            <div className="font-medium border-b pb-2 mb-2">{rows[0]?.label}</div>
+            <div className="font-medium border-b pb-2 mb-2 text-base">{rows[0]?.label}</div>
             <div className="grid grid-cols-3 gap-2 text-center w-full">
-              <div className="p-2 bg-gray-50 rounded">{rows[0]?.value1}</div>
-              <div className="p-2 bg-gray-50 rounded">{rows[0]?.value2}</div>
-              <div className="p-2 bg-gray-50 rounded">{rows[0]?.value3}</div>
+              <div className="p-2 bg-gray-50 rounded text-lg font-bold">{rows[0]?.value1}</div>
+              <div className="p-2 bg-gray-50 rounded text-lg font-bold">{rows[0]?.value2}</div>
+              <div className="p-2 bg-gray-50 rounded text-lg font-bold">{rows[0]?.value3}</div>
             </div>
           </div>
 
           {/* Coverage & Recourse */}
           {[1, 2].map((i) => (
             <div key={i} className="mb-6 px-4">
-              <div className="font-medium border-b pb-2 mb-2">{rows[i]?.label}</div>
-              <div className="p-2 bg-gray-50 rounded text-center">
+              <div className="font-medium border-b pb-2 mb-2 text-base">{rows[i]?.label}</div>
+              <div className="p-2 bg-gray-50 rounded text-center text-sm">
                 {formatValue(rows[i]?.description)}
               </div>
             </div>
@@ -67,25 +80,23 @@ const InsurancePricingTable = () => {
 
           {/* Additional Coverage Section */}
           <div className="mb-6 px-4">
-            <div className="font-medium border-b pb-2 mb-4">{ADDITIONAL_COVERAGE_LABEL}</div>
-
+            <div className="font-medium border-b pb-2 mb-4 text-base">{ADDITIONAL_COVERAGE_LABEL}</div>
+            {/* Only one cell per row, icon left, merge all amounts */}
             {[3, 4, 5, 6].map((i) => (
-              <div key={i} className="mb-4 last:mb-0">
-                <div className="flex items-center mb-2">
-                  {rowIcons[i] && (
-                    <div className="mr-2">
-                      {/* Force 5px rounded corners on mobile */}
-                      {React.cloneElement(rowIcons[i] as React.ReactElement, {
-                        className: "h-6 w-6 text-black rounded-[5px] bg-gray-200"
-                      })}
-                    </div>
-                  )}
-                </div>
-                <div className="grid grid-cols-3 gap-2 text-center w-full">
-                  <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
-                  <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
-                  <div className="p-2 bg-gray-50 rounded">{formatValue(rows[i]?.description)}</div>
-                </div>
+              <div key={i} className="mb-4 last:mb-0 flex items-start">
+                {/* Icon left, if present */}
+                {rowIcons[i] && (
+                  <span className="mr-3 flex-shrink-0">
+                    {React.cloneElement(rowIcons[i] as React.ReactElement, {
+                      className:
+                        "h-6 w-6 text-black rounded-[5px] bg-gray-200 p-1",
+                    })}
+                  </span>
+                )}
+                {/* Only a single cell with the description */}
+                <span className="p-2 bg-gray-50 rounded text-sm leading-snug w-full block">
+                  {formatValue(rows[i]?.description)}
+                </span>
               </div>
             ))}
           </div>
@@ -164,3 +175,4 @@ const InsurancePricingTable = () => {
 };
 
 export default InsurancePricingTable;
+
