@@ -1,3 +1,4 @@
+
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
@@ -69,16 +70,7 @@ const Footer = () => {
                   {t('navigation.faq')}
                 </Link>
               </li>
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/versicherung`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('navigation.insurance')}
-                </Link>
-              </li>
+              {/* Removed Insurance Link from Footer */}
             </ul>
           </div>
           
@@ -129,3 +121,4 @@ const Footer = () => {
 };
 
 export default memo(Footer);
+

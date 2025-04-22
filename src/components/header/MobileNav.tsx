@@ -1,3 +1,4 @@
+
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -76,13 +77,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             animate="visible"
           >
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
-              <button 
-                onClick={() => handleNavigation('versicherung')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.insurance')}
-              </button>
-
+              {/* Always show Home and Trust Badge except production */}
               {!isProduction && (
                 <button 
                   onClick={() => handleNavigation('home')}
@@ -91,6 +86,13 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                   {t('navigation.home')}
                 </button>
               )}
+
+              <button 
+                onClick={() => handleNavigation('versicherung')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+              >
+                {t('navigation.insurance')}
+              </button>
 
               <div className="space-y-2">
                 <div className="block w-full text-xl text-royal font-medium py-2 text-left">
@@ -136,13 +138,15 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 </div>
               </div>
               
-              
-              {!isProduction && (<button 
-                onClick={() => handleNavigation('trust-badge')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.trustBadge')}
-              </button>)}
+              {/* Trust Badge link in non-production */}
+              {!isProduction && (
+                <button 
+                  onClick={() => handleNavigation('trust-badge')}
+                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                >
+                  {t('navigation.trustBadge')}
+                </button>
+              )}
 
               <button 
                 onClick={() => handleSectionNavigation('preise')}
@@ -173,3 +177,4 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
 };
 
 export default memo(MobileNav);
+
