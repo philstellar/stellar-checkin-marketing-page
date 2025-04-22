@@ -2,6 +2,8 @@
 import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { X, Mail, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import { addContactToBrevo } from "@/services/brevoService";
 
 interface BrevoFormPopupProps {
   isOpen: boolean;
@@ -11,82 +13,71 @@ interface BrevoFormPopupProps {
 const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.defer = true;
-    script.src = "https://sibforms.com/forms/end-form/build/main.js";
-    
-    if (!document.querySelector('script[src="https://sibforms.com/forms/end-form/build/main.js"]')) {
-      document.body.appendChild(script);
-    }
-
-    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-    window.LOCALE = 'en';
-    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Leider sind die bereitgestellten Infos ungültig";
-    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
-    window.GENERIC_INVALID_MESSAGE = "Leider sind die bereitgestellten Infos ungültig";
-    window.translation = {
-      common: {
-        selectedList: '{quantity} list selected',
-        selectedLists: '{quantity} lists selected',
-        selectedOption: '{quantity} selected',
-        selectedOptions: '{quantity} selected',
-      }
-    };
-    window.AUTOHIDE = Boolean(0);
-
     // Reset submission state when the popup is opened again
     if (isOpen) {
       setIsSubmitted(false);
       setEmail("");
     }
-
-    // Observer for successful form submission
-    const successObserver = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' || mutation.type === 'childList') {
-          const successMessage = document.getElementById('success-message');
-          if (successMessage && window.getComputedStyle(successMessage).display !== 'none') {
-            setIsSubmitted(true);
-          }
-        }
-      });
-    });
-
-    // Start observing the success message element
-    const successElement = document.getElementById('success-message');
-    if (successElement) {
-      successObserver.observe(successElement, { 
-        attributes: true, 
-        childList: true,
-        subtree: true 
-      });
-    }
-
-    return () => {
-      successObserver.disconnect();
-    };
   }, [isOpen]);
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  // Handle form submission manually to ensure we can trigger the thank you message
-  const handleSubmit = (e: React.FormEvent) => {
+  // Handle form submission with direct API call
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // You might want to add validation here
-    if (email) {
-      setIsSubmitted(true);
-      // Optionally add an AJAX request to submit the form data
-      try {
-        if (typeof gtag_report_conversion === 'function') {
-          gtag_report_conversion();
+    
+    if (!email || !email.includes('@')) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const response = await addContactToBrevo(email);
+      
+      if (response.ok || response.status === 201) {
+        setIsSubmitted(true);
+        // Fire conversion tracking if it exists
+        try {
+          if (typeof gtag_report_conversion === 'function') {
+            gtag_report_conversion();
+          }
+        } catch (error) {
+          console.error("Error reporting conversion:", error);
         }
-      } catch (error) {
-        console.error("Error reporting conversion:", error);
+      } else {
+        // If response is 400, it might be an existing contact which is fine
+        if (response.status === 400) {
+          const data = await response.json();
+          // If it's just that the contact already exists, we consider it a success
+          if (data?.message?.includes('Contact already exist')) {
+            setIsSubmitted(true);
+            return;
+          }
+        }
+        
+        throw new Error('Failed to add contact to Brevo');
       }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem adding your email. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -126,113 +117,54 @@ const BrevoFormPopup = ({ isOpen, onClose }: BrevoFormPopupProps) => {
         {isSubmitted ? (
           <ThankYouMessage />
         ) : (
-          <div className="sib-form">
-            <div id="sib-form-container" className="sib-form-container">
-              {/* White box container - fixed to properly contain all elements */}
-              <div id="sib-container" className="sib-container--large sib-container--vertical relative" 
-                style={{ 
-                  textAlign: "center", 
-                  backgroundColor: "rgba(255,255,255,1)", 
-                  maxWidth: "540px", 
-                  borderRadius: "3px", 
-                  borderWidth: "1px", 
-                  borderColor: "#C0CCD9", 
-                  borderStyle: "solid", 
-                  direction: "ltr", 
-                  margin: "0 auto",
-                  padding: "40px 20px" 
-                }}>
-                <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none z-10">
-                  <X className="h-4 w-4" />
-                  <span className="sr-only">Close</span>
-                </DialogClose>
-                
-                <div className="flex justify-center mb-4">
-                  <Mail 
-                    className="text-apple-500" 
-                    size={48} 
-                    strokeWidth={1.5}
-                  />
-                </div>
-                <div className="sib-form-block text-center mb-6" style={{ fontSize: "32px", fontWeight: 700, fontFamily: "Helvetica, sans-serif", color: "#3C4858", backgroundColor: "transparent" }}>
-                  <p>Kostenlos registrieren</p>
-                </div>
-                
-                <div id="error-message" className="sib-form-message-panel" style={{ fontSize: "16px", textAlign: "center", fontFamily: "Helvetica, sans-serif", color: "#661d1d", backgroundColor: "#ffeded", borderRadius: "3px", borderColor: "#ff4949", maxWidth: "540px", margin: "0 auto", display: "none" }}>
-                  <div className="sib-form-message-panel__text sib-form-message-panel__text--center">
-                    <svg viewBox="0 0 512 512" className="sib-icon sib-notification__icon">
-                      <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-                    </svg>
-                    <span className="sib-form-message-panel__inner-text">
-                      Bitte nochmal versuchen
-                    </span>
-                  </div>
-                </div>
-                
-                <div id="success-message" className="sib-form-message-panel" style={{ fontSize: "16px", textAlign: "center", fontFamily: "Helvetica, sans-serif", color: "#085229", backgroundColor: "#e7faf0", borderRadius: "3px", borderColor: "#13ce66", maxWidth: "540px", margin: "0 auto", display: "none" }}>
-                  <div className="sib-form-message-panel__text sib-form-message-panel__text--center">
-                    <svg viewBox="0 0 512 512" className="sib-icon sib-notification__icon">
-                      <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-                    </svg>
-                    <span className="sib-form-message-panel__inner-text">
-                      Das war der erste Schritt. Wir melden uns zeitnah bei dir
-                    </span>
-                  </div>
-                </div>
-                
-                <form id="sib-form" method="POST" action="https://sibforms.com/serve/MUIFAJ_DcxJlvRD3psRVx2nDGNe2zYivbNrzs3_y_FJfTjM-wKiJDkVmebrGnMcOU4bBTRIOoCStBnk0pI2mwibEI-QLGkze73zvN0mzQlpC5p7yGWlIRc7S4WpRnMOknyl-wanGlvGGmUMnEa0zbSsKEL-ygR43D1uTXvrZYkF_Olmhv2vo5PUDda4qusHFvYGmFoq2oi49A8G3" data-type="subscription" onSubmit={handleSubmit}>
-                  <div style={{ padding: "8px 0" }}>
-                    <div className="sib-form-block text-center" style={{ fontSize: "16px", fontFamily: "Helvetica, sans-serif", color: "#3C4858", backgroundColor: "transparent" }}>
-                      <div className="sib-text-form-block">
-                        <p><br /></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ padding: "8px 0" }}>
-                    <div className="sib-input sib-form-block">
-                      <div className="form__entry entry_block">
-                        <div className="form__label-row flex flex-col items-center">
-                          <label className="entry__label mx-auto text-center" style={{ fontWeight: 700, fontSize: "16px", fontFamily: "Helvetica, sans-serif", color: "#3c4858" }} htmlFor="EMAIL" data-required="*">Bitte trage deine geschäftliche E-Mail ein</label>
-                          <div className="entry__field w-3/4 mx-auto mt-2">
-                            <input 
-                              className="input w-full" 
-                              type="email" 
-                              id="EMAIL" 
-                              name="EMAIL" 
-                              autoComplete="off" 
-                              placeholder="EMAIL" 
-                              data-required="true" 
-                              required 
-                              value={email}
-                              onChange={handleEmailChange}
-                            />
-                          </div>
-                        </div>
-                        <label className="entry__error entry__error--primary mx-auto text-center" style={{ fontSize: "16px", fontFamily: "Helvetica, sans-serif", color: "#661d1d", backgroundColor: "#ffeded", borderRadius: "3px", borderColor: "#ff4949" }}>
-                        </label>
-                        <div className="flex justify-center w-full">
-                          <label className="entry__specification text-center w-3/4" style={{ fontSize: "12px", fontFamily: "Helvetica, sans-serif", color: "#8390A4" }}>
-                            In Kürze erhältst du von uns weitere Infos und den Registrierungslink
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ padding: "8px 0" }} className="flex justify-center">
-                    <div className="sib-form-block mx-auto" style={{ textAlign: "center" }}>
-                      <button className="sib-form-block__button sib-form-block__button-with-loader" style={{ fontSize: "16px", fontWeight: 700, fontFamily: "Helvetica, sans-serif", color: "#FFFFFF", backgroundColor: "#a4c309", borderRadius: "3px", borderWidth: "0px", padding: "8px 16px" }} form="sib-form" type="submit">
-                        <svg className="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                          <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                        </svg>
-                        Jetzt registrieren
-                      </button>
-                    </div>
-                  </div>
-                  <input type="text" name="email_address_check" value="" className="input--hidden" />
-                  <input type="hidden" name="locale" value="en" />
-                </form>
-              </div>
+          <div className="bg-white p-8 rounded-lg shadow-lg max-w-[540px]">
+            <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none z-10">
+              <X className="h-4 w-4" />
+              <span className="sr-only">Close</span>
+            </DialogClose>
+            
+            <div className="flex justify-center mb-4">
+              <Mail 
+                className="text-apple-500" 
+                size={48} 
+                strokeWidth={1.5}
+              />
             </div>
+            
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-800">Kostenlos registrieren</h2>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <label className="block text-center font-semibold text-gray-700" htmlFor="email">
+                  Bitte trage deine geschäftliche E-Mail ein
+                </label>
+                <input 
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-500"
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  value={email}
+                  onChange={handleEmailChange}
+                  placeholder="deine@email.de" 
+                  required 
+                />
+                <p className="text-sm text-center text-gray-500">
+                  In Kürze erhältst du von uns weitere Infos und den Registrierungslink
+                </p>
+              </div>
+              
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full px-6 py-2 text-white font-medium bg-apple-500 rounded-md hover:bg-apple-600 transition-colors focus:outline-none focus:ring-2 focus:ring-apple-300 disabled:opacity-70"
+                >
+                  {isSubmitting ? "Wird gesendet..." : "Jetzt registrieren"}
+                </button>
+              </div>
+            </form>
           </div>
         )}
       </DialogContent>

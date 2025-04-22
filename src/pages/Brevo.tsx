@@ -1,9 +1,11 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { addContactToBrevo } from "@/services/brevoService";
 
 const Brevo = () => {
   const { toast } = useToast();
@@ -26,13 +28,20 @@ const Brevo = () => {
     });
   };
 
-  // Brevo-Formular-Handler
+  // Brevo-Formular-Handler with direct API integration
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Email content
+      // First, try to add the contact to Brevo
+      const response = await addContactToBrevo(formData.email);
+      
+      if (!response.ok && response.status !== 201 && response.status !== 400) {
+        throw new Error("Error adding contact to Brevo");
+      }
+      
+      // Now send the full form details via FormSubmit
       const emailContent = `
         Name: ${formData.name}
         Email: ${formData.email}
@@ -41,7 +50,7 @@ const Brevo = () => {
       `;
 
       // Using FormSubmit with activation string
-      const response = await fetch("https://formsubmit.co/4f8ed8dc6e198407f7647476b637eb77", {
+      const formSubmitResponse = await fetch("https://formsubmit.co/4f8ed8dc6e198407f7647476b637eb77", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -55,14 +64,20 @@ const Brevo = () => {
         }),
       });
 
-      if (response.ok) {
+      if (formSubmitResponse.ok) {
         // Success message
         toast({
           title: "Nachricht gesendet",
           description: "Vielen Dank für dein Interesse! Wir werden uns in Kürze bei dir melden.",
         });
         // fire conversion
-  gtag_report_conversion();
+        try {
+          if (typeof gtag_report_conversion === 'function') {
+            gtag_report_conversion();
+          }
+        } catch (error) {
+          console.error("Error reporting conversion:", error);
+        }
         // Reset form
         setFormData({
           name: "",
