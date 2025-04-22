@@ -33,6 +33,27 @@ export const useTranslation = () => {
             console.debug(`[Translation DEBUG] Key "${key}" exists in "${lang}" with value: "${valueInOtherLang}"`);
           }
         }
+        
+        // Show the nested path structure to help with debugging
+        const keyParts = key.split('.');
+        let currentPath = '';
+        let currentObject = translations[language];
+        
+        for (const part of keyParts) {
+          currentPath = currentPath ? `${currentPath}.${part}` : part;
+          const nested = get(translations[language], currentPath);
+          
+          if (nested) {
+            console.debug(`[Translation DEBUG] Found path "${currentPath}" in ${language}`);
+            if (typeof nested === 'object') {
+              console.debug(`[Translation DEBUG] Available nested keys at "${currentPath}":`, Object.keys(nested));
+              currentObject = nested;
+            }
+          } else {
+            console.debug(`[Translation DEBUG] Path "${currentPath}" not found in ${language}`);
+            break;
+          }
+        }
       }
     }
     

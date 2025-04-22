@@ -40,14 +40,14 @@ const VersicherungPage = () => {
       <HeroSection />
       
       <div className="container mx-auto px-4 py-[30px]">
-        <OverviewCards t={t} />
+        <OverviewCards />
 
         <div className="prose max-w-none">
           <div className="mb-12">
             <InsuranceComparisonTable />
           </div>
           
-          <BenefitsSection t={t} />
+          <BenefitsSection />
         </div>
 
         <LogoCarousel />
@@ -62,7 +62,7 @@ const VersicherungPage = () => {
             <p className="text-lg text-royal-700 text-center mb-8">
               {t('insurance.shortTerm.description')}
             </p>
-            <InsurancePricing t={t} />
+            <InsurancePricing />
           </div>
         </div>
       </section>

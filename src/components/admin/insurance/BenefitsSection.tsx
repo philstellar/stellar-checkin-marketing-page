@@ -2,12 +2,11 @@
 import React from 'react';
 import { CalendarCheck, Percent, Plus, Link as LinkIcon, ShieldCheck, FileCheck } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from '@/hooks/use-translation';
 
-interface BenefitsSectionProps {
-  t: (key: string) => string;
-}
-
-const BenefitsSection = ({ t }: BenefitsSectionProps) => {
+const BenefitsSection = () => {
+  const { t } = useTranslation();
+  
   const benefits = [
     {
       icon: <CalendarCheck className="h-6 w-6 text-apple" />,
