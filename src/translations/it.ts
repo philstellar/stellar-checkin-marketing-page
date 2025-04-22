@@ -96,20 +96,87 @@ export const it = {
   // Versicherung Section
   versicherung: {
     title: "Automatizza in Modo Intelligente Assicurazione e Depositi",
-    subtitle: "Automatizza la raccolta e il rimborso dei depositi, o offri ai tuoi ospiti un'alternativa comoda – e beneficia di commissioni aggiuntive.",
-    process: {
+    subtitle: "Offri ai tuoi ospiti un'assicurazione facoltativa e beneficia di entrate aggiuntive.",
+    section1: {
       title: "Processo di Check-in Più Veloce",
-      description: "Niente più gestione dei depositi, meno lavoro per te e i tuoi ospiti."
+      content: "Niente più gestione dei depositi, meno lavoro per te e i tuoi ospiti."
     },
-    income: {
+    section2: {
       title: "Fonte di Reddito Aggiuntiva",
-      description: "Guadagna commissioni con ogni polizza assicurativa – automaticamente e senza sforzo aggiuntivo."
+      content: "Guadagna commissioni con ogni polizza assicurativa – automaticamente e senza sforzo aggiuntivo."
     },
-    protection: {
+    section3: {
       title: "Protezione Completa",
-      description: "Protezione migliore rispetto ai depositi tradizionali, grazie a importi di copertura più elevati, copertura \"nuovo per vecchio\" e protezione contro la perdita di affitto."
+      content: "Protezione migliore rispetto ai depositi tradizionali, grazie a importi di copertura più elevati, copertura \"nuovo per vecchio\" e protezione contro la perdita di affitto."
     },
-    cta: "Registrati Ora"
+    benefits: {
+      title: "I Vantaggi dell’Assicurazione a Colpo d’Occhio",
+      list: [
+        "Accelera il check-in eliminando la gestione del deposito. I tuoi ospiti possono rilassarsi subito, senza preoccuparsi di contanti o autorizzazioni di carta.",
+        "Genera entrate extra grazie a commissioni con ogni assicurazione attivata. Un’entrata passiva che cresce con ogni prenotazione.",
+        "Sfrutta somme assicurate più alte rispetto ai depositi tradizionali. L’assicurazione offre protezione finanziaria più ampia per la proprietà e gli arredi.",
+        "Goditi un’integrazione completamente automatizzata nel processo di check-in. L’assicurazione si integra in modo fluido senza carico amministrativo aggiuntivo.",
+        "Protezione completa sia per te sia per gli ospiti: da danni materiali a furti ed eventi imprevisti. Una soluzione che porta serenità ad entrambe le parti.",
+        "Gestione dei danni automatica e fluida senza bisogno di confronto diretto con l’ospite. Elaborazione rapida e indennizzo equo in caso di sinistro."
+      ]
+    },
+    shortTerm: {
+      title: "Assicurazione Breve Termine",
+      description: "Soluzioni assicurative flessibili per la tua casa vacanze – su misura per le tue esigenze."
+    },
+    details: {
+      furniture: {
+        title: "Mobili & Arredi",
+        description: "Protezione completa per i tuoi mobili e complementi d’arredo."
+      },
+      newForOld: {
+        title: "Nuovo per Vecchio",
+        description: "In caso di danni, ricevi il prezzo di sostituzione nuovo per gli articoli danneggiati."
+      },
+      rentalLoss: {
+        title: "Perdita di Affitto",
+        description: "Protezione contro la perdita di reddito da affitti causata da danni."
+      },
+      petDamage: {
+        title: "Danni da Animali",
+        description: "Copertura per danni causati dagli animali degli ospiti."
+      },
+      cleaning: {
+        title: "Pulizia",
+        description: "Copre i costi di pulizie straordinarie."
+      },
+      art: {
+        title: "Arte e Decorazioni",
+        description: "Copertura assicurativa per oggetti d’arte ed elementi decorativi."
+      }
+    },
+    faq: {
+      airbnb: {
+        question: "Serve la vostra assicurazione anche se sono su Airbnb o Booking.com?",
+        answer:
+          "Sì—sebbene piattaforme come Airbnb e Booking.com offrano una certa protezione, hanno dei limiti importanti. AirCover di Airbnb non è una vera assicurazione: coinvolge sempre l’ospite e chiede a loro di pagare i danni. Solo in caso di rifiuto interviene AirCover. Questo può portare a conflitti e recensioni negative, e la protezione vale solo per le prenotazioni Airbnb. Il programma di Booking.com facilita la disputa col cliente e il massimale in UE è di €300, con possibili ripercussioni sul ranking o sulla conversione. La nostra assicurazione opera autonomamente senza questi rischi."
+      },
+      repeat: {
+        question: "L’assicurazione può favorire le prenotazioni ripetute?",
+        answer:
+          "Gli ospiti affezionati vogliono sicurezza. Offrendo l’assicurazione, dimostri attenzione; i clienti sanno che non avranno addebiti imprevisti. I sinistri di solito si risolvono senza coinvolgimento diretto, fidelizzando il cliente e favorendo le recensioni positive."
+      },
+      deposit: {
+        question: "Devo ancora chiedere il deposito?",
+        answer:
+          "Il deposito può proteggere dal rischio economico e spinge gli ospiti a prendersi cura dell’alloggio. Molti però evitano strutture con deposito per la burocrazia o il rischio di trattenuta. Con la nostra assicurazione, puoi saltare il deposito o proporre una soluzione più comoda. I sinistri di norma si liquidano direttamente, evitando discussioni e incentivando recensioni a 5 stelle."
+      },
+      coverage: {
+        question: "Cosa copre l’assicurazione?",
+        answer:
+          "La nostra assicurazione per affitti brevi è studiata per proprietari e gestori: un pacchetto robusto che copre danni accidentali o dolosi (a valore di sostituzione), furto da parte dell’ospite, perdita di redditi da danno, pulizie extra, danni da animali e altro ancora."
+      },
+      cost: {
+        question: "Quanto costa l’assicurazione danni ospite?",
+        answer:
+          "L’assicurazione ospite parte da 2,80 € a notte a seconda della copertura scelta. I dettagli sono nel tuo account Stellar. Puoi sostenere il costo tu oppure offrirlo come alternativa al deposito. Se vuoi tutelare ogni soggiorno, puoi includerlo nelle tariffe."
+      }
+    }
   },
 
   // Identitaetspruefung Section

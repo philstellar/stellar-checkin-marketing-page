@@ -212,8 +212,90 @@ export const es = {
     terms: "Términos y Condiciones",
     copyright: "Todos los derechos reservados."
   },
-
-  insurance: insuranceES,
+  insurance: {
+    title: "Automatice de Forma Inteligente el Seguro y los Depósitos",
+    introduction: "Ofrezca a sus huéspedes un seguro opcional y benefíciese de ingresos adicionales.",
+    section1: {
+      title: "Proceso de Check-in Más Rápido",
+      content: "Sin gestión de depósitos, menos trabajo para usted y sus huéspedes."
+    },
+    section2: {
+      title: "Fuente de Ingresos Adicional",
+      content: "Gane comisiones con cada póliza de seguro – automáticamente y sin esfuerzo adicional."
+    },
+    section3: {
+      title: "Protección Integral",
+      content: "Mejor protección que los depósitos tradicionales, gracias a montos de cobertura más altos, cobertura \"nuevo por viejo\" y protección contra pérdida de alquiler."
+    },
+    benefits: {
+      title: "Ventajas del Seguro de un Vistazo",
+      list: [
+        "Agilice el proceso de check-in eliminando la gestión de depósitos. Sus huéspedes pueden relajarse de inmediato sin preocuparse por el efectivo o autorizaciones de tarjeta.",
+        "Genere ingresos adicionales a través de atractivas comisiones con cada seguro contratado. Un ingreso pasivo que se acumula automáticamente con cada reserva.",
+        "Benefíciese de sumas aseguradas significativamente mayores en comparación con depósitos tradicionales. El seguro ofrece una protección financiera más amplia para su propiedad y mobiliario.",
+        "Disfrute de una integración totalmente automatizada en su proceso de check-in. El seguro se incluye en la reserva sin administración adicional.",
+        "Proteja de forma integral a usted y a sus huéspedes: desde daños materiales y robos hasta eventos imprevistos. Una protección total que aporta tranquilidad a ambas partes.",
+        "Experimente una gestión de daños ágil y automatizada sin confrontaciones con el huésped. Tramitación rápida y compensación justa en caso de siniestro."
+      ]
+    },
+    shortTerm: {
+      title: "Seguro para Alquiler Vacacional",
+      description: "Soluciones de seguro flexibles para su vivienda vacacional, adaptadas a sus necesidades."
+    },
+    details: {
+      furniture: {
+        title: "Mobiliario y Equipamiento",
+        description: "Cobertura integral para sus muebles y objetos de equipamiento."
+      },
+      newForOld: {
+        title: "Nuevo por Viejo",
+        description: "En caso de daños, recibirá el valor de reemplazo nuevo por los artículos perdidos."
+      },
+      rentalLoss: {
+        title: "Pérdida de Alquiler",
+        description: "Protección frente a la pérdida de ingresos por daños en la propiedad."
+      },
+      petDamage: {
+        title: "Daños por Mascotas",
+        description: "Cobertura frente a daños ocasionados por mascotas de los huéspedes."
+      },
+      cleaning: {
+        title: "Limpieza",
+        description: "Cubre los costes de limpiezas extraordinarias."
+      },
+      art: {
+        title: "Arte y Decoración",
+        description: "Cobertura para objetos de arte y elementos decorativos."
+      }
+    },
+    faq: {
+      airbnb: {
+        question: "¿Necesito su seguro aunque publique en Airbnb o Booking.com?",
+        answer:
+          "Sí: aunque plataformas como Airbnb y Booking.com ofrecen cierta protección, tienen limitaciones importantes. AirCover (Airbnb) no es un seguro tradicional e implica a los huéspedes, a quienes se les pide cubrir los daños. Solo si el huésped se niega, interviene AirCover. Esto puede llevar a conflictos, reseñas negativas, y la protección solo se aplica a estancias Airbnb. El programa de depósitos de Booking.com solo facilita la disputa con el huésped y está limitado a 300 € en la UE, lo que puede afectar su conversión o ranking. Nuestro seguro es independiente y no conlleva estos problemas."
+      },
+      repeat: {
+        question: "¿Puede el seguro de daños aumentar las reservas repetidas?",
+        answer:
+          "Los huéspedes recurrentes valoran la confianza y la transparencia. Si ofrece seguro, demuestra profesionalidad y los huéspedes saben que no tendrán cargos sorpresa. Los siniestros suelen tramitarse sin involucrar al huésped, lo que mejora la experiencia y fomenta fidelidad y buenas reseñas."
+      },
+      deposit: {
+        question: "¿Sigo necesitando pedir una fianza?",
+        answer:
+          "La fianza puede aportar seguridad financiera y fomenta que los huéspedes cuiden mejor el alojamiento. Sin embargo, muchos prefieren no reservar si hay fianza, por el trámite y el riesgo de deducciones. Con nuestro seguro, puede prescindir de la fianza o presentarlo como alternativa. Los siniestros suelen gestionarse directamente, evitando disputas, más reservas y mejores valoraciones."
+      },
+      coverage: {
+        question: "¿Qué cubre el seguro?",
+        answer:
+          "Nuestro seguro para alquiler vacacional está diseñado para gestores o propietarios: solución sólida para daños accidentales o malintencionados (por valor de reemplazo), robos de huéspedes, pérdida de ingresos por daños, limpieza extra, daños de mascotas, y más."
+      },
+      cost: {
+        question: "¿Cuánto cuesta el seguro de daños al huésped?",
+        answer:
+          "El seguro de daños comienza en 2,80 € por noche, según la cobertura elegida. Los detalles están en su cuenta de Stellar. Usted puede pagarlo o trasladar el coste al huésped como alternativa. Para cubrir todas las estancias, puede asumirlo e incluirlo en sus tarifas."
+      }
+    }
+  },
   trustBadge: trustBadgeES,
 
   brevoPopup: {
