@@ -1,4 +1,3 @@
-
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
@@ -8,7 +7,6 @@ import { useLanguage } from "@/context/LanguageContext";
 const Footer = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
-  const isProduction = window.location.hostname === 'stellar-checkin.com';
   
   const getUrlPrefix = () => {
     return `/${language}`;
@@ -37,47 +35,55 @@ const Footer = () => {
             </p>
           </div>
           
-          {/* Column 2: About Stellar - Only visible in non-production */}
-          {!isProduction && (
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link 
-                    to={`${getUrlPrefix()}/ueber-uns`} 
-                    className="flex items-center text-black hover:text-apple transition-colors"
-                    onClick={handleNavigation}
-                  >
-                    <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                    {t('navigation.aboutUs')}
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    to={`${getUrlPrefix()}/erfolgsgeschichten`} 
-                    className="flex items-center text-black hover:text-apple transition-colors"
-                    onClick={handleNavigation}
-                  >
-                    <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                    {t('navigation.successStories')}
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    to={`${getUrlPrefix()}/faq`} 
-                    className="flex items-center text-black hover:text-apple transition-colors"
-                    onClick={handleNavigation}
-                  >
-                    <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                    {t('navigation.faq')}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          )}
+          {/* Column 2: About Stellar */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link 
+                  to={`${getUrlPrefix()}/ueber-uns`} 
+                  className="flex items-center text-black hover:text-apple transition-colors"
+                  onClick={handleNavigation}
+                >
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.aboutUs')}
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to={`${getUrlPrefix()}/erfolgsgeschichten`} 
+                  className="flex items-center text-black hover:text-apple transition-colors"
+                  onClick={handleNavigation}
+                >
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.successStories')}
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to={`${getUrlPrefix()}/faq`} 
+                  className="flex items-center text-black hover:text-apple transition-colors"
+                  onClick={handleNavigation}
+                >
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.faq')}
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to={`${getUrlPrefix()}/versicherung`} 
+                  className="flex items-center text-black hover:text-apple transition-colors"
+                  onClick={handleNavigation}
+                >
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.insurance')}
+                </Link>
+              </li>
+            </ul>
+          </div>
           
           {/* Column 3: Legal - Spans 2 columns in production mode */}
-          <div className={isProduction ? "md:col-span-2" : ""}>
+          <div className="md:col-span-2">
             <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
             <ul className="space-y-3">
               <li>

@@ -1,4 +1,3 @@
-
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -77,6 +76,13 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             animate="visible"
           >
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
+              <button 
+                onClick={() => handleNavigation('versicherung')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+              >
+                {t('navigation.insurance')}
+              </button>
+
               {!isProduction && (
                 <button 
                   onClick={() => handleNavigation('home')}
@@ -130,19 +136,13 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 </div>
               </div>
               
-              <button 
-                onClick={() => handleNavigation('versicherung')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.insurance')}
-              </button>
               
-              <button 
+              {!isProduction && (<button 
                 onClick={() => handleNavigation('trust-badge')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.trustBadge')}
-              </button>
+              </button>)}
 
               <button 
                 onClick={() => handleSectionNavigation('preise')}
