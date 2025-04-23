@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Database, Plug, Link, ServerCog } from 'lucide-react';
+import { Database, Link, ServerCog } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
 import LogoCarouselAutoplay from "@/components/LogoCarouselAutoplay";
 import { useTranslation } from "@/hooks/use-translation";
@@ -14,11 +14,7 @@ export const IntegrationenSection: React.FC = () => {
       title: t('integration.pms.title'),
       description: t('integration.pms.description')
     },
-    {
-      icon: <Plug className="w-8 h-8 text-apple" />,
-      title: t('integration.api.title'),
-      description: t('integration.api.description')
-    },
+    // Deleted box with integration.api.title!
     {
       icon: <Link className="w-8 h-8 text-apple" />,
       title: t('integration.payment.title'),
@@ -82,7 +78,7 @@ export const IntegrationenSection: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-md">
               <div className="mb-4">
