@@ -82,7 +82,7 @@ export const insuranceDE = {
   details: {
     furniture: {
       title: "Mobiliar & Gebäude",
-      description: "Wir versichern versehentliche und böswillige Schäden an IHrem Eigentum. Auch Diebstahl ist versichert."
+      description: "Wir versichern versehentliche und böswillige Schäden an Ihrem Eigentum. Auch Diebstahl ist versichert."
     },
     newForOld: {
       title: "Neu für Alt",
