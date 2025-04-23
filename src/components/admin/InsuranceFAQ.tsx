@@ -13,7 +13,6 @@ const InsuranceFAQ = () => {
 
   const faqs = [
     'airbnb',
-    'repeat',
     'deposit',
     'coverage',
     'cost'
