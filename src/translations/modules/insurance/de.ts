@@ -2,7 +2,7 @@ export const insuranceDE = {
   title: "Versicherung und Kaution clever automatisieren",
   introduction: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung, oder bieten Sie Ihren Gästen eine bequeme Alternative – und profitieren Sie von zusätzlichen Provisionseinnahmen.",
   section1: {
-    title: "Schnellerer Check-in-Prozess",
+    title: "Schnellerer Check-in",
     content: "Keine Kautionsabwicklung mehr, weniger Arbeit für Sie und Ihre Gäste."
   },
   section2: {
