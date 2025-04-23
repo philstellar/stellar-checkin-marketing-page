@@ -62,49 +62,57 @@ const DesktopNav = ({
         </button>
       )}
 
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <button 
-            onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
-            className="text-royal hover:text-apple font-medium transition-colors outline-none flex items-center gap-1"
-          >
-            {t('navigation.features')}
-            <ChevronDown className="h-4 w-4" />
-          </button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="bg-white shadow-md z-50">
-          <DropdownMenuItem asChild>
-            <a href="/#kurtaxe" className="cursor-pointer hover:bg-slate-100 w-full">
-              {t('kurtaxe.title')}
-            </a>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <a href="/#zusatzservices" className="cursor-pointer hover:bg-slate-100 w-full">
-              {t('zusatzservices.title')}
-            </a>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <a href="/#versicherung" className="cursor-pointer hover:bg-slate-100 w-full">
-              {t('versicherung.title')}
-            </a>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <a href="/#identitaetspruefung" className="cursor-pointer hover:bg-slate-100 w-full">
-              {t('identity.title')}
-            </a>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <a href="/#einstellungen" className="cursor-pointer hover:bg-slate-100 w-full">
-              {t('settings.title')}
-            </a>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <a href="/#integrationen" className="cursor-pointer hover:bg-slate-100 w-full">
-              {t('integration.title')}
-            </a>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <div className="flex items-center space-x-1">
+        <button 
+          onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
+          className="text-royal hover:text-apple font-medium transition-colors"
+        >
+          {t('navigation.features')}
+        </button>
+        
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button 
+              className="text-royal hover:text-apple transition-colors outline-none ml-1 p-1"
+              aria-label="Show features menu"
+            >
+              <ChevronDown className="h-4 w-4" />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="bg-white shadow-md z-50">
+            <DropdownMenuItem asChild>
+              <a href="/#kurtaxe" className="cursor-pointer hover:bg-slate-100 w-full">
+                {t('kurtaxe.title')}
+              </a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="/#zusatzservices" className="cursor-pointer hover:bg-slate-100 w-full">
+                {t('zusatzservices.title')}
+              </a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="/#versicherung" className="cursor-pointer hover:bg-slate-100 w-full">
+                {t('versicherung.title')}
+              </a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="/#identitaetspruefung" className="cursor-pointer hover:bg-slate-100 w-full">
+                {t('identity.title')}
+              </a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="/#einstellungen" className="cursor-pointer hover:bg-slate-100 w-full">
+                {t('settings.title')}
+              </a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="/#integrationen" className="cursor-pointer hover:bg-slate-100 w-full">
+                {t('integration.title')}
+              </a>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
       
       <button 
         onClick={() => handleNavigation('versicherung')} 

@@ -88,9 +88,12 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               )}
 
               <div className="space-y-2">
-                <div className="block w-full text-xl text-royal font-medium py-2 text-left">
+                <button 
+                  onClick={() => handleSectionNavigation('gaeste-voranmeldung')}
+                  className="block w-full text-xl text-royal font-medium py-2 text-left"
+                >
                   {t('navigation.features')}
-                </div>
+                </button>
                 <div className="pl-4 space-y-2">
                   <a 
                     href="/#kurtaxe"
@@ -148,17 +151,15 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 </button>
               )}
 
-              {/* Fix pricing link to correctly navigate to the pricing section */}
               <button 
-                onClick={() => location.pathname === '/' ? handleSectionClick('preise') : navigate('/', { state: { scrollTo: 'preise' } })}
+                onClick={() => handleSectionNavigation('preise')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.pricing')}
               </button>
               
-              {/* Fix contact link to correctly navigate to the contact section */}
               <button 
-                onClick={() => location.pathname === '/' ? handleSectionClick('kontakt') : navigate('/', { state: { scrollTo: 'kontakt' } })}
+                onClick={() => handleSectionNavigation('kontakt')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.contact')}
