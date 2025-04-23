@@ -3,15 +3,15 @@ export const insuranceDE = {
   introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
   section1: {
     title: "Warum eine Versicherung?",
-    content: "Unsere Versicherung deckt Schäden, die durch Gäste, deren Begleitpersonen oder Haustiere entstehen. Mit einer Entscheidungsquote von 90% bietet sie Sicherheit für alle Beteiligten."
+    content: "Unsere Versicherung schützt vor Schäden, die durch Gäste, deren Begleitpersonen oder Haustiere verursacht werden. 90% der Gäste wählen unsere Versicherung - für ein sicheres Gefühl auf beiden Seiten."
   },
   section2: {
     title: "Wie funktioniert es?",
-    content: "Gäste können die Versicherung während des digitalen Check-ins erwerben, oder Sie als Gastgeber übernehmen die Kosten und kalkulieren diese in Ihren Preis mit ein."
+    content: "Die Versicherung kann direkt beim digitalen Check-in vom Gast gebucht werden – oder Sie übernehmen die Kosten und rechnen sie in Ihren Übernachtungspreis ein."
   },
   section3: {
     title: "Unser Partner",
-    content: "Unterstützt von Hiscox – einem weltweit renommierten Spezialversicherer mit über 100 Jahren Erfahrung, außergewöhnlicher finanzieller Stabilität und einer Kundenzufriedenheit von 95%."
+    content: "Partner von Hiscox – einem weltweit renommierten Spezialversicherer mit über 100 Jahren Erfahrung, hoher finanzieller Stabilität und einer Kundenzufriedenheit von 95%."
   },
   comparison: {
     headline: "Versicherungs- und Kautionsmanagement",
