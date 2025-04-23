@@ -3,15 +3,15 @@ export const insuranceEN = {
   introduction: "Offer your guests optional insurance and benefit from additional income.",
   section1: {
     title: "Why Insurance?",
-    content: "Insurance protects you from unexpected damages and losses. 90% of guests opt in for insurance, but Stellar also offers full-fledged deposit management"
+    content: "Our insurance covers damages caused by guests, their companions, or pets. With 90% of guests opting in, it offers peace of mind for everyone involved."
   },
   section2: {
     title: "How does it work?",
-    content: "Your guests can purchase insurance during check-in. Or you automatically pay as a host and charge your guest differently."
+    content: "Guests can either purchase insurance during check-in, or you cover the cost as the host and include it in your pricing."
   },
   section3: {
-    title: "Your Benefits",
-    content: "You can choose to add a premium amount to the insurance option. That way you receive commissions for every insurance policy purchased."
+    title: "Our Partner",
+    content: "Backed by Hiscox – a globally renowned specialist insurer with over 100 years of experience, exceptional financial stability, and a 95% customer satisfaction rate."
   },
   comparison: {
     headline: "Insurance & Deposit Management",
