@@ -51,9 +51,9 @@ const InsurancePricingTable = () => {
           {/* Maximum coverage amounts */}
           <div className="mb-2 px-4">
             <div className="grid grid-cols-3 gap-2 text-center w-full">
-              <div className="text-base font-bold text-gray-700">{header.amount1}</div>
-              <div className="text-base font-bold text-gray-700">{header.amount2}</div>
-              <div className="text-base font-bold text-gray-700">{header.amount3}</div>
+              <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{header.amount1}</div>
+              <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{header.amount2}</div>
+              <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{header.amount3}</div>
             </div>
           </div>
 
@@ -61,9 +61,9 @@ const InsurancePricingTable = () => {
           <div className="mb-6 px-4">
             <div className="font-medium border-b pb-2 mb-2 text-base">{rows[0]?.label}</div>
             <div className="grid grid-cols-3 gap-2 text-center w-full">
-              <div className="p-2 rounded text-lg font-bold bg-white/0">{rows[0]?.value1}</div>
-              <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{rows[0]?.value2}</div>
-              <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{rows[0]?.value3}</div>
+              <div className="text-base font-bold text-gray-700">{rows[0]?.value1}</div>
+              <div className="text-base font-bold text-gray-700">{rows[0]?.value2}</div>
+              <div className="text-base font-bold text-gray-700">{rows[0]?.value3}</div>
             </div>
           </div>
 
