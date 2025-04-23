@@ -67,12 +67,12 @@ export const insuranceDE = {
   benefits: {
     title: "Die Vorteile der Versicherung im Überblick",
     list: [
-      "Beschleunigen Sie den Check-in-Prozess durch den Wegfall zeitaufwändiger Kautionsabwicklung. Ihre Gäste können direkt bei der Ankunft entspannen, ohne sich um Bargeld oder Kreditkartenautorisierungen kümmern zu müssen.",
-      "Generieren Sie zusätzliche Einnahmen durch attraktive Provisionen bei jeder Versicherungsbuchung. Ein passives Einkommen, das sich automatisch mit jeder Buchung aufbaut.",
-      "Profitieren Sie von deutlich höheren Deckungssummen im Vergleich zu traditionellen Kautionen. Die Versicherung bietet einen umfassenderen finanziellen Schutz für Ihre Immobilie und Ausstattung.",
-      "Genießen Sie eine vollständig automatisierte Integration in Ihren bestehenden Check-in-Prozess. Die Versicherung wird nahtlos in den Buchungsablauf eingebunden, ohne zusätzlichen Verwaltungsaufwand.",
-      "Sichern Sie sich und Ihre Gäste umfassend ab - von Sachschäden über Diebstahl bis hin zu unvorhergesehenen Ereignissen. Ein Rundum-Schutz, der beide Seiten beruhigt.",
-      "Erleben Sie eine reibungslose, automatisierte Schadensabwicklung ohne direkte Konfrontation mit dem Gast. Schnelle Bearbeitung und faire Entschädigung im Schadensfall."
+      "Vereinfachen Sie den Check-in: Kein Kautionsprozess mehr, Ihre Gäste können sofort entspannen – ohne Bargeld oder Kreditkartenautorisierungen.",
+      "Erhöhen Sie Ihre Einnahmen durch Provisionen bei jeder Versicherungsbuchung – ganz automatisch.",
+      "Genießen Sie besseren finanziellen Schutz mit höheren Deckungssummen im Vergleich zu traditionellen Kautionen.",
+      "Nahtlose Integration: Die Versicherung wird automatisch in den Check-in eingebunden – ganz ohne zusätzlichen Verwaltungsaufwand.",
+      "Sichern Sie sich und Ihre Gäste umfassend ab - von Sachschäden über Diebstahl bis hin zu zusätzlichem Reinigungsaufwand. Ein Rundum-Schutz, der beide Seiten beruhigt.",
+      "Erleben Sie eine einfache und automatisierte Schadensabwicklung ohne direkte Kontaktaufnahme mit dem Gast. Schnelle Bearbeitung und faire Entschädigung im Schadensfall."
     ]
   },
   shortTerm: {
