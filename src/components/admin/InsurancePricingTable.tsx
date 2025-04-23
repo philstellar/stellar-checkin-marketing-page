@@ -41,7 +41,6 @@ const InsurancePricingTable = () => {
 
   // Text for the new heading cell that covers additional coverage (up to)
   const ADDITIONAL_COVERAGE_LABEL = rows[3]?.label || t("insurance.pricing.rows.3.label") || "Additional coverage\n(up to)";
-
   if (isMobile) {
     return <div className="w-full px-[2px]">
         <div className="bg-white p-0 mb-6 w-full rounded-none">
@@ -95,7 +94,7 @@ const InsurancePricingTable = () => {
 
   // Desktop view
   return <div className="w-full px-[15px]">
-      <div className="bg-white rounded-xl p-4 md:p-8 mb-6 w-full overflow-x-auto">
+      <div className="bg-white p-4 md:p-8 mb-6 w-full overflow-x-auto px-[9px] rounded-none">
         <table className="w-full text-[15px] min-w-[600px]">
           <thead>
             <tr>
@@ -151,5 +150,4 @@ const InsurancePricingTable = () => {
       </div>
     </div>;
 };
-
 export default InsurancePricingTable;
