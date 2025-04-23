@@ -148,15 +148,17 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 </button>
               )}
 
+              {/* Fix pricing link to correctly navigate to the pricing section */}
               <button 
-                onClick={() => handleSectionNavigation('preise')}
+                onClick={() => location.pathname === '/' ? handleSectionClick('preise') : navigate('/', { state: { scrollTo: 'preise' } })}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.pricing')}
               </button>
               
+              {/* Fix contact link to correctly navigate to the contact section */}
               <button 
-                onClick={() => handleSectionNavigation('kontakt')}
+                onClick={() => location.pathname === '/' ? handleSectionClick('kontakt') : navigate('/', { state: { scrollTo: 'kontakt' } })}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.contact')}
