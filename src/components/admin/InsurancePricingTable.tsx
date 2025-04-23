@@ -63,7 +63,7 @@ const InsurancePricingTable = () => {
             <div className="grid grid-cols-3 gap-2 text-center w-full">
               <div className="p-2 rounded text-lg font-bold bg-white/0">{rows[0]?.value1}</div>
               <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{rows[0]?.value2}</div>
-              <div className="p-2 bg-gray-50 rounded text-lg font-bold">{rows[0]?.value3}</div>
+              <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{rows[0]?.value3}</div>
             </div>
           </div>
 
