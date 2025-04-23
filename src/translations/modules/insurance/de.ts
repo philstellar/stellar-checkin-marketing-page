@@ -67,7 +67,7 @@ export const insuranceDE = {
   benefits: {
     title: "Die Vorteile der Versicherung im Überblick",
     list: [
-      "Vereinfachen Sie den Check-in: Kein Kautionsprozess mehr, Ihre Gäste können sofort entspannen – ohne Bargeld oder Kreditkarten-transaktionen",
+      "Vereinfachen Sie den Check-in: Kein Kautionsprozess mehr, Ihre Gäste können sofort entspannen – ohne Bargeld oder Kreditkartentransaktionen",
       "Erhöhen Sie Ihre Einnahmen durch Provisionen bei jeder Versicherungsbuchung – ganz automatisch.",
       "Genießen Sie besseren finanziellen Schutz mit höheren Deckungssummen im Vergleich zu traditionellen Kautionen.",
       "Nahtlose Integration: Die Versicherung wird automatisch in den Check-in eingebunden – ohne zusätzlichen Verwaltungsaufwand.",
