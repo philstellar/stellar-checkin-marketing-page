@@ -81,8 +81,8 @@ export const insuranceDE = {
   },
   details: {
     furniture: {
-      title: "Möbel & Einrichtung",
-      description: "Umfassender Schutz für Ihre Möbel und Einrichtungsgegenstände."
+      title: "Mobiliar & Gebäude",
+      description: "Wir versichern versehentliche und böswillige Schäden an deinem Eigentum. Auch Diebstahl ist versichert."
     },
     newForOld: {
       title: "Neu für Alt",
