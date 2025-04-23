@@ -72,8 +72,8 @@ export const insuranceDE = {
       "Erhöhen Sie Ihre Einnahmen durch Provisionen bei jeder Versicherungsbuchung – ganz automatisch.",
       "Genießen Sie besseren finanziellen Schutz mit höheren Deckungssummen im Vergleich zu traditionellen Kautionen.",
       "Nahtlose Integration: Die Versicherung wird automatisch in den Check-in eingebunden – ohne zusätzlichen Verwaltungsaufwand.",
-      "Sichern Sie sich und Ihre Gäste umfassend ab - von Sachschäden, Diebstahl bis hin zu zusätzlichem Reinigungsaufwand. Ein Rundum-Schutz, der beide Seiten beruhigt.",
-      "Erleben Sie eine einfache und automatisierte Schadensabwicklung ohne direkte Kontaktaufnahme mit dem Gast. Schnelle Bearbeitung und faire Entschädigung im Schadensfall."
+      "Sichern Sie sich und Ihre Gäste umfassend ab - von Sachschäden, Diebstahl bis hin zu zusätzlichem Reinigungsaufwand.",
+      "Erleben Sie eine einfache und schnelle Schadensabwicklung ohne direkte Kontaktaufnahme mit dem Gast."
     ]
   },
   shortTerm: {
