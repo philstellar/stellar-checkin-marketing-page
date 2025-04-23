@@ -137,14 +137,6 @@ const Erfolgsgeschichten = () => {
                 </CTAButton>
               </div>
             </div>
-            <div className="order-1 md:order-last flex justify-center">
-              <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
-                alt="Success Stories" 
-                className="w-4/5 h-auto rounded-lg shadow-xl"
-                loading="eager"
-              />
-            </div>
           </div>
         </div>
       </section>
