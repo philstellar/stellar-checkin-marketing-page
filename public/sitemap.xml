@@ -75,10 +75,10 @@
 
   <!-- Success Stories Pages - All Languages -->
   <url>
-    <loc>https://stellar-checkin.com/de/erfolgsgeschichten</loc>
+    <loc>https://stellar-checkin.com/de/erfolgsbeispiele</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/erfolgsgeschichten"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/erfolgsbeispiele"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/success-stories"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/storie-di-successo"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/historias-de-exito"/>

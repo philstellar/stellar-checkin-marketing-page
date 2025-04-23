@@ -113,7 +113,7 @@ const testimonials = [
   }
 ];
 
-const Erfolgsgeschichten = () => {
+const Erfolgsbeispiele = () => {
   return (
     <>
       <Header />
@@ -123,7 +123,7 @@ const Erfolgsgeschichten = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
-                Unsere <span className="text-apple">Erfolgsgeschichten</span>
+                Unsere <span className="text-apple">Erfolgsbeispiele</span>
               </h1>
               <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
                 Erfahren Sie, wie Vermieter und Gastgeber mit Stellar Checkin ihre Prozesse optimieren und ihren Erfolg steigern.
@@ -153,7 +153,7 @@ const Erfolgsgeschichten = () => {
           <div className="flex items-center gap-3 mb-12">
             <Award className="h-8 w-8 text-apple" />
             <h2 className="text-3xl font-bold text-royal inline-block relative">
-              Erfolgsgeschichten
+              Erfolgsbeispiele
               <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-apple rounded-full"></div>
             </h2>
           </div>
@@ -229,4 +229,4 @@ const Erfolgsgeschichten = () => {
   );
 };
 
-export default Erfolgsgeschichten;
+export default Erfolgsbeispiele;

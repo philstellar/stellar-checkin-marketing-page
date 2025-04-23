@@ -16,7 +16,7 @@ const Brevo = lazy(() => import('./pages/Brevo'));
 const VersicherungPage = lazy(() => import('./components/admin/VersicherungPage'));
 const TrustBadgePage = lazy(() => import('./components/admin/TrustBadgePage'));
 const UeberUns = lazy(() => import('./pages/UeberUns'));
-const Erfolgsgeschichten = lazy(() => import('./pages/Erfolgsgeschichten'));
+const Erfolgsbeispiele = lazy(() => import('./pages/Erfolgsbeispiele'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 
 // Lazy load translated legal pages
@@ -72,7 +72,7 @@ const App = () => {
           <Route path="/de/agb" element={<Agb />} />
           <Route path="/de/brevo" element={<Brevo />} />
           <Route path="/de/ueber-uns" element={<UeberUns />} />
-          <Route path="/de/erfolgsgeschichten" element={<Erfolgsgeschichten />} />
+          <Route path="/de/erfolgsbeispiele" element={<Erfolgsbeispiele />} />
           <Route path="/de/faq" element={<FAQ />} />
           
           {/* English routes */}

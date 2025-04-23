@@ -12,7 +12,7 @@ export const navigationDE = {
   trustBadge: "Trust Badge",
   aboutStellar: "Über uns",
   aboutUs: "Über uns",
-  successStories: "Erfolgsgeschichten",
+  successStories: "Erfolgsbeispiele",
   faq: "FAQ"
 };
 
