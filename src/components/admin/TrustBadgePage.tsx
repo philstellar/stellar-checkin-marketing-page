@@ -156,7 +156,7 @@ const TrustBadgePage = () => {
       
       <TrustBadgeCertificates />
       
-      <div className="text-center py-16 bg-white">
+      <div className="text-center bg-white py-[10px]">
         <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
           <UserCheck className="mr-2 h-4 w-4" /> {t('trustBadge.cta')}
         </CTAButton>
