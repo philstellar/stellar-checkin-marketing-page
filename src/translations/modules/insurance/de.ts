@@ -90,7 +90,7 @@ export const insuranceDE = {
     },
     rentalLoss: {
       title: "Mietausfall",
-      description: "Wenn ein versicherter Schaden Sie daran hindert, zu vermieten, erstatten wir entgangene Mieteinnahmen*"
+      description: "Wenn ein versicherter Schaden Sie daran hindert, zu vermieten, erstatten wir entgangene Mieteinnahmen"
     },
     petDamage: {
       title: "Haustier-Schäden",
