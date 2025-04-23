@@ -3,7 +3,7 @@ export const heroDE = {
   headline1: "Die umfassende digitale ",
   headline2: "Check-in",
   headline3: " Lösung für Ferienunterkünfte",
-  subheadline: "Automatisieren Sie den gesamten Check-in-Prozess für Ihre Ferienimmobilie.",
+  subheadline: "Automatisieren Sie den Check-in-Prozess für Ihre Ferienimmobilie.",
   subheadline2: "Weniger Arbeit, mehr Umsatz – und ein Check-in, der Gäste begeistert.",
   cta: "Jetzt Registrieren",
   tagline: "Einfach. Effizient. Für Sie und Ihre Gäste."
