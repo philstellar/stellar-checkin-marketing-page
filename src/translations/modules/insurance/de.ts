@@ -25,7 +25,8 @@ export const insuranceDE = {
       "Schutz bei Schäden durch Haustiere",
       "Schutz bei Mietausfall",
       "Schäden während gewerblicher Vermietung"
-    ]
+    ],
+    airbnbOnlyBooking: "Nur für Airbnb Buchungen"
   },
   pricing: {
     header: {

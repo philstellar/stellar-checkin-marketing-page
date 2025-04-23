@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import {
@@ -120,7 +121,7 @@ const InsuranceComparisonTable = () => {
                 {index === schutzBeiMietausfallIndex ? (
                   <div className="flex justify-center items-center h-full w-full">
                     <span className="text-sm font-medium text-black px-2 py-1 text-center break-words italic">
-                      Nur für Airbnb Buchungen
+                      {t('insurance.comparison.airbnbOnlyBooking')}
                     </span>
                   </div>
                 ) : (

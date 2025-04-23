@@ -25,7 +25,8 @@ export const insuranceES = {
       "Cobertura por daños de mascotas",
       "Cobertura por pérdida de alquiler",
       "Cobertura de daños en alquileres comerciales"
-    ]
+    ],
+    airbnbOnlyBooking: "Solo para reservas de Airbnb"
   },
   pricing: {
     header: {

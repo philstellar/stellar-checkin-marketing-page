@@ -25,7 +25,8 @@ export const insuranceEN = {
       "Pet damage protection",
       "Rental loss protection", 
       "Commercial rental damage protection"
-    ]
+    ],
+    airbnbOnlyBooking: "Only for Airbnb bookings"
   },
   pricing: {
     header: {

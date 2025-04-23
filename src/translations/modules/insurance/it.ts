@@ -25,7 +25,8 @@ export const insuranceIT = {
       "Copertura danni da animali domestici",
       "Copertura perdita d’affitto",
       "Copertura danni per locazioni commerciali"
-    ]
+    ],
+    airbnbOnlyBooking: "Solo per prenotazioni Airbnb"
   },
   pricing: {
     header: {
