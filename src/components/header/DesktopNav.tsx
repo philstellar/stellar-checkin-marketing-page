@@ -63,9 +63,14 @@ const DesktopNav = ({
       )}
 
       <DropdownMenu>
-        <DropdownMenuTrigger className="text-royal hover:text-apple font-medium transition-colors outline-none flex items-center gap-1">
-          {t('navigation.features')}
-          <ChevronDown className="h-4 w-4" />
+        <DropdownMenuTrigger asChild>
+          <button 
+            onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
+            className="text-royal hover:text-apple font-medium transition-colors outline-none flex items-center gap-1"
+          >
+            {t('navigation.features')}
+            <ChevronDown className="h-4 w-4" />
+          </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-white shadow-md z-50">
           <DropdownMenuItem asChild>
