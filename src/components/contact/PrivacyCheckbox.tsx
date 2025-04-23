@@ -10,17 +10,6 @@ interface PrivacyCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 const PrivacyCheckbox = ({ checked, onChange, ...props }: PrivacyCheckboxProps) => {
   const { t, currentLanguage } = useTranslation();
   
-  const privacyText = t('contact.formPrivacy', {
-    link: (text) => (
-      <Link 
-        to={`/${currentLanguage}/datenschutz`} 
-        className="text-stellar-600 hover:text-stellar-500 underline font-medium"
-      >
-        {text}
-      </Link>
-    )
-  });
-
   return (
     <div className="flex items-center">
       <input
@@ -34,7 +23,31 @@ const PrivacyCheckbox = ({ checked, onChange, ...props }: PrivacyCheckboxProps) 
         {...props}
       />
       <label htmlFor="privacy" className="ml-2 block text-sm text-gray-900">
-        {privacyText}
+        <span>
+          {t('contact.formPrivacy').split('<link>').map((part, index, array) => {
+            if (index === 0) return <span key="part-0">{part}</span>;
+            
+            const closingTagPos = part.indexOf('</link>');
+            if (closingTagPos !== -1) {
+              const linkText = part.substring(0, closingTagPos);
+              const restText = part.substring(closingTagPos + 7); // after </link>
+              
+              return (
+                <>
+                  <Link 
+                    key={`link-${index}`}
+                    to={`/${currentLanguage}/datenschutz`}
+                    className="text-stellar-600 hover:text-stellar-500 underline font-medium"
+                  >
+                    {linkText}
+                  </Link>
+                  <span key={`part-${index}`}>{restText}</span>
+                </>
+              );
+            }
+            return <span key={`part-${index}`}>{part}</span>;
+          })}
+        </span>
       </label>
     </div>
   );
