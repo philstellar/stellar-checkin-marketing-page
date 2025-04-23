@@ -86,7 +86,7 @@ export const insuranceDE = {
     },
     newForOld: {
       title: "Neu für Alt",
-      description: "Wir entschädigen auf Basis des Wiederbeschaffungswertes. Das heißt, Sie bekommen im Schadensfall Neu für Alt"
+      description: "Wir entschädigen auf Basis des Wiederbeschaffungswertes."
     },
     rentalLoss: {
       title: "Mietausfall",
@@ -102,7 +102,7 @@ export const insuranceDE = {
     },
     art: {
       title: "Kunst & Dekoratives",
-      description: "Wir schützen alle Kunstwerke oder Wertgegenstände, die als Einrichtungsgegenstände verwendet werden."
+      description: "Wir schützen alle Kunstwerke oder Wertgegenstände, die für die Einrichtung verwendet werden."
     }
   },
   faq: {
