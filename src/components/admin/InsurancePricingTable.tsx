@@ -85,7 +85,7 @@ const InsurancePricingTable = () => {
                 className: "h-6 w-6 text-black rounded-[5px] bg-gray-200 p-1"
               })}
                   </span>}
-                <span className="p-2 bg-gray-50 rounded text-sm leading-snug w-full block">
+                <span className="text-center">
                   {formatValue(rows[i]?.description)}
                 </span>
               </div>)}
