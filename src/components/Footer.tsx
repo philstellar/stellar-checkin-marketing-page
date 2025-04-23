@@ -33,7 +33,7 @@ const Footer = () => {
           {/* Column 2: About Stellar and Legal */}
           <div>
             <div className="flex gap-8 mb-6">
-              <div className="py-0 px-[240px]">
+              <div className="py-0 px-0 mx-[2px]">
                 <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
                 <ul className="space-y-3">
                   <li>
