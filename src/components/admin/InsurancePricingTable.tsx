@@ -4,7 +4,7 @@ import { Brush, Image, FileText, PawPrint } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 // Helper for value formatting
-const formatValue = (value?: string) => value ? <span className="whitespace-pre-line">{value}</span> : null;
+const formatValue = (value?: string) => value ? <span className="whitespace-pre-line font-bold text-left">{value}</span> : null;
 
 // Helper: returns a centered icon cell
 const IconCell = ({
@@ -68,7 +68,7 @@ const InsurancePricingTable = () => {
           {/* Coverage & Recourse */}
           {[1, 2].map(i => <div key={i} className="mb-6 px-4">
               <div className="font-medium border-b pb-2 mb-2 text-base">{rows[i]?.label}</div>
-              <div className="p-2 rounded text-center text-sm bg-white/0">
+              <div className="p-2 text-center text-sm bg-white/0 py-[14px] px-0 rounded-none">
                 {formatValue(rows[i]?.description)}
               </div>
             </div>)}
