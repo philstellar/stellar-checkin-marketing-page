@@ -77,7 +77,7 @@ export const insuranceDE = {
   },
   shortTerm: {
     title: "Unsere Preise",
-    description: "Die Preise entsprechen der Gebühr, die dem Gast pro Nacht berechnet wird (zzgl. möglicher Servicegebühren und Provisionen). Die Versicherung kann auch automatisch zu jeder Buchung hinzugefügt und im Gesamtpreis verrechnet werden."
+    description: "Die Preise entsprechen der Gebühr, die dem Gast pro Nacht berechnet wird (zzgl. möglicher Servicegebühren und Provisionen)."
   },
   details: {
     furniture: {
