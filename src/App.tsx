@@ -1,4 +1,3 @@
-
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -33,6 +32,15 @@ const AgbIT = lazy(() => import('./pages/legal/AgbIT'));
 
 // Lazy load the new Home page
 const Home = lazy(() => import('./pages/Home'));
+
+// Lazy load the new About & Success Stories pages for EN, IT, ES
+const AboutUsEN = lazy(() => import('./pages/ueber-uns/AboutUsEN'));
+const AboutUsIT = lazy(() => import('./pages/ueber-uns/AboutUsIT'));
+const AboutUsES = lazy(() => import('./pages/ueber-uns/AboutUsES'));
+
+const SuccessStoriesEN = lazy(() => import('./pages/erfolgsgeschichten/SuccessStoriesEN'));
+const SuccessStoriesIT = lazy(() => import('./pages/erfolgsgeschichten/SuccessStoriesIT'));
+const SuccessStoriesES = lazy(() => import('./pages/erfolgsgeschichten/SuccessStoriesES'));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -72,18 +80,24 @@ const App = () => {
           <Route path="/en/datenschutz" element={<DatenschutzEN />} />
           <Route path="/en/agb" element={<AgbEN />} />
           <Route path="/en/brevo" element={<Brevo />} />
+          <Route path="/en/about-us" element={<AboutUsEN />} />
+          <Route path="/en/success-stories" element={<SuccessStoriesEN />} />
           
           {/* Italian routes */}
           <Route path="/it/impressum" element={<ImpressumIT />} />
           <Route path="/it/datenschutz" element={<DatenschutzIT />} />
           <Route path="/it/agb" element={<AgbIT />} />
           <Route path="/it/brevo" element={<Brevo />} />
+          <Route path="/it/chi-siamo" element={<AboutUsIT />} />
+          <Route path="/it/storie-di-successo" element={<SuccessStoriesIT />} />
           
           {/* Spanish routes */}
           <Route path="/es/impressum" element={<ImpressumES />} />
           <Route path="/es/datenschutz" element={<DatenschutzES />} />
           <Route path="/es/agb" element={<AgbES />} />
           <Route path="/es/brevo" element={<Brevo />} />
+          <Route path="/es/sobre-nosotros" element={<AboutUsES />} />
+          <Route path="/es/historias-de-exito" element={<SuccessStoriesES />} />
           
           {/* Insurance and Trust Badge routes for all languages */}
           <Route path="/de/versicherung" element={<VersicherungPage />} />

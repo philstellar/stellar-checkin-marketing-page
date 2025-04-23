@@ -5,16 +5,40 @@ import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { useLanguage } from "@/context/LanguageContext";
 
+const aboutRoutes: Record<string, {aboutUs: string, successStories: string, faq: string}> = {
+  de: {
+    aboutUs: "/de/ueber-uns",
+    successStories: "/de/erfolgsgeschichten",
+    faq: "/de/faq"
+  },
+  en: {
+    aboutUs: "/en/about-us",
+    successStories: "/en/success-stories",
+    faq: "/en/faq"
+  },
+  it: {
+    aboutUs: "/it/chi-siamo",
+    successStories: "/it/storie-di-successo",
+    faq: "/it/faq"
+  },
+  es: {
+    aboutUs: "/es/sobre-nosotros",
+    successStories: "/es/historias-de-exito",
+    faq: "/es/faq"
+  }
+};
+
 const Footer = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
-
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
+
+  const about = aboutRoutes[language] || aboutRoutes.de;
 
   return <footer className="bg-gradient-to-br from-floral to-floral-400/20 py-12">
       <div className="container-custom">
@@ -35,7 +59,7 @@ const Footer = () => {
                 <ul className="space-y-3">
                   <li>
                     <Link 
-                      to={`/${language}/ueber-uns`} 
+                      to={about.aboutUs}
                       className="flex items-center text-black hover:text-apple transition-colors" 
                       onClick={handleNavigation}
                     >
@@ -45,7 +69,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link 
-                      to={`/${language}/erfolgsgeschichten`} 
+                      to={about.successStories}
                       className="flex items-center text-black hover:text-apple transition-colors" 
                       onClick={handleNavigation}
                     >
@@ -55,7 +79,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link 
-                      to={`/${language}/faq`} 
+                      to={about.faq}
                       className="flex items-center text-black hover:text-apple transition-colors" 
                       onClick={handleNavigation}
                     >
@@ -106,4 +130,3 @@ const Footer = () => {
 };
 
 export default memo(Footer);
-

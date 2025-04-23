@@ -25,12 +25,13 @@ export const useLanguageDetection = () => {
   };
 
   useEffect(() => {
+    // Check if user has made a language choice OR navigated via picker
     const hasUserMadeChoice = localStorage.getItem('languageChoiceMade') === 'true';
-    // Only show popup on the very first arrival, never after an explicit picker navigation.
     const hasBeenOnPage = localStorage.getItem('hasVisitedSite') === 'true';
+    const lastVisitWasPicker = localStorage.getItem('lastLanguageChangeByPicker') === 'true';
 
-    // If user has already made a language choice, or switched with the picker, do not show
-    if (hasUserMadeChoice || hasBeenOnPage) return;
+    // Never show dialog after using language picker
+    if (hasUserMadeChoice || hasBeenOnPage || lastVisitWasPicker) return;
 
     // Only show the popup once, on the initial page load
     localStorage.setItem('hasVisitedSite', 'true');
@@ -42,8 +43,7 @@ export const useLanguageDetection = () => {
       setDetectedLanguage(browserLang);
       setShouldShowPopup(true);
     }
-  // Only run on first mount
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
@@ -53,4 +53,3 @@ export const useLanguageDetection = () => {
     getCurrentPathLanguage
   };
 };
-
