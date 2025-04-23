@@ -4,16 +4,18 @@ import { Brush, Image, FileText, PawPrint } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 // Helper for value formatting
-const formatValue = (value?: string) =>
-  value ? <span className="whitespace-pre-line">{value}</span> : null;
+const formatValue = (value?: string) => value ? <span className="whitespace-pre-line">{value}</span> : null;
 
 // Helper: returns a centered icon cell
-const IconCell = ({ icon }: { icon: React.ReactNode }) => (
-  <div className="flex items-center justify-center">{icon}</div>
-);
-
+const IconCell = ({
+  icon
+}: {
+  icon: React.ReactNode;
+}) => <div className="flex items-center justify-center">{icon}</div>;
 const InsurancePricingTable = () => {
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   const isMobile = useIsMobile();
   const header = t("insurance.pricing.header") as any;
   const rows = t("insurance.pricing.rows") as any[];
@@ -22,26 +24,27 @@ const InsurancePricingTable = () => {
   if (!header || !rows) return null;
 
   // Icons for detailed coverage
-  const rowIcons = [
-    null, // Price row - no icon
-    null, // Coverage (text only)
-    null, // Recourse - no icon
-    <Brush className="h-6 w-6 text-black rounded-[5px]" />, // Additional cleaning
-    <Image className="h-6 w-6 text-black rounded-[5px]" />, // Art & Valuables
-    <FileText className="h-6 w-6 text-black rounded-[5px]" />, // Rental loss
-    <PawPrint className="h-6 w-6 text-black rounded-[5px]" />, // Pet damage
+  const rowIcons = [null,
+  // Price row - no icon
+  null,
+  // Coverage (text only)
+  null,
+  // Recourse - no icon
+  <Brush className="h-6 w-6 text-black rounded-[5px]" />,
+  // Additional cleaning
+  <Image className="h-6 w-6 text-black rounded-[5px]" />,
+  // Art & Valuables
+  <FileText className="h-6 w-6 text-black rounded-[5px]" />,
+  // Rental loss
+  <PawPrint className="h-6 w-6 text-black rounded-[5px]" /> // Pet damage
   ];
 
   // Text for the new heading cell that covers additional coverage (up to)
-  const ADDITIONAL_COVERAGE_LABEL =
-    rows[3]?.label ||
-    t("insurance.pricing.rows.3.label") ||
-    "Additional coverage\n(up to)";
+  const ADDITIONAL_COVERAGE_LABEL = rows[3]?.label || t("insurance.pricing.rows.3.label") || "Additional coverage\n(up to)";
 
   // Remove containers, make full width, and ensure 2px mobile, 15px desktop margin for the table itself!
   if (isMobile) {
-    return (
-      <div className="w-full px-[2px]">
+    return <div className="w-full px-[2px]">
         <div className="bg-white rounded-xl shadow p-0 mb-6 w-full">
           <h3 className="text-xl font-semibold mb-4 px-4 pt-4">{header.coverage}</h3>
 
@@ -58,49 +61,41 @@ const InsurancePricingTable = () => {
           <div className="mb-6 px-4">
             <div className="font-medium border-b pb-2 mb-2 text-base">{rows[0]?.label}</div>
             <div className="grid grid-cols-3 gap-2 text-center w-full">
-              <div className="p-2 bg-gray-50 rounded text-lg font-bold">{rows[0]?.value1}</div>
+              <div className="p-2 rounded text-lg font-bold bg-white/0">{rows[0]?.value1}</div>
               <div className="p-2 bg-gray-50 rounded text-lg font-bold">{rows[0]?.value2}</div>
               <div className="p-2 bg-gray-50 rounded text-lg font-bold">{rows[0]?.value3}</div>
             </div>
           </div>
 
           {/* Coverage & Recourse */}
-          {[1, 2].map((i) => (
-            <div key={i} className="mb-6 px-4">
+          {[1, 2].map(i => <div key={i} className="mb-6 px-4">
               <div className="font-medium border-b pb-2 mb-2 text-base">{rows[i]?.label}</div>
-              <div className="p-2 bg-gray-50 rounded text-center text-sm">
+              <div className="p-2 rounded text-center text-sm bg-white/0">
                 {formatValue(rows[i]?.description)}
               </div>
-            </div>
-          ))}
+            </div>)}
 
           {/* Additional Coverage Section */}
           <div className="mb-6 px-4">
             <div className="font-medium border-b pb-2 mb-4 text-base">{ADDITIONAL_COVERAGE_LABEL}</div>
             {/* Only one cell per row, icon left, merge all amounts */}
-            {[3, 4, 5, 6].map((i) => (
-              <div key={i} className="mb-4 last:mb-0 flex items-start">
-                {rowIcons[i] && (
-                  <span className="mr-3 flex-shrink-0">
+            {[3, 4, 5, 6].map(i => <div key={i} className="mb-4 last:mb-0 flex items-start">
+                {rowIcons[i] && <span className="mr-3 flex-shrink-0">
                     {React.cloneElement(rowIcons[i] as React.ReactElement, {
-                      className: "h-6 w-6 text-black rounded-[5px] bg-gray-200 p-1",
-                    })}
-                  </span>
-                )}
+                className: "h-6 w-6 text-black rounded-[5px] bg-gray-200 p-1"
+              })}
+                  </span>}
                 <span className="p-2 bg-gray-50 rounded text-sm leading-snug w-full block">
                   {formatValue(rows[i]?.description)}
                 </span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 
   // Desktop view (original table, now full width)
-  return (
-    <div className="w-full px-[15px]">
+  return <div className="w-full px-[15px]">
       <div className="bg-white rounded-xl shadow p-4 md:p-8 mb-6 w-full overflow-x-auto">
         <table className="w-full text-[15px] min-w-[600px]">
           <thead>
@@ -134,37 +129,27 @@ const InsurancePricingTable = () => {
               <td className="p-4 align-middle text-center" colSpan={3}>{formatValue(rows[2]?.description)}</td>
             </tr>
             {/* Additional Coverage: rows 3–6 */}
-            {[3, 4, 5, 6].map((i, idx) => (
-              <tr key={i} className="border-t">
-                {idx === 0 && (
-                  <td
-                    className="p-4 text-left align-middle font-semibold"
-                    rowSpan={4}
-                    style={{ verticalAlign: "top" }}
-                  >
+            {[3, 4, 5, 6].map((i, idx) => <tr key={i} className="border-t">
+                {idx === 0 && <td className="p-4 text-left align-middle font-semibold" rowSpan={4} style={{
+              verticalAlign: "top"
+            }}>
                     {formatValue(ADDITIONAL_COVERAGE_LABEL)}
-                  </td>
-                )}
+                  </td>}
                 <td className="p-4 align-middle text-center">
-                  {rowIcons[i] ? (
-                    <div className="inline-block rounded-[5px] bg-gray-200 p-[2px]">
+                  {rowIcons[i] ? <div className="inline-block rounded-[5px] bg-gray-200 p-[2px]">
                       {React.cloneElement(rowIcons[i] as React.ReactElement, {
-                        className: "h-6 w-6 text-black rounded-[5px]",
-                      })}
-                    </div>
-                  ) : null}
+                  className: "h-6 w-6 text-black rounded-[5px]"
+                })}
+                    </div> : null}
                 </td>
                 {/* Merged cell: cover all 3 amount columns */}
                 <td className="p-4 align-middle text-center" colSpan={3}>
                   {formatValue(rows[i]?.description || "")}
                 </td>
-              </tr>
-            ))}
+              </tr>)}
           </tbody>
         </table>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default InsurancePricingTable;
