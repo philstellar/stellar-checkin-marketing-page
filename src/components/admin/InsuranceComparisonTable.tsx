@@ -64,6 +64,9 @@ const InsuranceComparisonTable = () => {
     );
   };
 
+  // Row index for "Schutz bei Mietausfall"
+  const schutzBeiMietausfallIndex = 3;
+
   return (
     <div className="rounded-lg border bg-white">
       <Table>
@@ -94,7 +97,6 @@ const InsuranceComparisonTable = () => {
               />
             </TableHead>
             <TableHead className="w-[180px] text-center font-bold text-black whitespace-normal break-words">
-              {/* Force wrapping on Klassische Hausratsversicherung */}
               {String(t('insurance.comparison.header.classic'))
                 .replace(/\\n|\n/g, '<br />')
                 .split('<br />')
@@ -113,10 +115,26 @@ const InsuranceComparisonTable = () => {
           {features.map((feature, index) => (
             <TableRow key={index}>
               <TableCell className="font-medium whitespace-normal break-words">{feature.name}</TableCell>
-              <TableCell className="w-[180px] whitespace-normal break-words"><StatusIcon status={feature.stellar} /></TableCell>
-              <TableCell className="w-[180px] whitespace-normal break-words"><StatusIcon status={feature.airbnb} /></TableCell>
-              <TableCell className="w-[180px] whitespace-normal break-words"><StatusIcon status={feature.booking} /></TableCell>
-              <TableCell className="w-[180px] whitespace-normal break-words"><StatusIcon status={feature.classic} /></TableCell>
+              <TableCell className="w-[180px] whitespace-normal break-words">
+                <StatusIcon status={feature.stellar} />
+              </TableCell>
+              <TableCell className="w-[180px] whitespace-normal break-words">
+                {index === schutzBeiMietausfallIndex ? (
+                  <div className="flex justify-center items-center h-full w-full">
+                    <span className="text-xs font-medium text-black bg-gray-100 px-2 py-1 rounded text-center break-words">
+                      Nur für Airbnb Buchungen
+                    </span>
+                  </div>
+                ) : (
+                  <StatusIcon status={feature.airbnb} />
+                )}
+              </TableCell>
+              <TableCell className="w-[180px] whitespace-normal break-words">
+                <StatusIcon status={feature.booking} />
+              </TableCell>
+              <TableCell className="w-[180px] whitespace-normal break-words">
+                <StatusIcon status={feature.classic} />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -126,4 +144,3 @@ const InsuranceComparisonTable = () => {
 };
 
 export default InsuranceComparisonTable;
-
