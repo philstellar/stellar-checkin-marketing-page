@@ -8,12 +8,12 @@ interface PrivacyCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const PrivacyCheckbox = ({ checked, onChange, ...props }: PrivacyCheckboxProps) => {
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
   
   const privacyText = t('contact.formPrivacy', {
     link: (text) => (
       <Link 
-        to={`/${t('currentLanguage')}/datenschutz`} 
+        to={`/${currentLanguage}/datenschutz`} 
         className="text-stellar-600 hover:text-stellar-500 underline font-medium"
       >
         {text}
