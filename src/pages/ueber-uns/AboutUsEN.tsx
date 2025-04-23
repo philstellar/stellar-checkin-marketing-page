@@ -11,9 +11,14 @@ const AboutUsEN = () => (
       <div className="container-custom relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">About Us</h1>
         <p className="text-lg text-royal-900 mb-8 max-w-xl">
-          Stellar is based in Berlin and our team of short-term rental, insurance, and tech experts is on a mission: providing an outstanding experience for hosts and guests. Always looking for new team members! Get in touch: careers@stellar-trust.com
+          {/* 
+            TODO: Please provide a FULL, professional English translation of this "About Us" page, including all sections and proper adaptation for English-speaking audiences. This content is currently a placeholder/short description. 
+            Stellar is based in Berlin and our team of short-term rental, insurance, and tech experts is on a mission: providing an outstanding experience for hosts and guests. Always looking for new team members! Get in touch: careers@stellar-trust.com
+          */}
+          <span className="bg-yellow-200 text-black px-2 py-1 rounded font-semibold">
+            Translator needed: Please submit a full English translation for this page!
+          </span>
         </p>
-        {/* Consider translating and customizing content here */}
       </div>
     </section>
     <Footer />

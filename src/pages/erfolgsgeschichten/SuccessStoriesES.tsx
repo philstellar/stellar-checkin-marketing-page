@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -11,7 +10,13 @@ const SuccessStoriesES = () => (
       <div className="container-custom relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">Historias de Éxito</h1>
         <p className="text-lg text-royal-900 mb-8 max-w-xl">
-          Descubra cómo los anfitriones usan Stellar Checkin e Insurance para optimizar procesos y aumentar la confianza del huésped. (Contenido próximamente.)
+          {/* 
+            TODO: Please provide a FULL, professional Spanish version of this "Success Stories" page. This is only a placeholder for now.
+            Descubra cómo los anfitriones usan Stellar Checkin e Insurance para optimizar procesos y aumentar la confianza del huésped. (Contenido próximamente.)
+          */}
+          <span className="bg-yellow-200 text-black px-2 py-1 rounded font-semibold">
+            ¡Se necesita traducción profesional! Por favor, agregue el contenido completo de esta página en español.
+          </span>
         </p>
       </div>
     </section>

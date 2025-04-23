@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -11,9 +10,14 @@ const AboutUsES = () => (
       <div className="container-custom relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">Sobre Nosotros</h1>
         <p className="text-lg text-royal-900 mb-8 max-w-xl">
-          Stellar tiene su sede en Berlín y nuestro equipo de expertos en alquileres de corta duración, seguros y tecnología tiene una misión: ofrecer una experiencia sobresaliente para anfitriones y huéspedes. ¿Interesado en unirte? Escríbenos: careers@stellar-trust.com
+          {/* 
+            TODO: Please provide a FULL, professional Spanish translation/adaptation of this "About Us" page.
+            Stellar tiene su sede en Berlín y nuestro equipo de expertos en alquileres de corta duración, seguros y tecnología tiene una misión: ofrecer una experiencia sobresaliente para anfitriones y huéspedes. ¿Interesado en unirte? Escríbenos: careers@stellar-trust.com
+          */}
+          <span className="bg-yellow-200 text-black px-2 py-1 rounded font-semibold">
+            ¡Se necesita traducción profesional! Por favor, proporcione una versión completa en español de esta página.
+          </span>
         </p>
-        {/* Personaliza el contenido para una traducción completa */}
       </div>
     </section>
     <Footer />

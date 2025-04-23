@@ -11,7 +11,13 @@ const SuccessStoriesEN = () => (
       <div className="container-custom relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">Success Stories</h1>
         <p className="text-lg text-royal-900 mb-8 max-w-xl">
-          See how hosts use Stellar Checkin and Insurance to streamline processes and increase guest trust. (Content coming soon.)
+          {/* 
+            TODO: Please provide a FULL, professional English translation / localized version of this "Success Stories" page. Currently content is a placeholder.
+            See how hosts use Stellar Checkin and Insurance to streamline processes and increase guest trust. (Content coming soon.)
+          */}
+          <span className="bg-yellow-200 text-black px-2 py-1 rounded font-semibold">
+            Translator needed: Please submit a full English translation for this page!
+          </span>
         </p>
       </div>
     </section>

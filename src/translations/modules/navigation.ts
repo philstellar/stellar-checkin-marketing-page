@@ -1,4 +1,3 @@
-
 export const navigationDE = {
   home: "Home",
   features: "Check-in",
@@ -11,7 +10,7 @@ export const navigationDE = {
   termsAndConditions: "AGB",
   insurance: "Versicherung",
   trustBadge: "Trust Badge",
-  aboutStellar: "Über Stellar",
+  aboutStellar: "Über uns",
   aboutUs: "Über uns",
   successStories: "Erfolgsgeschichten",
   faq: "FAQ"
@@ -29,7 +28,7 @@ export const navigationEN = {
   termsAndConditions: "Terms and Conditions",
   insurance: "Insurance",
   trustBadge: "Trust Badge",
-  aboutStellar: "About Stellar",
+  aboutStellar: "About Us",
   aboutUs: "About Us",
   successStories: "Success Stories",
   faq: "FAQ"
@@ -48,7 +47,7 @@ export const navigationIT = {
   insurance: "Assicurazione",
   trustBadge: "Trust Badge",
   aboutStellar: "Chi Siamo",
-  aboutUs: "Su di Noi",
+  aboutUs: "Chi Siamo",
   successStories: "Storie di Successo",
   faq: "FAQ"
 };
@@ -65,7 +64,7 @@ export const navigationES = {
   termsAndConditions: "Términos y Condiciones",
   insurance: "Seguro",
   trustBadge: "Trust Badge",
-  aboutStellar: "Sobre Stellar",
+  aboutStellar: "Sobre Nosotros",
   aboutUs: "Sobre Nosotros",
   successStories: "Historias de Éxito",
   faq: "Preguntas Frecuentes"
