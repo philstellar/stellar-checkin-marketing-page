@@ -2,16 +2,16 @@ export const insuranceIT = {
   title: "Automatizza in Modo Intelligente Assicurazione e Depositi",
   introduction: "Offri ai tuoi ospiti un'assicurazione facoltativa e beneficia di entrate aggiuntive.",
   section1: {
-    title: "Perché un'assicurazione?",
-    content: "L'assicurazione ti protegge da danni e perdite impreviste."
+    title: "Perché un’assicurazione?",
+    content: "La nostra assicurazione copre i danni causati dagli ospiti, loro accompagnatori o animali. Con una scelta del 90% degli ospiti, offre serenità a tutti i coinvolti."
   },
   section2: {
     title: "Come funziona?",
-    content: "I tuoi ospiti possono acquistare un'assicurazione durante il check-in."
+    content: "Gli ospiti possono acquistare l'assicurazione durante il check-in digitale, oppure puoi coprire tu stesso il costo come host e includerlo nel prezzo."
   },
   section3: {
-    title: "I tuoi vantaggi",
-    content: "Ricevi commissioni per ogni polizza assicurativa acquistata."
+    title: "Il nostro partner",
+    content: "Copertura garantita da Hiscox – uno dei maggiori assicuratori specializzati al mondo, con oltre 100 anni di esperienza, massima solidità finanziaria e un tasso di soddisfazione clienti del 95%."
   },
   comparison: {
     headline: "Gestione Assicurazione e Depositi",
@@ -124,7 +124,7 @@ export const insuranceIT = {
     },
     cost: {
       question: "Quanto costa l'assicurazione per danni dell'ospite?",
-      answer: "La nostra assicurazione per danni dell'ospite parte da €2.80 per notte—il prezzo dipende dalla copertura scelta. I dettagli sono nel tuo account Stellar. Puoi scegliere di pagare o trasferire i costi all'ospite come sostituto del deposito. Per garantire che ogni soggiorno sia protetto, puoi coprire la tariffa tu stesso e includerla nelle tue tariffe."
+      answer: "La nostra assicurazione per danni dell'ospite parte da €2.80 per notte—il prezzo dipende dalla copertura scelta. I dettagli sono nel tuo account Stellar. Puoi scegliere di pagare o trasferire i costi all'ospite come sostituto del deposito. Per garantire che ogni soggiorno sia protetto, puoi coprire la tariffa tu stesso e includerlo nelle tue tariffe."
     }
   }
 };

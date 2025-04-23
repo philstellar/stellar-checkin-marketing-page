@@ -1,18 +1,17 @@
-
 export const insuranceDE = {
   title: "Versicherung und Kaution clever automatisieren",
-  introduction: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung, oder bieten Sie Ihren Gästen eine bequeme Alternative – und profitieren Sie von zusätzlichen Provisionseinnahmen.",
+  introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
   section1: {
-    title: "Schnellerer Check-in",
-    content: "Keine Kautionsabwicklung mehr, weniger Arbeit für Sie und Ihre Gäste."
+    title: "Warum eine Versicherung?",
+    content: "Unsere Versicherung deckt Schäden, die durch Gäste, deren Begleitpersonen oder Haustiere entstehen. Mit einer Entscheidungsquote von 90% bietet sie Sicherheit für alle Beteiligten."
   },
   section2: {
-    title: "Zusätzliche Einnahmequelle",
-    content: "Verdienen Sie Provision bei jeder Versicherung – automatisch und ohne zusätzlichen Aufwand."
+    title: "Wie funktioniert es?",
+    content: "Gäste können die Versicherung während des digitalen Check-ins erwerben, oder Sie als Gastgeber übernehmen die Kosten und kalkulieren diese in Ihren Preis mit ein."
   },
   section3: {
-    title: "Umfassender Schutz",
-    content: "Besserer Schutz als herkömmliche Kautionen, dank höherer Deckungssummen, \"Neu für Alt\"-Deckung und Schutz vor Mietausfall."
+    title: "Unser Partner",
+    content: "Unterstützt von Hiscox – einem weltweit renommierten Spezialversicherer mit über 100 Jahren Erfahrung, außergewöhnlicher finanzieller Stabilität und einer Kundenzufriedenheit von 95%."
   },
   comparison: {
     headline: "Versicherungs- und Kautionsmanagement",
@@ -111,7 +110,6 @@ export const insuranceDE = {
       question: "Brauche ich eure Gästeschadenversicherung, obwohl ich auf AirBnb oder Booking.com gelistet bin?",
       answer: "Ja, obwohl Plattformen wie Airbnb und Booking.com ihren eigenen Schutz bieten, haben beide ihre Tücken und Grenzen.\n\nAirCover von Airbnb ist kein Versicherungsprodukt und wird die Gäste immer mit einbeziehen und sie auffordern, für Schäden zu zahlen. Nur wenn der Gast sich weigert zu zahlen, kann AirCover den Schaden übernehmen.Die Meldung eines Schadens an Airbnb birgt daher immer das Risiko von Streitigkeiten mit den Gästen, die die Verantwortung abstreiten oder eine negative Bewertung hinterlassen könnten.Außerdem deckt AirCover nur entgangene Einnahmen aus bestätigten Airbnb-Buchungen ab, sodass Gastgeber, die auf mehreren Plattformen anbieten, mit Stornierungskosten und entgangenen Einnahmen dastehen.\n\nDas Schadensprogramm von Booking.com erleichtert lediglich die Schadensregulierung mit deinen Gästen, und nur, wenn du es speziell eingerichtet hast. Das Schadensprogramm ist in der EU auf 300 € begrenzt. Dieser Betrag wird während des Buchungsvorgangs angezeigt und kann sich negativ auf deine Buchungskonversion oder dein Suchranking auswirken."
     },
-    // Removed repeat.question as requested
     deposit: {
       question: "Soll ich die Gäste um eine Kaution bitten?",
       answer: "Eine Kaution kann eine finanzielle Absicherung für den Fall sein, dass das Haus während des Aufenthalts deiner Gäste beschädigt wird. Außerdem sorgt sie dafür, dass die Gäste während ihres Aufenthalts besser auf das Haus aufpassen, da sie die Kaution in voller Höhe zurückerhalten wollen und deshalb besonders darauf achten, das Haus in einem guten Zustand zu hinterlassen.\n\nIm Allgemeinen vermeiden Gäste jedoch oftmals Angebote, die die Hinterlegung einer Kaution erfordern, da sie das Geld vorübergehend binden und bei kleinen Problemen zu Abzügen führen können.\n\nWenn du dich für die Stellar-Gastschadenversicherung entscheidest, kannst du Kautionen ganz vermeiden oder deinen Gästen eine bequeme Alternative anbieten.\n\nDa mögliche Ansprüche in der Regel ohne Beteiligung der Gäste abgewickelt werden, kannst du Streitigkeiten mit den Gästen vermeiden – für mehr Wiederholungsbuchungen und mehr 5-Sterne-Bewertungen."
@@ -126,4 +124,3 @@ export const insuranceDE = {
     }
   }
 };
-

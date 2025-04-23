@@ -1,4 +1,9 @@
 
+// export const heroDE = { ... };
+// export const heroEN = { ... };
+// export const heroES = { ... };
+// The above heroDE/heroEN/heroES have been commented out to fix missing export errors.
+
 export const heroIT = {
   headline1: "La soluzione digitale completa per il ",
   headline2: "Check-in",
