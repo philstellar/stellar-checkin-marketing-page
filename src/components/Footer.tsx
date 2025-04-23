@@ -1,3 +1,4 @@
+
 import { memo } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
@@ -7,7 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 const aboutRoutes: Record<string, {aboutUs: string, successStories: string, faq: string}> = {
   de: {
     aboutUs: "/de/ueber-uns",
-    successStories: "/de/erfolgsgeschichten",
+    successStories: "/de/erfolgsbeispiele",
     faq: "/de/faq"
   },
   en: {
