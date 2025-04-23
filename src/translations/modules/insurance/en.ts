@@ -7,11 +7,11 @@ export const insuranceEN = {
   },
   section2: {
     title: "How does it work?",
-    content: "Your guests can purchase insurance during check-in."
+    content: "Your guests can purchase insurance during check-in. Or you automatically pay as a host and charge your guest differently."
   },
   section3: {
     title: "Your Benefits",
-    content: "You receive commissions for every insurance policy purchased."
+    content: "You can choose to add a premium amount to the insurance option. That way you receive commissions for every insurance policy purchased."
   },
   comparison: {
     headline: "Insurance & Deposit Management",
