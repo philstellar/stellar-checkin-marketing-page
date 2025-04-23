@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import {
@@ -64,7 +63,6 @@ const InsuranceComparisonTable = () => {
     );
   };
 
-  // Row index for "Schutz bei Mietausfall"
   const schutzBeiMietausfallIndex = 3;
 
   return (
@@ -121,7 +119,7 @@ const InsuranceComparisonTable = () => {
               <TableCell className="w-[180px] whitespace-normal break-words">
                 {index === schutzBeiMietausfallIndex ? (
                   <div className="flex justify-center items-center h-full w-full">
-                    <span className="text-sm font-medium text-black bg-gray-100 px-2 py-1 rounded text-center break-words italic">
+                    <span className="text-sm font-medium text-black px-2 py-1 text-center break-words italic">
                       Nur für Airbnb Buchungen
                     </span>
                   </div>
