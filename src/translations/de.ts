@@ -73,7 +73,7 @@ export const de = {
   // Zusatzservices Section
   zusatzservices: {
     title: "Zusatzleistungen verkaufen",
-    subtitle: "Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses zusätzliche Dienstleistungen anbieten.",
+    subtitle: "Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses gezielt zusätzliche Services anbieten.",
     additionalServices: {
       title: "Zusatzleistungen",
       description: "Bieten Sie Ihren Gästen mehr – und steigern Sie Ihren Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepakete oder besondere Erlebnisse."
@@ -84,7 +84,7 @@ export const de = {
     },
     revenue: {
       title: "Zusätzliche Einnahmequellen",
-      description: "Generieren Sie zusätzliches Einkommen durch gezielten Verkauf von Upgrades und Zusatzleistungen."
+      description: "Generieren Sie zusätzliches Einkommen durch den gezielten Verkauf von Upgrades und Zusatzleistungen."
     },
     cta: "Jetzt Registrieren"
   },
@@ -92,10 +92,11 @@ export const de = {
   // Versicherung Section
   versicherung: {
     title: "Versicherung und Kaution clever automatisieren",
-    subtitle: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung, oder bieten Sie Ihren Gästen eine bequeme Alternative – und profitieren Sie von zusätzlichen Provisionseinnahmen.",
+    subtitle: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung – oder bieten Sie Ihren Gästen eine bequeme Alternative und sichern Sie sich zusätzliche Provisionseinnahmen.",
     process: {
       title: "Schnellerer Check-in-Prozess",
-      description: "Keine Kautionsabwicklung mehr, weniger Arbeit für Sie und Ihre Gäste."
+      description: "Keine Kautionsabwicklung mehr – weniger Aufwand für Sie und mehr Komfort für Ihre Gäste.
+."
     },
     income: {
       title: "Zusätzliche Einnahmequelle",
@@ -114,7 +115,7 @@ export const de = {
     subtitle: "Schnelle und sichere Identitätsprüfung Ihrer Gäste – in nur 2 Minuten abgeschlossen, für mehr Vertrauen und Schutz.",
     biometric: {
       title: "Biometrische Verifizierung",
-      description: "Schnelle Gesichtserkennung mit Lebendprüfung – schützt vor Betrug und stellt sicher, dass Ausweis und Person echt sind."
+      description: "Verlässliche Gesichtserkennung mit Live-Check – schützt vor Identitätsbetrug und stellt sicher, dass Ausweis und Person übereinstimmen."
     },
     document: {
       title: "Ausweisdokumentenprüfung",
@@ -122,7 +123,7 @@ export const de = {
     },
     privacy: {
       title: "Datenschutzkonforme Lösung",
-      description: "Alle Daten werden sicher verarbeitet und nach DSGVO-Standards geschützt und nur zur Verifizierung verwendet."
+      description: "Alle Daten werden sicher verarbeitet, gemäß DSGVO-Richtlinien geschützt und ausschließlich zur Verifizierung verwendet."
     },
     cta: "Jetzt Registrieren"
   },
@@ -130,14 +131,10 @@ export const de = {
   // Integrationen Section
   integration: {
     title: "Integration mit Ihrem PMS",
-    subtitle: "Ob Integration mit Smoobu, Guesty, Hostaway, Lodgify, Beds24 oder anderen führenden Systemen – wir verbinden Ihr PMS für einen optimierten Workflow.",
+    subtitle: "Nahtlose Integration mit Smoobu, Guesty, Hostaway, Lodgify, Beds24 und vielen weiteren – für einen durchgängigen, effizienten Workflow in Ihrem PMS.",
     pms: {
       title: "PMS-Integration",
-      description: "Nahtlose Anbindung an Ihr Property Management System für effiziente Datensynchronisation."
-    },
-    api: {
-      title: "API-Schnittstellen",
-      description: "Offene API für individuelle Integrationen und individuelle Anpassungen."
+      description: "Direkte Anbindung an Ihr Property Management System oder Channel Manager für eine automatische Datensynchronisation."
     },
     payment: {
       title: "Zahlungssysteme",
