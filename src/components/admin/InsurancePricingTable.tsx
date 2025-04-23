@@ -45,7 +45,7 @@ const InsurancePricingTable = () => {
   // Remove containers, make full width, and ensure 2px mobile, 15px desktop margin for the table itself!
   if (isMobile) {
     return <div className="w-full px-[2px]">
-        <div className="bg-white rounded-xl shadow p-0 mb-6 w-full">
+        <div className="bg-white shadow p-0 mb-6 w-full rounded-none">
           <h3 className="font-medium border-b pb-2 mb-2 text-base px-[16px]">{header.coverage}</h3>
 
           {/* Maximum coverage amounts */}
@@ -76,7 +76,7 @@ const InsurancePricingTable = () => {
             </div>)}
 
           {/* Additional Coverage Section */}
-          <div className="mb-6 px-4">
+          <div className="mb-6 px-4 bg-white/0 py-0">
             <div className="font-medium border-b pb-2 mb-4 text-base">{ADDITIONAL_COVERAGE_LABEL}</div>
             {/* Only one cell per row, icon left, merge all amounts */}
             {[3, 4, 5, 6].map(i => <div key={i} className="mb-4 last:mb-0 flex items-start">

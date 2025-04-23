@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -13,10 +12,10 @@ import LogoCarousel from '../LogoCarousel';
 import HeroSection from './insurance/HeroSection';
 import BenefitsSection from './insurance/BenefitsSection';
 import OverviewCards from './insurance/OverviewCards';
-
 const VersicherungPage = () => {
-  const { t } = useTranslation();
-
+  const {
+    t
+  } = useTranslation();
   const addInsuranceFeatures = [{
     icon: <Book className="h-6 w-6 text-apple" />,
     title: "Synchronisiere deine Buchungen",
@@ -34,9 +33,7 @@ const VersicherungPage = () => {
     title: "Kautionen als Option",
     description: "Biete deinen Gästen die Wahl zwischen Versicherung und traditioneller Kaution."
   }];
-
-  return (
-    <>
+  return <>
       <Header />
       <HeroSection />
 
@@ -59,7 +56,7 @@ const VersicherungPage = () => {
       </div>
 
       {/* FULL WIDTH INSURANCE PRICING TABLE, NO EXTRA CONTAINERS */}
-      <section className="py-16 bg-white">
+      <section className="">
         <div className="max-w-none w-full px-[2px] md:px-[15px] mx-auto">
           <div className="max-w-none w-full mx-0">
             <div className="max-w-none w-full mx-0">
@@ -96,8 +93,6 @@ const VersicherungPage = () => {
       </section>
 
       <Footer />
-    </>
-  );
+    </>;
 };
-
 export default VersicherungPage;
