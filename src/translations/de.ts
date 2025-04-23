@@ -234,7 +234,7 @@ export const de = {
     formEmail: "E-Mail",
     formCompany: "Unternehmen",
     formMessage: "Nachricht",
-    formPrivacy: "Ich habe die <link>Datenschutzerklärung</link> gelesen und akzeptiere sie",
+    formPrivacy: "Datenschutzerklärung gelesen und akzeptiert",
     formSend: "Nachricht senden",
     formSending: "Wird gesendet...",
     success: "Nachricht gesendet!",
