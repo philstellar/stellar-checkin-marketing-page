@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -93,17 +94,55 @@ const pathMappings: Record<string, Record<Language, string>> = {
     'it': 'home',
     'es': 'home'
   },
+  // Add proper mappings for About Us pages
   'ueber-uns': {
     'de': 'ueber-uns',
-    'en': 'ueber-uns',
-    'it': 'ueber-uns',
-    'es': 'ueber-uns'
+    'en': 'about-us',
+    'it': 'chi-siamo',
+    'es': 'sobre-nosotros'
   },
+  'about-us': {
+    'de': 'ueber-uns',
+    'en': 'about-us',
+    'it': 'chi-siamo',
+    'es': 'sobre-nosotros'
+  },
+  'chi-siamo': {
+    'de': 'ueber-uns',
+    'en': 'about-us',
+    'it': 'chi-siamo',
+    'es': 'sobre-nosotros'
+  },
+  'sobre-nosotros': {
+    'de': 'ueber-uns',
+    'en': 'about-us',
+    'it': 'chi-siamo',
+    'es': 'sobre-nosotros'
+  },
+  // Add proper mappings for Success Stories pages
   'erfolgsgeschichten': {
     'de': 'erfolgsgeschichten',
-    'en': 'erfolgsgeschichten',
-    'it': 'erfolgsgeschichten',
-    'es': 'erfolgsgeschichten'
+    'en': 'success-stories',
+    'it': 'storie-di-successo',
+    'es': 'historias-de-exito'
+  },
+  'success-stories': {
+    'de': 'erfolgsgeschichten',
+    'en': 'success-stories',
+    'it': 'storie-di-successo',
+    'es': 'historias-de-exito'
+  },
+  'storie-di-successo': {
+    'de': 'erfolgsgeschichten',
+    'en': 'success-stories',
+    'it': 'storie-di-successo',
+    'es': 'historias-de-exito'
+  },
+  'historias-de-exito': {
+    'de': 'erfolgsgeschichten',
+    'en': 'success-stories',
+    'it': 'storie-di-successo',
+    'es': 'historias-de-exito'
   },
   'faq': {
     'de': 'faq',
