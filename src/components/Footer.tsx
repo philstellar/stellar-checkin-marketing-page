@@ -36,79 +36,86 @@ const Footer = () => {
             </p>
           </div>
           
-          {/* Column 2: About Stellar */}
+          {/* Column 2: About Stellar and Legal */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/ueber-uns`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('navigation.aboutUs')}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/erfolgsgeschichten`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('navigation.successStories')}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/faq`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('navigation.faq')}
-                </Link>
-              </li>
-              {/* Insurance link has been removed from Footer */}
-            </ul>
+            <div className="flex gap-8 mb-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link 
+                      to={`${getUrlPrefix()}/ueber-uns`} 
+                      className="flex items-center text-black hover:text-apple transition-colors"
+                      onClick={handleNavigation}
+                    >
+                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                      {t('navigation.aboutUs')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to={`${getUrlPrefix()}/erfolgsgeschichten`} 
+                      className="flex items-center text-black hover:text-apple transition-colors"
+                      onClick={handleNavigation}
+                    >
+                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                      {t('navigation.successStories')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to={`${getUrlPrefix()}/faq`} 
+                      className="flex items-center text-black hover:text-apple transition-colors"
+                      onClick={handleNavigation}
+                    >
+                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                      {t('navigation.faq')}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link 
+                      to={`${getUrlPrefix()}/impressum`} 
+                      className="flex items-center text-black hover:text-apple transition-colors"
+                      onClick={handleNavigation}
+                    >
+                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                      {t('footer.imprint')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to={`${getUrlPrefix()}/datenschutz`} 
+                      className="flex items-center text-black hover:text-apple transition-colors"
+                      onClick={handleNavigation}
+                    >
+                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                      {t('footer.privacy')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to={`${getUrlPrefix()}/agb`} 
+                      className="flex items-center text-black hover:text-apple transition-colors"
+                      onClick={handleNavigation}
+                    >
+                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                      {t('footer.terms')}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           
-          {/* Column 3: Legal - Spans 2 columns in production mode */}
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/impressum`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('footer.imprint')}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/datenschutz`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('footer.privacy')}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to={`${getUrlPrefix()}/agb`} 
-                  className="flex items-center text-black hover:text-apple transition-colors"
-                  onClick={handleNavigation}
-                >
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('footer.terms')}
-                </Link>
-              </li>
-            </ul>
+          {/* Column 3: Placeholder or empty for layout */}
+          <div>
+            {/* Optional additional content */}
           </div>
         </div>
         
