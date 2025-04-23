@@ -82,15 +82,15 @@ export const insuranceDE = {
   details: {
     furniture: {
       title: "Mobiliar & Gebäude",
-      description: "Wir versichern versehentliche und böswillige Schäden an deinem Eigentum. Auch Diebstahl ist versichert."
+      description: "Wir versichern versehentliche und böswillige Schäden an IHrem Eigentum. Auch Diebstahl ist versichert."
     },
     newForOld: {
       title: "Neu für Alt",
-      description: "Wir entschädigen auf Basis des Wiederbeschaffungswertes. Das heißt, du bekommst im Schadensfall neu für alt"
+      description: "Wir entschädigen auf Basis des Wiederbeschaffungswertes. Das heißt, Sie bekommen im Schadensfall Neu für Alt"
     },
     rentalLoss: {
       title: "Mietausfall",
-      description: "Wenn ein versicherter Schaden dich daran hindert, dein Eigentum zu vermieten, erstatten wir dir die entgangenen Mieteinnahmen*"
+      description: "Wenn ein versicherter Schaden Sie daran hindert, zu vermieten, erstatten wir entgangene Mieteinnahmen*"
     },
     petDamage: {
       title: "Haustier-Schäden",
