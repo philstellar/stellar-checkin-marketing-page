@@ -46,7 +46,7 @@ const InsurancePricingTable = () => {
   if (isMobile) {
     return <div className="w-full px-[2px]">
         <div className="bg-white rounded-xl shadow p-0 mb-6 w-full">
-          <h3 className="font-medium border-b pb-2 mb-2 text-base">{header.coverage}</h3>
+          <h3 className="font-medium border-b pb-2 mb-2 text-base px-[16px]">{header.coverage}</h3>
 
           {/* Maximum coverage amounts */}
           <div className="mb-2 px-4">
