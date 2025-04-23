@@ -4,7 +4,7 @@ import { Brush, Image, FileText, PawPrint } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 // Helper for value formatting
-const formatValue = (value?: string) => value ? <span className="whitespace-pre-line font-bold text-left">{value}</span> : null;
+const formatValue = (value?: string) => value ? <span className="whitespace-pre-line font-bold text-left text-base">{value}</span> : null;
 
 // Helper: returns a centered icon cell
 const IconCell = ({
