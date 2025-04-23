@@ -1,4 +1,3 @@
-
 import { memo } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
@@ -37,12 +36,6 @@ const Footer = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    });
-  };
-
-  const handleFAQNavigation = () => {
-    navigate('/', { 
-      state: { scrollTo: 'gaeste-voranmeldung' } 
     });
   };
 
@@ -85,16 +78,6 @@ const Footer = () => {
                       {t('navigation.successStories')}
                     </Link>
                   </li>
-                  <li>
-                    <Link 
-                      to={about.faq}
-                      className="flex items-center text-black hover:text-apple transition-colors" 
-                      onClick={handleNavigation}
-                    >
-                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                      {t('navigation.faq')}
-                    </Link>
-                  </li>
                 </ul>
               </div>
               
@@ -105,16 +88,6 @@ const Footer = () => {
                     <Link to={`/${language}/impressum`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
                       <ExternalLink className="h-5 w-5 text-apple mr-2" />
                       {t('footer.imprint')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="#" 
-                      onClick={handleFAQNavigation} 
-                      className="flex items-center text-black hover:text-apple transition-colors"
-                    >
-                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                      {t('navigation.faq')}
                     </Link>
                   </li>
                   <li>
