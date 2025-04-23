@@ -76,8 +76,8 @@ export const insuranceDE = {
     ]
   },
   shortTerm: {
-    title: "Kurzzeitversicherung für Ferienwohnungen",
-    description: "Flexible Versicherungslösungen für Ihre Ferienwohnung - passend zu Ihren Bedürfnissen."
+    title: "Unsere Preise",
+    description: "Die Preise entsprechen der Gebühr, die dem Gast pro Nacht berechnet wird (zzgl. möglicher Servicegebühren und Provisionen). Die Versicherung kann auch automatisch zu jeder Buchung hinzugefügt und im Gesamtpreis verrechnet werden."
   },
   details: {
     furniture: {
