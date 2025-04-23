@@ -64,7 +64,7 @@ const LogoCarousel = () => {
       emblaApi?.off('settle', startAutoplay);
     };
   }, [emblaApi]);
-  return <div className="py-16 bg-white relative" data-aos="fade-up">
+  return <div data-aos="fade-up" className="bg-white relative py-0">
       <div className="container-custom">
         <div className="mb-10 text-center">
           <h2 className="text-2xl font-bold mb-4 text-royal inline-block relative">
