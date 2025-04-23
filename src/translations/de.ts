@@ -95,8 +95,7 @@ export const de = {
     subtitle: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung – oder bieten Sie Ihren Gästen eine bequeme Alternative und sichern Sie sich zusätzliche Provisionseinnahmen.",
     process: {
       title: "Schnellerer Check-in-Prozess",
-      description: "Keine Kautionsabwicklung mehr – weniger Aufwand für Sie und mehr Komfort für Ihre Gäste.
-."
+      description: "Keine Kautionsabwicklung mehr – weniger Aufwand für Sie und mehr Komfort für Ihre Gäste."
     },
     income: {
       title: "Zusätzliche Einnahmequelle",
