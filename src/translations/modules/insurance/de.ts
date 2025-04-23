@@ -86,23 +86,23 @@ export const insuranceDE = {
     },
     newForOld: {
       title: "Neu für Alt",
-      description: "Bei Beschädigung erhalten Sie den Neupreis für beschädigte Gegenstände."
+      description: "Wir entschädigen auf Basis des Wiederbeschaffungswertes. Das heißt, du bekommst im Schadensfall neu für alt"
     },
     rentalLoss: {
       title: "Mietausfall",
-      description: "Schutz vor Einnahmeausfällen durch Beschädigung der Unterkunft."
+      description: "Wenn ein versicherter Schaden dich daran hindert, dein Eigentum zu vermieten, erstatten wir dir die entgangenen Mieteinnahmen*"
     },
     petDamage: {
       title: "Haustier-Schäden",
-      description: "Absicherung gegen Schäden durch Haustiere Ihrer Gäste."
+      description: "Unsere Versicherung deckt auch Schäden ab, die durch Haustiere der Gäste verursacht werden."
     },
     cleaning: {
       title: "Reinigung",
-      description: "Kostenübernahme für außergewöhnliche Reinigungsarbeiten."
+      description: "Wir erstatten die Kosten für eine zusätzliche Reinigung zur Entfernung von Flecken und Rauchgeruch."
     },
     art: {
       title: "Kunst & Dekoratives",
-      description: "Versicherungsschutz für Kunstgegenstände und dekorative Elemente."
+      description: "Wir schützen alle Kunstwerke oder Wertgegenstände, die als Einrichtungsgegenstände verwendet werden."
     }
   },
   faq: {
