@@ -141,7 +141,7 @@ export const de = {
     },
     webhooks: {
       title: "Webhooks",
-      description: "Ereignisbasierte Benachrichtigungen für Echtzeit-Updates in Ihren Systemen."
+      description: "Neue Buchungen und Änderungen werden in Echtzeit mit unseren Plattformen synchronisiert."
     },
     cta: "Integrationen entdecken"
   },
