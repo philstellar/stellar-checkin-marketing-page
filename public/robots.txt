@@ -31,4 +31,3 @@ Crawl-delay: 10
 
 # Instructions for page rendering
 Cache-Control: max-age=3600
-
