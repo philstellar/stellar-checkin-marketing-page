@@ -28,7 +28,7 @@ const InsuranceFAQ = () => {
             <AccordionTrigger className="text-left text-lg font-semibold text-royal">
               {t(`insurance.faq.${faq}.question`)}
             </AccordionTrigger>
-            <AccordionContent className="text-royal-700 text-left">
+            <AccordionContent className="text-royal-700 text-left whitespace-pre-line">
               {t(`insurance.faq.${faq}.answer`)}
             </AccordionContent>
           </AccordionItem>
