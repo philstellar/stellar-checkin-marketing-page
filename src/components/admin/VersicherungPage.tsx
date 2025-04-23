@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -39,7 +40,8 @@ const VersicherungPage = () => {
       <Header />
       <HeroSection />
 
-      <div className="container mx-auto px-4 py-[30px]">
+      {/* Modified container to be overflow-hidden and ensure no horizontal scrolling */}
+      <div className="container mx-auto px-4 py-[30px] overflow-hidden">
         <OverviewCards />
 
         <div className="prose max-w-none">
@@ -50,7 +52,10 @@ const VersicherungPage = () => {
           <BenefitsSection />
         </div>
 
-        <LogoCarousel />
+        {/* Added overflow-hidden to ensure logo carousel doesn't cause horizontal scrolling */}
+        <div className="overflow-hidden">
+          <LogoCarousel />
+        </div>
       </div>
 
       {/* FULL WIDTH INSURANCE PRICING TABLE, NO EXTRA CONTAINERS */}

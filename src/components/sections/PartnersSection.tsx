@@ -37,9 +37,11 @@ export function PartnersSection() {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container-custom">
+      <div className="container-custom overflow-hidden">
         <LogoCarouselAutoplay logos={pmsLogos} />
       </div>
     </section>
   );
 }
+
+export default PartnersSection;

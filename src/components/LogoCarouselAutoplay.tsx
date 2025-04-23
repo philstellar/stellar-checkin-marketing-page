@@ -62,7 +62,8 @@ const LogoCarouselAutoplay = ({ logos }: LogoCarouselAutoplayProps) => {
   }, [emblaApi]);
 
   return (
-    <div className="overflow-hidden" ref={emblaRef}>
+    // Adding w-full and max-w-full to contain the carousel within its parent
+    <div className="overflow-hidden w-full max-w-full" ref={emblaRef}>
       <div className="flex">
         {extendedLogos.map((logo, index) => (
           <div 

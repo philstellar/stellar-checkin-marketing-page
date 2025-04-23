@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Database, Plug, Link, ServerCog } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
@@ -75,8 +76,8 @@ export const IntegrationenSection: React.FC = () => {
             {t('integration.subtitle')}
           </p>
           
-          {/* Logo Carousel */}
-          <div className="mb-12">
+          {/* Logo Carousel with overflow-hidden to prevent horizontal scrolling */}
+          <div className="mb-12 overflow-hidden">
             <LogoCarouselAutoplay logos={pmsLogos} />
           </div>
         </div>
