@@ -93,7 +93,7 @@ const InsurancePricingTable = () => {
   }
 
   // Desktop view
-  return <div className="w-full px-[15px]">
+  return <div className="w-full px-0">
       <div className="bg-white p-4 md:p-8 mb-6 w-full overflow-x-auto px-[9px] rounded-none">
         <table className="w-full text-[15px] min-w-[600px]">
           <thead>
