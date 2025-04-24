@@ -17,7 +17,7 @@ interface Props {
 }
 
 const StatusIcon = ({ status }: { status: boolean }) => (
-  <div className="flex justify-center">
+  <div className="flex justify-center items-center h-full">
     {status ? (
       <Check className="h-6 w-6 text-apple" />
     ) : (
@@ -49,7 +49,9 @@ export const ComparisonMobileView = ({ features, schutzBeiMietausfallIndex }: Pr
                   className="h-8 w-auto object-contain mb-2" 
                 />
                 {index === schutzBeiMietausfallIndex ? (
-                  <X className="h-6 w-6 text-red-300" />
+                  <div className="flex justify-center items-center h-full">
+                    <X className="h-6 w-6 text-red-300" />
+                  </div>
                 ) : (
                   <StatusIcon status={feature.airbnb} />
                 )}
@@ -64,7 +66,8 @@ export const ComparisonMobileView = ({ features, schutzBeiMietausfallIndex }: Pr
               </div>
               <div className="flex flex-col items-center">
                 <div className="h-8 flex items-center justify-center mb-2 text-xs font-medium text-center">
-                  Traditional Insurance
+                  Hausrat
+                  Versicherung
                 </div>
                 <StatusIcon status={feature.classic} />
               </div>

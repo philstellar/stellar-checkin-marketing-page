@@ -1,4 +1,3 @@
-
 export const insuranceDE = {
   title: "Versicherung und Kaution clever automatisieren",
   introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
@@ -18,7 +17,7 @@ export const insuranceDE = {
     headline: "Versicherungs- und Kautionsmanagement",
     header: {
       feature: "In der Versicherung enthalten",
-      classic: "Klassische Versicherung"
+      classic: "Hausrat\nVersicherung"
     },
     rows: [
       "Keine Gästehaftung für versehentliche Schäden",

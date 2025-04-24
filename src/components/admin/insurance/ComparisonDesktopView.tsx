@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import {
@@ -25,7 +24,7 @@ interface Props {
 }
 
 const StatusIcon = ({ status }: { status: boolean }) => (
-  <div className="flex justify-center">
+  <div className="flex justify-center items-center h-full">
     {status ? (
       <Check className="h-6 w-6 text-apple" />
     ) : (
@@ -85,7 +84,9 @@ export const ComparisonDesktopView = ({ features, schutzBeiMietausfallIndex }: P
             </TableCell>
             <TableCell className="w-[180px] whitespace-normal break-words">
               {index === schutzBeiMietausfallIndex ? (
-                <X className="h-6 w-6 text-red-300" />
+                <div className="flex justify-center items-center h-full">
+                  <X className="h-6 w-6 text-red-300" />
+                </div>
               ) : (
                 <StatusIcon status={feature.airbnb} />
               )}
