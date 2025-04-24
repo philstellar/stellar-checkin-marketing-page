@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import useEmblaCarousel from 'embla-carousel-react';
+import { useTranslation } from '@/hooks/use-translation';
+
 const logos = [{
   src: "/lovable-uploads/4d73a118-7cc1-4e3f-bf33-dec5ec07b93c.png",
   alt: "Beds24",
@@ -26,7 +28,9 @@ const logos = [{
   alt: "Uplisting",
   width: 160
 }];
+
 const LogoCarousel = () => {
+  const { t } = useTranslation();
   const extendedLogos = [...logos, ...logos, ...logos];
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -36,6 +40,7 @@ const LogoCarousel = () => {
     align: 'start'
   });
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+
   const startAutoplay = () => {
     stopAutoplay();
     if (emblaApi) {
@@ -49,9 +54,11 @@ const LogoCarousel = () => {
       autoplayRef.current = setInterval(scroll, 3000);
     }
   };
+
   const stopAutoplay = () => {
     if (autoplayRef.current) clearInterval(autoplayRef.current);
   };
+
   useEffect(() => {
     if (emblaApi) {
       startAutoplay();
@@ -64,11 +71,12 @@ const LogoCarousel = () => {
       emblaApi?.off('settle', startAutoplay);
     };
   }, [emblaApi]);
+
   return <div data-aos="fade-up" className="bg-white relative py-0">
       <div className="container-custom">
         <div className="mb-10 text-center">
           <h2 className="text-2xl font-bold mb-4 text-royal inline-block relative">
-            Unsere Partner
+            {t('partners.title')}
             <div className="mt-2 h-1 w-20 bg-apple rounded-full mx-auto"></div>
           </h2>
         </div>
@@ -97,4 +105,5 @@ const LogoCarousel = () => {
       </div>
     </div>;
 };
+
 export default LogoCarousel;
