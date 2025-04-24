@@ -17,7 +17,7 @@ export const insuranceDE = {
     headline: "Versicherungs- und Kautionsmanagement",
     header: {
       feature: "In der Versicherung enthalten",
-      classic: "Klassische\nHausratsversicherung"
+      classic: "Klassische Versicherung"
     },
     rows: [
       "Keine Gästehaftung für versehentliche Schäden",

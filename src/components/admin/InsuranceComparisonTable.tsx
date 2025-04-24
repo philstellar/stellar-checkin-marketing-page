@@ -38,7 +38,7 @@ const InsuranceComparisonTable = () => {
     {
       name: t('insurance.comparison.rows.3'),
       stellar: true,
-      airbnb: false,
+      airbnb: true,
       booking: false,
       classic: false,
     },
@@ -95,17 +95,7 @@ const InsuranceComparisonTable = () => {
               />
             </TableHead>
             <TableHead className="w-[180px] text-center font-bold text-black whitespace-normal break-words">
-              {String(t('insurance.comparison.header.classic'))
-                .replace(/\\n|\n/g, '<br />')
-                .split('<br />')
-                .map((part, i, arr) =>
-                  i < arr.length - 1 ? (
-                    <React.Fragment key={i}>{part}<br /></React.Fragment>
-                  ) : (
-                    <React.Fragment key={i}>{part}</React.Fragment>
-                  )
-                )
-              }
+              {t('insurance.comparison.header.classic')}
             </TableHead>
           </TableRow>
         </TableHeader>
