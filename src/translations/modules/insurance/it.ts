@@ -1,4 +1,3 @@
-
 export const insuranceIT = {
   title: "Automatizza in modo intelligente assicurazione e deposito",
   introduction: "Offri ai tuoi ospiti un'assicurazione opzionale e beneficia di entrate aggiuntive.",
@@ -123,6 +122,20 @@ export const insuranceIT = {
     cost: {
       question: "Quanto mi costa l'assicurazione danni ospiti?",
       answer: "La nostra assicurazione danni ospiti parte da €2,8 per notte e varia a seconda del livello di copertura. I dettagli si trovano nel tuo account Stellar.\n\nIl costo dell'assicurazione può essere anche sostenuto dall'ospite, come alternativa al deposito.\n\nPer assicurarti che l'assicurazione copra tutti i soggiorni nei tuoi alloggi, puoi specificare nelle impostazioni che pagherai tu l'assicurazione e includerai i costi nel prezzo dell'affitto."
+    }
+  },
+  versicherung: {
+    process: {
+      title: "Processo di Check-in Più Veloce",
+      description: "Niente più gestione dei depositi, meno lavoro per te e i tuoi ospiti."
+    },
+    income: {
+      title: "Fonte di Reddito Aggiuntiva",
+      description: "Guadagna commissioni con ogni polizza assicurativa – automaticamente e senza sforzo aggiuntivo."
+    },
+    protection: {
+      title: "Protezione Completa",
+      description: "Protezione migliore rispetto ai depositi tradizionali, grazie a importi di copertura più elevati, copertura \"nuovo per vecchio\" e protezione contro la perdita di affitto."
     }
   }
 };
