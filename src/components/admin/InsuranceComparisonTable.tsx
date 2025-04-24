@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Check, X } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 import {
   Table,
   TableBody,
@@ -13,6 +14,7 @@ import { useTranslation } from '@/hooks/use-translation';
 
 const InsuranceComparisonTable = () => {
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
   
   const features = [
     {
@@ -104,7 +106,7 @@ const InsuranceComparisonTable = () => {
                 />
               </div>
             </TableHead>
-            <TableHead className="w-[180px] text-center font-bold text-black whitespace-normal break-words">
+            <TableHead className={`w-[180px] text-center font-bold text-black whitespace-normal break-words ${isMobile ? 'text-xs' : 'text-[15px]'}`}>
               {t('insurance.comparison.header.classic')}
             </TableHead>
           </TableRow>
