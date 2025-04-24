@@ -1,3 +1,4 @@
+
 import { navigationES } from './modules/navigation';
 import { heroES } from './modules/hero';
 import { featuresES } from './modules/features';
@@ -5,6 +6,11 @@ import { partnersES } from './modules/partners';
 import { kurtaxeES } from './modules/kurtaxe';
 import { insuranceES } from './modules/insurance';
 import { trustBadgeES } from './modules/trustBadge';
+import { cookiesES } from './modules/cookies/es';
+import { identityES } from './modules/identity/es';
+import { integrationES } from './modules/integration/es';
+import { pricingES } from './modules/pricing/es';
+import { zusatzservicesES } from './modules/zusatzservices/es';
 
 export const es = {
   // Header
@@ -14,11 +20,7 @@ export const es = {
   hero: heroES,
   
   // Features
-  features: {
-    title: "Check-in",
-    subtitle: "Digitalice su proceso de check-in – rápido, seguro y sin papel.",
-    moreBtn: "Más información"
-  },
+  features: featuresES,
 
   // Partners Section
   partners: partnersES,
@@ -26,26 +28,13 @@ export const es = {
   // Kurtaxe Section
   kurtaxe: kurtaxeES,
 
-  // Zusatzservices Section
-  zusatzservices: {
-    title: "Venda Servicios Adicionales",
-    subtitle: "Aumente sus ingresos ofreciendo servicios adicionales a sus huéspedes durante el proceso de check-in.",
-    additionalServices: {
-      title: "Servicios Adicionales",
-      description: "Ofrezca más a sus huéspedes – y aumente sus ingresos con servicios como el check-in anticipado, paquetes de ropa de cama o experiencias especiales."
-    },
-    payment: {
-      title: "Procesamiento de Pagos Integrado",
-      description: "Procesamiento de pagos integrado con todos los métodos de pago comunes directamente en el proceso de check-in."
-    },
-    revenue: {
-      title: "Fuentes de Ingresos Adicionales",
-      description: "Genere ingresos adicionales mediante la venta dirigida de mejoras y servicios adicionales."
-    },
-    cta: "Registrarse Ahora"
-  },
+  // Cookies
+  cookies: cookiesES,
 
-  // Versicherung Section
+  // Zusatzservices
+  zusatzservices: zusatzservicesES,
+
+  // Versicherung
   versicherung: {
     title: "Automatice de Forma Inteligente el Seguro y los Depósitos",
     subtitle: "Automatice la recolección y reembolso de depósitos, u ofrezca a sus huéspedes una alternativa conveniente – y benefíciese de ingresos adicionales por comisiones.",
@@ -64,49 +53,13 @@ export const es = {
     cta: "Registrarse Ahora"
   },
 
-  // Identitaetspruefung Section
-  identity: {
-    title: "Verificación de Identidad",
-    subtitle: "Verificación de identidad rápida y segura de sus huéspedes – completada en solo 2 minutos, para mayor confianza y protección.",
-    biometric: {
-      title: "Verificación Biométrica",
-      description: "Reconocimiento facial rápido con comprobación de vivacidad – protege contra fraudes y garantiza que el documento de identidad y la persona sean genuinos."
-    },
-    document: {
-      title: "Verificación de Documentos de Identidad",
-      description: "Validación automática de documentos de identidad mediante moderna tecnología de IA en segundos."
-    },
-    privacy: {
-      title: "Solución Compatible con la Privacidad",
-      description: "Todos los datos se procesan de forma segura y se protegen según los estándares de RGPD y solo se utilizan para verificación."
-    },
-    cta: "Registrarse Ahora"
-  },
+  // Identity Section
+  identity: identityES,
 
-  // Integrationen Section
-  integration: {
-    title: "Integración con su PMS",
-    subtitle: "Ya sea integración con Smoobu, Guesty, Hostaway, Lodgify, Beds24 u otros sistemas líderes - conectamos su PMS para un flujo de trabajo optimizado.",
-    pms: {
-      title: "Integración PMS",
-      description: "Conexión perfecta con su Sistema de Gestión de Propiedades para una sincronización eficiente de datos."
-    },
-    api: {
-      title: "Interfaces API",
-      description: "API abierta para integraciones personalizadas y adaptaciones individuales."
-    },
-    payment: {
-      title: "Sistemas de Pago",
-      description: "Conexión directa con los principales proveedores de pago como Stripe y PayPal."
-    },
-    webhooks: {
-      title: "Webhooks",
-      description: "Notificaciones basadas en eventos para actualizaciones en tiempo real en sus sistemas."
-    },
-    cta: "Descubrir Integraciones"
-  },
+  // Integration Section
+  integration: integrationES,
 
-  // Einstellungen Section
+  // Settings Section
   settings: {
     title: "Personalización",
     subtitle: "Personalice la experiencia de check-in – con su propia marca y una interfaz multilingüe",
@@ -125,63 +78,7 @@ export const es = {
   },
 
   // Pricing Section
-  pricing: {
-    title: "Nuestros Precios",
-    subtitle: "Encuentre el paquete adecuado para sus requisitos.",
-    basic: {
-      title: "Básico",
-      price: "5",
-      unit: "€/mes",
-      per: "por propiedad",
-      cta: "Registrarse Ahora",
-      additionalServices: "Servicios Adicionales *",
-      additionalServicesDesc: "En el paquete Básico, se cobra una tarifa del 5% sobre el valor total de los servicios adicionales reservados por el huésped.",
-      identityVerification: "Verificación de Identidad *",
-      identityVerificationDesc: "La verificación biométrica es opcional y tiene un costo de €1,50 por check-in.",
-      depositManagement: "Gestión de Depósitos *",
-      depositManagementDesc: "En el paquete Básico, se cobra una tarifa del 1% sobre el valor total del depósito.",
-      insurance: "Seguro para Huéspedes *",
-      insuranceDesc: "El seguro es opcional para el huésped o puede elegirse como reemplazo del depósito.",
-      digitalGuestRegistration: "Registro de Huéspedes a Autoridades *",
-      digitalGuestRegistrationDesc: "Los registros de huéspedes se envían automática y legalmente a las autoridades.",
-      features: [
-        "Check-in online",
-        "Registro de huéspedes personalizable",
-        "Integraciones PMS",
-        "Servicios Adicionales *",
-        "Verificación de Identidad *",
-        "Gestión de Depósitos *",
-        "Seguro para Huéspedes *",
-        "Aceptación del Acuerdo de Alojamiento"
-      ]
-    },
-    advanced: {
-      title: "Avanzado",
-      price: "9",
-      unit: "€/mes",
-      per: "por propiedad",
-      popular: "Más popular",
-      cta: "Registrarse Ahora",
-      plusBasic: "Todo en Básico más complementos seleccionados:",
-      features: [
-        "Registro de Huéspedes a Autoridades *",
-        "Impuesto Turístico – calculado y liquidado automáticamente",
-        "Servicios adicionales sin tarifas",
-        "Check-in personalizado"
-      ]
-    },
-    enterprise: {
-      title: "Más de 100 Propiedades",
-      contact: "Por favor, consulte a nuestro",
-      contactTeam: "equipo de ventas",
-      cta: "Contactar Ventas",
-      features: [
-        "Conexión API",
-        "Más de 100 propiedades"
-      ]
-    },
-    disclaimer: "Todos los precios están sujetos al IVA aplicable"
-  },
+  pricing: pricingES,
 
   // Contact Section
   contact: {
@@ -212,6 +109,7 @@ export const es = {
     terms: "Términos y Condiciones",
     copyright: "Todos los derechos reservados."
   },
+
   insurance: insuranceES,
   trustBadge: trustBadgeES,
 

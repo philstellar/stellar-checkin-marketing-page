@@ -6,6 +6,11 @@ import { partnersDE } from './modules/partners';
 import { kurtaxeDE } from './modules/kurtaxe';
 import { insuranceDE } from './modules/insurance';
 import { trustBadgeDE } from './modules/trustBadge';
+import { cookiesDE } from './modules/cookies/de';
+import { identityDE } from './modules/identity/de';
+import { integrationDE } from './modules/integration/de';
+import { pricingDE } from './modules/pricing/de';
+import { zusatzservicesDE } from './modules/zusatzservices/de';
 
 export const de = {
   // Header
@@ -23,72 +28,11 @@ export const de = {
   // Kurtaxe Section
   kurtaxe: kurtaxeDE,
 
-  // Cookies Section
-  cookies: {
-    title: "Cookie-Zustimmung",
-    description: "Diese Website verwendet verschiedene Cookies, um Ihr Surferlebnis zu verbessern, personalisierte Dienste anzubieten und den Website-Verkehr zu analysieren. Sie können wählen, ob Sie nicht-essentielle Cookies akzeptieren oder ablehnen möchten.",
-    whatAre: {
-      title: "Was sind Cookies?",
-      description: "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden und Websites helfen, Ihre Präferenzen zu speichern und Ihr Surferlebnis zu verbessern."
-    },
-    howWeUse: {
-      title: "Wie wir Cookies verwenden",
-      description: "Wir verwenden Cookies, um Ihre Präferenzen zu speichern, den Website-Verkehr zu analysieren und Inhalte zu personalisieren. Einige Cookies sind für die ordnungsgemäße Funktion der Website unerlässlich."
-    },
-    yourChoices: {
-      title: "Ihre Auswahlmöglichkeiten",
-      description: "Sie können wählen, welche Arten von Cookies Sie zulassen. Essentielle Cookies können nicht deaktiviert werden, da sie für die Funktion der Website notwendig sind."
-    },
-    categories: {
-      title: "Cookie-Kategorien",
-      description: "Nachfolgend finden Sie Informationen über die verschiedenen Arten von Cookies, die wir verwenden, und deren Zwecke."
-    },
-    essential: {
-      title: "Essentielle Cookies",
-      description: "Notwendige Cookies helfen dabei, eine Website nutzbar zu machen, indem sie Grundfunktionen wie Seitennavigation, Benutzerauthentifizierung und Zugang zu geschützten Bereichen der Website ermöglichen. Diese Cookies können nicht deaktiviert werden.",
-      duration: "Sitzung / 30 Tage"
-    },
-    analytics: {
-      title: "Analyse- und Leistungs-Cookies",
-      description: "Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem sie Informationen anonym sammeln und berichten. Sie verfolgen die Website-Leistung und liefern Erkenntnisse durch Google Analytics und Google Tag Manager.",
-      duration: "1-2 Jahre"
-    },
-    advertising: {
-      title: "Werbe- und Marketing-Cookies",
-      description: "Diese Cookies werden verwendet, um personalisierte Werbung basierend auf Ihren Interessen zu liefern und die Wirksamkeit von Werbekampagnen über Plattformen wie Google Ads und Conversion-Tracking zu verfolgen.",
-      duration: "Bis zu 2 Jahre"
-    },
-    functional: {
-      title: "Funktionale Cookies",
-      description: "Diese Cookies ermöglichen erweiterte Funktionalität und Personalisierung, wie Live-Chats, Videos und das Teilen in sozialen Medien. Sie können von uns oder von Drittanbietern gesetzt werden, deren Dienste wir zu unseren Seiten hinzugefügt haben.",
-      duration: "Bis zu 1 Jahr"
-    },
-    provider: "Anbieter",
-    duration: "Dauer",
-    showDetails: "Details anzeigen",
-    hideDetails: "Details ausblenden",
-    acceptAll: "Alle akzeptieren",
-    rejectNonEssential: "Nicht-essentielle ablehnen"
-  },
+  // Cookies
+  cookies: cookiesDE,
 
   // Zusatzservices Section
-  zusatzservices: {
-    title: "Zusatzleistungen verkaufen",
-    subtitle: "Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses gezielt zusätzliche Services anbieten.",
-    additionalServices: {
-      title: "Zusatzleistungen",
-      description: "Bieten Sie Ihren Gästen mehr – und steigern Sie Ihren Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepakete oder besondere Erlebnisse."
-    },
-    payment: {
-      title: "Nahtlose Zahlungsabwicklung",
-      description: "Integrierte Zahlungsabwicklung mit allen gängigen Zahlungsmethoden direkt im Check-in-Prozess."
-    },
-    revenue: {
-      title: "Zusätzliche Einnahmequellen",
-      description: "Generieren Sie zusätzliches Einkommen durch den gezielten Verkauf von Upgrades und Zusatzleistungen."
-    },
-    cta: "Jetzt Registrieren"
-  },
+  zusatzservices: zusatzservicesDE,
 
   // Versicherung Section
   versicherung: {
@@ -110,42 +54,10 @@ export const de = {
   },
 
   // Identitaetspruefung Section
-  identity: {
-    title: "Identitätsprüfung",
-    subtitle: "Schnelle und sichere Identitätsprüfung Ihrer Gäste – in nur 2 Minuten abgeschlossen, für mehr Vertrauen und Schutz.",
-    biometric: {
-      title: "Biometrische Verifizierung",
-      description: "Verlässliche Gesichtserkennung mit Live-Check – schützt vor Identitätsbetrug und stellt sicher, dass Ausweis und Person übereinstimmen."
-    },
-    document: {
-      title: "Ausweisdokumentenprüfung",
-      description: "Automatische Validierung von Ausweisdokumenten durch moderne KI-Technologie in Sekunden."
-    },
-    privacy: {
-      title: "Datenschutzkonforme Lösung",
-      description: "Alle Daten werden sicher verarbeitet, gemäß DSGVO-Richtlinien geschützt und ausschließlich zur Verifizierung verwendet."
-    },
-    cta: "Jetzt Registrieren"
-  },
+  identity: identityDE,
 
   // Integrationen Section
-  integration: {
-    title: "Integration mit Ihrem PMS",
-    subtitle: "Nahtlose Integration mit Smoobu, Guesty, Hostaway, Lodgify, Beds24 und vielen weiteren – für einen durchgängigen, effizienten Workflow in Ihrem PMS.",
-    pms: {
-      title: "PMS-Integration",
-      description: "Direkte Anbindung an Ihr Property Management System oder Channel Manager für eine automatische Datensynchronisation."
-    },
-    payment: {
-      title: "Zahlungssysteme",
-      description: "Direkte Anbindung an führende Zahlungsanbieter wie Stripe und PayPal."
-    },
-    webhooks: {
-      title: "Webhooks",
-      description: "Neue Buchungen und Änderungen werden in Echtzeit mit unseren Plattformen synchronisiert."
-    },
-    cta: "Integrationen entdecken"
-  },
+  integration: integrationDE,
 
   // Einstellungen Section
   settings: {
@@ -166,63 +78,7 @@ export const de = {
   },
 
   // Pricing Section
-  pricing: {
-    title: "Unsere Preise",
-    subtitle: "Finden Sie das passende Paket für Ihre Anforderungen.",
-    basic: {
-      title: "Basic",
-      price: "5",
-      unit: "€/Monat",
-      per: "pro Objekt",
-      cta: "Jetzt Registrieren",
-      additionalServices: "Zusatzleistungen *",
-      additionalServicesDesc: "Im Basic Paket wird eine Gebühr von 5% auf den Gesamtwert der vom Gast gebuchten Zusatzleistungen erhoben.",
-      identityVerification: "Identitätsprüfung *",
-      identityVerificationDesc: "Die biometrische Verifikation ist optional und wird mit 1,50€ pro Check-in berechnet.",
-      depositManagement: "Kautionsverwaltung *",
-      depositManagementDesc: "Im Basic Paket wird eine Gebühr von 1% auf den Gesamtwert der Kaution erhoben.",
-      insurance: "Gästeversicherung *",
-      insuranceDesc: "Die Versicherung ist für den Gast optional oder kann als Ersatz für die Kaution gewählt werden.",
-      digitalGuestRegistration: "Gästeregistrierung bei Behörden *",
-      digitalGuestRegistrationDesc: "Gästeregistrierungen werden automatisch und rechtssicher an die Behörden übermittelt.",
-      features: [
-        "Online Check-in",
-        "Anpassbare Gästeregistrierung",
-        "PMS-Integrationen",
-        "Zusatzleistungen *",
-        "Identitätsprüfung *",
-        "Kautionsverwaltung *",
-        "Gästeversicherung *",
-        "Annahme der Beherbergungsvereinbarung"
-      ]
-    },
-    advanced: {
-      title: "Advanced",
-      price: "9",
-      unit: "€/Monat",
-      per: "pro Objekt",
-      popular: "Am beliebtesten",
-      cta: "Jetzt Registrieren",
-      plusBasic: "Alles im Basic plus ausgewählte Add-ons:",
-      features: [
-        "Gästeregistrierung bei Behörden *",
-        "Kurtaxe – automatisch berechnet und abgerechnet",
-        "Zusatzleistungen ohne Gebühren",
-        "Individueller Check-in"
-      ]
-    },
-    enterprise: {
-      title: "Über 100 Objekte",
-      contact: "Bitte fragen Sie unser",
-      contactTeam: "Vertriebsteam",
-      cta: "Vertrieb kontaktieren",
-      features: [
-        "API-Anbindung",
-        "Mehr als 100 Objekte"
-      ]
-    },
-    disclaimer: "Alle Preise verstehen sich zzgl. der gesetzlichen MwSt."
-  },
+  pricing: pricingDE,
 
   // Contact Section
   contact: {
@@ -253,6 +109,7 @@ export const de = {
     terms: "AGB",
     copyright: "Alle Rechte vorbehalten."
   },
+
   insurance: insuranceDE,
   trustBadge: trustBadgeDE,
 
