@@ -1,3 +1,4 @@
+
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -13,7 +14,8 @@ const Impressum = lazy(() => import('./pages/Impressum'));
 const Datenschutz = lazy(() => import('./pages/Datenschutz'));
 const Agb = lazy(() => import('./pages/Agb'));
 const Brevo = lazy(() => import('./pages/Brevo'));
-const VersicherungPage = lazy(() => import('./components/admin/VersicherungPage'));
+// Direct import of admin components to avoid circular dependencies
+const VersicherungPage = lazy(() => import('./components/admin/VersicherungPage').then(m => ({ default: m.default })));
 const TrustBadgePage = lazy(() => import('./components/admin/TrustBadgePage'));
 const UeberUns = lazy(() => import('./pages/UeberUns'));
 const Erfolgsbeispiele = lazy(() => import('./pages/Erfolgsbeispiele'));

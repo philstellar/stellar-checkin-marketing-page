@@ -1,3 +1,4 @@
+
 import React, { lazy, Suspense, memo } from 'react';
 import Header from "@/components/Header";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -5,7 +6,6 @@ import { PartnersSection } from "@/components/sections/PartnersSection";
 import { OnlineCheckinSection } from "@/components/features";
 import Footer from "@/components/Footer";
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
-import ContactSection from "@/components/contact/ContactSection";
 
 // Custom loading component
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
@@ -19,7 +19,7 @@ const IdentitaetspruefungSection = lazy(() => import("@/components/Identitaetspr
 const IntegrationenSection = lazy(() => import("@/components/features/IntegrationenSection"));
 const EinstellungenSection = lazy(() => import("@/components/features/EinstellungenSection"));
 const PricingSection = lazy(() => import("@/components/PricingSection"));
-const ContactSectionLazy = lazy(() => import("@/components/contact/ContactSection"));
+const ContactSection = lazy(() => import("@/components/contact/ContactSection"));
 
 const Index = () => {
   return (
@@ -56,7 +56,7 @@ const Index = () => {
         </Suspense>
         
         <Suspense fallback={<SectionLoader bg="bg-floral-100" />}>
-          <ContactSectionLazy />
+          <ContactSection />
         </Suspense>
       </main>
       <Footer />

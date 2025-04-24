@@ -14,7 +14,7 @@ import HeroSection from './insurance/HeroSection';
 import BenefitsSection from './insurance/BenefitsSection';
 import OverviewCards from './insurance/OverviewCards';
 
-const VersicherungPage = () => {
+const VersicherungPage: React.FC = () => {
   const { t } = useTranslation();
   
   const addInsuranceFeatures = [
