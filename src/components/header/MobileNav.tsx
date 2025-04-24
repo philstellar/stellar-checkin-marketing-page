@@ -1,4 +1,3 @@
-
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -87,52 +86,13 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 </button>
               )}
 
-              <div className="space-y-2">
-                <button 
-                  onClick={() => handleSectionNavigation('gaeste-voranmeldung')}
-                  className="block w-full text-xl text-royal font-medium py-2 text-left"
-                >
-                  {t('navigation.features')}
-                </button>
-                <div className="pl-4 space-y-2">
-                  <a 
-                    href="/#kurtaxe"
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('kurtaxe.title')}
-                  </a>
-                  <a 
-                    href="/#zusatzservices"
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('zusatzservices.title')}
-                  </a>
-                  <a 
-                    href="/#versicherung"
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('versicherung.title')}
-                  </a>
-                  <a 
-                    href="/#identitaetspruefung"
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('identity.title')}
-                  </a>
-                  <a 
-                    href="/#einstellungen"
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('settings.title')}
-                  </a>
-                  <a 
-                    href="/#integrationen"
-                    className="block w-full text-lg text-royal hover:text-apple transition-colors py-1 text-left"
-                  >
-                    {t('integration.title')}
-                  </a>
-                </div>
-              </div>
+              {/* Check-in link without subpage items */}
+              <button 
+                onClick={() => handleSectionNavigation('gaeste-voranmeldung')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+              >
+                {t('navigation.features')}
+              </button>
 
               <button 
                 onClick={() => handleNavigation('versicherung')}
