@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import {
@@ -119,10 +118,8 @@ const InsuranceComparisonTable = () => {
               </TableCell>
               <TableCell className="w-[180px] whitespace-normal break-words">
                 {index === schutzBeiMietausfallIndex ? (
-                  <div className="flex justify-center items-center h-full w-full">
-                    <span className="text-sm font-medium text-black px-2 py-1 text-center break-words italic">
-                      {t('insurance.comparison.airbnbOnlyBooking')}
-                    </span>
+                  <div className="flex justify-center">
+                    <X className="h-6 w-6 text-red-300" />
                   </div>
                 ) : (
                   <StatusIcon status={feature.airbnb} />
