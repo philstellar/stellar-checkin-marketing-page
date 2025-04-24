@@ -1,131 +1,128 @@
+
 export const insuranceIT = {
-  title: "Automatizza in Modo Intelligente Assicurazione e Depositi",
-  introduction: "Offri ai tuoi ospiti un'assicurazione facoltativa e beneficia di entrate aggiuntive.",
+  title: "Automatizza in modo intelligente assicurazione e deposito",
+  introduction: "Offri ai tuoi ospiti un'assicurazione opzionale e beneficia di entrate aggiuntive.",
   section1: {
-    title: "Perché un’assicurazione?",
-    content: "La nostra assicurazione copre i danni causati dagli ospiti, loro accompagnatori o animali. Con una scelta del 90% degli ospiti, offre serenità a tutti i coinvolti."
+    title: "Perché un'assicurazione?",
+    content: "La nostra assicurazione protegge dai danni causati dagli ospiti, dai loro accompagnatori o animali domestici. Il 90% degli ospiti sceglie la nostra assicurazione - per la tranquillità di entrambe le parti."
   },
   section2: {
     title: "Come funziona?",
-    content: "Gli ospiti possono acquistare l'assicurazione durante il check-in digitale, oppure puoi coprire tu stesso il costo come host e includerlo nel prezzo."
+    content: "L'assicurazione può essere prenotata direttamente dall'ospite durante il check-in digitale, oppure puoi coprire tu i costi e includerli nel prezzo del pernottamento."
   },
   section3: {
     title: "Il nostro partner",
-    content: "Copertura garantita da Hiscox – uno dei maggiori assicuratori specializzati al mondo, con oltre 100 anni di esperienza, massima solidità finanziaria e un tasso di soddisfazione clienti del 95%."
+    content: "Partner di Hiscox - un assicuratore specializzato di fama mondiale con oltre 100 anni di esperienza, elevata stabilità finanziaria e 95% di soddisfazione dei clienti."
   },
   comparison: {
-    headline: "Gestione Assicurazione e Depositi",
+    headline: "Gestione assicurazioni e depositi",
     header: {
       feature: "Incluso nell'assicurazione",
-      classic: "Polizza casa\nclassica"
+      classic: "Assicurazione tradizionale"
     },
     rows: [
       "Nessuna responsabilità dell'ospite per danni accidentali",
-      "Prenotazioni su tutti i canali (anche dirette)",
-      "Copertura danni da animali domestici",
-      "Copertura perdita d'affitto per tutte le prenotazioni",
-      "Copertura danni per locazioni commerciali"
+      "Prenotazioni tramite tutti i canali (incluse prenotazioni dirette)",
+      "Protezione contro la perdita di affitto per tutte le prenotazioni",
+      "Protezione contro i danni causati da animali domestici",
+      "Danni durante l'affitto commerciale"
     ],
     airbnbOnlyBooking: "Solo per prenotazioni Airbnb"
   },
   pricing: {
     header: {
-      coverage: "Massimale assicurativo",
-      amount1: "€5.000",
-      amount2: "€10.000",
-      amount3: "€50.000"
+      coverage: "Importo massimo di copertura",
+      amount1: "€ 5.000",
+      amount2: "€ 10.000",
+      amount3: "€ 50.000"
     },
     rows: [
       {
-        label: "Prezzo per notte\n(più tasse assicurative)",
-        value1: "€2,82",
-        value2: "€3,62",
-        value3: "€4,91"
+        label: "Prezzo per notte\n(più tassa assicurativa)",
+        value1: "€ 2,82",
+        value2: "€ 3,62",
+        value3: "€ 4,91"
       },
       {
-        label: "Copertura (franchigia €100)",
-        description: "Danni a inventario e immobili al valore di sostituzione"
+        label: "Copertura (Franchigia €100)",
+        description: "Danni all'inventario e agli edifici al valore di sostituzione"
       },
       {
-        label: "Rivalza sull’ospite",
-        description: "Solo in caso di danno intenzionale"
+        label: "Ricorso contro l'ospite",
+        description: "Solo per danni intenzionali"
       },
       {
-        label: "Coperture aggiuntive\n(fino a)",
-        description: "Spese di pulizia straordinaria fino a €1.000"
+        label: "Copertura aggiuntiva\n(fino a)",
+        description: "Costi di pulizia aggiuntivi fino a € 1.000"
       },
       {
-        description: "Opere d’arte e oggetti di valore fino a €10.000"
+        description: "Opere d'arte e oggetti di valore fino a € 10.000"
       },
       {
-        description: "Perdita d’affitto fino a €5.000 (o 21 giorni)"
+        description: "Perdita di affitto fino a € 5.000 (o 21 giorni)"
       },
       {
-        description: "Danni da animali domestici fino a €5.000"
+        description: "Danni causati da animali domestici fino a € 5.000"
       }
     ]
   },
   benefits: {
-    title: "I Vantaggi dell'Assicurazione in Breve",
+    title: "I vantaggi dell'assicurazione in sintesi",
     list: [
-      "Velocizza il processo di check-in eliminando la gestione dei depositi. I tuoi ospiti possono rilassarsi immediatamente all'arrivo senza preoccuparsi di contanti o autorizzazioni di carte.",
-      "Genera un reddito extra attraverso commissioni attraenti con ogni prenotazione assicurativa. Un flusso di reddito passivo che cresce automaticamente con ogni prenotazione.",
-      "Beneficia di una copertura significativamente maggiore rispetto ai depositi tradizionali. L'assicurazione offre una sicurezza finanziaria più ampia per la tua proprietà e gli arredi.",
-      "Esperienza un'integrazione perfetta nel tuo flusso di check-in esistente. L'assicurazione è incorporata nel processo di prenotazione automaticamente senza ulteriore carico amministrativo.",
-      "Protezione completa per te e i tuoi ospiti—da danni alla proprietà e furti a eventi imprevisti. Una soluzione di tranquillità per entrambe le parti.",
-      "Beneficia di un'elaborazione automatizzata dei danni senza dover confrontare direttamente gli ospiti. Gestione rapida e compensazione equa in caso di reclami."
+      "Semplifica il check-in: Niente più processo di deposito, i tuoi ospiti possono rilassarsi subito - senza contanti o transazioni con carta di credito.",
+      "Aumenta le tue entrate attraverso commissioni su ogni prenotazione assicurativa - in modo completamente automatico.",
+      "Goditi una migliore protezione finanziaria con importi di copertura più elevati rispetto ai depositi tradizionali.",
+      "Integrazione perfetta: L'assicurazione è automaticamente integrata nel check-in - senza ulteriore sforzo amministrativo.",
+      "Assicura te stesso e i tuoi ospiti in modo completo - da danni alla proprietà, furto fino a spese di pulizia aggiuntive.",
+      "Esperienza un processo di gestione dei sinistri semplice e veloce senza contatto diretto con l'ospite."
     ]
   },
   shortTerm: {
-    title: "Assicurazione per Affitti a Breve Termine",
-    description: "Soluzioni assicurative flessibili per il tuo affitto vacanziero—su misura per le tue esigenze."
+    title: "I nostri prezzi",
+    description: "I prezzi sono calcolati per notte (più eventuali commissioni di servizio e provvigioni)."
   },
   details: {
     furniture: {
-      title: "Mobili e Arredi",
-      description: "Protezione completa per i tuoi mobili e arredi."
+      title: "Mobili e edificio",
+      description: "Assicuriamo danni accidentali e dolosi alla tua proprietà. Anche il furto è coperto."
     },
     newForOld: {
-      title: "Nuovo per Vecchio",
-      description: "In caso di danno, ricevi il valore di sostituzione nuovo per gli articoli interessati."
+      title: "Nuovo per vecchio",
+      description: "Risarciamo in base al valore di sostituzione."
     },
     rentalLoss: {
-      title: "Perdita di Affitto",
-      description: "Protezione contro la perdita di reddito da affitto a causa di danni alla proprietà."
+      title: "Perdita di affitto",
+      description: "Se un danno assicurato ti impedisce di affittare, rimborsiamo il reddito da affitto perso."
     },
     petDamage: {
-      title: "Danni da Animali Domestici",
-      description: "Copertura contro i danni causati dagli animali domestici degli ospiti."
+      title: "Danni da animali domestici",
+      description: "La nostra assicurazione copre anche i danni causati dagli animali domestici degli ospiti."
     },
     cleaning: {
       title: "Pulizia",
-      description: "Copre i costi di lavori di pulizia straordinari."
+      description: "Rimborsiamo i costi per la pulizia aggiuntiva per rimuovere macchie e odore di fumo."
     },
     art: {
-      title: "Arte e Decorazione",
-      description: "Copertura assicurativa per oggetti d'arte ed elementi decorativi."
+      title: "Arte e oggetti decorativi",
+      description: "Proteggiamo tutte le opere d'arte o gli oggetti di valore utilizzati per la decorazione."
     }
   },
   faq: {
     airbnb: {
-      question: "Ho bisogno della vostra assicurazione per gli ospiti anche se pubblico su Airbnb o Booking.com?",
-      answer: "Sì—anche se piattaforme come Airbnb e Booking.com forniscono una certa copertura, ci sono significative limitazioni. AirCover di Airbnb non è un'assicurazione tradizionale e coinvolge sempre l'ospite, chiedendogli di pagare per i danni. Solo se l'ospite si rifiuta entra in gioco AirCover. Questo può portare a conflitti con gli ospiti, recensioni negative, ed è limitato alle prenotazioni Airbnb. Il programma di deposito di Booking.com semplicemente facilita le controversie con gli ospiti ed è limitato a €300 nell'UE, potenzialmente influenzando il tuo ranking o la conversione. La nostra assicurazione opera indipendentemente e senza quei problemi che coinvolgono gli ospiti."
-    },
-    repeat: {
-      question: "L'assicurazione per danni dell'ospite può aumentare le prenotazioni ripetute?",
-      answer: "Gli ospiti abituali apprezzano la coerenza e l'affidabilità. Fornendo un'assicurazione, i gestori e gli host dimostrano una cura extra, e gli ospiti sanno che non affronteranno addebiti a sorpresa o costi nascosti. I reclami sono generalmente risolti senza il coinvolgimento dell'ospite, garantendo un'esperienza positiva e incoraggiando la fedeltà e recensioni migliori."
+      question: "Ho bisogno della vostra assicurazione danni ospiti anche se sono su Airbnb o Booking.com?",
+      answer: "Sì, sebbene piattaforme come Airbnb e Booking.com offrano la propria protezione, entrambe hanno le loro insidie e limitazioni.\n\nAirCover di Airbnb non è un prodotto assicurativo e coinvolgerà sempre gli ospiti chiedendo loro di pagare per i danni. Solo se l'ospite rifiuta di pagare, AirCover potrebbe coprire il danno. Segnalare un danno ad Airbnb, quindi, comporta sempre il rischio di dispute con gli ospiti che negano la responsabilità o lasciano una recensione negativa. Inoltre, AirCover copre solo la perdita di reddito da prenotazioni Airbnb confermate, lasciando gli host che offrono su più piattaforme con costi di cancellazione e perdita di reddito.\n\nIl programma danni di Booking.com facilita semplicemente la risoluzione dei danni con i tuoi ospiti, e solo se l'hai configurato specificamente. Il programma danni è limitato a €300 nell'UE. Questo importo viene visualizzato durante il processo di prenotazione e può influire negativamente sulla conversione delle prenotazioni o sul ranking di ricerca."
     },
     deposit: {
-      question: "Dovrei ancora chiedere un deposito?",
-      answer: "I depositi possono offrire sicurezza finanziaria e incoraggiare un trattamento attento della tua proprietà. Tuttavia, gli ospiti spesso evitano proprietà che richiedono depositi, a causa del fastidio e del rischio di detrazioni. Con la nostra assicurazione per danni dell'ospite, puoi saltare completamente i depositi o presentarla come un'opzione di convenienza. I reclami vengono normalmente risolti direttamente, evitando controversie con gli ospiti e aiutando a generare più prenotazioni ripetute e recensioni a 5 stelle."
+      question: "Dovrei chiedere agli ospiti un deposito?",
+      answer: "Un deposito può fornire sicurezza finanziaria nel caso in cui la casa venga danneggiata durante il soggiorno dei tuoi ospiti. Assicura anche che gli ospiti si prendano maggiormente cura della casa durante il loro soggiorno, poiché vogliono ricevere indietro l'intero deposito e quindi prestano particolare attenzione a lasciare la casa in buone condizioni.\n\nIn generale, tuttavia, gli ospiti spesso evitano offerte che richiedono un deposito, poiché vincolano temporaneamente denaro e possono portare a detrazioni per problemi minori.\n\nSe scegli l'assicurazione danni ospiti Stellar, puoi evitare completamente i depositi o offrire ai tuoi ospiti un'alternativa conveniente.\n\nPoiché i potenziali sinistri sono generalmente gestiti senza il coinvolgimento degli ospiti, puoi evitare dispute con gli ospiti - per più prenotazioni ripetute e più recensioni a 5 stelle."
     },
     coverage: {
       question: "Cosa copre la vostra assicurazione?",
-      answer: "La nostra assicurazione per affitti a breve termine è costruita su misura per gestori di proprietà e proprietari—una soluzione robusta per questi scenari: Danni accidentali e dolosi alla proprietà (con valore di sostituzione), furto da parte dell'ospite, perdita di reddito a causa di danni coperti, costi di pulizia extra per danni oltre la normale usura, danni da animali domestici, e altro."
+      answer: "La nostra assicurazione per case vacanza è stata progettata specificamente per le esigenze individuali di affittuari e proprietari a breve termine.\n\nInclude una copertura completa e critica per i seguenti casi rilevanti:\n\n• Danni non intenzionali e dolosi alla tua proprietà (al valore di sostituzione), in modo che non subisca perdite finanziarie.\n• Danni degli ospiti dovuti a furto, che possono verificarsi inaspettatamente e presentare sfide finanziarie per i proprietari.\n• Perdite di reddito dovute a danni coperti, minimizzando le tue perdite di affitto e garantendo stabilità finanziaria.\n• Costi aggiuntivi di pulizia per la rimozione elaborata di macchie lasciate dagli ospiti che vanno oltre la normale pulizia.\n• Protezione efficace contro i danni causati da animali domestici, in modo da poter affittare a proprietari di animali senza preoccuparti di alti costi di riparazione."
     },
     cost: {
-      question: "Quanto costa l'assicurazione per danni dell'ospite?",
-      answer: "La nostra assicurazione per danni dell'ospite parte da €2.80 per notte—il prezzo dipende dalla copertura scelta. I dettagli sono nel tuo account Stellar. Puoi scegliere di pagare o trasferire i costi all'ospite come sostituto del deposito. Per garantire che ogni soggiorno sia protetto, puoi coprire la tariffa tu stesso e includerlo nelle tue tariffe."
+      question: "Quanto mi costa l'assicurazione danni ospiti?",
+      answer: "La nostra assicurazione danni ospiti parte da €2,8 per notte e varia a seconda del livello di copertura. I dettagli si trovano nel tuo account Stellar.\n\nIl costo dell'assicurazione può essere anche sostenuto dall'ospite, come alternativa al deposito.\n\nPer assicurarti che l'assicurazione copra tutti i soggiorni nei tuoi alloggi, puoi specificare nelle impostazioni che pagherai tu l'assicurazione e includerai i costi nel prezzo dell'affitto."
     }
   }
 };

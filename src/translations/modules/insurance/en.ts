@@ -1,50 +1,51 @@
+
 export const insuranceEN = {
-  title: "Cleverly Automate Insurance and Deposits",
+  title: "Automate Insurance and Deposits Intelligently",
   introduction: "Offer your guests optional insurance and benefit from additional income.",
   section1: {
     title: "Why Insurance?",
-    content: "Our insurance covers damages caused by guests, their companions, or pets. With 90% of guests opting in, it offers peace of mind for everyone involved."
+    content: "Our insurance protects against damage caused by guests, their companions, or pets. 90% of guests choose our insurance - for peace of mind on both sides."
   },
   section2: {
-    title: "How does it work?",
-    content: "Guests can either purchase insurance during check-in, or you cover the cost as the host and include it in your pricing."
+    title: "How Does It Work?",
+    content: "The insurance can be booked directly by the guest during the digital check-in - or you can cover the costs and include it in your overnight price."
   },
   section3: {
     title: "Our Partner",
-    content: "Backed by Hiscox – a globally renowned specialist insurer with over 100 years of experience, exceptional financial stability, and a 95% customer satisfaction rate."
+    content: "Partner of Hiscox - a world-renowned specialty insurer with over 100 years of experience, high financial stability, and 95% customer satisfaction."
   },
   comparison: {
-    headline: "Insurance & Deposit Management",
+    headline: "Insurance and Deposit Management",
     header: {
-      feature: "Included in Insurance",
-      classic: "Classic Household\nInsurance"
+      feature: "Included in the Insurance",
+      classic: "Traditional Insurance"
     },
     rows: [
-      "No guest liability for accidental damages",
-      "Bookings across all channels (incl. direct bookings)",
-      "Pet damage protection",
-      "Rental loss protection for all bookings",
-      "Commercial rental damage protection"
+      "No guest liability for accidental damage",
+      "Bookings through all channels (including direct bookings)",
+      "Protection against rental loss for all bookings",
+      "Protection against damage caused by pets",
+      "Damage during commercial rental"
     ],
     airbnbOnlyBooking: "Only for Airbnb bookings"
   },
   pricing: {
     header: {
-      coverage: "Maximum coverage amount",
-      amount1: "€5,000",
-      amount2: "€10,000",
-      amount3: "€50,000"
+      coverage: "Maximum Coverage Amount",
+      amount1: "€ 5,000",
+      amount2: "€ 10,000",
+      amount3: "€ 50,000"
     },
     rows: [
       {
         label: "Price per night\n(plus insurance tax)",
-        value1: "€2.82",
-        value2: "€3.62",
-        value3: "€4.91"
+        value1: "€ 2.82",
+        value2: "€ 3.62",
+        value3: "€ 4.91"
       },
       {
-        label: "Coverage (deductible €100)",
-        description: "Damages to inventory and property at replacement value"
+        label: "Coverage (Deductible €100)",
+        description: "Damage to inventory and buildings at replacement value"
       },
       {
         label: "Guest recourse",
@@ -52,85 +53,76 @@ export const insuranceEN = {
       },
       {
         label: "Additional coverage\n(up to)",
-        description: "Additional cleaning costs up to €1,000"
+        description: "Additional cleaning costs up to € 1,000"
       },
       {
-        description: "Artworks and valuables up to €10,000"
+        description: "Artwork and valuables up to € 10,000"
       },
       {
-        description: "Loss of rental income up to €5,000 (or 21 days)"
+        description: "Loss of rent up to € 5,000 (or 21 days)"
       },
       {
-        description: "Damage by pets up to €5,000"
+        description: "Damage caused by pets up to € 5,000"
       }
     ]
   },
   benefits: {
     title: "The Benefits of Insurance at a Glance",
     list: [
-      "Speed up the check-in process by eliminating time-consuming deposit handling. Your guests can unwind immediately upon arrival without worrying about cash or card authorizations.",
-      "Generate extra income through attractive commissions with every insurance booking. A passive income stream that grows automatically with each reservation.",
-      "Benefit from significantly higher coverage compared to traditional deposits. The insurance offers broader financial security for your property and furnishings.",
-      "Experience seamless integration into your existing check-in flow. Insurance is embedded into the reservation process automatically with no added admin burden.",
-      "Comprehensive protection for you and your guests—from property damage and theft to unexpected events. A peace-of-mind solution for both parties.",
-      "Benefit from smooth, automated damage processing with no need to confront guests directly. Fast handling and fair compensation in case of claims."
+      "Simplify check-in: No more deposit process, your guests can relax right away - without cash or credit card transactions.",
+      "Increase your revenue through commissions on each insurance booking - completely automatically.",
+      "Enjoy better financial protection with higher coverage amounts compared to traditional deposits.",
+      "Seamless integration: The insurance is automatically integrated into check-in - without additional administrative effort.",
+      "Secure yourself and your guests comprehensively - from property damage, theft to additional cleaning expenses.",
+      "Experience simple and fast claims processing without direct contact with the guest."
     ]
   },
   shortTerm: {
-    title: "Short-term Rental Insurance",
-    description: "Flexible insurance solutions for your holiday rental—tailored to your needs."
+    title: "Our Prices",
+    description: "Prices are calculated per night (plus possible service fees and commissions)."
   },
   details: {
     furniture: {
-      title: "Furniture & Furnishings",
-      description: "Comprehensive protection for your furniture and furnishings."
+      title: "Furniture & Building",
+      description: "We insure accidental and malicious damage to your property. Theft is also covered."
     },
     newForOld: {
       title: "New for Old",
-      description: "In case of damage, you receive the new replacement value for affected items."
+      description: "We compensate based on replacement value."
     },
     rentalLoss: {
       title: "Rental Loss",
-      description: "Protection against lost rental income due to property damage."
+      description: "If an insured damage prevents you from renting, we reimburse lost rental income."
     },
     petDamage: {
       title: "Pet Damage",
-      description: "Coverage against damage caused by guests' pets."
+      description: "Our insurance also covers damage caused by guests' pets."
     },
     cleaning: {
       title: "Cleaning",
-      description: "Covers the costs of extraordinary cleaning jobs."
+      description: "We reimburse the costs for additional cleaning to remove stains and smoke odor."
     },
     art: {
-      title: "Art & Decor",
-      description: "Insurance cover for art objects and decorative elements."
+      title: "Art & Decorative Items",
+      description: "We protect all artwork or valuables used for decoration."
     }
   },
   faq: {
     airbnb: {
-      question: "Do I need your guest insurance even if I list on Airbnb or Booking.com?",
-      answer:
-        "Yes—even though platforms like Airbnb and Booking.com provide some coverage, there are significant limitations. Airbnb's AirCover is not traditional insurance and always involves the guest, asking them to pay for damages. Only if the guest refuses does AirCover come into play. This can lead to conflict with guests, negative reviews, and is limited to Airbnb bookings. Booking.com's deposit program merely facilitates disputes with guests and is capped at €300 in the EU, potentially affecting your ranking or conversion. Our insurance operates independently and without those guest-facing issues."
-    },
-    repeat: {
-      question: "Can guest damage insurance boost repeat bookings?",
-      answer:
-        "Repeat guests appreciate consistency and reliability. By providing insurance, managers and hosts demonstrate extra care, and guests know they won't face surprise charges or hidden fees. Claims are generally settled without guest involvement, ensuring a positive experience and encouraging loyalty and better reviews."
+      question: "Do I need your guest damage insurance even though I'm listed on Airbnb or Booking.com?",
+      answer: "Yes, although platforms like Airbnb and Booking.com offer their own protection, both have their pitfalls and limitations.\n\nAirbnb's AirCover is not an insurance product and will always involve guests and ask them to pay for damages. Only if the guest refuses to pay might AirCover cover the damage. Reporting damage to Airbnb therefore always risks disputes with guests who deny responsibility or leave a negative review. Additionally, AirCover only covers lost income from confirmed Airbnb bookings, leaving hosts who offer on multiple platforms with cancellation costs and lost income.\n\nBooking.com's damage program merely facilitates damage resolution with your guests, and only if you've specifically set it up. The damage program is limited to €300 in the EU. This amount is displayed during the booking process and can negatively impact your booking conversion or search ranking."
     },
     deposit: {
-      question: "Should I still ask for a deposit?",
-      answer:
-        "Deposits can offer financial security and encourage careful treatment of your property. However, guests often avoid properties requiring deposits, due to the hassle and risk of deductions. With our guest damage insurance, you can skip deposits completely or present it as a convenience option. Claims are normally settled directly, avoiding guest disputes and helping drive more repeat bookings and 5-star reviews."
+      question: "Should I ask guests for a deposit?",
+      answer: "A deposit can provide financial security in case the house is damaged during your guests' stay. It also ensures that guests take better care of the house during their stay, as they want to receive the deposit back in full and therefore pay special attention to leaving the house in good condition.\n\nIn general, however, guests often avoid offers that require a deposit, as it temporarily ties up money and can lead to deductions for minor issues.\n\nIf you choose Stellar guest damage insurance, you can avoid deposits altogether or offer your guests a convenient alternative.\n\nSince potential claims are usually handled without guest involvement, you can avoid disputes with guests - for more repeat bookings and more 5-star reviews."
     },
     coverage: {
       question: "What does your insurance cover?",
-      answer:
-        "Our short-term rental insurance is custom-built for property managers and owners—a robust solution for these scenarios: Accidental and malicious property damage (with replacement value), guest theft, loss of income due to covered damages, extra cleaning costs for damage beyond normal wear-and-tear, pet damage, and more."
+      answer: "Our vacation rental insurance was specifically designed for the individual needs of short-term renters and owners.\n\nIt includes comprehensive and critical coverage for the following relevant cases:\n\n• Unintentional and malicious damage to your property (at replacement value), so you don't suffer financial losses.\n• Guest damage due to theft, which can occur unexpectedly and present financial challenges for landlords.\n• Income losses due to covered damages, minimizing your rental losses and ensuring financial stability.\n• Additional cleaning costs for elaborate removal of stains left by guests that go beyond normal cleaning.\n• Effective protection against damage caused by pets, so you can rent to pet owners without worrying about high repair costs."
     },
     cost: {
-      question: "What does guest damage insurance cost?",
-      answer:
-        "Our guest damage insurance starts at €2.80 per night—pricing depends on the chosen coverage. Details are in your Stellar account. You can choose to pay or pass costs to the guest as a deposit replacement. To ensure every stay is protected, you can cover the fee yourself and bundle it into your rates."
+      question: "How much does guest damage insurance cost me?",
+      answer: "Our guest damage insurance starts at €2.8 per night and varies depending on the level of coverage. Details can be found in your Stellar account.\n\nThe cost of insurance can also be covered by the guest, as an alternative to a deposit.\n\nTo ensure that the insurance covers all stays in your accommodations, you can specify in the settings that you will pay for the insurance yourself and include the costs in the rental price."
     }
   }
 };
