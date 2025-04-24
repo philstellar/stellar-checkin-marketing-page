@@ -1,18 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Info, HelpCircle } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
-
 const PricingSection = () => {
-  const { t } = useTranslation();
-  
+  const {
+    t
+  } = useTranslation();
   const tooltipDescriptions = {
     zusatzleistungen: t('pricing.basic.additionalServicesDesc'),
     identitaetsverifizierung: t('pricing.basic.identityVerificationDesc'),
@@ -20,7 +15,6 @@ const PricingSection = () => {
     versicherung: t('pricing.basic.insuranceDesc'),
     digitaleGaestemeldung: t('pricing.basic.digitalGuestRegistrationDesc')
   };
-
   const scrollToContact = () => {
     const contactSection = document.getElementById('kontakt');
     if (contactSection) {
@@ -29,15 +23,9 @@ const PricingSection = () => {
       });
     }
   };
-
-  return (
-    <section id="preise" className="section-padding bg-white">
+  return <section id="preise" className="section-padding bg-white">
       <div className="container-custom">
-        <HeadingWithLine
-          title={t('pricing.title')}
-          subtitle={t('pricing.subtitle')}
-          align="center"
-        />
+        <HeadingWithLine title={t('pricing.title')} subtitle={t('pricing.subtitle')} align="center" />
         
         <div className="grid md:grid-cols-3 gap-8">
           {/* Basic Plan */}
@@ -63,29 +51,26 @@ const PricingSection = () => {
             <div className="space-y-4">
               <TooltipProvider>
                 {[t('pricing.basic.features.0'), t('pricing.basic.features.1'), t('pricing.basic.features.2'), {
-                  text: t('pricing.basic.additionalServices'),
-                  tooltip: tooltipDescriptions.zusatzleistungen
-                }, {
-                  text: t('pricing.basic.identityVerification'),
-                  tooltip: tooltipDescriptions.identitaetsverifizierung
-                }, {
-                  text: t('pricing.basic.depositManagement'),
-                  tooltip: tooltipDescriptions.kautionsmanagement
-                }, {
-                  text: t('pricing.basic.insurance'),
-                  tooltip: tooltipDescriptions.versicherung
-                }, t('pricing.basic.features.7')].map((feature, index) => {
-                  const isTooltipFeature = typeof feature === 'object';
-                  const featureText = isTooltipFeature ? feature.text : feature;
-                  const hasTooltip = isTooltipFeature && featureText.includes("*");
-                  
-                  return (
-                    <div key={index} className="flex items-center">
+                text: t('pricing.basic.additionalServices'),
+                tooltip: tooltipDescriptions.zusatzleistungen
+              }, {
+                text: t('pricing.basic.identityVerification'),
+                tooltip: tooltipDescriptions.identitaetsverifizierung
+              }, {
+                text: t('pricing.basic.depositManagement'),
+                tooltip: tooltipDescriptions.kautionsmanagement
+              }, {
+                text: t('pricing.basic.insurance'),
+                tooltip: tooltipDescriptions.versicherung
+              }, t('pricing.basic.features.7')].map((feature, index) => {
+                const isTooltipFeature = typeof feature === 'object';
+                const featureText = isTooltipFeature ? feature.text : feature;
+                const hasTooltip = isTooltipFeature && featureText.includes("*");
+                return <div key={index} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                       <span className="text-royal-700">
                         {featureText.replace(" *", "")}
-                        {hasTooltip && (
-                          <Tooltip>
+                        {hasTooltip && <Tooltip>
                             <TooltipTrigger asChild>
                               <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                                 <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
@@ -94,12 +79,10 @@ const PricingSection = () => {
                             <TooltipContent className="max-w-xs text-sm p-2 bg-white">
                               {feature.tooltip}
                             </TooltipContent>
-                          </Tooltip>
-                        )}
+                          </Tooltip>}
                       </span>
-                    </div>
-                  );
-                })}
+                    </div>;
+              })}
               </TooltipProvider>
             </div>
           </div>
@@ -137,20 +120,17 @@ const PricingSection = () => {
             <div className="space-y-4">
               <TooltipProvider>
                 {[{
-                  text: t('pricing.basic.digitalGuestRegistration'),
-                  tooltip: tooltipDescriptions.digitaleGaestemeldung
-                }, t('pricing.advanced.features.1'), t('pricing.advanced.features.2'), t('pricing.advanced.features.3')].map((feature, index) => {
-                  const isTooltipFeature = typeof feature === 'object';
-                  const featureText = isTooltipFeature ? feature.text : feature;
-                  const hasTooltip = isTooltipFeature && featureText.includes("*");
-                  
-                  return (
-                    <div key={index} className="flex items-center">
+                text: t('pricing.basic.digitalGuestRegistration'),
+                tooltip: tooltipDescriptions.digitaleGaestemeldung
+              }, t('pricing.advanced.features.1'), t('pricing.advanced.features.2'), t('pricing.advanced.features.3')].map((feature, index) => {
+                const isTooltipFeature = typeof feature === 'object';
+                const featureText = isTooltipFeature ? feature.text : feature;
+                const hasTooltip = isTooltipFeature && featureText.includes("*");
+                return <div key={index} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                       <span className="text-royal-700">
                         {featureText.replace(" *", "")}
-                        {hasTooltip && (
-                          <Tooltip>
+                        {hasTooltip && <Tooltip>
                             <TooltipTrigger asChild>
                               <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                                 <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
@@ -159,12 +139,10 @@ const PricingSection = () => {
                             <TooltipContent className="max-w-xs text-sm p-2 bg-white">
                               {feature.tooltip}
                             </TooltipContent>
-                          </Tooltip>
-                        )}
+                          </Tooltip>}
                       </span>
-                    </div>
-                  );
-                })}
+                    </div>;
+              })}
               </TooltipProvider>
             </div>
           </div>
@@ -185,25 +163,18 @@ const PricingSection = () => {
             </div>
             
             <div className="space-y-4">
-              {[t('pricing.enterprise.features.0'), t('pricing.enterprise.features.1')].map((feature, index) => (
-                <div key={index} className="flex items-center">
+              {[t('pricing.enterprise.features.0'), t('pricing.enterprise.features.1')].map((feature, index) => <div key={index} className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
         
         <div className="mt-16 text-center">
-          <p className="text-sm text-royal-700 flex items-center justify-center">
-            <Info className="w-4 h-4 mr-2" />
-            {t('pricing.disclaimer')}
-          </p>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PricingSection;
