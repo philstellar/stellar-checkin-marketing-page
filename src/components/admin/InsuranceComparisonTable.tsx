@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import {
@@ -32,7 +31,7 @@ const InsuranceComparisonTable = () => {
     {
       name: t('insurance.comparison.rows.2'),
       stellar: true,
-      airbnb: true,
+      airbnb: false,
       booking: false,
       classic: false,
     },
