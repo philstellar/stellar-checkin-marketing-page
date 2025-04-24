@@ -10,8 +10,8 @@ const InsurancePricing = () => {
   
   return (
     <div className="grid md:grid-cols-2 gap-8 text-left">
-      <Card className="border-2 border-royal relative overflow-hidden">
-        <div className="absolute top-0 left-0 bg-royal text-white px-4 py-1 rounded-br-lg text-sm font-medium">
+      <Card className="border-2 border-apple relative overflow-hidden">
+        <div className="absolute top-0 left-0 bg-apple text-white px-4 py-1 rounded-br-lg text-sm font-medium">
           Basic
         </div>
         <CardContent className="pt-12 pb-6">
@@ -20,15 +20,15 @@ const InsurancePricing = () => {
           
           <ul className="space-y-3 mb-6">
             <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
+              <CheckCircle className="h-5 w-5 text-apple mr-2 mt-0.5" />
               <span className="text-royal-700">Property Damage Coverage</span>
             </li>
             <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
+              <CheckCircle className="h-5 w-5 text-apple mr-2 mt-0.5" />
               <span className="text-royal-700">Personal Liability</span>
             </li>
             <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
+              <CheckCircle className="h-5 w-5 text-apple mr-2 mt-0.5" />
               <span className="text-royal-700">Pet Damage Coverage</span>
             </li>
           </ul>

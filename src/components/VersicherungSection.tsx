@@ -23,7 +23,7 @@ export const VersicherungSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               {t('versicherung.title')}
             </h2>
-            <div className="h-1 w-24 bg-royal mb-6 rounded-full"></div>
+            <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
               {t('versicherung.subtitle')}
             </p>
@@ -31,17 +31,17 @@ export const VersicherungSection = () => {
             <div className="space-y-8">
               {[
                 {
-                  icon: <CreditCard className="w-8 h-8 text-royal" />,
+                  icon: <CreditCard className="w-8 h-8 text-apple" />,
                   title: t('versicherung.process.title'),
                   description: t('versicherung.process.description')
                 },
                 {
-                  icon: <Shield className="w-8 h-8 text-royal" />,
+                  icon: <Shield className="w-8 h-8 text-apple" />,
                   title: t('versicherung.income.title'),
                   description: t('versicherung.income.description')
                 },
                 {
-                  icon: <ShieldCheck className="w-8 h-8 text-royal" />,
+                  icon: <ShieldCheck className="w-8 h-8 text-apple" />,
                   title: t('versicherung.protection.title'),
                   description: t('versicherung.protection.description')
                 }
@@ -53,7 +53,7 @@ export const VersicherungSection = () => {
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-black mb-2 pb-2">
                       {feature.title}
-                      <div className="mt-1 h-1 w-[30%] bg-royal rounded-full"></div>
+                      <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
                     </h3>
                     <p className="text-base text-black">{feature.description}</p>
                   </div>
@@ -62,7 +62,7 @@ export const VersicherungSection = () => {
             </div>
             
             <div className="mt-10">
-              <CTAButton className="bg-royal hover:bg-royal-600 text-white px-6 py-2.5">
+              <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
                 <UserCheck className="mr-2 h-4 w-4" /> {t('versicherung.cta')}
               </CTAButton>
             </div>

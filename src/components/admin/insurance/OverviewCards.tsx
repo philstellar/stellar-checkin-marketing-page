@@ -10,10 +10,10 @@ const OverviewCards = () => {
   return (
     <>
       <div className="flex items-center gap-3 mb-8">
-        <Shield className="h-8 w-8 text-royal" />
+        <Shield className="h-8 w-8 text-apple" />
         <h1 className="text-3xl font-bold text-royal inline-block relative">
           {t('insurance.comparison.headline')}
-          <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-royal rounded-full"></div>
+          <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-apple rounded-full"></div>
         </h1>
       </div>
       
