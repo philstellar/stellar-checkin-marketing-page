@@ -36,16 +36,15 @@ const InsuranceComparisonTable = () => {
       booking: false,
       classic: false,
     },
-    // Swapping the third last and second last rows
     {
-      name: t('insurance.comparison.rows.4'),
+      name: t('insurance.comparison.rows.3'),
       stellar: true,
       airbnb: true,
       booking: false,
       classic: false,
     },
     {
-      name: t('insurance.comparison.rows.3'),
+      name: t('insurance.comparison.rows.4'),
       stellar: true,
       airbnb: true,
       booking: false,
