@@ -1,3 +1,4 @@
+
 export const insuranceDE = {
   title: "Versicherung und Kaution clever automatisieren",
   introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
@@ -22,8 +23,8 @@ export const insuranceDE = {
     rows: [
       "Keine Gästehaftung für versehentliche Schäden",
       "Buchungen über alle Kanäle (inkl. Direktbuchungen)",
-      "Schutz bei Schäden durch Haustiere",
       "Schutz bei Mietausfall bei allen Buchungen",
+      "Schutz bei Schäden durch Haustiere",
       "Schäden während gewerblicher Vermietung"
     ],
     airbnbOnlyBooking: "Nur für Airbnb Buchungen"

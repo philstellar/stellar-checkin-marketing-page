@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import {
@@ -36,14 +37,14 @@ const InsuranceComparisonTable = () => {
       classic: false,
     },
     {
-      name: t('insurance.comparison.rows.4'),
+      name: t('insurance.comparison.rows.3'),
       stellar: true,
       airbnb: true,
       booking: false,
       classic: false,
     },
     {
-      name: t('insurance.comparison.rows.3'),
+      name: t('insurance.comparison.rows.4'),
       stellar: true,
       airbnb: true,
       booking: false,
@@ -63,7 +64,7 @@ const InsuranceComparisonTable = () => {
     );
   };
 
-  const schutzBeiMietausfallIndex = 4;
+  const schutzBeiMietausfallIndex = 2;
 
   return (
     <div className="rounded-lg border bg-white">
