@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -13,10 +12,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #a4c309aa); /* Updated to apple green */
+  filter: drop-shadow(0 0 2em #0f2661aa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #a4c309aa); /* Updated to apple green */
+  filter: drop-shadow(0 0 2em #0f2661aa);
 }
 
 @keyframes logo-spin {
