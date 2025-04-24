@@ -22,7 +22,7 @@ const Hero = () => {
               }}
             >
               {t('hero.headline1')}
-              <span style={{ color: 'rgb(164 195 9)' }}>{t('hero.headline2')}</span>
+              <span style={{ color: '#0f2661' }}>{t('hero.headline2')}</span>
               {t('hero.headline3')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
@@ -30,15 +30,15 @@ const Hero = () => {
               {t('hero.subheadline2')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
+              <CTAButton size="lg" className="bg-royal hover:bg-royal-600 font-aeonik">
                 <UserCheck className="mr-2 h-4 w-4" /> {t('hero.cta')}
               </CTAButton>
             </div>
             <div className="mt-8 flex items-center">
               <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-apple-300"></div>
-                <div className="w-8 h-8 rounded-full bg-apple-400"></div>
-                <div className="w-8 h-8 rounded-full bg-apple-500"></div>
+                <div className="w-8 h-8 rounded-full bg-royal-300"></div>
+                <div className="w-8 h-8 rounded-full bg-royal-400"></div>
+                <div className="w-8 h-8 rounded-full bg-royal-500"></div>
               </div>
               <p className="ml-4 text-sm text-black font-aeonik">
                 <span className="font-medium">{t('hero.tagline')}</span>

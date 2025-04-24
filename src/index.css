@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -63,8 +64,8 @@
     background: linear-gradient(135deg, #0f2661 0%, #091c4c 100%);
   }
 
-  .apple-gradient {
-    background: linear-gradient(135deg, #a4c309 0%, #c5ea08 100%);
+  .royal-gradient {
+    background: linear-gradient(135deg, #0f2661 0%, #091c4c 100%);
   }
 
   .stellar-shadow {

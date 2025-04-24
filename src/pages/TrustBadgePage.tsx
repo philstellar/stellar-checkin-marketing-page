@@ -56,7 +56,7 @@ const TrustBadgePage = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
                 {t('trustBadge.headline1')}
                 <span style={{
-                color: 'rgb(164 195 9)'
+                color: '#0f2661'
               }}>{t('trustBadge.headline2')}</span>
                 {t('trustBadge.headline3')}
               </h1>
@@ -64,7 +64,7 @@ const TrustBadgePage = () => {
                 {t('trustBadge.content')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
+                <CTAButton size="lg" className="bg-royal hover:bg-royal-600 font-aeonik">
                   <UserCheck className="mr-2 h-4 w-4" /> {t('hero.cta')}
                 </CTAButton>
               </div>
@@ -90,7 +90,7 @@ const TrustBadgePage = () => {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-royal">
               {t('trustBadge.verification.title')}
-              <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
+              <div className="mt-2 mx-auto h-1 w-24 bg-royal rounded-full"></div>
             </h2>
             <p className="text-lg text-royal-700 mb-4">{t('trustBadge.verification.subtitle')}</p>
             <p className="text-royal-700">{t('trustBadge.verification.customization')}</p>
@@ -99,7 +99,7 @@ const TrustBadgePage = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-white">
               <CardContent className="p-6">
-                <Shield className="h-8 w-8 text-apple mb-4" />
+                <Shield className="h-8 w-8 text-royal mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-royal">{t('trustBadge.trust.title')}</h3>
                 <p className="text-royal-700">{t('trustBadge.trust.description')}</p>
               </CardContent>
@@ -107,7 +107,7 @@ const TrustBadgePage = () => {
 
             <Card className="bg-white">
               <CardContent className="p-6">
-                <Star className="h-8 w-8 text-apple mb-4" />
+                <Star className="h-8 w-8 text-royal mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-royal">{t('trustBadge.reviews.title')}</h3>
                 <p className="text-royal-700">{t('trustBadge.reviews.description')}</p>
               </CardContent>
@@ -115,7 +115,7 @@ const TrustBadgePage = () => {
 
             <Card className="bg-white">
               <CardContent className="p-6">
-                <Globe2 className="h-8 w-8 text-apple mb-4" />
+                <Globe2 className="h-8 w-8 text-royal mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-royal">{t('trustBadge.reviews.stats')}</h3>
                 <p className="text-royal-700">{t('trustBadge.reviews.importance')}</p>
               </CardContent>
@@ -130,27 +130,27 @@ const TrustBadgePage = () => {
           <div className="max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-6 text-royal text-center">
               {t('trustBadge.preview.title')}
-              <div className="mt-2 mx-auto h-1 w-24 bg-apple rounded-full"></div>
+              <div className="mt-2 mx-auto h-1 w-24 bg-royal rounded-full"></div>
             </h2>
             <p className="text-lg text-royal-700 mb-6">{t('trustBadge.preview.intro')}</p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="mt-1"><BadgeCheck className="h-5 w-5 text-apple" /></span>
+                <span className="mt-1"><BadgeCheck className="h-5 w-5 text-royal" /></span>
                 <p className="text-royal-700">{t('trustBadge.preview.level1')}</p>
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1"><BadgeCheck className="h-5 w-5 text-apple" /></span>
+                <span className="mt-1"><BadgeCheck className="h-5 w-5 text-royal" /></span>
                 <p className="text-royal-700">{t('trustBadge.preview.level2')}</p>
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1"><BadgeCheck className="h-5 w-5 text-apple" /></span>
+                <span className="mt-1"><BadgeCheck className="h-5 w-5 text-royal" /></span>
                 <p className="text-royal-700">{t('trustBadge.preview.level3')}</p>
               </li>
             </ul>
           </div>
 
           <div className="text-center">
-            <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
+            <CTAButton size="lg" className="bg-royal hover:bg-royal-600 font-aeonik">
               <UserCheck className="mr-2 h-4 w-4" /> {t('trustBadge.cta')}
             </CTAButton>
           </div>
@@ -160,7 +160,7 @@ const TrustBadgePage = () => {
       <TrustBadgeCertificates />
       
       <div className="text-center py-16 bg-white">
-        <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
+        <CTAButton size="lg" className="bg-royal hover:bg-royal-600 font-aeonik">
           <UserCheck className="mr-2 h-4 w-4" /> {t('trustBadge.cta')}
         </CTAButton>
       </div>
