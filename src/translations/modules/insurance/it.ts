@@ -23,7 +23,7 @@ export const insuranceIT = {
       "Nessuna responsabilità dell'ospite per danni accidentali",
       "Prenotazioni su tutti i canali (anche dirette)",
       "Copertura danni da animali domestici",
-      "Copertura perdita d’affitto",
+      "Copertura perdita d'affitto per tutte le prenotazioni",
       "Copertura danni per locazioni commerciali"
     ],
     airbnbOnlyBooking: "Solo per prenotazioni Airbnb"

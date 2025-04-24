@@ -23,7 +23,7 @@ export const insuranceEN = {
       "No guest liability for accidental damages",
       "Bookings across all channels (incl. direct bookings)",
       "Pet damage protection",
-      "Rental loss protection", 
+      "Rental loss protection for all bookings",
       "Commercial rental damage protection"
     ],
     airbnbOnlyBooking: "Only for Airbnb bookings"

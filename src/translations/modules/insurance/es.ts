@@ -23,7 +23,7 @@ export const insuranceES = {
       "Sin responsabilidad del huésped por daños accidentales",
       "Reservas en todos los canales (incluidas reservas directas)",
       "Cobertura por daños de mascotas",
-      "Cobertura por pérdida de alquiler",
+      "Cobertura por pérdida de alquiler en todas las reservas",
       "Cobertura de daños en alquileres comerciales"
     ],
     airbnbOnlyBooking: "Solo para reservas de Airbnb"

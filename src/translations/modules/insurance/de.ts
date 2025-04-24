@@ -23,7 +23,7 @@ export const insuranceDE = {
       "Keine Gästehaftung für versehentliche Schäden",
       "Buchungen über alle Kanäle (inkl. Direktbuchungen)",
       "Schutz bei Schäden durch Haustiere",
-      "Schutz bei Mietausfall",
+      "Schutz bei Mietausfall bei allen Buchungen",
       "Schäden während gewerblicher Vermietung"
     ],
     airbnbOnlyBooking: "Nur für Airbnb Buchungen"
