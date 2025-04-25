@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -13,35 +12,28 @@ import LogoCarousel from '../LogoCarousel';
 import HeroSection from './insurance/HeroSection';
 import BenefitsSection from './insurance/BenefitsSection';
 import OverviewCards from './insurance/OverviewCards';
-
 const VersicherungPage: React.FC = () => {
-  const { t } = useTranslation();
-  
-  const addInsuranceFeatures = [
-    {
-      icon: <Book className="h-6 w-6 text-apple" />,
-      title: "Synchronisiere deine Buchungen",
-      description: "Richte die Logik ein, die am besten zu deinem Unternehmen passt."
-    }, 
-    {
-      icon: <ShieldPlus className="h-6 w-6 text-apple" />,
-      title: "Wähle die richtige Deckungssumme",
-      description: "Sichere dich bei jeder erfolgreichen Buchung ab."
-    }, 
-    {
-      icon: <Clock className="h-6 w-6 text-apple" />,
-      title: "Online Check-in Integration",
-      description: "Lass deine Gäste zwischen Versicherung und Kaution wählen."
-    }, 
-    {
-      icon: <Wallet className="h-6 w-6 text-apple" />,
-      title: "Kautionen als Option",
-      description: "Biete deinen Gästen die Wahl zwischen Versicherung und traditioneller Kaution."
-    }
-  ];
-  
-  return (
-    <>
+  const {
+    t
+  } = useTranslation();
+  const addInsuranceFeatures = [{
+    icon: <Book className="h-6 w-6 text-apple" />,
+    title: "Synchronisiere deine Buchungen",
+    description: "Richte die Logik ein, die am besten zu deinem Unternehmen passt."
+  }, {
+    icon: <ShieldPlus className="h-6 w-6 text-apple" />,
+    title: "Wähle die richtige Deckungssumme",
+    description: "Sichere dich bei jeder erfolgreichen Buchung ab."
+  }, {
+    icon: <Clock className="h-6 w-6 text-apple" />,
+    title: "Online Check-in Integration",
+    description: "Lass deine Gäste zwischen Versicherung und Kaution wählen."
+  }, {
+    icon: <Wallet className="h-6 w-6 text-apple" />,
+    title: "Kautionen als Option",
+    description: "Biete deinen Gästen die Wahl zwischen Versicherung und traditioneller Kaution."
+  }];
+  return <>
       <Header />
       <HeroSection />
 
@@ -66,7 +58,7 @@ const VersicherungPage: React.FC = () => {
           <div className="max-w-none w-full mx-0">
             <div className="max-w-none w-full mx-0">
               <div className="max-w-none w-full mx-0">
-                <div className="max-w-none w-full mx-0">
+                <div className="max-w-none w-full mx-0 bg-white">
                   <div className="max-w-3xl mx-auto text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4 text-royal text-center">
                       {t('insurance.shortTerm.title')}
@@ -96,8 +88,6 @@ const VersicherungPage: React.FC = () => {
       </section>
 
       <Footer />
-    </>
-  );
+    </>;
 };
-
 export default VersicherungPage;
