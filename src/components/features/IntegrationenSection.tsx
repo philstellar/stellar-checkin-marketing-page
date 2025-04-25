@@ -95,7 +95,7 @@ export const IntegrationenSection: React.FC = () => {
         
         <div className="mt-12 text-center">
           <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-            {t('integration.cta')}
+            Jetzt registrieren
           </CTAButton>
         </div>
       </div>
