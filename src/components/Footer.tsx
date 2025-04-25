@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { useLanguage } from "@/context/LanguageContext";
+import { Separator } from "@/components/ui/separator";
+
 const aboutRoutes: Record<string, {
   aboutUs: string;
   successStories: string;
@@ -29,6 +31,7 @@ const aboutRoutes: Record<string, {
     faq: "/es/faq"
   }
 };
+
 const Footer = () => {
   const {
     t
@@ -46,8 +49,8 @@ const Footer = () => {
   const about = aboutRoutes[language] || aboutRoutes.de;
   return <footer className="bg-white">
       <div className="container-custom">
+        <Separator className="my-8 bg-[#8E9196]" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Column 1: Logo and Tagline */}
           <div>
             <img src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" alt="Stellar Logo" className="h-6 mb-4 w-auto object-contain" width="72" height="24" loading="lazy" />
             <p className="text-black mb-6 max-w-md">
@@ -55,7 +58,6 @@ const Footer = () => {
             </p>
           </div>
           
-          {/* Column 2: About Stellar and Legal */}
           <div>
             <div className="flex gap-8 mb-6">
               <div className="py-0 px-0 mx-[2px]">
@@ -102,7 +104,6 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Column 3: Placeholder or empty for layout */}
           <div>
             {/* Optional additional content */}
           </div>
@@ -114,4 +115,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default memo(Footer);
