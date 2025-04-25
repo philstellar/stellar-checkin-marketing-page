@@ -122,7 +122,7 @@ const TrustBadgePage = () => {
       </section>
 
       {/* Preview Section */}
-      <section className="bg-floral py-[26px]">
+      <section className="py-[26px] bg-white">
         <div className="">
           <div className="max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-6 text-royal text-center">
