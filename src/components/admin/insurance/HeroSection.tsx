@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { UserCheck, Shield } from 'lucide-react';
+import { UserCheck } from 'lucide-react';
 import CTAButton from '../../CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 
@@ -14,8 +14,8 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" style={{
-            contentVisibility: 'auto'
-          }}>
+              contentVisibility: 'auto'
+            }}>
               {t('insurance.title')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
@@ -38,7 +38,13 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="order-1 md:order-last flex justify-center">
-            <Shield className="w-3/5 h-auto text-apple opacity-90" />
+            <img 
+              src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png"
+              alt="Insurance Settings Interface"
+              className="w-full h-auto object-contain bg-transparent rounded-lg shadow-lg"
+              loading="eager"
+              fetchPriority="high"
+            />
           </div>
         </div>
       </div>
