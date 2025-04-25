@@ -1,11 +1,9 @@
-
 import { memo } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { useLanguage } from "@/context/LanguageContext";
 import { Separator } from "@/components/ui/separator";
-
 const aboutRoutes: Record<string, {
   aboutUs: string;
   successStories: string;
@@ -32,35 +30,27 @@ const aboutRoutes: Record<string, {
     faq: "/es/faq"
   }
 };
-
 const Footer = () => {
-  const { t } = useTranslation();
-  const { language } = useLanguage();
+  const {
+    t
+  } = useTranslation();
+  const {
+    language
+  } = useLanguage();
   const navigate = useNavigate();
-  
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
-  
   const about = aboutRoutes[language] || aboutRoutes.de;
-
-  return (
-    <footer className="bg-floral">
-      <div className="container-custom">
+  return <footer className="bg-floral">
+      <div className="container-custom bg-white">
         <Separator className="my-8 bg-[#8E9196]" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <img 
-              src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
-              alt="Stellar Logo" 
-              className="h-6 mb-4 w-auto object-contain" 
-              width="150" 
-              height="24" 
-              loading="lazy"
-            />
+            <img src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" alt="Stellar Logo" className="h-6 mb-4 w-auto object-contain" width="150" height="24" loading="lazy" />
             <p className="text-black mb-6 max-w-md">
               {t('footer.tagline')}
             </p>
@@ -121,8 +111,6 @@ const Footer = () => {
           <p className="text-black">&copy; {new Date().getFullYear()} Stellar Tourism Innovations GmbH. {t('footer.copyright')}</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default memo(Footer);
