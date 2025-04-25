@@ -75,7 +75,7 @@ const VersicherungPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-floral">
+      <section className="py-16 bg-white">
         <div className="container-custom">
           <InsuranceDetails />
         </div>
