@@ -30,7 +30,7 @@ const ContactInformation = () => {
       </div>
       
       <div className="flex items-start gap-5">
-        <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
+        <div className="flex-shrink-0 h-14 w-14 rounded-xl flex items-center justify-center text-royal bg-apple-500/[0.27]">
           <MapPin className="h-6 w-6" />
         </div>
         <div>
