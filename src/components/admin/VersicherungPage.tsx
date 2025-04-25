@@ -37,7 +37,7 @@ const VersicherungPage: React.FC = () => {
       <Header />
       <HeroSection />
 
-      <div className="container mx-auto px-4 py-[30px] overflow-hidden">
+      <div className="container mx-auto px-4 py-[30px] overflow-hidden bg-white">
         <OverviewCards />
 
         <div className="prose max-w-none">
