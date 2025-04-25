@@ -1,46 +1,38 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Shield, Star, User, Home, Mail } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
-const teamMembers = [
-  {
-    name: "Philipp Reuter",
-    bio: "Philipp Reuter, founder of Stellar Trust and co-founder of one of Europe’s leading channel managers Smoobu.com, created Stellar Trust based on his experience at Smoobu.\n\nHis goal: to give hosts more independence from large platforms while maximizing safety. In Berlin, he also successfully manages two vacation rentals and uses Stellar Trust himself.",
-    rating: 4.9,
-    reviews: 167,
-    properties: 2,
-    joined: 2024,
-    image: "/lovable-uploads/a4c197e8-9f89-4408-abc5-217c19594def.png"
-  },
-  {
-    name: "Milan Plogsties",
-    bio: "Milan Plogsties, co-founder of Stellar Trust, brings extensive experience from consulting and the travel industry.\n\nHe rents out his own apartment in Berlin and relies on Stellar Trust for full security across all platforms.",
-    rating: 5.0,
-    reviews: 25,
-    properties: 1,
-    joined: 2024,
-    image: "/lovable-uploads/892b5bc5-bbb1-43f3-81f3-3913b8ca3db6.png"
-  },
-  {
-    name: "Ralf Kramer",
-    bio: "Ralf Kramer, experienced insurance expert (including founder of the leading insurance broker for event and entertainment: Event Assec), is responsible for insurance at Stellar Trust and competently advises our clients.\n\nAdditionally, he has built his own vacation rental business and owns \"Plau Lagoons.\" This practical hosting experience, combined with deep industry expertise, makes him the perfect fit for our mission.",
-    rating: 4.7,
-    reviews: 166,
-    properties: 10,
-    joined: 2024,
-    image: "/lovable-uploads/ec49196e-b150-4532-9f94-780fc83bea5a.png"
-  }
-];
-
-const AboutUsEN = () => (
-  <>
+const teamMembers = [{
+  name: "Philipp Reuter",
+  bio: "Philipp Reuter, founder of Stellar Trust and co-founder of one of Europe’s leading channel managers Smoobu.com, created Stellar Trust based on his experience at Smoobu.\n\nHis goal: to give hosts more independence from large platforms while maximizing safety. In Berlin, he also successfully manages two vacation rentals and uses Stellar Trust himself.",
+  rating: 4.9,
+  reviews: 167,
+  properties: 2,
+  joined: 2024,
+  image: "/lovable-uploads/a4c197e8-9f89-4408-abc5-217c19594def.png"
+}, {
+  name: "Milan Plogsties",
+  bio: "Milan Plogsties, co-founder of Stellar Trust, brings extensive experience from consulting and the travel industry.\n\nHe rents out his own apartment in Berlin and relies on Stellar Trust for full security across all platforms.",
+  rating: 5.0,
+  reviews: 25,
+  properties: 1,
+  joined: 2024,
+  image: "/lovable-uploads/892b5bc5-bbb1-43f3-81f3-3913b8ca3db6.png"
+}, {
+  name: "Ralf Kramer",
+  bio: "Ralf Kramer, experienced insurance expert (including founder of the leading insurance broker for event and entertainment: Event Assec), is responsible for insurance at Stellar Trust and competently advises our clients.\n\nAdditionally, he has built his own vacation rental business and owns \"Plau Lagoons.\" This practical hosting experience, combined with deep industry expertise, makes him the perfect fit for our mission.",
+  rating: 4.7,
+  reviews: 166,
+  properties: 10,
+  joined: 2024,
+  image: "/lovable-uploads/ec49196e-b150-4532-9f94-780fc83bea5a.png"
+}];
+const AboutUsEN = () => <>
     <Header />
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20"></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20 bg-white"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -52,12 +44,7 @@ const AboutUsEN = () => (
             </p>
           </div>
           <div className="order-1 md:order-last flex justify-center">
-            <img 
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-              alt="Digital Check-in Platform" 
-              className="w-4/5 h-auto rounded-lg shadow-xl"
-              loading="eager"
-            />
+            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Digital Check-in Platform" className="w-4/5 h-auto rounded-lg shadow-xl" loading="eager" />
           </div>
         </div>
       </div>
@@ -100,16 +87,11 @@ const AboutUsEN = () => (
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
-            <Card key={index} className="overflow-hidden">
+          {teamMembers.map((member, index) => <Card key={index} className="overflow-hidden">
               <CardContent className="p-6">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
+                    <img src={member.image} alt={member.name} className="w-16 h-16 rounded-full object-cover" />
                     <h3 className="text-xl font-bold">{member.name}</h3>
                   </div>
                   <p className="text-gray-600 whitespace-pre-line">{member.bio}</p>
@@ -130,13 +112,10 @@ const AboutUsEN = () => (
                   </div>
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
       </div>
     </section>
     <Footer />
-  </>
-);
-
+  </>;
 export default AboutUsEN;
