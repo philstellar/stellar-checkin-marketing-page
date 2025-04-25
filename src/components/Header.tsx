@@ -65,13 +65,11 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    // Handle navigation state when coming from another page
     const state = location.state as { scrollTo?: string };
     if (state?.scrollTo) {
       const element = document.getElementById(state.scrollTo);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        // Clean up the state to prevent scrolling on subsequent renders
         navigate(location.pathname, { replace: true, state: {} });
       }
     }
@@ -80,7 +78,7 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMenuOpen ? 'bg-white stellar-shadow' : 'bg-transparent'
+        isScrolled || isMenuOpen ? 'bg-[#D3E4FD] stellar-shadow' : 'bg-[#D3E4FD]'
       }`}
     >
       <div className="container-custom">
