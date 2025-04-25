@@ -1,12 +1,14 @@
+
 import React from 'react';
 import { UserCheck, Shield } from 'lucide-react';
 import CTAButton from '../../CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
+
 const HeroSection = () => {
-  const {
-    t
-  } = useTranslation();
-  return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
+  const { t } = useTranslation();
+  
+  return (
+    <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -40,6 +42,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
