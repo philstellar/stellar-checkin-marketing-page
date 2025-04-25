@@ -45,7 +45,7 @@ const Footer = () => {
     });
   };
   const about = aboutRoutes[language] || aboutRoutes.de;
-  return <footer className="bg-floral">
+  return <footer className="bg-white">
       <div className="container-custom bg-white">
         <Separator className="my-8 bg-[#8E9196]" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
