@@ -52,7 +52,12 @@ const Footer = () => {
         <Separator className="my-8 bg-[#8E9196]" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <img src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" alt="Stellar Logo" className="h-6 mb-4 w-auto object-contain" width="72" height="24" loading="lazy" />
+            <img src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
+                 alt="Stellar Logo" 
+                 className="h-6 mb-4 w-auto object-contain" 
+                 width="150" 
+                 height="24" 
+                 loading="lazy" />
             <p className="text-black mb-6 max-w-md">
               {t('footer.tagline')}
             </p>

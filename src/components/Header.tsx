@@ -65,13 +65,11 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    // Handle navigation state when coming from another page
     const state = location.state as { scrollTo?: string };
     if (state?.scrollTo) {
       const element = document.getElementById(state.scrollTo);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        // Clean up the state to prevent scrolling on subsequent renders
         navigate(location.pathname, { replace: true, state: {} });
       }
     }
@@ -91,10 +89,10 @@ const Header = () => {
               className="flex items-center"
             >
               <img 
-                src="/lovable-uploads/51f6ef34-a9e3-44a7-b9d9-8765e43e287c.png" 
+                src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
                 alt="Stellar Logo" 
                 className="h-6 w-auto object-contain"
-                width="72"
+                width="150"
                 height="24"
               />
             </button>
