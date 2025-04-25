@@ -1,14 +1,12 @@
-
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
-
 const ContactInformation = () => {
-  const { t } = useTranslation();
-
-  return (
-    <div className="space-y-8">
+  const {
+    t
+  } = useTranslation();
+  return <div className="space-y-8">
       <div className="flex items-start gap-5">
-        <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-floral-400 flex items-center justify-center text-royal">
+        <div className="flex-shrink-0 h-14 w-14 rounded-xl flex items-center justify-center text-royal bg-apple-500/[0.27]">
           <Mail className="h-6 w-6" />
         </div>
         <div>
@@ -45,8 +43,6 @@ const ContactInformation = () => {
           </p>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ContactInformation;
