@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
@@ -10,7 +11,6 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHomePage = location.pathname === '/';
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 10);
@@ -78,7 +78,7 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMenuOpen ? 'bg-white stellar-shadow' : 'bg-transparent'
+        isScrolled || isMenuOpen ? 'bg-white stellar-shadow' : 'bg-floral'
       }`}
     >
       <div className="container-custom">
