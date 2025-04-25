@@ -1,11 +1,13 @@
-
 import { memo } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { useLanguage } from "@/context/LanguageContext";
-
-const aboutRoutes: Record<string, {aboutUs: string, successStories: string, faq: string}> = {
+const aboutRoutes: Record<string, {
+  aboutUs: string;
+  successStories: string;
+  faq: string;
+}> = {
   de: {
     aboutUs: "/de/ueber-uns",
     successStories: "/de/erfolgsbeispiele",
@@ -27,22 +29,22 @@ const aboutRoutes: Record<string, {aboutUs: string, successStories: string, faq:
     faq: "/es/faq"
   }
 };
-
 const Footer = () => {
-  const { t } = useTranslation();
-  const { language } = useLanguage();
+  const {
+    t
+  } = useTranslation();
+  const {
+    language
+  } = useLanguage();
   const navigate = useNavigate();
-
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
-
   const about = aboutRoutes[language] || aboutRoutes.de;
-
-  return <footer className="bg-gradient-to-br from-floral to-floral-400/20 py-12">
+  return <footer className="bg-white">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Logo and Tagline */}
@@ -60,21 +62,13 @@ const Footer = () => {
                 <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link 
-                      to={about.aboutUs}
-                      className="flex items-center text-black hover:text-apple transition-colors" 
-                      onClick={handleNavigation}
-                    >
+                    <Link to={about.aboutUs} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
                       <ExternalLink className="h-5 w-5 text-apple mr-2" />
                       {t('navigation.aboutUs')}
                     </Link>
                   </li>
                   <li>
-                    <Link 
-                      to={about.successStories}
-                      className="flex items-center text-black hover:text-apple transition-colors" 
-                      onClick={handleNavigation}
-                    >
+                    <Link to={about.successStories} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
                       <ExternalLink className="h-5 w-5 text-apple mr-2" />
                       {t('navigation.successStories')}
                     </Link>
@@ -120,5 +114,4 @@ const Footer = () => {
       </div>
     </footer>;
 };
-
 export default memo(Footer);
