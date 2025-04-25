@@ -1,7 +1,15 @@
 
 import React from 'react';
 import { Check, X } from 'lucide-react';
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { useTranslation } from '@/hooks/use-translation';
 
 interface ComparisonFeature {
   name: string;
@@ -19,62 +27,76 @@ interface Props {
 const StatusIcon = ({ status }: { status: boolean }) => (
   <div className="flex justify-center items-center h-full">
     {status ? (
-      <Check className="h-6 w-6 text-apple" />
+      <Check className="h-5 w-5 text-apple" />
     ) : (
-      <X className="h-6 w-6 text-red-300" />
+      <X className="h-5 w-5 text-red-300" />
     )}
   </div>
 );
 
 export const ComparisonMobileView = ({ features, schutzBeiMietausfallIndex }: Props) => {
+  const { t } = useTranslation();
+  
   return (
-    <div className="space-y-4">
-      {features.map((feature, index) => (
-        <Card key={index} className="overflow-hidden">
-          <CardContent className="p-4">
-            <div className="font-medium mb-4">{feature.name}</div>
-            <div className="grid grid-cols-4 gap-2">
-              <div className="flex flex-col items-center">
-                <img 
-                  src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2024/11/stellar_tourism_innovations_gmbh_logo.jpeg" 
-                  alt="Stellar" 
-                  className="h-8 w-auto object-contain mb-2" 
-                />
+    <div className="overflow-x-auto -mx-4 px-4">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[140px] font-bold text-black text-sm">
+              {t('insurance.comparison.header.feature')}
+            </TableHead>
+            <TableHead className="text-center w-[80px]">
+              <img 
+                src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2024/11/stellar_tourism_innovations_gmbh_logo.jpeg" 
+                alt="Stellar" 
+                className="h-8 w-auto mx-auto object-contain overflow-hidden rounded-lg shadow-sm" 
+              />
+            </TableHead>
+            <TableHead className="text-center w-[80px]">
+              <img 
+                src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2025/03/Airbnb-1.png" 
+                alt="Airbnb" 
+                className="h-8 w-auto mx-auto object-contain overflow-hidden rounded-lg shadow-sm" 
+              />
+            </TableHead>
+            <TableHead className="text-center w-[80px]">
+              <img 
+                src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2025/03/Booking.com_-1.png" 
+                alt="Booking.com" 
+                className="h-8 w-auto mx-auto object-contain overflow-hidden rounded-lg shadow-sm" 
+              />
+            </TableHead>
+            <TableHead className="text-center w-[80px] text-sm font-bold text-black">
+              {t('insurance.comparison.header.classic')}
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {features.map((feature, index) => (
+            <TableRow key={index}>
+              <TableCell className="font-medium text-sm">
+                {feature.name}
+              </TableCell>
+              <TableCell className="p-2">
                 <StatusIcon status={feature.stellar} />
-              </div>
-              <div className="flex flex-col items-center">
-                <img 
-                  src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2025/03/Airbnb-1.png" 
-                  alt="Airbnb" 
-                  className="h-8 w-auto object-contain mb-2" 
-                />
+              </TableCell>
+              <TableCell className="p-2">
                 {index === schutzBeiMietausfallIndex ? (
-                  <div className="flex justify-center items-center h-full">
-                    <X className="h-6 w-6 text-red-300" />
-                  </div>
+                  <StatusIcon status={false} />
                 ) : (
                   <StatusIcon status={feature.airbnb} />
                 )}
-              </div>
-              <div className="flex flex-col items-center">
-                <img 
-                  src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://stellar-trust.com/wp-content/uploads/2025/03/Booking.com_-1.png" 
-                  alt="Booking.com" 
-                  className="h-8 w-auto object-contain mb-2" 
-                />
+              </TableCell>
+              <TableCell className="p-2">
                 <StatusIcon status={feature.booking} />
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="h-8 flex items-center justify-center mb-2 text-xs font-medium text-center">
-                  Hausrat
-                  Versicherung
-                </div>
+              </TableCell>
+              <TableCell className="p-2">
                 <StatusIcon status={feature.classic} />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   );
 };
