@@ -1,3 +1,4 @@
+
 import { memo } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
@@ -41,7 +42,7 @@ const Footer = () => {
 
   const about = aboutRoutes[language] || aboutRoutes.de;
 
-  return <footer className="bg-[#D3E4FD] py-12">
+  return <footer className="bg-gradient-to-br from-floral to-floral-400/20 py-12">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Logo and Tagline */}
