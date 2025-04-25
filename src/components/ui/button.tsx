@@ -10,13 +10,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-apple text-black hover:bg-apple-600",
+        default: "bg-apple text-white hover:bg-apple-600",
         destructive:
-          "bg-destructive text-black hover:bg-destructive/90",
+          "bg-destructive text-white hover:bg-destructive/90",
         outline:
           "border border-input bg-background text-black hover:bg-accent hover:text-black",
         secondary:
-          "bg-royal text-black hover:bg-royal-600",
+          "bg-royal text-white hover:bg-royal-600",
         ghost: "hover:bg-accent text-black hover:text-black",
         link: "text-apple text-black underline-offset-4 hover:underline",
       },

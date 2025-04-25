@@ -12,7 +12,7 @@ const CTAButton = ({ children, ...props }: CTAButtonProps) => {
   return (
     <Button 
       onClick={openForm} 
-      className={`rounded-cta ${props.className || ''}`} 
+      className={`rounded-cta text-white ${props.className || ''}`} 
       {...props}
     >
       {children}

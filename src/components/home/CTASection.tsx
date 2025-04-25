@@ -30,7 +30,7 @@ const CTASection = () => {
             <CTAButton 
               variant="default"
               size="lg"
-              className="font-aeonik"
+              className="font-aeonik bg-apple text-white hover:bg-apple-600"
             >
               Jetzt Registrieren <ArrowRight className="ml-2 h-4 w-4" />
             </CTAButton>

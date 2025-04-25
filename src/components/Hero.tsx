@@ -22,7 +22,7 @@ const Hero = () => {
               }}
             >
               {t('hero.headline1')}
-              <span style={{ color: 'rgb(164 195 9)' }}>{t('hero.headline2')}</span>
+              <span style={{ color: '#0f2661' }}>{t('hero.headline2')}</span>
               {t('hero.headline3')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
