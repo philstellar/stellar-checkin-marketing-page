@@ -2,13 +2,21 @@
 export const integrationEN = {
   title: "Integrations",
   subtitle: "Connect with your favorite tools and platforms",
-  platforms: {
-    title: "Supported Platforms",
-    description: "Our system integrates seamlessly with all major booking platforms and property management systems."
+  pms: {
+    title: "PMS Integration",
+    description: "Direct connection to your Property Management System for efficient data synchronization."
+  },
+  payment: {
+    title: "Payment Systems",
+    description: "Direct integration with leading payment providers like Stripe and PayPal."
   },
   api: {
-    title: "API Access",
-    description: "Full API access for custom integrations and automation workflows."
+    title: "API Interfaces",
+    description: "Open API for custom integrations and individual adaptations."
+  },
+  webhooks: {
+    title: "Webhooks",
+    description: "Event-based notifications for real-time updates in your systems."
   },
   sync: {
     title: "Two-way Synchronization",

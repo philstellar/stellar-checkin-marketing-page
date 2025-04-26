@@ -1,3 +1,4 @@
+
 export const identityEN = {
   title: "Identity Verification",
   subtitle: "Secure and reliable identity verification for your guests",
@@ -29,5 +30,13 @@ export const identityEN = {
   privacy: {
     title: "Data Privacy",
     description: "Your guests' personal information is protected with state-of-the-art security measures."
+  },
+  biometric: {
+    title: "Biometric Verification",
+    description: "Advanced facial recognition technology to verify guest identities securely and quickly."
+  },
+  document: {
+    title: "Document Validation",
+    description: "Automated document checking to ensure the authenticity of guest identification."
   }
 };
