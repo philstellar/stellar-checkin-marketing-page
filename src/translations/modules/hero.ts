@@ -1,4 +1,5 @@
 
+
 // Home page hero with line breaks
 export const heroDE = {
   headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
@@ -11,7 +12,7 @@ export const heroDE = {
 };
 
 export const heroEN = {
-  headline1: "Seamless Check-in\nBuilt-in Protection\nUltimate Trust Badge",
+  headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
   headline2: "",
   headline3: "",
   subheadline: "360-Degree Trust for Your Vacation Rental",
@@ -21,7 +22,7 @@ export const heroEN = {
 };
 
 export const heroIT = {
-  headline1: "Check-in Online Senza Interruzioni\nProtezione Integrata\nBadge di Fiducia Definitivo",
+  headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
   headline2: "",
   headline3: "",
   subheadline: "Fiducia a 360 Gradi per il Tuo Alloggio Vacanze",
@@ -31,7 +32,7 @@ export const heroIT = {
 };
 
 export const heroES = {
-  headline1: "Check-in En Línea Perfecto\nProtección Incorporada\nSello de Confianza Definitivo",
+  headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
   headline2: "",
   headline3: "",
   subheadline: "Confianza 360 Grados para Su Alojamiento Vacacional",
@@ -39,3 +40,4 @@ export const heroES = {
   cta: "Regístrese Ahora",
   tagline: "Simple. Eficiente. Para usted y sus huéspedes."
 };
+
