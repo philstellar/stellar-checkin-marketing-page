@@ -52,7 +52,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const urlLanguage = getLanguageFromPath(location.pathname);
     if (urlLanguage && urlLanguage !== language) {
       setLanguageState(urlLanguage);
-      localStorage.setItem('language', urlLanguage);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('language', urlLanguage);
+      }
     }
   }, [location.pathname, language]);
 
