@@ -1,17 +1,22 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
+import { useLanguage } from '@/context/LanguageContext';
 import DesktopNav from './header/DesktopNav';
 import MobileNav from './header/MobileNav';
 import LanguageSelector from './LanguageSelector';
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { language } = useLanguage();
+
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 10);
   }, []);
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, {
       passive: true
@@ -20,9 +25,11 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [handleScroll]);
+
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -33,21 +40,23 @@ const Header = () => {
       document.body.style.overflow = '';
     };
   }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
   const handleHomeClick = () => {
-    if (location.pathname !== '/') {
-      navigate('/');
-    }
+    navigate(`/${language}/home`);
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
+
   const handleSectionClick = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -57,6 +66,7 @@ const Header = () => {
       });
     }
   }, []);
+
   useEffect(() => {
     const state = location.state as {
       scrollTo?: string;
@@ -74,6 +84,7 @@ const Header = () => {
       }
     }
   }, [location, navigate]);
+
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${isScrolled || isMenuOpen ? 'stellar-shadow' : ''}`}>
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
@@ -98,4 +109,5 @@ const Header = () => {
       </div>
     </header>;
 };
+
 export default Header;

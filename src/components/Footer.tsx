@@ -37,6 +37,11 @@ const Footer = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
 
+  const handleLogoClick = () => {
+    navigate(`/${language}/home`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const href = e.currentTarget.getAttribute('href');
     if (href?.startsWith('#')) {
@@ -62,7 +67,9 @@ const Footer = () => {
         <Separator className="my-8 bg-[#8E9196]" />
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <img src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" alt="Stellar Logo" className="h-6 mb-4 w-auto object-contain" width="150" height="24" loading="lazy" />
+            <button onClick={handleLogoClick} className="inline-block">
+              <img src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" alt="Stellar Logo" className="h-6 mb-4 w-auto object-contain" width="150" height="24" loading="lazy" />
+            </button>
             <p className="text-black mb-6 max-w-md">
               {t('footer.tagline')}
             </p>
