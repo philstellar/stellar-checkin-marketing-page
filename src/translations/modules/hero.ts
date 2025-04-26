@@ -1,6 +1,5 @@
 
-
-// Home page hero with line breaks
+// Main index hero translations
 export const heroDE = {
   headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
   headline2: "",
@@ -12,7 +11,7 @@ export const heroDE = {
 };
 
 export const heroEN = {
-  headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
+  headline1: "The Digital Complete Solution for Vacation Rental Check-in",
   headline2: "",
   headline3: "",
   subheadline: "360-Degree Trust for Your Vacation Rental",
@@ -22,7 +21,7 @@ export const heroEN = {
 };
 
 export const heroIT = {
-  headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
+  headline1: "La Soluzione Digitale Completa per il Check-in degli Alloggi Vacanze",
   headline2: "",
   headline3: "",
   subheadline: "Fiducia a 360 Gradi per il Tuo Alloggio Vacanze",
@@ -32,7 +31,7 @@ export const heroIT = {
 };
 
 export const heroES = {
-  headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
+  headline1: "La Solución Digital Completa para el Check-in de Alojamientos Vacacionales",
   headline2: "",
   headline3: "",
   subheadline: "Confianza 360 Grados para Su Alojamiento Vacacional",
@@ -40,4 +39,3 @@ export const heroES = {
   cta: "Regístrese Ahora",
   tagline: "Simple. Eficiente. Para usted y sus huéspedes."
 };
-
