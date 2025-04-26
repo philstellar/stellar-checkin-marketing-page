@@ -18,8 +18,6 @@ const DesktopNav = ({
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
 
-  const isProduction = window.location.hostname === 'stellar-checkin.com';
-
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
     window.scrollTo({
@@ -69,15 +67,13 @@ const DesktopNav = ({
 
   return (
     <nav className="hidden md:flex items-center space-x-8">
-      {!isProduction && (
-        <button
-          onClick={() => handleNavigation('home')}
-          onMouseEnter={() => handleMouseEnter('home')}
-          className="text-royal hover:text-apple font-medium transition-colors"
-        >
-          {renderBoldText(t('navigation.home'))}
-        </button>
-      )}
+      <button
+        onClick={() => handleNavigation('home')}
+        onMouseEnter={() => handleMouseEnter('home')}
+        className="text-royal hover:text-apple font-medium transition-colors"
+      >
+        {renderBoldText(t('navigation.home'))}
+      </button>
 
       <div className="flex items-center space-x-1">
         <button 
@@ -139,15 +135,13 @@ const DesktopNav = ({
         {renderBoldText(t('navigation.insurance'))}
       </button>
 
-      {!isProduction && (
-        <button
-          onClick={() => handleNavigation('trust-badge')}
-          onMouseEnter={() => handleMouseEnter('trust-badge')}
-          className="text-royal hover:text-apple font-medium transition-colors"
-        >
-          {renderBoldText(t('navigation.trustBadge'))}
-        </button>
-      )}
+      <button
+        onClick={() => handleNavigation('trust-badge')}
+        onMouseEnter={() => handleMouseEnter('trust-badge')}
+        className="text-royal hover:text-apple font-medium transition-colors"
+      >
+        {renderBoldText(t('navigation.trustBadge'))}
+      </button>
 
       <button onClick={() => handleSectionNavigation('preise')} className="text-royal hover:text-apple font-medium transition-colors">
         {t('navigation.pricing')}
