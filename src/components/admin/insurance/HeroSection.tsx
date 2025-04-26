@@ -5,9 +5,7 @@ import CTAButton from '../../../components/CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 
 const HeroSection = () => {
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
   return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
       <div className="container-custom relative z-10">
@@ -16,7 +14,7 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" style={{
             contentVisibility: 'auto'
           }}>
-              {t('insurance.title')}
+              {t('insurance.title').replace('Versicherung', '<span class="text-apple">Versicherung</span>').replace('Kaution', '<span class="text-apple">Kaution</span>')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               Bieten Sie Ihren Gästen <span className="text-apple">optional</span> eine <span className="text-apple">Versicherung</span> an und profitieren Sie von zusätzlichen Einnahmen.
