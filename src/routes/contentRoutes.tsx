@@ -1,6 +1,6 @@
 
-import { lazy } from 'react';
-import { Route, Fragment } from 'react-router-dom';
+import React, { lazy } from 'react';
+import { Route } from 'react-router-dom';
 
 // Import pages
 const UeberUns = lazy(() => import('@/pages/UeberUns'));
@@ -16,7 +16,7 @@ const Brevo = lazy(() => import('@/pages/Brevo'));
 const Home = lazy(() => import('@/pages/Home'));
 
 export const ContentRoutes = () => (
-  <Fragment>
+  <React.Fragment>
     {/* Home routes */}
     <Route path="/de/home" element={<Home />} />
     
@@ -38,5 +38,6 @@ export const ContentRoutes = () => (
     <Route path="/en/brevo" element={<Brevo />} />
     <Route path="/it/brevo" element={<Brevo />} />
     <Route path="/es/brevo" element={<Brevo />} />
-  </Fragment>
+  </React.Fragment>
 );
+

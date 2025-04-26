@@ -1,14 +1,13 @@
 
-import { lazy } from 'react';
-import { Route, Navigate, Routes } from 'react-router-dom';
-import { Fragment } from 'react';
+import React, { lazy } from 'react';
+import { Route, Navigate } from 'react-router-dom';
 
 // Lazy load product pages
 const VersicherungPage = lazy(() => import('@/components/admin/VersicherungPage'));
 const TrustBadgePage = lazy(() => import('@/components/admin/TrustBadgePage'));
 
 export const ProductRoutes = () => (
-  <Fragment>
+  <React.Fragment>
     {/* Insurance routes */}
     <Route path="/de/versicherung" element={<VersicherungPage />} />
     <Route path="/en/insurance" element={<VersicherungPage />} />
@@ -25,5 +24,6 @@ export const ProductRoutes = () => (
     <Route path="/en/trust-badge" element={<TrustBadgePage />} />
     <Route path="/it/trust-badge" element={<TrustBadgePage />} />
     <Route path="/es/trust-badge" element={<TrustBadgePage />} />
-  </Fragment>
+  </React.Fragment>
 );
+
