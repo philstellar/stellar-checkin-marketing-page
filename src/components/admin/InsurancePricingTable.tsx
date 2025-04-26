@@ -12,10 +12,9 @@ const IconCell = ({
 }: {
   icon: React.ReactNode;
 }) => <div className="flex items-center justify-center">{icon}</div>;
+
 const InsurancePricingTable = () => {
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
   const isMobile = useIsMobile();
   const header = t("insurance.pricing.header") as any;
   const rows = t("insurance.pricing.rows") as any[];
@@ -24,25 +23,22 @@ const InsurancePricingTable = () => {
   if (!header || !rows) return null;
 
   // Icons for detailed coverage
-  const rowIcons = [null,
-  // Price row - no icon
-  null,
-  // Coverage (text only)
-  null,
-  // Recourse - no icon
-  <Brush className="h-6 w-6 text-black rounded-[5px]" />,
-  // Additional cleaning
-  <Image className="h-6 w-6 text-black rounded-[5px]" />,
-  // Art & Valuables
-  <FileText className="h-6 w-6 text-black rounded-[5px]" />,
-  // Rental loss
-  <PawPrint className="h-6 w-6 text-black rounded-[5px]" /> // Pet damage
+  const rowIcons = [
+    null, // Price row - no icon
+    null, // Coverage (text only)
+    null, // Recourse - no icon
+    <Brush className="h-6 w-6 text-black rounded-[5px]" />, // Additional cleaning
+    <Image className="h-6 w-6 text-black rounded-[5px]" />, // Art & Valuables
+    <FileText className="h-6 w-6 text-black rounded-[5px]" />, // Rental loss
+    <PawPrint className="h-6 w-6 text-black rounded-[5px]" /> // Pet damage
   ];
 
   // Text for the new heading cell that covers additional coverage (up to)
   const ADDITIONAL_COVERAGE_LABEL = rows[3]?.label || t("insurance.pricing.rows.3.label") || "Additional coverage\n(up to)";
+
   if (isMobile) {
-    return <div className="w-full px-[2px]">
+    return (
+      <div className="container-custom mx-auto">
         <div className="bg-white p-0 mb-6 w-full rounded-none">
           <h3 className="font-medium border-b pb-2 mb-2 text-base px-[16px]">{header.coverage}</h3>
 
@@ -89,12 +85,14 @@ const InsurancePricingTable = () => {
               </div>)}
           </div>
         </div>
-      </div>;
+      </div>
+    );
   }
 
   // Desktop view
-  return <div className="w-full px-0">
-      <div className="bg-white p-4 md:p-8 mb-6 w-full overflow-x-auto px-[9px] rounded-none">
+  return (
+    <div className="container-custom mx-auto">
+      <div className="bg-white p-4 md:p-8 mb-6 w-full overflow-x-auto">
         <table className="w-full text-[15px] min-w-[600px]">
           <thead>
             <tr>
@@ -148,6 +146,8 @@ const InsurancePricingTable = () => {
           </tbody>
         </table>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default InsurancePricingTable;
