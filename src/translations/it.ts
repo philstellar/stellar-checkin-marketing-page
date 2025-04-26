@@ -6,14 +6,14 @@ import { partnersIT } from './modules/partners';
 import { kurtaxeIT } from './modules/kurtaxe';
 import { insuranceIT } from './modules/insurance';
 import { trustBadgeIT } from './modules/trustBadge';
-import { cookiesIT } from './modules/cookies/it';
-import { zusatzservicesIT } from './modules/zusatzservices/it';
-import { brevoPopupIT } from './modules/brevoPopup/it';
-import { identityIT } from './modules/identity/it';
-import { integrationIT } from './modules/integration/it';
-import { settingsIT } from './modules/settings/it';
-import { pricingIT } from './modules/pricing/it';
-import { contactIT } from './modules/contact/it';
+import { cookiesIT } from './modules/cookies'; // Fixed path
+import { zusatzservicesIT } from './modules/zusatzservices'; // Fixed path
+import { brevoPopupIT } from './modules/brevoPopup'; // Fixed path
+import { identityIT } from './modules/identity'; // Fixed path
+import { integrationIT } from './modules/integration'; // Fixed path
+import { settingsIT } from './modules/settings'; // Fixed path
+import { pricingIT } from './modules/pricing'; // Fixed path
+import { contactIT } from './modules/contact'; // Fixed path
 import { stellarIT } from './modules/stellar';
 import { productsIT } from './modules/products';
 
