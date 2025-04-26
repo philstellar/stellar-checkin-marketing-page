@@ -1,10 +1,17 @@
+
 import React from 'react';
 import { UserCheck } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+
 const HeroSection = () => {
   const navigate = useNavigate();
+
+  const handleReferenceClick = () => {
+    navigate('/de/erfolgsbeispiele');
+  };
+
   return <section className="hero-section pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20 bg-white"></div>
       <div className="container-custom relative z-10">
@@ -26,13 +33,13 @@ const HeroSection = () => {
                 <UserCheck className="mr-2 h-4 w-4" /> Jetzt Starten
               </CTAButton>
             </div>
-            <div className="mt-8 flex items-center">
+            <div className="mt-8 flex items-center cursor-pointer" onClick={handleReferenceClick}>
               <div className="flex -space-x-2">
                 <div className="w-8 h-8 rounded-full bg-apple-300"></div>
                 <div className="w-8 h-8 rounded-full bg-apple-400"></div>
                 <div className="w-8 h-8 rounded-full bg-apple-500"></div>
               </div>
-              <p className="ml-4 text-sm text-black font-aeonik">
+              <p className="ml-4 text-sm text-black font-aeonik hover:text-apple transition-colors">
                 <span className="font-medium">Hier geht es zu den Referenzen</span>
               </p>
             </div>
@@ -45,4 +52,5 @@ const HeroSection = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;
