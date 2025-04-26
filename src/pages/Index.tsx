@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from "@/components/Header";
 import { IndexHeroSection } from "@/components/sections/IndexHeroSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
@@ -21,6 +22,22 @@ const PricingSection = lazy(() => import("@/components/PricingSection"));
 const ContactSection = lazy(() => import("@/components/contact/ContactSection"));
 
 const Index = () => {
+  const location = useLocation();
+
+  // Handle scroll after component mount and when sections are loaded
+  useEffect(() => {
+    const state = location.state as { scrollTo?: string };
+    if (state?.scrollTo) {
+      // Add a delay to ensure lazy-loaded sections are mounted
+      setTimeout(() => {
+        const element = document.getElementById(state.scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500); // Longer delay for initial page load
+    }
+  }, [location]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -28,7 +45,6 @@ const Index = () => {
         <IndexHeroSection />
         <OnlineCheckinSection />
         <PartnersSection />
-        <ZusatzservicesSection />
         
         <Suspense fallback={<SectionLoader />}>
           <KurtaxeSection />
@@ -51,11 +67,15 @@ const Index = () => {
         </Suspense>
         
         <Suspense fallback={<SectionLoader />}>
-          <PricingSection />
+          <div id="preise">
+            <PricingSection />
+          </div>
         </Suspense>
         
         <Suspense fallback={<SectionLoader bg="bg-floral-100" />}>
-          <ContactSection />
+          <div id="kontakt">
+            <ContactSection />
+          </div>
         </Suspense>
       </main>
       <Footer />

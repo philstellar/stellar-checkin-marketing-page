@@ -37,15 +37,20 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   };
 
   const handleSectionNavigation = (sectionId: string) => {
-    if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
-      navigate(`/${currentLanguage}/`, { 
-        state: { 
-          scrollTo: sectionId 
-        } 
-      });
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     onClose();
+    if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
+      navigate(`/${currentLanguage}/`, {
+        state: { scrollTo: sectionId }
+      });
+      return;
+    }
+    
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (

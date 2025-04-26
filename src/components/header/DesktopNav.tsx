@@ -23,12 +23,17 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
   const handleSectionNavigation = (sectionId: string) => {
     if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
       navigate(`/${currentLanguage}/`, {
-        state: {
-          scrollTo: sectionId
-        }
+        state: { scrollTo: sectionId }
       });
+      return;
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   const handleMouseEnter = (path: string) => {
