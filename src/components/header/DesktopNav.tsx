@@ -29,15 +29,19 @@ const DesktopNav = ({
   };
 
   const handleSectionNavigation = (sectionId: string) => {
-    if (location.pathname !== '/') {
-      navigate('/', {
+    if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
+      navigate(`/${currentLanguage}/`, {
         state: {
           scrollTo: sectionId
         }
       });
+      // Always scroll to top when navigating from another page
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     } else {
       handleSectionClick(sectionId);
-      // Add smooth scroll to top
       window.scrollTo({
         top: 0,
         behavior: 'smooth'

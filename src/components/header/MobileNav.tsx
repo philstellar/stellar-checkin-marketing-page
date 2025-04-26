@@ -1,3 +1,4 @@
+
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -38,8 +39,17 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   };
 
   const handleSectionNavigation = (sectionId: string) => {
-    if (location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: sectionId } });
+    if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
+      navigate(`/${currentLanguage}/`, { 
+        state: { 
+          scrollTo: sectionId 
+        } 
+      });
+      // Always scroll to top when navigating from another page
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     } else {
       handleSectionClick(sectionId);
       window.scrollTo({
