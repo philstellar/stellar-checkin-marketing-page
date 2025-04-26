@@ -19,11 +19,12 @@ const HeroSection = () => {
               {(() => {
                 const fullText = t('insurance.title');
                 const [first, second] = fullText.split(' und ');
+                const [versicherung, rest] = first.split(' ');
                 return (
                   <>
-                    {first} 
+                    <span style={{ color: '#a4c309' }}>{versicherung}</span> {rest}
                     <span className="text-black"> und </span> 
-                    <span style={{ color: '#a4c309' }}>{second}</span>
+                    <span>{second}</span>
                   </>
                 );
               })()}
@@ -55,4 +56,3 @@ const HeroSection = () => {
     </section>;
 };
 export default HeroSection;
-
