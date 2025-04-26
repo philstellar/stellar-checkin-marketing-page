@@ -11,7 +11,7 @@ export const heroDE = {
 };
 
 export const heroEN = {
-  headline1: "The Digital All-in-One Solution for Vacation Rental Check-ins",
+  headline1: "Seamless Check-in\nBuilt-in Protection\nUltimate Trust Badge",
   headline2: "",
   headline3: "",
   subheadline: "360-Degree Trust for Your Vacation Rental",
@@ -21,7 +21,7 @@ export const heroEN = {
 };
 
 export const heroIT = {
-  headline1: "La Soluzione Digitale Completa per il Check-in delle Case Vacanza",
+  headline1: "Check-in Online Senza Interruzioni\nProtezione Integrata\nBadge di Fiducia Definitivo",
   headline2: "",
   headline3: "",
   subheadline: "Fiducia a 360 Gradi per il Tuo Alloggio Vacanze",
@@ -31,7 +31,7 @@ export const heroIT = {
 };
 
 export const heroES = {
-  headline1: "La Solución Digital Completa para el Check-in de Alquileres Vacacionales",
+  headline1: "Check-in En Línea Perfecto\nProtección Incorporada\nSello de Confianza Definitivo",
   headline2: "",
   headline3: "",
   subheadline: "Confianza 360 Grados para Su Alojamiento Vacacional",
