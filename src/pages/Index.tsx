@@ -1,7 +1,6 @@
-
 import React, { lazy, Suspense } from 'react';
 import Header from "@/components/Header";
-import { HeroSection } from "@/components/sections/HeroSection";
+import { IndexHeroSection } from "@/components/sections/IndexHeroSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
 import { OnlineCheckinSection } from "@/components/features";
 import Footer from "@/components/Footer";
@@ -26,7 +25,7 @@ const Index = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main>
-        <HeroSection />
+        <IndexHeroSection />
         <OnlineCheckinSection />
         <PartnersSection />
         <ZusatzservicesSection />
