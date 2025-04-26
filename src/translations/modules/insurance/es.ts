@@ -1,6 +1,26 @@
 export const insuranceES = {
-  title: "Automatice de forma inteligente seguros y depósitos",
-  introduction: "Ofrezca a sus huéspedes un seguro opcional y benefíciese de ingresos adicionales.",
+  hero: {
+    title: "Automatice de forma inteligente seguros y depósitos",
+    subtitle: "Proteja su propiedad y simplifique el check-in",
+    introduction: "Ofrezca a sus huéspedes un seguro opcional y benefíciese de ingresos adicionales",
+    cta: "Comenzar"
+  },
+  
+  overview: {
+    process: {
+      title: "Proceso Simple y Seguro",
+      description: "Gestión optimizada de seguros y depósitos que garantiza tranquilidad tanto para anfitriones como para huéspedes."
+    },
+    income: {
+      title: "Proteja sus Ingresos de Alquiler",
+      description: "Proteja su propiedad contra posibles daños y pérdida de ingresos por alquiler."
+    },
+    protection: {
+      title: "Cobertura Integral",
+      description: "Seguro integral que cubre daños a la propiedad, responsabilidad civil e incidentes inesperados."
+    }
+  },
+  
   section1: {
     title: "¿Por qué un seguro?",
     content: "Nuestro seguro protege contra daños causados por huéspedes, sus acompañantes o mascotas. El 90% de los huéspedes eligen nuestro seguro, para tranquilidad de ambas partes."

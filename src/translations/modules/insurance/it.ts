@@ -1,6 +1,26 @@
 export const insuranceIT = {
-  title: "Automatizza in modo intelligente assicurazione e depositi",
-  introduction: "Offri ai tuoi ospiti un'assicurazione opzionale e beneficia di entrate aggiuntive.",
+  hero: {
+    title: "Automatizza in modo intelligente assicurazione e depositi",
+    subtitle: "Proteggi la tua proprietà e semplifica il check-in",
+    introduction: "Offri ai tuoi ospiti un'assicurazione opzionale e beneficia di entrate aggiuntive",
+    cta: "Inizia Ora"
+  },
+  
+  overview: {
+    process: {
+      title: "Processo Semplice e Sicuro",
+      description: "Gestione ottimizzata di assicurazioni e depositi che garantisce tranquillità sia per host che per ospiti."
+    },
+    income: {
+      title: "Proteggi i Tuoi Ricavi da Affitto",
+      description: "Proteggi la tua proprietà contro possibili danni e perdita di reddito da affitto."
+    },
+    protection: {
+      title: "Copertura Completa",
+      description: "Assicurazione completa che copre danni alla proprietà, responsabilità civile e incidenti imprevisti."
+    }
+  },
+  
   section1: {
     title: "Perché un'assicurazione?",
     content: "La nostra assicurazione protegge dai danni causati dagli ospiti, dai loro accompagnatori o animali domestici. Il 90% degli ospiti sceglie la nostra assicurazione - per la tranquillità di entrambe le parti."

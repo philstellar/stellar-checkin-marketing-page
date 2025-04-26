@@ -1,7 +1,11 @@
 export const insuranceDE = {
-  title: "Versicherung und Kaution clever automatisieren",
-  subtitle: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
-  introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
+  hero: {
+    title: "Versicherung und Kaution clever automatisieren",
+    subtitle: "Schützen Sie Ihr Eigentum und vereinfachen Sie den Check-in",
+    introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen",
+    cta: "Jetzt Starten"
+  },
+  
   overview: {
     process: {
       title: "Einfacher und sicherer Prozess",
