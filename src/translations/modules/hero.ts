@@ -11,7 +11,7 @@ export const heroDE = {
 };
 
 export const heroEN = {
-  headline1: "The Digital Complete Solution for Vacation Rental Check-in",
+  headline1: "The Ultimate Solution for Short Term Rental Check-ins",
   headline2: "",
   headline3: "",
   subheadline: "360-Degree Trust for Your Vacation Rental",
