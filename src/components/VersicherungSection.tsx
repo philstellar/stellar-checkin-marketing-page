@@ -14,7 +14,7 @@ export const VersicherungSection = () => {
           <div className="order-1 md:order-first flex justify-center">
             <img 
               src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
-              alt="Versicherung und Kautionsabwicklung" 
+              alt={t('insurance.title')}
               className="w-3/5 h-auto object-contain bg-transparent"
             />
           </div>
@@ -32,18 +32,18 @@ export const VersicherungSection = () => {
               {[
                 {
                   icon: <CreditCard className="w-8 h-8 text-apple" />,
-                  title: t('insurance.process.title'),
-                  description: t('insurance.process.description')
+                  title: t('insurance.overview.process.title'),
+                  description: t('insurance.overview.process.description')
                 },
                 {
                   icon: <Shield className="w-8 h-8 text-apple" />,
-                  title: t('insurance.income.title'),
-                  description: t('insurance.income.description')
+                  title: t('insurance.overview.income.title'),
+                  description: t('insurance.overview.income.description')
                 },
                 {
                   icon: <ShieldCheck className="w-8 h-8 text-apple" />,
-                  title: t('insurance.protection.title'),
-                  description: t('insurance.protection.description')
+                  title: t('insurance.overview.protection.title'),
+                  description: t('insurance.overview.protection.description')
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">

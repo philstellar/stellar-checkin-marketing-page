@@ -1,8 +1,26 @@
-
 export const insuranceEN = {
+  // Hero section
   title: "Guest Insurance & Deposit Management",
   subtitle: "Protect your property and simplify guest check-ins",
   introduction: "Offer your guests optional insurance and benefit from additional income.",
+
+  // Overview section
+  overview: {
+    process: {
+      title: "Simple and Secure Process",
+      description: "Streamlined insurance and deposit management that ensures peace of mind for both hosts and guests."
+    },
+    income: {
+      title: "Protect Your Rental Income",
+      description: "Safeguard your property against potential damages and rental income loss."
+    },
+    protection: {
+      title: "Comprehensive Coverage",
+      description: "Comprehensive insurance that covers property damage, liability, and unexpected incidents."
+    }
+  },
+
+  // Section content
   section1: {
     title: "Why Insurance?",
     content: "Our insurance protects against damage caused by guests, their companions, or pets. 90% of guests choose our insurance - for peace of mind on both sides."
@@ -15,6 +33,8 @@ export const insuranceEN = {
     title: "Our Partner",
     content: "Partner of Hiscox - a world-renowned specialty insurer with over 100 years of experience, high financial stability, and 95% customer satisfaction."
   },
+
+  // Comparison section
   comparison: {
     headline: "Insurance and Deposit Management",
     header: {
