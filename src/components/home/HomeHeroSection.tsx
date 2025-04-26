@@ -33,7 +33,7 @@ const HomeHeroSection = () => {
             </div>
           </div>
           <div className="order-1 md:order-last flex justify-center">
-            {/* Right side intentionally left empty */}
+            {/* Right side intentionally left empty - screenshot removed as requested */}
           </div>
         </div>
       </div>
@@ -42,3 +42,4 @@ const HomeHeroSection = () => {
 };
 
 export default HomeHeroSection;
+
