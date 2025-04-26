@@ -1,6 +1,7 @@
+
 export const insuranceIT = {
   hero: {
-    title: "Automatizza in modo intelligente assicurazione e depositi",
+    title: "Automatizzare la protezione tramite assicurazione e/o depositi",
     subtitle: "Proteggi la tua proprietà e semplifica il check-in",
     introduction: "Offri ai tuoi ospiti un'assicurazione opzionale e beneficia di entrate aggiuntive",
     cta: "Inizia Ora"

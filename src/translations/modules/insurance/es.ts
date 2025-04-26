@@ -1,6 +1,7 @@
+
 export const insuranceES = {
   hero: {
-    title: "Automatice de forma inteligente seguros y depósitos",
+    title: "Automatizar la protección mediante seguros y/o depósitos",
     subtitle: "Proteja su propiedad y simplifique el check-in",
     introduction: "Ofrezca a sus huéspedes un seguro opcional y benefíciese de ingresos adicionales",
     cta: "Comenzar"

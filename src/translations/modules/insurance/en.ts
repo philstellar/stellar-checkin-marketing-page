@@ -1,6 +1,7 @@
+
 export const insuranceEN = {
   hero: {
-    title: "Smartly Automate Insurance and Deposits",
+    title: "Automate Insurance and/or Deposit Protection",
     subtitle: "Protect your property and simplify guest check-ins",
     introduction: "Offer your guests optional insurance and benefit from additional income",
     cta: "Get Started"
