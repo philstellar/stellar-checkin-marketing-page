@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik max-w-[66.66%]">
               Nahtloser Online Checkin
               <br />
               Eingebauter Versicherungs-Schutz
