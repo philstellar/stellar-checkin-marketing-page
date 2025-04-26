@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Card } from "@/components/ui/card";
 import LogoCarouselAutoplay from '@/components/LogoCarouselAutoplay';
 import CTAButton from '@/components/CTAButton';
+
 const testimonialLogos = [{
   src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
   alt: "Hof Liebeneck Osterspai",
@@ -34,6 +35,7 @@ const testimonialLogos = [{
   alt: "Fairienglück",
   width: 160
 }];
+
 const testimonials = [{
   company: "Hof Liebeneck",
   name: "Mario Schilling",
@@ -62,7 +64,7 @@ const testimonials = [{
   company: "Fairienglück",
   name: "Christopher Redenz",
   image: "/lovable-uploads/d642b640-6f64-4b66-a4d4-263a5d6f288c.png",
-  properties: 6,
+  properties: 100,
   joinedYear: 2024,
   quote: "Als kleine Ferienhaus-Vermieterin war es für mich immer eine Herausforderung, Gäste von der Buchung direkt auf meiner Website zu überzeugen. Stellar Checkin hat das komplett verändert. Das Trust Badge gibt meinen potenziellen Gästen sofort das Vertrauen, das sie brauchen.\n\nDie Identitätsprüfung und die Möglichkeit, eine Gästeschadenversicherung anzubieten, haben meine Buchungssicherheit massiv erhöht.",
   website: "https://www.fairienglueck.de/"
@@ -70,7 +72,7 @@ const testimonials = [{
   company: "Berlin Mitte Experience",
   name: "Philipp Reuter",
   image: "/lovable-uploads/321ff530-1491-4b9c-b977-7111d0710385.png",
-  properties: 8,
+  properties: 2,
   joinedYear: 2024,
   quote: "Als Gastgeber mit mehreren Unterkünften in Berlin Mitte war der Verwaltungsaufwand für Kautionen und Gästeregistrierungen immer ein Zeitfresser. Mit Stellar Checkin habe ich diese Prozesse komplett digitalisiert und automatisiert.\n\nBesonders beeindruckt bin ich von der nahtlosen Integration mit unserem Property Management System und der Möglichkeit, Zusatzleistungen direkt im Check-in-Prozess zu verkaufen.",
   website: "https://berlin-mitte.homes/de"
@@ -83,6 +85,7 @@ const testimonials = [{
   quote: "Als Immobilienmanagement-Unternehmen mussten wir ständig zwischen verschiedenen Systemen wechseln. Stellar Checkin hat unsere gesamten Check-in-Prozesse vereinfacht und digitalisiert.\n\nDie Möglichkeit, Gästedaten automatisch zu erfassen, Versicherungen anzubieten und Zusatzleistungen zu verkaufen, hat unsere Effizienz und Umsätze deutlich gesteigert.",
   website: "https://homeby.it"
 }];
+
 const Erfolgsbeispiele = () => {
   return <>
       <Header />
@@ -166,4 +169,5 @@ const Erfolgsbeispiele = () => {
       <Footer />
     </>;
 };
+
 export default Erfolgsbeispiele;
