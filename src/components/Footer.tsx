@@ -4,6 +4,7 @@ import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { useLanguage } from "@/context/LanguageContext";
 import { Separator } from "@/components/ui/separator";
+
 const aboutRoutes: Record<string, {
   aboutUs: string;
   successStories: string;
@@ -30,25 +31,26 @@ const aboutRoutes: Record<string, {
     faq: "/es/faq"
   }
 };
+
 const Footer = () => {
-  const {
-    t
-  } = useTranslation();
-  const {
-    language
-  } = useLanguage();
+  const { t } = useTranslation();
+  const { language } = useLanguage();
   const navigate = useNavigate();
+  const isProduction = window.location.hostname === 'stellar-checkin.com';
+
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
+
   const about = aboutRoutes[language] || aboutRoutes.de;
+
   return <footer className="bg-white">
       <div className="container-custom bg-white">
         <Separator className="my-8 bg-[#8E9196]" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <img src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" alt="Stellar Logo" className="h-6 mb-4 w-auto object-contain" width="150" height="24" loading="lazy" />
             <p className="text-black mb-6 max-w-md">
@@ -57,53 +59,77 @@ const Footer = () => {
           </div>
           
           <div>
-            <div className="flex gap-8 mb-6">
-              <div className="py-0 px-0 mx-[2px]">
-                <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link to={about.aboutUs} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
-                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                      {t('navigation.aboutUs')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={about.successStories} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
-                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                      {t('navigation.successStories')}
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link to={`/${language}/impressum`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
-                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                      {t('footer.imprint')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={`/${language}/datenschutz`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
-                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                      {t('footer.privacy')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={`/${language}/agb`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
-                      <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                      {t('footer.terms')}
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <h3 className="text-lg font-semibold mb-4 text-black">Solutions</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to={`#gaeste-voranmeldung`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.features')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${language}/versicherung`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.insurance')}
+                </Link>
+              </li>
+              {!isProduction && (
+                <li>
+                  <Link to={`/${language}/trust-badge`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                    <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                    {t('navigation.trustBadge')}
+                  </Link>
+                </li>
+              )}
+              <li>
+                <Link to={`#preise`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.pricing')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to={about.aboutUs} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.aboutUs')}
+                </Link>
+              </li>
+              <li>
+                <Link to={about.successStories} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.successStories')}
+                </Link>
+              </li>
+            </ul>
           </div>
           
           <div>
-            {/* Third column empty for balance */}
+            <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to={`/${language}/impressum`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('footer.imprint')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${language}/datenschutz`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('footer.privacy')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${language}/agb`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('footer.terms')}
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
         
@@ -113,4 +139,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default memo(Footer);
