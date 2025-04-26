@@ -34,8 +34,7 @@ export function IndexHeroSection() {
               {renderHeadline()}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-              {t('hero.subheadline')}<br /><br />
-              {t('hero.subheadline2')}
+              {t('hero.subheadline')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik text-white">
