@@ -1,4 +1,3 @@
-
 export const pricingIT = {
   title: "I Nostri Prezzi",
   subtitle: "Trova il pacchetto giusto per le tue esigenze.",
@@ -8,24 +7,24 @@ export const pricingIT = {
     unit: "€/mese",
     per: "per proprietà",
     cta: "Registrati Ora",
-    additionalServices: "Servizi Aggiuntivi *",
+    additionalServices: "Servizi Aggiuntivi",
     additionalServicesDesc: "Nel pacchetto Base, viene addebitata una commissione del 5% sul valore totale dei servizi aggiuntivi prenotati dall'ospite.",
-    identityVerification: "Verifica dell'Identità *",
+    identityVerification: "Verifica dell'Identità",
     identityVerificationDesc: "La verifica biometrica è opzionale e costa €1,50 per check-in.",
-    depositManagement: "Gestione del Deposito *",
+    depositManagement: "Gestione del Deposito",
     depositManagementDesc: "Nel pacchetto Base, viene addebitata una commissione dell'1% sul valore totale del deposito.",
-    insurance: "Assicurazione Ospiti *",
+    insurance: "Assicurazione Ospiti",
     insuranceDesc: "L'assicurazione è opzionale per l'ospite o può essere scelta come sostituto del deposito.",
-    digitalGuestRegistration: "Registrazione Ospiti alle Autorità *",
+    digitalGuestRegistration: "Registrazione Ospiti alle Autorità",
     digitalGuestRegistrationDesc: "Le registrazioni degli ospiti vengono inviate automaticamente e legalmente alle autorità.",
     features: [
       "Check-in online",
       "Registrazione ospiti personalizzabile",
       "Integrazioni PMS",
-      "Servizi Aggiuntivi *",
-      "Verifica dell'Identità *",
-      "Gestione del Deposito *",
-      "Assicurazione Ospiti *",
+      "Servizi Aggiuntivi",
+      "Verifica dell'Identità",
+      "Gestione del Deposito",
+      "Assicurazione Ospiti",
       "Accettazione del Contratto di Alloggio"
     ]
   },
@@ -38,7 +37,7 @@ export const pricingIT = {
     cta: "Registrati Ora",
     plusBasic: "Tutto nel pacchetto Base più add-on selezionati:",
     features: [
-      "Registrazione Ospiti alle Autorità *",
+      "Registrazione Ospiti alle Autorità",
       "Tassa di Soggiorno – calcolata e regolata automaticamente",
       "Servizi aggiuntivi senza commissioni",
       "Check-in personalizzato"
