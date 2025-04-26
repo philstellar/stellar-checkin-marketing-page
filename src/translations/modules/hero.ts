@@ -1,7 +1,6 @@
-
 // Home page hero with line breaks
 export const heroDE = {
-  headline1: "Nahtloser Online Checkin\nEingebauter Versicherungs-Schutz\nUltimativer Trust Badge",
+  headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
   headline2: "",
   headline3: "",
   subheadline: "360-Grad-Vertrauen für Ihre Ferienunterkunft",
