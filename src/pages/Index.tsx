@@ -1,5 +1,5 @@
 
-import React, { lazy, Suspense, memo } from 'react';
+import React, { lazy, Suspense } from 'react';
 import Header from "@/components/Header";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
@@ -64,4 +64,4 @@ const Index = () => {
   );
 };
 
-export default memo(Index);
+export default Index;
