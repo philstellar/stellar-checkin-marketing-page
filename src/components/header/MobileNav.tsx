@@ -29,13 +29,6 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const navigate = useNavigate();
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
-  const isProduction = window.location.hostname === 'stellar-checkin.com';
-
-  const handleNavigation = (path: string) => {
-    navigate(`/${currentLanguage}/${path}`);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    onClose();
-  };
 
   const handleSectionNavigation = (sectionId: string) => {
     if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
@@ -44,17 +37,8 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
           scrollTo: sectionId 
         } 
       });
-      // Always scroll to top when navigating from another page
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
     } else {
       handleSectionClick(sectionId);
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
     }
     onClose();
   };
