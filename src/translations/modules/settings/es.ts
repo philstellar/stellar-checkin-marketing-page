@@ -22,6 +22,19 @@ export const settingsES = {
     delete: "Eliminar Propiedad",
     confirmDelete: "¿Está seguro de que desea eliminar esta propiedad?"
   },
+  // Add the missing keys for the design, language and custom sections
+  design: {
+    title: "Diseño y Marca",
+    description: "Personalice fácilmente el diseño - con su logotipo, colores de marca y URL."
+  },
+  language: {
+    title: "Opciones de Idioma",
+    description: "Check-in multilingüe - para que los huéspedes internacionales puedan orientarse inmediatamente."
+  },
+  custom: {
+    title: "Check-in Personalizado",
+    description: "Personalice el proceso de check-in según sus necesidades y determine qué datos deben recopilarse."
+  },
   save: "Guardar Cambios",
   cancel: "Cancelar",
   success: "¡Configuración guardada con éxito!",
