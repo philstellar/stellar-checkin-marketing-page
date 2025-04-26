@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet, UserCheck } from 'lucide-react';
@@ -12,6 +13,7 @@ import LogoCarousel from '../LogoCarousel';
 import HeroSection from './insurance/HeroSection';
 import BenefitsSection from './insurance/BenefitsSection';
 import OverviewCards from './insurance/OverviewCards';
+import CTAButton from '../CTAButton';
 
 const VersicherungPage: React.FC = () => {
   const { t } = useTranslation();
