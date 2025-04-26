@@ -16,7 +16,17 @@ const HeroSection = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" 
               style={{ contentVisibility: 'auto' }}
             >
-              {t('insurance.title')}
+              {(() => {
+                const fullText = t('insurance.title');
+                const [first, second] = fullText.split(' und ');
+                return (
+                  <>
+                    {first} 
+                    <span className="text-black"> und </span> 
+                    <span style={{ color: '#a4c309' }}>{second}</span>
+                  </>
+                );
+              })()}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('insurance.introduction')}
@@ -45,3 +55,4 @@ const HeroSection = () => {
     </section>;
 };
 export default HeroSection;
+
