@@ -36,6 +36,14 @@ const testimonialLogos = [{
   src: "/lovable-uploads/9451653b-0793-4645-8889-3222d4c98e84.png",
   alt: "Fairienglück",
   width: 160
+}, {
+  src: "/lovable-uploads/759bb20b-e23e-480a-ba2e-ebf411ee1d64.png",
+  alt: "Fincaurlaub",
+  width: 180
+}, {
+  src: "/lovable-uploads/c1427597-2572-4610-9b08-9d34bbbd25d1.png",
+  alt: "Alpen Chalets Resorts",
+  width: 160
 }];
 
 const Home = () => {
