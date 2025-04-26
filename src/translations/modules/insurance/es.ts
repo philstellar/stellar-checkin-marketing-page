@@ -1,6 +1,5 @@
-
 export const insuranceES = {
-  title: "Automatice inteligentemente el seguro y el depósito",
+  title: "Automatice de forma inteligente seguros y depósitos",
   introduction: "Ofrezca a sus huéspedes un seguro opcional y benefíciese de ingresos adicionales.",
   section1: {
     title: "¿Por qué un seguro?",

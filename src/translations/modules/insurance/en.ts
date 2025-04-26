@@ -1,10 +1,8 @@
 export const insuranceEN = {
-  // Hero section
-  title: "Guest Insurance & Deposit Management",
+  title: "Smartly Automate Insurance and Deposits",
   subtitle: "Protect your property and simplify guest check-ins",
   introduction: "Offer your guests optional insurance and benefit from additional income.",
 
-  // Overview section
   overview: {
     process: {
       title: "Simple and Secure Process",
@@ -20,7 +18,6 @@ export const insuranceEN = {
     }
   },
 
-  // Section content
   section1: {
     title: "Why Insurance?",
     content: "Our insurance protects against damage caused by guests, their companions, or pets. 90% of guests choose our insurance - for peace of mind on both sides."
@@ -34,7 +31,6 @@ export const insuranceEN = {
     content: "Partner of Hiscox - a world-renowned specialty insurer with over 100 years of experience, high financial stability, and 95% customer satisfaction."
   },
 
-  // Comparison section
   comparison: {
     headline: "Insurance and Deposit Management",
     header: {

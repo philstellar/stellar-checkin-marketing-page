@@ -1,5 +1,5 @@
 export const insuranceIT = {
-  title: "Automatizza in modo intelligente assicurazione e deposito",
+  title: "Automatizza in modo intelligente assicurazione e depositi",
   introduction: "Offri ai tuoi ospiti un'assicurazione opzionale e beneficia di entrate aggiuntive.",
   section1: {
     title: "Perché un'assicurazione?",
