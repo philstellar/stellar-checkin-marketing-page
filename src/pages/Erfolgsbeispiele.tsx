@@ -36,55 +36,62 @@ const testimonialLogos = [{
   width: 160
 }];
 
-const testimonials = [{
-  company: "Hof Liebeneck",
-  name: "Mario Schilling",
-  image: "/lovable-uploads/7ac2f1b9-71b4-4955-b98d-10b23cd137a4.png",
-  properties: 4,
-  joinedYear: 2024,
-  quote: "Gäste davon zu überzeugen, direkt auf unserer Website zu buchen, war immer eine Herausforderung. Seitdem wir das Stellar Trust Badge auf unserer Website anzeigen, das unsere Airbnb- und Booking.com-Bewertungen aggregiert, sehen wir bereits einen Anstieg der Buchungen.\n\nAußerdem habe ich ein viel besseres Gefühl bei Buchungen von Gästen, die ich noch nicht kenne, seit ich ihnen die Wahl zwischen einer Kaution und der Gästeschadenversicherung von Stellar anbieten kann.",
-  website: "https://www.liebeneck.com/"
-}, {
-  company: "Plau Lagoons",
-  name: "Ralf Kramer",
-  image: "/lovable-uploads/cda4c627-8961-489c-b264-d970daf26bed.png",
-  properties: 10,
-  joinedYear: 2024,
-  quote: "Mehr Direktbuchungen zu bekommen, war für uns in letzter Zeit super wichtig – nicht nur, um den Umsatz zu steigern, sondern auch, um persönlicher mit unseren Gästen zu interagieren, zum Beispiel mit Grußkarten oder speziellen Angeboten.\n\nAber uns war schnell klar: Eine schöne Website allein reicht nicht. Wir brauchten etwas, das unseren Gästen zusätzlich Sicherheit gibt. Genau da kam das Stellar Trust Badge ins Spiel.",
-  website: "https://www.plau-lagoons.de"
-}, {
-  company: "Favorent",
-  name: "Volker Rantz",
-  image: "/lovable-uploads/d7825600-e22b-4fa5-a960-fb33e4dd0d9d.png",
-  properties: 700,
-  joinedYear: 2024,
-  quote: "Die tägliche Gästeschadenversicherung ist für uns ein echter Gamechanger – sowohl als einzigartiges Verkaufsargument zur Gewinnung neuer Agenturkunden als auch zur Vereinfachung unserer Kautionsverwaltung.\n\nWir konnten die Reibungspunkte zwischen uns als Agentur, den Eigentümern und den Gästen erheblich reduzieren.",
-  website: "https://favorent.de/"
-}, {
-  company: "Fairienglück",
-  name: "Christopher Redenz",
-  image: "/lovable-uploads/d642b640-6f64-4b66-a4d4-263a5d6f288c.png",
-  properties: 100,
-  joinedYear: 2024,
-  quote: "Als kleine Ferienhaus-Vermieterin war es für mich immer eine Herausforderung, Gäste von der Buchung direkt auf meiner Website zu überzeugen. Stellar Checkin hat das komplett verändert. Das Trust Badge gibt meinen potenziellen Gästen sofort das Vertrauen, das sie brauchen.\n\nDie Identitätsprüfung und die Möglichkeit, eine Gästeschadenversicherung anzubieten, haben meine Buchungssicherheit massiv erhöht.",
-  website: "https://www.fairienglueck.de/"
-}, {
-  company: "Berlin Mitte Experience",
-  name: "Philipp Reuter",
-  image: "/lovable-uploads/321ff530-1491-4b9c-b977-7111d0710385.png",
-  properties: 2,
-  joinedYear: 2024,
-  quote: "Als Gastgeber mit mehreren Unterkünften in Berlin Mitte war der Verwaltungsaufwand für Kautionen und Gästeregistrierungen immer ein Zeitfresser. Mit Stellar Checkin habe ich diese Prozesse komplett digitalisiert und automatisiert.\n\nBesonders beeindruckt bin ich von der nahtlosen Integration mit unserem Property Management System und der Möglichkeit, Zusatzleistungen direkt im Check-in-Prozess zu verkaufen.",
-  website: "https://berlin-mitte.homes/de"
-}, {
-  company: "Homeby",
-  name: "Ale Fiorotto",
-  image: "/lovable-uploads/b81e2a35-1a4a-4192-b141-6e5d7d8e3390.png",
-  properties: 100,
-  joinedYear: 2024,
-  quote: "Als Immobilienmanagement-Unternehmen mussten wir ständig zwischen verschiedenen Systemen wechseln. Stellar Checkin hat unsere gesamten Check-in-Prozesse vereinfacht und digitalisiert.\n\nDie Möglichkeit, Gästedaten automatisch zu erfassen, Versicherungen anzubieten und Zusatzleistungen zu verkaufen, hat unsere Effizienz und Umsätze deutlich gesteigert.",
-  website: "https://homeby.it"
-}];
+const testimonials = [
+  {
+    company: "Hof Liebeneck",
+    name: "Mario Schilling",
+    image: "/lovable-uploads/7ac2f1b9-71b4-4955-b98d-10b23cd137a4.png",
+    properties: 4,
+    joinedYear: 2024,
+    quote: "Gäste davon zu überzeugen, direkt auf unserer Website zu buchen, war immer eine Herausforderung. Seitdem wir das Stellar Trust Badge auf unserer Website anzeigen, das unsere Airbnb- und Booking.com-Bewertungen aggregiert, sehen wir bereits einen Anstieg der Buchungen.\n\nAußerdem habe ich ein viel besseres Gefühl bei Buchungen von Gästen, die ich noch nicht kenne, seit ich ihnen die Wahl zwischen einer Kaution und der Gästeschadenversicherung von Stellar anbieten kann.",
+    website: "https://www.liebeneck.com/"
+  },
+  {
+    company: "Plau Lagoons",
+    name: "Ralf Kramer",
+    image: "/lovable-uploads/cda4c627-8961-489c-b264-d970daf26bed.png",
+    properties: 10,
+    joinedYear: 2024,
+    quote: "Mehr Direktbuchungen zu bekommen, war für uns in letzter Zeit super wichtig – nicht nur, um den Umsatz zu steigern, sondern auch, um persönlicher mit unseren Gästen zu interagieren, zum Beispiel mit Grußkarten oder speziellen Angeboten.\n\nAber uns war schnell klar: Eine schöne Website allein reicht nicht. Wir brauchten etwas, das unseren Gästen zusätzlich Sicherheit gibt. Genau da kam das Stellar Trust Badge ins Spiel.",
+    website: "https://www.plau-lagoons.de"
+  },
+  {
+    company: "Favorent",
+    name: "Volker Rantz",
+    image: "/lovable-uploads/d7825600-e22b-4fa5-a960-fb33e4dd0d9d.png",
+    properties: 700,
+    joinedYear: 2024,
+    quote: "Die tägliche Gästeschadenversicherung ist für uns ein echter Gamechanger – sowohl als einzigartiges Verkaufsargument zur Gewinnung neuer Agenturkunden als auch zur Vereinfachung unserer Kautionsverwaltung.\n\nWir konnten die Reibungspunkte zwischen uns als Agentur, den Eigentümern und den Gästen erheblich reduzieren.",
+    website: "https://favorent.de/"
+  },
+  {
+    company: "Fairienglück",
+    name: "Christopher Redenz",
+    image: "/lovable-uploads/d642b640-6f64-4b66-a4d4-263a5d6f288c.png",
+    properties: 100,
+    joinedYear: 2024,
+    quote: "Für mich immer eine Herausforderung, Gäste von der Buchung direkt auf meiner Website zu überzeugen. Stellar hat das komplett verändert. Das Trust Badge gibt meinen potenziellen Gästen sofort das Vertrauen, das sie brauchen. Gleichzeitig bin ich auch bei Direktbuchungen und bei Booking.com z.B. voll abgesichert.\n\nDie Identitätsprüfung und die Möglichkeit, eine Gästeschadenversicherung anzubieten, haben meine Buchungssicherheit massiv erhöht.",
+    website: "https://www.fairienglueck.de/"
+  },
+  {
+    company: "Berlin Mitte Experience",
+    name: "Philipp Reuter",
+    image: "/lovable-uploads/321ff530-1491-4b9c-b977-7111d0710385.png",
+    properties: 2,
+    joinedYear: 2024,
+    quote: "Als Gastgeber mit mehreren Unterkünften in Berlin Mitte war der Verwaltungsaufwand für Kautionen und Gästeregistrierungen immer ein Zeitfresser. Mit Stellar Checkin habe ich diese Prozesse komplett digitalisiert und automatisiert.\n\nBesonders beeindruckt bin ich von der nahtlosen Integration mit unserem Property Management System und der Möglichkeit, Zusatzleistungen direkt im Check-in-Prozess zu verkaufen.",
+    website: "https://berlin-mitte.homes/de"
+  },
+  {
+    company: "Homeby",
+    name: "Ale Fiorotto",
+    image: "/lovable-uploads/b81e2a35-1a4a-4192-b141-6e5d7d8e3390.png",
+    properties: 100,
+    joinedYear: 2024,
+    quote: "Als Immobilienmanagement-Unternehmen mussten wir ständig zwischen verschiedenen Systemen wechseln. Stellar Checkin hat unsere gesamten Check-in-Prozesse vereinfacht und digitalisiert.\n\nDie Möglichkeit, Gästedaten automatisch zu erfassen, Versicherungen anzubieten und Zusatzleistungen zu verkaufen, hat unsere Effizienz und Umsätze deutlich gesteigert.",
+    website: "https://homeby.it"
+  }
+];
 
 const Erfolgsbeispiele = () => {
   return <>
