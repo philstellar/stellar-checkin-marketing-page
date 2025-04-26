@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
-import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
+import { Book, ShieldPlus, Clock, Wallet, UserCheck } from 'lucide-react';
 import Header from '../Header';
 import Footer from '../Footer';
 import InsurancePricing from './InsurancePricing';
@@ -86,6 +85,14 @@ const VersicherungPage: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <InsuranceDetails />
+        </div>
+      </section>
+
+      <section className="py-16 bg-white text-center">
+        <div className="container-custom">
+          <CTAButton className="bg-apple hover:bg-apple-600 text-white px-8 py-3 text-lg">
+            <UserCheck className="mr-2 h-5 w-5" /> {t('hero.cta')}
+          </CTAButton>
         </div>
       </section>
 
