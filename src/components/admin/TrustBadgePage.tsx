@@ -8,6 +8,7 @@ import CTAButton from '../CTAButton';
 import TrustBadgeFAQ from './TrustBadgeFAQ';
 import TrustBadgeCertificates from './TrustBadgeCertificates';
 import LogoCarouselAutoplay from '../LogoCarouselAutoplay';
+
 const testimonialLogos = [{
   src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
   alt: "Hof Liebeneck Osterspai",
@@ -37,6 +38,7 @@ const testimonialLogos = [{
   alt: "Fairienglück",
   width: 160
 }];
+
 const TrustBadgePage = () => {
   const {
     t
@@ -45,8 +47,7 @@ const TrustBadgePage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20 bg-white"></div>
+      <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
         <div className="container-custom relative z-10">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
