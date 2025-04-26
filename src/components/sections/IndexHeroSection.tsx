@@ -1,13 +1,17 @@
+
 import { UserCheck } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { useIsMobile } from "@/hooks/use-mobile";
-export function HeroSection() {
+
+export function IndexHeroSection() {
   const isMobile = useIsMobile();
   const {
     t
   } = useTranslation();
-  return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
+  
+  return (
+    <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-#0f266145 to-#0f266145-400/20 bg-white"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -45,5 +49,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
