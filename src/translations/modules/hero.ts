@@ -1,5 +1,4 @@
 
-// Main index hero translations
 export const heroDE = {
   headline1: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
   headline2: "",
