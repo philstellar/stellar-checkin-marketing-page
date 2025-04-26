@@ -42,6 +42,10 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
       navigate('/', { state: { scrollTo: sectionId } });
     } else {
       handleSectionClick(sectionId);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
     onClose();
   };
