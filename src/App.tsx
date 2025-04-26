@@ -59,7 +59,7 @@ const App = () => {
   return (
     <BrevoFormProvider>
       <Routes>
-        {/* Home routes for all languages */}
+        {/* Add the new home route before other routes */}
         <Route 
           path="/de/home" 
           element={
@@ -68,31 +68,7 @@ const App = () => {
             </Suspense>
           } 
         />
-        <Route 
-          path="/en/home" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <Home />
-            </Suspense>
-          } 
-        />
-        <Route 
-          path="/es/home" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <Home />
-            </Suspense>
-          } 
-        />
-        <Route 
-          path="/it/home" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <Home />
-            </Suspense>
-          } 
-        />
-
+        
         {/* Language-specific routes with consistent URL structure */}
         <Route path="/:lang?" element={<Index />} />
         <Route path="/:lang/legal/imprint" element={<Navigate to="/:lang/impressum" replace />} />

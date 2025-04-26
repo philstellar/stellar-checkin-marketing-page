@@ -15,14 +15,10 @@ const HeroSection = () => {
   return <section className="hero-section pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20 bg-white"></div>
       <div className="container-custom relative z-10">
-        <div className="grid md:grid-cols-[66.66%_auto] gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
-              Nahtloser Online Checkin
-              <br />
-              Eingebauter Versicherungs-Schutz
-              <br />
-              Ultimativer Trust Badge
+              Nahtloser Online Checkin. Eingebauter Versicherungs-Schutz. Trust Badge
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               Die ultimative 360 Grad Lösung für Vertrauen und Sicherheit
