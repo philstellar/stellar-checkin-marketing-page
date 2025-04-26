@@ -4,7 +4,8 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
-const PricingSection = () => {
+
+export function PricingSection() {
   const {
     t
   } = useTranslation();
@@ -23,11 +24,13 @@ const PricingSection = () => {
       });
     }
   };
-  return <section id="preise" className="section-padding bg-white">
-      <div className="container-custom">
+
+  return (
+    <section className="section-padding">
+      <div className="container-custom max-w-[90rem] mx-auto">
         <HeadingWithLine title={t('pricing.title')} subtitle={t('pricing.subtitle')} align="center" />
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Basic Plan */}
           <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow bg-white">
             <h3 className="text-2xl font-bold text-center text-royal mb-6">{t('pricing.basic.title')}</h3>
@@ -175,6 +178,6 @@ const PricingSection = () => {
           
         </div>
       </div>
-    </section>;
-};
-export default PricingSection;
+    </section>
+  );
+}
