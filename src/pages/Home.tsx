@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import HeroSection from '@/components/home/HeroSection';
+import { HeroSection } from '@/components/sections/HeroSection';
 import ProductsSection from '@/components/home/ProductsSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
 import CTASection from '@/components/home/CTASection';
