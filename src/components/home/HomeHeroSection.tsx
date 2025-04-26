@@ -11,7 +11,11 @@ const HomeHeroSection = () => {
         <div className="grid md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-9">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
-              Nahtloser Online Checkin. Eingebauter Versicherungs-Schutz. Trust Badge
+              Nahtloser Online Checkin.{' '}
+              <br />
+              Eingebauter Versicherungs-Schutz.{' '}
+              <br />
+              Trust Badge
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               360-Grad-Vertrauen für Ihre Ferienunterkunft
