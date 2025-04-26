@@ -6,16 +6,20 @@ import { useTranslation } from '@/hooks/use-translation';
 
 const HeroSection = () => {
   const { t } = useTranslation();
+  
+  // Get the title and replace the keywords with styled spans
+  const formattedTitle = t('insurance.title').replace('Versicherung', '<span class="text-apple">Versicherung</span>').replace('Kaution', '<span class="text-apple">Kaution</span>');
+  
   return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" style={{
-            contentVisibility: 'auto'
-          }}>
-              {t('insurance.title').replace('Versicherung', '<span class="text-apple">Versicherung</span>').replace('Kaution', '<span class="text-apple">Kaution</span>')}
-            </h1>
+            <h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" 
+              style={{ contentVisibility: 'auto' }}
+              dangerouslySetInnerHTML={{ __html: formattedTitle }}
+            />
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               Bieten Sie Ihren Gästen <span className="text-apple">optional</span> eine <span className="text-apple">Versicherung</span> an und profitieren Sie von zusätzlichen Einnahmen.
             </p>
