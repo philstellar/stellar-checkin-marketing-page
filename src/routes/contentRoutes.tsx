@@ -16,7 +16,7 @@ const Brevo = lazy(() => import('@/pages/Brevo'));
 const Home = lazy(() => import('@/pages/Home'));
 
 export const ContentRoutes = () => (
-  <React.Fragment>
+  <>
     {/* Home routes */}
     <Route path="/de/home" element={<Home />} />
     
@@ -38,6 +38,5 @@ export const ContentRoutes = () => (
     <Route path="/en/brevo" element={<Brevo />} />
     <Route path="/it/brevo" element={<Brevo />} />
     <Route path="/es/brevo" element={<Brevo />} />
-  </React.Fragment>
+  </>
 );
-

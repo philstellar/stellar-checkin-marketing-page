@@ -7,7 +7,7 @@ const VersicherungPage = lazy(() => import('@/components/admin/VersicherungPage'
 const TrustBadgePage = lazy(() => import('@/components/admin/TrustBadgePage'));
 
 export const ProductRoutes = () => (
-  <React.Fragment>
+  <>
     {/* Insurance routes */}
     <Route path="/de/versicherung" element={<VersicherungPage />} />
     <Route path="/en/insurance" element={<VersicherungPage />} />
@@ -24,6 +24,5 @@ export const ProductRoutes = () => (
     <Route path="/en/trust-badge" element={<TrustBadgePage />} />
     <Route path="/it/trust-badge" element={<TrustBadgePage />} />
     <Route path="/es/trust-badge" element={<TrustBadgePage />} />
-  </React.Fragment>
+  </>
 );
-

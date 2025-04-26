@@ -19,26 +19,30 @@ const App = () => {
   return (
     <BrevoFormProvider>
       <Routes>
+        {/* Home route */}
         <Route path="/:lang?" element={<Index />} />
         
-        <Suspense fallback={<PageLoader />}>
-          {/* Group route components properly */}
-          <Route>
-            <Route
-              path="/*"
-              element={
-                <>
-                  <LegalRoutes />
-                  <ProductRoutes />
-                  <ContentRoutes />
-                </>
-              }
-            />
-            
-            {/* Catch-all for 404 */}
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Suspense>
+        {/* All other routes wrapped in Suspense */}
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                {/* Legal routes */}
+                <Route path="/*" element={<LegalRoutes />} />
+                
+                {/* Product routes */}
+                <Route path="/*" element={<ProductRoutes />} />
+                
+                {/* Content routes */}
+                <Route path="/*" element={<ContentRoutes />} />
+                
+                {/* Catch-all for 404 */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          }
+        />
       </Routes>
       <BrevoFormPopupWrapper />
       <CookieBanner />

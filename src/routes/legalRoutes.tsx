@@ -19,7 +19,7 @@ const AgbES = lazy(() => import('@/pages/legal/AgbES'));
 const AgbIT = lazy(() => import('@/pages/legal/AgbIT'));
 
 export const LegalRoutes = () => (
-  <React.Fragment>
+  <>
     {/* Legal redirects */}
     <Route path="/:lang/legal/imprint" element={<Navigate to="/:lang/impressum" replace />} />
     <Route path="/:lang/legal/privacy" element={<Navigate to="/:lang/datenschutz" replace />} />
@@ -44,6 +44,5 @@ export const LegalRoutes = () => (
     <Route path="/es/impressum" element={<ImpressumES />} />
     <Route path="/es/datenschutz" element={<DatenschutzES />} />
     <Route path="/es/agb" element={<AgbES />} />
-  </React.Fragment>
+  </>
 );
-
