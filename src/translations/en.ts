@@ -36,5 +36,14 @@ export const en = {
   integration: integrationEN,
   settings: settingsEN,
   pricing: pricingEN,
-  contact: contactEN
+  contact: contactEN,
+  footer: {
+    legal: "Legal",
+    imprint: "Imprint",
+    privacy: "Privacy Policy",
+    terms: "Terms and Conditions",
+    copyright: "All rights reserved.",
+    tagline: "Streamline your guest management with Stellar's innovative solutions."
+  }
 };
+
