@@ -1,4 +1,3 @@
-
 import { navigationDE } from './modules/navigation';
 import { heroDE } from './modules/hero';
 import { featuresDE } from './modules/features';
@@ -91,7 +90,7 @@ export const de = {
     formEmail: "E-Mail",
     formCompany: "Unternehmen",
     formMessage: "Nachricht",
-    formPrivacy: "Ich habe die <link>Datenschutzerklärung</link> gelesen und akzeptiert",
+    formPrivacy: "Ich habe die Datenschutzerklärung gelesen und akzeptiert",
     formSend: "Nachricht senden",
     formSending: "Wird gesendet...",
     success: "Nachricht gesendet!",
