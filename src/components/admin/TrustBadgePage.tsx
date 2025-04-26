@@ -46,9 +46,9 @@ const TrustBadgePage = () => {
       
       {/* Hero Section */}
       <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
-        <div className="bg-white"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20 bg-white"></div>
         <div className="container-custom relative z-10">
-          <div className="bg-white">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
                 {t('trustBadge.headline1')}
