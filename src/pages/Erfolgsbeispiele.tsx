@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Award, Star, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
@@ -103,7 +104,7 @@ const testimonials = [
   {
     company: "Homeby",
     name: "Elena Müller",
-    image: "/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png",
+    image: "/lovable-uploads/3618ba00-f35f-4fc2-b6a9-cfa131269ebb.png", // Updated image URL
     rating: 5.0,
     ratings: 18,
     properties: 12,
