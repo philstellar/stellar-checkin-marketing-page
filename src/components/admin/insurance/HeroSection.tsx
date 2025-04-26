@@ -19,7 +19,7 @@ const HeroSection = () => {
               {t('insurance.title')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-              Bieten Sie Ihren Gästen eine Versicherung an, dediziert gegen Gästeschäden und profitieren Sie von zusätzlichen Einnahmen. Oder schließen Sie diese pro Nacht selber ab, keine Verpflichtungen.
+              Bieten Sie Ihren Gästen <span className="text-apple">optional</span> eine <span className="text-apple">Versicherung</span> an und profitieren Sie von zusätzlichen Einnahmen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
