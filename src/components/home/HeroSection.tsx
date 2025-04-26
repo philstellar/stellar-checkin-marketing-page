@@ -18,12 +18,7 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
-              Rundum abgesichert:{' '}&nbsp;&nbsp;
-              Vertrauen schaffen
-              <br />
-              Schäden vermeiden
-              <br />
-              Checkin automatisieren
+              Nahtloser Online Checkin. Eingebauter Versicherungs-Schutz. Trust Badge
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               Die ultimative 360 Grad Lösung für Vertrauen und Sicherheit
@@ -54,3 +49,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
