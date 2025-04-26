@@ -9,6 +9,9 @@ import { LanguageDetectionDialog } from './components/LanguageDetectionDialog';
 // Import Index directly to avoid potential circular dependency issues
 import Index from './pages/Index';
 
+// Import Home directly to avoid dynamic loading issues
+import Home from './pages/Home';
+
 // Lazy load all pages for better initial load performance
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Impressum = lazy(() => import('./pages/Impressum'));
@@ -33,10 +36,7 @@ const AgbEN = lazy(() => import('./pages/legal/AgbEN'));
 const AgbES = lazy(() => import('./pages/legal/AgbES'));
 const AgbIT = lazy(() => import('./pages/legal/AgbIT'));
 
-// Lazy load the new Home page
-const Home = lazy(() => import('./pages/Home'));
-
-// Lazy load the new About & Success Stories pages for EN, IT, ES
+// Lazy load the About & Success Stories pages for EN, IT, ES
 const AboutUsEN = lazy(() => import('./pages/ueber-uns/AboutUsEN'));
 const AboutUsIT = lazy(() => import('./pages/ueber-uns/AboutUsIT'));
 const AboutUsES = lazy(() => import('./pages/ueber-uns/AboutUsES'));
@@ -62,11 +62,7 @@ const App = () => {
         {/* Add home routes for all languages */}
         <Route 
           path="/:lang/home" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <Home />
-            </Suspense>
-          } 
+          element={<Home />} 
         />
         
         {/* Language-specific routes with consistent URL structure */}

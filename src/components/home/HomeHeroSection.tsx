@@ -4,7 +4,7 @@ import { UserCheck, ShieldCheck, BadgeCheck } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 
-const HomeHeroSection = () => {
+const HomeHeroSection: React.FC = () => {
   const { t } = useTranslation();
   
   return (

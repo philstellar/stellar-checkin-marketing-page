@@ -1,20 +1,20 @@
 
 export const homeHeroDE = {
-  headline: "Nahtloser Online Checkin\nEingebauter Versicherungs-Schutz\nUltimativer Trust Badge",
-  subheadline: "360-Grad-Vertrauen für Ihre Ferienunterkunft"
+  headline: "Die moderne Plattform für effizientes Gästemanagement",
+  subheadline: "Automatisieren Sie den Gäste-Check-in und steigern Sie Ihre Effizienz mit unserer digitalen Komplettlösung."
 };
 
 export const homeHeroEN = {
-  headline: "Seamless Check-in\nBuilt-in Protection\nUltimate Trust Badge",
-  subheadline: "360-Degree Trust for Your Vacation Rental"
+  headline: "The Modern Platform for Efficient Guest Management",
+  subheadline: "Automate guest check-in and increase your efficiency with our complete digital solution."
 };
 
 export const homeHeroIT = {
-  headline: "Check-in Online Senza Interruzioni\nProtezione Integrata\nBadge di Fiducia Definitivo",
-  subheadline: "Fiducia a 360 Gradi per il Tuo Alloggio Vacanze"
+  headline: "La Piattaforma Moderna per una Gestione Efficiente degli Ospiti",
+  subheadline: "Automatizza il check-in degli ospiti e aumenta la tua efficienza con la nostra soluzione digitale completa."
 };
 
 export const homeHeroES = {
-  headline: "Check-in En Línea Perfecto\nProtección Incorporada\nSello de Confianza Definitivo",
-  subheadline: "Confianza 360 Grados para Su Alojamiento Vacacional"
+  headline: "La Plataforma Moderna para una Gestión Eficiente de Huéspedes",
+  subheadline: "Automatice el check-in de los huéspedes y aumente su eficiencia con nuestra solución digital completa."
 };
