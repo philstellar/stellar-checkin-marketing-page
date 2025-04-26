@@ -1,29 +1,18 @@
 
 export const zusatzservicesEN = {
-  title: "Additional Services",
-  subtitle: "Offer your guests additional services and generate extra revenue",
-  benefits: {
-    title: "Benefits",
-    revenue: "Additional revenue stream",
-    experience: "Enhanced guest experience",
-    automation: "Fully automated process"
+  title: "Additional Services and Upselling",
+  subtitle: "Boost your revenue and enhance guest experience",
+  additionalServices: {
+    title: "Customizable Additional Services",
+    description: "Offer personalized extras that guests can book before arrival, increasing your revenue and guest satisfaction."
   },
-  services: {
-    title: "Popular Services",
-    breakfast: "Breakfast",
-    cleaning: "Mid-stay cleaning",
-    airport: "Airport transfer",
-    pets: "Pet accommodation",
-    late: "Late check-out",
-    early: "Early check-in",
-    baby: "Baby equipment",
-    bike: "Bike rental"
+  payment: {
+    title: "Flexible Payment Options",
+    description: "Seamless integrated payment processing for all additional services, making booking and paying simple for guests."
   },
-  management: {
-    title: "Service Management",
-    add: "Add new services",
-    pricing: "Set your own prices",
-    availability: "Manage availability"
+  revenue: {
+    title: "Maximize Your Revenue",
+    description: "Increase your property's profitability by offering targeted and attractive additional services."
   },
-  cta: "Start Offering Services"
+  cta: "Explore Additional Services"
 };
