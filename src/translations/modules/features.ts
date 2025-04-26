@@ -12,7 +12,8 @@ export const featuresDE = {
     description: "Schützen Sie Ihre Daten und die Ihrer Gäste mit modernsten Sicherheitsstandards."
   },
   title: "Your wins",
-  subtitle: "Verbessern Sie das Gästeerlebnis vor der Anreise und steigern Sie Ihren Umsatz"
+  subtitle: "Verbessern Sie das Gästeerlebnis vor der Anreise und steigern Sie Ihren Umsatz",
+  moreBtn: "Mehr erfahren"
 };
 
 export const featuresEN = {
