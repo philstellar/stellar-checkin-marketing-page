@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import CTAButton from '@/components/CTAButton';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
+import { useTranslation } from "@/hooks/use-translation";
 
 const CTASection = () => {
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const { t } = useTranslation();
   
   const handleNavigation = (path: string) => {
     navigate(`/${language}/${path}`);
@@ -20,11 +22,11 @@ const CTASection = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-royal font-aeonik relative inline-block">
-            Warum Stellar?
+            {t('stellar.why')}
             <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-24 bg-apple rounded-full"></span>
           </h2>
           <p className="text-lg text-royal-700 mb-8 font-aeonik">
-            Unsere ganzheitliche Lösung verbindet digitalen Check-in, Versicherungsschutz und Vertrauenssiegel zu einem nahtlosen Erlebnis für Sie und Ihre Gäste.
+            {t('stellar.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CTAButton 
@@ -32,7 +34,7 @@ const CTASection = () => {
               size="lg"
               className="font-aeonik bg-apple text-white hover:bg-apple-600"
             >
-              Jetzt Registrieren <ArrowRight className="ml-2 h-4 w-4" />
+              {t('stellar.registerNow')} <ArrowRight className="ml-2 h-4 w-4" />
             </CTAButton>
             <Button 
               variant="outline"
@@ -41,7 +43,7 @@ const CTASection = () => {
               className="font-aeonik"
             >
               <span className="flex items-center">
-                Über uns <ArrowRight className="ml-2 h-4 w-4" />
+                {t('stellar.aboutUs')} <ArrowRight className="ml-2 h-4 w-4" />
               </span>
             </Button>
           </div>
