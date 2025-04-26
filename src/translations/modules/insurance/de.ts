@@ -1,6 +1,21 @@
 export const insuranceDE = {
   title: "Versicherung und Kaution clever automatisieren",
+  subtitle: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
   introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
+  overview: {
+    process: {
+      title: "Einfacher und sicherer Prozess",
+      description: "Optimierte Versicherungs- und Kautionsverwaltung, die Sicherheit für Gastgeber und Gäste gewährleistet."
+    },
+    income: {
+      title: "Schützen Sie Ihre Mieteinnahmen",
+      description: "Sichern Sie Ihr Eigentum gegen mögliche Schäden und Mietausfälle."
+    },
+    protection: {
+      title: "Umfassender Schutz",
+      description: "Umfassende Versicherung, die Sachschäden, Haftung und unerwartete Vorfälle abdeckt."
+    }
+  },
   section1: {
     title: "Warum eine Versicherung?",
     content: "Unsere Versicherung schützt vor Schäden, die durch Gäste, deren Begleitpersonen oder Haustiere verursacht werden. 90% der Gäste wählen unsere Versicherung - für ein sicheres Gefühl auf beiden Seiten."
