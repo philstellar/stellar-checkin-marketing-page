@@ -1,4 +1,3 @@
-
 import { UserCheck } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
@@ -6,9 +5,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 export function IndexHeroSection() {
   const isMobile = useIsMobile();
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
   
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
@@ -16,12 +13,8 @@ export function IndexHeroSection() {
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik whitespace-pre-line">
               {t('hero.headline1')}
-              <span style={{
-              color: '#0f2661'
-            }}>{t('hero.headline2')}</span>
-              {t('hero.headline3')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('hero.subheadline')}<br /><br />
