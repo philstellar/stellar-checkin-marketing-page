@@ -1,4 +1,3 @@
-
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -18,7 +17,6 @@ const DesktopNav = ({
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
 
-  // Always show Home/Trust Badge except production
   const isProduction = window.location.hostname === 'stellar-checkin.com';
 
   const handleNavigation = (path: string) => {
@@ -49,16 +47,25 @@ const DesktopNav = ({
     document.head.appendChild(link);
   };
 
+  const renderBoldText = (text: string) => {
+    const cleanText = text.replace(/\*\*/g, '');
+    
+    if (text !== cleanText) {
+      return <strong className="text-apple">{cleanText}</strong>;
+    }
+    
+    return cleanText;
+  };
+
   return (
     <nav className="hidden md:flex items-center space-x-8">
-      {/* Show Home in non-production */}
       {!isProduction && (
         <button
           onClick={() => handleNavigation('home')}
           onMouseEnter={() => handleMouseEnter('home')}
           className="text-royal hover:text-apple font-medium transition-colors"
         >
-          {t('navigation.home')}
+          {renderBoldText(t('navigation.home'))}
         </button>
       )}
 
@@ -67,7 +74,7 @@ const DesktopNav = ({
           onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
           className="text-royal hover:text-apple font-medium transition-colors"
         >
-          {t('navigation.features')}
+          {renderBoldText(t('navigation.features'))}
         </button>
         
         <DropdownMenu>
@@ -119,17 +126,16 @@ const DesktopNav = ({
         onMouseEnter={() => handleMouseEnter('versicherung')} 
         className="text-royal hover:text-apple font-medium transition-colors"
       >
-        {t('navigation.insurance')}
+        {renderBoldText(t('navigation.insurance'))}
       </button>
 
-      {/* Show Trust Badge in non-production */}
       {!isProduction && (
         <button
           onClick={() => handleNavigation('trust-badge')}
           onMouseEnter={() => handleMouseEnter('trust-badge')}
           className="text-royal hover:text-apple font-medium transition-colors"
         >
-          {t('navigation.trustBadge')}
+          {renderBoldText(t('navigation.trustBadge'))}
         </button>
       )}
 

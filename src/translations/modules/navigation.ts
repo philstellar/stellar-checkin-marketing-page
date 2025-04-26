@@ -1,6 +1,6 @@
 export const navigationDE = {
   home: "Home",
-  features: "Check-in",
+  features: "**Check-in**",
   pricing: "Preise",
   contact: "Kontakt",
   register: "Jetzt Registrieren",
@@ -8,8 +8,8 @@ export const navigationDE = {
   imprint: "Impressum", 
   privacyPolicy: "Datenschutz",
   termsAndConditions: "AGB",
-  insurance: "Versicherung",
-  trustBadge: "Trust Badge",
+  insurance: "**Versicherung**",
+  trustBadge: "**Trust Badge**",
   aboutStellar: "Über uns",
   aboutUs: "Über uns",
   successStories: "Erfolgsbeispiele",
@@ -18,7 +18,7 @@ export const navigationDE = {
 
 export const navigationEN = {
   home: "Home",
-  features: "Check-in",
+  features: "**Check-in**",
   pricing: "Pricing",
   contact: "Contact", 
   register: "Register Now",
@@ -26,8 +26,8 @@ export const navigationEN = {
   imprint: "Imprint",
   privacyPolicy: "Privacy Policy", 
   termsAndConditions: "Terms and Conditions",
-  insurance: "Insurance",
-  trustBadge: "Trust Badge",
+  insurance: "**Versicherung**",
+  trustBadge: "**Trust Badge**",
   aboutStellar: "About Us",
   aboutUs: "About Us",
   successStories: "Success Stories",
@@ -36,7 +36,7 @@ export const navigationEN = {
 
 export const navigationIT = {
   home: "Home",
-  features: "Check-in",
+  features: "**Check-in**",
   pricing: "Prezzi",
   contact: "Contatti",
   register: "Registrati Ora",
@@ -44,8 +44,8 @@ export const navigationIT = {
   imprint: "Impressum",
   privacyPolicy: "Informativa sulla Privacy", 
   termsAndConditions: "Termini e Condizioni",
-  insurance: "Assicurazione",
-  trustBadge: "Trust Badge",
+  insurance: "**Versicherung**",
+  trustBadge: "**Trust Badge**",
   aboutStellar: "Chi Siamo",
   aboutUs: "Chi Siamo",
   successStories: "Storie di Successo",
@@ -54,7 +54,7 @@ export const navigationIT = {
 
 export const navigationES = {
   home: "Home", 
-  features: "Check-in",
+  features: "**Check-in**",
   pricing: "Precios",
   contact: "Contacto",
   register: "Registrarse Ahora",
@@ -62,8 +62,8 @@ export const navigationES = {
   imprint: "Aviso Legal",
   privacyPolicy: "Política de Privacidad", 
   termsAndConditions: "Términos y Condiciones",
-  insurance: "Seguro",
-  trustBadge: "Trust Badge",
+  insurance: "**Versicherung**",
+  trustBadge: "**Trust Badge**",
   aboutStellar: "Sobre Nosotros",
   aboutUs: "Sobre Nosotros",
   successStories: "Historias de Éxito",
