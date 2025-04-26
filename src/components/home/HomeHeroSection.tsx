@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { UserCheck, ShieldCheck, BadgeCheck } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
@@ -15,7 +14,7 @@ const HomeHeroSection = () => {
               <br />
               Eingebauter Versicherungs-Schutz.{' '}
               <br />
-              Trust Badge
+              Ultimativer Trust Badge
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               360-Grad-Vertrauen für Ihre Ferienunterkunft
