@@ -22,6 +22,7 @@ const App = () => {
         <Route path="/:lang?" element={<Index />} />
         
         <Suspense fallback={<PageLoader />}>
+          {/* Use the route components */}
           <LegalRoutes />
           <ProductRoutes />
           <ContentRoutes />
