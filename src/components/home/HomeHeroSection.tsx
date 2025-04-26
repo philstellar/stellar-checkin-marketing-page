@@ -8,8 +8,8 @@ const HomeHeroSection = () => {
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-white"></div>
       <div className="container-custom relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
+        <div className="grid md:grid-cols-12 gap-8 items-center">
+          <div className="md:col-span-9">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
               Nahtloser Online Checkin. Eingebauter Versicherungs-Schutz. Trust Badge
             </h1>
@@ -32,7 +32,7 @@ const HomeHeroSection = () => {
               </p>
             </div>
           </div>
-          <div className="order-1 md:order-last flex justify-center">
+          <div className="order-1 md:order-last md:col-span-3 flex justify-center">
             {/* Right side intentionally left empty - screenshot removed as requested */}
           </div>
         </div>
@@ -42,4 +42,3 @@ const HomeHeroSection = () => {
 };
 
 export default HomeHeroSection;
-
