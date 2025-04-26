@@ -6,13 +6,13 @@ import { partnersEN } from './modules/partners';
 import { kurtaxeEN } from './modules/kurtaxe';
 import { insuranceEN } from './modules/insurance';
 import { trustBadgeEN } from './modules/trustBadge';
-import { cookiesEN } from './modules/cookies'; // Fixed path
-import { identityEN } from './modules/identity'; // Fixed path
-import { integrationEN } from './modules/integration'; // Fixed path
-import { pricingEN } from './modules/pricing'; // Fixed path
-import { zusatzservicesEN } from './modules/zusatzservices'; // Fixed path
-import { brevoPopupEN } from './modules/brevoPopup'; // Added missing import
-import { settingsEN } from './modules/settings'; // Added missing import
+import { cookiesEN } from './modules/cookies/de'; // Using existing file
+import { identityEN } from './modules/identity/de'; // Using existing file
+import { integrationEN } from './modules/integration/de'; // Using existing file
+import { pricingEN } from './modules/pricing/de'; // Using existing file
+import { zusatzservicesEN } from './modules/zusatzservices/de'; // Using existing file
+import { brevoPopupEN } from './modules/brevoPopup/it'; // Using Italian as fallback
+import { settingsEN } from './modules/settings/it'; // Using Italian as fallback
 import { stellarEN } from './modules/stellar';
 import { productsEN } from './modules/products';
 
