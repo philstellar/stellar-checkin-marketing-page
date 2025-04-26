@@ -7,6 +7,7 @@ import ProductsSection from '@/components/home/ProductsSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
 import CTASection from '@/components/home/CTASection';
 import LogoCarouselAutoplay from '@/components/LogoCarouselAutoplay';
+import { useTranslation } from "@/hooks/use-translation";
 
 const testimonialLogos = [{
   src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
@@ -47,6 +48,8 @@ const testimonialLogos = [{
 }];
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

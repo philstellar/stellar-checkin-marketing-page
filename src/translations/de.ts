@@ -1,3 +1,4 @@
+
 import { navigationDE } from './modules/navigation';
 import { heroDE } from './modules/hero';
 import { featuresDE } from './modules/features';
@@ -10,6 +11,8 @@ import { identityDE } from './modules/identity/de';
 import { integrationDE } from './modules/integration/de';
 import { pricingDE } from './modules/pricing/de';
 import { zusatzservicesDE } from './modules/zusatzservices/de';
+import { stellarDE } from './modules/stellar';
+import { productsDE } from './modules/products';
 
 export const de = {
   // Header
@@ -21,6 +24,12 @@ export const de = {
   // Features
   features: featuresDE,
 
+  // Products
+  products: productsDE,
+
+  // Stellar section
+  stellar: stellarDE,
+  
   // Partners Section
   partners: partnersDE,
 

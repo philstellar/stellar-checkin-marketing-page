@@ -14,11 +14,15 @@ import { integrationIT } from './modules/integration/it';
 import { settingsIT } from './modules/settings/it';
 import { pricingIT } from './modules/pricing/it';
 import { contactIT } from './modules/contact/it';
+import { stellarIT } from './modules/stellar';
+import { productsIT } from './modules/products';
 
 export const it = {
   navigation: navigationIT,
   hero: heroIT,
   features: featuresIT,
+  products: productsIT,
+  stellar: stellarIT,
   partners: partnersIT,
   kurtaxe: kurtaxeIT,
   insurance: insuranceIT,

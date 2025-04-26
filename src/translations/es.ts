@@ -11,6 +11,8 @@ import { identityES } from './modules/identity/es';
 import { integrationES } from './modules/integration/es';
 import { pricingES } from './modules/pricing/es';
 import { zusatzservicesES } from './modules/zusatzservices/es';
+import { stellarES } from './modules/stellar';
+import { productsES } from './modules/products';
 
 export const es = {
   // Header
@@ -21,6 +23,12 @@ export const es = {
   
   // Features
   features: featuresES,
+
+  // Products
+  products: productsES,
+
+  // Stellar section
+  stellar: stellarES,
 
   // Partners Section
   partners: partnersES,
