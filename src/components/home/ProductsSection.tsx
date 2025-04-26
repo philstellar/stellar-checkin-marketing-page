@@ -1,5 +1,5 @@
 
-import { Shield, CalendarCheck, Award, ArrowRight } from 'lucide-react';
+import { UserCheck, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,21 +9,21 @@ const products = [
   {
     title: 'Online Check-in',
     description: 'Digitalisieren Sie Ihren Check-in-Prozess – schnell, sicher und papierlos. Mit zusätzlichen Funktionen wie Kurtaxe und Zusatzleistungen.',
-    icon: CalendarCheck,
+    icon: UserCheck,
     path: '/',
     color: 'bg-apple'
   },
   {
     title: 'Versicherung',
     description: 'Automatisieren Sie die Kautionsabwicklung und bieten Sie Ihren Gästen eine clevere Versicherungslösung als Alternative.',
-    icon: Shield,
+    icon: ShieldCheck,
     path: '/de/versicherung',
     color: 'bg-royal'
   },
   {
     title: 'Trust Badge',
     description: 'Steigern Sie das Vertrauen Ihrer Gäste mit dem Stellar Trust Badge – Ihr Qualitätssiegel für geprüfte Unterkünfte.',
-    icon: Award,
+    icon: BadgeCheck,
     path: '/de/trust-badge',
     color: 'bg-floral'
   }
