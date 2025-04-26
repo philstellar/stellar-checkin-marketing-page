@@ -1,6 +1,6 @@
-
 import { navigationIT } from './modules/navigation';
 import { heroIT } from './modules/hero';
+import { homeHeroIT } from './modules/homeHero';
 import { featuresIT } from './modules/features/it';
 import { partnersIT } from './modules/partners';
 import { kurtaxeIT } from './modules/kurtaxe';
@@ -20,6 +20,7 @@ import { productsIT } from './modules/products';
 export const it = {
   navigation: navigationIT,
   hero: heroIT,
+  homeHero: homeHeroIT,
   features: featuresIT,
   products: productsIT,
   stellar: stellarIT,

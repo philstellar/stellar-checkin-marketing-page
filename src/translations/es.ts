@@ -1,4 +1,3 @@
-
 import { navigationES } from './modules/navigation';
 import { heroES } from './modules/hero';
 import { featuresES } from './modules/features';
@@ -13,6 +12,7 @@ import { pricingES } from './modules/pricing/es';
 import { zusatzservicesES } from './modules/zusatzservices/es';
 import { stellarES } from './modules/stellar';
 import { productsES } from './modules/products';
+import { homeHeroES } from './modules/homeHero';
 
 export const es = {
   // Header
@@ -20,6 +20,9 @@ export const es = {
   
   // Hero
   hero: heroES,
+  
+  // HomeHero
+  homeHero: homeHeroES,
   
   // Features
   features: featuresES,

@@ -1,6 +1,6 @@
-
 import { navigationEN } from './modules/navigation';
 import { heroEN } from './modules/hero';
+import { homeHeroEN } from './modules/homeHero';
 import { featuresEN } from './modules/features';
 import { partnersEN } from './modules/partners';
 import { kurtaxeEN } from './modules/kurtaxe';
@@ -19,6 +19,7 @@ import { productsEN } from './modules/products';
 export const en = {
   navigation: navigationEN,
   hero: heroEN,
+  homeHero: homeHeroEN,
   features: featuresEN,
   products: productsEN,
   stellar: stellarEN,

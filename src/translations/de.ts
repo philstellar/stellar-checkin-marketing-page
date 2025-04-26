@@ -1,6 +1,6 @@
-
 import { navigationDE } from './modules/navigation';
 import { heroDE } from './modules/hero';
+import { homeHeroDE } from './modules/homeHero';
 import { featuresDE } from './modules/features';
 import { partnersDE } from './modules/partners';
 import { kurtaxeDE } from './modules/kurtaxe';
