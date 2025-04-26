@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { UserCheck } from 'lucide-react';
-import CTAButton from '../../CTAButton';
+import CTAButton from '../../../components/CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
+
 const HeroSection = () => {
   const {
     t
@@ -17,7 +19,7 @@ const HeroSection = () => {
               {t('insurance.title')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-              {t('insurance.introduction')}
+              Bieten Sie Ihren Gästen eine Versicherung an, dediziert gegen Gästeschäden und profitieren Sie von zusätzlichen Einnahmen. Oder schließen Sie diese pro Nacht selber ab, keine Verpflichtungen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
