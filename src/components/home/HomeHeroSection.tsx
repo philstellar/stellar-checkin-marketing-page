@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { UserCheck, ShieldCheck, BadgeCheck } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
@@ -32,14 +33,14 @@ const HomeHeroSection = () => {
             </div>
           </div>
           <div className="order-1 md:order-last md:col-span-3 flex flex-col gap-8 justify-center items-center">
-            <div className="w-16 h-16 rounded-full bg-apple/10 flex items-center justify-center">
-              <UserCheck className="w-8 h-8 text-apple" />
+            <div className="w-20 h-20 rounded-full bg-apple/10 flex items-center justify-center">
+              <UserCheck className="w-10 h-10 text-apple" />
             </div>
-            <div className="w-16 h-16 rounded-full bg-apple/10 flex items-center justify-center">
-              <ShieldCheck className="w-8 h-8 text-apple" />
+            <div className="w-20 h-20 rounded-full bg-apple/10 flex items-center justify-center">
+              <ShieldCheck className="w-10 h-10 text-apple" />
             </div>
-            <div className="w-16 h-16 rounded-full bg-apple/10 flex items-center justify-center">
-              <BadgeCheck className="w-8 h-8 text-apple" />
+            <div className="w-20 h-20 rounded-full bg-apple/10 flex items-center justify-center">
+              <BadgeCheck className="w-10 h-10 text-apple" />
             </div>
           </div>
         </div>
