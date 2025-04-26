@@ -22,13 +22,22 @@ const App = () => {
         <Route path="/:lang?" element={<Index />} />
         
         <Suspense fallback={<PageLoader />}>
-          {/* Use the route components */}
-          <LegalRoutes />
-          <ProductRoutes />
-          <ContentRoutes />
-          
-          {/* Catch-all for 404 */}
-          <Route path="*" element={<NotFound />} />
+          {/* Group route components properly */}
+          <Route>
+            <Route
+              path="/*"
+              element={
+                <>
+                  <LegalRoutes />
+                  <ProductRoutes />
+                  <ContentRoutes />
+                </>
+              }
+            />
+            
+            {/* Catch-all for 404 */}
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Suspense>
       </Routes>
       <BrevoFormPopupWrapper />
