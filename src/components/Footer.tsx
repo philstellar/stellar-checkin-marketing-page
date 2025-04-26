@@ -38,10 +38,21 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    const href = e.currentTarget.getAttribute('href');
+    if (href?.startsWith('#')) {
+      e.preventDefault();
+      const sectionId = href.substring(1);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/', {
+          state: { scrollTo: sectionId }
+        });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const about = aboutRoutes[language] || aboutRoutes.de;

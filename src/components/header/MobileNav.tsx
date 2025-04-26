@@ -1,4 +1,3 @@
-
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -31,7 +30,6 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
 
-  // Add back the handleNavigation function
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -45,9 +43,8 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
           scrollTo: sectionId 
         } 
       });
-    } else {
-      handleSectionClick(sectionId);
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     onClose();
   };
 
@@ -89,7 +86,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               </button>
 
               <button 
-                onClick={() => handleSectionNavigation('gaeste-voranmeldung')}
+                onClick={() => handleNavigation('')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.features')}

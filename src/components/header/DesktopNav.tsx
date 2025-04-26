@@ -10,19 +10,14 @@ type DesktopNavProps = {
   handleSectionClick: (sectionId: string) => void;
 };
 
-const DesktopNav = ({
-  handleSectionClick
-}: DesktopNavProps) => {
+const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSectionNavigation = (sectionId: string) => {
@@ -32,9 +27,8 @@ const DesktopNav = ({
           scrollTo: sectionId
         }
       });
-    } else {
-      handleSectionClick(sectionId);
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleMouseEnter = (path: string) => {
@@ -67,7 +61,7 @@ const DesktopNav = ({
 
       <div className="flex items-center space-x-1">
         <button 
-          onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
+          onClick={() => handleNavigation('')} 
           className="text-royal hover:text-apple font-medium transition-colors"
         >
           {renderBoldText(t('navigation.features'))}
