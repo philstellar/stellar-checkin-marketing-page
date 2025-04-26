@@ -1,3 +1,4 @@
+
 export const homeHeroDE = {
   headline: "Stellar Check-in\nVerbessern Sie das Gästeerlebnis vor der Anreise\nund steigern Sie Ihren Umsatz",
   subheadline: "360-Grad-Vertrauen für Ihre Ferienunterkunft"

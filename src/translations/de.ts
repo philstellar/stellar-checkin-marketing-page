@@ -1,3 +1,4 @@
+
 import { navigationDE } from './modules/navigation';
 import { heroDE } from './modules/hero';
 import { homeHeroDE } from './modules/homeHero';
@@ -20,6 +21,9 @@ export const de = {
   
   // Hero
   hero: heroDE,
+  
+  // Home Hero
+  homeHero: homeHeroDE,
   
   // Features
   features: featuresDE,
