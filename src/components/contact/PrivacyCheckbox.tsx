@@ -38,6 +38,8 @@ const PrivacyCheckbox = ({ checked, onChange, ...props }: PrivacyCheckboxProps) 
                     key={`link-${index}`}
                     to={`/${currentLanguage}/datenschutz`}
                     className="text-stellar-600 hover:text-stellar-500 underline font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {linkText}
                   </Link>
