@@ -8,6 +8,22 @@ export function IndexHeroSection() {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   
+  // Create a function to render the headline with the colored "Check-ins" text
+  const renderHeadline = () => {
+    const headlineText = t('hero.headline1');
+    if (headlineText.includes('Check-ins')) {
+      const parts = headlineText.split('Check-ins');
+      return (
+        <>
+          {parts[0]}
+          <span style={{ color: '#a4c309' }}>Check-ins</span>
+          {parts[1]}
+        </>
+      );
+    }
+    return headlineText;
+  };
+  
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-#0f266145 to-#0f266145-400/20 bg-white"></div>
@@ -15,7 +31,7 @@ export function IndexHeroSection() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
-              {t('hero.headline1').replace('Check-ins', `<span style="color: #a4c309;">Check-ins</span>`)}
+              {renderHeadline()}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('hero.subheadline')}<br /><br />
