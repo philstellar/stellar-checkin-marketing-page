@@ -13,12 +13,8 @@ const HomeHeroSection = () => {
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-9">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
-              {t('hero.headline1')}{' '}
-              <br />
-              {t('hero.headline2')}{' '}
-              <br />
-              {t('hero.headline3')}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik whitespace-pre-line">
+              {t('hero.headline1')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('hero.subheadline')}

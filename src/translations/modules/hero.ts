@@ -1,4 +1,5 @@
 
+// Home page hero with line breaks
 export const heroDE = {
   headline1: "Nahtloser Online Checkin\nEingebauter Versicherungs-Schutz\nUltimativer Trust Badge",
   headline2: "",
