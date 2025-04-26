@@ -77,6 +77,24 @@ export const insuranceEN = {
       "Experience simple and fast claims processing without direct contact with the guest."
     ]
   },
+  addFeatures: {
+    syncBookings: {
+      title: "Synchronize your bookings",
+      description: "Set up the logic that works best for your business."
+    },
+    coverage: {
+      title: "Choose the right coverage amount",
+      description: "Secure yourself with every successful booking."
+    },
+    integration: {
+      title: "Online Check-in Integration",
+      description: "Let your guests choose between insurance and deposit."
+    },
+    deposit: {
+      title: "Deposits as an option",
+      description: "Offer your guests the choice between insurance and traditional deposit."
+    }
+  },
   shortTerm: {
     title: "Our Prices",
     description: "Prices are calculated per night (plus possible service fees and commissions)."

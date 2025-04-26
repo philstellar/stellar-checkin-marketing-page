@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -19,23 +20,23 @@ const VersicherungPage: React.FC = () => {
   const addInsuranceFeatures = [
     {
       icon: <Book className="h-6 w-6 text-apple" />,
-      title: "Synchronisiere deine Buchungen",
-      description: "Richte die Logik ein, die am besten zu deinem Unternehmen passt."
+      title: t('insurance.addFeatures.syncBookings.title'),
+      description: t('insurance.addFeatures.syncBookings.description')
     },
     {
       icon: <ShieldPlus className="h-6 w-6 text-apple" />,
-      title: "Wähle die richtige Deckungssumme",
-      description: "Sichere dich bei jeder erfolgreichen Buchung ab."
+      title: t('insurance.addFeatures.coverage.title'),
+      description: t('insurance.addFeatures.coverage.description')
     },
     {
       icon: <Clock className="h-6 w-6 text-apple" />,
-      title: "Online Check-in Integration",
-      description: "Lass deine Gäste zwischen Versicherung und Kaution wählen."
+      title: t('insurance.addFeatures.integration.title'),
+      description: t('insurance.addFeatures.integration.description')
     },
     {
       icon: <Wallet className="h-6 w-6 text-apple" />,
-      title: "Kautionen als Option",
-      description: "Biete deinen Gästen die Wahl zwischen Versicherung und traditioneller Kaution."
+      title: t('insurance.addFeatures.deposit.title'),
+      description: t('insurance.addFeatures.deposit.description')
     }
   ];
 

@@ -1,3 +1,4 @@
+
 import { navigationEN } from './modules/navigation';
 import { heroEN } from './modules/hero';
 import { homeHeroEN } from './modules/homeHero';
@@ -6,15 +7,16 @@ import { partnersEN } from './modules/partners';
 import { kurtaxeEN } from './modules/kurtaxe';
 import { insuranceEN } from './modules/insurance';
 import { trustBadgeEN } from './modules/trustBadge';
-import { cookiesDE as cookiesEN } from './modules/cookies/de'; // Using German as fallback
-import { identityDE as identityEN } from './modules/identity/de'; // Using German as fallback
-import { integrationDE as integrationEN } from './modules/integration/de'; // Using German as fallback
-import { pricingDE as pricingEN } from './modules/pricing/de'; // Using German as fallback
-import { zusatzservicesDE as zusatzservicesEN } from './modules/zusatzservices/de'; // Using German as fallback
-import { brevoPopupEN } from './modules/brevoPopup/en'; // Using our new English translations
-import { settingsIT as settingsEN } from './modules/settings/it'; // Using Italian as fallback
+import { cookiesEN } from './modules/cookies/en';
+import { identityEN } from './modules/identity/en';
+import { integrationEN } from './modules/integration/en';
+import { pricingEN } from './modules/pricing/en';
+import { zusatzservicesEN } from './modules/zusatzservices/en';
+import { brevoPopupEN } from './modules/brevoPopup/en';
+import { settingsEN } from './modules/settings/en';
 import { stellarEN } from './modules/stellar';
 import { productsEN } from './modules/products';
+import { contactEN } from './modules/contact/en';
 
 export const en = {
   navigation: navigationEN,
@@ -34,22 +36,5 @@ export const en = {
   integration: integrationEN,
   settings: settingsEN,
   pricing: pricingEN,
-  contact: {
-    title: "Contact Us",
-    subtitle: "Do you have questions about Stellar Checkin? Our team is happy to help.",
-    email: "E-Mail",
-    phone: "Phone",
-    address: "Address",
-    formName: "Name",
-    formEmail: "E-Mail",
-    formCompany: "Company",
-    formMessage: "Message",
-    formPrivacy: "I have read and accept the privacy policy",
-    formSend: "Send Message",
-    formSending: "Sending...",
-    success: "Message sent!",
-    successDesc: "Thank you for your inquiry. We will get back to you shortly.",
-    error: "Error sending",
-    errorDesc: "There was a problem sending your message. Please try again later."
-  }
+  contact: contactEN
 };
