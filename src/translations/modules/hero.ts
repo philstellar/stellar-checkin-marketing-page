@@ -4,7 +4,6 @@ export const heroDE = {
   headline2: "",
   headline3: "",
   subheadline: "Weniger Arbeit, mehr Einnahmen – und ein Check-in, der Ihre Gäste begeistert.",
-  subheadline2: "",
   cta: "Jetzt Registrieren",
   tagline: "Einfach. Effizient. Für Sie und Ihre Gäste."
 };
@@ -14,7 +13,6 @@ export const heroEN = {
   headline2: "",
   headline3: "",
   subheadline: "Less work, more revenue – and a check-in that delights your guests.",
-  subheadline2: "",
   cta: "Register Now",
   tagline: "Simple. Efficient. For you and your guests."
 };
@@ -24,7 +22,6 @@ export const heroIT = {
   headline2: "",
   headline3: "",
   subheadline: "Meno lavoro, più guadagni – e un check-in che entusiasma i tuoi ospiti.",
-  subheadline2: "",
   cta: "Registrati Ora",
   tagline: "Semplice. Efficiente. Per te e i tuoi ospiti."
 };
@@ -34,7 +31,6 @@ export const heroES = {
   headline2: "",
   headline3: "",
   subheadline: "Menos trabajo, más ingresos – y un check-in que encanta a sus huéspedes.",
-  subheadline2: "",
   cta: "Regístrese Ahora",
   tagline: "Simple. Eficiente. Para usted y sus huéspedes."
 };
