@@ -14,10 +14,12 @@ const HomeHeroSection = () => {
         <div className="grid md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-9">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik whitespace-pre-line">
-              {t('hero.headline1')}
+              Nahtloser Online Checkin
+              Eingebauter Versicherungs-Schutz
+              Ultimativer Trust Badge
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-              {t('hero.subheadline')}
+              360-Grad-Vertrauen für Ihre Ferienunterkunft
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
