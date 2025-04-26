@@ -16,25 +16,14 @@ const HeroSection = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" 
               style={{ contentVisibility: 'auto' }}
             >
-              {(() => {
-                const fullText = t('insurance.title');
-                const [first, second] = fullText.split(' und ');
-                const [versicherung, rest] = first.split(' ');
-                return (
-                  <>
-                    <span style={{ color: '#a4c309' }}>{versicherung}</span> {rest}
-                    <span className="text-black"> und </span> 
-                    <span>{second}</span>
-                  </>
-                );
-              })()}
+              {t('insurance.hero.title')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-              {t('insurance.introduction')}
+              {t('insurance.hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
-                <UserCheck className="mr-2 h-4 w-4" /> {t('hero.cta')}
+                <UserCheck className="mr-2 h-4 w-4" /> {t('insurance.hero.cta')}
               </CTAButton>
             </div>
             <div className="mt-8 flex items-center">
@@ -44,7 +33,7 @@ const HeroSection = () => {
                 <div className="w-8 h-8 rounded-full bg-apple-500"></div>
               </div>
               <p className="ml-4 text-sm text-black font-aeonik">
-                <span className="font-medium">{t('hero.tagline')}</span>
+                <span className="font-medium">{t('insurance.hero.introduction')}</span>
               </p>
             </div>
           </div>
