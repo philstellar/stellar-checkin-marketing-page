@@ -1,3 +1,4 @@
+
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -29,6 +30,13 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const navigate = useNavigate();
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
+
+  // Add back the handleNavigation function
+  const handleNavigation = (path: string) => {
+    navigate(`/${currentLanguage}/${path}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    onClose();
+  };
 
   const handleSectionNavigation = (sectionId: string) => {
     if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
