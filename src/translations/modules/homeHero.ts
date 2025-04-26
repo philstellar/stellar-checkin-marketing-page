@@ -1,5 +1,5 @@
 export const homeHeroDE = {
-  headline: "Nahtloser Check-in\nIntegrierte Absicherung\nUltimativer Trust Badge",
+  headline: "Stellar Check-in\nVerbessern Sie das Gästeerlebnis vor der Anreise\nund steigern Sie Ihren Umsatz",
   subheadline: "360-Grad-Vertrauen für Ihre Ferienunterkunft"
 };
 
