@@ -19,6 +19,16 @@ export const heroEN = {
   tagline: "Simple. Efficient. For you and your guests."
 };
 
+export const heroIT = {
+  headline1: "La soluzione digitale completa per il ",
+  headline2: "Check-in",
+  headline3: " degli affitti vacanza",
+  subheadline: "Automatizza l'intero processo di check-in della tua struttura turistica.",
+  subheadline2: "Meno lavoro, più guadagni – e un check-in che entusiasma i tuoi ospiti.",
+  cta: "Registrati Ora",
+  tagline: "Semplice. Efficiente. Per te e i tuoi ospiti."
+};
+
 export const heroES = {
   headline1: "La solución digital completa para el ",
   headline2: "Check-in",
@@ -27,14 +37,4 @@ export const heroES = {
   subheadline2: "Menos trabajo, más ingresos – y un check-in que encanta a sus huéspedes.",
   cta: "Regístrese Ahora",
   tagline: "Simple. Eficiente. Para usted y sus huéspedes."
-};
-
-export const heroIT = {
-  headline1: "La soluzione digitale completa per il ",
-  headline2: "Check-in",
-  headline3: " di affitti brevi",
-  subheadline: "Automatizza l'intero processo di check-in della tua struttura vacanziera.",
-  subheadline2: "Meno lavoro, più guadagni – e un check-in che entusiasma gli ospiti.",
-  cta: "Registrati Ora",
-  tagline: "Semplice. Efficiente. Per te e i tuoi ospiti."
 };

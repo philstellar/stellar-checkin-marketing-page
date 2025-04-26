@@ -59,9 +59,9 @@ const App = () => {
   return (
     <BrevoFormProvider>
       <Routes>
-        {/* Add the new home route before other routes */}
+        {/* Add home routes for all languages */}
         <Route 
-          path="/de/home" 
+          path="/:lang/home" 
           element={
             <Suspense fallback={<PageLoader />}>
               <Home />
