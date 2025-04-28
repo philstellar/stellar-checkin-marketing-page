@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from './components/ui/toaster';
 import { LanguageProvider } from './context/LanguageContext';
@@ -23,42 +23,40 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <Router>
-      <LanguageProvider>
-        <CookieConsentProvider>
-          <BrevoFormProvider>
-            <QueryClientProvider client={queryClient}>
-              <div className="flex min-h-screen flex-col">
-                <Header />
-                <div className="flex-1">
-                  <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/:lang/" element={<Index />} />
-                    <Route path="/:lang/versicherung" element={<Versicherung />} />
-                    <Route path="/:lang/success-stories" element={<SuccessStories />} />
-                    <Route path="/:lang/about-us" element={<AboutUs />} />
-                    <Route path="/:lang/faq" element={<FAQ />} />
-                    <Route path="/:lang/impressum" element={<Impressum />} />
-                    <Route path="/:lang/datenschutz" element={<Datenschutz />} />
-                    <Route path="/:lang/agb" element={<AGB />} />
+    <LanguageProvider>
+      <CookieConsentProvider>
+        <BrevoFormProvider>
+          <QueryClientProvider client={queryClient}>
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <div className="flex-1">
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/:lang/" element={<Index />} />
+                  <Route path="/:lang/versicherung" element={<Versicherung />} />
+                  <Route path="/:lang/success-stories" element={<SuccessStories />} />
+                  <Route path="/:lang/about-us" element={<AboutUs />} />
+                  <Route path="/:lang/faq" element={<FAQ />} />
+                  <Route path="/:lang/impressum" element={<Impressum />} />
+                  <Route path="/:lang/datenschutz" element={<Datenschutz />} />
+                  <Route path="/:lang/agb" element={<AGB />} />
 
-                    {/* These routes remain accessible even in production, though hidden from navigation */}
-                    <Route path="/:lang/home" element={<Home />} />
-                    <Route path="/:lang/trust-badge" element={<TrustBadgePage />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/trust-badge" element={<TrustBadgePage />} />
-                    
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </div>
-                <Footer />
-                <Toaster />
+                  {/* These routes remain accessible even in production, though hidden from navigation */}
+                  <Route path="/:lang/home" element={<Home />} />
+                  <Route path="/:lang/trust-badge" element={<TrustBadgePage />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/trust-badge" element={<TrustBadgePage />} />
+                  
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
               </div>
-            </QueryClientProvider>
-          </BrevoFormProvider>
-        </CookieConsentProvider>
-      </LanguageProvider>
-    </Router>
+              <Footer />
+              <Toaster />
+            </div>
+          </QueryClientProvider>
+        </BrevoFormProvider>
+      </CookieConsentProvider>
+    </LanguageProvider>
   );
 }
 
