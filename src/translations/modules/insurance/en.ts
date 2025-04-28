@@ -53,6 +53,7 @@ export const insuranceEN = {
   pricing: {
     header: {
       coverage: "Maximum Coverage Amount",
+      tooltip: "The maximum amount that will be paid out in the event of a claim",
       amount1: "€ 5,000",
       amount2: "€ 10,000",
       amount3: "€ 50,000"
@@ -60,20 +61,25 @@ export const insuranceEN = {
     rows: [
       {
         label: "Price per night\n(plus insurance tax)",
+        tooltip: "The statutory insurance tax will be calculated additionally",
         value1: "€ 2.82",
         value2: "€ 3.62",
-        value3: "€ 4.91"
+        value3: "€ 4.91",
+        description: "Basic coverage with flexible options"
       },
       {
         label: "Coverage (Deductible €100)",
+        tooltip: "Deductible of €100 per claim",
         description: "Damage to inventory and buildings at replacement value"
       },
       {
         label: "Guest recourse",
+        tooltip: "When the guest can be held liable",
         description: "Only for intentional damage"
       },
       {
         label: "Additional coverage\n(up to)",
+        tooltip: "Special benefits included in the insurance",
         description: "Additional cleaning costs up to € 1,000"
       },
       {
@@ -85,7 +91,10 @@ export const insuranceEN = {
       {
         description: "Damage caused by pets up to € 5,000"
       }
-    ]
+    ],
+    allBasicFeatures: "All Basic Features",
+    increasedCoverage: "Increased Coverage Amount",
+    keyReplacement: "Key Replacement Coverage"
   },
   benefits: {
     title: "The Benefits of Insurance at a Glance",
@@ -97,24 +106,6 @@ export const insuranceEN = {
       "Secure yourself and your guests comprehensively - from property damage, theft to additional cleaning expenses.",
       "Experience simple and fast claims processing without direct contact with the guest."
     ]
-  },
-  addFeatures: {
-    syncBookings: {
-      title: "Synchronize your bookings",
-      description: "Set up the logic that works best for your business."
-    },
-    coverage: {
-      title: "Choose the right coverage amount",
-      description: "Secure yourself with every successful booking."
-    },
-    integration: {
-      title: "Online Check-in Integration",
-      description: "Let your guests choose between insurance and deposit."
-    },
-    deposit: {
-      title: "Deposits as an option",
-      description: "Offer your guests the choice between insurance and traditional deposit."
-    }
   },
   shortTerm: {
     title: "Our Prices",
@@ -164,23 +155,23 @@ export const insuranceEN = {
       answer: "Our guest damage insurance starts at €2.8 per night and varies depending on the level of coverage. Details can be found in your Stellar account.\n\nThe cost of insurance can also be covered by the guest, as an alternative to a deposit.\n\nTo ensure that the insurance covers all stays in your accommodations, you can specify in the settings that you will pay for the insurance yourself and include the costs in the rental price."
     }
   },
-  versicherung: {
-    title: "Smartly Automate Insurance and Deposits",
-    subtitle: "Automate the handling and refunding of deposits - or offer your guests a convenient alternative and secure additional commission income.",
-    process: {
-      title: "Faster Check-in Process",
-      description: "No more deposit handling - less effort for you and more convenience for your guests."
+  addFeatures: {
+    syncBookings: {
+      title: "Synchronize your bookings",
+      description: "Set up the logic that works best for your business."
     },
-    income: {
-      title: "Additional Source of Income",
-      description: "Earn commission on every insurance policy - automatically and without additional effort."
+    coverage: {
+      title: "Choose the right coverage amount",
+      description: "Secure yourself with every successful booking."
     },
-    protection: {
-      title: "Comprehensive Protection",
-      description: "Better protection than traditional deposits, thanks to higher coverage amounts, \"New for Old\" coverage and protection against loss of rent."
+    integration: {
+      title: "Online Check-in Integration",
+      description: "Let your guests choose between insurance and deposit."
     },
-    cta: "Register Now",
-    relatedFeatures: "Related Features"
+    deposit: {
+      title: "Deposits as an option",
+      description: "Offer your guests the choice between insurance and traditional deposit."
+    }
   },
   process: {
     title: "Simple and Secure Process",

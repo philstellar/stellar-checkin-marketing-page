@@ -2,8 +2,6 @@
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet, UserCheck } from 'lucide-react';
-import Header from '../Header';
-import Footer from '../Footer';
 import InsurancePricing from './InsurancePricing';
 import InsuranceDetails from './InsuranceDetails';
 import InsuranceFAQ from './InsuranceFAQ';
@@ -38,7 +36,6 @@ const VersicherungPage: React.FC = () => {
   
   return (
     <>
-      <Header />
       <HeroSection />
 
       <div className="container mx-auto px-4 bg-white overflow-hidden py-[65px]">
@@ -98,8 +95,6 @@ const VersicherungPage: React.FC = () => {
           <InsuranceFAQ />
         </div>
       </section>
-
-      <Footer />
     </>
   );
 };

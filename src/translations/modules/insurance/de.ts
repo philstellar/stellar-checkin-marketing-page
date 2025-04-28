@@ -51,6 +51,7 @@ export const insuranceDE = {
   pricing: {
     header: {
       coverage: "Maximale Deckungssumme",
+      tooltip: "Die maximale Summe, die im Schadensfall ausgezahlt wird",
       amount1: "€ 5.000",
       amount2: "€ 10.000",
       amount3: "€ 50.000"
@@ -58,6 +59,7 @@ export const insuranceDE = {
     rows: [
       {
         label: "Preis pro Nacht\n(plus Versicherungssteuer)",
+        tooltip: "Zusätzlich wird die gesetzliche Versicherungssteuer berechnet",
         value1: "€ 2,82",
         value2: "€ 3,62",
         value3: "€ 4,91",
@@ -65,14 +67,17 @@ export const insuranceDE = {
       },
       {
         label: "Deckung (SB €100)",
+        tooltip: "Selbstbeteiligung von €100 pro Schadensfall",
         description: "Schäden an Inventar und Gebäuden zum Wiederbeschaffungswert"
       },
       {
         label: "Gäste-Regress",
+        tooltip: "Wann der Gast in Haftung genommen werden kann",
         description: "Nur bei vorsätzlicher Beschädigung"
       },
       {
         label: "Zusätzliche Abdeckung\n(bis zu)",
+        tooltip: "Spezielle Leistungen, die in der Versicherung enthalten sind",
         description: "Zusätzliche Reinigungskosten bis zu € 1.000"
       },
       {

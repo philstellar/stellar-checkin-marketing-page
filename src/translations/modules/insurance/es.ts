@@ -52,6 +52,7 @@ export const insuranceES = {
   pricing: {
     header: {
       coverage: "Cantidad máxima de cobertura",
+      tooltip: "La cantidad máxima que se pagará en caso de reclamación",
       amount1: "€ 5.000",
       amount2: "€ 10.000",
       amount3: "€ 50.000"
@@ -59,20 +60,25 @@ export const insuranceES = {
     rows: [
       {
         label: "Precio por noche\n(más impuesto sobre seguros)",
+        tooltip: "El impuesto legal sobre seguros se calculará adicionalmente",
         value1: "€ 2,82",
         value2: "€ 3,62",
-        value3: "€ 4,91"
+        value3: "€ 4,91",
+        description: "Cobertura básica con opciones flexibles"
       },
       {
         label: "Cobertura (Franquicia €100)",
+        tooltip: "Franquicia de €100 por siniestro",
         description: "Daños al inventario y edificios a valor de reposición"
       },
       {
         label: "Recurso contra el huésped",
+        tooltip: "Cuándo se puede responsabilizar al huésped",
         description: "Solo por daños intencionales"
       },
       {
         label: "Cobertura adicional\n(hasta)",
+        tooltip: "Beneficios especiales incluidos en el seguro",
         description: "Gastos adicionales de limpieza hasta € 1.000"
       },
       {
@@ -84,7 +90,10 @@ export const insuranceES = {
       {
         description: "Daños causados por mascotas hasta € 5.000"
       }
-    ]
+    ],
+    allBasicFeatures: "Todas las características básicas",
+    increasedCoverage: "Mayor cantidad de cobertura",
+    keyReplacement: "Cobertura para reemplazo de llaves"
   },
   benefits: {
     title: "Las ventajas del seguro de un vistazo",
@@ -145,23 +154,23 @@ export const insuranceES = {
       answer: "Nuestro seguro de daños de huéspedes comienza en €2,8 por noche y varía según el nivel de cobertura. Los detalles se pueden encontrar en su cuenta de Stellar.\n\nEl costo del seguro también puede ser cubierto por el huésped, como alternativa a un depósito.\n\nPara asegurar que el seguro cubra todas las estancias en sus alojamientos, puede especificar en la configuración que usted pagará el seguro y incluirá los costos en el precio del alquiler."
     }
   },
-  versicherung: {
-    title: "Automatizar seguros y depósitos de forma inteligente",
-    subtitle: "Automatice la gestión y devolución de depósitos, o ofrezca a sus huéspedes una alternativa conveniente y asegure ingresos adicionales por comisiones.",
-    process: {
-      title: "Check-in Más Rápido",
-      description: "Sin más gestión de depósitos, menos trabajo para usted y sus huéspedes."
+  addFeatures: {
+    syncBookings: {
+      title: "Sincronice sus reservas",
+      description: "Configure la lógica que mejor funcione para su negocio."
     },
-    income: {
-      title: "Fuente de Ingresos Adicional",
-      description: "Gane comisiones con cada póliza de seguro – automáticamente y sin esfuerzo adicional."
+    coverage: {
+      title: "Elija la cantidad de cobertura correcta",
+      description: "Asegúrese con cada reserva exitosa."
     },
-    protection: {
-      title: "Protección Completa",
-      description: "Mejor protección que los depósitos tradicionales, gracias a montos de cobertura más altos, cobertura \"nuevo por viejo\" y protección contra pérdida de alquiler."
+    integration: {
+      title: "Integración de check-in en línea",
+      description: "Permita que sus huéspedes elijan entre seguro y depósito."
     },
-    cta: "Regístrese ahora",
-    relatedFeatures: "Características relacionadas"
+    deposit: {
+      title: "Depósitos como opción",
+      description: "Ofrezca a sus huéspedes la opción entre seguro y depósito tradicional."
+    }
   },
   process: {
     title: "Proceso Simple y Seguro",
