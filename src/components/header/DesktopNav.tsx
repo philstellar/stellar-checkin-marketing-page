@@ -53,7 +53,6 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
       {!isPublished && (
         <button
           onClick={() => handleNavigation('home')}
-          onMouseEnter={() => handleMouseEnter('home')}
           className="text-royal hover:text-apple font-medium transition-colors"
         >
           {renderBoldText(t('navigation.home'))}
@@ -114,7 +113,6 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
       
       <button 
         onClick={() => handleNavigation('versicherung')} 
-        onMouseEnter={() => handleMouseEnter('versicherung')} 
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         {renderBoldText(t('navigation.insurance'))}
@@ -123,7 +121,6 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
       {!isPublished && (
         <button
           onClick={() => handleNavigation('trust-badge')}
-          onMouseEnter={() => handleMouseEnter('trust-badge')}
           className="text-royal hover:text-apple font-medium transition-colors"
         >
           {renderBoldText(t('navigation.trustBadge'))}
