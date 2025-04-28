@@ -1,3 +1,4 @@
+
 // This file serves as a bridge between the main insurance translations in each language file
 // and the components that need simplified insurance data on the main page
 

@@ -10,6 +10,12 @@ export const VersicherungSection = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
   
+  // Debug logging for insurance translations
+  console.debug("Current language:", language);
+  console.debug("Insurance mainPageTitle:", t('insurance.mainPageTitle'));
+  console.debug("Insurance mainPageSubtitle:", t('insurance.mainPageSubtitle'));
+  console.debug("Insurance process title:", t('insurance.process.title'));
+  
   return (
     <section id="versicherung" className="section-padding bg-white">
       <div className="container-custom">
