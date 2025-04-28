@@ -1,3 +1,4 @@
+
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -34,16 +35,8 @@ const DesktopNav = ({
           scrollTo: sectionId
         }
       });
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
     } else {
       handleSectionClick(sectionId);
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
     }
   };
 

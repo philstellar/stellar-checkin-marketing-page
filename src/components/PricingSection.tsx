@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Info, HelpCircle } from "lucide-react";
+import { CheckCircle, HelpCircle } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
@@ -25,7 +25,7 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="section-padding">
+    <section id="preise" className="section-padding">
       <div className="container-custom max-w-[90rem] mx-auto">
         <HeadingWithLine 
           title={t('pricing.title')} 
@@ -68,14 +68,13 @@ export default function PricingSection() {
                 ].map((feature, index) => {
                   const isTooltipFeature = typeof feature === 'object';
                   const featureText = isTooltipFeature ? feature.text : feature;
-                  const hasTooltip = isTooltipFeature && featureText.includes("*");
 
                   return (
                     <div key={index} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                       <span className="text-royal-700">
-                        {featureText.replace(" *", "")}
-                        {hasTooltip && (
+                        {featureText}
+                        {isTooltipFeature && (
                           <Tooltip>
                             <TooltipTrigger asChild>
                               <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
@@ -135,14 +134,13 @@ export default function PricingSection() {
                 ].map((feature, index) => {
                   const isTooltipFeature = typeof feature === 'object';
                   const featureText = isTooltipFeature ? feature.text : feature;
-                  const hasTooltip = isTooltipFeature && featureText.includes("*");
 
                   return (
                     <div key={index} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                       <span className="text-royal-700">
-                        {featureText.replace(" *", "")}
-                        {hasTooltip && (
+                        {featureText}
+                        {isTooltipFeature && (
                           <Tooltip>
                             <TooltipTrigger asChild>
                               <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
@@ -196,7 +194,7 @@ export default function PricingSection() {
         </div>
         
         <div className="mt-16 text-center">
-          
+          <p className="text-sm text-royal-600">{t('pricing.disclaimer')}</p>
         </div>
       </div>
     </section>
