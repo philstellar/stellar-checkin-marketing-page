@@ -1,3 +1,4 @@
+
 import React, { lazy, Suspense, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from "@/components/Header";
@@ -9,6 +10,7 @@ import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 import ContactSection from "@/components/contact/ContactSection"; // Direct import instead of lazy loading
 import KurtaxeSection from "@/components/KurtaxeSection"; // Direct import instead of lazy loading
 import { StructuredData } from "@/components/StructuredData";
+import IntegrationenSection from "@/components/IntegrationenSection"; // Updated import path
 
 // Custom loading component
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
@@ -16,13 +18,10 @@ const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
 );
 
 // Lazy load non-critical sections
-// Removed KurtaxeSection from lazy loading
 const VersicherungSection = lazy(() => import("@/components/VersicherungSection"));
 const IdentitaetspruefungSection = lazy(() => import("@/components/IdentitaetspruefungSection"));
-const IntegrationenSection = lazy(() => import("@/components/features/IntegrationenSection"));
 const EinstellungenSection = lazy(() => import("@/components/features/EinstellungenSection"));
 const PricingSection = lazy(() => import("@/components/PricingSection"));
-// Removed lazy loading for ContactSection
 
 const Index = () => {
   const location = useLocation();
@@ -51,22 +50,19 @@ const Index = () => {
         <OnlineCheckinSection />
         <PartnersSection />
         
-        {/* Replace lazy-loaded KurtaxeSection with directly imported component */}
         <KurtaxeSection />
         
         <Suspense fallback={<SectionLoader />}>
           <VersicherungSection />
         </Suspense>
         
-        <Suspense fallback={<SectionLoader bg="bg-floral-100" />}>
+        <Suspense fallback={<SectionLoader bg="bg-white" />}>
           <IdentitaetspruefungSection />
         </Suspense>
         
-        <Suspense fallback={<SectionLoader />}>
-          <IntegrationenSection />
-        </Suspense>
+        <IntegrationenSection />
         
-        <Suspense fallback={<SectionLoader bg="bg-floral-100" />}>
+        <Suspense fallback={<SectionLoader bg="bg-white" />}>
           <EinstellungenSection />
         </Suspense>
         
@@ -76,7 +72,6 @@ const Index = () => {
           </div>
         </Suspense>
         
-        {/* Replace lazy-loaded ContactSection with directly imported component */}
         <div id="kontakt">
           <ContactSection />
         </div>

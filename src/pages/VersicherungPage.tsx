@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import InsurancePricing from '../components/admin/InsurancePricing';
@@ -14,6 +15,7 @@ import { Book, ShieldPlus, Clock, Wallet, UserCheck } from 'lucide-react';
 
 const VersicherungPage: React.FC = () => {
   const { t } = useTranslation();
+  
   const addInsuranceFeatures = [{
     icon: <Book className="h-6 w-6 text-apple" />,
     title: t('insuranceDetail.addFeatures.syncBookings.title'),
@@ -31,7 +33,9 @@ const VersicherungPage: React.FC = () => {
     title: t('insuranceDetail.addFeatures.deposit.title'),
     description: t('insuranceDetail.addFeatures.deposit.description')
   }];
-  return <>
+  
+  return (
+    <>
       <HeroSection />
 
       <div className="container mx-auto px-4 bg-white overflow-hidden py-[65px]">
@@ -91,6 +95,8 @@ const VersicherungPage: React.FC = () => {
           <InsuranceFAQ />
         </div>
       </section>
-    </>;
+    </>
+  );
 };
+
 export default VersicherungPage;
