@@ -1,11 +1,13 @@
-
 import { useTranslation } from "@/hooks/use-translation";
 
 interface StructuredDataProps {
-  type: 'product' | 'organization';
+  type: 'product' | 'organization' | 'faq';
+  faqData?: {
+    questions: { question: string; answer: string; }[];
+  };
 }
 
-export const StructuredData = ({ type }: StructuredDataProps) => {
+export const StructuredData = ({ type, faqData }: StructuredDataProps) => {
   const { t } = useTranslation();
 
   const getProductData = () => ({
@@ -68,7 +70,30 @@ export const StructuredData = ({ type }: StructuredDataProps) => {
     }
   });
 
-  const structuredData = type === 'product' ? getProductData() : getOrganizationData();
+  const getFAQData = () => {
+    if (!faqData) return null;
+    
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.questions.map(({ question, answer }) => ({
+        "@type": "Question",
+        "name": question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": answer
+        }
+      }))
+    };
+  };
+
+  const structuredData = type === 'faq' 
+    ? getFAQData()
+    : type === 'product' 
+      ? getProductData() 
+      : getOrganizationData();
+
+  if (!structuredData) return null;
 
   return (
     <script

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
+import { StructuredData } from '@/components/StructuredData';
 import {
   Accordion,
   AccordionContent,
@@ -18,8 +19,16 @@ const InsuranceFAQ = () => {
     'cost'
   ];
 
+  const faqData = {
+    questions: faqs.map(faq => ({
+      question: t(`insurance.faq.${faq}.question`),
+      answer: t(`insurance.faq.${faq}.answer`)
+    }))
+  };
+
   return (
     <div className="w-full max-w-full px-4 sm:px-6 lg:px-8">
+      <StructuredData type="faq" faqData={faqData} />
       <h2 className="text-3xl font-bold mb-8 text-royal text-left">FAQ</h2>
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((faq, index) => (
@@ -38,3 +47,4 @@ const InsuranceFAQ = () => {
 };
 
 export default InsuranceFAQ;
+
