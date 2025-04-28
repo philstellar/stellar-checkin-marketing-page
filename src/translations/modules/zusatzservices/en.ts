@@ -1,6 +1,6 @@
 
 export const zusatzservicesEN = {
-  title: "Sell Additional Services - Without Additional Fees",
+  title: "Sell Additional Services - With Zero Fees",
   subtitle: "Increase your revenue by offering your guests additional services during the check-in process - without additional costs for you or your guests.",
   additionalServices: {
     title: "Additional Services",
