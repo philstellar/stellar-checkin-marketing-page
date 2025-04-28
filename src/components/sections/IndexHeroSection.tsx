@@ -1,4 +1,3 @@
-
 import { UserCheck } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
@@ -8,20 +7,9 @@ export function IndexHeroSection() {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   
-  // Create a function to render the headline with the colored "Check-ins" text
+  // Create a function to render the headline as HTML
   const renderHeadline = () => {
-    const headlineText = t('hero.headline1');
-    if (headlineText.includes('Check-ins')) {
-      const parts = headlineText.split('Check-ins');
-      return (
-        <>
-          {parts[0]}
-          <span style={{ color: '#a4c309' }}>Check-ins</span>
-          {parts[1]}
-        </>
-      );
-    }
-    return headlineText;
+    return <span dangerouslySetInnerHTML={{ __html: t('hero.headline1') }} />;
   };
   
   return (
