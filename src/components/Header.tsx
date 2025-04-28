@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
@@ -50,11 +51,23 @@ const Header = () => {
   };
 
   const handleHomeClick = () => {
-    navigate(`/${language}/home`);
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // Check if we're already on the home page
+    const isHomePath = location.pathname === `/${language}` || 
+                       location.pathname === `/${language}/` || 
+                       location.pathname === `/${language}/home`;
+    
+    if (isHomePath) {
+      // If we're already on the home page, scroll to the check-in section
+      const checkInSection = document.getElementById('gaeste-voranmeldung');
+      if (checkInSection) {
+        checkInSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we're on another page, navigate to home and set state to scroll to section on load
+      navigate(`/${language}/home`, {
+        state: { scrollTo: 'gaeste-voranmeldung' }
+      });
+    }
   };
 
   const handleSectionClick = useCallback((sectionId: string) => {

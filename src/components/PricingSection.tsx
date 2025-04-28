@@ -30,14 +30,12 @@ export default function PricingSection() {
   };
 
   // Helper component to display tooltip/popover based on device
-  const InfoTooltip = ({ content, children }) => {
+  const InfoTooltip = ({ content, children }: { content: React.ReactNode; children: React.ReactNode }) => {
     if (isMobile) {
       return (
         <Popover>
           <PopoverTrigger asChild>
-            <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-              <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
-            </button>
+            {children}
           </PopoverTrigger>
           <PopoverContent className="max-w-xs text-sm p-2 bg-white">{content}</PopoverContent>
         </Popover>
@@ -47,9 +45,7 @@ export default function PricingSection() {
     return (
       <Tooltip>
         <TooltipTrigger asChild>
-          <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-            <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
-          </button>
+          {children}
         </TooltipTrigger>
         <TooltipContent className="max-w-xs text-sm p-2 bg-white">
           {content}
@@ -102,25 +98,41 @@ export default function PricingSection() {
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{t('pricing.basic.additionalServices')}</span>
-                  <InfoTooltip content={tooltipDescriptions.zusatzleistungen} />
+                  <InfoTooltip content={tooltipDescriptions.zusatzleistungen}>
+                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                    </button>
+                  </InfoTooltip>
                 </div>
 
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{t('pricing.basic.identityVerification')}</span>
-                  <InfoTooltip content={tooltipDescriptions.identitaetsverifizierung} />
+                  <InfoTooltip content={tooltipDescriptions.identitaetsverifizierung}>
+                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                    </button>
+                  </InfoTooltip>
                 </div>
 
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{t('pricing.basic.depositManagement')}</span>
-                  <InfoTooltip content={tooltipDescriptions.kautionsmanagement} />
+                  <InfoTooltip content={tooltipDescriptions.kautionsmanagement}>
+                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                    </button>
+                  </InfoTooltip>
                 </div>
 
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{t('pricing.basic.insurance')}</span>
-                  <InfoTooltip content={tooltipDescriptions.versicherung} />
+                  <InfoTooltip content={tooltipDescriptions.versicherung}>
+                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                    </button>
+                  </InfoTooltip>
                 </div>
 
                 <div className="flex items-center">
@@ -166,7 +178,11 @@ export default function PricingSection() {
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{t('pricing.basic.digitalGuestRegistration')}</span>
-                  <InfoTooltip content={tooltipDescriptions.digitaleGaestemeldung} />
+                  <InfoTooltip content={tooltipDescriptions.digitaleGaestemeldung}>
+                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                    </button>
+                  </InfoTooltip>
                 </div>
 
                 {/* Regular features without tooltips */}
