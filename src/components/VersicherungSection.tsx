@@ -76,32 +76,6 @@ export const VersicherungSection = () => {
                 </CTAButton>
               </Link>
             </div>
-            
-            <div className="mt-6 space-y-2">
-              <p className="text-sm text-royal-700">{t('insurance.relatedFeatures')}:</p>
-              <div className="flex gap-4">
-                <Link 
-                  to="#kurtaxe" 
-                  className="text-royal hover:text-apple transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('kurtaxe')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  {t('kurtaxe.title')}
-                </Link>
-                <Link 
-                  to="#identitaetspruefung" 
-                  className="text-royal hover:text-apple transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('identitaetspruefung')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  {t('identity.title')}
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>
