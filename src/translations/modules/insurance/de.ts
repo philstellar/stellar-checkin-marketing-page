@@ -1,7 +1,7 @@
 
 export const insuranceDE = {
   hero: {
-    title: "Versicherung und Kaution clever automatisieren",
+    title: "Unser Check-in: Absicherung für Ihre Unterkünfte inklusive",
     subtitle: "Schützen Sie Ihr Eigentum und vereinfachen Sie den Check-in",
     introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen",
     cta: "Jetzt loslegen"  // Changed from "Jetzt Starten"
