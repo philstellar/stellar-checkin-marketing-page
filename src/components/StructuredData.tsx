@@ -16,13 +16,6 @@ export const StructuredData = ({ type, faqData }: StructuredDataProps) => {
     "name": "Stellar Checkin",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "124",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "offers": {
       "@type": "AggregateOffer",
       "offerCount": 3,
@@ -71,13 +64,6 @@ export const StructuredData = ({ type, faqData }: StructuredDataProps) => {
     "url": "https://stellar-checkin.com",
     "logo": "https://stellar-checkin.com/lovable-uploads/b1071c9d-b132-4a47-ab49-b3c6f6b61ed0.png",
     "description": t('stellar.description'),
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "124",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "DE",
