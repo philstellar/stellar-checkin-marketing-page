@@ -14,6 +14,8 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
+  const isPublished = window.location.hostname.includes('lovable.app') || 
+                     window.location.hostname.includes('lovable.dev');
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
@@ -36,14 +38,6 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
     }, 100);
   };
 
-  const handleMouseEnter = (path: string) => {
-    const link = document.createElement('link');
-    link.rel = 'prefetch';
-    link.href = `/${currentLanguage}/${path}`;
-    link.as = 'document';
-    document.head.appendChild(link);
-  };
-
   const renderBoldText = (text: string) => {
     const cleanText = text.replace(/\*\*/g, '');
     
@@ -56,13 +50,15 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
 
   return (
     <nav className="hidden md:flex items-center space-x-8">
-      <button
-        onClick={() => handleNavigation('home')}
-        onMouseEnter={() => handleMouseEnter('home')}
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
-        {renderBoldText(t('navigation.home'))}
-      </button>
+      {!isPublished && (
+        <button
+          onClick={() => handleNavigation('home')}
+          onMouseEnter={() => handleMouseEnter('home')}
+          className="text-royal hover:text-apple font-medium transition-colors"
+        >
+          {renderBoldText(t('navigation.home'))}
+        </button>
+      )}
 
       <div className="flex items-center space-x-1">
         <button 
@@ -124,13 +120,15 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
         {renderBoldText(t('navigation.insurance'))}
       </button>
 
-      <button
-        onClick={() => handleNavigation('trust-badge')}
-        onMouseEnter={() => handleMouseEnter('trust-badge')}
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
-        {renderBoldText(t('navigation.trustBadge'))}
-      </button>
+      {!isPublished && (
+        <button
+          onClick={() => handleNavigation('trust-badge')}
+          onMouseEnter={() => handleMouseEnter('trust-badge')}
+          className="text-royal hover:text-apple font-medium transition-colors"
+        >
+          {renderBoldText(t('navigation.trustBadge'))}
+        </button>
+      )}
 
       <button 
         onClick={() => handleSectionNavigation('preise')} 

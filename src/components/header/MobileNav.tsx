@@ -29,6 +29,8 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const navigate = useNavigate();
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
+  const isPublished = window.location.hostname.includes('lovable.app') || 
+                     window.location.hostname.includes('lovable.dev');
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
@@ -83,12 +85,14 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             animate="visible"
           >
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
-              <button 
-                onClick={() => handleNavigation('home')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.home')}
-              </button>
+              {!isPublished && (
+                <button 
+                  onClick={() => handleNavigation('home')}
+                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                >
+                  {t('navigation.home')}
+                </button>
+              )}
 
               <button 
                 onClick={() => handleNavigation('')}
@@ -104,12 +108,14 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 {t('navigation.insurance')}
               </button>
               
-              <button 
-                onClick={() => handleNavigation('trust-badge')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.trustBadge')}
-              </button>
+              {!isPublished && (
+                <button 
+                  onClick={() => handleNavigation('trust-badge')}
+                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                >
+                  {t('navigation.trustBadge')}
+                </button>
+              )}
 
               <button 
                 onClick={() => handleSectionNavigation('preise')}
