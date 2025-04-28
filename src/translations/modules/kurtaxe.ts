@@ -17,7 +17,7 @@ export const kurtaxeDE = {
 };
 
 export const kurtaxeEN = {
-  title: "Digital Guest Registration, Collection of City Taxes, Tourist Taxes, etc.",
+  title: "Digital Guest Registration & Tourist Tax",
   subtitle: "Automate the collection and management of guest registrations, city taxes, and tourist taxes to comply with local regulations.",
   digitalRegistration: {
     title: "Digital Guest Registration",
