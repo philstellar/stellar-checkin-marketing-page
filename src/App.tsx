@@ -1,3 +1,4 @@
+
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -5,6 +6,7 @@ import { BrevoFormProvider } from './context/BrevoFormContext';
 import BrevoFormPopupWrapper from './components/BrevoFormPopupWrapper';
 import CookieBanner from './components/CookieBanner';
 import { LanguageDetectionDialog } from './components/LanguageDetectionDialog';
+import { SEOHead } from './components/SEOHead';
 
 // Import Index directly to avoid potential circular dependency issues
 import Index from './pages/Index';
@@ -58,6 +60,9 @@ const App = () => {
 
   return (
     <BrevoFormProvider>
+      {/* Add SEO Head component for dynamic meta tags */}
+      <SEOHead />
+      
       <Routes>
         {/* Add home routes for all languages */}
         <Route 

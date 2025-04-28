@@ -1,3 +1,4 @@
+
 import { UserCheck } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
@@ -7,9 +8,11 @@ export function IndexHeroSection() {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   
-  // Create a function to render the headline as HTML
+  // Fix the rendering of HTML - properly handle inline styles in HTML string
   const renderHeadline = () => {
-    return <span dangerouslySetInnerHTML={{ __html: t('hero.headline1') }} />;
+    // The dangerouslySetInnerHTML needs proper attributes format
+    const headline = t('hero.headline1').replace('style={{ color: "#a4c309" }}', 'style="color: #a4c309;"');
+    return <span dangerouslySetInnerHTML={{ __html: headline }} />;
   };
   
   return (

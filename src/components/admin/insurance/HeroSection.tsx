@@ -7,6 +7,13 @@ import { useTranslation } from '@/hooks/use-translation';
 const HeroSection = () => {
   const { t } = useTranslation();
   
+  // Create a function to render the title as HTML
+  const renderTitle = () => {
+    // Make sure the title contains properly formatted HTML with direct style attribute
+    const title = t('insurance.hero.title').replace('style={{ color: "#a4c309" }}', 'style="color: #a4c309;"');
+    return <span dangerouslySetInnerHTML={{ __html: title }} />;
+  };
+  
   return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
       <div className="container-custom relative z-10">
@@ -16,7 +23,7 @@ const HeroSection = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" 
               style={{ contentVisibility: 'auto' }}
             >
-              {t('insurance.hero.title')}
+              {renderTitle()}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('insurance.hero.subtitle')}

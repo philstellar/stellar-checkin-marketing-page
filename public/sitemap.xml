@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -12,12 +13,55 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/"/>
   </url>
+  
+  <!-- Language-specific home pages -->
+  <url>
+    <loc>https://stellar-checkin.com/de</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/en</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/"/>
+  </url>
 
   <!-- German URLs -->
   <url>
     <loc>https://stellar-checkin.com/de/impressum</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/impressum"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/impressum"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/impressum"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/impressum"/>
@@ -26,6 +70,7 @@
     <loc>https://stellar-checkin.com/de/datenschutz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/datenschutz"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/datenschutz"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/datenschutz"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/datenschutz"/>
@@ -34,12 +79,13 @@
     <loc>https://stellar-checkin.com/de/agb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/agb"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/agb"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/agb"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/agb"/>
   </url>
 
-  <!-- Insurance Pages - All Languages -->
+  <!-- Insurance Pages - All Languages with proper bidirectional alternates -->
   <url>
     <loc>https://stellar-checkin.com/de/versicherung</loc>
     <changefreq>weekly</changefreq>
@@ -49,8 +95,35 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/assicurazione"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/seguro"/>
   </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/insurance</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/versicherung"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/insurance"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/assicurazione"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/seguro"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/assicurazione</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/versicherung"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/insurance"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/assicurazione"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/seguro"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/seguro</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/versicherung"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/insurance"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/assicurazione"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/seguro"/>
+  </url>
 
-  <!-- Trust Badge Pages - All Languages -->
+  <!-- Trust Badge Pages - All Languages with bidirectional alternates -->
   <url>
     <loc>https://stellar-checkin.com/de/trust-badge</loc>
     <changefreq>weekly</changefreq>
@@ -60,8 +133,35 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/trust-badge"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/trust-badge"/>
   </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/trust-badge</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/trust-badge"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/trust-badge"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/trust-badge"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/trust-badge"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/trust-badge</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/trust-badge"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/trust-badge"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/trust-badge"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/trust-badge"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/trust-badge</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/trust-badge"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/trust-badge"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/trust-badge"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/trust-badge"/>
+  </url>
 
-  <!-- About Us Pages - All Languages -->
+  <!-- About Us Pages - All Languages with bidirectional alternates -->
   <url>
     <loc>https://stellar-checkin.com/de/ueber-uns</loc>
     <changefreq>monthly</changefreq>
@@ -71,8 +171,35 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/chi-siamo"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/sobre-nosotros"/>
   </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/about-us</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/chi-siamo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/sobre-nosotros"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/chi-siamo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/chi-siamo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/sobre-nosotros"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/sobre-nosotros</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/chi-siamo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/sobre-nosotros"/>
+  </url>
 
-  <!-- Success Stories Pages - All Languages -->
+  <!-- Success Stories Pages - All Languages with bidirectional alternates -->
   <url>
     <loc>https://stellar-checkin.com/de/erfolgsbeispiele</loc>
     <changefreq>monthly</changefreq>
@@ -82,8 +209,35 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/storie-di-successo"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/historias-de-exito"/>
   </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/success-stories</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/erfolgsbeispiele"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/success-stories"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/storie-di-successo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/historias-de-exito"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/storie-di-successo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/erfolgsbeispiele"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/success-stories"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/storie-di-successo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/historias-de-exito"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/historias-de-exito</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/erfolgsbeispiele"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/success-stories"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/storie-di-successo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/historias-de-exito"/>
+  </url>
 
-  <!-- FAQ Pages - All Languages -->
+  <!-- FAQ Pages - All Languages with bidirectional alternates -->
   <url>
     <loc>https://stellar-checkin.com/de/faq</loc>
     <changefreq>monthly</changefreq>
@@ -93,63 +247,152 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/faq"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/faq"/>
   </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/faq"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/faq"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/faq"/>
+  </url>
 
-  <!-- English URLs -->
+  <!-- English, Italian and Spanish Legal Pages with bidirectional alternates -->
   <url>
     <loc>https://stellar-checkin.com/en/impressum</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/impressum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/impressum"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/impressum"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/impressum"/>
   </url>
   <url>
     <loc>https://stellar-checkin.com/en/datenschutz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/datenschutz"/>
   </url>
   <url>
     <loc>https://stellar-checkin.com/en/agb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/agb"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/agb"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/agb"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/agb"/>
   </url>
-
-  <!-- Italian URLs -->
   <url>
     <loc>https://stellar-checkin.com/it/impressum</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/impressum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/impressum"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/impressum"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/impressum"/>
   </url>
   <url>
     <loc>https://stellar-checkin.com/it/datenschutz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/datenschutz"/>
   </url>
   <url>
     <loc>https://stellar-checkin.com/it/agb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/agb"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/agb"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/agb"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/agb"/>
   </url>
-
-  <!-- Spanish URLs -->
   <url>
     <loc>https://stellar-checkin.com/es/impressum</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/impressum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/impressum"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/impressum"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/impressum"/>
   </url>
   <url>
     <loc>https://stellar-checkin.com/es/datenschutz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/datenschutz"/>
   </url>
   <url>
     <loc>https://stellar-checkin.com/es/agb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/agb"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/agb"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/agb"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/agb"/>
   </url>
 
-  <!-- Home Page -->
+  <!-- Home Page with path-specific variants (now with complete alternates) -->
   <url>
     <loc>https://stellar-checkin.com/de/home</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/home"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/home"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/home"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/home"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/home</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/home"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/home"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/home"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/home"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/home</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/home"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/home"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/home"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/home"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/home</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/home"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/home"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/home"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/home"/>
   </url>
 </urlset>

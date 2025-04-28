@@ -26,8 +26,8 @@ Allow: /
 # Reference to sitemap
 Sitemap: https://stellar-checkin.com/sitemap.xml
 
-# Set crawl delay to be friendly to servers
-Crawl-delay: 10
+# Set crawl delay to be gentle but not too slow
+Crawl-delay: 5
 
 # Instructions for page rendering
 Cache-Control: max-age=3600
