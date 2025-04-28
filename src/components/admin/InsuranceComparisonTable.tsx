@@ -9,6 +9,7 @@ const InsuranceComparisonTable = () => {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
   
+  // Use direct translation strings instead of keys
   const comparisonRows = [
     t('insuranceDetail.comparison.rows.0'), 
     t('insuranceDetail.comparison.rows.1'), 

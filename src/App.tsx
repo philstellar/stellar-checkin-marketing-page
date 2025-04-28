@@ -33,7 +33,13 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/:lang/" element={<Index />} />
+                  
+                  {/* Insurance routes for all languages */}
                   <Route path="/:lang/versicherung" element={<Versicherung />} />
+                  <Route path="/:lang/insurance" element={<Versicherung />} />
+                  <Route path="/:lang/seguro" element={<Versicherung />} />
+                  <Route path="/:lang/assicurazione" element={<Versicherung />} />
+                  
                   <Route path="/:lang/success-stories" element={<SuccessStories />} />
                   <Route path="/:lang/about-us" element={<AboutUs />} />
                   <Route path="/:lang/faq" element={<FAQ />} />
