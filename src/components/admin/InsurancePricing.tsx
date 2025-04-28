@@ -16,7 +16,7 @@ const InsurancePricing = () => {
         </div>
         <CardContent className="pt-12 pb-6">
           <h3 className="text-2xl font-bold text-royal mb-2">2,80 € <span className="text-sm font-normal text-royal-600">/ night</span></h3>
-          <p className="text-royal-600 mb-6">{t('insuranceDetail.pricing.rows.0.description') || 'Damage Protection up to 1.000 €'}</p>
+          <p className="text-royal-600 mb-6">{t('insuranceDetail.pricing.rows.0.description')}</p>
           
           <ul className="space-y-3 mb-6">
             <li className="flex items-start">
@@ -43,16 +43,16 @@ const InsurancePricing = () => {
         </div>
         <CardContent className="pt-12 pb-6">
           <h3 className="text-2xl font-bold text-royal mb-2">3,90 € <span className="text-sm font-normal text-royal-600">/ night</span></h3>
-          <p className="text-royal-600 mb-6">{t('insuranceDetail.pricing.rows.0.description') || 'Damage Protection up to 3.000 €'}</p>
+          <p className="text-royal-600 mb-6">{t('insuranceDetail.pricing.rows.0.description')}</p>
           
           <ul className="space-y-3 mb-6">
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.allBasicFeatures', 'All Basic Features')}</span>
+              <span className="text-royal-700">{t('insuranceDetail.pricing.allBasicFeatures')}</span>
             </li>
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.increasedCoverage', 'Increased Coverage Limit')}</span>
+              <span className="text-royal-700">{t('insuranceDetail.pricing.increasedCoverage')}</span>
             </li>
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
@@ -60,7 +60,7 @@ const InsurancePricing = () => {
             </li>
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.keyReplacement', 'Key Replacement Coverage')}</span>
+              <span className="text-royal-700">{t('insuranceDetail.pricing.keyReplacement')}</span>
             </li>
           </ul>
           
