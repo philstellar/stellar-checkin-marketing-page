@@ -45,7 +45,7 @@ export function IndexHeroSection() {
               loading="eager" 
               width="500" 
               height="400" 
-              fetchpriority="high" 
+              fetchPriority="high" 
             />
           </div>
         </div>
