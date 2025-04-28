@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
@@ -33,26 +34,14 @@ const InsurancePricingTable = () => {
         label: t('insuranceDetail.pricing.rows.1.label'),
         tooltip: t('insuranceDetail.pricing.rows.1.tooltip'),
         description: t('insuranceDetail.pricing.rows.1.description')
-      },
-      {
-        label: t('insuranceDetail.pricing.rows.2.label'),
-        tooltip: t('insuranceDetail.pricing.rows.2.tooltip'),
-        description: t('insuranceDetail.pricing.rows.2.description')
-      },
-      {
-        label: t('insuranceDetail.pricing.rows.3.label'),
-        tooltip: t('insuranceDetail.pricing.rows.3.tooltip'),
-        description: t('insuranceDetail.pricing.rows.3.description')
-      },
-      {
-        description: t('insuranceDetail.pricing.rows.4.description')
-      },
-      {
-        description: t('insuranceDetail.pricing.rows.5.description')
-      },
-      {
-        description: t('insuranceDetail.pricing.rows.6.description')
       }
+    ],
+    features: [
+      t('insuranceDetail.pricing.rows.2.description'),
+      t('insuranceDetail.pricing.rows.3.description'),
+      t('insuranceDetail.pricing.rows.4.description'),
+      t('insuranceDetail.pricing.rows.5.description'),
+      t('insuranceDetail.pricing.rows.6.description')
     ]
   };
 
@@ -77,11 +66,17 @@ const InsurancePricingTable = () => {
                 <p className="text-xs text-royal-600 mt-1">{pricingData.rows[0].description}</p>
               </div>
 
-              {/* Rest of the rows */}
-              {pricingData.rows.slice(1).map((row, rowIndex) => (
-                <div key={rowIndex + 1} className="flex items-start gap-2">
+              {/* Second row with description */}
+              <div className="flex items-start gap-2">
+                <Check className="h-5 w-5 text-apple flex-shrink-0 mt-0.5" />
+                <span className="text-sm">{pricingData.rows[1].description}</span>
+              </div>
+
+              {/* Features */}
+              {pricingData.features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-2">
                   <Check className="h-5 w-5 text-apple flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">{row.description}</span>
+                  <span className="text-sm">{feature}</span>
                 </div>
               ))}
             </div>
@@ -122,26 +117,30 @@ const InsurancePricingTable = () => {
             ))}
           </tr>
           
-          {/* Feature rows */}
-          {pricingData.rows.slice(1).map((row, rowIndex) => (
-            <tr key={rowIndex + 1}>
-              <td className="p-4 border-b">
-                {row.label && (
-                  <>
-                    <div className="font-medium">{row.label}</div>
-                    {row.tooltip && <div className="text-xs text-royal-600">{row.tooltip}</div>}
-                  </>
-                )}
+          {/* Second row */}
+          <tr>
+            <td className="p-4 border-b">
+              <div className="font-medium">{pricingData.rows[1].label}</div>
+              <div className="text-xs text-royal-600">{pricingData.rows[1].tooltip}</div>
+            </td>
+            <td colSpan={3} className="p-4 border-b">
+              <div className="flex items-center justify-center gap-2">
+                <Check className="h-5 w-5 text-apple" />
+                <span className="text-sm">{pricingData.rows[1].description}</span>
+              </div>
+            </td>
+          </tr>
+
+          {/* Features rows */}
+          {pricingData.features.map((feature, index) => (
+            <tr key={index}>
+              <td className="p-4 border-b" />
+              <td colSpan={3} className="p-4 border-b">
+                <div className="flex items-center justify-center gap-2">
+                  <Check className="h-5 w-5 text-apple" />
+                  <span className="text-sm">{feature}</span>
+                </div>
               </td>
-              
-              {pricingData.header.amounts.map((_, planIndex) => (
-                <td key={planIndex} className="p-4 border-b text-center">
-                  <div className="flex items-center justify-center gap-2">
-                    <Check className="h-5 w-5 text-apple" />
-                    <span className="text-sm">{row.description}</span>
-                  </div>
-                </td>
-              ))}
             </tr>
           ))}
         </tbody>
