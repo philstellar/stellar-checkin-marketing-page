@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const InsurancePricingTable = () => {
   const {
     t
@@ -107,9 +109,9 @@ const InsurancePricingTable = () => {
           {pricingData.features.map((feature, index) => <tr key={index}>
               <td className="p-4 border-b" />
               <td colSpan={3} className="p-4 border-b">
-                <div className="flex items-center gap-2">
-                  
-                  <span className="text-sm">{feature}</span>
+                <div className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-apple flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-left">{feature}</span>
                 </div>
               </td>
             </tr>)}
@@ -117,4 +119,5 @@ const InsurancePricingTable = () => {
       </table>
     </div>;
 };
+
 export default InsurancePricingTable;
