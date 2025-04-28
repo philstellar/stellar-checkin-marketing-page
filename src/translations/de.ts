@@ -36,8 +36,8 @@ export const de = {
 
   // Versicherung Section - will be migrated to its own module later
   versicherung: {
-    title: "Versicherung und Kaution clever automatisieren",
-    subtitle: "Automatisieren Sie Kaution und Rückerstattung – oder bieten Sie Ihren Gästen eine bequeme Alternative für zusätzliche Provisionseinnahmen.",
+    title: "Integrierter Schutz für Ihre Unterkünfte",
+    subtitle: "Integrierter Schutz vor Gästeschäden – dank einzigartiger Versicherung und/oder Kautionsmanagement.",
     process: {
       title: "Schnellerer Check-in-Prozess",
       description: "Keine Kautionsabwicklung mehr – weniger Aufwand für Sie und mehr Komfort für Ihre Gäste."
