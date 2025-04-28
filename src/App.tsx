@@ -9,7 +9,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Index from './pages/Index';
-import Versicherung from './components/admin/VersicherungPage';
+import VersicherungPage from './pages/VersicherungPage';
 import TrustBadgePage from './pages/TrustBadgePage';
 import NotFound from './pages/NotFound';
 import Impressum from './pages/Impressum';
@@ -35,10 +35,10 @@ function App() {
                   <Route path="/:lang/" element={<Index />} />
                   
                   {/* Insurance routes for all languages */}
-                  <Route path="/:lang/versicherung" element={<Versicherung />} />
-                  <Route path="/:lang/insurance" element={<Versicherung />} />
-                  <Route path="/:lang/seguro" element={<Versicherung />} />
-                  <Route path="/:lang/assicurazione" element={<Versicherung />} />
+                  <Route path="/:lang/versicherung" element={<VersicherungPage />} />
+                  <Route path="/:lang/insurance" element={<VersicherungPage />} />
+                  <Route path="/:lang/seguro" element={<VersicherungPage />} />
+                  <Route path="/:lang/assicurazione" element={<VersicherungPage />} />
                   
                   <Route path="/:lang/success-stories" element={<SuccessStories />} />
                   <Route path="/:lang/about-us" element={<AboutUs />} />
