@@ -1,4 +1,3 @@
-
 import React, { lazy, Suspense, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from "@/components/Header";
@@ -9,6 +8,7 @@ import Footer from "@/components/Footer";
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 import ContactSection from "@/components/contact/ContactSection"; // Direct import instead of lazy loading
 import KurtaxeSection from "@/components/KurtaxeSection"; // Direct import instead of lazy loading
+import { StructuredData } from "@/components/StructuredData";
 
 // Custom loading component
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
@@ -43,6 +43,8 @@ const Index = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <StructuredData type="product" />
+      <StructuredData type="organization" />
       <Header />
       <main>
         <IndexHeroSection />

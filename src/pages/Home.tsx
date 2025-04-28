@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,6 +7,7 @@ import FeaturesSection from '@/components/home/FeaturesSection';
 import CTASection from '@/components/home/CTASection';
 import LogoCarouselAutoplay from '@/components/LogoCarouselAutoplay';
 import { useTranslation } from "@/hooks/use-translation";
+import { StructuredData } from "@/components/StructuredData";
 
 const testimonialLogos = [
   {
@@ -62,6 +62,8 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <StructuredData type="product" />
+      <StructuredData type="organization" />
       <Header />
       <main className="flex-grow">
         <HomeHeroSection />
