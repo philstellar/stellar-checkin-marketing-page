@@ -39,6 +39,11 @@ export const useTranslation = () => {
           const currentValue = get(translations[language], currentPath);
           console.debug(`Path "${currentPath}" in ${language}:`, currentValue);
         }
+        
+        // In development mode, provide a more visible indicator for missing translations
+        if (!value) {
+          return `[Missing: ${key}]`;
+        }
       }
     }
     

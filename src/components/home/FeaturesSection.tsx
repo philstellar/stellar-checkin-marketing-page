@@ -7,6 +7,13 @@ import { useTranslation } from "@/hooks/use-translation";
 const FeaturesSection = () => {
   const { t } = useTranslation();
   
+  // Add debug logging for feature translations
+  console.debug('[HomeFeatures] Current features titles:', {
+    digitalization: t('features.digitalization.title'),
+    timeSaving: t('features.timeSaving.title'),
+    security: t('features.security.title')
+  });
+  
   const features = [
     {
       title: t('features.digitalization.title'),
