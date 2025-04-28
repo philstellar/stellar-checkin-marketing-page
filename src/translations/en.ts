@@ -37,7 +37,7 @@ export const en = {
   // Versicherung - will be migrated later
   versicherung: {
     title: "Cleverly automate insurance and deposits",
-    subtitle: "Automate deposit handling and refunds, or offer your guests a convenient alternative – and secure additional commission income.",
+    subtitle: "Integrierter Schutz vor Gästeschäden – dank einzigartiger Versicherung und/oder Kautionsmanagement.",
     process: {
       title: "Faster Check-in Process",
       description: "No more deposit management – less effort for you and more convenience for your guests."

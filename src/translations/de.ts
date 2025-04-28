@@ -37,7 +37,7 @@ export const de = {
   // Versicherung Section - will be migrated to its own module later
   versicherung: {
     title: "Integrierter Schutz für Ihre Unterkünfte",
-    subtitle: "Integrierter Schutz vor Gästeschäden – dank einzigartiger Versicherung und/ oder Kautionsmanagement.",
+    subtitle: "Der umfassende Schutz vor Gästeschäden – dank einzigartiger Versicherung und/ oder Kautionsmanagement.",
     process: {
       title: "Schnellerer Check-in-Prozess",
       description: "Keine Kautionsabwicklung mehr – weniger Aufwand für Sie und mehr Komfort für Ihre Gäste."
