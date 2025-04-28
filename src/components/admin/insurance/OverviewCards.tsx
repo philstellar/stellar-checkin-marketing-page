@@ -39,7 +39,7 @@ const OverviewCards = () => {
               <img 
                 src="/lovable-uploads/0da418dc-2d10-4140-85c9-4c96a4bbe2a9.png" 
                 alt="Hiscox Insurance" 
-                className="h-12" 
+                className="h-16" 
               />
             </div>
             <p className="text-royal-700">{t('insurance.section3.content')}</p>
