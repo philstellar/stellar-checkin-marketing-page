@@ -1,4 +1,3 @@
-
 import { useTranslation } from "@/hooks/use-translation";
 
 interface StructuredDataProps {
@@ -83,8 +82,8 @@ export const StructuredData = ({ type, faqData }: StructuredDataProps) => {
       "@type": "PostalAddress",
       "addressCountry": "DE",
       "addressLocality": "Berlin",
-      "postalCode": "10115",
-      "streetAddress": "Chausseestraße 86"
+      "postalCode": "10405",
+      "streetAddress": "Immanuelkirchstrasse 38"
     }
   });
 
