@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import InsurancePricing from '../components/admin/InsurancePricing';
@@ -12,10 +11,10 @@ import BenefitsSection from '../components/admin/insurance/BenefitsSection';
 import OverviewCards from '../components/admin/insurance/OverviewCards';
 import CTAButton from '../components/CTAButton';
 import { Book, ShieldPlus, Clock, Wallet, UserCheck } from 'lucide-react';
-
 const VersicherungPage: React.FC = () => {
-  const { t } = useTranslation();
-  
+  const {
+    t
+  } = useTranslation();
   const addInsuranceFeatures = [{
     icon: <Book className="h-6 w-6 text-apple" />,
     title: t('insuranceDetail.addFeatures.syncBookings.title'),
@@ -33,9 +32,7 @@ const VersicherungPage: React.FC = () => {
     title: t('insuranceDetail.addFeatures.deposit.title'),
     description: t('insuranceDetail.addFeatures.deposit.description')
   }];
-  
-  return (
-    <>
+  return <>
       <HeroSection />
 
       <div className="container mx-auto px-4 bg-white overflow-hidden py-[65px]">
@@ -82,7 +79,7 @@ const VersicherungPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white text-center">
+      <section className="bg-white text-center py-0">
         <div className="container-custom">
           <CTAButton className="bg-apple hover:bg-apple-600 text-white px-8 py-3 text-lg">
             <UserCheck className="mr-2 h-5 w-5" /> {t('insuranceDetail.hero.cta')}
@@ -95,8 +92,6 @@ const VersicherungPage: React.FC = () => {
           <InsuranceFAQ />
         </div>
       </section>
-    </>
-  );
+    </>;
 };
-
 export default VersicherungPage;
