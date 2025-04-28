@@ -1,5 +1,5 @@
+
 export const navigationDE = {
-  home: "Home",
   features: "Check-in",
   pricing: "Preise",
   contact: "Kontakt",
@@ -9,7 +9,6 @@ export const navigationDE = {
   privacyPolicy: "Datenschutz",
   termsAndConditions: "AGB",
   insurance: "Versicherung",
-  trustBadge: "Trust Badge",
   aboutStellar: "Über uns",
   aboutUs: "Über uns",
   successStories: "Erfolgsbeispiele",
@@ -24,7 +23,6 @@ export const navigationDE = {
 };
 
 export const navigationEN = {
-  home: "Home",
   features: "Check-in",
   pricing: "Pricing",
   contact: "Contact", 
@@ -34,7 +32,6 @@ export const navigationEN = {
   privacyPolicy: "Privacy Policy", 
   termsAndConditions: "Terms and Conditions",
   insurance: "Insurance",
-  trustBadge: "Trust Badge",
   aboutStellar: "About Us",
   aboutUs: "About Us",
   successStories: "Success Stories",
@@ -49,7 +46,6 @@ export const navigationEN = {
 };
 
 export const navigationIT = {
-  home: "Home",
   features: "Check-in",
   pricing: "Prezzi",
   contact: "Contatti",
@@ -59,7 +55,6 @@ export const navigationIT = {
   privacyPolicy: "Informativa sulla Privacy", 
   termsAndConditions: "Termini e Condizioni",
   insurance: "Assicurazione",
-  trustBadge: "Trust Badge",
   aboutStellar: "Chi Siamo",
   aboutUs: "Chi Siamo",
   successStories: "Storie di Successo",
@@ -74,7 +69,6 @@ export const navigationIT = {
 };
 
 export const navigationES = {
-  home: "Home", 
   features: "Check-in",
   pricing: "Precios",
   contact: "Contacto",
@@ -84,7 +78,6 @@ export const navigationES = {
   privacyPolicy: "Política de Privacidad", 
   termsAndConditions: "Términos y Condiciones",
   insurance: "Seguro",
-  trustBadge: "Trust Badge",
   aboutStellar: "Sobre Nosotros",
   aboutUs: "Sobre Nosotros",
   successStories: "Historias de Éxito",
