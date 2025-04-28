@@ -24,7 +24,7 @@ const HeroSection = () => {
               dangerouslySetInnerHTML={{ __html: formattedTitle }}
             />
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-              Bieten Sie Ihren Gästen <span className="text-apple">optional</span> eine <span className="text-apple">Versicherung</span> an und profitieren Sie von zusätzlichen Einnahmen.
+              {t('insurance.introduction')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
