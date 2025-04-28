@@ -20,6 +20,7 @@ const Agb = lazy(() => import('./pages/Agb'));
 const Brevo = lazy(() => import('./pages/Brevo'));
 // Direct import of admin components to avoid circular dependencies
 const VersicherungPage = lazy(() => import('./components/admin/VersicherungPage').then(m => ({ default: m.default })));
+const TrustBadgePage = lazy(() => import('./components/admin/TrustBadgePage'));
 const UeberUns = lazy(() => import('./pages/UeberUns'));
 const Erfolgsbeispiele = lazy(() => import('./pages/Erfolgsbeispiele'));
 const FAQ = lazy(() => import('./pages/FAQ'));
@@ -58,6 +59,12 @@ const App = () => {
   return (
     <BrevoFormProvider>
       <Routes>
+        {/* Add home routes for all languages */}
+        <Route 
+          path="/:lang/home" 
+          element={<Home />} 
+        />
+        
         {/* Language-specific routes with consistent URL structure */}
         <Route path="/:lang?" element={<Index />} />
         <Route path="/:lang/legal/imprint" element={<Navigate to="/:lang/impressum" replace />} />
@@ -272,7 +279,7 @@ const App = () => {
           } 
         />
         
-        {/* Insurance routes for all languages */}
+        {/* Insurance and Trust Badge routes for all languages */}
         <Route 
           path="/de/versicherung" 
           element={
@@ -302,6 +309,39 @@ const App = () => {
           element={
             <Suspense fallback={<PageLoader />}>
               <VersicherungPage />
+            </Suspense>
+          } 
+        />
+        
+        <Route 
+          path="/de/trust-badge" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <TrustBadgePage />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/en/trust-badge" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <TrustBadgePage />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/it/trust-badge" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <TrustBadgePage />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/es/trust-badge" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <TrustBadgePage />
             </Suspense>
           } 
         />

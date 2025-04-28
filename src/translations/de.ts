@@ -48,7 +48,7 @@ export const de = {
 
   // Versicherung Section
   versicherung: {
-    title: "Unser Check-in: Absicherung für Ihre Unterkünfte inklusive",
+    title: "Versicherung und Kaution clever automatisieren",
     subtitle: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung – oder bieten Sie Ihren Gästen eine bequeme Alternative und sichern Sie sich zusätzliche Provisionseinnahmen.",
     process: {
       title: "Schnellerer Check-in-Prozess",

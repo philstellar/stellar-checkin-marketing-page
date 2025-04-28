@@ -1,3 +1,4 @@
+
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -50,6 +51,15 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
 
   return (
     <nav className="hidden md:flex items-center space-x-8">
+      {!isPublished && (
+        <button
+          onClick={() => handleNavigation('home')}
+          className="text-royal hover:text-apple font-medium transition-colors"
+        >
+          {renderBoldText(t('navigation.home'))}
+        </button>
+      )}
+
       <div className="flex items-center space-x-1">
         <button 
           onClick={() => handleNavigation('')} 
@@ -108,6 +118,15 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
       >
         {renderBoldText(t('navigation.insurance'))}
       </button>
+
+      {!isPublished && (
+        <button
+          onClick={() => handleNavigation('trust-badge')}
+          className="text-royal hover:text-apple font-medium transition-colors"
+        >
+          {renderBoldText(t('navigation.trustBadge'))}
+        </button>
+      )}
 
       <button 
         onClick={() => handleSectionNavigation('preise')} 

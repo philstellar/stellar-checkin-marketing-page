@@ -7,14 +7,6 @@ import { useTranslation } from '@/hooks/use-translation';
 const HeroSection = () => {
   const { t } = useTranslation();
   
-  const renderTitle = () => {
-    const titleText = t('insurance.hero.title');
-    return titleText.replace(
-      /<highlight>(.*?)<\/highlight>/g,
-      (_, p1) => `<span style="color: #a4c309">${p1}</span>`
-    );
-  };
-  
   return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
       <div className="container-custom relative z-10">
@@ -23,8 +15,9 @@ const HeroSection = () => {
             <h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" 
               style={{ contentVisibility: 'auto' }}
-              dangerouslySetInnerHTML={{ __html: renderTitle() }}
-            />
+            >
+              {t('insurance.hero.title')}
+            </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('insurance.hero.subtitle')}
             </p>

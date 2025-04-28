@@ -50,8 +50,7 @@ const Header = () => {
   };
 
   const handleHomeClick = () => {
-    const { language } = useLanguage();
-    navigate(`/${language}/`);
+    navigate(`/${language}/home`);
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -94,6 +93,7 @@ const Header = () => {
               <img src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" alt="Stellar Logo" width="150" height="24" className="h-9 w-auto object-contain" />
             </button>
           </div>
+
           <div className="flex items-center gap-4">
             <div className="md:hidden">
               <LanguageSelector variant="icon-only" />
@@ -104,6 +104,7 @@ const Header = () => {
             </button>
           </div>
         </div>
+
         <MobileNav isOpen={isMenuOpen} handleSectionClick={handleSectionClick} onClose={closeMenu} isScrolled={isScrolled} />
       </div>
     </header>;
