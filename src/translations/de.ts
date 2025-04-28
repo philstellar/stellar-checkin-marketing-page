@@ -1,3 +1,4 @@
+
 import { navigationDE } from './modules/navigation';
 import { heroDE } from './modules/hero';
 import { homeHeroDE } from './modules/homeHero';
@@ -142,96 +143,6 @@ export const de = {
     infoText: "In Kürze erhalten Sie von uns weitere Infos und den Registrierungslink",
     sending: "Wird gesendet...",
     cta: "Jetzt registrieren"
-  },
-  pricing: {
-    title: "Flexible Preisgestaltung",
-    subtitle: "Wählen Sie das passende Modell für Ihre Bedürfnisse",
-    basic: {
-      title: "Basic",
-      price: "0",
-      unit: "€",
-      per: "pro Monat",
-      cta: "Kostenlos starten",
-      features: [
-        "Digitaler Check-in / Check-out",
-        "Automatisierte Datenerfassung",
-        "Sichere Datenübertragung (SSL)",
-        "Zusatzleistungen *",
-        "Identitätsprüfung *",
-        "Kautionsverwaltung *",
-        "Gästeversicherung *",
-        "E-Mail-Support"
-      ],
-      additionalServices: "Zusatzleistungen *",
-      identityVerification: "Identitätsprüfung *",
-      depositManagement: "Kautionsverwaltung *",
-      insurance: "Gästeversicherung *",
-      digitalGuestRegistration: "Gästeregistrierung bei Behörden *"
-    },
-    advanced: {
-      title: "Advanced",
-      popular: "Beliebt",
-      price: "99",
-      unit: "€",
-      per: "pro Monat",
-      cta: "Jetzt upgraden",
-      plusBasic: "Alles aus Basic, plus:",
-      features: [
-        "Gästeregistrierung bei Behörden *",
-        "SMS-Benachrichtigungen",
-        "Mehrsprachigkeit",
-        "Priorisierter Support"
-      ],
-      digitalGuestRegistration: "Gästeregistrierung bei Behörden *"
-    },
-    enterprise: {
-      title: "Enterprise",
-      contact: "Individuelles",
-      contactTeam: "Angebot anfordern",
-      cta: "Kontakt aufnehmen",
-      features: [
-        "Individuelle Anpassung",
-        "Dedizierter Support"
-      ]
-    },
-    basic: {
-      title: "Basic",
-      price: "0",
-      unit: "€",
-      per: "pro Monat",
-      cta: "Kostenlos starten",
-      features: [
-        "Digitaler Check-in / Check-out",
-        "Automatisierte Datenerfassung",
-        "Sichere Datenübertragung (SSL)",
-        "Zusatzleistungen *",
-        "Identitätsprüfung *",
-        "Kautionsverwaltung *",
-        "Gästeversicherung *",
-        "E-Mail-Support"
-      ],
-      additionalServicesDesc: "Zusätzliche Dienstleistungen wie digitale Gästemappe, Reinigungsmanagement und mehr.",
-      identityVerificationDesc: "Automatische Überprüfung der Identität Ihrer Gäste anhand offizieller Ausweisdokumente.",
-      depositManagementDesc: "Automatisierte Verwaltung von Kautionen, einschließlich Einzug und Rückerstattung.",
-      insuranceDesc: "Optionale Versicherung für Ihre Gäste als Alternative zur Kaution.",
-      digitalGuestRegistrationDesc: "Automatische Übermittlung der Gästedaten an die zuständigen Behörden."
-    },
-  },
-  features: {
-    digitalization: {
-      title: "Digitalisierung",
-      description: "Ersetzen Sie Papierformulare durch digitale Prozesse und sparen Sie Zeit und Kosten."
-    },
-    timeSaving: {
-      title: "Zeitersparnis",
-      description: "Automatisieren Sie Routineaufgaben und konzentrieren Sie sich auf das Wesentliche."
-    },
-    security: {
-      title: "Sicherheit",
-      description: "Schützen Sie Ihre Daten und die Ihrer Gäste mit modernsten Sicherheitsstandards."
-    },
-    title: "Was wir bieten",
-    subtitle: "Verbessern Sie das Gästeerlebnis vor der Anreise und steigern Sie Ihren Umsatz",
-    moreBtn: "Mehr erfahren"
-  },
+  }
 };
+
