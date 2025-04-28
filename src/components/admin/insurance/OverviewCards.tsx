@@ -19,8 +19,8 @@ const OverviewCards = () => {
       
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
         <Card>
-          <CardContent className="pt-6 flex flex-col">
-            <div className="mb-4 min-h-[2rem] flex items-center">
+          <CardContent className="pt-6 relative">
+            <div className="flex min-h-[2.5rem] mb-4">
               <h3 className="text-xl font-semibold text-royal">{t('insurance.section1.title')}</h3>
             </div>
             <p className="text-royal-700">{t('insurance.section1.content')}</p>
@@ -28,8 +28,8 @@ const OverviewCards = () => {
         </Card>
 
         <Card>
-          <CardContent className="pt-6 flex flex-col">
-            <div className="mb-4 min-h-[2rem] flex items-center">
+          <CardContent className="pt-6 relative">
+            <div className="flex min-h-[2.5rem] mb-4">
               <h3 className="text-xl font-semibold text-royal">{t('insurance.section2.title')}</h3>
             </div>
             <p className="text-royal-700">{t('insurance.section2.content')}</p>
@@ -37,14 +37,14 @@ const OverviewCards = () => {
         </Card>
 
         <Card>
-          <CardContent className="pt-6 flex flex-col">
-            <div className="mb-4 min-h-[2rem] flex items-center justify-between">
+          <CardContent className="pt-6 relative">
+            <img 
+              src="/lovable-uploads/0da418dc-2d10-4140-85c9-4c96a4bbe2a9.png" 
+              alt="Hiscox Insurance" 
+              className="h-16 absolute top-6 right-6" 
+            />
+            <div className="flex min-h-[2.5rem] mb-4">
               <h3 className="text-xl font-semibold text-royal">{t('insurance.section3.title')}</h3>
-              <img 
-                src="/lovable-uploads/0da418dc-2d10-4140-85c9-4c96a4bbe2a9.png" 
-                alt="Hiscox Insurance" 
-                className="h-16" 
-              />
             </div>
             <p className="text-royal-700">{t('insurance.section3.content')}</p>
           </CardContent>
