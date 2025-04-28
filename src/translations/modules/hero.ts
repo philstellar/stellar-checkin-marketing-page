@@ -1,9 +1,9 @@
 
 export const heroDE = {
   headline: "Die digitale Komplettlösung für den Check-in von Ferienunterkünften",
-  subheadline: "Weniger Arbeit, mehr Einnahmen – und ein Check-in, der Ihre Gäste begeistert.",
+  subheadline: "Weniger Aufwand, mehr Umsatz – und ein Check-in, der Ihre Gäste begeistert und Ihre Unterkünfte schützt.",
   cta: "Jetzt Registrieren",
-  tagline: "Einfach. Effizient. Für Sie und Ihre Gäste."
+  tagline: "Automatisiert. Sicher. Gästefreundlich."
 };
 
 export const heroEN = {
