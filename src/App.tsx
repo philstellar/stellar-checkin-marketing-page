@@ -9,7 +9,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Index from './pages/Index';
-import Versicherung from './pages/admin/VersicherungPage';
+import Versicherung from './components/admin/VersicherungPage';
 import TrustBadgePage from './pages/TrustBadgePage';
 import NotFound from './pages/NotFound';
 import Impressum from './pages/Impressum';
