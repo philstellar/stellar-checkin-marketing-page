@@ -8,7 +8,7 @@ export interface FeatureSectionProps {
   title: string;
   description: string;
   features: {
-    icon?: React.ReactNode; // Make icon optional
+    icon?: React.ReactNode;
     title: string;
     description: string;
   }[];

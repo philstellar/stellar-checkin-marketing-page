@@ -6,9 +6,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 export function IndexHeroSection() {
   const isMobile = useIsMobile();
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
   
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">

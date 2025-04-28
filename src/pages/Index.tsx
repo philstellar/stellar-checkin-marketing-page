@@ -1,3 +1,4 @@
+
 import React, { lazy, Suspense } from 'react';
 import Header from "@/components/Header";
 import { IndexHeroSection } from "@/components/sections/IndexHeroSection";
