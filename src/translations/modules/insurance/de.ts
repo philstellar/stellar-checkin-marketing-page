@@ -2,7 +2,7 @@
 export const insuranceDE = {
   hero: {
     title: "Check-in und Schutz für Ihre Unterkünfte – alles in einem",
-    subtitle: "Schützen Sie Ihre Unterkünfte vor Gästeschäden – mit unserer einzigartigen Versicherung und Kautionsmanagement.",
+    subtitle: "Optimaler Schutz für Ihre Unterkünfte – mit Versicherung und Kautionsmanagement.",
     introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen",
     cta: "Jetzt loslegen"  // Changed from "Jetzt Starten"
   },
