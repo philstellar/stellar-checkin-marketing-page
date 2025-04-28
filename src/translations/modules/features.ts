@@ -29,7 +29,7 @@ export const featuresDE = {
 };
 
 export const featuresEN = {
-  title: "Stellar Check-in",
+  title: "Our Features at a Glance",
   subtitle: "Improve the guest experience before arrival and increase your revenue",
   kurtaxe: {
     title: "Tourist tax & digital guest registration",
@@ -59,7 +59,7 @@ export const featuresEN = {
 };
 
 export const featuresIT = {
-  title: "Stellar Check-in",
+  title: "Le nostre funzionalità in sintesi",
   subtitle: "Migliora l'esperienza degli ospiti prima dell'arrivo e aumenta i tuoi guadagni",
   kurtaxe: {
     title: "Tassa di soggiorno e registrazione digitale degli ospiti",
@@ -89,7 +89,7 @@ export const featuresIT = {
 };
 
 export const featuresES = {
-  title: "Stellar Check-in",
+  title: "Nuestras funciones en resumen",
   subtitle: "Mejore la experiencia del huésped antes de la llegada y aumente sus ingresos",
   kurtaxe: {
     title: "Tasa turística y registro digital de huéspedes",
