@@ -1,3 +1,4 @@
+
 export const featuresDE = {
   digitalization: {
     title: "Digitalisierung",
@@ -11,7 +12,7 @@ export const featuresDE = {
     title: "Sicherheit",
     description: "Schützen Sie Ihre Daten und die Ihrer Gäste mit modernsten Sicherheitsstandards."
   },
-  title: "Your wins",
+  title: "Was wir bieten",
   subtitle: "Verbessern Sie das Gästeerlebnis vor der Anreise und steigern Sie Ihren Umsatz",
   moreBtn: "Mehr erfahren"
 };
