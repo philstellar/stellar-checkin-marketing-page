@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,7 +8,6 @@ import CTASection from '@/components/home/CTASection';
 import LogoCarouselAutoplay from '@/components/LogoCarouselAutoplay';
 import { useTranslation } from "@/hooks/use-translation";
 import { StructuredData } from "@/components/StructuredData";
-import { useLanguage } from '@/context/LanguageContext';
 
 const testimonialLogos = [
   {
@@ -61,11 +59,6 @@ const testimonialLogos = [
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
-  const { language } = useLanguage();
-  
-  // Debug translations
-  console.debug("[Home] Current language:", language);
-  console.debug("[Home] Features section translation:", t('features.title'));
 
   return (
     <div className="flex flex-col min-h-screen">
