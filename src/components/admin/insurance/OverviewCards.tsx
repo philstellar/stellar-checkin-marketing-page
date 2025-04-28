@@ -19,22 +19,26 @@ const OverviewCards = () => {
       
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
         <Card>
-          <CardContent className="pt-6">
-            <h3 className="text-xl font-semibold text-royal mb-4">{t('insurance.section1.title')}</h3>
+          <CardContent className="pt-6 flex flex-col">
+            <div className="mb-4 min-h-[2rem] flex items-center">
+              <h3 className="text-xl font-semibold text-royal">{t('insurance.section1.title')}</h3>
+            </div>
             <p className="text-royal-700">{t('insurance.section1.content')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardContent className="pt-6">
-            <h3 className="text-xl font-semibold text-royal mb-4">{t('insurance.section2.title')}</h3>
+          <CardContent className="pt-6 flex flex-col">
+            <div className="mb-4 min-h-[2rem] flex items-center">
+              <h3 className="text-xl font-semibold text-royal">{t('insurance.section2.title')}</h3>
+            </div>
             <p className="text-royal-700">{t('insurance.section2.content')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardContent className="pt-6">
-            <div className="flex items-center justify-between mb-4">
+          <CardContent className="pt-6 flex flex-col">
+            <div className="mb-4 min-h-[2rem] flex items-center justify-between">
               <h3 className="text-xl font-semibold text-royal">{t('insurance.section3.title')}</h3>
               <img 
                 src="/lovable-uploads/0da418dc-2d10-4140-85c9-4c96a4bbe2a9.png" 
