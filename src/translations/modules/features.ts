@@ -1,5 +1,5 @@
 export const featuresDE = {
-  title: "Stellar Check-in",
+  title: "Unsere Funktionen im Überblick",
   subtitle: "Verbessern Sie das Gästeerlebnis vor der Anreise und steigern Sie Ihren Umsatz",
   kurtaxe: {
     title: "Kurtaxe & digitale Gästeregistrierung",
