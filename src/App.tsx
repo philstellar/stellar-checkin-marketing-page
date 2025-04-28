@@ -1,3 +1,4 @@
+
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -32,9 +33,6 @@ const DatenschutzIT = lazy(() => import('./pages/legal/DatenschutzIT'));
 const AgbEN = lazy(() => import('./pages/legal/AgbEN'));
 const AgbES = lazy(() => import('./pages/legal/AgbES'));
 const AgbIT = lazy(() => import('./pages/legal/AgbIT'));
-
-// Lazy load the new Home page
-const Home = lazy(() => import('./pages/Home'));
 
 // Lazy load the new About & Success Stories pages for EN, IT, ES
 const AboutUsEN = lazy(() => import('./pages/ueber-uns/AboutUsEN'));
