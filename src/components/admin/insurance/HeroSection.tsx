@@ -11,9 +11,7 @@ const HeroSection = () => {
   const formattedTitle = t('insurance.title')
     .replace('Versicherung', '<span class="text-apple">Versicherung</span>')
     .replace('Kaution', '<span class="text-apple">Kaution</span>')
-    .replace(/Check-in/gi, '<span style="color:#a4c309">Check-in</span>')
-    .replace(/Check-ins/gi, '<span style="color:#a4c309">Check-ins</span>')
-    .replace(/Checkin/gi, '<span style="color:#a4c309">Checkin</span>');
+    .replace(/Schutz für Ihre Unterkünfte/gi, '<span style="color:#a4c309">Schutz für Ihre Unterkünfte</span>');
   
   return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
