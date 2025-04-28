@@ -4,7 +4,7 @@ export const insuranceDE = {
     title: "Versicherung und Kaution clever automatisieren",
     subtitle: "Schützen Sie Ihr Eigentum und vereinfachen Sie den Check-in",
     introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen",
-    cta: "Jetzt loslegen"  // Changed from "Jetzt Starten"
+    cta: "Jetzt loslegen"
   },
   
   overview: {
@@ -60,7 +60,8 @@ export const insuranceDE = {
         label: "Preis pro Nacht\n(plus Versicherungssteuer)",
         value1: "€ 2,82",
         value2: "€ 3,62",
-        value3: "€ 4,91"
+        value3: "€ 4,91",
+        description: "Grundabsicherung mit flexiblen Optionen"
       },
       {
         label: "Deckung (SB €100)",
@@ -83,7 +84,10 @@ export const insuranceDE = {
       {
         description: "Durch Haustiere verursachte Schäden bis zu € 5.000"
       }
-    ]
+    ],
+    allBasicFeatures: "Alle Basisfunktionen",
+    increasedCoverage: "Erhöhte Deckungssumme",
+    keyReplacement: "Schlüsselersatz-Deckung"
   },
   benefits: {
     title: "Die Vorteile der Versicherung im Überblick",
@@ -142,6 +146,24 @@ export const insuranceDE = {
     cost: {
       question: "Was kostet mich die Gästeschadenversicherung?",
       answer: "Unsere Gastschadensversicherung beginnt bei 2,8 € pro Nacht und variiert je nach Höhe der Deckung. Details findest du in deinem Stellar-Konto.\n\nDie Kosten für die Versicherung können auch vom Gast getragen werden, als Alternative zur Kaution.\n\nUm sicherzustellen, dass die Versicherung alle Aufenthalte in deinen Unterkünften abdeckt, kannst du in den Einstellungen festlegen, dass du die Versicherung selbst bezahlst und die Kosten in den Mietpreis einbeziehst."
+    }
+  },
+  addFeatures: {
+    syncBookings: {
+      title: "Synchronisieren Sie Ihre Buchungen",
+      description: "Richten Sie die Logik ein, die am besten für Ihr Geschäft funktioniert."
+    },
+    coverage: {
+      title: "Wählen Sie die richtige Deckungssumme",
+      description: "Sichern Sie sich mit jeder erfolgreichen Buchung ab."
+    },
+    integration: {
+      title: "Online Check-in Integration",
+      description: "Lassen Sie Ihre Gäste zwischen Versicherung und Kaution wählen."
+    },
+    deposit: {
+      title: "Kautionen als Option",
+      description: "Bieten Sie Ihren Gästen die Wahl zwischen Versicherung und traditioneller Kaution."
     }
   }
 };

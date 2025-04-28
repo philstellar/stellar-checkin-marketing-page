@@ -1,10 +1,12 @@
+
 import { navigationDE } from './modules/navigation';
 import { heroDE } from './modules/hero';
 import { homeHeroDE } from './modules/homeHero';
 import { featuresDE } from './modules/features';
 import { partnersDE } from './modules/partners';
 import { kurtaxeDE } from './modules/kurtaxe';
-import { insuranceDE } from './modules/insurance/de';
+import { insuranceDE } from './modules/insurance';
+import { insuranceDetailDE } from './modules/insurance/index';
 import { trustBadgeDE } from './modules/trustBadge';
 import { cookiesDE } from './modules/cookies/de';
 import { identityDE } from './modules/identity/de';
@@ -45,24 +47,14 @@ export const de = {
   // Zusatzservices Section
   zusatzservices: zusatzservicesDE,
 
-  // Versicherung Section
-  versicherung: {
-    title: "Versicherung und Kaution clever automatisieren",
-    subtitle: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung – oder bieten Sie Ihren Gästen eine bequeme Alternative und sichern Sie sich zusätzliche Provisionseinnahmen.",
-    process: {
-      title: "Schnellerer Check-in-Prozess",
-      description: "Keine Kautionsabwicklung mehr – weniger Aufwand für Sie und mehr Komfort für Ihre Gäste."
-    },
-    income: {
-      title: "Zusätzliche Einnahmequelle",
-      description: "Verdienen Sie Provision bei jeder Versicherung – automatisch und ohne zusätzlichen Aufwand."
-    },
-    protection: {
-      title: "Umfassender Schutz",
-      description: "Besserer Schutz als herkömmliche Kautionen, dank höherer Deckungssummen, \"Neu für Alt\"-Deckung und Schutz vor Mietausfall."
-    },
-    cta: "Jetzt Registrieren"
-  },
+  // Versicherung Section (Simple version for main page)
+  insurance: insuranceDE,
+  
+  // Detailed insurance page translations
+  insuranceDetail: insuranceDetailDE,
+  
+  // Trust Badge
+  trustBadge: trustBadgeDE,
 
   // Identitaetspruefung Section
   identity: identityDE,
@@ -120,9 +112,6 @@ export const de = {
     terms: "AGB",
     copyright: "Alle Rechte vorbehalten."
   },
-
-  insurance: insuranceDE,
-  trustBadge: trustBadgeDE,
 
   brevoPopup: {
     invalidEmailTitle: "Ungültige E-Mail",
