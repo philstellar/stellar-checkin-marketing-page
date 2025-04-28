@@ -124,7 +124,7 @@ const InsurancePricingTable = () => {
               <div className="text-xs text-royal-600">{pricingData.rows[1].tooltip}</div>
             </td>
             <td colSpan={3} className="p-4 border-b">
-              <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center gap-2">
                 <Check className="h-5 w-5 text-apple" />
                 <span className="text-sm">{pricingData.rows[1].description}</span>
               </div>
@@ -136,7 +136,7 @@ const InsurancePricingTable = () => {
             <tr key={index}>
               <td className="p-4 border-b" />
               <td colSpan={3} className="p-4 border-b">
-                <div className="flex items-center justify-center gap-2">
+                <div className="flex items-center gap-2">
                   <Check className="h-5 w-5 text-apple" />
                   <span className="text-sm">{feature}</span>
                 </div>
