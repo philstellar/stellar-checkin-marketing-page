@@ -5,13 +5,24 @@ import CTAButton from '../../../components/CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 
 const HeroSection = () => {
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
   
-  // Get the title and replace the keywords with styled spans
-  const formattedTitle = t('insurance.title')
-    .replace('Versicherung', '<span class="text-apple">Versicherung</span>')
-    .replace('Kaution', '<span class="text-apple">Kaution</span>')
-    .replace(/Schutz für Ihre Unterkünfte/gi, '<span style="color:#a4c309">Schutz für Ihre Unterkünfte</span>');
+  // Get the title and replace the keywords with styled spans based on language
+  const formattedTitle = () => {
+    const title = t('insurance.title');
+    
+    if (currentLanguage === 'de') {
+      return title
+        .replace('Versicherung', '<span class="text-apple">Versicherung</span>')
+        .replace('Kaution', '<span class="text-apple">Kaution</span>')
+        .replace(/Schutz für Ihre Unterkünfte/gi, '<span style="color:#a4c309">Schutz für Ihre Unterkünfte</span>');
+    } else if (currentLanguage === 'en') {
+      return title
+        .replace(/integrated protection/gi, '<span style="color:#a4c309">integrated protection</span>');
+    }
+    
+    return title;
+  };
   
   return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
@@ -21,7 +32,7 @@ const HeroSection = () => {
             <h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" 
               style={{ contentVisibility: 'auto' }}
-              dangerouslySetInnerHTML={{ __html: formattedTitle }}
+              dangerouslySetInnerHTML={{ __html: formattedTitle() }}
             />
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('insurance.introduction')}
@@ -47,7 +58,6 @@ const HeroSection = () => {
               src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
               alt="Insurance Settings Interface" 
               loading="eager" 
-              fetchPriority="high" 
               className="object-scale-down" 
             />
           </div>
