@@ -145,19 +145,21 @@ export const insuranceIT = {
     }
   },
   versicherung: {
-    title: "Automatizzare assicurazioni e depositi in modo intelligente",
-    subtitle: "Automatizza la gestione e la restituzione dei depositi, oppure offri ai tuoi ospiti un'alternativa conveniente e assicurati entrate aggiuntive dalle commissioni.",
+    title: "Automatizzare in modo intelligente assicurazione e depositi",
+    subtitle: "Automatizza la gestione e il rimborso dei depositi – o offri ai tuoi ospiti un'alternativa conveniente garantendoti entrate aggiuntive dalle commissioni.",
     process: {
-      title: "Check-in Più Veloce",
-      description: "Niente più gestione dei depositi, meno lavoro per te e i tuoi ospiti."
+      title: "Processo di check-in più veloce",
+      description: "Nessuna gestione più dei depositi – meno sforzo per te e più comodità per i tuoi ospiti."
     },
     income: {
-      title: "Fonte di Reddito Aggiuntiva",
+      title: "Fonte di reddito aggiuntiva",
       description: "Guadagna commissioni con ogni polizza assicurativa – automaticamente e senza sforzo aggiuntivo."
     },
     protection: {
-      title: "Protezione Completa",
-      description: "Protezione migliore rispetto ai depositi tradizionali, grazie a importi di copertura più elevati, copertura \"nuovo per vecchio\" e protezione contro la perdita di affitto."
-    }
+      title: "Protezione completa",
+      description: "Migliore protezione rispetto ai depositi tradizionali, grazie a importi di copertura più elevati, copertura \"Nuovo per Vecchio\" e protezione contro la perdita di affitto."
+    },
+    cta: "Registrati ora",
+    relatedFeatures: "Funzionalità correlate"
   }
 };
