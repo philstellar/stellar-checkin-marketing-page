@@ -1,6 +1,6 @@
 
 export const insuranceEN = {
-  title: "Cleverly automate insurance and deposits",
+  title: "Smart automation for insurance and deposits",
   introduction: "Optimal protection for your accommodations - with insurance and deposit management.",
   section1: {
     title: "Why insurance?",
