@@ -145,15 +145,15 @@ export const insuranceES = {
     }
   },
   versicherung: {
-    title: "Un seguro para cada huésped",
-    subtitle: "Protege tu alojamiento ofreciendo un seguro a tus huéspedes",
+    title: "Automatizar seguros y depósitos de forma inteligente",
+    subtitle: "Automatice la gestión y devolución de depósitos, o ofrezca a sus huéspedes una alternativa conveniente y asegure ingresos adicionales por comisiones.",
     process: {
       title: "Check-in Más Rápido",
-      description: "Sin más gestión de depósitos, menos trabajo para ti y tus huéspedes."
+      description: "Sin más gestión de depósitos, menos trabajo para usted y sus huéspedes."
     },
     income: {
       title: "Fuente de Ingresos Adicional",
-      description: "Gana comisiones con cada póliza de seguro – automáticamente y sin esfuerzo adicional."
+      description: "Gane comisiones con cada póliza de seguro – automáticamente y sin esfuerzo adicional."
     },
     protection: {
       title: "Protección Completa",

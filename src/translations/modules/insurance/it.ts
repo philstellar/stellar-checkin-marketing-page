@@ -1,4 +1,3 @@
-
 export const insuranceIT = {
   hero: {
     title: "Automatizzare la protezione tramite assicurazione e/o depositi",
@@ -146,8 +145,8 @@ export const insuranceIT = {
     }
   },
   versicherung: {
-    title: "Un'assicurazione per ogni ospite",
-    subtitle: "Proteggi il tuo alloggio offrendo un'assicurazione ai tuoi ospiti",
+    title: "Automatizzare assicurazioni e depositi in modo intelligente",
+    subtitle: "Automatizza la gestione e la restituzione dei depositi, oppure offri ai tuoi ospiti un'alternativa conveniente e assicurati entrate aggiuntive dalle commissioni.",
     process: {
       title: "Check-in Più Veloce",
       description: "Niente più gestione dei depositi, meno lavoro per te e i tuoi ospiti."
