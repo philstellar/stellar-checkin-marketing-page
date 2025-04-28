@@ -1,3 +1,4 @@
+
 export const insuranceIT = {
   hero: {
     title: "Automatizzare la protezione tramite assicurazione e/o depositi",
@@ -153,7 +154,7 @@ export const insuranceIT = {
     },
     income: {
       title: "Fonte di reddito aggiuntiva",
-      description: "Guadagna commissioni con ogni polizza assicurativa – automaticamente e senza sforzo aggiuntivo."
+      description: "Guadagna commissioni su ogni polizza assicurativa – automaticamente e senza sforzo aggiuntivo."
     },
     protection: {
       title: "Protezione completa",
@@ -161,5 +162,18 @@ export const insuranceIT = {
     },
     cta: "Registrati ora",
     relatedFeatures: "Funzionalità correlate"
-  }
+  },
+  process: {
+    title: "Processo Semplice e Sicuro",
+    description: "Gestione ottimizzata di assicurazioni e depositi che garantisce tranquillità sia per host che per ospiti."
+  },
+  income: {
+    title: "Proteggi i Tuoi Ricavi da Affitto",
+    description: "Proteggi la tua proprietà contro possibili danni e perdita di reddito da affitto."
+  },
+  protection: {
+    title: "Copertura Completa",
+    description: "Assicurazione completa che copre danni alla proprietà, responsabilità civile e incidenti imprevisti."
+  },
+  cta: "Scopri le Opzioni Assicurative"
 };

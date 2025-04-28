@@ -1,5 +1,4 @@
 
-
 export const featuresIT = {
   title: "Stellar Check-in",
   subtitle: "Migliora l'esperienza dell'ospite prima dell'arrivo e aumenta i tuoi ricavi",
@@ -17,4 +16,3 @@ export const featuresIT = {
   },
   moreBtn: "Scopri di più"
 };
-
