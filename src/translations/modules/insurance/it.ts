@@ -4,7 +4,7 @@ export const insuranceIT = {
   introduction: "Protezione ottimale per i tuoi alloggi - con gestione assicurativa e dei depositi.",
   section1: {
     title: "Perché un'assicurazione?",
-    content: "La nostra assicurazione protegge dai danni causati da ospiti, loro accompagnatori o animali domestici. Il 90% degli ospiti sceglie la nostra assicurazione - per la tranquillità di entrambe le parti."
+    content: "Protezione contro i danni causati da ospiti, accompagnatori e animali domestici: l’80 % degli ospiti sceglie la nostra assicurazione."
   },
   section2: {
     title: "Come funziona?",
