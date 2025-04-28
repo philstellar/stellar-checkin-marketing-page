@@ -5,7 +5,8 @@ import { homeHeroIT } from './modules/homeHero';
 import { featuresIT } from './modules/features/it';
 import { partnersIT } from './modules/partners';
 import { kurtaxeIT } from './modules/kurtaxe';
-import { insuranceIT } from './modules/insurance/it';
+import { insuranceIT } from './modules/insurance'; // Simple version for main page
+import { insuranceDetailIT } from './modules/insurance/index'; // Detailed version for insurance page
 import { trustBadgeIT } from './modules/trustBadge';
 import { cookiesIT } from './modules/cookies/it';
 import { zusatzservicesIT } from './modules/zusatzservices/it';
@@ -27,7 +28,8 @@ export const it = {
   stellar: stellarIT,
   partners: partnersIT,
   kurtaxe: kurtaxeIT,
-  insurance: insuranceIT,
+  insurance: insuranceIT, // Simple version for main page
+  insuranceDetail: insuranceDetailIT, // Detailed version for insurance page
   trustBadge: trustBadgeIT,
   cookies: cookiesIT,
   zusatzservices: zusatzservicesIT,

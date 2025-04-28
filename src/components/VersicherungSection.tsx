@@ -1,3 +1,4 @@
+
 import { UserCheck } from "lucide-react";
 import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
@@ -16,7 +17,7 @@ export const VersicherungSection = () => {
           <div className="order-1 md:order-first flex justify-center">
             <img 
               src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
-              alt={t('versicherung.title')}
+              alt={t('insurance.title')}
               className="w-3/5 h-auto object-contain bg-transparent"
             />
           </div>
@@ -27,30 +28,30 @@ export const VersicherungSection = () => {
                 to={`/${language}/versicherung`} 
                 className="hover:text-apple transition-colors"
               >
-                {t('versicherung.title')}
+                {t('insurance.title')}
               </Link>
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-              {t('versicherung.subtitle')}
+              {t('insurance.subtitle')}
             </p>
             
             <div className="space-y-8">
               {[
                 {
                   icon: <CreditCard className="w-8 h-8 text-apple" />,
-                  title: t('versicherung.process.title'),
-                  description: t('versicherung.process.description')
+                  title: t('insurance.process.title'),
+                  description: t('insurance.process.description')
                 },
                 {
                   icon: <Shield className="w-8 h-8 text-apple" />,
-                  title: t('versicherung.income.title'),
-                  description: t('versicherung.income.description')
+                  title: t('insurance.income.title'),
+                  description: t('insurance.income.description')
                 },
                 {
                   icon: <ShieldCheck className="w-8 h-8 text-apple" />,
-                  title: t('versicherung.protection.title'),
-                  description: t('versicherung.protection.description')
+                  title: t('insurance.protection.title'),
+                  description: t('insurance.protection.description')
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
@@ -71,13 +72,13 @@ export const VersicherungSection = () => {
             <div className="mt-10">
               <Link to={`/${language}/versicherung`}>
                 <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                  <UserCheck className="mr-2 h-4 w-4" /> {t('versicherung.cta')}
+                  <UserCheck className="mr-2 h-4 w-4" /> {t('insurance.cta')}
                 </CTAButton>
               </Link>
             </div>
             
             <div className="mt-6 space-y-2">
-              <p className="text-sm text-royal-700">{t('versicherung.relatedFeatures')}:</p>
+              <p className="text-sm text-royal-700">{t('insurance.relatedFeatures')}:</p>
               <div className="flex gap-4">
                 <Link 
                   to="#kurtaxe" 

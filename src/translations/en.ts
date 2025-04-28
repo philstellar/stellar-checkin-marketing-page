@@ -1,10 +1,12 @@
+
 import { navigationEN } from './modules/navigation';
 import { heroEN } from './modules/hero';
 import { homeHeroEN } from './modules/homeHero';
 import { featuresEN } from './modules/features';
 import { partnersEN } from './modules/partners';
 import { kurtaxeEN } from './modules/kurtaxe';
-import { insuranceEN } from './modules/insurance/en';
+import { insuranceEN } from './modules/insurance'; // Simple version for main page
+import { insuranceDetailEN } from './modules/insurance/index'; // Detailed version for insurance page
 import { trustBadgeEN } from './modules/trustBadge';
 import { cookiesEN } from './modules/cookies/en';
 import { identityEN } from './modules/identity/en';
@@ -26,7 +28,8 @@ export const en = {
   stellar: stellarEN,
   partners: partnersEN,
   kurtaxe: kurtaxeEN,
-  insurance: insuranceEN,
+  insurance: insuranceEN, // Simple version for main page
+  insuranceDetail: insuranceDetailEN, // Detailed version for insurance page
   trustBadge: trustBadgeEN,
   cookies: cookiesEN,
   zusatzservices: zusatzservicesEN,

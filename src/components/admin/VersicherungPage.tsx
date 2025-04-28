@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet, UserCheck } from 'lucide-react';
@@ -13,28 +14,30 @@ import HeroSection from './insurance/HeroSection';
 import BenefitsSection from './insurance/BenefitsSection';
 import OverviewCards from './insurance/OverviewCards';
 import CTAButton from '../CTAButton';
+
 const VersicherungPage: React.FC = () => {
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
+  
   const addInsuranceFeatures = [{
     icon: <Book className="h-6 w-6 text-apple" />,
-    title: t('insurance.addFeatures.syncBookings.title'),
-    description: t('insurance.addFeatures.syncBookings.description')
+    title: t('insuranceDetail.addFeatures.syncBookings.title'),
+    description: t('insuranceDetail.addFeatures.syncBookings.description')
   }, {
     icon: <ShieldPlus className="h-6 w-6 text-apple" />,
-    title: t('insurance.addFeatures.coverage.title'),
-    description: t('insurance.addFeatures.coverage.description')
+    title: t('insuranceDetail.addFeatures.coverage.title'),
+    description: t('insuranceDetail.addFeatures.coverage.description')
   }, {
     icon: <Clock className="h-6 w-6 text-apple" />,
-    title: t('insurance.addFeatures.integration.title'),
-    description: t('insurance.addFeatures.integration.description')
+    title: t('insuranceDetail.addFeatures.integration.title'),
+    description: t('insuranceDetail.addFeatures.integration.description')
   }, {
     icon: <Wallet className="h-6 w-6 text-apple" />,
-    title: t('insurance.addFeatures.deposit.title'),
-    description: t('insurance.addFeatures.deposit.description')
+    title: t('insuranceDetail.addFeatures.deposit.title'),
+    description: t('insuranceDetail.addFeatures.deposit.description')
   }];
-  return <>
+  
+  return (
+    <>
       <Header />
       <HeroSection />
 
@@ -62,10 +65,10 @@ const VersicherungPage: React.FC = () => {
                 <div className="max-w-none w-full mx-0 bg-white">
                   <div className="max-w-3xl mx-auto text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4 text-royal text-center">
-                      {t('insurance.shortTerm.title')}
+                      {t('insuranceDetail.shortTerm.title')}
                     </h2>
                     <p className="text-lg text-royal-700 text-center mb-8">
-                      {t('insurance.shortTerm.description')}
+                      {t('insuranceDetail.shortTerm.description')}
                     </p>
                   </div>
                   <InsurancePricingTable />
@@ -97,6 +100,8 @@ const VersicherungPage: React.FC = () => {
       </section>
 
       <Footer />
-    </>;
+    </>
+  );
 };
+
 export default VersicherungPage;

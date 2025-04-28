@@ -19,10 +19,25 @@ export const useTranslation = () => {
     if (process.env.NODE_ENV === 'development') {
       console.debug(`[Translation] Key: "${key}", Language: "${language}", Result: "${value}"`);
       
-      // Additional debug info for insurance comparison keys
-      if (key.startsWith('insurance.comparison')) {
-        console.debug(`[Translation DEBUG] Insurance comparison key "${key}" in "${language}":`, value);
-        console.debug(`[Translation DEBUG] Full insurance translations:`, translations[language].insurance);
+      // Additional debug info for insurance keys to help debug conflicts
+      if (key.startsWith('insurance.')) {
+        console.debug(`[Translation DEBUG] Insurance key "${key}" in "${language}":`, value);
+        
+        // Check both insurance and insuranceDetail paths
+        const simpleValue = get(translations[language], key);
+        const detailedKey = key.replace('insurance.', 'insuranceDetail.');
+        const detailedValue = get(translations[language], detailedKey);
+        
+        console.debug(`[Translation DEBUG] Simple insurance value: "${simpleValue}", Detailed value: "${detailedValue}"`);
+      }
+      
+      if (key.startsWith('insuranceDetail.')) {
+        console.debug(`[Translation DEBUG] Insurance detail key "${key}" in "${language}":`, value);
+      }
+      
+      // Additional debug info for kurtaxe keys
+      if (key.startsWith('kurtaxe.')) {
+        console.debug(`[Translation DEBUG] Kurtaxe key "${key}" in "${language}":`, value);
       }
       
       // If translation is missing or shows the key itself
