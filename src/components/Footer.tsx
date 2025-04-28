@@ -1,6 +1,6 @@
 
 import { memo } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { useLanguage } from "@/context/LanguageContext";
@@ -37,15 +37,33 @@ const Footer = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
   const navigate = useNavigate();
+  const location = useLocation();
   const isProduction = window.location.hostname === 'stellar-checkin.com' || 
                        window.location.hostname.includes('lovable.app') || 
                        window.location.hostname.includes('lovable.dev');
 
-  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, hash?: string) => {
+    e.preventDefault();
+    
+    // If we're not on the homepage and a hash is provided, navigate to the homepage with hash
+    if (location.pathname !== `/${language}/` && hash) {
+      navigate(`/${language}/#${hash}`);
+    } 
+    // If we're already on the homepage and a hash is provided
+    else if (hash) {
+      // Navigate to the hash directly
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // For non-hash links, just navigate and scroll to top
+      navigate(e.currentTarget.getAttribute('href') || '/');
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const about = aboutRoutes[language] || aboutRoutes.de;
@@ -65,7 +83,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.solutions')}</h3>
             <ul className="space-y-3">
               <li>
-                <Link to={`#gaeste-voranmeldung`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                <Link to={`/${language}/#gaeste-voranmeldung`} className="flex items-center text-black hover:text-apple transition-colors" onClick={(e) => handleNavigation(e, 'gaeste-voranmeldung')}>
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.features')}
                 </Link>
@@ -85,7 +103,7 @@ const Footer = () => {
                 </li>
               )}
               <li>
-                <Link to={`#preise`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                <Link to={`/${language}/#preise`} className="flex items-center text-black hover:text-apple transition-colors" onClick={(e) => handleNavigation(e, 'preise')}>
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.pricing')}
                 </Link>
@@ -144,4 +162,3 @@ const Footer = () => {
 };
 
 export default memo(Footer);
-
