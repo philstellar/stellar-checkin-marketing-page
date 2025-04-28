@@ -1,5 +1,5 @@
 export const kurtaxeDE = {
-  title: "Digitale Gästeregistrierung, Erhebung von Kurtaxe, Tourismusabgaben, etc.",
+  title: "Digitale Gästeregistrierung & Kurtaxe",
   subtitle: "Automatisieren Sie die Erfassung und Verwaltung von Gästeregistrierungen, Kurtaxe und Tourismusabgaben, um lokale Vorschriften einzuhalten.",
   digitalRegistration: {
     title: "Digitale Gästeregistrierung",
