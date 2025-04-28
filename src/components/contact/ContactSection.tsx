@@ -1,6 +1,7 @@
 
 import { useTranslation } from "@/hooks/use-translation";
 import ContactForm from "./ContactForm";
+import ContactInformation from "./ContactInformation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
 
 const ContactSection = () => {
@@ -15,7 +16,7 @@ const ContactSection = () => {
               title={t('contact.title')}
               subtitle={t('contact.subtitle')}
             />
-            {/* Contact information structure maintained but content removed */}
+            <ContactInformation />
           </div>
           
           <div className="bg-white p-8 rounded-xl shadow-lg">
