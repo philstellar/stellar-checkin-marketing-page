@@ -59,15 +59,8 @@ const App = () => {
   return (
     <BrevoFormProvider>
       <Routes>
-        {/* Add home routes for all languages */}
-        <Route 
-          path="/:lang/home" 
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <Home />
-            </Suspense>
-          } 
-        />
+        {/* Remove home routes and redirect /home to index */}
+        <Route path="/:lang/home" element={<Navigate to="/:lang" replace />} />
         
         {/* Language-specific routes with consistent URL structure */}
         <Route path="/:lang?" element={<Index />} />

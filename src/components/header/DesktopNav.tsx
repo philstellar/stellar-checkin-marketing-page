@@ -1,4 +1,3 @@
-
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -35,7 +34,6 @@ const DesktopNav = ({
           scrollTo: sectionId
         }
       });
-      // Always scroll to top when navigating from another page
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -69,16 +67,6 @@ const DesktopNav = ({
 
   return (
     <nav className="hidden md:flex items-center space-x-8">
-      {!isProduction && (
-        <button
-          onClick={() => handleNavigation('home')}
-          onMouseEnter={() => handleMouseEnter('home')}
-          className="text-royal hover:text-apple font-medium transition-colors"
-        >
-          {renderBoldText(t('navigation.home'))}
-        </button>
-      )}
-
       <div className="flex items-center space-x-1">
         <button 
           onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
