@@ -145,4 +145,3 @@ export const de = {
     cta: "Jetzt registrieren"
   }
 };
-

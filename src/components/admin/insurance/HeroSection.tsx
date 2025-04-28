@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { UserCheck } from 'lucide-react';
 import CTAButton from '../../../components/CTAButton';
@@ -6,27 +7,17 @@ import { useTranslation } from '@/hooks/use-translation';
 const HeroSection = () => {
   const { t } = useTranslation();
   
-  const renderTitle = (title: string) => {
-    if (title.includes('<highlight>')) {
-      const parts = title.split(/<highlight>|<\/highlight>/);
-      return (
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik">
-          {parts[0]}
-          <span className="text-[#a4c309]">{parts[1]}</span>
-          {parts[2]}
-        </h1>
-      );
-    }
-    return <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik">{title}</h1>;
-  };
-  
-  return (
-    <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
+  return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            {renderTitle(t('insurance.hero.title'))}
+            <h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" 
+              style={{ contentVisibility: 'auto' }}
+            >
+              {t('insurance.hero.title')}
+            </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('insurance.hero.subtitle')}
             </p>
@@ -51,8 +42,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
