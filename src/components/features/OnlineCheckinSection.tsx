@@ -1,32 +1,33 @@
+
 import React from 'react';
-import { UserCheck, ArrowDown } from 'lucide-react';
+import { UserCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
+
 type FeatureCardProps = {
   title: string;
   description: string;
   targetSection: string;
 };
+
 const FeatureCard: React.FC<FeatureCardProps> = ({
   title,
   description,
   targetSection
 }) => {
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
+
   const handleClick = () => {
     const section = document.getElementById(targetSection);
     if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth'
-      });
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  console.log("Translation key for moreBtn:", 'featuresEN.moreBtn', t('featuresEN.moreBtn'));
-  return <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
+
+  return (
+    <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-lg border border-gray-200 bg-white">
       <CardHeader className="pb-2">
         <CardTitle className="text-lg font-semibold text-royal pb-2">
           {title}
@@ -36,43 +37,57 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       <CardContent className="pt-4 flex-grow flex flex-col justify-between">
         <p className="text-royal-700 text-left mb-6">{description}</p>
         <div className="mt-auto">
-          <Button variant="ghost" onClick={handleClick} className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2">
-            {t('features.moreBtn') || "Learn more"} <ArrowDown className="h-4 w-4" />
+          <Button 
+            variant="ghost" 
+            onClick={handleClick} 
+            className="text-apple hover:text-apple-600 hover:bg-gray-100 p-0 flex items-center gap-2"
+          >
+            {t('features.moreBtn')}
           </Button>
         </div>
       </CardContent>
-    </Card>;
+    </Card>
+  );
 };
+
 export const OnlineCheckinSection: React.FC = () => {
-  const {
-    t
-  } = useTranslation();
-  const features = [{
-    title: t('kurtaxe.title'),
-    description: t('kurtaxe.subtitle'),
-    targetSection: "kurtaxe"
-  }, {
-    title: t('zusatzservices.title'),
-    description: t('zusatzservices.subtitle'),
-    targetSection: "zusatzservices"
-  }, {
-    title: t('versicherung.title'),
-    description: t('versicherung.subtitle'),
-    targetSection: "versicherung"
-  }, {
-    title: t('identity.title'),
-    description: t('identity.subtitle'),
-    targetSection: "identitaetspruefung"
-  }, {
-    title: t('settings.title'),
-    description: t('settings.subtitle'),
-    targetSection: "einstellungen"
-  }, {
-    title: t('integration.title'),
-    description: t('integration.subtitle'),
-    targetSection: "integrationen"
-  }];
-  return <section id="gaeste-voranmeldung" className="py-16 bg-white">
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      title: t('kurtaxe.title'),
+      description: t('kurtaxe.subtitle'),
+      targetSection: "kurtaxe"
+    },
+    {
+      title: t('zusatzservices.title'),
+      description: t('zusatzservices.subtitle'),
+      targetSection: "zusatzservices"
+    },
+    {
+      title: t('versicherung.title'),
+      description: t('versicherung.subtitle'),
+      targetSection: "versicherung"
+    },
+    {
+      title: t('identity.title'),
+      description: t('identity.subtitle'),
+      targetSection: "identitaetspruefung"
+    },
+    {
+      title: t('settings.title'),
+      description: t('settings.subtitle'),
+      targetSection: "einstellungen"
+    },
+    {
+      title: t('integration.title'),
+      description: t('integration.subtitle'),
+      targetSection: "integrationen"
+    }
+  ];
+
+  return (
+    <section id="gaeste-voranmeldung" className="py-16 bg-white">
       <div className="container-custom">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4 text-royal mx-auto">
@@ -85,7 +100,14 @@ export const OnlineCheckinSection: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          {features.map((feature, index) => <FeatureCard key={index} title={feature.title} description={feature.description} targetSection={feature.targetSection} />)}
+          {features.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              title={feature.title}
+              description={feature.description}
+              targetSection={feature.targetSection}
+            />
+          ))}
         </div>
         
         <div className="mt-12 text-center">
@@ -94,6 +116,8 @@ export const OnlineCheckinSection: React.FC = () => {
           </CTAButton>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default OnlineCheckinSection;
