@@ -85,15 +85,25 @@ const Header = () => {
     }
   }, [location, navigate]);
 
+  const handleLogoClick = () => {
+    const section = document.getElementById('gaeste-voranmeldung');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate(`/${language}/`, {
+        state: { scrollTo: 'gaeste-voranmeldung' }
+      });
+    }
+  };
+
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${isScrolled || isMenuOpen ? 'stellar-shadow' : ''}`}>
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            <button onClick={handleHomeClick} className="flex items-center">
+            <button onClick={handleLogoClick} className="flex items-center">
               <img src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" alt="Stellar Logo" width="150" height="24" className="h-9 w-auto object-contain" />
             </button>
           </div>
-
           <div className="flex items-center gap-4">
             <div className="md:hidden">
               <LanguageSelector variant="icon-only" />
@@ -104,7 +114,6 @@ const Header = () => {
             </button>
           </div>
         </div>
-
         <MobileNav isOpen={isMenuOpen} handleSectionClick={handleSectionClick} onClose={closeMenu} isScrolled={isScrolled} />
       </div>
     </header>;

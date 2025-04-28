@@ -1,4 +1,3 @@
-
 import React, { memo } from 'react';
 import { UserCheck } from 'lucide-react';
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -16,13 +15,10 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik" 
-              style={{ 
-                contentVisibility: 'auto'
-              }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik"
             >
               {t('hero.headline1')}
-              <span style={{ color: '#0f2661' }}>{t('hero.headline2')}</span>
+              <span className="text-[#a4c309]">{t('hero.headline2')}</span>
               {t('hero.headline3')}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
@@ -63,5 +59,4 @@ const Hero = () => {
   );
 };
 
-// Use memo to prevent unnecessary re-renders
 export default memo(Hero);
