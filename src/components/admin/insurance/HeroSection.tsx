@@ -42,8 +42,22 @@ const HeroSection = () => {
               </p>
             </div>
           </div>
-          <div className="order-1 md:order-last flex justify-center">
-            <img src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" alt="Insurance Settings Interface" loading="eager" fetchPriority="high" className="object-scale-down" />
+          <div className="order-1 md:order-last flex flex-col justify-center items-center">
+            <img 
+              src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
+              alt="Insurance Settings Interface" 
+              loading="eager" 
+              fetchPriority="high" 
+              className="object-scale-down mb-4" 
+            />
+            <div className="flex justify-center items-center mt-4">
+              <p className="text-sm text-gray-600 mr-2">In Partnership with</p>
+              <img 
+                src="/lovable-uploads/0da418dc-2d10-4140-85c9-4c96a4bbe2a9.png" 
+                alt="Hiscox Insurance" 
+                className="h-10" 
+              />
+            </div>
           </div>
         </div>
       </div>
