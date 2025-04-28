@@ -5,10 +5,11 @@ import CTAButton from "@/components/CTAButton";
 import { UserCheck } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
+import { Link } from "react-router-dom";
+
 const KurtaxeSection = () => {
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
+  
   const features = [{
     icon: <FileText className="h-8 w-8 text-apple" />,
     title: t('kurtaxe.digitalRegistration.title'),
@@ -22,6 +23,7 @@ const KurtaxeSection = () => {
     title: t('kurtaxe.authorities.title'),
     description: t('kurtaxe.authorities.description')
   }];
+
   return <section id="kurtaxe" className="py-20 bg-white">
       <div className="container-custom">
         <HeadingWithLine title={t('kurtaxe.title')} subtitle={t('kurtaxe.subtitle')} align="center" />
@@ -47,7 +49,34 @@ const KurtaxeSection = () => {
             <UserCheck className="mr-2 h-4 w-4" /> {t('kurtaxe.cta')}
           </CTAButton>
         </div>
+
+        <div className="mt-8 text-center">
+          <p className="text-sm text-royal-700">{t('kurtaxe.relatedFeatures')}:</p>
+          <div className="flex justify-center gap-4 mt-2">
+            <Link 
+              to="#versicherung" 
+              className="text-royal hover:text-apple transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('versicherung')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              {t('versicherung.title')}
+            </Link>
+            <Link 
+              to="#zusatzservices" 
+              className="text-royal hover:text-apple transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('zusatzservices')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              {t('zusatzservices.title')}
+            </Link>
+          </div>
+        </div>
       </div>
     </section>;
 };
+
 export default KurtaxeSection;

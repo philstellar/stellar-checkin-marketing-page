@@ -1,11 +1,13 @@
-
 import { UserCheck } from "lucide-react";
 import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
+import { Link } from "react-router-dom";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const VersicherungSection = () => {
   const { t } = useTranslation();
+  const { language } = useLanguage();
   
   return (
     <section id="versicherung" className="section-padding bg-white">
@@ -21,7 +23,12 @@ export const VersicherungSection = () => {
           
           <div className="order-2 md:order-last">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              {t('versicherung.title')}
+              <Link 
+                to={`/${language}/versicherung`} 
+                className="hover:text-apple transition-colors"
+              >
+                {t('versicherung.title')}
+              </Link>
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
@@ -62,9 +69,37 @@ export const VersicherungSection = () => {
             </div>
             
             <div className="mt-10">
-              <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                <UserCheck className="mr-2 h-4 w-4" /> {t('versicherung.cta')}
-              </CTAButton>
+              <Link to={`/${language}/versicherung`}>
+                <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
+                  <UserCheck className="mr-2 h-4 w-4" /> {t('versicherung.cta')}
+                </CTAButton>
+              </Link>
+            </div>
+            
+            <div className="mt-6 space-y-2">
+              <p className="text-sm text-royal-700">{t('versicherung.relatedFeatures')}:</p>
+              <div className="flex gap-4">
+                <Link 
+                  to="#kurtaxe" 
+                  className="text-royal hover:text-apple transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('kurtaxe')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {t('kurtaxe.title')}
+                </Link>
+                <Link 
+                  to="#identitaetspruefung" 
+                  className="text-royal hover:text-apple transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('identitaetspruefung')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {t('identity.title')}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
