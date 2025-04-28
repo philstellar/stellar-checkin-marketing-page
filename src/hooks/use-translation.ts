@@ -22,6 +22,11 @@ export const useTranslation = () => {
         console.debug(`[Translation] Key: "${key}", Language: "${language}", Result: "${value}"`);
       }
       
+      // Add debugging for features translations
+      if (key.startsWith('features.')) {
+        console.debug(`[Features Translation] Key: "${key}", Language: "${language}", Result: "${value}"`);
+      }
+      
       // If translation is missing or shows the key itself
       if (!value || value === key) {
         console.warn(`[Translation WARNING] Missing translation for key: "${key}" in language "${language}"`);
