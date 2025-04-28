@@ -38,7 +38,7 @@ export const IntegrationenSection: React.FC = () => {
       features={features}
       image=""
       imageAlt="Systemintegrationen für Ferienwohnungen"
-      bgColor="bg-gray-50"
+      bgColor="bg-white"
       centerTitle={true}
     />
   );

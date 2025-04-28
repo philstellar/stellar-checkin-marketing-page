@@ -11,10 +11,9 @@ import BenefitsSection from '../components/admin/insurance/BenefitsSection';
 import OverviewCards from '../components/admin/insurance/OverviewCards';
 import CTAButton from '../components/CTAButton';
 import { Book, ShieldPlus, Clock, Wallet, UserCheck } from 'lucide-react';
+
 const VersicherungPage: React.FC = () => {
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
   const addInsuranceFeatures = [{
     icon: <Book className="h-6 w-6 text-apple" />,
     title: t('insuranceDetail.addFeatures.syncBookings.title'),
