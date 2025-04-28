@@ -78,7 +78,7 @@ export const insuranceEN = {
     ]
   },
   shortTerm: {
-    title: "Our Prices",
+    title: "Our coverage – fair and transparent",
     description: "Prices are calculated per night (plus possible service fees and commissions)."
   },
   details: {
