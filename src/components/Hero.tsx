@@ -9,6 +9,22 @@ const Hero = () => {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   
+  // Create a function to render the headline with the colored "Check-in" text
+  const renderHeadline = () => {
+    const headlineText = t('hero.headline1');
+    if (headlineText.includes('Check-in')) {
+      const parts = headlineText.split('Check-in');
+      return (
+        <>
+          {parts[0]}
+          <span style={{ color: '#a4c309' }}>Check-in</span>
+          {parts[1]}
+        </>
+      );
+    }
+    return headlineText;
+  };
+
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20"></div>
@@ -21,9 +37,7 @@ const Hero = () => {
                 contentVisibility: 'auto'
               }}
             >
-              {t('hero.headline1')}
-              <span style={{ color: '#0f2661' }}>{t('hero.headline2')}</span>
-              {t('hero.headline3')}
+              {renderHeadline()}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('hero.subheadline')}<br /><br /> 
@@ -63,5 +77,4 @@ const Hero = () => {
   );
 };
 
-// Use memo to prevent unnecessary re-renders
 export default memo(Hero);
