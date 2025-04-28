@@ -1,21 +1,22 @@
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { Toaster } from 'react-hot-toast';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Toaster } from './components/ui/toaster';
 import { LanguageProvider } from './context/LanguageContext';
 import { CookieConsentProvider } from './context/CookieConsentContext';
 import { BrevoFormProvider } from './context/BrevoFormContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import CheckIn from './pages/CheckIn';
-import Versicherung from './pages/Versicherung';
+import Index from './pages/Index';
+import Versicherung from './pages/admin/VersicherungPage';
 import TrustBadgePage from './pages/TrustBadgePage';
 import NotFound from './pages/NotFound';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
-import AGB from './pages/AGB';
-import SuccessStories from './pages/SuccessStories';
-import AboutUs from './pages/AboutUs';
+import AGB from './pages/Agb';
+import SuccessStories from './pages/Erfolgsbeispiele';
+import AboutUs from './pages/UeberUns';
 import FAQ from './pages/FAQ';
 
 const queryClient = new QueryClient();
@@ -31,8 +32,8 @@ function App() {
                 <Header />
                 <div className="flex-1">
                   <Routes>
-                    <Route path="/" element={<CheckIn />} />
-                    <Route path="/:lang/" element={<CheckIn />} />
+                    <Route path="/" element={<Index />} />
+                    <Route path="/:lang/" element={<Index />} />
                     <Route path="/:lang/versicherung" element={<Versicherung />} />
                     <Route path="/:lang/success-stories" element={<SuccessStories />} />
                     <Route path="/:lang/about-us" element={<AboutUs />} />
