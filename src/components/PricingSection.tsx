@@ -5,13 +5,11 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function PricingSection() {
-  const { t } = useTranslation();
-  const isMobile = useIsMobile();
-  
+  const {
+    t
+  } = useTranslation();
   const tooltipDescriptions = {
     zusatzleistungen: t('pricing.basic.additionalServicesDesc'),
     identitaetsverifizierung: t('pricing.basic.identityVerificationDesc'),
@@ -19,7 +17,6 @@ export default function PricingSection() {
     versicherung: t('pricing.basic.insuranceDesc'),
     digitaleGaestemeldung: t('pricing.basic.digitalGuestRegistrationDesc')
   };
-
   const scrollToContact = () => {
     const contactSection = document.getElementById('kontakt');
     if (contactSection) {
@@ -27,31 +24,6 @@ export default function PricingSection() {
         behavior: 'smooth'
       });
     }
-  };
-
-  // Helper component to display tooltip/popover based on device
-  const InfoTooltip = ({ content, children }: { content: React.ReactNode; children: React.ReactNode }) => {
-    if (isMobile) {
-      return (
-        <Popover>
-          <PopoverTrigger asChild>
-            {children}
-          </PopoverTrigger>
-          <PopoverContent className="max-w-xs text-sm p-2 bg-white">{content}</PopoverContent>
-        </Popover>
-      );
-    }
-    
-    return (
-      <Tooltip>
-        <TooltipTrigger asChild>
-          {children}
-        </TooltipTrigger>
-        <TooltipContent className="max-w-xs text-sm p-2 bg-white">
-          {content}
-        </TooltipContent>
-      </Tooltip>
-    );
   };
 
   return (
@@ -82,63 +54,39 @@ export default function PricingSection() {
             
             <div className="space-y-4">
               <TooltipProvider>
-                {/* Regular features without tooltips */}
-                {[
-                  t('pricing.basic.features.0'),
-                  t('pricing.basic.features.1'),
-                  t('pricing.basic.features.2')
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                    <span className="text-royal-700">{feature}</span>
-                  </div>
-                ))}
-
-                {/* Features with tooltips */}
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                  <span className="text-royal-700">{t('pricing.basic.additionalServices')}</span>
-                  <InfoTooltip content={tooltipDescriptions.zusatzleistungen}>
-                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
-                    </button>
-                  </InfoTooltip>
-                </div>
-
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                  <span className="text-royal-700">{t('pricing.basic.identityVerification')}</span>
-                  <InfoTooltip content={tooltipDescriptions.identitaetsverifizierung}>
-                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
-                    </button>
-                  </InfoTooltip>
-                </div>
-
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                  <span className="text-royal-700">{t('pricing.basic.depositManagement')}</span>
-                  <InfoTooltip content={tooltipDescriptions.kautionsmanagement}>
-                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
-                    </button>
-                  </InfoTooltip>
-                </div>
-
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                  <span className="text-royal-700">{t('pricing.basic.insurance')}</span>
-                  <InfoTooltip content={tooltipDescriptions.versicherung}>
-                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
-                    </button>
-                  </InfoTooltip>
-                </div>
-
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                  <span className="text-royal-700">{t('pricing.basic.features.7')}</span>
-                </div>
+                {[t('pricing.basic.features.0'), t('pricing.basic.features.1'), t('pricing.basic.features.2'), {
+                text: t('pricing.basic.additionalServices'),
+                tooltip: tooltipDescriptions.zusatzleistungen
+              }, {
+                text: t('pricing.basic.identityVerification'),
+                tooltip: tooltipDescriptions.identitaetsverifizierung
+              }, {
+                text: t('pricing.basic.depositManagement'),
+                tooltip: tooltipDescriptions.kautionsmanagement
+              }, {
+                text: t('pricing.basic.insurance'),
+                tooltip: tooltipDescriptions.versicherung
+              }, t('pricing.basic.features.7')].map((feature, index) => {
+                const isTooltipFeature = typeof feature === 'object';
+                const featureText = isTooltipFeature ? feature.text : feature;
+                const hasTooltip = isTooltipFeature && featureText.includes("*");
+                return <div key={index} className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
+                      <span className="text-royal-700">
+                        {featureText.replace(" *", "")}
+                        {hasTooltip && <Tooltip>
+                            <TooltipTrigger asChild>
+                              <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                                <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                              </button>
+                            </TooltipTrigger>
+                            <TooltipContent className="max-w-xs text-sm p-2 bg-white">
+                              {feature.tooltip}
+                            </TooltipContent>
+                          </Tooltip>}
+                      </span>
+                    </div>;
+              })}
               </TooltipProvider>
             </div>
           </div>
@@ -175,27 +123,30 @@ export default function PricingSection() {
             
             <div className="space-y-4">
               <TooltipProvider>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                  <span className="text-royal-700">{t('pricing.basic.digitalGuestRegistration')}</span>
-                  <InfoTooltip content={tooltipDescriptions.digitaleGaestemeldung}>
-                    <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                      <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
-                    </button>
-                  </InfoTooltip>
-                </div>
-
-                {/* Regular features without tooltips */}
-                {[
-                  t('pricing.advanced.features.1'),
-                  t('pricing.advanced.features.2'),
-                  t('pricing.advanced.features.3')
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
-                    <span className="text-royal-700">{feature}</span>
-                  </div>
-                ))}
+                {[{
+                text: t('pricing.basic.digitalGuestRegistration'),
+                tooltip: tooltipDescriptions.digitaleGaestemeldung
+              }, t('pricing.advanced.features.1'), t('pricing.advanced.features.2'), t('pricing.advanced.features.3')].map((feature, index) => {
+                const isTooltipFeature = typeof feature === 'object';
+                const featureText = isTooltipFeature ? feature.text : feature;
+                const hasTooltip = isTooltipFeature && featureText.includes("*");
+                return <div key={index} className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
+                      <span className="text-royal-700">
+                        {featureText.replace(" *", "")}
+                        {hasTooltip && <Tooltip>
+                            <TooltipTrigger asChild>
+                              <button className="inline-flex ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                                <HelpCircle className="w-4 h-4 text-royal-700 inline-block" />
+                              </button>
+                            </TooltipTrigger>
+                            <TooltipContent className="max-w-xs text-sm p-2 bg-white">
+                              {feature.tooltip}
+                            </TooltipContent>
+                          </Tooltip>}
+                      </span>
+                    </div>;
+              })}
               </TooltipProvider>
             </div>
           </div>
@@ -216,18 +167,16 @@ export default function PricingSection() {
             </div>
             
             <div className="space-y-4">
-              {[t('pricing.enterprise.features.0'), t('pricing.enterprise.features.1')].map((feature, index) => (
-                <div key={index} className="flex items-center">
+              {[t('pricing.enterprise.features.0'), t('pricing.enterprise.features.1')].map((feature, index) => <div key={index} className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-royal mr-3 flex-shrink-0" />
                   <span className="text-royal-700">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
         
         <div className="mt-16 text-center">
-          {/* Empty div for spacing */}
+          
         </div>
       </div>
     </section>

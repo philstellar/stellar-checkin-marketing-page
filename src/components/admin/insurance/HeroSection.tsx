@@ -7,10 +7,8 @@ import { useTranslation } from '@/hooks/use-translation';
 const HeroSection = () => {
   const { t } = useTranslation();
   
-  // Create a function to render the title as HTML
-  const renderTitle = () => {
-    return <span dangerouslySetInnerHTML={{ __html: t('insuranceDetail.hero.title') }} />;
-  };
+  // Get the title and replace the keywords with styled spans
+  const formattedTitle = t('insurance.title').replace('Versicherung', '<span class="text-apple">Versicherung</span>').replace('Kaution', '<span class="text-apple">Kaution</span>');
   
   return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
@@ -20,15 +18,14 @@ const HeroSection = () => {
             <h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 font-aeonik" 
               style={{ contentVisibility: 'auto' }}
-            >
-              {renderTitle()}
-            </h1>
+              dangerouslySetInnerHTML={{ __html: formattedTitle }}
+            />
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-              {t('insuranceDetail.hero.subtitle')}
+              Bieten Sie Ihren Gästen <span className="text-apple">optional</span> eine <span className="text-apple">Versicherung</span> an und profitieren Sie von zusätzlichen Einnahmen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
-                <UserCheck className="mr-2 h-4 w-4" /> {t('insuranceDetail.hero.cta')}
+                <UserCheck className="mr-2 h-4 w-4" /> {t('hero.cta')}
               </CTAButton>
             </div>
             <div className="mt-8 flex items-center">
@@ -38,7 +35,7 @@ const HeroSection = () => {
                 <div className="w-8 h-8 rounded-full bg-apple-500"></div>
               </div>
               <p className="ml-4 text-sm text-black font-aeonik">
-                <span className="font-medium">{t('insuranceDetail.hero.introduction')}</span>
+                <span className="font-medium">{t('hero.tagline')}</span>
               </p>
             </div>
           </div>

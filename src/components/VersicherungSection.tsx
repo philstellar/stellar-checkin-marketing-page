@@ -3,18 +3,9 @@ import { UserCheck } from "lucide-react";
 import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/context/LanguageContext";
 
 export const VersicherungSection = () => {
   const { t } = useTranslation();
-  const { language } = useLanguage();
-  
-  // Debug logging for insurance translations
-  console.debug("Current language:", language);
-  console.debug("Insurance mainPageTitle:", t('insurance.mainPageTitle'));
-  console.debug("Insurance mainPageSubtitle:", t('insurance.mainPageSubtitle'));
-  console.debug("Insurance process title:", t('insurance.process.title'));
   
   return (
     <section id="versicherung" className="section-padding bg-white">
@@ -23,41 +14,36 @@ export const VersicherungSection = () => {
           <div className="order-1 md:order-first flex justify-center">
             <img 
               src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
-              alt={t('insurance.mainPageTitle')}
+              alt="Versicherung und Kautionsabwicklung" 
               className="w-3/5 h-auto object-contain bg-transparent"
             />
           </div>
           
           <div className="order-2 md:order-last">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              <Link 
-                to={`/${language}/versicherung`} 
-                className="hover:text-apple transition-colors"
-              >
-                {t('insurance.mainPageTitle')}
-              </Link>
+              {t('versicherung.title')}
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-              {t('insurance.mainPageSubtitle')}
+              {t('versicherung.subtitle')}
             </p>
             
             <div className="space-y-8">
               {[
                 {
                   icon: <CreditCard className="w-8 h-8 text-apple" />,
-                  title: t('insurance.process.title'),
-                  description: t('insurance.process.description')
+                  title: t('versicherung.process.title'),
+                  description: t('versicherung.process.description')
                 },
                 {
                   icon: <Shield className="w-8 h-8 text-apple" />,
-                  title: t('insurance.income.title'),
-                  description: t('insurance.income.description')
+                  title: t('versicherung.income.title'),
+                  description: t('versicherung.income.description')
                 },
                 {
                   icon: <ShieldCheck className="w-8 h-8 text-apple" />,
-                  title: t('insurance.protection.title'),
-                  description: t('insurance.protection.description')
+                  title: t('versicherung.protection.title'),
+                  description: t('versicherung.protection.description')
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
@@ -76,11 +62,9 @@ export const VersicherungSection = () => {
             </div>
             
             <div className="mt-10">
-              <Link to={`/${language}/versicherung`}>
-                <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
-                  <UserCheck className="mr-2 h-4 w-4" /> {t('insurance.cta')}
-                </CTAButton>
-              </Link>
+              <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
+                <UserCheck className="mr-2 h-4 w-4" /> {t('versicherung.cta')}
+              </CTAButton>
             </div>
           </div>
         </div>

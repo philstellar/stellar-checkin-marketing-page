@@ -1,4 +1,3 @@
-
 export const kurtaxeDE = {
   title: "Digitale Gästeregistrierung, Erhebung von Kurtaxe, Tourismusabgaben, etc.",
   subtitle: "Automatisieren Sie die Erfassung und Verwaltung von Gästeregistrierungen, Kurtaxe und Tourismusabgaben, um lokale Vorschriften einzuhalten.",
@@ -14,8 +13,7 @@ export const kurtaxeDE = {
     title: "Behördenanbindung",
     description: "Direkte Übermittlung der Daten an die zuständigen Behörden durch unsere Partner AVS und Ostseecard."
   },
-  cta: "Jetzt Registrieren",
-  relatedFeatures: "Verwandte Funktionen"
+  cta: "Jetzt Registrieren"
 };
 
 export const kurtaxeEN = {
@@ -33,8 +31,7 @@ export const kurtaxeEN = {
     title: "Authority Connection",
     description: "Direct transmission of data to the relevant authorities in almost all of Europe. Plus Colombia, Turkey and Dubai."
   },
-  cta: "Register Now",
-  relatedFeatures: "Related Features"
+  cta: "Register Now"
 };
 
 export const kurtaxeIT = {
@@ -52,8 +49,7 @@ export const kurtaxeIT = {
     title: "Connessione con le Autorità",
     description: "Trasmissione diretta dei dati alle autorità competenti attraverso i nostri partner Alloggiati Web e ISTAT."
   },
-  cta: "Registrati Ora",
-  relatedFeatures: "Funzionalità correlate"
+  cta: "Registrati Ora"
 };
 
 export const kurtaxeES = {
@@ -71,6 +67,5 @@ export const kurtaxeES = {
     title: "Conexión con Autoridades",
     description: "Transmisión directa de datos a las autoridades competentes a través de Policía Nacional, Guardia Civil, SES Hospedajes, Mossos d'Esquadra."
   },
-  cta: "Registrarse Ahora",
-  relatedFeatures: "Características Relacionadas"
+  cta: "Registrarse Ahora"
 };

@@ -1,26 +1,6 @@
-
 export const insuranceDE = {
-  hero: {
-    title: "Versicherung und Kaution clever automatisieren",
-    subtitle: "Schützen Sie Ihr Eigentum und vereinfachen Sie den Check-in",
-    introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen",
-    cta: "Jetzt loslegen"
-  },
-  
-  overview: {
-    process: {
-      title: "Einfacher und sicherer Prozess",
-      description: "Optimierte Versicherungs- und Kautionsverwaltung, die Sicherheit für Gastgeber und Gäste gewährleistet."
-    },
-    income: {
-      title: "Schützen Sie Ihre Mieteinnahmen",
-      description: "Sichern Sie Ihr Eigentum gegen mögliche Schäden und Mietausfälle."
-    },
-    protection: {
-      title: "Umfassender Schutz",
-      description: "Umfassende Versicherung, die Sachschäden, Haftung und unerwartete Vorfälle abdeckt."
-    }
-  },
+  title: "Versicherung und Kaution clever automatisieren",
+  introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen.",
   section1: {
     title: "Warum eine Versicherung?",
     content: "Unsere Versicherung schützt vor Schäden, die durch Gäste, deren Begleitpersonen oder Haustiere verursacht werden. 90% der Gäste wählen unsere Versicherung - für ein sicheres Gefühl auf beiden Seiten."
@@ -51,7 +31,6 @@ export const insuranceDE = {
   pricing: {
     header: {
       coverage: "Maximale Deckungssumme",
-      tooltip: "Die maximale Summe, die im Schadensfall ausgezahlt wird",
       amount1: "€ 5.000",
       amount2: "€ 10.000",
       amount3: "€ 50.000"
@@ -59,25 +38,20 @@ export const insuranceDE = {
     rows: [
       {
         label: "Preis pro Nacht\n(plus Versicherungssteuer)",
-        tooltip: "Zusätzlich wird die gesetzliche Versicherungssteuer berechnet",
         value1: "€ 2,82",
         value2: "€ 3,62",
-        value3: "€ 4,91",
-        description: "Grundabsicherung mit flexiblen Optionen"
+        value3: "€ 4,91"
       },
       {
         label: "Deckung (SB €100)",
-        tooltip: "Selbstbeteiligung von €100 pro Schadensfall",
         description: "Schäden an Inventar und Gebäuden zum Wiederbeschaffungswert"
       },
       {
         label: "Gäste-Regress",
-        tooltip: "Wann der Gast in Haftung genommen werden kann",
         description: "Nur bei vorsätzlicher Beschädigung"
       },
       {
         label: "Zusätzliche Abdeckung\n(bis zu)",
-        tooltip: "Spezielle Leistungen, die in der Versicherung enthalten sind",
         description: "Zusätzliche Reinigungskosten bis zu € 1.000"
       },
       {
@@ -89,10 +63,7 @@ export const insuranceDE = {
       {
         description: "Durch Haustiere verursachte Schäden bis zu € 5.000"
       }
-    ],
-    allBasicFeatures: "Alle Basisfunktionen",
-    increasedCoverage: "Erhöhte Deckungssumme",
-    keyReplacement: "Schlüsselersatz-Deckung"
+    ]
   },
   benefits: {
     title: "Die Vorteile der Versicherung im Überblick",
@@ -151,24 +122,6 @@ export const insuranceDE = {
     cost: {
       question: "Was kostet mich die Gästeschadenversicherung?",
       answer: "Unsere Gastschadensversicherung beginnt bei 2,8 € pro Nacht und variiert je nach Höhe der Deckung. Details findest du in deinem Stellar-Konto.\n\nDie Kosten für die Versicherung können auch vom Gast getragen werden, als Alternative zur Kaution.\n\nUm sicherzustellen, dass die Versicherung alle Aufenthalte in deinen Unterkünften abdeckt, kannst du in den Einstellungen festlegen, dass du die Versicherung selbst bezahlst und die Kosten in den Mietpreis einbeziehst."
-    }
-  },
-  addFeatures: {
-    syncBookings: {
-      title: "Synchronisieren Sie Ihre Buchungen",
-      description: "Richten Sie die Logik ein, die am besten für Ihr Geschäft funktioniert."
-    },
-    coverage: {
-      title: "Wählen Sie die richtige Deckungssumme",
-      description: "Sichern Sie sich mit jeder erfolgreichen Buchung ab."
-    },
-    integration: {
-      title: "Online Check-in Integration",
-      description: "Lassen Sie Ihre Gäste zwischen Versicherung und Kaution wählen."
-    },
-    deposit: {
-      title: "Kautionen als Option",
-      description: "Bieten Sie Ihren Gästen die Wahl zwischen Versicherung und traditioneller Kaution."
     }
   }
 };

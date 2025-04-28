@@ -1,3 +1,4 @@
+
 export const navigationDE = {
   home: "Home",
   features: "Check-in",
@@ -13,14 +14,7 @@ export const navigationDE = {
   aboutStellar: "Über uns",
   aboutUs: "Über uns",
   successStories: "Erfolgsbeispiele",
-  faq: "FAQ",
-  footer: {
-    legal: "Rechtliches",
-    imprint: "Impressum",
-    privacy: "Datenschutz",
-    terms: "AGB",
-    tagline: "Digitale Gästeregistrierung für Ferienunterkünfte – schnell, sicher, papierlos."
-  }
+  faq: "FAQ"
 };
 
 export const navigationEN = {
@@ -33,19 +27,12 @@ export const navigationEN = {
   imprint: "Imprint",
   privacyPolicy: "Privacy Policy", 
   termsAndConditions: "Terms and Conditions",
-  insurance: "Insurance",
+  insurance: "Versicherung",
   trustBadge: "Trust Badge",
   aboutStellar: "About Us",
   aboutUs: "About Us",
   successStories: "Success Stories",
-  faq: "FAQ",
-  footer: {
-    legal: "Legal",
-    imprint: "Imprint",
-    privacy: "Privacy Policy",
-    terms: "Terms and Conditions",
-    tagline: "Your gateway to efficient guest management and more satisfied guests."
-  }
+  faq: "FAQ"
 };
 
 export const navigationIT = {
@@ -58,19 +45,12 @@ export const navigationIT = {
   imprint: "Impressum",
   privacyPolicy: "Informativa sulla Privacy", 
   termsAndConditions: "Termini e Condizioni",
-  insurance: "Assicurazione",
+  insurance: "Versicherung",
   trustBadge: "Trust Badge",
   aboutStellar: "Chi Siamo",
   aboutUs: "Chi Siamo",
   successStories: "Storie di Successo",
-  faq: "FAQ",
-  footer: {
-    legal: "Legale",
-    imprint: "Note Legali",
-    privacy: "Informativa sulla Privacy",
-    terms: "Termini e Condizioni",
-    tagline: "Il tuo gateway per una gestione efficiente degli ospiti e ospiti più soddisfatti."
-  }
+  faq: "FAQ"
 };
 
 export const navigationES = {
@@ -83,17 +63,10 @@ export const navigationES = {
   imprint: "Aviso Legal",
   privacyPolicy: "Política de Privacidad", 
   termsAndConditions: "Términos y Condiciones",
-  insurance: "Seguro",
+  insurance: "Versicherung",
   trustBadge: "Trust Badge",
   aboutStellar: "Sobre Nosotros",
   aboutUs: "Sobre Nosotros",
   successStories: "Historias de Éxito",
-  faq: "Preguntas Frecuentes",
-  footer: {
-    legal: "Legal",
-    imprint: "Aviso Legal",
-    privacy: "Política de Privacidad",
-    terms: "Términos y Condiciones",
-    tagline: "Tu puerta de entrada a una gestión eficiente de huéspedes y huéspedes más satisfechos."
-  }
+  faq: "Preguntas Frecuentes"
 };

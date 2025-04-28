@@ -5,7 +5,6 @@ import CTAButton from "@/components/CTAButton";
 import { UserCheck } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
-import { Link } from "react-router-dom";
 const KurtaxeSection = () => {
   const {
     t
@@ -47,11 +46,6 @@ const KurtaxeSection = () => {
           <CTAButton className="bg-apple hover:bg-apple-600 text-white px-6 py-2.5">
             <UserCheck className="mr-2 h-4 w-4" /> {t('kurtaxe.cta')}
           </CTAButton>
-        </div>
-
-        <div className="mt-8 text-center">
-          
-          
         </div>
       </div>
     </section>;

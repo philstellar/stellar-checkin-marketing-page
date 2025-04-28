@@ -24,10 +24,10 @@ const InsuranceDetails = () => {
           </div>
           <div>
             <h3 className="text-lg font-semibold text-royal mb-2">
-              {t(`insuranceDetail.details.${detail.key}.title`)}
+              {t(`insurance.details.${detail.key}.title`)}
             </h3>
             <p className="text-royal-700">
-              {t(`insuranceDetail.details.${detail.key}.description`)}
+              {t(`insurance.details.${detail.key}.description`)}
             </p>
           </div>
         </div>

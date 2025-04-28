@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Monitor, CreditCard, RefreshCw, Clock } from 'lucide-react';
+import { Monitor, Check, RefreshCw, Clock } from 'lucide-react';
 import { FeatureSection } from './features/FeatureSection';
 import { useTranslation } from "@/hooks/use-translation";
 
@@ -14,14 +14,14 @@ export const IntegrationenSection: React.FC = () => {
       description: t('integration.pms.description')
     },
     {
-      icon: <CreditCard className="h-6 w-6" />,
-      title: t('integration.payment.title'),
-      description: t('integration.payment.description')
+      icon: <Check className="h-6 w-6" />,
+      title: t('integration.api.title'),
+      description: t('integration.api.description')
     },
     {
       icon: <RefreshCw className="h-6 w-6" />,
-      title: t('integration.api.title'),
-      description: t('integration.api.description')
+      title: t('integration.payment.title'),
+      description: t('integration.payment.description')
     },
     {
       icon: <Clock className="h-6 w-6" />,
@@ -38,7 +38,7 @@ export const IntegrationenSection: React.FC = () => {
       features={features}
       image=""
       imageAlt="Systemintegrationen für Ferienwohnungen"
-      bgColor="bg-white"
+      bgColor="bg-gray-50"
       centerTitle={true}
     />
   );

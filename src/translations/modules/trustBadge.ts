@@ -1,4 +1,3 @@
-
 export const trustBadgeDE = {
   headline1: "Vertrauenswürdiger ",
   headline2: "Host",
@@ -107,102 +106,12 @@ export const trustBadgeIT = {
   headline1: "Diventa un ",
   headline2: "Host",
   headline3: " Affidabile",
-  content: "Mostra ai tuoi ospiti che sei un host affidabile. Con il nostro programma Trust Badge, aumenta la fiducia e il tasso di prenotazione.",
-  verification: {
-    title: "Verifica e Trust Badge",
-    subtitle: "Scegli un Trust Badge che si adatti perfettamente al tuo sito web.",
-    customization: "Dalla lingua (fissa o automatica in base alla lingua del visitatore) al design – tutto è personalizzabile."
-  },
-  trust: {
-    title: "Il nostro Trust Badge rafforza la fiducia dei tuoi ospiti nelle prenotazioni dirette sul tuo sito web.",
-    description: "Poiché le frodi negli affitti vacanza stanno diventando un problema crescente, molti ospiti preferiscono i grandi portali di prenotazione – anche se spesso pagano significativamente di più per lo stesso alloggio. Risolviamo esattamente questo problema."
-  },
-  reviews: {
-    title: "Acquisiamo automaticamente le tue recensioni",
-    description: "Utilizza recensioni verificate come strumento di marketing gratuito. Importa automaticamente recensioni da piattaforme come Airbnb, Booking.com, Expedia, VRBO e altro – chiaramente riassunte e presentate in modo attraente.",
-    stats: "Le prove sociali creano fiducia, aumentano la tua visibilità e garantiscono la massima trasparenza.",
-    importance: "E questo è cruciale: quasi il 95% degli ospiti legge le recensioni prima di prenotare."
-  },
-  preview: {
-    title: "Anteprima dal vivo: I livelli del Trust Badge",
-    intro: "Il nostro badge è composto da tre livelli (da sinistra a destra):",
-    level1: "Primo livello (Scegli la tua variante di colore): Riassume le tue recensioni e mostra ai visitatori che la fiducia è importante per te.",
-    level2: "Secondo livello: Spiega agli ospiti perché possono fidarsi di te, inclusa una panoramica dettagliata delle recensioni.",
-    level3: "Per maggiori dettagli, i tuoi ospiti possono cliccare su una pagina di certificato ospitata da Stellar contenente informazioni su di te, le tue proprietà verificate e il Stellar Trust Badge"
-  },
-  cta: "Aggiungi il tuo certificato personale ora",
-  faq: {
-    certification: {
-      question: "Come posso ottenere la certificazione con Stellar?",
-      answer: "Il nostro obiettivo è rendere la certificazione Stellar il più semplice e fluida possibile, mantenendo al contempo la sicurezza e la fiducia degli ospiti.\n\nPer ottenere la certificazione, segui semplicemente la checklist sulla tua Dashboard Stellar. Durante il processo in più fasi, verifichiamo:\n\n• Verifica ID tramite il tuo smartphone\n• Confronto dei dati geografici con i tuoi annunci OTA\n• Verifica del sito web utilizzando un codice che forniamo per l'intestazione del tuo sito\n• Controlli di sicurezza aggiuntivi del tuo sito web\n• Verifica dei dati della tua proprietà, ad es. bollette di elettricità e gas\n• Verifica del tuo numero di telefono e indirizzo email\n• Controlli di background inclusi attività di frode del sito web, recensioni OTA e altro."
-    },
-    bookings: {
-      question: "Come mi aiuta il Stellar Trust Badge a ottenere più prenotazioni?",
-      answer: "Il nostro Trust Badge può aiutare ad aumentare le prenotazioni in diversi modi:\n\n1. I certificati di fiducia aumentano la conversione – uno studio di VeriSign mostra che i siti web degli hotel hanno ricevuto il 30% in più di prenotazioni dopo l'implementazione dei certificati. Nel nostro settore, vediamo un potenziale ancora maggiore a causa della frammentazione e delle sfide di convalida degli host.\n\n2. Il badge Stellar mostra recensioni da tutte le principali piattaforme di prenotazione – i potenziali ospiti vedono recensioni verificate direttamente sul tuo sito web, costruendo fiducia e incoraggiandoli a prenotare direttamente con te."
-    },
-    reviews: {
-      question: "Posso selezionare quali recensioni vengono visualizzate sul mio Trust Badge?",
-      answer: "In Stellar, crediamo nella piena trasparenza per host e ospiti e mostriamo tutte le recensioni attuali. Tuttavia, puoi sempre scegliere quali piattaforme di prenotazione connettere con Stellar, e le recensioni non verificabili (ad es. Google o Facebook) non vengono mai incluse nella tua valutazione complessiva."
-    },
-    developer: {
-      question: "Ho bisogno di uno sviluppatore web per visualizzare il Trust Badge sul mio sito web?",
-      answer: "Il badge Stellar può essere facilmente integrato nel tuo sito web e in genere non richiede uno sviluppatore web. Dopo aver sincronizzato le tue proprietà e completato il processo di certificazione, i codici HTML sono disponibili sulla piattaforma Stellar e possono essere semplicemente copiati nel codice sorgente del tuo sito web."
-    },
-    noWebsite: {
-      question: "Non accetto prenotazioni attraverso il mio sito web. Posso comunque utilizzare il Trust Badge?",
-      answer: "Il Stellar Trust Badge è stato progettato per aumentare la conversione sui tuoi canali di prenotazione e attualmente non può essere integrato nei tuoi annunci sulle principali piattaforme.\n\nSe desideri offrire prenotazioni dirette in futuro, il nostro check-in web e l'assicurazione danni per gli ospiti possono aiutarti a farlo con maggiore sicurezza e fiducia. Per ulteriori informazioni, puoi contattare il nostro servizio clienti in qualsiasi momento."
-    }
-  }
+  content: "Mostra ai tuoi ospiti che sei un host affidabile. Con il nostro programma Trust Badge, aumenta la fiducia e il tasso di prenotazione."
 };
 
 export const trustBadgeES = {
   headline1: "Conviértete en un ",
   headline2: "Anfitrión",
   headline3: " de Confianza",
-  content: "Muestre a sus huéspedes que es un anfitrión confiable. Con nuestro programa Trust Badge, aumente la confianza y las tasas de reserva.",
-  verification: {
-    title: "Verificación y Trust Badge",
-    subtitle: "Elija un Trust Badge que se adapte perfectamente a su sitio web.",
-    customization: "Desde el idioma (fijo o automático según el idioma del visitante) hasta el diseño – todo es personalizable."
-  },
-  trust: {
-    title: "Nuestro Trust Badge refuerza la confianza de sus huéspedes en las reservas directas en su sitio web.",
-    description: "Como el fraude en los alquileres vacacionales se está convirtiendo en un problema creciente, muchos huéspedes prefieren los grandes portales de reservas – aunque a menudo paguen significativamente más por el mismo alojamiento. Resolvemos exactamente este problema."
-  },
-  reviews: {
-    title: "Capturamos automáticamente sus reseñas",
-    description: "Utilice reseñas verificadas como herramienta de marketing gratuita. Importe automáticamente reseñas de plataformas como Airbnb, Booking.com, Expedia, VRBO y más – claramente resumidas y presentadas de manera atractiva.",
-    stats: "Las pruebas sociales generan confianza, aumentan su visibilidad y garantizan la máxima transparencia.",
-    importance: "Y esto es crucial: casi el 95% de los huéspedes leen reseñas antes de reservar."
-  },
-  preview: {
-    title: "Vista previa en vivo: Las capas del Trust Badge",
-    intro: "Nuestra insignia consta de tres capas (de izquierda a derecha):",
-    level1: "Primera capa (Elija su variante de color): Resume sus reseñas y muestra a los visitantes que la confianza es importante para usted.",
-    level2: "Segunda capa: Explica a los huéspedes por qué pueden confiar en usted, incluyendo una descripción detallada de las reseñas.",
-    level3: "Para más detalles, sus huéspedes pueden hacer clic en una página de certificado alojada por Stellar que contiene información sobre usted, sus propiedades verificadas y el Stellar Trust Badge"
-  },
-  cta: "Añada su certificado personal ahora",
-  faq: {
-    certification: {
-      question: "¿Cómo obtengo la certificación con Stellar?",
-      answer: "Nuestro objetivo es hacer que la certificación Stellar sea lo más simple y fluida posible, manteniendo al mismo tiempo la seguridad y la confianza de los huéspedes.\n\nPara obtener la certificación, simplemente siga la lista de verificación en su Panel de Control Stellar. Durante el proceso de varios pasos, verificamos:\n\n• Verificación de ID a través de su smartphone\n• Comparación de datos geográficos con sus listados OTA\n• Verificación del sitio web mediante un código que proporcionamos para el encabezado de su sitio\n• Comprobaciones de seguridad adicionales de su sitio web\n• Verificación de los datos de su propiedad, por ejemplo, facturas de electricidad y gas\n• Verificación de su número de teléfono y dirección de correo electrónico\n• Comprobaciones de antecedentes que incluyen actividad fraudulenta del sitio web, reseñas de OTA y más."
-    },
-    bookings: {
-      question: "¿Cómo me ayuda el Stellar Trust Badge a obtener más reservas?",
-      answer: "Nuestro Trust Badge puede ayudar a aumentar las reservas de varias maneras:\n\n1. Los certificados de confianza aumentan la conversión – un estudio de VeriSign muestra que los sitios web de hoteles recibieron un 30% más de reservas después de implementar certificados. En nuestra industria, vemos un potencial aún mayor debido a la fragmentación y los desafíos de validación de anfitriones.\n\n2. La insignia Stellar muestra reseñas de todas las principales plataformas de reserva – los huéspedes potenciales ven reseñas verificadas directamente en su sitio web, generando confianza y alentándolos a reservar directamente con usted."
-    },
-    reviews: {
-      question: "¿Puedo seleccionar qué reseñas se muestran en mi Trust Badge?",
-      answer: "En Stellar, creemos en la total transparencia para anfitriones y huéspedes y mostramos todas las reseñas actuales. Sin embargo, siempre puede elegir qué plataformas de reserva conectar con Stellar, y las reseñas no verificables (por ejemplo, Google o Facebook) nunca se incluyen en su calificación general."
-    },
-    developer: {
-      question: "¿Necesito un desarrollador web para mostrar el Trust Badge en mi sitio web?",
-      answer: "La insignia Stellar se puede integrar fácilmente en su sitio web y normalmente no requiere un desarrollador web. Después de sincronizar sus propiedades y completar el proceso de certificación, los códigos HTML están disponibles en la plataforma Stellar y se pueden copiar simplemente en el código fuente de su sitio web."
-    },
-    noWebsite: {
-      question: "No acepto reservas a través de mi propio sitio web. ¿Puedo usar el Trust Badge de todos modos?",
-      answer: "El Stellar Trust Badge fue diseñado para aumentar la conversión en sus propios canales de reserva y actualmente no puede integrarse en sus listados en las principales plataformas.\n\nSi desea ofrecer reservas directas en el futuro, nuestro check-in web y el seguro de daños para huéspedes pueden ayudarlo a hacerlo con más seguridad y confianza. Para obtener más información, puede contactar a nuestro servicio de atención al cliente en cualquier momento."
-    }
-  }
+  content: "Muestre a sus huéspedes que es un anfitrión confiable. Con nuestro programa Trust Badge, aumente la confianza y las tasas de reserva."
 };

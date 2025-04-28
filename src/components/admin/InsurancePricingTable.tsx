@@ -1,123 +1,153 @@
+import React from "react";
+import { useTranslation } from "@/hooks/use-translation";
+import { Brush, Image, FileText, PawPrint } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
-import React from 'react';
-import { Check } from 'lucide-react';
-import { useTranslation } from '@/hooks/use-translation';
-import { useIsMobile } from '@/hooks/use-mobile';
+// Helper for value formatting
+const formatValue = (value?: string) => value ? <span className="whitespace-pre-line font-bold text-left text-base">{value}</span> : null;
 
+// Helper: returns a centered icon cell
+const IconCell = ({
+  icon
+}: {
+  icon: React.ReactNode;
+}) => <div className="flex items-center justify-center">{icon}</div>;
 const InsurancePricingTable = () => {
   const {
     t
   } = useTranslation();
   const isMobile = useIsMobile();
+  const header = t("insurance.pricing.header") as any;
+  const rows = t("insurance.pricing.rows") as any[];
 
-  // Define the pricing data structure using translations
-  const pricingData = {
-    header: {
-      coverage: t('insuranceDetail.pricing.header.coverage'),
-      tooltip: t('insuranceDetail.pricing.header.tooltip'),
-      amounts: [t('insuranceDetail.pricing.header.amount1'), t('insuranceDetail.pricing.header.amount2'), t('insuranceDetail.pricing.header.amount3')]
-    },
-    rows: [{
-      label: t('insuranceDetail.pricing.rows.0.label'),
-      tooltip: t('insuranceDetail.pricing.rows.0.tooltip'),
-      values: [t('insuranceDetail.pricing.rows.0.value1'), t('insuranceDetail.pricing.rows.0.value2'), t('insuranceDetail.pricing.rows.0.value3')],
-      description: t('insuranceDetail.pricing.rows.0.description')
-    }, {
-      label: t('insuranceDetail.pricing.rows.1.label'),
-      tooltip: t('insuranceDetail.pricing.rows.1.tooltip'),
-      description: t('insuranceDetail.pricing.rows.1.description')
-    }],
-    features: [t('insuranceDetail.pricing.rows.2.description'), t('insuranceDetail.pricing.rows.3.description'), t('insuranceDetail.pricing.rows.4.description'), t('insuranceDetail.pricing.rows.5.description'), t('insuranceDetail.pricing.rows.6.description')]
-  };
+  // fallback if translations are broken
+  if (!header || !rows) return null;
 
-  // Mobile view - each plan as a separate card
+  // Icons for detailed coverage
+  const rowIcons = [null,
+  // Price row - no icon
+  null,
+  // Coverage (text only)
+  null,
+  // Recourse - no icon
+  <Brush className="h-6 w-6 text-black rounded-[5px]" />,
+  // Additional cleaning
+  <Image className="h-6 w-6 text-black rounded-[5px]" />,
+  // Art & Valuables
+  <FileText className="h-6 w-6 text-black rounded-[5px]" />,
+  // Rental loss
+  <PawPrint className="h-6 w-6 text-black rounded-[5px]" /> // Pet damage
+  ];
+
+  // Text for the new heading cell that covers additional coverage (up to)
+  const ADDITIONAL_COVERAGE_LABEL = rows[3]?.label || t("insurance.pricing.rows.3.label") || "Additional coverage\n(up to)";
   if (isMobile) {
-    return <div className="space-y-8 px-4">
-        {pricingData.header.amounts.map((amount, planIndex) => <div key={planIndex} className="bg-white rounded-lg border p-6">
-            <div className="text-center mb-4">
-              <h3 className="text-xl font-bold text-royal">{amount}</h3>
-              <p className="text-sm text-royal-600">{pricingData.header.coverage}</p>
-            </div>
-            
-            <div className="space-y-4">
-              {/* First row with price */}
-              <div className="border-b pb-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium">{pricingData.rows[0].label}</span>
-                  <span className="font-bold text-apple">{pricingData.rows[0].values[planIndex]}</span>
-                </div>
-                <p className="text-xs text-royal-600 mt-1">{pricingData.rows[0].description}</p>
-              </div>
+    return <div className="w-full px-[2px]">
+        <div className="bg-white p-0 mb-6 w-full rounded-none">
+          <h3 className="font-medium border-b pb-2 mb-2 text-base px-[16px]">{header.coverage}</h3>
 
-              {/* Second row with description */}
-              <div className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-apple flex-shrink-0 mt-0.5" />
-                <span className="text-sm">{pricingData.rows[1].description}</span>
-              </div>
-
-              {/* Features */}
-              {pricingData.features.map((feature, index) => <div key={index} className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-apple flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">{feature}</span>
-                </div>)}
+          {/* Maximum coverage amounts */}
+          <div className="mb-2 px-4">
+            <div className="grid grid-cols-3 gap-2 text-center w-full">
+              <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{header.amount1}</div>
+              <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{header.amount2}</div>
+              <div className="p-2 rounded text-lg font-bold bg-gray-50/0">{header.amount3}</div>
             </div>
-          </div>)}
+          </div>
+
+          {/* Price per night */}
+          <div className="mb-6 px-4">
+            <div className="font-medium border-b pb-2 mb-2 text-base">{rows[0]?.label}</div>
+            <div className="grid grid-cols-3 gap-2 text-center w-full">
+              <div className="text-base font-bold text-gray-700">{rows[0]?.value1}</div>
+              <div className="text-base font-bold text-gray-700">{rows[0]?.value2}</div>
+              <div className="text-base font-bold text-gray-700">{rows[0]?.value3}</div>
+            </div>
+          </div>
+
+          {/* Coverage & Recourse */}
+          {[1, 2].map(i => <div key={i} className="mb-6 px-4">
+              <div className="font-medium border-b pb-2 mb-2 text-base">{rows[i]?.label}</div>
+              <div className="p-2 text-center text-sm bg-white/0 py-[14px] px-0 rounded-none">
+                {formatValue(rows[i]?.description)}
+              </div>
+            </div>)}
+
+          {/* Additional Coverage Section */}
+          <div className="mb-6 px-4 bg-white/0 py-0">
+            <div className="font-medium border-b pb-2 mb-4 text-base">{ADDITIONAL_COVERAGE_LABEL}</div>
+            {/* Only one cell per row, icon left, merge all amounts */}
+            {[3, 4, 5, 6].map(i => <div key={i} className="mb-4 last:mb-0 flex items-start">
+                {rowIcons[i] && <span className="mr-3 flex-shrink-0">
+                    {React.cloneElement(rowIcons[i] as React.ReactElement, {
+                className: "h-6 w-6 text-black rounded-[5px] bg-gray-200 p-1"
+              })}
+                  </span>}
+                <span className="text-center">
+                  {formatValue(rows[i]?.description)}
+                </span>
+              </div>)}
+          </div>
+        </div>
       </div>;
   }
 
-  // Desktop view - traditional pricing table
-  return <div className="overflow-x-auto">
-      <table className="w-full border-collapse">
-        <thead>
-          <tr>
-            <th className="w-1/3 p-4 border-b text-left text-royal font-bold">
-              {pricingData.header.coverage}
-              <div className="text-xs text-royal-600">{pricingData.header.tooltip}</div>
-            </th>
-            {pricingData.header.amounts.map((amount, index) => <th key={index} className="w-1/6 p-4 border-b text-center">
-                <div className="text-xl font-bold text-royal">{amount}</div>
-              </th>)}
-          </tr>
-        </thead>
-        <tbody>
-          {/* First row with prices */}
-          <tr>
-            <td className="p-4 border-b">
-              <div className="font-medium">{pricingData.rows[0].label}</div>
-              <div className="text-xs text-royal-600">{pricingData.rows[0].tooltip}</div>
-            </td>
-            {pricingData.rows[0].values.map((value, index) => <td key={index} className="p-4 border-b text-center">
-                <div className="font-bold text-apple">{value}</div>
-              </td>)}
-          </tr>
-          
-          {/* Second row */}
-          <tr>
-            <td className="p-4 border-b">
-              <div className="font-medium">{pricingData.rows[1].label}</div>
-              <div className="text-xs text-royal-600">{pricingData.rows[1].tooltip}</div>
-            </td>
-            <td colSpan={3} className="p-4 border-b">
-              <div className="flex items-center gap-2">
-                
-                <span className="text-sm">{pricingData.rows[1].description}</span>
-              </div>
-            </td>
-          </tr>
-
-          {/* Features rows */}
-          {pricingData.features.map((feature, index) => <tr key={index}>
-              <td className="p-4 border-b" />
-              <td colSpan={3} className="p-4 border-b">
-                <div className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-apple flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-left">{feature}</span>
-                </div>
-              </td>
-            </tr>)}
-        </tbody>
-      </table>
+  // Desktop view
+  return <div className="w-full px-0">
+      <div className="bg-white p-4 md:p-8 mb-6 w-full overflow-x-auto px-[9px] rounded-none">
+        <table className="w-full text-[15px] min-w-[600px]">
+          <thead>
+            <tr>
+              <th className="text-left w-[260px] p-4 font-semibold text-lg align-bottom">{header.coverage}</th>
+              <th className="text-center p-4 font-bold text-lg align-bottom"></th>
+              <th className="text-center p-4 font-bold text-lg align-bottom">{header.amount1}</th>
+              <th className="text-center p-4 font-bold text-lg align-bottom">{header.amount2}</th>
+              <th className="text-center p-4 font-bold text-lg align-bottom">{header.amount3}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Price per night */}
+            <tr className="border-t">
+              <td className="p-4 text-left align-middle">{formatValue(rows[0]?.label)}</td>
+              <td></td>
+              <td className="p-4 align-middle text-center">{rows[0]?.value1}</td>
+              <td className="p-4 align-middle text-center">{rows[0]?.value2}</td>
+              <td className="p-4 align-middle text-center">{rows[0]?.value3}</td>
+            </tr>
+            {/* Coverage */}
+            <tr className="border-t">
+              <td className="p-4 text-left align-middle">{formatValue(rows[1]?.label)}</td>
+              <td></td>
+              <td className="p-4 align-middle text-center" colSpan={3}>{formatValue(rows[1]?.description)}</td>
+            </tr>
+            {/* Recourse */}
+            <tr className="border-t">
+              <td className="p-4 text-left align-middle">{formatValue(rows[2]?.label)}</td>
+              <td></td>
+              <td className="p-4 align-middle text-center" colSpan={3}>{formatValue(rows[2]?.description)}</td>
+            </tr>
+            {/* Additional Coverage: rows 3–6 */}
+            {[3, 4, 5, 6].map((i, idx) => <tr key={i} className="border-t">
+                {idx === 0 && <td className="p-4 text-left align-middle font-semibold" rowSpan={4} style={{
+              verticalAlign: "top"
+            }}>
+                    {formatValue(ADDITIONAL_COVERAGE_LABEL)}
+                  </td>}
+                <td className="p-4 align-middle text-center">
+                  {rowIcons[i] ? <div className="inline-block rounded-[5px] bg-gray-200 p-[2px]">
+                      {React.cloneElement(rowIcons[i] as React.ReactElement, {
+                  className: "h-6 w-6 text-black rounded-[5px]"
+                })}
+                    </div> : null}
+                </td>
+                {/* Merged cell: cover all 3 amount columns */}
+                <td className="p-4 align-middle text-center" colSpan={3}>
+                  {formatValue(rows[i]?.description || "")}
+                </td>
+              </tr>)}
+          </tbody>
+        </table>
+      </div>
     </div>;
 };
-
 export default InsurancePricingTable;

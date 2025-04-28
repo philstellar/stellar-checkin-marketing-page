@@ -1,3 +1,4 @@
+
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -10,33 +11,50 @@ type DesktopNavProps = {
   handleSectionClick: (sectionId: string) => void;
 };
 
-const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
+const DesktopNav = ({
+  handleSectionClick
+}: DesktopNavProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
-  const isPublished = window.location.hostname.includes('lovable.app') || 
-                     window.location.hostname.includes('lovable.dev') ||
-                     window.location.hostname.includes('stellar-checkin.com');
+
+  const isProduction = window.location.hostname === 'stellar-checkin.com';
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   const handleSectionNavigation = (sectionId: string) => {
     if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
       navigate(`/${currentLanguage}/`, {
-        state: { scrollTo: sectionId }
+        state: {
+          scrollTo: sectionId
+        }
       });
-      return;
+      // Always scroll to top when navigating from another page
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      handleSectionClick(sectionId);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
-    
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  };
+
+  const handleMouseEnter = (path: string) => {
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = `/${currentLanguage}/${path}`;
+    link.as = 'document';
+    document.head.appendChild(link);
   };
 
   const renderBoldText = (text: string) => {
@@ -51,9 +69,10 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
 
   return (
     <nav className="hidden md:flex items-center space-x-8">
-      {!isPublished && (
+      {!isProduction && (
         <button
           onClick={() => handleNavigation('home')}
+          onMouseEnter={() => handleMouseEnter('home')}
           className="text-royal hover:text-apple font-medium transition-colors"
         >
           {renderBoldText(t('navigation.home'))}
@@ -62,7 +81,7 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
 
       <div className="flex items-center space-x-1">
         <button 
-          onClick={() => handleNavigation('')} 
+          onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
           className="text-royal hover:text-apple font-medium transition-colors"
         >
           {renderBoldText(t('navigation.features'))}
@@ -114,31 +133,26 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
       
       <button 
         onClick={() => handleNavigation('versicherung')} 
+        onMouseEnter={() => handleMouseEnter('versicherung')} 
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         {renderBoldText(t('navigation.insurance'))}
       </button>
 
-      {!isPublished && (
+      {!isProduction && (
         <button
           onClick={() => handleNavigation('trust-badge')}
+          onMouseEnter={() => handleMouseEnter('trust-badge')}
           className="text-royal hover:text-apple font-medium transition-colors"
         >
           {renderBoldText(t('navigation.trustBadge'))}
         </button>
       )}
 
-      <button 
-        onClick={() => handleSectionNavigation('preise')} 
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
+      <button onClick={() => handleSectionNavigation('preise')} className="text-royal hover:text-apple font-medium transition-colors">
         {t('navigation.pricing')}
       </button>
-      
-      <button 
-        onClick={() => handleSectionNavigation('kontakt')} 
-        className="text-royal hover:text-apple font-medium transition-colors"
-      >
+      <button onClick={() => handleSectionNavigation('kontakt')} className="text-royal hover:text-apple font-medium transition-colors">
         {t('navigation.contact')}
       </button>
       <LanguageSelector />

@@ -1,3 +1,4 @@
+
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -29,9 +30,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const navigate = useNavigate();
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
-  const isPublished = window.location.hostname.includes('lovable.app') || 
-                     window.location.hostname.includes('lovable.dev') ||
-                     window.location.hostname.includes('stellar-checkin.com');
+  const isProduction = window.location.hostname === 'stellar-checkin.com';
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
@@ -40,20 +39,25 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   };
 
   const handleSectionNavigation = (sectionId: string) => {
-    onClose();
     if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
-      navigate(`/${currentLanguage}/`, {
-        state: { scrollTo: sectionId }
+      navigate(`/${currentLanguage}/`, { 
+        state: { 
+          scrollTo: sectionId 
+        } 
       });
-      return;
+      // Always scroll to top when navigating from another page
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      handleSectionClick(sectionId);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
-    
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    onClose();
   };
 
   return (
@@ -86,7 +90,8 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             animate="visible"
           >
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
-              {!isPublished && (
+              {/* Always show Home in non-production */}
+              {!isProduction && (
                 <button 
                   onClick={() => handleNavigation('home')}
                   className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
@@ -95,8 +100,9 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 </button>
               )}
 
+              {/* Check-in link without subpage items */}
               <button 
-                onClick={() => handleNavigation('')}
+                onClick={() => handleSectionNavigation('gaeste-voranmeldung')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.features')}
@@ -109,7 +115,8 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 {t('navigation.insurance')}
               </button>
               
-              {!isPublished && (
+              {/* Trust Badge link in non-production */}
+              {!isProduction && (
                 <button 
                   onClick={() => handleNavigation('trust-badge')}
                   className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"

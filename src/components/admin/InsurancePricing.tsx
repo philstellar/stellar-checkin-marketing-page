@@ -16,24 +16,24 @@ const InsurancePricing = () => {
         </div>
         <CardContent className="pt-12 pb-6">
           <h3 className="text-2xl font-bold text-royal mb-2">2,80 € <span className="text-sm font-normal text-royal-600">/ night</span></h3>
-          <p className="text-royal-600 mb-6">{t('insuranceDetail.pricing.rows.0.description')}</p>
+          <p className="text-royal-600 mb-6">Damage Protection up to 1.000 €</p>
           
           <ul className="space-y-3 mb-6">
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-apple mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.rows.1.description')}</span>
+              <span className="text-royal-700">Property Damage Coverage</span>
             </li>
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-apple mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.rows.2.description')}</span>
+              <span className="text-royal-700">Personal Liability</span>
             </li>
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-apple mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.rows.6.description')}</span>
+              <span className="text-royal-700">Pet Damage Coverage</span>
             </li>
           </ul>
           
-          <CTAButton className="w-full">{t('insuranceDetail.hero.cta')}</CTAButton>
+          <CTAButton className="w-full">Get Started</CTAButton>
         </CardContent>
       </Card>
       
@@ -43,28 +43,28 @@ const InsurancePricing = () => {
         </div>
         <CardContent className="pt-12 pb-6">
           <h3 className="text-2xl font-bold text-royal mb-2">3,90 € <span className="text-sm font-normal text-royal-600">/ night</span></h3>
-          <p className="text-royal-600 mb-6">{t('insuranceDetail.pricing.rows.0.description')}</p>
+          <p className="text-royal-600 mb-6">Damage Protection up to 3.000 €</p>
           
           <ul className="space-y-3 mb-6">
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.allBasicFeatures')}</span>
+              <span className="text-royal-700">All Basic Features</span>
             </li>
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.increasedCoverage')}</span>
+              <span className="text-royal-700">Increased Coverage Limit</span>
             </li>
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.rows.5.description')}</span>
+              <span className="text-royal-700">Rental Income Loss Protection</span>
             </li>
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-royal mr-2 mt-0.5" />
-              <span className="text-royal-700">{t('insuranceDetail.pricing.keyReplacement')}</span>
+              <span className="text-royal-700">Key Replacement Coverage</span>
             </li>
           </ul>
           
-          <CTAButton className="w-full bg-royal hover:bg-royal-600">{t('insuranceDetail.hero.cta')}</CTAButton>
+          <CTAButton className="w-full bg-royal hover:bg-royal-600">Get Started</CTAButton>
         </CardContent>
       </Card>
     </div>

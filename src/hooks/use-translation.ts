@@ -1,7 +1,7 @@
 
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
-import { translations } from '../translations';
+import { TranslationKey, translations } from '../translations';
 import get from 'lodash.get';
 
 export const useTranslation = () => {
@@ -17,14 +17,20 @@ export const useTranslation = () => {
     
     // Enhanced debug output in development
     if (process.env.NODE_ENV === 'development') {
-      // Additional debug info for insurance keys to help debug conflicts
-      if (key.startsWith('insurance.') || key.startsWith('insuranceDetail.')) {
-        console.debug(`[Translation] Key: "${key}", Language: "${language}", Result: "${value}"`);
+      console.debug(`[Translation] Key: "${key}", Language: "${language}", Result: "${value}"`);
+      
+      // Additional debug info for insurance comparison keys
+      if (key.startsWith('insurance.comparison')) {
+        console.debug(`[Translation DEBUG] Insurance comparison key "${key}" in "${language}":`, value);
+        console.debug(`[Translation DEBUG] Full insurance translations:`, translations[language].insurance);
       }
       
       // If translation is missing or shows the key itself
       if (!value || value === key) {
         console.warn(`[Translation WARNING] Missing translation for key: "${key}" in language "${language}"`);
+        // Log the structure to help debug
+        console.debug(`Translation value type: ${typeof value}`);
+        console.debug(`Available paths in ${language}:`, Object.keys(translations[language]));
         
         // Output parent keys to help find structure issues
         const keyParts = key.split('.');
@@ -33,6 +39,19 @@ export const useTranslation = () => {
           currentPath = currentPath ? `${currentPath}.${keyParts[i]}` : keyParts[i];
           const currentValue = get(translations[language], currentPath);
           console.debug(`Path "${currentPath}" in ${language}:`, currentValue);
+          
+          if (currentValue && typeof currentValue === 'object') {
+            console.debug(`Available keys at "${currentPath}":`, Object.keys(currentValue));
+          }
+        }
+        
+        // Try to find the path in other languages to help debug
+        const otherLanguages = Object.keys(translations).filter(lang => lang !== language);
+        for (const lang of otherLanguages) {
+          const valueInOtherLang = get(translations[lang], key);
+          if (valueInOtherLang && valueInOtherLang !== key) {
+            console.debug(`[Translation DEBUG] Key "${key}" exists in "${lang}" with value: "${valueInOtherLang}"`);
+          }
         }
       }
     }

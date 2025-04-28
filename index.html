@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,16 +7,6 @@
     <meta name="description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Gästemeldung, Kurtaxe, Zusatzleistungen und mehr." />
     <meta name="author" content="Stellar Checkin" />
     <link rel="icon" href="/lovable-uploads/b1071c9d-b132-4a47-ab49-b3c6f6b61ed0.png" type="image/png" />
-    
-    <!-- Language alternates for SEO -->
-    <link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de" />
-    <link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en" />
-    <link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it" />
-    <link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es" />
-    <link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/" />
-    
-    <!-- Canonical URL for SEO -->
-    <link rel="canonical" href="https://stellar-checkin.com/" id="canonical-link" />
     
     <!-- Resource hints for external domains -->
     <link rel="preconnect" href="https://assets.brevo.com" crossorigin />
@@ -43,10 +32,6 @@
     <meta name="twitter:title" content="Stellar Checkin - Digitale Check-in Lösung" />
     <meta name="twitter:description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Weniger Aufwand, mehr Umsatz." />
     <meta name="twitter:image" content="/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png" />
-    
-    <!-- SEO-specific meta tags -->
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
     
     <!-- Brevo Form Styles - minified -->
     <style>
@@ -88,33 +73,6 @@
         });
         return false;
       }
-
-      // Dynamic canonical URL script for SPA - updated for better handling
-      document.addEventListener('DOMContentLoaded', function() {
-        const updateCanonical = () => {
-          const path = window.location.pathname;
-          const canonical = document.getElementById('canonical-link');
-          if (canonical) {
-            // Ensure we have a clean path structure for canonical URLs
-            let canonicalPath = path;
-            // Remove trailing slashes for consistency
-            if (canonicalPath.endsWith('/') && canonicalPath.length > 1) {
-              canonicalPath = canonicalPath.slice(0, -1);
-            }
-            canonical.href = `https://stellar-checkin.com${canonicalPath}`;
-          }
-        };
-        
-        // Update on initial load
-        updateCanonical();
-        
-        // Update on route changes
-        window.addEventListener('popstate', updateCanonical);
-        
-        // Add a MutationObserver to detect SPA navigation changes
-        const observer = new MutationObserver(updateCanonical);
-        observer.observe(document.body, { childList: true, subtree: true });
-      });
     </script>
   </head>
   

@@ -12,7 +12,7 @@ const OverviewCards = () => {
       <div className="flex items-center gap-3 mb-8">
         <Shield className="h-8 w-8 text-apple" />
         <h1 className="text-3xl font-bold text-royal inline-block relative">
-          {t('insuranceDetail.comparison.headline')}
+          {t('insurance.comparison.headline')}
           <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-apple rounded-full"></div>
         </h1>
       </div>
@@ -20,22 +20,22 @@ const OverviewCards = () => {
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
         <Card>
           <CardContent className="pt-6">
-            <h3 className="text-xl font-semibold text-royal mb-4">{t('insuranceDetail.section1.title')}</h3>
-            <p className="text-royal-700">{t('insuranceDetail.section1.content')}</p>
+            <h3 className="text-xl font-semibold text-royal mb-4">{t('insurance.section1.title')}</h3>
+            <p className="text-royal-700">{t('insurance.section1.content')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardContent className="pt-6">
-            <h3 className="text-xl font-semibold text-royal mb-4">{t('insuranceDetail.section2.title')}</h3>
-            <p className="text-royal-700">{t('insuranceDetail.section2.content')}</p>
+            <h3 className="text-xl font-semibold text-royal mb-4">{t('insurance.section2.title')}</h3>
+            <p className="text-royal-700">{t('insurance.section2.content')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardContent className="pt-6">
-            <h3 className="text-xl font-semibold text-royal mb-4">{t('insuranceDetail.section3.title')}</h3>
-            <p className="text-royal-700">{t('insuranceDetail.section3.content')}</p>
+            <h3 className="text-xl font-semibold text-royal mb-4">{t('insurance.section3.title')}</h3>
+            <p className="text-royal-700">{t('insurance.section3.content')}</p>
           </CardContent>
         </Card>
       </div>

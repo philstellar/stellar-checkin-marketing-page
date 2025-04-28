@@ -1,27 +1,7 @@
 
 export const insuranceEN = {
-  hero: {
-    title: "Automate Insurance and/or Deposit Protection",
-    subtitle: "Protect your property and simplify guest check-ins",
-    introduction: "Offer your guests optional insurance and benefit from additional income",
-    cta: "Get Started"
-  },
-  
-  overview: {
-    process: {
-      title: "Simple and Secure Process",
-      description: "Streamlined insurance and deposit management that ensures peace of mind for both hosts and guests."
-    },
-    income: {
-      title: "Protect Your Rental Income",
-      description: "Safeguard your property against potential damages and rental income loss."
-    },
-    protection: {
-      title: "Comprehensive Coverage",
-      description: "Comprehensive insurance that covers property damage, liability, and unexpected incidents."
-    }
-  },
-
+  title: "Automate Insurance and Deposits Intelligently",
+  introduction: "Offer your guests optional insurance and benefit from additional income.",
   section1: {
     title: "Why Insurance?",
     content: "Our insurance protects against damage caused by guests, their companions, or pets. 90% of guests choose our insurance - for peace of mind on both sides."
@@ -34,7 +14,6 @@ export const insuranceEN = {
     title: "Our Partner",
     content: "Partner of Hiscox - a world-renowned specialty insurer with over 100 years of experience, high financial stability, and 95% customer satisfaction."
   },
-
   comparison: {
     headline: "Insurance and Deposit Management",
     header: {
@@ -53,7 +32,6 @@ export const insuranceEN = {
   pricing: {
     header: {
       coverage: "Maximum Coverage Amount",
-      tooltip: "The maximum amount that will be paid out in the event of a claim",
       amount1: "€ 5,000",
       amount2: "€ 10,000",
       amount3: "€ 50,000"
@@ -61,25 +39,20 @@ export const insuranceEN = {
     rows: [
       {
         label: "Price per night\n(plus insurance tax)",
-        tooltip: "The statutory insurance tax will be calculated additionally",
         value1: "€ 2.82",
         value2: "€ 3.62",
-        value3: "€ 4.91",
-        description: "Basic coverage with flexible options"
+        value3: "€ 4.91"
       },
       {
         label: "Coverage (Deductible €100)",
-        tooltip: "Deductible of €100 per claim",
         description: "Damage to inventory and buildings at replacement value"
       },
       {
         label: "Guest recourse",
-        tooltip: "When the guest can be held liable",
         description: "Only for intentional damage"
       },
       {
         label: "Additional coverage\n(up to)",
-        tooltip: "Special benefits included in the insurance",
         description: "Additional cleaning costs up to € 1,000"
       },
       {
@@ -91,10 +64,7 @@ export const insuranceEN = {
       {
         description: "Damage caused by pets up to € 5,000"
       }
-    ],
-    allBasicFeatures: "All Basic Features",
-    increasedCoverage: "Increased Coverage Amount",
-    keyReplacement: "Key Replacement Coverage"
+    ]
   },
   benefits: {
     title: "The Benefits of Insurance at a Glance",
@@ -154,36 +124,5 @@ export const insuranceEN = {
       question: "How much does guest damage insurance cost me?",
       answer: "Our guest damage insurance starts at €2.8 per night and varies depending on the level of coverage. Details can be found in your Stellar account.\n\nThe cost of insurance can also be covered by the guest, as an alternative to a deposit.\n\nTo ensure that the insurance covers all stays in your accommodations, you can specify in the settings that you will pay for the insurance yourself and include the costs in the rental price."
     }
-  },
-  addFeatures: {
-    syncBookings: {
-      title: "Synchronize your bookings",
-      description: "Set up the logic that works best for your business."
-    },
-    coverage: {
-      title: "Choose the right coverage amount",
-      description: "Secure yourself with every successful booking."
-    },
-    integration: {
-      title: "Online Check-in Integration",
-      description: "Let your guests choose between insurance and deposit."
-    },
-    deposit: {
-      title: "Deposits as an option",
-      description: "Offer your guests the choice between insurance and traditional deposit."
-    }
-  },
-  process: {
-    title: "Simple and Secure Process",
-    description: "Streamlined insurance and deposit management that ensures peace of mind for both hosts and guests."
-  },
-  income: {
-    title: "Protect Your Rental Income",
-    description: "Safeguard your property against potential damages and rental income loss."
-  },
-  protection: {
-    title: "Comprehensive Coverage",
-    description: "Comprehensive insurance that covers property damage, liability, and unexpected incidents."
-  },
-  cta: "Discover Insurance Options"
+  }
 };

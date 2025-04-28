@@ -42,7 +42,7 @@ export const ComparisonDesktopView = ({ features, schutzBeiMietausfallIndex }: P
       <TableHeader>
         <TableRow>
           <TableHead className="w-[300px] font-bold text-black whitespace-normal break-words">
-            {t('insuranceDetail.comparison.header.feature')}
+            {t('insurance.comparison.header.feature')}
           </TableHead>
           <TableHead className="w-[180px] text-center whitespace-normal break-words">
             <div className="flex justify-center">
@@ -72,7 +72,7 @@ export const ComparisonDesktopView = ({ features, schutzBeiMietausfallIndex }: P
             </div>
           </TableHead>
           <TableHead className="w-[180px] text-center font-bold text-black whitespace-normal break-words">
-            {t('insuranceDetail.comparison.header.classic')}
+            {t('insurance.comparison.header.classic')}
           </TableHead>
         </TableRow>
       </TableHeader>

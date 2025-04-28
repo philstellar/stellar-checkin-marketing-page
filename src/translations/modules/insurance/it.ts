@@ -1,27 +1,6 @@
-
 export const insuranceIT = {
-  hero: {
-    title: "Automatizzare la protezione tramite assicurazione e/o depositi",
-    subtitle: "Proteggi la tua proprietà e semplifica il check-in",
-    introduction: "Offri ai tuoi ospiti un'assicurazione opzionale e beneficia di entrate aggiuntive",
-    cta: "Inizia Ora"
-  },
-  
-  overview: {
-    process: {
-      title: "Processo Semplice e Sicuro",
-      description: "Gestione ottimizzata di assicurazioni e depositi che garantisce tranquillità sia per host che per ospiti."
-    },
-    income: {
-      title: "Proteggi i Tuoi Ricavi da Affitto",
-      description: "Proteggi la tua proprietà contro possibili danni e perdita di reddito da affitto."
-    },
-    protection: {
-      title: "Copertura Completa",
-      description: "Assicurazione completa che copre danni alla proprietà, responsabilità civile e incidenti imprevisti."
-    }
-  },
-  
+  title: "Automatizza in modo intelligente assicurazione e deposito",
+  introduction: "Offri ai tuoi ospiti un'assicurazione opzionale e beneficia di entrate aggiuntive.",
   section1: {
     title: "Perché un'assicurazione?",
     content: "La nostra assicurazione protegge dai danni causati dagli ospiti, dai loro accompagnatori o animali domestici. Il 90% degli ospiti sceglie la nostra assicurazione - per la tranquillità di entrambe le parti."
@@ -52,7 +31,6 @@ export const insuranceIT = {
   pricing: {
     header: {
       coverage: "Importo massimo di copertura",
-      tooltip: "L'importo massimo che verrà pagato in caso di sinistro",
       amount1: "€ 5.000",
       amount2: "€ 10.000",
       amount3: "€ 50.000"
@@ -60,25 +38,20 @@ export const insuranceIT = {
     rows: [
       {
         label: "Prezzo per notte\n(più tassa assicurativa)",
-        tooltip: "La tassa assicurativa di legge sarà calcolata in aggiunta",
         value1: "€ 2,82",
         value2: "€ 3,62",
-        value3: "€ 4,91",
-        description: "Copertura di base con opzioni flessibili"
+        value3: "€ 4,91"
       },
       {
         label: "Copertura (Franchigia €100)",
-        tooltip: "Franchigia di €100 per sinistro",
         description: "Danni all'inventario e agli edifici al valore di sostituzione"
       },
       {
         label: "Ricorso contro l'ospite",
-        tooltip: "Quando l'ospite può essere ritenuto responsabile",
         description: "Solo per danni intenzionali"
       },
       {
         label: "Copertura aggiuntiva\n(fino a)",
-        tooltip: "Benefici speciali inclusi nell'assicurazione",
         description: "Costi di pulizia aggiuntivi fino a € 1.000"
       },
       {
@@ -90,10 +63,7 @@ export const insuranceIT = {
       {
         description: "Danni causati da animali domestici fino a € 5.000"
       }
-    ],
-    allBasicFeatures: "Tutte le funzionalità di base",
-    increasedCoverage: "Importo di copertura aumentato",
-    keyReplacement: "Copertura per sostituzione chiavi"
+    ]
   },
   benefits: {
     title: "I vantaggi dell'assicurazione in sintesi",
@@ -154,35 +124,18 @@ export const insuranceIT = {
       answer: "La nostra assicurazione danni ospiti parte da €2,8 per notte e varia a seconda del livello di copertura. I dettagli si trovano nel tuo account Stellar.\n\nIl costo dell'assicurazione può essere anche sostenuto dall'ospite, come alternativa al deposito.\n\nPer assicurarti che l'assicurazione copra tutti i soggiorni nei tuoi alloggi, puoi specificare nelle impostazioni che pagherai tu l'assicurazione e includerai i costi nel prezzo dell'affitto."
     }
   },
-  addFeatures: {
-    syncBookings: {
-      title: "Sincronizza le tue prenotazioni",
-      description: "Configura la logica che funziona meglio per la tua attività."
+  versicherung: {
+    process: {
+      title: "Processo di Check-in Più Veloce",
+      description: "Niente più gestione dei depositi, meno lavoro per te e i tuoi ospiti."
     },
-    coverage: {
-      title: "Scegli l'importo di copertura giusto",
-      description: "Assicurati con ogni prenotazione di successo."
+    income: {
+      title: "Fonte di Reddito Aggiuntiva",
+      description: "Guadagna commissioni con ogni polizza assicurativa – automaticamente e senza sforzo aggiuntivo."
     },
-    integration: {
-      title: "Integrazione check-in online",
-      description: "Lascia che i tuoi ospiti scelgano tra assicurazione e deposito."
-    },
-    deposit: {
-      title: "Depositi come opzione",
-      description: "Offri ai tuoi ospiti la scelta tra assicurazione e deposito tradizionale."
+    protection: {
+      title: "Protezione Completa",
+      description: "Protezione migliore rispetto ai depositi tradizionali, grazie a importi di copertura più elevati, copertura \"nuovo per vecchio\" e protezione contro la perdita di affitto."
     }
-  },
-  process: {
-    title: "Processo Semplice e Sicuro",
-    description: "Gestione ottimizzata di assicurazioni e depositi che garantisce tranquillità sia per host che per ospiti."
-  },
-  income: {
-    title: "Proteggi i Tuoi Ricavi da Affitto",
-    description: "Proteggi la tua proprietà contro possibili danni e perdita di reddito da affitto."
-  },
-  protection: {
-    title: "Copertura Completa",
-    description: "Assicurazione completa che copre danni alla proprietà, responsabilità civile e incidenti imprevisti."
-  },
-  cta: "Scopri le Opzioni Assicurative"
+  }
 };

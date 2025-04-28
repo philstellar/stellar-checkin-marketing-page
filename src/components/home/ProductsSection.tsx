@@ -5,33 +5,31 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
 import { useTranslation } from "@/hooks/use-translation";
-import { useLanguage } from "@/context/LanguageContext";
 
 const ProductsSection = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const { language } = useLanguage();
   
   const products = [
     {
       title: t('products.checkin.title'),
       description: t('products.checkin.description'),
       icon: UserCheck,
-      path: `/${language}`,
+      path: '/',
       color: 'bg-apple'
     },
     {
       title: t('products.insurance.title'),
       description: t('products.insurance.description'),
       icon: ShieldCheck,
-      path: `/${language}/versicherung`,
+      path: '/de/versicherung',
       color: 'bg-royal'
     },
     {
       title: t('products.trustBadge.title'),
       description: t('products.trustBadge.description'),
       icon: BadgeCheck,
-      path: `/${language}/trust-badge`,
+      path: '/de/trust-badge',
       color: 'bg-floral'
     }
   ];

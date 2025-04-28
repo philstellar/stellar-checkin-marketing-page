@@ -1,27 +1,7 @@
 
 export const insuranceES = {
-  hero: {
-    title: "Automatizar la protección mediante seguros y/o depósitos",
-    subtitle: "Proteja su propiedad y simplifique el check-in",
-    introduction: "Ofrezca a sus huéspedes un seguro opcional y benefíciese de ingresos adicionales",
-    cta: "Comenzar"
-  },
-  
-  overview: {
-    process: {
-      title: "Proceso Simple y Seguro",
-      description: "Gestión optimizada de seguros y depósitos que garantiza tranquilidad tanto para anfitriones como para huéspedes."
-    },
-    income: {
-      title: "Proteja sus Ingresos de Alquiler",
-      description: "Proteja su propiedad contra posibles daños y pérdida de ingresos por alquiler."
-    },
-    protection: {
-      title: "Cobertura Integral",
-      description: "Seguro integral que cubre daños a la propiedad, responsabilidad civil e incidentes inesperados."
-    }
-  },
-  
+  title: "Automatice inteligentemente el seguro y el depósito",
+  introduction: "Ofrezca a sus huéspedes un seguro opcional y benefíciese de ingresos adicionales.",
   section1: {
     title: "¿Por qué un seguro?",
     content: "Nuestro seguro protege contra daños causados por huéspedes, sus acompañantes o mascotas. El 90% de los huéspedes eligen nuestro seguro, para tranquilidad de ambas partes."
@@ -52,7 +32,6 @@ export const insuranceES = {
   pricing: {
     header: {
       coverage: "Cantidad máxima de cobertura",
-      tooltip: "La cantidad máxima que se pagará en caso de reclamación",
       amount1: "€ 5.000",
       amount2: "€ 10.000",
       amount3: "€ 50.000"
@@ -60,25 +39,20 @@ export const insuranceES = {
     rows: [
       {
         label: "Precio por noche\n(más impuesto sobre seguros)",
-        tooltip: "El impuesto legal sobre seguros se calculará adicionalmente",
         value1: "€ 2,82",
         value2: "€ 3,62",
-        value3: "€ 4,91",
-        description: "Cobertura básica con opciones flexibles"
+        value3: "€ 4,91"
       },
       {
         label: "Cobertura (Franquicia €100)",
-        tooltip: "Franquicia de €100 por siniestro",
         description: "Daños al inventario y edificios a valor de reposición"
       },
       {
         label: "Recurso contra el huésped",
-        tooltip: "Cuándo se puede responsabilizar al huésped",
         description: "Solo por daños intencionales"
       },
       {
         label: "Cobertura adicional\n(hasta)",
-        tooltip: "Beneficios especiales incluidos en el seguro",
         description: "Gastos adicionales de limpieza hasta € 1.000"
       },
       {
@@ -90,10 +64,7 @@ export const insuranceES = {
       {
         description: "Daños causados por mascotas hasta € 5.000"
       }
-    ],
-    allBasicFeatures: "Todas las características básicas",
-    increasedCoverage: "Mayor cantidad de cobertura",
-    keyReplacement: "Cobertura para reemplazo de llaves"
+    ]
   },
   benefits: {
     title: "Las ventajas del seguro de un vistazo",
@@ -153,36 +124,5 @@ export const insuranceES = {
       question: "¿Cuánto me cuesta el seguro de daños de huéspedes?",
       answer: "Nuestro seguro de daños de huéspedes comienza en €2,8 por noche y varía según el nivel de cobertura. Los detalles se pueden encontrar en su cuenta de Stellar.\n\nEl costo del seguro también puede ser cubierto por el huésped, como alternativa a un depósito.\n\nPara asegurar que el seguro cubra todas las estancias en sus alojamientos, puede especificar en la configuración que usted pagará el seguro y incluirá los costos en el precio del alquiler."
     }
-  },
-  addFeatures: {
-    syncBookings: {
-      title: "Sincronice sus reservas",
-      description: "Configure la lógica que mejor funcione para su negocio."
-    },
-    coverage: {
-      title: "Elija la cantidad de cobertura correcta",
-      description: "Asegúrese con cada reserva exitosa."
-    },
-    integration: {
-      title: "Integración de check-in en línea",
-      description: "Permita que sus huéspedes elijan entre seguro y depósito."
-    },
-    deposit: {
-      title: "Depósitos como opción",
-      description: "Ofrezca a sus huéspedes la opción entre seguro y depósito tradicional."
-    }
-  },
-  process: {
-    title: "Proceso Simple y Seguro",
-    description: "Gestión optimizada de seguros y depósitos que garantiza tranquilidad tanto para anfitriones como para huéspedes."
-  },
-  income: {
-    title: "Proteja sus Ingresos de Alquiler",
-    description: "Proteja su propiedad contra posibles daños y pérdida de ingresos por alquiler."
-  },
-  protection: {
-    title: "Cobertura Integral",
-    description: "Seguro integral que cubre daños a la propiedad, responsabilidad civil e incidentes inesperados."
-  },
-  cta: "Descubrir opciones de seguro"
+  }
 };

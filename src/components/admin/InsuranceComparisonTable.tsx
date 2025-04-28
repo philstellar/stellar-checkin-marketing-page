@@ -9,30 +9,45 @@ const InsuranceComparisonTable = () => {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
   
-  // Use direct translation strings instead of keys
-  const comparisonRows = [
-    t('insuranceDetail.comparison.rows.0'), 
-    t('insuranceDetail.comparison.rows.1'), 
-    t('insuranceDetail.comparison.rows.2'),
-    t('insuranceDetail.comparison.rows.3'),
-    t('insuranceDetail.comparison.rows.4')
-  ];
-  
-  const features = comparisonRows.map((rowText) => {
-    return {
-      name: rowText,
+  const features = [
+    {
+      name: t('insurance.comparison.rows.0'),
       stellar: true,
-      airbnb: rowText === comparisonRows[3],  // Only "Protection against damage caused by pets" is true for Airbnb
+      airbnb: false,
       booking: false,
       classic: false,
-    };
-  });
-  
-  // Change "airbnb" value specifically for "Schutz bei Mietausfall" (row index 2)
+    },
+    {
+      name: t('insurance.comparison.rows.1'),
+      stellar: true,
+      airbnb: false,
+      booking: false,
+      classic: false,
+    },
+    {
+      name: t('insurance.comparison.rows.2'),
+      stellar: true,
+      airbnb: false,
+      booking: false,
+      classic: false,
+    },
+    {
+      name: t('insurance.comparison.rows.3'),
+      stellar: true,
+      airbnb: true,
+      booking: false,
+      classic: false,
+    },
+    {
+      name: t('insurance.comparison.rows.4'),
+      stellar: true,
+      airbnb: true,
+      booking: false,
+      classic: false,
+    },
+  ];
+
   const schutzBeiMietausfallIndex = 2;
-  if (features[schutzBeiMietausfallIndex]) {
-    features[schutzBeiMietausfallIndex].airbnb = false;
-  }
 
   return (
     <div className="rounded-lg border bg-white">

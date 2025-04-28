@@ -8,6 +8,7 @@ import CTAButton from '../CTAButton';
 import TrustBadgeFAQ from './TrustBadgeFAQ';
 import TrustBadgeCertificates from './TrustBadgeCertificates';
 import LogoCarouselAutoplay from '../LogoCarouselAutoplay';
+
 const testimonialLogos = [{
   src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
   alt: "Hof Liebeneck Osterspai",
@@ -37,6 +38,7 @@ const testimonialLogos = [{
   alt: "Fairienglück",
   width: 160
 }];
+
 const TrustBadgePage = () => {
   const {
     t
@@ -122,7 +124,7 @@ const TrustBadgePage = () => {
 
       {/* Preview Section */}
       <section className="py-[26px] bg-white">
-        <div className="mx-0 px-[10px]">
+        <div className="">
           <div className="max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-6 text-royal text-center">
               {t('trustBadge.preview.title')}
