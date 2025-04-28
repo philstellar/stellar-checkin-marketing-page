@@ -1,3 +1,4 @@
+
 import { memo } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
@@ -36,7 +37,9 @@ const Footer = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
   const navigate = useNavigate();
-  const isProduction = window.location.hostname === 'stellar-checkin.com';
+  const isProduction = window.location.hostname === 'stellar-checkin.com' || 
+                       window.location.hostname.includes('lovable.app') || 
+                       window.location.hostname.includes('lovable.dev');
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
     window.scrollTo({

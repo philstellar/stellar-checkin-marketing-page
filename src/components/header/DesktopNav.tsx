@@ -18,7 +18,9 @@ const DesktopNav = ({
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
 
-  const isProduction = window.location.hostname === 'stellar-checkin.com';
+  const isProduction = window.location.hostname === 'stellar-checkin.com' || 
+                       window.location.hostname.includes('lovable.app') || 
+                       window.location.hostname.includes('lovable.dev');
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
