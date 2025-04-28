@@ -28,7 +28,7 @@ export const navigationEN = {
   imprint: "Imprint",
   privacyPolicy: "Privacy Policy", 
   termsAndConditions: "Terms and Conditions",
-  insurance: "Versicherung",
+  insurance: "Insurance",
   trustBadge: "Trust Badge",
   aboutStellar: "About Us",
   aboutUs: "About Us",

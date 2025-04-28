@@ -25,18 +25,18 @@ const IdentitaetspruefungSection = () => {
               {[
                 {
                   icon: <ScanFace className="w-8 h-8 text-apple" />,
-                  title: t('identity.biometric.title'),
-                  description: t('identity.biometric.description')
+                  title: t('identity.iCheck.title'),
+                  description: t('identity.iCheck.description')
                 },
                 {
                   icon: <Fingerprint className="w-8 h-8 text-apple" />,
-                  title: t('identity.document.title'),
-                  description: t('identity.document.description')
+                  title: t('identity.protection.title'),
+                  description: t('identity.protection.description')
                 },
                 {
                   icon: <ShieldCheck className="w-8 h-8 text-apple" />,
-                  title: t('identity.privacy.title'),
-                  description: t('identity.privacy.description')
+                  title: t('identity.compliance.title'),
+                  description: t('identity.compliance.description')
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
