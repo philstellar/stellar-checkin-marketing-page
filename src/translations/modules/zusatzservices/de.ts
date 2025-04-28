@@ -7,8 +7,8 @@ export const zusatzservicesDE = {
     description: "Bieten Sie Ihren Gästen mehr – und steigern Sie Ihren Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepakete oder besondere Erlebnisse."
   },
   payment: {
-    title: "Nahtlose Zahlungsabwicklung",
-    description: "Integrierte Zahlungsabwicklung mit allen gängigen Zahlungsmethoden direkt im Check-in-Prozess."
+    title: "Zahlungsabwicklung direkt im Check-in",
+    description: "Integrierte Zahlungsabwicklung mit allen gängigen Zahlungsmethoden und ohne Zusatzkosten für Sie oder Ihre Gäste."
   },
   revenue: {
     title: "Zusätzliche Einnahmequellen",
