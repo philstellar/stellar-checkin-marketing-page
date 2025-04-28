@@ -3,7 +3,7 @@ export const insuranceDE = {
   introduction: "Umfassender Schutz vor Gästeschäden – dank einzigartiger Versicherung und/oder Kautionsmanagement.",
   section1: {
     title: "Warum eine Versicherung?",
-    content: "Unsere Versicherung schützt vor Schäden, die durch Gäste, deren Begleitpersonen oder Haustiere verursacht werden. 90% der Gäste wählen unsere Versicherung - für ein sicheres Gefühl auf beiden Seiten."
+    content: "Schutz vor Schäden durch Gäste, Begleitpersonen und Haustiere – 80 % der Gäste wählen unsere Versicherung - für ein sicheres Gefühl auf beiden Seiten."
   },
   section2: {
     title: "Wie funktioniert es?",
