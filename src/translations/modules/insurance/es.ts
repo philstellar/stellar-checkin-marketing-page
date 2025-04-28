@@ -1,59 +1,59 @@
 
 export const insuranceES = {
-  title: "Automatice inteligentemente el seguro y el depósito",
-  introduction: "Ofrezca a sus huéspedes un seguro opcional y benefíciese de ingresos adicionales.",
+  title: "Automatice de forma inteligente el seguro y los depósitos",
+  introduction: "Protección óptima para sus alojamientos - con gestión de seguros y depósitos.",
   section1: {
     title: "¿Por qué un seguro?",
-    content: "Nuestro seguro protege contra daños causados por huéspedes, sus acompañantes o mascotas. El 90% de los huéspedes eligen nuestro seguro, para tranquilidad de ambas partes."
+    content: "Nuestro seguro protege contra daños causados por huéspedes, sus acompañantes o mascotas. El 90% de los huéspedes eligen nuestro seguro - para tranquilidad de ambas partes."
   },
   section2: {
     title: "¿Cómo funciona?",
-    content: "El seguro puede ser reservado directamente por el huésped durante el check-in digital, o usted puede cubrir los costos e incluirlo en su precio por noche."
+    content: "El seguro puede ser contratado directamente por el huésped durante el check-in digital – o usted puede cubrir los costos e incluirlos en su tarifa por noche."
   },
   section3: {
-    title: "Nuestro socio",
-    content: "Socio de Hiscox, una aseguradora especializada de renombre mundial con más de 100 años de experiencia, alta estabilidad financiera y 95% de satisfacción del cliente."
+    title: "Nuestro Socio",
+    content: "Socio de Hiscox – una aseguradora especializada de renombre mundial con más de 100 años de experiencia, alta estabilidad financiera y 95% de satisfacción del cliente."
   },
   comparison: {
-    headline: "Gestión de seguros y depósitos",
+    headline: "Gestión de Seguros y Depósitos",
     header: {
       feature: "Incluido en el seguro",
-      classic: "Seguro tradicional"
+      classic: "Seguro de\nContenido"
     },
     rows: [
-      "Sin responsabilidad para el huésped por daños accidentales",
-      "Reservas a través de todos los canales (incluyendo reservas directas)",
-      "Protección contra pérdida de alquiler en todas las reservas",
-      "Protección contra daños causados por mascotas",
+      "Sin responsabilidad del huésped por daños accidentales",
+      "Reservas a través de todos los canales (incl. reservas directas)",
+      "Protección contra pérdida de alquiler para todas las reservas",
+      "Protección contra daños por mascotas",
       "Daños durante el alquiler comercial"
     ],
     airbnbOnlyBooking: "Solo para reservas de Airbnb"
   },
   pricing: {
     header: {
-      coverage: "Cantidad máxima de cobertura",
+      coverage: "Monto máximo de cobertura",
       amount1: "€ 5.000",
       amount2: "€ 10.000",
       amount3: "€ 50.000"
     },
     rows: [
       {
-        label: "Precio por noche\n(más impuesto sobre seguros)",
+        label: "Precio por noche\n(más impuesto al seguro)",
         value1: "€ 2,82",
         value2: "€ 3,62",
         value3: "€ 4,91"
       },
       {
-        label: "Cobertura (Franquicia €100)",
+        label: "Cobertura (deducible €100)",
         description: "Daños al inventario y edificios a valor de reposición"
       },
       {
-        label: "Recurso contra el huésped",
-        description: "Solo por daños intencionales"
+        label: "Recurso contra huéspedes",
+        description: "Solo en caso de daño intencional"
       },
       {
         label: "Cobertura adicional\n(hasta)",
-        description: "Gastos adicionales de limpieza hasta € 1.000"
+        description: "Costos adicionales de limpieza hasta € 1.000"
       },
       {
         description: "Obras de arte y objetos de valor hasta € 10.000"
@@ -67,62 +67,62 @@ export const insuranceES = {
     ]
   },
   benefits: {
-    title: "Las ventajas del seguro de un vistazo",
+    title: "Los beneficios del seguro de un vistazo",
     list: [
-      "Simplifique el check-in: Sin proceso de depósito, sus huéspedes pueden relajarse de inmediato, sin efectivo ni transacciones con tarjeta de crédito.",
-      "Aumente sus ingresos a través de comisiones en cada reserva de seguro, de forma completamente automática.",
+      "Simplifique el check-in: Sin proceso de depósito, sus huéspedes pueden relajarse inmediatamente – sin efectivo ni transacciones con tarjeta de crédito",
+      "Aumente sus ingresos a través de comisiones en cada reserva de seguro – automáticamente.",
       "Disfrute de mejor protección financiera con montos de cobertura más altos en comparación con los depósitos tradicionales.",
-      "Integración perfecta: El seguro se integra automáticamente en el check-in, sin esfuerzo administrativo adicional.",
-      "Protéjase a sí mismo y a sus huéspedes de manera integral, desde daños a la propiedad, robo hasta gastos adicionales de limpieza.",
-      "Experimente un procesamiento de reclamaciones simple y rápido sin contacto directo con el huésped."
+      "Integración perfecta: El seguro se integra automáticamente en el check-in – sin esfuerzo administrativo adicional.",
+      "Asegure una cobertura integral para usted y sus huéspedes - desde daños a la propiedad, robo hasta esfuerzo adicional de limpieza.",
+      "Experimente un procesamiento de reclamos simple y rápido sin contacto directo con el huésped."
     ]
   },
   shortTerm: {
-    title: "Nuestros precios",
+    title: "Nuestros Precios",
     description: "Los precios se calculan por noche (más posibles tarifas de servicio y comisiones)."
   },
   details: {
     furniture: {
-      title: "Muebles y edificio",
-      description: "Aseguramos daños accidentales y malintencionados a su propiedad. El robo también está cubierto."
+      title: "Muebles y Edificios",
+      description: "Aseguramos daños accidentales y malintencionados a su propiedad. El robo también está asegurado."
     },
     newForOld: {
-      title: "Nuevo por viejo",
-      description: "Compensamos en base al valor de reposición."
+      title: "Nuevo por Viejo",
+      description: "Compensamos basándonos en el valor de reposición."
     },
     rentalLoss: {
-      title: "Pérdida de alquiler",
-      description: "Si un daño asegurado le impide alquilar, reembolsamos los ingresos de alquiler perdidos."
+      title: "Pérdida de Alquiler",
+      description: "Si una pérdida asegurada le impide alquilar, reembolsamos los ingresos perdidos por alquiler"
     },
     petDamage: {
-      title: "Daños por mascotas",
-      description: "Nuestro seguro también cubre daños causados por mascotas de los huéspedes."
+      title: "Daños por Mascotas",
+      description: "Nuestro seguro también cubre los daños causados por las mascotas de los huéspedes."
     },
     cleaning: {
       title: "Limpieza",
-      description: "Reembolsamos los costos de limpieza adicional para eliminar manchas y olor a humo."
+      description: "Cubrimos los costos de limpieza adicional para eliminar manchas y olores a humo."
     },
     art: {
-      title: "Arte y objetos decorativos",
-      description: "Protegemos todas las obras de arte u objetos de valor utilizados para la decoración."
+      title: "Arte y Decoración",
+      description: "Protegemos todas las obras de arte u objetos de valor utilizados para decoración."
     }
   },
   faq: {
     airbnb: {
-      question: "¿Necesito su seguro de daños de huéspedes aunque esté listado en Airbnb o Booking.com?",
-      answer: "Sí, aunque plataformas como Airbnb y Booking.com ofrecen su propia protección, ambas tienen sus inconvenientes y limitaciones.\n\nAirCover de Airbnb no es un producto de seguro y siempre involucrará a los huéspedes y les pedirá que paguen por los daños. Solo si el huésped se niega a pagar, AirCover podría cubrir el daño. Reportar un daño a Airbnb, por lo tanto, siempre arriesga disputas con huéspedes que niegan la responsabilidad o dejan una reseña negativa. Además, AirCover solo cubre los ingresos perdidos de reservas confirmadas de Airbnb, dejando a los anfitriones que ofrecen en múltiples plataformas con costos de cancelación e ingresos perdidos.\n\nEl programa de daños de Booking.com simplemente facilita la resolución de daños con sus huéspedes, y solo si lo ha configurado específicamente. El programa de daños está limitado a €300 en la UE. Esta cantidad se muestra durante el proceso de reserva y puede impactar negativamente en su conversión de reservas o clasificación de búsqueda."
+      question: "¿Necesito su seguro de daños de huéspedes aunque esté listado en AirBnb o Booking.com?",
+      answer: "Sí, aunque plataformas como Airbnb y Booking.com ofrecen su propia protección, ambas tienen sus limitaciones y dificultades.\n\nAirCover de Airbnb no es un producto de seguro y siempre involucrará a los huéspedes, requiriendo que paguen por los daños. Solo si el huésped se niega a pagar, AirCover puede cubrir el daño. Reportar daños a Airbnb, por lo tanto, siempre arriesga disputas con huéspedes que niegan la responsabilidad o dejan reseñas negativas. Además, AirCover solo cubre ingresos perdidos de reservas confirmadas de Airbnb, dejando a los anfitriones que listan en múltiples plataformas con costos de cancelación e ingresos perdidos.\n\nEl programa de daños de Booking.com simplemente facilita la liquidación de daños con sus huéspedes, y solo si lo ha configurado específicamente. El programa de daños está limitado a €300 en la UE. Esta cantidad se muestra durante el proceso de reserva y puede impactar negativamente en su conversión de reservas o ranking de búsqueda."
     },
     deposit: {
-      question: "¿Debería pedir a los huéspedes un depósito?",
-      answer: "Un depósito puede proporcionar seguridad financiera en caso de que la casa sufra daños durante la estancia de sus huéspedes. También asegura que los huéspedes cuiden mejor la casa durante su estancia, ya que quieren recibir el depósito completo y por lo tanto prestan especial atención a dejar la casa en buen estado.\n\nEn general, sin embargo, los huéspedes a menudo evitan ofertas que requieren un depósito, ya que inmoviliza dinero temporalmente y puede llevar a deducciones por problemas menores.\n\nSi elige el seguro de daños de huéspedes Stellar, puede evitar depósitos por completo u ofrecer a sus huéspedes una alternativa conveniente.\n\nComo las posibles reclamaciones generalmente se manejan sin la participación del huésped, puede evitar disputas con los huéspedes - para más reservas repetidas y más reseñas de 5 estrellas."
+      question: "¿Debería pedir un depósito a los huéspedes?",
+      answer: "Un depósito puede proporcionar seguridad financiera en caso de que la casa sufra daños durante la estancia de sus huéspedes. También asegura que los huéspedes cuiden mejor la casa durante su estancia ya que desean recibir su depósito completo y por lo tanto prestan especial atención a dejar la casa en buen estado.\n\nEn general, sin embargo, los huéspedes a menudo evitan ofertas que requieren un depósito ya que inmoviliza temporalmente el dinero y puede llevar a deducciones por problemas menores.\n\nSi elige el seguro de daños de huéspedes de Stellar, puede evitar los depósitos por completo u ofrecer a sus huéspedes una alternativa conveniente.\n\nDado que los posibles reclamos generalmente se manejan sin la participación del huésped, puede evitar disputas con los huéspedes – para más reservas repetidas y más reseñas de 5 estrellas."
     },
     coverage: {
       question: "¿Qué cubre su seguro?",
-      answer: "Nuestro seguro para alquileres vacacionales fue diseñado específicamente para las necesidades individuales de arrendadores y propietarios de corto plazo.\n\nIncluye cobertura integral y crítica para los siguientes casos relevantes:\n\n• Daños no intencionados y malintencionados a su propiedad (a valor de reposición), para que no sufra pérdidas financieras.\n• Daños de huéspedes debido a robo, que pueden ocurrir de manera inesperada y presentar desafíos financieros para los propietarios.\n• Pérdidas de ingresos debido a daños cubiertos, minimizando sus pérdidas de alquiler y asegurando la estabilidad financiera.\n• Costos adicionales de limpieza para la eliminación elaborada de manchas dejadas por huéspedes que van más allá de la limpieza normal.\n• Protección efectiva contra daños causados por mascotas, para que pueda alquilar a dueños de mascotas sin preocuparse por altos costos de reparación."
+      answer: "Nuestro seguro de alquiler vacacional fue desarrollado específicamente para las necesidades individuales de anfitriones y propietarios de alquileres a corto plazo.\n\nIncluye cobertura integral y crítica para los siguientes casos relevantes:\n\n• Daños no intencionales y malintencionados a su propiedad (a valor de reposición), asegurando que no sufra pérdidas financieras.\n• Daños por huéspedes debido a robo, que pueden ocurrir inesperadamente y plantear desafíos financieros para los propietarios.\n• Pérdidas de ingresos debido a daños cubiertos, minimizando sus pérdidas de alquiler y asegurando estabilidad financiera.\n• Costos adicionales de limpieza para la eliminación extensiva de manchas dejadas por los huéspedes que van más allá de la limpieza normal.\n• Protección efectiva contra daños por mascotas, permitiéndole alquilar a dueños de mascotas sin preocupaciones y sin el riesgo de altos costos de reparación."
     },
     cost: {
-      question: "¿Cuánto me cuesta el seguro de daños de huéspedes?",
-      answer: "Nuestro seguro de daños de huéspedes comienza en €2,8 por noche y varía según el nivel de cobertura. Los detalles se pueden encontrar en su cuenta de Stellar.\n\nEl costo del seguro también puede ser cubierto por el huésped, como alternativa a un depósito.\n\nPara asegurar que el seguro cubra todas las estancias en sus alojamientos, puede especificar en la configuración que usted pagará el seguro y incluirá los costos en el precio del alquiler."
+      question: "¿Cuánto cuesta el seguro de daños de huéspedes?",
+      answer: "Nuestro seguro de daños de huéspedes comienza en €2,8 por noche y varía según el monto de cobertura. Puede encontrar detalles en su cuenta Stellar.\n\nLos costos del seguro también pueden ser pagados por el huésped como alternativa al depósito.\n\nPara asegurar que el seguro cubra todas las estancias en sus alojamientos, puede especificar en la configuración que usted pagará el seguro y incluirá los costos en el precio del alquiler."
     }
   }
 };
