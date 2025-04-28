@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
@@ -50,7 +51,16 @@ const Header = () => {
   };
 
   const handleHomeClick = () => {
-    navigate(`/${language}/home`);
+    // Map language to the appropriate check-in page path
+    const checkInPagePaths = {
+      'de': '/de/versicherung',
+      'en': '/en/insurance',
+      'it': '/it/assicurazione',
+      'es': '/es/seguro'
+    };
+    
+    // Navigate to the check-in page in the current language
+    navigate(checkInPagePaths[language]);
   };
 
   const handleSectionClick = useCallback((sectionId: string) => {
