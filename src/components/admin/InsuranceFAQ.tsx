@@ -21,8 +21,8 @@ const InsuranceFAQ = () => {
 
   const faqData = {
     questions: faqs.map(faq => ({
-      question: t(`insurance.faq.${faq}.question`),
-      answer: t(`insurance.faq.${faq}.answer`)
+      question: t(`insuranceDetail.faq.${faq}.question`),
+      answer: t(`insuranceDetail.faq.${faq}.answer`)
     }))
   };
 
@@ -34,10 +34,10 @@ const InsuranceFAQ = () => {
         {faqs.map((faq, index) => (
           <AccordionItem key={index} value={`item-${index}`}>
             <AccordionTrigger className="text-left text-lg font-semibold text-royal">
-              {t(`insurance.faq.${faq}.question`)}
+              {t(`insuranceDetail.faq.${faq}.question`)}
             </AccordionTrigger>
             <AccordionContent className="text-royal-700 text-left whitespace-pre-line">
-              {t(`insurance.faq.${faq}.answer`)}
+              {t(`insuranceDetail.faq.${faq}.answer`)}
             </AccordionContent>
           </AccordionItem>
         ))}
@@ -47,4 +47,3 @@ const InsuranceFAQ = () => {
 };
 
 export default InsuranceFAQ;
-

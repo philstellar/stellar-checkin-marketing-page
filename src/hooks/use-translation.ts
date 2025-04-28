@@ -31,7 +31,7 @@ export const useTranslation = () => {
           const detailedValue = get(translations[language], key);
           console.debug(`[InsuranceDetail] Detailed key "${key}" in "${language}":`, detailedValue);
           
-          // Also check if there's a matching simple key
+          // Check if there's a matching simple key
           const simpleKey = key.replace('insuranceDetail.', 'insurance.');
           const simpleValue = get(translations[language], simpleKey);
           console.debug(`[InsuranceDetail] Matching simple key "${simpleKey}" value:`, simpleValue);
