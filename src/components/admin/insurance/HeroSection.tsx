@@ -9,9 +9,7 @@ const HeroSection = () => {
   
   // Create a function to render the title as HTML
   const renderTitle = () => {
-    // Make sure the title contains properly formatted HTML with direct style attribute
-    const title = t('insurance.hero.title').replace('style={{ color: "#a4c309" }}', 'style="color: #a4c309;"');
-    return <span dangerouslySetInnerHTML={{ __html: title }} />;
+    return <span dangerouslySetInnerHTML={{ __html: t('insurance.hero.title') }} />;
   };
   
   return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">

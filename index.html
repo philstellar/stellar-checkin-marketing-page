@@ -89,21 +89,31 @@
         return false;
       }
 
-      // Dynamic canonical URL script for SPA
+      // Dynamic canonical URL script for SPA - updated for better handling
       document.addEventListener('DOMContentLoaded', function() {
         const updateCanonical = () => {
           const path = window.location.pathname;
           const canonical = document.getElementById('canonical-link');
           if (canonical) {
-            canonical.href = `https://stellar-checkin.com${path}`;
+            // Ensure we have a clean path structure for canonical URLs
+            let canonicalPath = path;
+            // Remove trailing slashes for consistency
+            if (canonicalPath.endsWith('/') && canonicalPath.length > 1) {
+              canonicalPath = canonicalPath.slice(0, -1);
+            }
+            canonical.href = `https://stellar-checkin.com${canonicalPath}`;
           }
         };
         
         // Update on initial load
         updateCanonical();
         
-        // Update on route changes - need to hook into your router
+        // Update on route changes
         window.addEventListener('popstate', updateCanonical);
+        
+        // Add a MutationObserver to detect SPA navigation changes
+        const observer = new MutationObserver(updateCanonical);
+        observer.observe(document.body, { childList: true, subtree: true });
       });
     </script>
   </head>
