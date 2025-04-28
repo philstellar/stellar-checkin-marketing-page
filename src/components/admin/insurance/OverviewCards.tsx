@@ -34,15 +34,15 @@ const OverviewCards = () => {
 
         <Card>
           <CardContent className="pt-6">
-            <h3 className="text-xl font-semibold text-royal mb-4">{t('insurance.section3.title')}</h3>
-            <p className="text-royal-700">{t('insurance.section3.content')}</p>
-            <div className="flex justify-center mt-5">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-semibold text-royal">{t('insurance.section3.title')}</h3>
               <img 
                 src="/lovable-uploads/0da418dc-2d10-4140-85c9-4c96a4bbe2a9.png" 
                 alt="Hiscox Insurance" 
-                className="h-10" 
+                className="h-12" 
               />
             </div>
+            <p className="text-royal-700">{t('insurance.section3.content')}</p>
           </CardContent>
         </Card>
       </div>
