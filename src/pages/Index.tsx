@@ -8,6 +8,7 @@ import { OnlineCheckinSection } from "@/components/features";
 import Footer from "@/components/Footer";
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 import ContactSection from "@/components/contact/ContactSection"; // Direct import instead of lazy loading
+import KurtaxeSection from "@/components/KurtaxeSection"; // Direct import instead of lazy loading
 
 // Custom loading component
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
@@ -15,7 +16,7 @@ const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
 );
 
 // Lazy load non-critical sections
-const KurtaxeSection = lazy(() => import("@/components/KurtaxeSection"));
+// Removed KurtaxeSection from lazy loading
 const VersicherungSection = lazy(() => import("@/components/VersicherungSection"));
 const IdentitaetspruefungSection = lazy(() => import("@/components/IdentitaetspruefungSection"));
 const IntegrationenSection = lazy(() => import("@/components/features/IntegrationenSection"));
@@ -48,9 +49,8 @@ const Index = () => {
         <OnlineCheckinSection />
         <PartnersSection />
         
-        <Suspense fallback={<SectionLoader />}>
-          <KurtaxeSection />
-        </Suspense>
+        {/* Replace lazy-loaded KurtaxeSection with directly imported component */}
+        <KurtaxeSection />
         
         <Suspense fallback={<SectionLoader />}>
           <VersicherungSection />
