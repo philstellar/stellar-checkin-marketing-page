@@ -17,7 +17,7 @@ export const VersicherungSection = () => {
           <div className="order-1 md:order-first flex justify-center">
             <img 
               src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
-              alt={t('insurance.title')}
+              alt={t('insurance.mainPageTitle')}
               className="w-3/5 h-auto object-contain bg-transparent"
             />
           </div>
@@ -28,12 +28,12 @@ export const VersicherungSection = () => {
                 to={`/${language}/versicherung`} 
                 className="hover:text-apple transition-colors"
               >
-                {t('insurance.title')}
+                {t('insurance.mainPageTitle')}
               </Link>
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
-              {t('insurance.subtitle')}
+              {t('insurance.mainPageSubtitle')}
             </p>
             
             <div className="space-y-8">

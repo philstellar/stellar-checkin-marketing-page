@@ -1,8 +1,9 @@
-
 // This file serves as a bridge between the main insurance translations in each language file
 // and the components that need simplified insurance data on the main page
 
 export const insuranceDE = {
+  mainPageTitle: "Versicherung und Kaution clever automatisieren",
+  mainPageSubtitle: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung – oder bieten Sie Ihren Gästen eine bequeme Alternative und sichern Sie sich zusätzliche Provisionseinnahmen.",
   title: "Versicherung und Kaution clever automatisieren",
   subtitle: "Automatisieren Sie die Kautionsabwicklung und Rückerstattung – oder bieten Sie Ihren Gästen eine bequeme Alternative und sichern Sie sich zusätzliche Provisionseinnahmen.",
   process: {
@@ -22,6 +23,8 @@ export const insuranceDE = {
 };
 
 export const insuranceEN = {
+  mainPageTitle: "Smartly Automate Insurance and Deposits",
+  mainPageSubtitle: "Automate the handling and refunding of deposits - or offer your guests a convenient alternative and secure additional commission income.",
   title: "Smartly Automate Insurance and Deposits",
   subtitle: "Automate the handling and refunding of deposits - or offer your guests a convenient alternative and secure additional commission income.",
   process: {
@@ -41,6 +44,8 @@ export const insuranceEN = {
 };
 
 export const insuranceIT = {
+  mainPageTitle: "Automatizzare in modo intelligente assicurazione e depositi",
+  mainPageSubtitle: "Automatizza la gestione e il rimborso dei depositi – o offri ai tuoi ospiti un'alternativa conveniente garantendoti entrate aggiuntive dalle commissioni.",
   title: "Automatizzare in modo intelligente assicurazione e depositi",
   subtitle: "Automatizza la gestione e il rimborso dei depositi – o offri ai tuoi ospiti un'alternativa conveniente garantendoti entrate aggiuntive dalle commissioni.",
   process: {
@@ -60,6 +65,8 @@ export const insuranceIT = {
 };
 
 export const insuranceES = {
+  mainPageTitle: "Automatizar seguros y depósitos de forma inteligente",
+  mainPageSubtitle: "Automatice el proceso de gestión y devolución de depósitos – u ofrezca a sus huéspedes una alternativa conveniente mientras asegura ingresos adicionales por comisiones.",
   title: "Automatizar seguros y depósitos de forma inteligente",
   subtitle: "Automatice el proceso de gestión y devolución de depósitos – u ofrezca a sus huéspedes una alternativa conveniente mientras asegura ingresos adicionales por comisiones.",
   process: {
