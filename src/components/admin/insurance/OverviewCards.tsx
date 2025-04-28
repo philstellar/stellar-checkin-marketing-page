@@ -38,11 +38,17 @@ const OverviewCards = () => {
 
         <Card>
           <CardContent className="pt-6 relative">
-            <img 
-              src="/lovable-uploads/0da418dc-2d10-4140-85c9-4c96a4bbe2a9.png" 
-              alt="Hiscox Insurance" 
-              className="h-16 absolute top-6 right-6" 
-            />
+            <a 
+              href="https://www.hiscox.de/privatkunden/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <img 
+                src="/lovable-uploads/0da418dc-2d10-4140-85c9-4c96a4bbe2a9.png" 
+                alt="Hiscox Insurance" 
+                className="h-16 absolute top-2 right-2" 
+              />
+            </a>
             <div className="flex min-h-[2.5rem] mb-4">
               <h3 className="text-xl font-semibold text-royal">{t('insurance.section3.title')}</h3>
             </div>
