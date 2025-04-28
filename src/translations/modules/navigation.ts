@@ -1,4 +1,3 @@
-
 export const navigationDE = {
   home: "Home",
   features: "Check-in",
@@ -32,7 +31,10 @@ export const navigationEN = {
   aboutStellar: "About Us",
   aboutUs: "About Us",
   successStories: "Success Stories",
-  faq: "FAQ"
+  faq: "FAQ",
+  footer: {
+    tagline: "Your gateway to efficient guest management and more satisfied guests."
+  }
 };
 
 export const navigationIT = {
@@ -50,7 +52,10 @@ export const navigationIT = {
   aboutStellar: "Chi Siamo",
   aboutUs: "Chi Siamo",
   successStories: "Storie di Successo",
-  faq: "FAQ"
+  faq: "FAQ",
+  footer: {
+    tagline: "Il tuo gateway per una gestione efficiente degli ospiti e ospiti più soddisfatti."
+  }
 };
 
 export const navigationES = {
@@ -68,6 +73,8 @@ export const navigationES = {
   aboutStellar: "Sobre Nosotros",
   aboutUs: "Sobre Nosotros",
   successStories: "Historias de Éxito",
-  faq: "Preguntas Frecuentes"
+  faq: "Preguntas Frecuentes",
+  footer: {
+    tagline: "Tu puerta de entrada a una gestión eficiente de huéspedes y huéspedes más satisfechos."
+  }
 };
-
