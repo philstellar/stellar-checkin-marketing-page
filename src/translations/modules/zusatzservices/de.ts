@@ -1,7 +1,7 @@
 
 export const zusatzservicesDE = {
   title: "Zusatzleistungen verkaufen - ohne weitere Gebühren",
-  subtitle: "Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses gezielt zusätzliche Services anbieten.",
+  subtitle: "Steigern Sie Ihren Umsatz, indem Sie Ihren Gästen während des Check-in-Prozesses gezielt zusätzliche Services anbieten - ohne Zusatzkosten für Sie oder Ihre Gäste.",
   additionalServices: {
     title: "Zusatzleistungen",
     description: "Bieten Sie Ihren Gästen mehr – und steigern Sie Ihren Umsatz mit Zusatzleistungen wie Early Check-in, Wäschepakete oder besondere Erlebnisse."
