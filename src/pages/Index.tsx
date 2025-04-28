@@ -1,3 +1,4 @@
+
 import React, { lazy, Suspense, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from "@/components/Header";
@@ -6,6 +7,7 @@ import { PartnersSection } from "@/components/sections/PartnersSection";
 import { OnlineCheckinSection } from "@/components/features";
 import Footer from "@/components/Footer";
 import ZusatzservicesSection from "@/components/ZusatzservicesSection";
+import ContactSection from "@/components/contact/ContactSection"; // Direct import instead of lazy loading
 
 // Custom loading component
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
@@ -19,7 +21,7 @@ const IdentitaetspruefungSection = lazy(() => import("@/components/Identitaetspr
 const IntegrationenSection = lazy(() => import("@/components/features/IntegrationenSection"));
 const EinstellungenSection = lazy(() => import("@/components/features/EinstellungenSection"));
 const PricingSection = lazy(() => import("@/components/PricingSection"));
-const ContactSection = lazy(() => import("@/components/contact/ContactSection"));
+// Removed lazy loading for ContactSection
 
 const Index = () => {
   const location = useLocation();
@@ -72,11 +74,10 @@ const Index = () => {
           </div>
         </Suspense>
         
-        <Suspense fallback={<SectionLoader bg="bg-floral-100" />}>
-          <div id="kontakt">
-            <ContactSection />
-          </div>
-        </Suspense>
+        {/* Replace lazy-loaded ContactSection with directly imported component */}
+        <div id="kontakt">
+          <ContactSection />
+        </div>
       </main>
       <Footer />
     </div>
