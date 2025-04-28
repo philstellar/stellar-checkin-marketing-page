@@ -7,8 +7,8 @@ export const heroDE = {
 };
 
 export const heroEN = {
-  headline: "The digital check-in solution for vacation rentals — with built-in protection",
-  subheadline: "Less work, more revenue – and a check-in that delights your guests.",
+  headline: "The digital check-in solution for vacation rentals",
+  subheadline: "Less work, more revenue – and a check-in that delights your guests and protects your properties.",
   cta: "Register Now",
   tagline: "Simple. Efficient. For you and your guests."
 };
