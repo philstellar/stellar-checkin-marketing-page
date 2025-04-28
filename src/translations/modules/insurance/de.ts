@@ -77,7 +77,7 @@ export const insuranceDE = {
     ]
   },
   shortTerm: {
-    title: "Unsere Preise",
+    title: "Unsere Leistungen – fair und transparent",
     description: "Die Preise werden pro Nacht berechnet (zzgl. möglicher Servicegebühren und Provisionen)."
   },
   details: {
