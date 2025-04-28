@@ -15,6 +15,7 @@ import { settingsDE } from './modules/settings/de';
 import { pricingDE } from './modules/pricing/de';
 import { contactDE } from './modules/contact/de';
 import { footerDE } from './modules/footer/de';
+import { versicherungDE } from './modules/versicherung/de';
 
 export const de = {
   navigation: navigationDE,
@@ -33,23 +34,5 @@ export const de = {
   pricing: pricingDE,
   contact: contactDE,
   footer: footerDE,
-
-  // Versicherung Section - will be migrated to its own module later
-  versicherung: {
-    title: "Integrierter Schutz für Ihre Unterkünfte",
-    subtitle: "Der umfassende Schutz vor Gästeschäden – dank einzigartiger Versicherung und/ oder Kautionsmanagement.",
-    process: {
-      title: "Schnellerer Check-in-Prozess",
-      description: "Keine Kautionsabwicklung mehr – weniger Aufwand für Sie und mehr Komfort für Ihre Gäste."
-    },
-    income: {
-      title: "Zusätzliche Einnahmequelle",
-      description: "Verdienen Sie Provision bei jeder Versicherung – automatisch und ohne zusätzlichen Aufwand."
-    },
-    protection: {
-      title: "Umfassender Schutz",
-      description: "Besserer Schutz als herkömmliche Kautionen, dank höherer Deckungssummen, \"Neu für Alt\"-Deckung und Schutz vor Mietausfall."
-    },
-    cta: "Jetzt Registrieren"
-  }
+  versicherung: versicherungDE
 };

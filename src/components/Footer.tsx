@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-black">Solutions</h3>
+            <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.solutions')}</h3>
             <ul className="space-y-3">
               <li>
                 <Link to={`#gaeste-voranmeldung`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
@@ -144,3 +144,4 @@ const Footer = () => {
 };
 
 export default memo(Footer);
+

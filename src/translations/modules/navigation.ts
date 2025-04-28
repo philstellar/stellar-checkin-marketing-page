@@ -14,7 +14,8 @@ export const navigationDE = {
   aboutStellar: "Über uns",
   aboutUs: "Über uns",
   successStories: "Erfolgsbeispiele",
-  faq: "FAQ"
+  faq: "FAQ",
+  solutions: "Lösungen"
 };
 
 export const navigationEN = {
@@ -32,7 +33,8 @@ export const navigationEN = {
   aboutStellar: "About Us",
   aboutUs: "About Us",
   successStories: "Success Stories",
-  faq: "FAQ"
+  faq: "FAQ",
+  solutions: "Solutions"
 };
 
 export const navigationIT = {
@@ -50,7 +52,8 @@ export const navigationIT = {
   aboutStellar: "Chi Siamo",
   aboutUs: "Chi Siamo",
   successStories: "Storie di Successo",
-  faq: "FAQ"
+  faq: "FAQ",
+  solutions: "Soluzioni"
 };
 
 export const navigationES = {
@@ -68,5 +71,7 @@ export const navigationES = {
   aboutStellar: "Sobre Nosotros",
   aboutUs: "Sobre Nosotros",
   successStories: "Historias de Éxito",
-  faq: "Preguntas Frecuentes"
+  faq: "Preguntas Frecuentes",
+  solutions: "Soluciones"
 };
+

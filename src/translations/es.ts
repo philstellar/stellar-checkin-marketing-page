@@ -15,6 +15,7 @@ import { settingsES } from './modules/settings/es';
 import { pricingES } from './modules/pricing/es';
 import { contactES } from './modules/contact/es';
 import { footerES } from './modules/footer/es';
+import { versicherungES } from './modules/versicherung/es';
 
 export const es = {
   navigation: navigationES,
@@ -33,23 +34,5 @@ export const es = {
   pricing: pricingES,
   contact: contactES,
   footer: footerES,
-  
-  // Versicherung section - will be migrated to its own module later
-  versicherung: {
-    title: "Automatice de Forma Inteligente el Seguro y los Depósitos",
-    subtitle: "Automatice la recolección y reembolso de depósitos, u ofrezca a sus huéspedes una alternativa conveniente – y benefíciese de ingresos adicionales por comisiones.",
-    process: {
-      title: "Proceso de Check-in Más Rápido",
-      description: "Sin gestión de depósitos, menos trabajo para usted y sus huéspedes."
-    },
-    income: {
-      title: "Fuente de Ingresos Adicional",
-      description: "Gane comisiones con cada póliza de seguro – automáticamente y sin esfuerzo adicional."
-    },
-    protection: {
-      title: "Protección Integral",
-      description: "Mejor protección que los depósitos tradicionales, gracias a montos de cobertura más altos, cobertura \"nuevo por viejo\" y protección contra pérdida de alquiler."
-    },
-    cta: "Registrarse Ahora"
-  }
+  versicherung: versicherungES
 };
