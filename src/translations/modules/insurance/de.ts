@@ -1,6 +1,6 @@
 export const insuranceDE = {
   title: "Der erste Check-in mit integriertem Schutz für Ihre Unterkünfte",
-  introduction: "Integrated protection against guest damages – thanks to unique insurance and/or deposit management.",
+  introduction: "Integrierter Schutz vor Gästeschäden – dank einzigartiger Versicherung und/oder Kautionsmanagement.",
   section1: {
     title: "Warum eine Versicherung?",
     content: "Unsere Versicherung schützt vor Schäden, die durch Gäste, deren Begleitpersonen oder Haustiere verursacht werden. 90% der Gäste wählen unsere Versicherung - für ein sicheres Gefühl auf beiden Seiten."
