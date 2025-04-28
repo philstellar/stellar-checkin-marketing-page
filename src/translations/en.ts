@@ -1,11 +1,10 @@
-
 import { navigationEN } from './modules/navigation';
 import { heroEN } from './modules/hero';
 import { homeHeroEN } from './modules/homeHero';
 import { featuresEN } from './modules/features';
 import { partnersEN } from './modules/partners';
 import { kurtaxeEN } from './modules/kurtaxe';
-import { insuranceEN } from './modules/insurance';
+import { insuranceEN } from './modules/insurance/en';
 import { trustBadgeEN } from './modules/trustBadge';
 import { cookiesEN } from './modules/cookies/en';
 import { identityEN } from './modules/identity/en';
@@ -46,4 +45,3 @@ export const en = {
     tagline: "Streamline your guest management with Stellar's innovative solutions."
   }
 };
-

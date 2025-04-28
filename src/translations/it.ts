@@ -1,11 +1,10 @@
-
 import { navigationIT } from './modules/navigation';
 import { heroIT } from './modules/hero';
 import { homeHeroIT } from './modules/homeHero';
 import { featuresIT } from './modules/features/it';
 import { partnersIT } from './modules/partners';
 import { kurtaxeIT } from './modules/kurtaxe';
-import { insuranceIT } from './modules/insurance';
+import { insuranceIT } from './modules/insurance/it';
 import { trustBadgeIT } from './modules/trustBadge';
 import { cookiesIT } from './modules/cookies/it';
 import { zusatzservicesIT } from './modules/zusatzservices/it';
