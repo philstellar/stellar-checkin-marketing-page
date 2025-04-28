@@ -1,4 +1,5 @@
 
+
 export const featuresIT = {
   title: "Stellar Check-in",
   subtitle: "Migliora l'esperienza dell'ospite prima dell'arrivo e aumenta i tuoi ricavi",
@@ -13,5 +14,7 @@ export const featuresIT = {
   security: {
     title: "Sicurezza e Protezione dei Dati",
     description: "Tutti i dati sono archiviati e trattati in conformità con il GDPR. La sicurezza dei dati dei tuoi ospiti è la nostra massima priorità."
-  }
+  },
+  moreBtn: "Scopri di più"
 };
+

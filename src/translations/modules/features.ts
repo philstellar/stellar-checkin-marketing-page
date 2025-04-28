@@ -1,3 +1,4 @@
+
 export const featuresDE = {
   digitalization: {
     title: "Digitalisierung",
@@ -29,8 +30,9 @@ export const featuresEN = {
     title: "Security",
     description: "Protect your data and your guests' data with state-of-the-art security standards."
   },
-  title: "Your wins",
-  subtitle: "Improve the guest experience before arrival and increase your revenue"
+  title: "Your Wins",
+  subtitle: "Improve the guest experience before arrival and increase your revenue",
+  moreBtn: "Learn more"
 };
 
 export const featuresIT = {
@@ -46,8 +48,9 @@ export const featuresIT = {
     title: "Sicurezza",
     description: "Proteggi i tuoi dati e quelli dei tuoi ospiti con standard di sicurezza all'avanguardia."
   },
-  title: "Your wins",
-  subtitle: "Migliorate l'esperienza degli ospiti prima dell'arrivo e aumentate i vostri ricavi"
+  title: "I tuoi vantaggi",
+  subtitle: "Migliora l'esperienza degli ospiti prima dell'arrivo e aumenta i tuoi ricavi",
+  moreBtn: "Scopri di più"
 };
 
 export const featuresES = {
@@ -63,6 +66,7 @@ export const featuresES = {
     title: "Seguridad",
     description: "Proteja sus datos y los de sus huéspedes con los estándares de seguridad más modernos."
   },
-  title: "Your wins",
-  subtitle: "Mejore la experiencia de los huéspedes antes de la llegada y aumente sus ingresos"
+  title: "Sus Ventajas",
+  subtitle: "Mejore la experiencia de los huéspedes antes de la llegada y aumente sus ingresos",
+  moreBtn: "Más información"
 };

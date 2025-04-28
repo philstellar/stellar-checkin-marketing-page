@@ -1,3 +1,4 @@
+
 export const insuranceES = {
   hero: {
     title: "Automatizar la protección mediante seguros y/o depósitos",
@@ -158,6 +159,21 @@ export const insuranceES = {
     protection: {
       title: "Protección Completa",
       description: "Mejor protección que los depósitos tradicionales, gracias a montos de cobertura más altos, cobertura \"nuevo por viejo\" y protección contra pérdida de alquiler."
-    }
-  }
+    },
+    cta: "Regístrese ahora",
+    relatedFeatures: "Características relacionadas"
+  },
+  process: {
+    title: "Proceso Simple y Seguro",
+    description: "Gestión optimizada de seguros y depósitos que garantiza tranquilidad tanto para anfitriones como para huéspedes."
+  },
+  income: {
+    title: "Proteja sus Ingresos de Alquiler",
+    description: "Proteja su propiedad contra posibles daños y pérdida de ingresos por alquiler."
+  },
+  protection: {
+    title: "Cobertura Integral",
+    description: "Seguro integral que cubre daños a la propiedad, responsabilidad civil e incidentes inesperados."
+  },
+  cta: "Descubrir opciones de seguro"
 };

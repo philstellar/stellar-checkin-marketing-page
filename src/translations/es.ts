@@ -1,3 +1,4 @@
+
 import { navigationES } from './modules/navigation';
 import { heroES } from './modules/hero';
 import { homeHeroES } from './modules/homeHero';
@@ -35,5 +36,13 @@ export const es = {
   integration: integrationES,
   settings: settingsES,
   pricing: pricingES,
-  contact: contactES
+  contact: contactES,
+  footer: {
+    legal: "Legal",
+    imprint: "Aviso Legal",
+    privacy: "Política de Privacidad",
+    terms: "Términos y Condiciones",
+    copyright: "Todos los derechos reservados.",
+    tagline: "Optimice la gestión de sus huéspedes con las soluciones innovadoras de Stellar."
+  }
 };

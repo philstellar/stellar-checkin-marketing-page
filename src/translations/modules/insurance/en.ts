@@ -164,6 +164,24 @@ export const insuranceEN = {
       answer: "Our guest damage insurance starts at €2.8 per night and varies depending on the level of coverage. Details can be found in your Stellar account.\n\nThe cost of insurance can also be covered by the guest, as an alternative to a deposit.\n\nTo ensure that the insurance covers all stays in your accommodations, you can specify in the settings that you will pay for the insurance yourself and include the costs in the rental price."
     }
   },
+  versicherung: {
+    title: "Smartly Automate Insurance and Deposits",
+    subtitle: "Automate the handling and refunding of deposits - or offer your guests a convenient alternative and secure additional commission income.",
+    process: {
+      title: "Faster Check-in Process",
+      description: "No more deposit handling - less effort for you and more convenience for your guests."
+    },
+    income: {
+      title: "Additional Source of Income",
+      description: "Earn commission on every insurance policy - automatically and without additional effort."
+    },
+    protection: {
+      title: "Comprehensive Protection",
+      description: "Better protection than traditional deposits, thanks to higher coverage amounts, \"New for Old\" coverage and protection against loss of rent."
+    },
+    cta: "Register Now",
+    relatedFeatures: "Related Features"
+  },
   process: {
     title: "Simple and Secure Process",
     description: "Streamlined insurance and deposit management that ensures peace of mind for both hosts and guests."
