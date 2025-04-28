@@ -4,7 +4,7 @@ export const insuranceEN = {
   introduction: "Optimal protection for your accommodations - with insurance and deposit management.",
   section1: {
     title: "Why insurance?",
-    content: "Our insurance protects against damages caused by guests, their companions, or pets. 90% of guests choose our insurance - for peace of mind on both sides."
+    content: "Protection against damages caused by guests, companions, and pets – 80% of guests choose our insurance."
   },
   section2: {
     title: "How does it work?",
