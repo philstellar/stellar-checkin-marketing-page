@@ -1,8 +1,8 @@
 
 export const insuranceDE = {
   hero: {
-    title: "Unser Check-in: Absicherung für Ihre Unterkünfte inklusive",
-    subtitle: "Schützen Sie Ihr Eigentum und vereinfachen Sie den Check-in",
+    title: "Check-in und Schutz für Ihre Unterkünfte – alles in einem",
+    subtitle: "Schützen Sie Ihre Unterkünfte vor Gästeschäden – mit unserer einzigartigen Versicherung.",
     introduction: "Bieten Sie Ihren Gästen optional eine Versicherung an und profitieren Sie von zusätzlichen Einnahmen",
     cta: "Jetzt loslegen"  // Changed from "Jetzt Starten"
   },
