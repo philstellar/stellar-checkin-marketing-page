@@ -1,4 +1,3 @@
-
 export const insuranceES = {
   hero: {
     title: "Automatizar la protección mediante seguros y/o depósitos",
@@ -143,6 +142,22 @@ export const insuranceES = {
     cost: {
       question: "¿Cuánto me cuesta el seguro de daños de huéspedes?",
       answer: "Nuestro seguro de daños de huéspedes comienza en €2,8 por noche y varía según el nivel de cobertura. Los detalles se pueden encontrar en su cuenta de Stellar.\n\nEl costo del seguro también puede ser cubierto por el huésped, como alternativa a un depósito.\n\nPara asegurar que el seguro cubra todas las estancias en sus alojamientos, puede especificar en la configuración que usted pagará el seguro y incluirá los costos en el precio del alquiler."
+    }
+  },
+  versicherung: {
+    title: "Un seguro para cada huésped",
+    subtitle: "Protege tu alojamiento ofreciendo un seguro a tus huéspedes",
+    process: {
+      title: "Check-in Más Rápido",
+      description: "Sin más gestión de depósitos, menos trabajo para ti y tus huéspedes."
+    },
+    income: {
+      title: "Fuente de Ingresos Adicional",
+      description: "Gana comisiones con cada póliza de seguro – automáticamente y sin esfuerzo adicional."
+    },
+    protection: {
+      title: "Protección Completa",
+      description: "Mejor protección que los depósitos tradicionales, gracias a montos de cobertura más altos, cobertura \"nuevo por viejo\" y protección contra pérdida de alquiler."
     }
   }
 };

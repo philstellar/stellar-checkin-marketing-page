@@ -146,8 +146,10 @@ export const insuranceIT = {
     }
   },
   versicherung: {
+    title: "Un'assicurazione per ogni ospite",
+    subtitle: "Proteggi il tuo alloggio offrendo un'assicurazione ai tuoi ospiti",
     process: {
-      title: "Processo di Check-in Più Veloce",
+      title: "Check-in Più Veloce",
       description: "Niente più gestione dei depositi, meno lavoro per te e i tuoi ospiti."
     },
     income: {
