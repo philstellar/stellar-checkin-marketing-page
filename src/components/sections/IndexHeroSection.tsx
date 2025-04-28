@@ -8,15 +8,26 @@ export function IndexHeroSection() {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   
+  // Format the headline to color "Check-in" with the specific green color
+  const getFormattedHeadline = () => {
+    const headline = t('hero.headline');
+    // Handle different languages by coloring the word "Check-in" or its variants
+    return headline
+      .replace(/Check-in/gi, '<span style="color:#a4c309">Check-in</span>')
+      .replace(/Check-ins/gi, '<span style="color:#a4c309">Check-ins</span>')
+      .replace(/Checkin/gi, '<span style="color:#a4c309">Checkin</span>');
+  };
+  
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-#0f266145 to-#0f266145-400/20 bg-white"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
-              {t('hero.headline')}
-            </h1>
+            <h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik"
+              dangerouslySetInnerHTML={{ __html: getFormattedHeadline() }}
+            />
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('hero.subheadline')}
             </p>

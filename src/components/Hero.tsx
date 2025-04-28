@@ -9,6 +9,13 @@ const Hero = () => {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   
+  // Format the headlines to apply the color to Check-in
+  const formatHeadline = (text: string) => {
+    return text.replace(/Check-in/gi, '<span style="color:#a4c309">Check-in</span>')
+               .replace(/Check-ins/gi, '<span style="color:#a4c309">Check-ins</span>')
+               .replace(/Checkin/gi, '<span style="color:#a4c309">Checkin</span>');
+  };
+  
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20"></div>
@@ -17,14 +24,15 @@ const Hero = () => {
           <div>
             <h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik" 
-              style={{ 
-                contentVisibility: 'auto'
+              style={{ contentVisibility: 'auto' }}
+              dangerouslySetInnerHTML={{ 
+                __html: formatHeadline(
+                  (t('hero.headline1') || '') + 
+                  `<span style={{ color: '#0f2661' }}>${t('hero.headline2') || ''}</span>` + 
+                  (t('hero.headline3') || '')
+                )
               }}
-            >
-              {t('hero.headline1')}
-              <span style={{ color: '#0f2661' }}>{t('hero.headline2')}</span>
-              {t('hero.headline3')}
-            </h1>
+            />
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('hero.subheadline')}<br /><br /> 
               {t('hero.subheadline2')}
