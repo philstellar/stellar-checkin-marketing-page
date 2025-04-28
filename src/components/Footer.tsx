@@ -1,4 +1,3 @@
-
 import { memo } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
@@ -38,7 +37,8 @@ const Footer = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const isPublished = window.location.hostname.includes('lovable.app') || 
-                     window.location.hostname.includes('lovable.dev');
+                     window.location.hostname.includes('lovable.dev') ||
+                     window.location.hostname.includes('stellar-checkin.com');
 
   const handleLogoClick = () => {
     navigate(`/${language}/home`);

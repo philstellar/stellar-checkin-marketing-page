@@ -1,4 +1,3 @@
-
 import { memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
@@ -16,7 +15,8 @@ const DesktopNav = ({ handleSectionClick }: DesktopNavProps) => {
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
   const isPublished = window.location.hostname.includes('lovable.app') || 
-                     window.location.hostname.includes('lovable.dev');
+                     window.location.hostname.includes('lovable.dev') ||
+                     window.location.hostname.includes('stellar-checkin.com');
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);

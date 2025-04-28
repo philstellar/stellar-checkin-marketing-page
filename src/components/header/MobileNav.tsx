@@ -1,4 +1,3 @@
-
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
@@ -31,7 +30,8 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
   const isPublished = window.location.hostname.includes('lovable.app') || 
-                     window.location.hostname.includes('lovable.dev');
+                     window.location.hostname.includes('lovable.dev') ||
+                     window.location.hostname.includes('stellar-checkin.com');
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
