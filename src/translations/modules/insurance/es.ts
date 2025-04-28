@@ -4,7 +4,7 @@ export const insuranceES = {
   introduction: "Protección óptima para sus alojamientos - con gestión de seguros y depósitos.",
   section1: {
     title: "¿Por qué un seguro?",
-    content: "Nuestro seguro protege contra daños causados por huéspedes, sus acompañantes o mascotas. El 90% de los huéspedes eligen nuestro seguro - para tranquilidad de ambas partes."
+    content: "Protección contra daños causados por huéspedes, acompañantes y mascotas: el 80 % de los huéspedes elige nuestro seguro."
   },
   section2: {
     title: "¿Cómo funciona?",
