@@ -1,5 +1,5 @@
 export const insuranceDE = {
-  title: "Smart automation for insurance and deposits",
+  title: "Versicherung und Kaution clever automatisieren",
   introduction: "Optimaler Schutz für Ihre Unterkünfte – mit Versicherung und Kautionsverwaltung.",
   section1: {
     title: "Warum eine Versicherung?",
