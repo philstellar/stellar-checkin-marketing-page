@@ -9,7 +9,7 @@ const HeroSection = () => {
   
   // Create a function to render the title as HTML
   const renderTitle = () => {
-    return <span dangerouslySetInnerHTML={{ __html: t('insurance.hero.title') }} />;
+    return <span dangerouslySetInnerHTML={{ __html: t('insuranceDetail.hero.title') }} />;
   };
   
   return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
@@ -24,11 +24,11 @@ const HeroSection = () => {
               {renderTitle()}
             </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
-              {t('insurance.hero.subtitle')}
+              {t('insuranceDetail.hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
-                <UserCheck className="mr-2 h-4 w-4" /> {t('insurance.hero.cta')}
+                <UserCheck className="mr-2 h-4 w-4" /> {t('insuranceDetail.hero.cta')}
               </CTAButton>
             </div>
             <div className="mt-8 flex items-center">
@@ -38,7 +38,7 @@ const HeroSection = () => {
                 <div className="w-8 h-8 rounded-full bg-apple-500"></div>
               </div>
               <p className="ml-4 text-sm text-black font-aeonik">
-                <span className="font-medium">{t('insurance.hero.introduction')}</span>
+                <span className="font-medium">{t('insuranceDetail.hero.introduction')}</span>
               </p>
             </div>
           </div>

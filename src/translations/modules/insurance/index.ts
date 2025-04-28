@@ -1,14 +1,21 @@
 
 // Export the specific language insurance translations for the detailed insurance page
-import { insuranceDE as insuranceDetailDE } from './de';
-import { insuranceEN as insuranceDetailEN } from './en';
-import { insuranceIT as insuranceDetailIT } from './it';
-import { insuranceES as insuranceDetailES } from './es';
+import { insuranceDE } from './de';
+import { insuranceEN } from './en';
+import { insuranceIT } from './it';
+import { insuranceES } from './es';
 
-// Re-export with new names to avoid conflicts with the simpler versions
+// Export both the original insurance translations and renamed versions
+// This prevents conflicts between simple versions and detailed versions
 export { 
-  insuranceDetailDE, 
-  insuranceDetailEN, 
-  insuranceDetailIT, 
-  insuranceDetailES 
+  insuranceDE, 
+  insuranceEN, 
+  insuranceIT, 
+  insuranceES,
+  
+  // Re-export with new names to avoid conflicts with the simpler versions
+  insuranceDE as insuranceDetailDE, 
+  insuranceEN as insuranceDetailEN, 
+  insuranceIT as insuranceDetailIT, 
+  insuranceES as insuranceDetailES 
 };

@@ -43,7 +43,7 @@ export const ComparisonMobileView = ({ features, schutzBeiMietausfallIndex }: Pr
         <TableHeader>
           <TableRow>
             <TableHead className="w-[140px] font-bold text-black text-sm">
-              {t('insurance.comparison.header.feature')}
+              {t('insuranceDetail.comparison.header.feature')}
             </TableHead>
             <TableHead className="text-center w-[80px]">
               <img 
@@ -67,7 +67,7 @@ export const ComparisonMobileView = ({ features, schutzBeiMietausfallIndex }: Pr
               />
             </TableHead>
             <TableHead className="text-center w-[80px] text-sm font-bold text-black">
-              {t('insurance.comparison.header.classic')}
+              {t('insuranceDetail.comparison.header.classic')}
             </TableHead>
           </TableRow>
         </TableHeader>

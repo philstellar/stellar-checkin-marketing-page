@@ -88,7 +88,7 @@ const VersicherungPage: React.FC = () => {
       <section className="py-16 bg-white text-center">
         <div className="container-custom">
           <CTAButton className="bg-apple hover:bg-apple-600 text-white px-8 py-3 text-lg">
-            <UserCheck className="mr-2 h-5 w-5" /> {t('hero.cta')}
+            <UserCheck className="mr-2 h-5 w-5" /> {t('insuranceDetail.hero.cta')}
           </CTAButton>
         </div>
       </section>

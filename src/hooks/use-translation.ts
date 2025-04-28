@@ -17,27 +17,25 @@ export const useTranslation = () => {
     
     // Enhanced debug output in development
     if (process.env.NODE_ENV === 'development') {
-      console.debug(`[Translation] Key: "${key}", Language: "${language}", Result: "${value}"`);
-      
       // Additional debug info for insurance keys to help debug conflicts
-      if (key.startsWith('insurance.')) {
-        console.debug(`[Translation DEBUG] Insurance key "${key}" in "${language}":`, value);
+      if (key.startsWith('insurance.') || key.startsWith('insuranceDetail.')) {
+        console.debug(`[Translation] Key: "${key}", Language: "${language}", Result: "${value}"`);
         
-        // Check both insurance and insuranceDetail paths
-        const simpleValue = get(translations[language], key);
-        const detailedKey = key.replace('insurance.', 'insuranceDetail.');
-        const detailedValue = get(translations[language], detailedKey);
+        // Show detailed debugging for insurance keys
+        if (key.startsWith('insurance.')) {
+          const simpleValue = get(translations[language], key);
+          console.debug(`[Insurance] Simple key "${key}" in "${language}":`, simpleValue);
+        }
         
-        console.debug(`[Translation DEBUG] Simple insurance value: "${simpleValue}", Detailed value: "${detailedValue}"`);
-      }
-      
-      if (key.startsWith('insuranceDetail.')) {
-        console.debug(`[Translation DEBUG] Insurance detail key "${key}" in "${language}":`, value);
-      }
-      
-      // Additional debug info for kurtaxe keys
-      if (key.startsWith('kurtaxe.')) {
-        console.debug(`[Translation DEBUG] Kurtaxe key "${key}" in "${language}":`, value);
+        if (key.startsWith('insuranceDetail.')) {
+          const detailedValue = get(translations[language], key);
+          console.debug(`[InsuranceDetail] Detailed key "${key}" in "${language}":`, detailedValue);
+          
+          // Also check if there's a matching simple key
+          const simpleKey = key.replace('insuranceDetail.', 'insurance.');
+          const simpleValue = get(translations[language], simpleKey);
+          console.debug(`[InsuranceDetail] Matching simple key "${simpleKey}" value:`, simpleValue);
+        }
       }
       
       // If translation is missing or shows the key itself
