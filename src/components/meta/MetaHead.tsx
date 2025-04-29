@@ -72,10 +72,13 @@ export const MetaHead: React.FC<MetaHeadProps> = ({
             rel="preload" 
             as="image" 
             href={imgPath} 
-            fetchpriority="high"
+            fetchPriority="high"
           />
         ))
       )}
     </Helmet>
   );
 };
+
+// Default export for compatibility with existing imports
+export default MetaHead;

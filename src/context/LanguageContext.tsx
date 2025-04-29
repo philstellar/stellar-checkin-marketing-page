@@ -13,8 +13,8 @@ export const LanguageContext = createContext<LanguageContextType>({
 // Create a hook to use the language context
 export const useLanguage = () => useContext(LanguageContext);
 
-// Create the provider component
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+// Create the provider component - ensure it's properly defined as a React functional component
+export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   // Initialize with default language
   const [language, setLanguageState] = useState<Language>('de');
   
