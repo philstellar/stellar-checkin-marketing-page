@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Link } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
@@ -10,12 +10,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   // Process email addresses safely after component mounts
-  useEffect(() => {
+  const processEmails = useCallback(() => {
     try {
+      if (typeof document === 'undefined') return;
+      
       const emailElements = document.querySelectorAll('[data-email]');
       emailElements.forEach(function(element) {
-        const encodedEmail = element.getAttribute('data-email');
-        if (encodedEmail) {
+        try {
+          const encodedEmail = element.getAttribute('data-email');
+          if (!encodedEmail) return;
+          
           const decodedEmail = encodedEmail.replace(/AT/, '@').replace(/DOT/g, '.');
           
           if (element.tagName.toLowerCase() === 'a') {
@@ -26,12 +30,20 @@ const Footer = () => {
           } else {
             element.textContent = decodedEmail;
           }
+        } catch (err) {
+          console.error('Error processing individual email element:', err);
         }
       });
     } catch (e) {
       console.error('Error processing email addresses:', e);
     }
   }, []);
+  
+  useEffect(() => {
+    // Use a small timeout to ensure DOM is fully ready
+    const timer = setTimeout(processEmails, 100);
+    return () => clearTimeout(timer);
+  }, [processEmails]);
   
   return (
     <footer className="bg-white text-royal-800 py-12">
@@ -106,7 +118,7 @@ const Footer = () => {
           <h4 className="font-semibold text-lg mb-4">{t('footer.contact')}</h4>
           <ul className="text-sm">
             <li className="mb-2">
-              <a data-email="infoATstellar-checkinDOTcom" className="hover:text-apple transition-colors"></a>
+              <a data-email="infoATstellar-checkinDOTcom" className="hover:text-apple transition-colors">infoATstellar-checkinDOTcom</a>
             </li>
             <li>
               <a href="tel:+4917647740917" className="hover:text-apple transition-colors">
