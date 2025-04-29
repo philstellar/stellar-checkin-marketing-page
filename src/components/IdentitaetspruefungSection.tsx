@@ -4,6 +4,7 @@ import { UserCheck } from "lucide-react";
 import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const IdentitaetspruefungSection = () => {
   const { t } = useTranslation();
@@ -62,10 +63,14 @@ const IdentitaetspruefungSection = () => {
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
-            <img 
-              src="/lovable-uploads/f65f2787-eee3-47c4-a728-74654f2e8651.png"
+            <OptimizedImage 
+              src="/lovable-uploads/9eed864c-02ee-458e-af5f-0306b81bbd3b.png"
               alt="Identitätsprüfung mit Stellar" 
               className="w-3/5 h-auto object-contain bg-transparent"
+              width={500}
+              height={800}
+              loading="lazy"
+              sizes="(max-width: 768px) 90vw, 500px"
             />
           </div>
         </div>
