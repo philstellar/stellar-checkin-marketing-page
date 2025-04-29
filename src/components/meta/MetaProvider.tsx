@@ -6,7 +6,7 @@ interface MetaProviderProps {
   children: React.ReactNode;
 }
 
-const MetaProvider: React.FC<MetaProviderProps> = ({ children }) => {
+const MetaProvider = ({ children }: MetaProviderProps) => {
   return <HelmetProvider>{children}</HelmetProvider>;
 };
 

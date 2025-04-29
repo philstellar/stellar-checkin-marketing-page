@@ -9,7 +9,7 @@ import OptimizedImage from './OptimizedImage';
 import { MetaHead } from './meta';
 import { useLanguage } from '@/context/LanguageContext';
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
   const location = useLocation();

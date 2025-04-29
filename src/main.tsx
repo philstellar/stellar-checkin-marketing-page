@@ -61,17 +61,15 @@ const injectCriticalCSS = () => {
 injectCriticalCSS();
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <LanguageProvider>
-        <MetaProvider>
-          <PerformanceProvider>
-            <CookieConsentProvider>
-              <App />
-            </CookieConsentProvider>
-          </PerformanceProvider>
-        </MetaProvider>
-      </LanguageProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <LanguageProvider>
+      <MetaProvider>
+        <PerformanceProvider>
+          <CookieConsentProvider>
+            <App />
+          </CookieConsentProvider>
+        </PerformanceProvider>
+      </MetaProvider>
+    </LanguageProvider>
+  </BrowserRouter>
 );

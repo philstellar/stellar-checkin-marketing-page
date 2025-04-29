@@ -16,7 +16,7 @@ export interface MetaHeadProps {
   disableSocialTags?: boolean;
 }
 
-export const MetaHead: React.FC<MetaHeadProps> = ({
+const MetaHead: React.FC<MetaHeadProps> = ({
   title,
   description,
   keywords,
