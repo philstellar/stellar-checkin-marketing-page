@@ -1,7 +1,6 @@
 
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import VersicherungPage from '@/components/admin/VersicherungPage';
 import Index from '@/pages/Index';
 import { PageLoader } from './PageLoader';
 
@@ -15,6 +14,7 @@ const TrustBadgePage = lazy(() => import('../components/admin/TrustBadgePage'));
 const UeberUns = lazy(() => import('../pages/UeberUns'));
 const Erfolgsbeispiele = lazy(() => import('../pages/Erfolgsbeispiele'));
 const FAQ = lazy(() => import('../pages/FAQ'));
+const VersicherungPage = lazy(() => import('../components/admin/VersicherungPage'));
 
 // Lazy load translated legal pages
 const ImpressumEN = lazy(() => import('../pages/legal/ImpressumEN'));
@@ -259,11 +259,39 @@ const RouteConfig = () => {
         } 
       />
       
-      {/* Insurance and Trust Badge routes for all languages */}
-      <Route path="/de/versicherung" element={<VersicherungPage />} />
-      <Route path="/en/insurance" element={<VersicherungPage />} />
-      <Route path="/it/assicurazione" element={<VersicherungPage />} />
-      <Route path="/es/seguro" element={<VersicherungPage />} />
+      {/* Insurance and Trust Badge routes for all languages with proper lazy loading */}
+      <Route 
+        path="/de/versicherung" 
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <VersicherungPage />
+          </Suspense>
+        } 
+      />
+      <Route 
+        path="/en/insurance" 
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <VersicherungPage />
+          </Suspense>
+        } 
+      />
+      <Route 
+        path="/it/assicurazione" 
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <VersicherungPage />
+          </Suspense>
+        } 
+      />
+      <Route 
+        path="/es/seguro" 
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <VersicherungPage />
+          </Suspense>
+        } 
+      />
       
       <Route 
         path="/de/trust-badge" 
