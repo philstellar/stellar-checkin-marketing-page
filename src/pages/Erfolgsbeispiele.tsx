@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Award, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
@@ -103,7 +102,7 @@ const Erfolgsbeispiele = () => {
                 Erfahren Sie, wie Vermieter und Gastgeber mit Stellar Checkin ihre Prozesse optimieren und ihren Erfolg steigern.
               </p>
               <div className="mb-8">
-                <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
+                <CTAButton size="lg" className="bg-apple hover:bg-apple-600 text-white font-aeonik">
                   Jetzt registrieren
                 </CTAButton>
               </div>
@@ -130,8 +129,7 @@ const Erfolgsbeispiele = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-8 bg-white hover:shadow-lg transition-shadow duration-300">
+            {testimonials.map((testimonial, index) => <Card key={index} className="p-8 bg-white hover:shadow-lg transition-shadow duration-300">
                 <div className="flex flex-col h-full">
                   <div className="mb-6 my-0 py-0">
                     <div className="flex items-center gap-4 mb-4">
@@ -167,8 +165,7 @@ const Erfolgsbeispiele = () => {
                       </div>}
                   </div>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
