@@ -49,11 +49,11 @@ export function IndexHeroSection() {
             </div>
           </div>
           
-          <div className="order-1 md:order-last flex justify-center">
+          <div className="order-1 md:order-last flex justify-center md:justify-end">
             <OptimizedImage 
               src="/lovable-uploads/ff8a3a50-21d0-4e53-98f4-3265e363fe55.png" 
               alt="Stellar Online Check-in Interface" 
-              className="w-3/5 h-auto object-contain bg-transparent" 
+              className="w-3/5 h-auto object-contain bg-transparent md:mr-4" 
               loading="eager" 
               priority={true}
               width={500} 
@@ -66,3 +66,4 @@ export function IndexHeroSection() {
     </section>
   );
 }
+
