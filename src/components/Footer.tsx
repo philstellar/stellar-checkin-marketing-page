@@ -3,7 +3,7 @@ import { memo, useCallback } from "react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/language/LanguageContext";
 import { Separator } from "@/components/ui/separator";
 import OptimizedImage from "./OptimizedImage";
 
