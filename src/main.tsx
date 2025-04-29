@@ -1,13 +1,12 @@
 
-import * as React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
-import './index.css';
-import { CookieConsentProvider } from './context/CookieConsentContext';
-import { BrowserRouter } from 'react-router-dom';
-import { LanguageProvider } from './context/LanguageContext';
-import MetaProvider from './components/meta/MetaProvider';
-import PerformanceProvider from './components/optimization/PerformanceProvider';
+import { createRoot } from 'react-dom/client'
+import App from './App.tsx'
+import './index.css'
+import { CookieConsentProvider } from './context/CookieConsentContext'
+import { BrowserRouter } from 'react-router-dom'
+import { LanguageProvider } from './context/LanguageContext'
+import MetaProvider from './components/meta/MetaProvider'
+import PerformanceProvider from './components/optimization/PerformanceProvider'
 
 // Create root and render the app with strict mode disabled to avoid double-rendering issues
 const container = document.getElementById("root");
@@ -61,17 +60,15 @@ const injectCriticalCSS = () => {
 injectCriticalCSS();
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <LanguageProvider>
-        <MetaProvider>
-          <PerformanceProvider>
-            <CookieConsentProvider>
-              <App />
-            </CookieConsentProvider>
-          </PerformanceProvider>
-        </MetaProvider>
-      </LanguageProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <LanguageProvider>
+      <MetaProvider>
+        <PerformanceProvider>
+          <CookieConsentProvider>
+            <App />
+          </CookieConsentProvider>
+        </PerformanceProvider>
+      </MetaProvider>
+    </LanguageProvider>
+  </BrowserRouter>
 );

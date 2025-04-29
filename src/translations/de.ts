@@ -16,6 +16,7 @@ import { pricingDE } from './modules/pricing/de';
 import { contactDE } from './modules/contact/de';
 import { footerDE } from './modules/footer/de';
 import { versicherungDE } from './modules/versicherung/de';
+import { successStoriesDE } from './modules/successStories/de';
 
 export const de = {
   navigation: navigationDE,
@@ -34,5 +35,6 @@ export const de = {
   pricing: pricingDE,
   contact: contactDE,
   footer: footerDE,
-  versicherung: versicherungDE
+  versicherung: versicherungDE,
+  successStories: successStoriesDE
 };

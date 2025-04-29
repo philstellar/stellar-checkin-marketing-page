@@ -16,6 +16,7 @@ import { pricingIT } from './modules/pricing/it';
 import { contactIT } from './modules/contact/it';
 import { footerIT } from './modules/footer/it';
 import { versicherungIT } from './modules/versicherung/it';
+import { successStoriesIT } from './modules/successStories/it';
 
 export const it = {
   navigation: navigationIT,
@@ -34,5 +35,6 @@ export const it = {
   pricing: pricingIT,
   contact: contactIT,
   footer: footerIT,
-  versicherung: versicherungIT
+  versicherung: versicherungIT,
+  successStories: successStoriesIT
 };

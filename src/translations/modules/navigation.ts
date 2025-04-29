@@ -37,8 +37,8 @@ export const navigationEN = {
   successStories: "Success Stories",
   faq: "FAQ",
   solutions: "Solutions",
-  pricingAnchor: "preise",
-  contactAnchor: "kontakt"
+  pricingAnchor: "pricing",
+  contactAnchor: "contact"
 };
 
 export const navigationIT = {
@@ -58,8 +58,8 @@ export const navigationIT = {
   successStories: "Storie di Successo",
   faq: "FAQ",
   solutions: "Soluzioni",
-  pricingAnchor: "preise",
-  contactAnchor: "kontakt"
+  pricingAnchor: "prezzi",
+  contactAnchor: "contatti"
 };
 
 export const navigationES = {
