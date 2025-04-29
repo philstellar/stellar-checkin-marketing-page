@@ -1,6 +1,9 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
-import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
+import { Book, ShieldPlus, Clock, Wallet, Link as LinkIcon, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '@/context/LanguageContext';
 import Header from '../Header';
 import Footer from '../Footer';
 import InsurancePricing from './InsurancePricing';
@@ -12,9 +15,12 @@ import LogoCarouselAutoplay from '../LogoCarouselAutoplay';
 import HeroSection from './insurance/HeroSection';
 import BenefitsSection from './insurance/BenefitsSection';
 import OverviewCards from './insurance/OverviewCards';
+import FAQSchema from '../schema/FAQSchema';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const VersicherungPage: React.FC = () => {
   const { t } = useTranslation();
+  const { language } = useLanguage();
   
   const addInsuranceFeatures = [
     {
@@ -39,9 +45,23 @@ const VersicherungPage: React.FC = () => {
     }
   ];
 
+  // List of FAQs for schema markup
+  const insuranceFAQs = [
+    'airbnb',
+    'deposit',
+    'coverage',
+    'cost',
+    'process',
+    'implementation'
+  ];
+
   return (
     <>
       <Header />
+      
+      {/* Add FAQ Schema for better SEO */}
+      <FAQSchema faqKeys={insuranceFAQs} namespace="insurance.faq" />
+      
       <HeroSection />
 
       <div className="container mx-auto px-4 py-[30px] bg-white overflow-hidden">
@@ -50,6 +70,24 @@ const VersicherungPage: React.FC = () => {
         <div className="prose max-w-none">
           <div className="mb-12">
             <InsuranceComparisonTable />
+            
+            <div className="mt-8 text-royal-700">
+              <p className="mb-4">
+                Um die Vertrauenswürdigkeit Ihrer Immobilie zu steigern, kombinieren Sie die Versicherung mit unserem{' '}
+                <Link to={`/${language}/trust-badge`} className="text-apple hover:underline font-medium">
+                  Trust Badge
+                </Link>{' '}
+                für maximale Gästesicherheit.
+              </p>
+              
+              <p>
+                Integriert nahtlos mit unserem{' '}
+                <Link to={`/${language}/#gaeste-voranmeldung`} className="text-apple hover:underline font-medium">
+                  digitalen Check-in System
+                </Link>{' '}
+                für ein optimales Gästeerlebnis.
+              </p>
+            </div>
           </div>
 
           <BenefitsSection />
@@ -119,6 +157,64 @@ const VersicherungPage: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <InsuranceFAQ />
+        </div>
+      </section>
+      
+      {/* Related Content Section for better internal linking */}
+      <section className="py-12 bg-floral-100">
+        <div className="container-custom">
+          <h2 className="text-3xl font-bold mb-8 text-royal text-center">
+            {t('common.relatedContent')}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="bg-white hover:shadow-md transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-royal">{t('navigation.trustBadge')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-royal-700">
+                  {t('trustBadge.content')}
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Link to={`/${language}/trust-badge`} className="inline-flex items-center text-apple hover:underline">
+                  {t('navigation.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardFooter>
+            </Card>
+            
+            <Card className="bg-white hover:shadow-md transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-royal">{t('identity.title')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-royal-700">
+                  {t('identity.description')}
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Link to={`/${language}/#identitaetspruefung`} className="inline-flex items-center text-apple hover:underline">
+                  {t('navigation.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardFooter>
+            </Card>
+            
+            <Card className="bg-white hover:shadow-md transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-royal">{t('navigation.successStories')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-royal-700">
+                  {t('common.successStoriesDescription', {fallback: 'Entdecken Sie, wie andere Gastgeber unsere Lösungen nutzen.'}) }
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Link to={`/${language === 'de' ? 'de/erfolgsbeispiele' : language === 'en' ? 'en/success-stories' : language === 'it' ? 'it/storie-di-successo' : 'es/historias-de-exito'}`} className="inline-flex items-center text-apple hover:underline">
+                  {t('navigation.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
         </div>
       </section>
 
