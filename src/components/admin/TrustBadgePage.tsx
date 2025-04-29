@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { UserCheck, BadgeCheck, Star, Shield, Globe2 } from 'lucide-react';
@@ -9,6 +10,7 @@ import TrustBadgeFAQ from './TrustBadgeFAQ';
 import TrustBadgeCertificates from './TrustBadgeCertificates';
 import LogoCarouselAutoplay from '../LogoCarouselAutoplay';
 import OptimizedImage from '../OptimizedImage';
+import { MetaHead } from '../meta';
 
 const testimonialLogos = [{
   src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
@@ -45,6 +47,11 @@ const TrustBadgePage = () => {
     t
   } = useTranslation();
   return <>
+      <MetaHead 
+        title={t('trustBadge.headline1') + t('trustBadge.headline2') + t('trustBadge.headline3')}
+        description="Boost guest confidence and increase direct bookings with Stellar's Trust Badge. Our verification system showcases your property's authenticity, displays verified reviews, and helps guests feel secure when booking directly. Become a trusted host today and watch your conversion rates grow."
+      />
+      
       <Header />
       
       {/* Hero Section */}
