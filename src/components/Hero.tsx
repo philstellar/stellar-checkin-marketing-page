@@ -57,7 +57,7 @@ const Hero = () => {
           
           <div className="order-1 md:order-last flex justify-center">
             <OptimizedImage 
-              src="/lovable-uploads/ff8a3a50-21d0-4e53-98f4-3265e363fe55.png" 
+              src="/lovable-uploads/d22bc7c6-7bc6-4e74-80df-eb62d4f34b18.png" 
               alt="Stellar Online Check-in Interface" 
               className="w-3/5 h-auto object-contain bg-transparent"
               loading="eager"
