@@ -60,10 +60,10 @@ const HeroSection = () => {
               src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
               alt="Insurance Settings Interface" 
               loading="eager"
-              className="w-auto h-auto max-h-[400px] object-contain"
-              width={350}
-              height={400}
-              sizes="(max-width: 768px) 90vw, 350px"
+              className="w-3/5 h-auto object-contain"
+              width={500}
+              height={500}
+              sizes="(max-width: 768px) 90vw, 500px"
               priority={true}
             />
           </div>
