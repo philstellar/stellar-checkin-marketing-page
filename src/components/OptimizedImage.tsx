@@ -1,7 +1,4 @@
 
-// Fix the OptimizedImage component to resolve potential issues with priority attribute
-// and ensure proper image loading behavior
-
 import React from 'react';
 
 interface OptimizedImageProps {
@@ -14,6 +11,7 @@ interface OptimizedImageProps {
   priority?: boolean;
   style?: React.CSSProperties;
   onClick?: () => void;
+  sizes?: string;
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -25,7 +23,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   loading = 'lazy',
   priority = false,
   style,
-  onClick
+  onClick,
+  sizes
 }) => {
   // Convert priority to loading="eager" instead of using fetchPriority which causes a warning
   const loadingValue = priority ? 'eager' : loading;
@@ -41,6 +40,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         loading={loadingValue}
         style={style}
         onClick={onClick}
+        sizes={sizes}
       />
     </picture>
   );

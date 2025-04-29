@@ -1,14 +1,8 @@
-import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-
-// Define available languages
-export type Language = 'de' | 'en' | 'it' | 'es';
-
-// Define the context type
-type LanguageContextType = {
-  language: Language;
-  setLanguage: (language: Language) => void;
-};
+import { Language, LanguageContextType, LanguageProviderProps } from './language/types';
+import { getLanguageFromPath, getLocalizedPath } from './language/utils';
 
 // Create the context with default values
 export const LanguageContext = createContext<LanguageContextType>({
@@ -19,138 +13,8 @@ export const LanguageContext = createContext<LanguageContextType>({
 // Create a hook to use the language context
 export const useLanguage = () => useContext(LanguageContext);
 
-// Helper function to extract language from path
-const getLanguageFromPath = (path: string): Language | null => {
-  const parts = path.split('/').filter(Boolean);
-  const firstPart = parts[0];
-  
-  if (firstPart === 'de' || firstPart === 'en' || firstPart === 'es' || firstPart === 'it') {
-    return firstPart;
-  }
-  
-  return null;
-};
-
-// Language-specific path mapping
-const pathMappings: Record<string, Record<Language, string>> = {
-  'versicherung': {
-    'de': 'versicherung',
-    'en': 'insurance',
-    'it': 'assicurazione',
-    'es': 'seguro'
-  },
-  'insurance': {
-    'de': 'versicherung',
-    'en': 'insurance',
-    'it': 'assicurazione',
-    'es': 'seguro'
-  },
-  'assicurazione': {
-    'de': 'versicherung',
-    'en': 'insurance',
-    'it': 'assicurazione',
-    'es': 'seguro'
-  },
-  'seguro': {
-    'de': 'versicherung',
-    'en': 'insurance',
-    'it': 'assicurazione',
-    'es': 'seguro'
-  },
-  'trust-badge': {
-    'de': 'trust-badge',
-    'en': 'trust-badge',
-    'it': 'trust-badge',
-    'es': 'trust-badge'
-  },
-  'impressum': {
-    'de': 'impressum',
-    'en': 'impressum',
-    'it': 'impressum',
-    'es': 'impressum'
-  },
-  'datenschutz': {
-    'de': 'datenschutz',
-    'en': 'datenschutz',
-    'it': 'datenschutz',
-    'es': 'datenschutz'
-  },
-  'agb': {
-    'de': 'agb',
-    'en': 'agb',
-    'it': 'agb',
-    'es': 'agb'
-  },
-  'brevo': {
-    'de': 'brevo',
-    'en': 'brevo',
-    'it': 'brevo',
-    'es': 'brevo'
-  },
-  'home': {
-    'de': 'home',
-    'en': 'home',
-    'it': 'home',
-    'es': 'home'
-  },
-  'ueber-uns': {
-    'de': 'ueber-uns',
-    'en': 'about-us',
-    'it': 'chi-siamo',
-    'es': 'sobre-nosotros'
-  },
-  'about-us': {
-    'de': 'ueber-uns',
-    'en': 'about-us',
-    'it': 'chi-siamo',
-    'es': 'sobre-nosotros'
-  },
-  'chi-siamo': {
-    'de': 'ueber-uns',
-    'en': 'about-us',
-    'it': 'chi-siamo',
-    'es': 'sobre-nosotros'
-  },
-  'sobre-nosotros': {
-    'de': 'ueber-uns',
-    'en': 'about-us',
-    'it': 'chi-siamo',
-    'es': 'sobre-nosotros'
-  },
-  'erfolgsbeispiele': {
-    'de': 'erfolgsbeispiele',
-    'en': 'success-stories',
-    'it': 'storie-di-successo',
-    'es': 'historias-de-exito'
-  },
-  'success-stories': {
-    'de': 'erfolgsbeispiele',
-    'en': 'success-stories',
-    'it': 'storie-di-successo',
-    'es': 'historias-de-exito'
-  },
-  'storie-di-successo': {
-    'de': 'erfolgsbeispiele',
-    'en': 'success-stories',
-    'it': 'storie-di-successo',
-    'es': 'historias-de-exito'
-  },
-  'historias-de-exito': {
-    'de': 'erfolgsbeispiele',
-    'en': 'success-stories',
-    'it': 'storie-di-successo',
-    'es': 'historias-de-exito'
-  },
-  'faq': {
-    'de': 'faq',
-    'en': 'faq',
-    'it': 'faq',
-    'es': 'faq'
-  }
-};
-
 // Create the provider component
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   // Initialize with default language
   const [language, setLanguageState] = useState<Language>('de');
   
@@ -179,31 +43,6 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     
     setLanguageState(initializeLanguage());
   }, [location.pathname]);
-
-  // Maps current path to localized path
-  const getLocalizedPath = (currentPath: string, newLanguage: Language): string => {
-    // Extract current language and path components
-    const pathParts = currentPath.split('/').filter(Boolean);
-    const currentLanguage = getLanguageFromPath(currentPath);
-    
-    if (!currentLanguage || pathParts.length <= 1) {
-      // If no language in path or just language with no page, return simple language path
-      return `/${newLanguage}`;
-    }
-    
-    // Get the page path (after language)
-    const pagePath = pathParts[1];
-    const restOfPath = pathParts.slice(2).join('/');
-    
-    // Check if this page has language-specific mappings
-    if (pathMappings[pagePath] && pathMappings[pagePath][newLanguage]) {
-      const localizedPage = pathMappings[pagePath][newLanguage];
-      return restOfPath ? `/${newLanguage}/${localizedPage}/${restOfPath}` : `/${newLanguage}/${localizedPage}`;
-    }
-    
-    // If no mapping exists, keep the same page name
-    return restOfPath ? `/${newLanguage}/${pagePath}/${restOfPath}` : `/${newLanguage}/${pagePath}`;
-  };
 
   // Update language, save to localStorage, and update URL
   const handleSetLanguage = (newLanguage: Language) => {
