@@ -12,7 +12,7 @@ const testimonialLogos = [{
   alt: "Homeby",
   width: 160
 }, {
-  src: "/lovable-uploads/new-favorent-logo.png",
+  src: "/lovable-uploads/new-favorent-logo.webp",
   alt: "Favorent",
   width: 150
 }, {
@@ -81,7 +81,7 @@ const testimonials = [{
   ratings: 35,
   properties: 8,
   joinedYear: 2024,
-  quote: "As a host with multiple accommodations in Berlin Mitte, managing deposits and guest registrations was always time-consuming. With Stellar Checkin, I’ve fully digitized and automated these processes.\n\nI’m especially impressed by the seamless integration with our Property Management System and being able to upsell additional services directly in the check-in process.",
+  quote: "As a host with multiple accommodations in Berlin Mitte, managing deposits and guest registrations was always time-consuming. With Stellar Checkin, I���ve fully digitized and automated these processes.\n\nI’m especially impressed by the seamless integration with our Property Management System and being able to upsell additional services directly in the check-in process.",
   website: "https://berlin-mitte.homes/de"
 }, {
   company: "Homeby",
