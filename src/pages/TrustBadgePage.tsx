@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { UserCheck, BadgeCheck, Star, Shield, Globe2 } from 'lucide-react';
@@ -71,7 +72,7 @@ const TrustBadgePage = () => {
             </div>
             <div className="order-1 md:order-last flex justify-center">
               <OptimizedImage 
-                src="/lovable-uploads/3098a042-bbb0-4607-b03f-beb60fdc911d.png" 
+                src="/lovable-uploads/e070310d-08b4-4df1-91de-a1fed4393882.png" 
                 alt="Trust Badge Preview" 
                 className="w-full h-auto object-contain max-w-[800px]" 
                 loading="eager"

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { UserCheck, BadgeCheck, Star, Shield, Globe2 } from 'lucide-react';
@@ -9,6 +8,7 @@ import CTAButton from '../CTAButton';
 import TrustBadgeFAQ from './TrustBadgeFAQ';
 import TrustBadgeCertificates from './TrustBadgeCertificates';
 import LogoCarouselAutoplay from '../LogoCarouselAutoplay';
+import OptimizedImage from '../OptimizedImage';
 
 const testimonialLogos = [{
   src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
@@ -69,7 +69,15 @@ const TrustBadgePage = () => {
               </div>
             </div>
             <div className="order-1 md:order-last flex justify-center">
-              <img src="/lovable-uploads/3098a042-bbb0-4607-b03f-beb60fdc911d.png" alt="Trust Badge Preview" className="w-full h-auto object-contain max-w-[800px]" loading="eager" fetchPriority="high" />
+              <OptimizedImage 
+                src="/lovable-uploads/e070310d-08b4-4df1-91de-a1fed4393882.png" 
+                alt="Trust Badge Preview" 
+                className="w-full h-auto object-contain max-w-[800px]" 
+                loading="eager"
+                priority={true}
+                width={800}
+                height={600}
+              />
             </div>
           </div>
         </div>
