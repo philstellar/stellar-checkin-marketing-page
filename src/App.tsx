@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Toaster } from '@/components/ui/toaster';
 import { BrevoFormProvider } from './context/BrevoFormContext';
 import BrevoFormPopupWrapper from './components/BrevoFormPopupWrapper';

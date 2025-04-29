@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 // Re-export from the new location to handle any cached imports
 import { 
   LanguageContext, 
