@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Award, Star, User, Home } from 'lucide-react';
+import { Award, User, Home } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card } from "@/components/ui/card";
@@ -79,7 +80,7 @@ const testimonials = [{
 }, {
   company: "Homeby",
   name: "Ale Fiorotto",
-  image: "/lovable-uploads/b81e2a35-1a4a-4192-b141-6e5d7d8e3390.png",
+  image: "/lovable-uploads/1c1f42aa-b940-4bc9-bae9-f556d48149cf.png",
   properties: 100,
   joinedYear: 2024,
   quote: "Als Immobilienmanagement-Unternehmen mussten wir ständig zwischen verschiedenen Systemen wechseln. Stellar Checkin hat unsere gesamten Check-in-Prozesse vereinfacht und digitalisiert.\n\nDie Möglichkeit, Gästedaten automatisch zu erfassen, Versicherungen anzubieten und Zusatzleistungen zu verkaufen, hat unsere Effizienz und Umsätze deutlich gesteigert.",
@@ -153,10 +154,6 @@ const Erfolgsbeispiele = () => {
                   
                   <div className="mt-auto">
                     <div className="">
-                      <div className="flex items-center gap-1">
-                        
-                        
-                      </div>
                       {testimonial.properties && <div className="flex items-center gap-1">
                           <Home className="h-4 w-4" />
                           <span className="text-left">{testimonial.properties} Unterkünfte</span>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -38,8 +39,6 @@ const testimonials = [
     company: "Hof Liebeneck",
     name: "Mario Schilling",
     image: "/lovable-uploads/7ac2f1b9-71b4-4955-b98d-10b23cd137a4.png",
-    rating: 5.0,
-    ratings: 28,
     properties: 4,
     joinedYear: 2024,
     quote: "Convincere gli ospiti a prenotare direttamente sul nostro sito è sempre stata una sfida. Da quando abbiamo aggiunto il Trust Badge Stellar, che aggrega le nostre recensioni Airbnb e Booking.com, abbiamo già visto un aumento delle prenotazioni.\n\nInoltre, ho molta più sicurezza quando prenotano ospiti che non conosco ancora, perché ora posso offrire loro la scelta tra cauzione e assicurazione danni ospiti di Stellar.",
@@ -49,8 +48,6 @@ const testimonials = [
     company: "Plau Lagoons",
     name: "Ralf Kramer",
     image: "/lovable-uploads/cda4c627-8961-489c-b264-d970daf26bed.png",
-    rating: 4.7,
-    ratings: 12,
     properties: 10,
     joinedYear: 2024,
     quote: "Aumentare le prenotazioni dirette è diventato molto importante di recente—not solo per crescere il fatturato, ma anche per connettersi in modo più personale con gli ospiti, ad esempio con biglietti di benvenuto o offerte speciali.\n\nMa ci siamo resi conto velocemente: un sito bello da solo non basta. Ci serviva qualcosa che desse ulteriore sicurezza ai nostri clienti. Ecco, il Trust Badge Stellar fa esattamente questo.",
@@ -60,44 +57,36 @@ const testimonials = [
     company: "Favorent",
     name: "Volker Rantz",
     image: "/lovable-uploads/d7825600-e22b-4fa5-a960-fb33e4dd0d9d.png",
-    rating: 5.0,
-    ratings: 13600,
     properties: 700,
     joinedYear: 2024,
-    quote: "L’assicurazione danni ospite giornaliera è stata una vera svolta per noi – sia come punto di forza unico per acquisire nuovi clienti agenziali, sia per semplificare la gestione delle cauzioni.\n\nSiamo riusciti a ridurre notevolmente le frizioni tra la nostra agenzia, i proprietari e gli ospiti.",
+    quote: "L'assicurazione danni ospite giornaliera è stata una vera svolta per noi – sia come punto di forza unico per acquisire nuovi clienti agenziali, sia per semplificare la gestione delle cauzioni.\n\nSiamo riusciti a ridurre notevolmente le frizioni tra la nostra agenzia, i proprietari e gli ospiti.",
     website: "https://favorent.de/"
   },
   {
     company: "Fairienglück",
     name: "Christopher Redenz",
     image: "/lovable-uploads/d642b640-6f64-4b66-a4d4-263a5d6f288c.png",
-    rating: 4.9,
-    ratings: 22,
     properties: 6,
     joinedYear: 2024,
-    quote: "Da piccola proprietaria di casa vacanze, per me era sempre difficile convincere gli ospiti a prenotare direttamente dal mio sito. Stellar Checkin ha completamente cambiato le cose. Il Trust Badge dà subito la fiducia necessaria.\n\nLa verifica dell’identità e la possibilità di proporre l’assicurazione danni ospite hanno aumentato enormemente la sicurezza delle mie prenotazioni.",
+    quote: "Da piccola proprietaria di casa vacanze, per me era sempre difficile convincere gli ospiti a prenotare direttamente dal mio sito. Stellar Checkin ha completamente cambiato le cose. Il Trust Badge dà subito la fiducia necessaria.\n\nLa verifica dell'identità e la possibilità di proporre l'assicurazione danni ospite hanno aumentato enormemente la sicurezza delle mie prenotazioni.",
     website: "https://www.fairienglueck.de/"
   },
   {
     company: "Berlin Mitte Experience",
     name: "Philipp Reuter",
     image: "/lovable-uploads/321ff530-1491-4b9c-b977-7111d0710385.png",
-    rating: 4.8,
-    ratings: 35,
     properties: 8,
     joinedYear: 2024,
-    quote: "Come host di diverse strutture a Berlino Mitte, la gestione delle cauzioni e delle registrazioni ospiti mi portava via molto tempo. Con Stellar Checkin, ho digitalizzato e automatizzato processi che prima facevo a mano.\n\nSoprattutto sono colpito dall’integrazione perfetta con il nostro PMS e dalla possibilità di vendere servizi aggiuntivi direttamente durante il check-in.",
+    quote: "Come host di diverse strutture a Berlino Mitte, la gestione delle cauzioni e delle registrazioni ospiti mi portava via molto tempo. Con Stellar Checkin, ho digitalizzato e automatizzato processi che prima facevo a mano.\n\nSoprattutto sono colpito dall'integrazione perfetta con il nostro PMS e dalla possibilità di vendere servizi aggiuntivi direttamente durante il check-in.",
     website: "https://berlin-mitte.homes/de"
   },
   {
     company: "Homeby",
-    name: "Elena Müller",
-    image: "/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png",
-    rating: 5.0,
-    ratings: 18,
+    name: "Ale Fiorotto",
+    image: "/lovable-uploads/1c1f42aa-b940-4bc9-bae9-f556d48149cf.png",
     properties: 12,
     joinedYear: 2024,
-    quote: "Come azienda di property management, prima dovevamo sempre gestire sistemi diversi. Stellar Checkin ha davvero semplificato e digitalizzato tutti i nostri processi di check-in.\n\nOra raccogliamo automaticamente i dati degli ospiti, possiamo offrire assicurazione e proporre servizi extra — l’efficienza e i ricavi sono visibilmente cresciuti.",
+    quote: "Come azienda di property management, prima dovevamo sempre gestire sistemi diversi. Stellar Checkin ha davvero semplificato e digitalizzato tutti i nostri processi di check-in.\n\nOra raccogliamo automaticamente i dati degli ospiti, possiamo offrire assicurazione e proporre servizi extra — l'efficienza e i ricavi sono visibilmente cresciuti.",
     website: "https://homeby.it"
   }
 ];
@@ -180,17 +169,6 @@ const SuccessStoriesIT = () => (
                 <p className="text-gray-600 mb-6 whitespace-pre-line">{testimonial.quote}</p>
               </div>
               <div className="mt-auto">
-                <div className="flex items-center gap-2 mb-2">
-                  {testimonial.rating && (
-                    <>
-                      <svg className="h-5 w-5 fill-yellow-400 text-yellow-400 inline" viewBox="0 0 24 24"><path d="M12 17.75L6.619 21l1.153-6.726L2.338 9.974l6.797-.987L12 3.5l2.865 5.487 6.797.987-4.434 4.3L17.381 21z" /></svg>
-                      <span className="font-semibold">{testimonial.rating}</span>
-                      {testimonial.ratings && (
-                        <span className="text-gray-500">({testimonial.ratings} recensioni)</span>
-                      )}
-                    </>
-                  )}
-                </div>
                 <div className="flex items-center text-sm text-gray-600 gap-4">
                   <div className="flex items-center gap-1">
                     <svg className="h-4 w-4 inline" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4" /><path d="M12 13c-4.418 0-8 1.79-8 4v3h16v-3c0-2.21-3.582-4-8-4z" /></svg>

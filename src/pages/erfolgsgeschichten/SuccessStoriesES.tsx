@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -38,8 +39,6 @@ const testimonials = [
     company: "Hof Liebeneck",
     name: "Mario Schilling",
     image: "/lovable-uploads/7ac2f1b9-71b4-4955-b98d-10b23cd137a4.png",
-    rating: 5.0,
-    ratings: 28,
     properties: 4,
     joinedYear: 2024,
     quote: "Convencer a los huéspedes de que reserven directamente en nuestra web siempre fue un reto. Desde que mostramos el Trust Badge de Stellar, que agrupa nuestras valoraciones de Airbnb y Booking.com, hemos visto ya un aumento en reservas.\n\nAdemás, tengo mucha más seguridad en reservas de huéspedes que aún no conozco, ya que ahora puedo ofrecerles elegir entre un depósito o el seguro de daños al huésped de Stellar.",
@@ -49,8 +48,6 @@ const testimonials = [
     company: "Plau Lagoons",
     name: "Ralf Kramer",
     image: "/lovable-uploads/cda4c627-8961-489c-b264-d970daf26bed.png",
-    rating: 4.7,
-    ratings: 12,
     properties: 10,
     joinedYear: 2024,
     quote: "Incrementar las reservas directas es fundamental últimamente—no solo para crecer en ingresos, sino también para conectar de manera más personal con los huéspedes, por ejemplo, con tarjetas de bienvenida u ofertas especiales.\n\nPero nos dimos cuenta de que una web bonita no basta. Necesitábamos algo que transmitiera seguridad extra. Ahí es donde el Trust Badge de Stellar ha marcado la diferencia.",
@@ -60,8 +57,6 @@ const testimonials = [
     company: "Favorent",
     name: "Volker Rantz",
     image: "/lovable-uploads/d7825600-e22b-4fa5-a960-fb33e4dd0d9d.png",
-    rating: 5.0,
-    ratings: 13600,
     properties: 700,
     joinedYear: 2024,
     quote: "El seguro de daños por huésped diario ha supuesto un auténtico cambio para nosotros—tanto como argumento de venta único para captar nuevas agencias, como para simplificar la gestión de depósitos.\n\nHemos logrado reducir considerablemente los puntos de fricción entre agencia, propietarios y huéspedes.",
@@ -71,8 +66,6 @@ const testimonials = [
     company: "Fairienglück",
     name: "Christopher Redenz",
     image: "/lovable-uploads/d642b640-6f64-4b66-a4d4-263a5d6f288c.png",
-    rating: 4.9,
-    ratings: 22,
     properties: 6,
     joinedYear: 2024,
     quote: "Como pequeña arrendadora, siempre era complicado convencer a los huéspedes para que reservaran directamente en mi web. Stellar Checkin cambió todo eso. El Trust Badge da la confianza necesaria al instante.\n\nLa verificación de identidad y la posibilidad de ofrecer un seguro de daños al huésped han incrementado mucho la seguridad de mis reservas.",
@@ -82,8 +75,6 @@ const testimonials = [
     company: "Berlin Mitte Experience",
     name: "Philipp Reuter",
     image: "/lovable-uploads/321ff530-1491-4b9c-b977-7111d0710385.png",
-    rating: 4.8,
-    ratings: 35,
     properties: 8,
     joinedYear: 2024,
     quote: "Como anfitrión con varios apartamentos en Berlin Mitte, la gestión de depósitos y los registros de huéspedes siempre llevaba tiempo. Con Stellar Checkin, todo el proceso lo tengo digitalizado y automatizado.\n\nMe impresiona sobre todo la integración directa con nuestro PMS y poder vender servicios adicionales directamente durante el check-in.",
@@ -91,10 +82,8 @@ const testimonials = [
   },
   {
     company: "Homeby",
-    name: "Elena Müller",
-    image: "/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png",
-    rating: 5.0,
-    ratings: 18,
+    name: "Ale Fiorotto",
+    image: "/lovable-uploads/1c1f42aa-b940-4bc9-bae9-f556d48149cf.png",
     properties: 12,
     joinedYear: 2024,
     quote: "Como empresa de administración, antes teníamos que cambiar continuamente de sistema. Stellar Checkin ha simplificado y digitalizado todos nuestros procesos de check-in.\n\nAhora recogemos automáticamente los datos del huésped, podemos ofrecer seguro y vender extras — eficiencia e ingresos han aumentado claramente.",
@@ -180,17 +169,6 @@ const SuccessStoriesES = () => (
                 <p className="text-gray-600 mb-6 whitespace-pre-line">{testimonial.quote}</p>
               </div>
               <div className="mt-auto">
-                <div className="flex items-center gap-2 mb-2">
-                  {testimonial.rating && (
-                    <>
-                      <svg className="h-5 w-5 fill-yellow-400 text-yellow-400 inline" viewBox="0 0 24 24"><path d="M12 17.75L6.619 21l1.153-6.726L2.338 9.974l6.797-.987L12 3.5l2.865 5.487 6.797.987-4.434 4.3L17.381 21z" /></svg>
-                      <span className="font-semibold">{testimonial.rating}</span>
-                      {testimonial.ratings && (
-                        <span className="text-gray-500">({testimonial.ratings} valoraciones)</span>
-                      )}
-                    </>
-                  )}
-                </div>
                 <div className="flex items-center text-sm text-gray-600 gap-4">
                   <div className="flex items-center gap-1">
                     <svg className="h-4 w-4 inline" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4" /><path d="M12 13c-4.418 0-8 1.79-8 4v3h16v-3c0-2.21-3.582-4-8-4z" /></svg>
