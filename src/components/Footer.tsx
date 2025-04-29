@@ -38,9 +38,6 @@ const Footer = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
-  const isProduction = window.location.hostname === 'stellar-checkin.com' || 
-                       window.location.hostname.includes('lovable.app') || 
-                       window.location.hostname.includes('lovable.dev');
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, hash?: string) => {
     e.preventDefault();
@@ -94,14 +91,12 @@ const Footer = () => {
                   {t('navigation.insurance')}
                 </Link>
               </li>
-              {!isProduction && (
-                <li>
-                  <Link to={`/${language}/trust-badge`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
-                    <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                    {t('navigation.trustBadge')}
-                  </Link>
-                </li>
-              )}
+              <li>
+                <Link to={`/${language}/trust-badge`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.trustBadge')}
+                </Link>
+              </li>
               <li>
                 <Link to={`/${language}/#preise`} className="flex items-center text-black hover:text-apple transition-colors" onClick={(e) => handleNavigation(e, 'preise')}>
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />

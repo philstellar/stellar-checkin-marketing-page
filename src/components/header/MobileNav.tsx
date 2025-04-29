@@ -30,9 +30,6 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   const navigate = useNavigate();
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
-  const isProduction = window.location.hostname === 'stellar-checkin.com' || 
-                       window.location.hostname.includes('lovable.app') || 
-                       window.location.hostname.includes('lovable.dev');
 
   const handleNavigation = (path: string) => {
     navigate(`/${currentLanguage}/${path}`);
@@ -106,15 +103,12 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 {t('navigation.insurance')}
               </button>
               
-              {/* Trust Badge link in non-production */}
-              {!isProduction && (
-                <button 
-                  onClick={() => handleNavigation('trust-badge')}
-                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-                >
-                  {t('navigation.trustBadge')}
-                </button>
-              )}
+              <button 
+                onClick={() => handleNavigation('trust-badge')}
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+              >
+                {t('navigation.trustBadge')}
+              </button>
 
               <button 
                 onClick={() => handleSectionNavigation('preise')}
