@@ -8,9 +8,8 @@ import CookieBanner from './components/CookieBanner';
 import { LanguageDetectionDialog } from './components/LanguageDetectionDialog';
 import { SchemaProvider } from './components/schema/SchemaProvider';
 
-// Import Index directly to avoid potential circular dependency issues
+// Import components directly that have loading issues
 import Index from './pages/Index';
-// Import VersicherungPage directly to resolve loading issue
 import VersicherungPage from './components/admin/VersicherungPage';
 
 // Lazy load all pages for better initial load performance
@@ -19,7 +18,6 @@ const Impressum = lazy(() => import('./pages/Impressum'));
 const Datenschutz = lazy(() => import('./pages/Datenschutz'));
 const Agb = lazy(() => import('./pages/Agb'));
 const Brevo = lazy(() => import('./pages/Brevo'));
-// Direct import of admin components - Trust Badge can remain lazy loaded
 const TrustBadgePage = lazy(() => import('./components/admin/TrustBadgePage'));
 const UeberUns = lazy(() => import('./pages/UeberUns'));
 const Erfolgsbeispiele = lazy(() => import('./pages/Erfolgsbeispiele'));
@@ -278,22 +276,10 @@ const App = () => {
           />
           
           {/* Insurance and Trust Badge routes for all languages */}
-          <Route 
-            path="/de/versicherung" 
-            element={<VersicherungPage />}
-          />
-          <Route 
-            path="/en/insurance" 
-            element={<VersicherungPage />}
-          />
-          <Route 
-            path="/it/assicurazione" 
-            element={<VersicherungPage />}
-          />
-          <Route 
-            path="/es/seguro" 
-            element={<VersicherungPage />}
-          />
+          <Route path="/de/versicherung" element={<VersicherungPage />} />
+          <Route path="/en/insurance" element={<VersicherungPage />} />
+          <Route path="/it/assicurazione" element={<VersicherungPage />} />
+          <Route path="/es/seguro" element={<VersicherungPage />} />
           
           <Route 
             path="/de/trust-badge" 

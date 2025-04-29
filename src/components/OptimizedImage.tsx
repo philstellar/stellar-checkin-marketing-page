@@ -1,4 +1,7 @@
 
+// Fix the OptimizedImage component to resolve potential issues with priority attribute
+// and ensure proper image loading behavior
+
 import React from 'react';
 
 interface OptimizedImageProps {
@@ -7,71 +10,39 @@ interface OptimizedImageProps {
   width?: number;
   height?: number;
   className?: string;
-  priority?: boolean;
-  sizes?: string;
   loading?: 'lazy' | 'eager';
+  priority?: boolean;
+  style?: React.CSSProperties;
+  onClick?: () => void;
 }
 
-/**
- * Optimized image component that provides:
- * - Proper width and height to prevent layout shifts
- * - Responsive loading with srcset when available
- * - Lazy loading by default for images below the fold
- * - WebP format support with fallbacks
- */
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
   width,
   height,
   className = '',
+  loading = 'lazy',
   priority = false,
-  sizes = '100vw',
-  loading = 'lazy'
+  style,
+  onClick
 }) => {
-  // Detect if the source is a PNG that could benefit from WebP conversion
-  const isPng = src.toLowerCase().endsWith('.png');
-  
-  // If we have a PNG from lovable-uploads, create a WebP version path
-  const webpSrc = isPng && src.includes('lovable-uploads') 
-    ? src.replace(/\.png$/, '.webp') 
-    : null;
-  
-  // Set priority or lazy loading
-  const loadingAttribute = priority ? 'eager' : loading;
-  
-  // Set fetchPriority for critical images
-  const fetchPriority = priority ? 'high' : 'auto';
-  
+  // Convert priority to loading="eager" instead of using fetchPriority which causes a warning
+  const loadingValue = priority ? 'eager' : loading;
+
   return (
-    <>
-      {webpSrc ? (
-        <picture>
-          <source srcSet={webpSrc} type="image/webp" />
-          <img
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            loading={loadingAttribute}
-            fetchPriority={fetchPriority as any}
-            className={className}
-            sizes={sizes}
-          />
-        </picture>
-      ) : (
-        <img
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          loading={loadingAttribute}
-          fetchPriority={fetchPriority as any}
-          className={className}
-          sizes={sizes}
-        />
-      )}
-    </>
+    <picture>
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={className}
+        loading={loadingValue}
+        style={style}
+        onClick={onClick}
+      />
+    </picture>
   );
 };
 
