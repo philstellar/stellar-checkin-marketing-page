@@ -39,7 +39,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     src.replace(/\.(png|jpg|jpeg)$/i, '.webp') : 
     src;
   
-  // Add fetchpriority for important images
+  // Add fetchpriority for important images - using camelCase for React
   const fetchPriority = priority ? "high" : undefined;
   
   // For priority images (likely LCP candidates), apply display block to improve rendering
@@ -68,7 +68,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         style={imageStyle}
         onClick={onClick}
         sizes={sizes}
-        fetchpriority={fetchPriority}
+        fetchPriority={fetchPriority}
         decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
       />
     </picture>
