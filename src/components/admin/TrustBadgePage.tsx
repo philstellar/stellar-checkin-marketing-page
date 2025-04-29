@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { UserCheck, BadgeCheck, Star, Shield, Globe2 } from 'lucide-react';
@@ -18,7 +19,7 @@ const testimonialLogos = [{
   alt: "Homeby",
   width: 160
 }, {
-  src: "/lovable-uploads/800ababe-141e-40a9-aa0f-2e8d2519b7ef.png",
+  src: "/lovable-uploads/new-favorent-logo.png",
   alt: "Favorent",
   width: 150
 }, {
