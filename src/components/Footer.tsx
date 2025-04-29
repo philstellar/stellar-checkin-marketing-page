@@ -140,6 +140,12 @@ const Footer = () => {
                   {t('navigation.successStories')}
                 </Link>
               </li>
+              <li>
+                <Link to={`/${language}/trust-badge`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.trustBadge')}
+                </Link>
+              </li>
             </ul>
           </div>
           

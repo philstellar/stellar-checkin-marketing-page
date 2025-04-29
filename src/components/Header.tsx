@@ -60,6 +60,14 @@ const Header = () => {
       behavior: 'smooth'
     });
   };
+
+  const handleTrustBadgeClick = () => {
+    navigate(`/${language}/trust-badge`);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   
   const handleSectionClick = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -108,7 +116,7 @@ const Header = () => {
                 />
               </button>
             </div>
-  
+            
             <div className="flex items-center gap-4">
               <div className="md:hidden">
                 <LanguageSelector variant="icon-only" />
