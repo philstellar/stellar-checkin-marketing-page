@@ -9,8 +9,6 @@ import { siteTranslations } from './modules/site';
 // Re-export the translations
 export * from './modules/site';
 
-export type TranslationKey = string;
-
 // Extend each language object with the site translations
 const deWithSite = { ...de, site: siteTranslations.de };
 const enWithSite = { ...en, site: siteTranslations.en };

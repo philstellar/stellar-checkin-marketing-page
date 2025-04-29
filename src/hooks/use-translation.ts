@@ -1,7 +1,7 @@
 
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
-import { TranslationKey, translations } from '../translations';
+import { translations } from '../translations';
 import get from 'lodash.get';
 
 export const useTranslation = () => {
