@@ -3,6 +3,7 @@ import { UserCheck } from "lucide-react";
 import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export const VersicherungSection = () => {
   const { t } = useTranslation();
@@ -12,10 +13,14 @@ export const VersicherungSection = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-1 md:order-first flex justify-center">
-            <img 
-              src="/lovable-uploads/b8b98b42-57f1-464d-be4a-952044caf6cc.png"
+            <OptimizedImage 
+              src="/lovable-uploads/da5cc900-97f6-4e95-a8d2-29fe4bf0fc66.png"
               alt="Versicherung und Kautionsabwicklung" 
               className="w-3/5 h-auto object-contain bg-transparent"
+              width={500}
+              height={800}
+              loading="lazy"
+              sizes="(max-width: 768px) 90vw, 500px"
             />
           </div>
           
