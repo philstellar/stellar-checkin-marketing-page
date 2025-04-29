@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Link } from 'react-router-dom';
@@ -9,7 +10,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-royal-800 text-white py-12">
+    <footer className="bg-white text-royal-800 py-12">
       <div className="container-custom grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Logo and Description */}
         <div className="mb-6">
@@ -22,8 +23,8 @@ const Footer = () => {
               className="h-9 w-auto object-contain"
             />
           </Link>
-          <p className="text-sm text-royal-200">
-            {t('footer.description')}
+          <p className="text-sm text-royal-600">
+            {t('footer.tagline')}
           </p>
         </div>
 
@@ -96,8 +97,8 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="container-custom mt-8 border-t border-royal-700 pt-4 text-center text-sm text-royal-200">
-        &copy; {currentYear} Stellar Checkin. {t('footer.allRightsReserved')}
+      <div className="container-custom mt-8 border-t border-royal-100 pt-4 text-center text-sm text-royal-600">
+        &copy; {currentYear} Stellar Checkin. {t('footer.copyright')}
       </div>
     </footer>
   );
