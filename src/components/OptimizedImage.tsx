@@ -43,12 +43,18 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const fetchPriority = priority ? "high" : undefined;
   
   // For priority images (likely LCP candidates), apply optimized styles
-  const imageStyle = {
+  // Use type assertion to fix the TypeScript error with contentVisibility
+  const imageStyle: React.CSSProperties = {
     ...style,
     display: priority ? 'block' : undefined, // Prevent layout shifts
-    contentVisibility: priority ? 'auto' : undefined,
     contain: 'paint', // Optimize rendering
   };
+
+  // Add contentVisibility separately with type assertion
+  if (priority) {
+    // Using type assertion to tell TypeScript this is valid
+    (imageStyle as any).contentVisibility = 'auto';
+  }
   
   return (
     <picture>
