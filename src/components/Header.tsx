@@ -7,12 +7,14 @@ import MobileNav from './header/MobileNav';
 import LanguageSelector from './LanguageSelector';
 import OptimizedImage from './OptimizedImage';
 import { MetaHead } from './meta';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { language } = useLanguage();
   
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 10);
@@ -51,9 +53,8 @@ const Header = () => {
   };
   
   const handleHomeClick = () => {
-    if (location.pathname !== '/') {
-      navigate('/');
-    }
+    // Navigate to the check-in page based on current language
+    navigate(`/${language}/`);
     window.scrollTo({
       top: 0,
       behavior: 'smooth'

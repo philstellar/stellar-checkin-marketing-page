@@ -64,6 +64,15 @@ const Footer = () => {
     }
   };
 
+  const handleLogoClick = () => {
+    // Navigate to the check-in page based on current language
+    navigate(`/${language}/`);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const about = aboutRoutes[language] || aboutRoutes.de;
 
   return <footer className="bg-white">
@@ -71,14 +80,16 @@ const Footer = () => {
         <Separator className="my-8 bg-[#8E9196]" />
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <OptimizedImage 
-              src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
-              alt="Stellar Logo" 
-              className="h-6 mb-4 w-auto object-contain" 
-              width={150} 
-              height={24} 
-              loading="lazy" 
-            />
+            <button onClick={handleLogoClick} className="bg-transparent border-0 p-0 cursor-pointer">
+              <OptimizedImage 
+                src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
+                alt="Stellar Logo" 
+                className="h-6 mb-4 w-auto object-contain" 
+                width={150} 
+                height={24} 
+                loading="lazy" 
+              />
+            </button>
             <p className="text-black mb-6 max-w-md">
               {t('footer.tagline')}
             </p>
