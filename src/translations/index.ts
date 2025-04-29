@@ -1,5 +1,6 @@
-import { navigation } from './modules/navigation';
-import { hero } from './modules/hero';
+
+import { navigationDE, navigationEN, navigationES, navigationIT } from './modules/navigation';
+import { heroDE, heroEN, heroES, heroIT } from './modules/features';
 import { siteTranslations } from './modules/site';
 import { commonTranslations } from './modules/common';
 
@@ -11,29 +12,29 @@ import { insuranceIT } from './modules/insurance/it';
 
 export const translations = {
   de: {
-    navigation: navigation.de,
-    hero: hero.de,
+    navigation: navigationDE,
+    hero: heroDE,
     site: siteTranslations.de,
     common: commonTranslations.de,
     insurance: insuranceDE,
   },
   en: {
-    navigation: navigation.en,
-    hero: hero.en,
+    navigation: navigationEN,
+    hero: heroEN,
     site: siteTranslations.en,
     common: commonTranslations.en,
     insurance: insuranceEN,
   },
   it: {
-    navigation: navigation.it,
-    hero: hero.it,
+    navigation: navigationIT,
+    hero: heroIT,
     site: siteTranslations.it,
     common: commonTranslations.it,
     insurance: insuranceIT,
   },
   es: {
-    navigation: navigation.es,
-    hero: hero.es,
+    navigation: navigationES,
+    hero: heroES,
     site: siteTranslations.es,
     common: commonTranslations.es,
     insurance: insuranceES,

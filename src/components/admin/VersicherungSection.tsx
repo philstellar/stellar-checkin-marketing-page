@@ -1,7 +1,7 @@
 
 import { UserCheck, Link } from "lucide-react";
 import { Shield, ShieldCheck, CreditCard } from "lucide-react";
-import CTAButton from "./CTAButton";
+import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { Link as RouterLink } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
