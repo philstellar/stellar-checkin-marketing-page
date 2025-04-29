@@ -1,5 +1,4 @@
-
-import { memo, useCallback } from "react";
+import { memo } from "react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
@@ -7,7 +6,6 @@ import { useLanguage } from "@/context/LanguageContext";
 import { Separator } from "@/components/ui/separator";
 import OptimizedImage from "./OptimizedImage";
 
-// Move this outside the component to avoid recreating it on every render
 const aboutRoutes: Record<string, {
   aboutUs: string;
   successStories: string;
@@ -36,13 +34,16 @@ const aboutRoutes: Record<string, {
 };
 
 const Footer = () => {
-  const { t } = useTranslation();
-  const { language } = useLanguage();
+  const {
+    t
+  } = useTranslation();
+  const {
+    language
+  } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
   
-  // Memoize handlers to prevent recreating functions on re-renders
-  const handleNavigation = useCallback((e: React.MouseEvent<HTMLAnchorElement>, hash?: string) => {
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, hash?: string) => {
     e.preventDefault();
 
     // If we're not on the homepage and a hash is provided, navigate to the homepage with hash
@@ -66,21 +67,18 @@ const Footer = () => {
         behavior: 'smooth'
       });
     }
-  }, [navigate, location.pathname, language]);
+  };
   
-  const handleLogoClick = useCallback(() => {
+  const handleLogoClick = () => {
     // Navigate to the check-in page based on current language
     navigate(`/${language}/`);
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
-  }, [navigate, language]);
+  };
   
-  // Memoize about routes lookup
   const about = aboutRoutes[language] || aboutRoutes.de;
-  
-  // Use React's built-in useMemo or HOF like memo for expensive computations
   
   return <footer className="bg-white">
       <div className="container-custom bg-white">
@@ -95,7 +93,6 @@ const Footer = () => {
             </p>
           </div>
           
-          {/* Solutions column */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.solutions')}</h3>
             <ul className="space-y-3">
@@ -126,7 +123,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* About column */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
             <ul className="space-y-3">
@@ -151,7 +147,6 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Legal column */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
             <ul className="space-y-3">
@@ -190,5 +185,4 @@ const Footer = () => {
     </footer>;
 };
 
-// Memo the entire component to prevent unnecessary re-renders
 export default memo(Footer);

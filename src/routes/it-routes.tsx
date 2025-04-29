@@ -1,7 +1,7 @@
 
 import { lazy } from 'react';
 import Index from '@/pages/Index';
-import VersicherungPage from '@/pages/VersicherungPage';
+import VersicherungPage from '@/components/admin/VersicherungPage';
 
 // Define the interface for route configuration
 interface RouteConfig {

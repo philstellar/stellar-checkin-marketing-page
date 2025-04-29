@@ -15,9 +15,7 @@ export const navigationDE = {
   aboutUs: "Über uns",
   successStories: "Erfolgsbeispiele",
   faq: "FAQ",
-  solutions: "Lösungen",
-  pricingAnchor: "preise",
-  contactAnchor: "kontakt"
+  solutions: "Lösungen"
 };
 
 export const navigationEN = {
@@ -36,9 +34,7 @@ export const navigationEN = {
   aboutUs: "About Us",
   successStories: "Success Stories",
   faq: "FAQ",
-  solutions: "Solutions",
-  pricingAnchor: "pricing",
-  contactAnchor: "contact"
+  solutions: "Solutions"
 };
 
 export const navigationIT = {
@@ -57,9 +53,7 @@ export const navigationIT = {
   aboutUs: "Chi Siamo",
   successStories: "Storie di Successo",
   faq: "FAQ",
-  solutions: "Soluzioni",
-  pricingAnchor: "prezzi",
-  contactAnchor: "contatti"
+  solutions: "Soluzioni"
 };
 
 export const navigationES = {
@@ -78,7 +72,5 @@ export const navigationES = {
   aboutUs: "Sobre Nosotros",
   successStories: "Historias de Éxito",
   faq: "Preguntas Frecuentes",
-  solutions: "Soluciones",
-  pricingAnchor: "precios",
-  contactAnchor: "contacto"
+  solutions: "Soluciones"
 };

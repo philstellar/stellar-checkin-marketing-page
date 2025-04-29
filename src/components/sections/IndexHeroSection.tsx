@@ -1,19 +1,17 @@
-
 import { UserCheck } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { useIsMobile } from "@/hooks/use-mobile";
 import OptimizedImage from "@/components/OptimizedImage";
 import { useNavigate } from "react-router-dom";
-import { memo, useMemo, useCallback } from "react";
 
-export const IndexHeroSection = memo(() => {
+export function IndexHeroSection() {
   const isMobile = useIsMobile();
   const { t, currentLanguage } = useTranslation();
   const navigate = useNavigate();
   
-  // Optimization: pre-compute headline parts only when needed
-  const headlineParts = useMemo(() => {
+  // Pre-compute headline parts for better performance
+  const headlineParts = (() => {
     const headline = t('hero.headline');
     const checkInRegex = /(Check-in|Check-ins|Checkin)/gi;
     
@@ -25,21 +23,19 @@ export const IndexHeroSection = memo(() => {
     let lastIndex = 0;
     
     matches.forEach(match => {
-      if (match.index !== undefined && match.index > lastIndex) {
+      if (match.index > lastIndex) {
         parts.push({
           text: headline.substring(lastIndex, match.index),
           isHighlighted: false
         });
       }
       
-      if (match.index !== undefined) {
-        parts.push({
-          text: match[0],
-          isHighlighted: true
-        });
-        
-        lastIndex = match.index + match[0].length;
-      }
+      parts.push({
+        text: match[0],
+        isHighlighted: true
+      });
+      
+      lastIndex = match.index + match[0].length;
     });
     
     if (lastIndex < headline.length) {
@@ -50,12 +46,11 @@ export const IndexHeroSection = memo(() => {
     }
     
     return parts;
-  }, [t]);
+  })();
   
-  // Optimization: memoize handlers
-  const handleTrustBadgeClick = useCallback(() => {
+  const handleTrustBadgeClick = () => {
     navigate(`/${currentLanguage}/trust-badge`);
-  }, [navigate, currentLanguage]);
+  };
   
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
@@ -112,6 +107,4 @@ export const IndexHeroSection = memo(() => {
       </div>
     </section>
   );
-});
-
-IndexHeroSection.displayName = 'IndexHeroSection';
+}

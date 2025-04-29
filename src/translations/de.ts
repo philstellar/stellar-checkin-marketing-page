@@ -6,6 +6,7 @@ import { partnersDE } from './modules/partners';
 import { kurtaxeDE } from './modules/kurtaxe';
 import { insuranceDE } from './modules/insurance';
 import { trustBadgeDE } from './modules/trustBadge';
+import { cookiesDE } from './modules/cookies/de';
 import { zusatzservicesDE } from './modules/zusatzservices/de';
 import { brevoPopupDE } from './modules/brevoPopup/de';
 import { identityDE } from './modules/identity/de';
@@ -15,7 +16,6 @@ import { pricingDE } from './modules/pricing/de';
 import { contactDE } from './modules/contact/de';
 import { footerDE } from './modules/footer/de';
 import { versicherungDE } from './modules/versicherung/de';
-import { successStoriesDE } from './modules/successStories/de';
 
 export const de = {
   navigation: navigationDE,
@@ -25,6 +25,7 @@ export const de = {
   kurtaxe: kurtaxeDE,
   insurance: insuranceDE,
   trustBadge: trustBadgeDE,
+  cookies: cookiesDE,
   zusatzservices: zusatzservicesDE,
   brevoPopup: brevoPopupDE,
   identity: identityDE,
@@ -33,6 +34,5 @@ export const de = {
   pricing: pricingDE,
   contact: contactDE,
   footer: footerDE,
-  versicherung: versicherungDE,
-  successStories: successStoriesDE
+  versicherung: versicherungDE
 };
