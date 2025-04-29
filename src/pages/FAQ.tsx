@@ -4,11 +4,44 @@ import { HelpCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import SchemaData from '@/components/schema/SchemaData';
 
 const FAQ = () => {
+  // FAQ schema data
+  const faqPageData = {
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Was ist Stellar Checkin?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Stellar Checkin ist eine digitale Check-in Lösung für Ferienwohnungen, die den gesamten Check-in-Prozess automatisiert.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Wie funktioniert die Gästemeldung?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Die Gästemeldung erfolgt digital über unser System. Gäste füllen ihre Daten online aus, und diese werden automatisch an die Behörden übermittelt.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Ist Stellar Checkin DSGVO-konform?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Ja, Stellar Checkin ist vollständig DSGVO-konform und verarbeitet alle Gästedaten sicher und geschützt.'
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <Header />
+      <SchemaData pageType="FAQPage" pageData={faqPageData} />
       <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-floral to-floral-400/20"></div>
         <div className="container-custom relative z-10">

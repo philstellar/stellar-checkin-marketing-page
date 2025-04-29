@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import FAQSchema from '@/components/schema/FAQSchema';
 
 const InsuranceFAQ = () => {
   const { t } = useTranslation();
@@ -20,6 +21,9 @@ const InsuranceFAQ = () => {
 
   return (
     <div className="w-full max-w-full px-4 sm:px-6 lg:px-8">
+      {/* Add FAQ Schema */}
+      <FAQSchema faqKeys={faqs} namespace="insurance.faq" />
+      
       <h2 className="text-3xl font-bold mb-8 text-royal text-left">FAQ</h2>
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((faq, index) => (
