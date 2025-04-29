@@ -63,6 +63,12 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
         'allow_google_signals': false,
         'allow_ad_personalization_signals': false
       });
+      
+      // Disable Google Tag Manager
+      window.dataLayer.push({
+        'gtm.blacklist': ['google', 'gclidw', 'gad', 'adm', 'awct', 'flc', 'fls', 'ga', 'gcs', 'opt', 'ua'],
+        'event': 'gtm.init_consent'
+      });
     }
   };
 
@@ -75,6 +81,13 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
       
       // Enable GA4 tracking
       window.gtag('config', 'G-YZM5YCLGBD');
+      
+      // Enable Google Tag Manager
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'gtm.whitelist': ['google', 'gclidw', 'gad', 'adm', 'awct', 'flc', 'fls', 'ga', 'gcs', 'opt', 'ua'],
+        'event': 'gtm.init_consent'
+      });
     }
   };
 
