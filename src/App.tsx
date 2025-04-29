@@ -1,3 +1,4 @@
+
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -9,6 +10,8 @@ import { SchemaProvider } from './components/schema/SchemaProvider';
 
 // Import Index directly to avoid potential circular dependency issues
 import Index from './pages/Index';
+// Import VersicherungPage directly to resolve loading issue
+import VersicherungPage from './components/admin/VersicherungPage';
 
 // Lazy load all pages for better initial load performance
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -16,8 +19,7 @@ const Impressum = lazy(() => import('./pages/Impressum'));
 const Datenschutz = lazy(() => import('./pages/Datenschutz'));
 const Agb = lazy(() => import('./pages/Agb'));
 const Brevo = lazy(() => import('./pages/Brevo'));
-// Direct import of admin components
-const VersicherungPage = lazy(() => import('./components/admin/VersicherungPage'));
+// Direct import of admin components - Trust Badge can remain lazy loaded
 const TrustBadgePage = lazy(() => import('./components/admin/TrustBadgePage'));
 const UeberUns = lazy(() => import('./pages/UeberUns'));
 const Erfolgsbeispiele = lazy(() => import('./pages/Erfolgsbeispiele'));
@@ -278,35 +280,19 @@ const App = () => {
           {/* Insurance and Trust Badge routes for all languages */}
           <Route 
             path="/de/versicherung" 
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <VersicherungPage />
-              </Suspense>
-            } 
+            element={<VersicherungPage />}
           />
           <Route 
             path="/en/insurance" 
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <VersicherungPage />
-              </Suspense>
-            } 
+            element={<VersicherungPage />}
           />
           <Route 
             path="/it/assicurazione" 
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <VersicherungPage />
-              </Suspense>
-            } 
+            element={<VersicherungPage />}
           />
           <Route 
             path="/es/seguro" 
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <VersicherungPage />
-              </Suspense>
-            } 
+            element={<VersicherungPage />}
           />
           
           <Route 
