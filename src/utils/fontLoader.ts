@@ -7,7 +7,7 @@
  * Check if fonts have been loaded
  */
 export const areFontsLoaded = (): boolean => {
-  if (typeof document === 'undefined') return false;
+  if (typeof document === 'undefined' || !document.documentElement) return false;
   return document.documentElement.classList.contains('fonts-loaded');
 };
 
@@ -15,10 +15,11 @@ export const areFontsLoaded = (): boolean => {
  * Register a callback for when fonts are loaded
  */
 export const onFontsLoaded = (callback: () => void): void => {
-  if (typeof document === 'undefined') return;
+  if (typeof document === 'undefined' || !document.documentElement) return;
   
   if (areFontsLoaded()) {
-    callback();
+    // Execute callback on next tick to avoid potential sync issues
+    setTimeout(callback, 0);
   } else {
     const checkLoaded = () => {
       if (areFontsLoaded()) {
@@ -33,8 +34,15 @@ export const onFontsLoaded = (callback: () => void): void => {
     setTimeout(() => {
       if (!areFontsLoaded()) {
         document.documentElement.classList.add('fonts-loaded');
-        const event = new Event('fontsloaded');
-        document.dispatchEvent(event);
+        
+        try {
+          const event = new Event('fontsloaded');
+          document.dispatchEvent(event);
+        } catch (e) {
+          console.error('Error dispatching font loaded event:', e);
+          // Execute callback anyway if event creation fails
+          checkLoaded();
+        }
       }
     }, 2000);
   }

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Link } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
@@ -8,6 +8,30 @@ import OptimizedImage from './OptimizedImage';
 const Footer = () => {
   const { t, currentLanguage } = useTranslation();
   const currentYear = new Date().getFullYear();
+  
+  // Process email addresses safely after component mounts
+  useEffect(() => {
+    try {
+      const emailElements = document.querySelectorAll('[data-email]');
+      emailElements.forEach(function(element) {
+        const encodedEmail = element.getAttribute('data-email');
+        if (encodedEmail) {
+          const decodedEmail = encodedEmail.replace(/AT/, '@').replace(/DOT/g, '.');
+          
+          if (element.tagName.toLowerCase() === 'a') {
+            element.setAttribute('href', 'mailto:' + decodedEmail);
+            if (!element.textContent || element.textContent === '') {
+              element.textContent = decodedEmail;
+            }
+          } else {
+            element.textContent = decodedEmail;
+          }
+        }
+      });
+    } catch (e) {
+      console.error('Error processing email addresses:', e);
+    }
+  }, []);
   
   return (
     <footer className="bg-white text-royal-800 py-12">
