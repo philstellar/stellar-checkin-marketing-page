@@ -7,7 +7,7 @@ import {
 } from './language/LanguageContext';
 
 // Import type separately for proper re-export
-import type { Language } from './language/LanguageContext';
+import type { Language } from './language/types';
 
 // Export values
 export { 

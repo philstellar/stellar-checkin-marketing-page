@@ -1,10 +1,10 @@
 
+import React, { memo } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import { motion, AnimatePresence } from "framer-motion";
-import { memo } from "react";
 import LanguageSelector from '../LanguageSelector';
 
 type MobileNavProps = {
