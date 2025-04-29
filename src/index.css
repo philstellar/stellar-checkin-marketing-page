@@ -27,6 +27,14 @@
   font-display: swap;
 }
 
+/* Safe area insets for notched devices */
+:root {
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+}
+
 @layer base {
   :root {
     /* color-related variables */
@@ -113,11 +121,28 @@
     --sidebar-ring: 224 71% 4%;
   }
 
+  /* Fix for iOS Safari status bar */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--sat, 0);
+    background-color: #ffffff;
+    z-index: 9999;
+  }
+
   body {
     @apply text-black font-sans bg-white;
     font-family: 'Aeonik', sans-serif;
     text-rendering: optimizeLegibility;
     background-color: #fff;
+    /* Add padding for the iOS safe areas */
+    padding-top: var(--sat, 0);
+    padding-right: var(--sar, 0);
+    padding-bottom: var(--sab, 0);
+    padding-left: var(--sal, 0);
   }
 
   section {
@@ -130,6 +155,13 @@
   .hero-section {
     @apply bg-floral;
     background-color: #f9f8ef;
+  }
+
+  /* Fix for Safari - ensuring the header is white */
+  header {
+    background-color: #ffffff !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
   }
 
   h1, h2, h3, h4, h5, h6 {

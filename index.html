@@ -1,136 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stellar Checkin - Digitale Check-in Lösung für Ferienwohnungen</title>
-    <meta name="description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Gästemeldung, Kurtaxe, Zusatzleistungen und mehr." />
-    <meta name="author" content="Stellar Checkin" />
-    <meta name="keywords" content="check-in, ferienwohnungen, gästemeldung, kurtaxe, vacation rental, digital check-in, guest registration" />
-    <link rel="icon" href="/lovable-uploads/b1071c9d-b132-4a47-ab49-b3c6f6b61ed0.png" type="image/png" />
-    
-    <!-- Resource hints for external domains -->
-    <link rel="preconnect" href="https://assets.brevo.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.webp" as="image" fetchpriority="high" type="image/webp" />
-    <link rel="preload" href="/lovable-uploads/d22bc7c6-7bc6-4e74-80df-eb62d4f34b18.webp" as="image" fetchpriority="high" type="image/webp" />
-    <link rel="preload" href="/fonts/Aeonik-Bold.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/Aeonik-Medium.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/Aeonik-Regular.woff2" as="font" type="font/woff2" crossorigin />
-
-    <!-- Meta tags -->
-    <meta property="og:title" content="Stellar Checkin - Digitale Check-in Lösung für Ferienwohnungen" />
-    <meta property="og:description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Gästemeldung, Kurtaxe, Zusatzleistungen und mehr." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.webp" />
-    <meta property="og:url" content="https://stellar-checkin.com" />
-    <meta property="og:site_name" content="Stellar Checkin" />
-    <meta property="og:locale" content="de_DE" />
-    <meta property="og:locale:alternate" content="en_US" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="es_ES" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@stellar_checkin" />
-    <meta name="twitter:title" content="Stellar Checkin - Digitale Check-in Lösung" />
-    <meta name="twitter:description" content="Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Weniger Aufwand, mehr Umsatz." />
-    <meta name="twitter:image" content="/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png" />
-    
-    <!-- Mobile specific meta tags -->
-    <meta name="application-name" content="Stellar Checkin" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Stellar Checkin" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="theme-color" content="#a4c309" />
-    
-    <!-- Brevo Form Styles - minified & inlined for performance -->
-    <style>
-      @font-face{font-display:swap;font-family:Roboto;src:url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-weight:600;src:url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-weight:700;src:url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")}#sib-container input:-ms-input-placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container input::placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container textarea::placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container a{text-decoration:underline;color:#2BB2FC}.input--hidden{display:none}.sib-form-block__button{background-color:#a4c309!important}.sib-form-block__button:hover{background-color:#93af08!important}
-    </style>
-    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
-    <!-- Critical CSS inline - only for the heading optimization -->
-    <style>
-      .font-aeonik {
-        font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-display: swap;
-      }
-      .text-4xl {
-        font-size: 2.25rem;
-        line-height: 2.5rem;
-      }
-      @media (min-width: 768px) {
-        .text-5xl {
-          font-size: 3rem;
-          line-height: 1;
-        }
-      }
-      @media (min-width: 1024px) {
-        .text-6xl {
-          font-size: 3.75rem;
-          line-height: 1;
-        }
-      }
-    </style>
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5BR9N479');</script>
-    <!-- End Google Tag Manager -->
-    
-    <!-- Defer non-critical analytics -->
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=AW-16898170225"></script>
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-YZM5YCLGBD"></script>
-    <script defer>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YZM5YCLGBD');
-      gtag('config', 'AW-16898170225', { 'send_page_view': false });
-      gtag('event', 'page_view');
-      
-      window.addEventListener('load', function() {
-        gtag('event', 'conversion', {
-            'send_to': 'AW-16898170225/0RydCISEsrgaEPG61vk-',
-            'value': 1.0,
-            'currency': 'EUR'
-        });
-      });
-      
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-16898170225/iMqhCLSyvrgaEPG61vk-',
-            'value': 1.0,
-            'currency': 'EUR',
-            'event_callback': callback
-        });
-        return false;
-      }
-    </script>
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <title>Stellar Checkin</title>
+    <meta name="description" content="Digital check-in system for vacation rentals, hotels and b&bs" />
   </head>
-  
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BR9N479"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
-    <!-- Lovable Script Tag -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

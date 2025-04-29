@@ -63,8 +63,12 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
     <AnimatePresence>
       {isOpen && (
         <motion.div 
-          className={`fixed inset-0 z-50 ${isScrolled ? 'bg-white' : 'bg-floral'}`}
-          style={{ backgroundColor: isScrolled ? '#fff' : '#f9f8ef' }}
+          className="fixed inset-0 z-50"
+          style={{ 
+            backgroundColor: '#fff', // Always use white background
+            WebkitBackdropFilter: 'none',
+            backdropFilter: 'none'
+          }}
           variants={menuVariants}
           initial="hidden"
           animate="visible"
