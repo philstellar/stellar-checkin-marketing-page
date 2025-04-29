@@ -62,10 +62,10 @@ const HeroSection = () => {
               src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
               alt="Insurance Settings Interface" 
               loading="eager"
-              className="w-3/5 h-auto object-contain hero-image-shadow"
-              width={500}
+              className="w-4/5 md:w-4/5 h-auto object-contain hero-image-shadow"
+              width={700}
               height={800}
-              sizes="(max-width: 768px) 90vw, 500px"
+              sizes="(max-width: 768px) 90vw, 700px"
               priority={true}
             />
           </div>
