@@ -42,12 +42,13 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   // Add fetchpriority for important images - using camelCase for React
   const fetchPriority = priority ? "high" : undefined;
   
-  // For priority images (likely LCP candidates), apply display block to improve rendering
-  const imageStyle = priority ? {
+  // For priority images (likely LCP candidates), apply optimized styles
+  const imageStyle = {
     ...style,
-    display: 'block', // Prevent layout shifts
-    contentVisibility: 'auto' as 'auto', // Optimize rendering
-  } : style;
+    display: priority ? 'block' : undefined, // Prevent layout shifts
+    contentVisibility: priority ? 'auto' : undefined,
+    contain: 'paint', // Optimize rendering
+  };
   
   return (
     <picture>

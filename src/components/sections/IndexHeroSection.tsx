@@ -9,15 +9,43 @@ export function IndexHeroSection() {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   
-  // Format the headline to color "Check-in" with the specific green color
-  const getFormattedHeadline = () => {
+  // Pre-compute headline parts for better performance
+  const headlineParts = (() => {
     const headline = t('hero.headline');
-    // Handle different languages by coloring the word "Check-in" or its variants
-    return headline
-      .replace(/Check-in/gi, '<span style="color:#a4c309">Check-in</span>')
-      .replace(/Check-ins/gi, '<span style="color:#a4c309">Check-ins</span>')
-      .replace(/Checkin/gi, '<span style="color:#a4c309">Checkin</span>');
-  };
+    const checkInRegex = /(Check-in|Check-ins|Checkin)/gi;
+    
+    // Find matches and split text into parts
+    const matches = [...headline.matchAll(checkInRegex)];
+    if (!matches.length) return [{ text: headline, isHighlighted: false }];
+    
+    const parts = [];
+    let lastIndex = 0;
+    
+    matches.forEach(match => {
+      if (match.index > lastIndex) {
+        parts.push({
+          text: headline.substring(lastIndex, match.index),
+          isHighlighted: false
+        });
+      }
+      
+      parts.push({
+        text: match[0],
+        isHighlighted: true
+      });
+      
+      lastIndex = match.index + match[0].length;
+    });
+    
+    if (lastIndex < headline.length) {
+      parts.push({
+        text: headline.substring(lastIndex),
+        isHighlighted: false
+      });
+    }
+    
+    return parts;
+  })();
   
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
@@ -27,9 +55,17 @@ export function IndexHeroSection() {
           <div>
             <h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik"
-              dangerouslySetInnerHTML={{ __html: getFormattedHeadline() }}
-              style={{ contentVisibility: 'auto' }}
-            />
+              style={{ 
+                contentVisibility: 'auto',
+                textRendering: 'optimizeSpeed'
+              }}
+            >
+              {headlineParts.map((part, index) => (
+                part.isHighlighted ? (
+                  <span key={index} className="text-[#a4c309]">{part.text}</span>
+                ) : part.text
+              ))}
+            </h1>
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('hero.subheadline')}
             </p>

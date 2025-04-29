@@ -8,7 +8,7 @@
   src: url('/fonts/Aeonik-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: swap; /* Ensure text remains visible during font loading */
 }
 
 @font-face {
@@ -116,6 +116,7 @@
   body {
     @apply text-black font-sans bg-white;
     font-family: 'Aeonik', sans-serif;
+    text-rendering: optimizeLegibility;
   }
 
   section {
@@ -129,7 +130,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    text-rendering: optimizeLegibility;
+    text-rendering: optimizeSpeed;
+    font-display: swap;
   }
 
   .section-padding {
