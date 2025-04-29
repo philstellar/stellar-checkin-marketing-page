@@ -39,20 +39,46 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     contain: priority ? 'paint' : undefined, // Optimize rendering
   };
 
+  // Use webp version if available (assuming .png or .jpg original)
+  const srcWebp = src.replace(/\.(png|jpg|jpeg)$/, '.webp');
+  const isWebpAvailable = srcWebp !== src;
+
   return (
-    <img
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      className={className}
-      loading={loadingValue}
-      style={imageStyle}
-      onClick={onClick}
-      sizes={sizes}
-      fetchPriority={fetchPriority}
-      decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
-    />
+    <>
+      {isWebpAvailable ? (
+        <picture>
+          <source srcSet={srcWebp} type="image/webp" />
+          <source srcSet={src} type={`image/${src.split('.').pop()}`} />
+          <img
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            className={className}
+            loading={loadingValue}
+            style={imageStyle}
+            onClick={onClick}
+            sizes={sizes}
+            fetchPriority={fetchPriority}
+            decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
+          />
+        </picture>
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className={className}
+          loading={loadingValue}
+          style={imageStyle}
+          onClick={onClick}
+          sizes={sizes}
+          fetchPriority={fetchPriority}
+          decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
+        />
+      )}
+    </>
   );
 };
 

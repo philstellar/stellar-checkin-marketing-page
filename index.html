@@ -16,12 +16,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.webp" as="image" fetchpriority="high" type="image/webp" />
-    <link rel="preload" href="/lovable-uploads/d22bc7c6-7bc6-4e74-80df-eb62d4f34b18.webp" as="image" fetchpriority="high" type="image/webp" />
-    <link rel="preload" href="/fonts/Aeonik-Bold.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/Aeonik-Medium.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/Aeonik-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Preload critical fonts with high fetchpriority -->
+    <link rel="preload" href="/fonts/Aeonik-Regular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
+    <link rel="preload" href="/fonts/Aeonik-Medium.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
+    <link rel="preload" href="/fonts/Aeonik-Bold.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
+    
+    <!-- Preload critical above-the-fold images -->
+    <link rel="preload" href="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" as="image" fetchpriority="high" />
 
     <!-- Meta tags -->
     <meta property="og:title" content="Stellar Checkin - Digitale Check-in Lösung für Ferienwohnungen" />
@@ -50,17 +51,74 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#a4c309" />
     
-    <!-- Brevo Form Styles - minified & inlined for performance -->
+    <!-- Critical CSS for above-the-fold content - EXPANDED -->
     <style>
-      @font-face{font-display:swap;font-family:Roboto;src:url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-weight:600;src:url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-weight:700;src:url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")}#sib-container input:-ms-input-placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container input::placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container textarea::placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container a{text-decoration:underline;color:#2BB2FC}.input--hidden{display:none}.sib-form-block__button{background-color:#a4c309!important}.sib-form-block__button:hover{background-color:#93af08!important}
-    </style>
-    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
-    <!-- Critical CSS inline - only for the heading optimization -->
-    <style>
+      /* Font definitions with optimized loading */
+      @font-face {
+        font-family: 'Aeonik';
+        src: url('/fonts/Aeonik-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Aeonik';
+        src: url('/fonts/Aeonik-Medium.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Aeonik';
+        src: url('/fonts/Aeonik-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      /* Base critical styles for initial render */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        text-rendering: optimizeLegibility;
+        background-color: #fff;
+        color: #000;
+        line-height: 1.5;
+      }
+      
+      /* Header styles (always visible on first paint) */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition: all 0.3s;
+        background-color: #fff;
+        padding: 1rem 0;
+      }
+      
+      /* Container helper */
+      .container-custom {
+        width: 100%;
+        max-width: 90rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      
+      /* Hero section (above the fold) */
+      .hero-section {
+        background-color: #f9f8ef;
+        padding-top: 6rem;
+        min-height: 600px;
+      }
+      
+      /* Font helpers for hero section */
       .font-aeonik {
         font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-display: swap;
       }
       .text-4xl {
         font-size: 2.25rem;
@@ -78,28 +136,114 @@
           line-height: 1;
         }
       }
+      
+      /* Hide text while fonts load */
+      .font-opacity-transition {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .fonts-loaded .font-opacity-transition {
+        opacity: 1;
+      }
+    </style>
+    
+    <!-- Brevo Form Styles - minified & inlined for performance -->
+    <style>
+      @font-face{font-display:swap;font-family:Roboto;src:url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-weight:600;src:url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-weight:700;src:url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"),url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")}#sib-container input:-ms-input-placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container input::placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container textarea::placeholder{text-align:left;font-family:Helvetica,sans-serif;color:#c0ccda}#sib-container a{text-decoration:underline;color:#2BB2FC}.input--hidden{display:none}.sib-form-block__button{background-color:#a4c309!important}.sib-form-block__button:hover{background-color:#93af08!important}
     </style>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5BR9N479');</script>
-    <!-- End Google Tag Manager -->
-    
-    <!-- Defer non-critical analytics -->
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=AW-16898170225"></script>
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-YZM5YCLGBD"></script>
+    <!-- Font loading detection script -->
+    <script>
+      (function() {
+        // Add class when fonts are loaded
+        if ("fonts" in document) {
+          Promise.all([
+            document.fonts.load("400 1em Aeonik"),
+            document.fonts.load("500 1em Aeonik"),
+            document.fonts.load("700 1em Aeonik")
+          ]).then(() => {
+            document.documentElement.classList.add("fonts-loaded");
+          });
+        } else {
+          // Fallback for browsers that don't support Font Loading API
+          document.documentElement.classList.add("fonts-loaded");
+        }
+      })();
+    </script>
+
+    <!-- Optimized email obfuscation script - defer to not block rendering -->
     <script defer>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YZM5YCLGBD');
-      gtag('config', 'AW-16898170225', { 'send_page_view': false });
-      gtag('event', 'page_view');
-      
+      document.addEventListener('DOMContentLoaded', function() {
+        const emailElements = document.querySelectorAll('[data-email]');
+        emailElements.forEach(function(element) {
+          const encodedEmail = element.getAttribute('data-email');
+          if (encodedEmail) {
+            const decodedEmail = encodedEmail.replace(/AT/, '@').replace(/DOT/g, '.');
+            
+            if (element.tagName.toLowerCase() === 'a') {
+              element.href = 'mailto:' + decodedEmail;
+              if (!element.textContent || element.textContent === '') {
+                element.textContent = decodedEmail;
+              }
+            } else {
+              element.textContent = decodedEmail;
+            }
+          }
+        });
+      });
+    </script>
+    
+    <!-- Preconnect for HTTP → HTTPS redirect (non-blocking) -->
+    <script defer>
+      (function() {
+        var location = window.location;
+        if (location.protocol === 'http:') {
+          window.location.href = 'https://' + location.hostname + location.pathname + location.search;
+        }
+      })();
+    </script>
+  </head>
+  
+  <body>
+    <div id="root"></div>
+    
+    <!-- Deferred non-critical script loading -->
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    
+    <!-- Deferred analytics - loaded after page content -->
+    <script defer src="https://sibforms.com/forms/end-form/build/sib-styles.css"></script>
+    
+    <!-- Google Tag Manager -->
+    <script>
       window.addEventListener('load', function() {
+        // GTM script
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5BR9N479');
+        
+        // Analytics scripts - deferred
+        const analyticsScript1 = document.createElement('script');
+        analyticsScript1.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16898170225';
+        analyticsScript1.async = true;
+        document.body.appendChild(analyticsScript1);
+        
+        const analyticsScript2 = document.createElement('script');
+        analyticsScript2.src = 'https://www.googletagmanager.com/gtag/js?id=G-YZM5YCLGBD';
+        analyticsScript2.async = true;
+        document.body.appendChild(analyticsScript2);
+        
+        // Initialize analytics
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YZM5YCLGBD');
+        gtag('config', 'AW-16898170225', { 'send_page_view': false });
+        gtag('event', 'page_view');
+        
+        // Conversion tracking
         gtag('event', 'conversion', {
             'send_to': 'AW-16898170225/0RydCISEsrgaEPG61vk-',
             'value': 1.0,
@@ -122,59 +266,9 @@
         return false;
       }
     </script>
-
-    <!-- Email obfuscation script -->
-    <script>
-      // Simple email obfuscation
-      document.addEventListener('DOMContentLoaded', function() {
-        const emailElements = document.querySelectorAll('[data-email]');
-        emailElements.forEach(function(element) {
-          const encodedEmail = element.getAttribute('data-email');
-          if (encodedEmail) {
-            const decodedEmail = encodedEmail.replace(/AT/, '@').replace(/DOT/g, '.');
-            
-            if (element.tagName.toLowerCase() === 'a') {
-              element.href = 'mailto:' + decodedEmail;
-              if (!element.textContent || element.textContent === '') {
-                element.textContent = decodedEmail;
-              }
-            } else {
-              element.textContent = decodedEmail;
-            }
-          }
-        });
-      });
-    </script>
     
-    <!-- HTTP to HTTPS and www/non-www redirect logic -->
-    <script>
-      // Redirect to HTTPS and consistent www/non-www
-      (function() {
-        var location = window.location;
-        var hostname = location.hostname;
-        var preferredDomain = 'stellar-checkin.com'; // Choose your preferred domain
-        
-        // Redirect HTTP to HTTPS first
-        if (location.protocol === 'http:') {
-          window.location.href = 'https://' + hostname + location.pathname + location.search;
-        } 
-        // Then handle www vs non-www consistently
-        else if ((hostname === preferredDomain && hostname.indexOf('www.') === 0) || 
-                 (hostname === 'www.' + preferredDomain && preferredDomain.indexOf('www.') !== 0)) {
-          window.location.href = 'https://' + preferredDomain + location.pathname + location.search;
-        }
-      })();
-    </script>
-  </head>
-  
-  <body>
-    <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) - placed at end of body -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BR9N479"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div id="root"></div>
-    <!-- Lovable Script Tag -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

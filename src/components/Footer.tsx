@@ -98,7 +98,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="container-custom mt-8 border-t border-royal-100 pt-4 text-center text-sm text-royal-600">
-        &copy; {currentYear} Stellar Checkin. {t('footer.copyright')}
+        &copy; {currentYear} Stellar Checkin. {t('footer.allRightsReserved')}
       </div>
     </footer>
   );
