@@ -3,15 +3,20 @@
 import { 
   LanguageContext, 
   LanguageProvider, 
-  useLanguage,
-  Language 
+  useLanguage
 } from './language/LanguageContext';
 
+// Import type separately for proper re-export
+import type { Language } from './language/LanguageContext';
+
+// Export values
 export { 
   LanguageContext, 
   LanguageProvider, 
-  useLanguage,
-  Language 
+  useLanguage
 };
+
+// Export type properly
+export type { Language };
 
 export default LanguageContext;
