@@ -6,6 +6,7 @@ import { useTranslation } from "@/hooks/use-translation";
 import { useLanguage } from "@/context/LanguageContext";
 import { Separator } from "@/components/ui/separator";
 import OptimizedImage from "./OptimizedImage";
+
 const aboutRoutes: Record<string, {
   aboutUs: string;
   successStories: string;
@@ -32,6 +33,7 @@ const aboutRoutes: Record<string, {
     faq: "/es/faq"
   }
 };
+
 const Footer = () => {
   const {
     t
@@ -41,6 +43,7 @@ const Footer = () => {
   } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
+  
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, hash?: string) => {
     e.preventDefault();
 
@@ -66,6 +69,7 @@ const Footer = () => {
       });
     }
   };
+  
   const handleLogoClick = () => {
     // Navigate to the check-in page based on current language
     navigate(`/${language}/`);
@@ -74,7 +78,9 @@ const Footer = () => {
       behavior: 'smooth'
     });
   };
+  
   const about = aboutRoutes[language] || aboutRoutes.de;
+  
   return <footer className="bg-white">
       <div className="container-custom bg-white">
         <Separator className="my-8 bg-[#8E9196]" />
@@ -98,7 +104,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to={`/${language}/versicherung`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                <Link to={`/${language === 'en' ? 'en/insurance' : language === 'it' ? 'it/assicurazione' : language === 'es' ? 'es/seguro' : 'de/versicherung'}`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.insurance')}
                 </Link>
@@ -173,4 +179,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default memo(Footer);

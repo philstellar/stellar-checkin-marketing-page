@@ -47,7 +47,7 @@ export const navigationIT = {
   imprint: "Impressum",
   privacyPolicy: "Informativa sulla Privacy", 
   termsAndConditions: "Termini e Condizioni",
-  insurance: "Versicherung",
+  insurance: "Assicurazione",
   trustBadge: "Trust Badge",
   aboutStellar: "Chi Siamo",
   aboutUs: "Chi Siamo",
@@ -66,7 +66,7 @@ export const navigationES = {
   imprint: "Aviso Legal",
   privacyPolicy: "Política de Privacidad", 
   termsAndConditions: "Términos y Condiciones",
-  insurance: "Versicherung",
+  insurance: "Seguro",
   trustBadge: "Trust Badge",
   aboutStellar: "Sobre Nosotros",
   aboutUs: "Sobre Nosotros",
@@ -74,4 +74,3 @@ export const navigationES = {
   faq: "Preguntas Frecuentes",
   solutions: "Soluciones"
 };
-
