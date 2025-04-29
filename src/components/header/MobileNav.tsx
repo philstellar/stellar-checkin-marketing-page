@@ -38,25 +38,17 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
   };
 
   const handleSectionNavigation = (sectionId: string) => {
-    if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
-      navigate(`/${currentLanguage}/`, { 
-        state: { 
-          scrollTo: sectionId 
-        } 
-      });
-      // Always scroll to top when navigating from another page
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+    const isHomePage = location.pathname === `/${currentLanguage}/` || location.pathname === '/';
+    
+    if (!isHomePage) {
+      // If we're not on the homepage, navigate to home with the section in the URL
+      navigate(`/${currentLanguage}/#${sectionId}`);
+      onClose();
     } else {
+      // If we're already on the homepage, just scroll to the section
       handleSectionClick(sectionId);
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      onClose();
     }
-    onClose();
   };
 
   return (
@@ -115,19 +107,21 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 {t('navigation.trustBadge')}
               </button>
 
-              <button 
-                onClick={() => handleSectionNavigation('preise')}
+              <a 
+                href={`/${currentLanguage}/#${t('navigation.pricingAnchor')}`} 
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                onClick={onClose}
               >
                 {t('navigation.pricing')}
-              </button>
+              </a>
               
-              <button 
-                onClick={() => handleSectionNavigation('kontakt')}
+              <a 
+                href={`/${currentLanguage}/#${t('navigation.contactAnchor')}`} 
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                onClick={onClose}
               >
                 {t('navigation.contact')}
-              </button>
+              </a>
             </div>
             
             <CTAButton 

@@ -1,9 +1,10 @@
 
 export const footerDE = {
-  tagline: "Digitale Gästeregistrierung für Ferienunterkünfte – schnell, sicher, papierlos.",
-  legal: "Rechtliches",
-  imprint: "Impressum",
-  privacy: "Datenschutz",
-  terms: "AGB",
-  copyright: "Alle Rechte vorbehalten."
+  tagline: 'Die All-in-One-Lösung für digitales Gästemanagement und automatisierten Check-in für Ferienunterkünfte, Hotels und B&Bs.',
+  copyright: 'Alle Rechte vorbehalten.',
+  legal: 'Rechtliches',
+  imprint: 'Impressum',
+  privacy: 'Datenschutz',
+  terms: 'AGB',
+  sitemap: 'Sitemap'
 };

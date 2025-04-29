@@ -5,10 +5,13 @@ import ContactInformation from "./ContactInformation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
 
 const ContactSection = () => {
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
+  
+  // Get the correct ID based on language
+  const sectionId = currentLanguage === 'es' ? 'contacto' : 'kontakt';
 
   return (
-    <section id="kontakt" className="section-padding bg-white">
+    <section id={sectionId} className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
