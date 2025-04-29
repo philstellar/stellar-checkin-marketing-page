@@ -1,4 +1,3 @@
 
-import MetaHead from './MetaHead';
-
-export { MetaHead };
+export { default as MetaHead } from './MetaHead';
+export { default as MetaProvider } from './MetaProvider';

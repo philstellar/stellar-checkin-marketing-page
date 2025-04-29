@@ -1,8 +1,21 @@
 
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Language, LanguageContextType, LanguageProviderProps } from './language/types';
 import { getLanguageFromPath, getLocalizedPath } from './language/utils';
+
+// Define Language type
+export type Language = 'de' | 'en' | 'es' | 'it';
+
+// Define context type
+export interface LanguageContextType {
+  language: Language;
+  setLanguage: (language: Language) => void;
+}
+
+// Define provider props type
+export interface LanguageProviderProps {
+  children: React.ReactNode;
+}
 
 // Create the context with default values
 export const LanguageContext = createContext<LanguageContextType>({
@@ -51,6 +64,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     // Save to localStorage
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', newLanguage);
+      // Mark that language was changed by picker to prevent detection popup
+      localStorage.setItem('languageChoiceMade', 'true');
+      localStorage.setItem('lastLanguageChangeByPicker', 'true');
     }
     
     // Update URL based on current path
@@ -63,9 +79,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     const urlLanguage = getLanguageFromPath(location.pathname);
     if (urlLanguage && urlLanguage !== language) {
       setLanguageState(urlLanguage);
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('language', urlLanguage);
-      }
+      localStorage.setItem('language', urlLanguage);
     }
   }, [location.pathname, language]);
 
