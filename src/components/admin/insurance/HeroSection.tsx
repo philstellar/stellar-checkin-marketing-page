@@ -4,7 +4,6 @@ import { UserCheck } from 'lucide-react';
 import CTAButton from '../../../components/CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import OptimizedImage from '@/components/OptimizedImage';
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const HeroSection = () => {
@@ -59,22 +58,16 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="order-1 md:order-last flex justify-center">
-            <div className="w-full md:w-4/5 relative" style={{ maxWidth: '700px' }}>
-              <div className="relative">
-                <AspectRatio ratio={isMobile ? 4/5 : 4/3} className="bg-transparent">
-                  <OptimizedImage 
-                    src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
-                    alt="Insurance Settings Interface" 
-                    loading="eager"
-                    className="w-full h-full object-contain hero-image-shadow"
-                    width={700}
-                    height={525}
-                    sizes="(max-width: 768px) 100vw, 700px"
-                    priority={true}
-                  />
-                </AspectRatio>
-              </div>
-            </div>
+            <OptimizedImage 
+              src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
+              alt="Insurance Settings Interface" 
+              loading="eager"
+              className="w-3/5 h-auto object-contain hero-image-shadow"
+              width={500}
+              height={800}
+              sizes="(max-width: 768px) 90vw, 500px"
+              priority={true}
+            />
           </div>
         </div>
       </div>
