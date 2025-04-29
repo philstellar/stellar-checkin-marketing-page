@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import * as React from 'react';
 import type { Language } from '@/context/language/types';
 import { useLocation } from 'react-router-dom';
 
@@ -8,8 +8,8 @@ type SupportedLanguages = Language | 'fr';
 const SUPPORTED_LANGUAGES: SupportedLanguages[] = ['en', 'de', 'fr', 'es', 'it'];
 
 export const useLanguageDetection = () => {
-  const [shouldShowPopup, setShouldShowPopup] = useState(false);
-  const [detectedLanguage, setDetectedLanguage] = useState<SupportedLanguages | null>(null);
+  const [shouldShowPopup, setShouldShowPopup] = React.useState(false);
+  const [detectedLanguage, setDetectedLanguage] = React.useState<SupportedLanguages | null>(null);
   const location = useLocation();
 
   const getBrowserLanguage = (): SupportedLanguages | null => {
@@ -24,7 +24,7 @@ export const useLanguageDetection = () => {
     return SUPPORTED_LANGUAGES.includes(langFromPath) ? langFromPath : null;
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     // Check if user has made a language choice OR navigated via picker
     const hasUserMadeChoice = localStorage.getItem('languageChoiceMade') === 'true';
     const hasBeenOnPage = localStorage.getItem('hasVisitedSite') === 'true';
