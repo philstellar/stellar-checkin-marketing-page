@@ -3,8 +3,8 @@ export const successStoriesEN = {
   title: "Our <span>Success Stories</span>",
   subtitle: "Discover how property owners and hosts use Stellar Checkin to optimize their processes and boost their success.",
   cta: "Register now",
-  clientsTitle: "Selected Customers",
-  sectionTitle: "Customer Spotlights",
+  clientsTitle: "Selected Clients",
+  sectionTitle: "Success Stories",
   properties: "Properties",
   clientSince: "Client since",
   testimonials: [
