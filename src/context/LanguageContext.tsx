@@ -1,5 +1,6 @@
 
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import * as React from 'react';
+import { useState, createContext, useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Language, LanguageContextType, LanguageProviderProps } from './language/types';
 import { getLanguageFromPath, getLocalizedPath } from './language/utils';
