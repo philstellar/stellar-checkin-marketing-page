@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import * as React from 'react';
 import { useToast } from '@/hooks/use-toast';
 
 type ConsentStatus = 'pending' | 'accepted' | 'rejected';
@@ -10,10 +10,10 @@ interface CookieConsentContextType {
   rejectCookies: () => void;
 }
 
-const CookieConsentContext = createContext<CookieConsentContextType | undefined>(undefined);
+const CookieConsentContext = React.createContext<CookieConsentContextType | undefined>(undefined);
 
 export const useCookieConsent = () => {
-  const context = useContext(CookieConsentContext);
+  const context = React.useContext(CookieConsentContext);
   if (!context) {
     throw new Error('useCookieConsent must be used within a CookieConsentProvider');
   }
@@ -25,10 +25,10 @@ interface CookieConsentProviderProps {
 }
 
 export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ children }) => {
-  const [consentStatus, setConsentStatus] = useState<ConsentStatus>('pending');
+  const [consentStatus, setConsentStatus] = React.useState<ConsentStatus>('pending');
   const { toast } = useToast();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const savedConsent = localStorage.getItem('cookieConsent');
     if (savedConsent) {
       setConsentStatus(savedConsent as ConsentStatus);
