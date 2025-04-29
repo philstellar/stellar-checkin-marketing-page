@@ -5,15 +5,15 @@ import { useTranslation } from "@/hooks/use-translation";
 import { useIsMobile } from "@/hooks/use-mobile";
 import OptimizedImage from "@/components/OptimizedImage";
 import { useNavigate } from "react-router-dom";
-import { memo, useMemo, useCallback } from "react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-export const IndexHeroSection = memo(() => {
+export function IndexHeroSection() {
   const isMobile = useIsMobile();
   const { t, currentLanguage } = useTranslation();
   const navigate = useNavigate();
   
-  // Optimization: pre-compute headline parts only when needed
-  const headlineParts = useMemo(() => {
+  // Pre-compute headline parts for better performance
+  const headlineParts = (() => {
     const headline = t('hero.headline');
     const checkInRegex = /(Check-in|Check-ins|Checkin)/gi;
     
@@ -25,21 +25,19 @@ export const IndexHeroSection = memo(() => {
     let lastIndex = 0;
     
     matches.forEach(match => {
-      if (match.index !== undefined && match.index > lastIndex) {
+      if (match.index > lastIndex) {
         parts.push({
           text: headline.substring(lastIndex, match.index),
           isHighlighted: false
         });
       }
       
-      if (match.index !== undefined) {
-        parts.push({
-          text: match[0],
-          isHighlighted: true
-        });
-        
-        lastIndex = match.index + match[0].length;
-      }
+      parts.push({
+        text: match[0],
+        isHighlighted: true
+      });
+      
+      lastIndex = match.index + match[0].length;
     });
     
     if (lastIndex < headline.length) {
@@ -50,12 +48,11 @@ export const IndexHeroSection = memo(() => {
     }
     
     return parts;
-  }, [t]);
+  })();
   
-  // Optimization: memoize handlers
-  const handleTrustBadgeClick = useCallback(() => {
+  const handleTrustBadgeClick = () => {
     navigate(`/${currentLanguage}/trust-badge`);
-  }, [navigate, currentLanguage]);
+  };
   
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
@@ -97,21 +94,25 @@ export const IndexHeroSection = memo(() => {
           </div>
           
           <div className="order-1 md:order-last flex justify-center md:justify-end">
-            <OptimizedImage 
-              src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
-              alt="Stellar Online Check-in Interface" 
-              className="w-3/5 h-auto object-contain bg-transparent hero-image-shadow" 
-              loading="eager" 
-              priority={true}
-              width={500} 
-              height={800} 
-              sizes="(max-width: 768px) 90vw, 500px"
-            />
+            <div className="w-full md:w-4/5 relative" style={{ maxWidth: '700px' }}>
+              <div className="relative">
+                <AspectRatio ratio={isMobile ? 4/5 : 4/3} className="bg-transparent">
+                  <OptimizedImage 
+                    src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
+                    alt="Stellar Online Check-in Interface" 
+                    className="w-full h-full object-contain bg-transparent md:mr-4 hero-image-shadow" 
+                    loading="eager" 
+                    priority={true}
+                    width={700} 
+                    height={525} 
+                    sizes="(max-width: 768px) 100vw, 700px"
+                  />
+                </AspectRatio>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-});
-
-IndexHeroSection.displayName = 'IndexHeroSection';
+}

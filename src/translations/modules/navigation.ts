@@ -15,9 +15,7 @@ export const navigationDE = {
   aboutUs: "Über uns",
   successStories: "Erfolgsbeispiele",
   faq: "FAQ",
-  solutions: "Lösungen",
-  pricingAnchor: "preise",
-  contactAnchor: "kontakt"
+  solutions: "Lösungen"
 };
 
 export const navigationEN = {
@@ -36,9 +34,7 @@ export const navigationEN = {
   aboutUs: "About Us",
   successStories: "Success Stories",
   faq: "FAQ",
-  solutions: "Solutions",
-  pricingAnchor: "preise",
-  contactAnchor: "kontakt"
+  solutions: "Solutions"
 };
 
 export const navigationIT = {
@@ -51,15 +47,13 @@ export const navigationIT = {
   imprint: "Impressum",
   privacyPolicy: "Informativa sulla Privacy", 
   termsAndConditions: "Termini e Condizioni",
-  insurance: "Assicurazione",
+  insurance: "Versicherung",
   trustBadge: "Trust Badge",
   aboutStellar: "Chi Siamo",
   aboutUs: "Chi Siamo",
   successStories: "Storie di Successo",
   faq: "FAQ",
-  solutions: "Soluzioni",
-  pricingAnchor: "preise",
-  contactAnchor: "kontakt"
+  solutions: "Soluzioni"
 };
 
 export const navigationES = {
@@ -72,13 +66,12 @@ export const navigationES = {
   imprint: "Aviso Legal",
   privacyPolicy: "Política de Privacidad", 
   termsAndConditions: "Términos y Condiciones",
-  insurance: "Seguro",
+  insurance: "Versicherung",
   trustBadge: "Trust Badge",
   aboutStellar: "Sobre Nosotros",
   aboutUs: "Sobre Nosotros",
   successStories: "Historias de Éxito",
   faq: "Preguntas Frecuentes",
-  solutions: "Soluciones",
-  pricingAnchor: "precios",
-  contactAnchor: "contacto"
+  solutions: "Soluciones"
 };
+
