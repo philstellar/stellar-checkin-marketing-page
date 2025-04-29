@@ -28,9 +28,24 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
   // Convert priority to loading="eager" instead of using fetchPriority which causes a warning
   const loadingValue = priority ? 'eager' : loading;
-
+  
+  // Generate WebP source if the original is PNG
+  const webpSrc = src.toLowerCase().endsWith('.png')
+    ? src.replace(/\.png$/i, '.webp')
+    : src;
+  
+  // We'll provide the original as fallback for browsers that don't support WebP
+  const isPng = src.toLowerCase().endsWith('.png');
+  
   return (
     <picture>
+      {isPng && (
+        <source 
+          srcSet={webpSrc} 
+          type="image/webp" 
+          sizes={sizes}
+        />
+      )}
       <img
         src={src}
         alt={alt}
