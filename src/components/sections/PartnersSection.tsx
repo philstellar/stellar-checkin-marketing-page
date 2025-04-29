@@ -10,7 +10,7 @@ const testimonialLogos = [{
   alt: "Homeby",
   width: 160
 }, {
-  src: "/lovable-uploads/new-favorent-logo.webp",
+  src: "/lovable-uploads/ad8e2b41-5b7e-4094-bf01-18582faeba83.png",
   alt: "Favorent",
   width: 150
 }, {

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Book, ShieldPlus, Clock, Wallet } from 'lucide-react';
@@ -68,7 +69,7 @@ const VersicherungPage: React.FC = () => {
               width: 160
             }, 
             {
-              src: "/lovable-uploads/new-favorent-logo.webp",
+              src: "/lovable-uploads/ad8e2b41-5b7e-4094-bf01-18582faeba83.png",
               alt: "Favorent",
               width: 150
             }, 
