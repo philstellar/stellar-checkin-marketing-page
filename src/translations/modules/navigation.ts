@@ -79,6 +79,6 @@ export const navigationES = {
   successStories: "Historias de Éxito",
   faq: "Preguntas Frecuentes",
   solutions: "Soluciones",
-  pricingAnchor: "preise",
-  contactAnchor: "kontakt"
+  pricingAnchor: "precios",
+  contactAnchor: "contacto"
 };
