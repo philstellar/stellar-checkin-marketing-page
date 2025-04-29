@@ -8,9 +8,16 @@ import { englishRoutes } from './en-routes';
 import { italianRoutes } from './it-routes';
 import { spanishRoutes } from './es-routes';
 
+// Define the interface for route configuration
+interface RouteConfig {
+  path: string;
+  element?: React.ReactNode;
+  redirectTo?: string;
+}
+
 const RouteConfig = () => {
   // Combine all routes
-  const allRoutes = [
+  const allRoutes: RouteConfig[] = [
     ...commonRoutes,
     ...germanRoutes,
     ...englishRoutes,

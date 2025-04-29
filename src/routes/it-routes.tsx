@@ -3,6 +3,13 @@ import { lazy } from 'react';
 import Index from '@/pages/Index';
 import VersicherungPage from '@/components/admin/VersicherungPage';
 
+// Define the interface for route configuration
+interface RouteConfig {
+  path: string;
+  element?: React.ReactNode;
+  redirectTo?: string;
+}
+
 // Lazy load pages
 const ImpressumIT = lazy(() => import('@/pages/legal/ImpressumIT'));
 const DatenschutzIT = lazy(() => import('@/pages/legal/DatenschutzIT'));
@@ -12,7 +19,7 @@ const TrustBadgePage = lazy(() => import('@/components/admin/TrustBadgePage'));
 const AboutUsIT = lazy(() => import('@/pages/ueber-uns/AboutUsIT'));
 const SuccessStoriesIT = lazy(() => import('@/pages/erfolgsgeschichten/SuccessStoriesIT'));
 
-export const italianRoutes = [
+export const italianRoutes: RouteConfig[] = [
   {
     path: '/it',
     element: <Index />
