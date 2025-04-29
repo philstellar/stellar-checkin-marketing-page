@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getLanguageFromPath, getLocalizedPath } from './utils';
-import { LanguageContextType, LanguageProviderProps, Language } from './types';
+import type { LanguageContextType, LanguageProviderProps, Language } from './types';
 
 // Create the context with default values
 const LanguageContext = createContext<LanguageContextType>({
@@ -45,4 +45,6 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
 // Export the context for direct use if needed
 export { LanguageContext };
+
+// Export types
 export type { Language };

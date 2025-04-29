@@ -1,11 +1,11 @@
 
 import { useEffect, useState } from 'react';
-import { Language } from '@/context/language/types';
+import type { Language } from '@/context/LanguageContext';
 import { useLocation } from 'react-router-dom';
 
 type SupportedLanguages = Language | 'fr';
 
-const SUPPORTED_LANGUAGES: SupportedLanguages[] = ['en', 'de', 'fr', 'es'];
+const SUPPORTED_LANGUAGES: SupportedLanguages[] = ['en', 'de', 'fr', 'es', 'it'];
 
 export const useLanguageDetection = () => {
   const [shouldShowPopup, setShouldShowPopup] = useState(false);
