@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -120,6 +121,49 @@
         });
         return false;
       }
+    </script>
+
+    <!-- Email obfuscation script -->
+    <script>
+      // Simple email obfuscation
+      document.addEventListener('DOMContentLoaded', function() {
+        const emailElements = document.querySelectorAll('[data-email]');
+        emailElements.forEach(function(element) {
+          const encodedEmail = element.getAttribute('data-email');
+          if (encodedEmail) {
+            const decodedEmail = encodedEmail.replace(/AT/, '@').replace(/DOT/g, '.');
+            
+            if (element.tagName.toLowerCase() === 'a') {
+              element.href = 'mailto:' + decodedEmail;
+              if (!element.textContent || element.textContent === '') {
+                element.textContent = decodedEmail;
+              }
+            } else {
+              element.textContent = decodedEmail;
+            }
+          }
+        });
+      });
+    </script>
+    
+    <!-- HTTP to HTTPS and www/non-www redirect logic -->
+    <script>
+      // Redirect to HTTPS and consistent www/non-www
+      (function() {
+        var location = window.location;
+        var hostname = location.hostname;
+        var preferredDomain = 'stellar-checkin.com'; // Choose your preferred domain
+        
+        // Redirect HTTP to HTTPS first
+        if (location.protocol === 'http:') {
+          window.location.href = 'https://' + hostname + location.pathname + location.search;
+        } 
+        // Then handle www vs non-www consistently
+        else if ((hostname === preferredDomain && hostname.indexOf('www.') === 0) || 
+                 (hostname === 'www.' + preferredDomain && preferredDomain.indexOf('www.') !== 0)) {
+          window.location.href = 'https://' + preferredDomain + location.pathname + location.search;
+        }
+      })();
     </script>
   </head>
   
