@@ -1,4 +1,3 @@
 
-import * as React from 'react';
-// Re-export language context from the language folder
+// Simple re-export file - fixes circular dependency issues
 export * from './language/LanguageContext';

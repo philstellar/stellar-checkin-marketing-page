@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Shield, Info, Cookie, Settings, CheckCircle2, XCircle, AlertTriangle } from 'lucide-react';
 import { useCookieConsent } from '@/context/CookieConsentContext';
@@ -9,7 +9,7 @@ import { useTranslation } from '@/hooks/use-translation';
 
 const CookieBanner = () => {
   const { consentStatus, acceptCookies, rejectCookies } = useCookieConsent();
-  const [showDetails, setShowDetails] = useState(false);
+  const [showDetails, setShowDetails] = React.useState(false);
   const { t } = useTranslation();
   
   if (consentStatus !== 'pending') {
