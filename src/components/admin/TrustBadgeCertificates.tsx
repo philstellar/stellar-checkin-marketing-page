@@ -3,27 +3,36 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const certificates = [
   {
     id: 4,
     src: "/lovable-uploads/36636722-b73c-4517-b0b4-8f86fa601011.png",
-    alt: "Trust Badge Certificate 4"
+    alt: "Trust Badge Certificate 4",
+    width: 450,
+    height: 600
   },
   {
     id: 1,
     src: "/lovable-uploads/a87e68a9-df58-447c-b9bf-d197457953f3.png",
-    alt: "Trust Badge Certificate 1"
+    alt: "Trust Badge Certificate 1",
+    width: 450,
+    height: 600
   },
   {
     id: 2,
     src: "/lovable-uploads/df315b16-7211-46de-adf8-952b9517f932.png",
-    alt: "Trust Badge Certificate 3"
+    alt: "Trust Badge Certificate 3",
+    width: 450,
+    height: 600
   },
   {
     id: 3,
     src: "/lovable-uploads/05f1c849-d684-4052-8971-994a0c72e9d6.png",
-    alt: "Trust Badge Certificate 2"
+    alt: "Trust Badge Certificate 2",
+    width: 450,
+    height: 600
   }
 ];
 
@@ -47,10 +56,14 @@ const TrustBadgeCertificates = () => {
               className="hover:scale-105 transition-transform duration-300 cursor-pointer"
               onClick={() => setSelectedImage(cert.src)}
             >
-              <img
+              <OptimizedImage
                 src={cert.src}
                 alt={cert.alt}
+                width={cert.width}
+                height={cert.height}
                 className="w-full h-auto rounded-[5px] shadow-lg"
+                loading="lazy"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 450px"
               />
             </motion.div>
           ))}
@@ -66,10 +79,12 @@ const TrustBadgeCertificates = () => {
             <X className="h-6 w-6" />
           </button>
           {selectedImage && (
-            <img
+            <OptimizedImage
               src={selectedImage}
               alt="Certificate Full View"
               className="w-full h-full object-contain rounded-[5px]"
+              width={900}
+              height={1200}
             />
           )}
         </DialogContent>

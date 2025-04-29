@@ -1,48 +1,68 @@
 
 /**
- * This script can be used to convert PNG images to WebP format
- * It's meant to be run via Node.js, not in the browser
+ * This script converts PNG images to WebP format for better performance
  * 
  * Usage: 
  * 1. Install sharp: npm install sharp
  * 2. Run: node scripts/convert-images.js
  */
 
-console.log('This script is a placeholder for the image conversion process.');
-console.log('To convert images from PNG to WebP, you would:');
-console.log('1. Install the sharp package via npm');
-console.log('2. Scan your public/lovable-uploads directory for PNG files');
-console.log('3. Create WebP versions alongside the original files');
-console.log('4. The OptimizedImage component will automatically use these WebP versions when available');
-console.log('');
-console.log('Example implementation with sharp:');
-console.log(`
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
 const uploadDir = path.join(__dirname, '../public/lovable-uploads');
 
-// Get all PNG files
-fs.readdir(uploadDir, (err, files) => {
-  if (err) {
-    console.error('Error reading directory:', err);
-    return;
-  }
-  
-  // Filter for PNG files
-  const pngFiles = files.filter(file => file.toLowerCase().endsWith('.png'));
-  
-  // Convert each PNG to WebP
-  pngFiles.forEach(pngFile => {
-    const pngPath = path.join(uploadDir, pngFile);
-    const webpPath = pngPath.replace(/\.png$/i, '.webp');
+// Process all images
+async function processImages() {
+  try {
+    // Get all files in the directory
+    const files = fs.readdirSync(uploadDir);
     
-    sharp(pngPath)
-      .webp({ quality: 80 })
-      .toFile(webpPath)
-      .then(() => console.log(\`Converted \${pngFile} to WebP\`))
-      .catch(err => console.error(\`Error converting \${pngFile}:\`, err));
-  });
-});
-`);
+    // Filter for PNG files
+    const pngFiles = files.filter(file => file.toLowerCase().endsWith('.png'));
+    
+    console.log(`Found ${pngFiles.length} PNG files to process`);
+    
+    // Convert each PNG to WebP with 80% quality (good balance of quality and size)
+    for (const pngFile of pngFiles) {
+      const pngPath = path.join(uploadDir, pngFile);
+      const webpPath = pngPath.replace(/\.png$/i, '.webp');
+      
+      // Skip if WebP already exists and is newer than the PNG
+      if (fs.existsSync(webpPath)) {
+        const pngStat = fs.statSync(pngPath);
+        const webpStat = fs.statSync(webpPath);
+        
+        if (webpStat.mtime > pngStat.mtime) {
+          console.log(`Skipping ${pngFile} as WebP is already up-to-date`);
+          continue;
+        }
+      }
+      
+      // Get image dimensions
+      const metadata = await sharp(pngPath).metadata();
+      
+      // Resize if dimensions are too large (max width 1500px)
+      let sharpInstance = sharp(pngPath);
+      if (metadata.width > 1500) {
+        console.log(`Resizing ${pngFile} from ${metadata.width}x${metadata.height} to max width 1500px`);
+        sharpInstance = sharpInstance.resize({ width: 1500, withoutEnlargement: true });
+      }
+      
+      // Convert to WebP
+      await sharpInstance
+        .webp({ quality: 80 })
+        .toFile(webpPath);
+      
+      console.log(`Converted ${pngFile} to WebP (${Math.round(fs.statSync(webpPath).size / 1024)}KB)`);
+    }
+    
+    console.log('Image processing completed successfully');
+  } catch (err) {
+    console.error('Error processing images:', err);
+  }
+}
+
+// Run the function
+processImages();

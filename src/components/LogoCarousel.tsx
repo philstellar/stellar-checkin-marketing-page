@@ -80,7 +80,8 @@ const LogoCarousel = () => {
     };
   }, [emblaApi]);
 
-  return <div data-aos="fade-up" className="bg-white relative py-0">
+  return (
+    <div data-aos="fade-up" className="bg-white relative py-0">
       <div className="container-custom">
         <div className="mb-10 text-center">
           <h2 className="text-2xl font-bold mb-4 text-royal inline-block relative">
@@ -91,7 +92,8 @@ const LogoCarousel = () => {
         
         <div ref={emblaRef} className="bg-white/0">
           <div className="flex">
-            {extendedLogos.map((logo, index) => <div key={index} className="flex-shrink-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 px-4">
+            {extendedLogos.map((logo, index) => (
+              <div key={index} className="flex-shrink-0 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 px-4">
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <div className="h-20 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
@@ -112,11 +114,13 @@ const LogoCarousel = () => {
                     {logo.alt}
                   </HoverCardContent>
                 </HoverCard>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default LogoCarousel;

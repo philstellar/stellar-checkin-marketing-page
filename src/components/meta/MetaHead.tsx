@@ -2,59 +2,67 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from '@/hooks/use-translation';
 
 interface MetaHeadProps {
   title?: string;
   description?: string;
   image?: string;
   type?: string;
-  children?: React.ReactNode;
+  structuredData?: Record<string, any>;
 }
 
-/**
- * Component for managing page metadata including title, description, canonical URLs,
- * and social sharing tags (OpenGraph and Twitter Cards)
- */
 const MetaHead: React.FC<MetaHeadProps> = ({ 
   title, 
   description, 
-  image = "/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png",
-  type = "website",
-  children 
+  image = '/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png',
+  type = 'website',
+  structuredData 
 }) => {
   const location = useLocation();
-  const currentUrl = window.location.origin + location.pathname;
-  const siteTitle = title ? `${title} | Stellar Checkin` : 'Stellar Checkin - Digitale Check-in Lösung für Ferienwohnungen';
-  const siteDescription = description || 'Automatisiere den gesamten Check-in-Prozess deiner Ferienimmobilie - Gästemeldung, Kurtaxe, Zusatzleistungen und mehr.';
+  const { t, currentLanguage } = useTranslation();
   
-  // Ensure image URL is absolute
-  const imageUrl = image.startsWith('http') 
+  // Default title and description if not provided
+  const pageTitle = title || t('site.homepage.title');
+  const pageDescription = description || t('site.homepage.description');
+  
+  // Create absolute URL for the image
+  const absoluteImageUrl = image.startsWith('http') 
     ? image 
     : `${window.location.origin}${image}`;
-
+  
+  // Create canonical URL
+  const canonicalUrl = `${window.location.origin}${location.pathname}`;
+  
   return (
     <Helmet>
       {/* Basic Meta Tags */}
-      <title>{siteTitle}</title>
-      <meta name="description" content={siteDescription} />
-      <link rel="canonical" href={currentUrl} />
-
-      {/* OpenGraph Meta Tags */}
-      <meta property="og:title" content={siteTitle} />
-      <meta property="og:description" content={siteDescription} />
-      <meta property="og:image" content={imageUrl} />
-      <meta property="og:url" content={currentUrl} />
-      <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="Stellar Checkin" />
-
-      {/* Twitter Meta Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@stellar_checkin" />
-      <meta name="twitter:title" content={siteTitle} />
-      <meta name="twitter:description" content={siteDescription} />
-      <meta name="twitter:image" content={imageUrl} />
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <link rel="canonical" href={canonicalUrl} />
       
-      {children}
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
+      <meta property="og:image" content={absoluteImageUrl} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:type" content={type} />
+      <meta property="og:locale" content={currentLanguage === 'de' ? 'de_DE' : 
+                                          currentLanguage === 'en' ? 'en_US' : 
+                                          currentLanguage === 'it' ? 'it_IT' : 'es_ES'} />
+      
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:description" content={pageDescription} />
+      <meta name="twitter:image" content={absoluteImageUrl} />
+      
+      {/* Structured Data */}
+      {structuredData && (
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      )}
     </Helmet>
   );
 };

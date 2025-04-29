@@ -17,6 +17,7 @@ interface OptimizedImageProps {
  * - Proper width and height to prevent layout shifts
  * - Responsive loading with srcset when available
  * - Lazy loading by default for images below the fold
+ * - WebP format support with fallbacks
  */
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,

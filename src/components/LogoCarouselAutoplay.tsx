@@ -2,11 +2,13 @@
 import { useEffect, useRef } from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import useEmblaCarousel from 'embla-carousel-react';
+import OptimizedImage from './OptimizedImage';
 
 interface Logo {
   src: string;
   alt: string;
   width?: number;
+  height?: number;
 }
 
 interface LogoCarouselAutoplayProps {
@@ -74,12 +76,14 @@ const LogoCarouselAutoplay = ({ logos }: LogoCarouselAutoplayProps) => {
               <HoverCardTrigger asChild>
                 <div className="h-20 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
                   <div className="w-full h-full flex items-center justify-center">
-                    <img
+                    <OptimizedImage
                       src={logo.src}
                       alt={logo.alt}
-                      style={{ width: logo.width ? `${logo.width}px` : 'auto', height: 'auto' }}
+                      width={logo.width || 150}
+                      height={logo.width ? Math.round(logo.width * 0.6) : 90}
                       className="max-w-full max-h-full object-contain"
                       loading="lazy"
+                      sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, (max-width: 1024px) 20vw, 160px"
                     />
                   </div>
                 </div>

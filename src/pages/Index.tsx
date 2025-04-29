@@ -29,6 +29,26 @@ const Index = () => {
   const { t, currentLanguage } = useTranslation();
   const isHome = location.pathname === '/' || location.pathname === `/${currentLanguage}/`;
   
+  // Schema data for the homepage
+  const homePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Stellar Checkin",
+    "url": window.location.origin,
+    "logo": `${window.location.origin}/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png`,
+    "description": t('site.homepage.description'),
+    "sameAs": [
+      "https://twitter.com/stellar_checkin",
+      "https://www.linkedin.com/company/stellar-checkin/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+49-123-456789",
+      "contactType": "customer service",
+      "availableLanguage": ["German", "English", "Italian", "Spanish"]
+    }
+  };
+  
   return (
     <div className="flex flex-col min-h-screen">
       {isHome && (
@@ -36,6 +56,7 @@ const Index = () => {
           title={t('site.homepage.title')} 
           description={t('site.homepage.description')}
           image="/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png"
+          structuredData={homePageSchema}
         />
       )}
       <Header />

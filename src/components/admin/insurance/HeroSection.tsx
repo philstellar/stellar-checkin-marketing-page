@@ -3,6 +3,7 @@ import React from 'react';
 import { UserCheck } from 'lucide-react';
 import CTAButton from '../../../components/CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const HeroSection = () => {
   const { t, currentLanguage } = useTranslation();
@@ -24,7 +25,8 @@ const HeroSection = () => {
     return title;
   };
   
-  return <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
+  return (
+    <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
       <div className="bg-white"></div>
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -54,15 +56,21 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="order-1 md:order-last flex justify-center">
-            <img 
+            <OptimizedImage 
               src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
               alt="Insurance Settings Interface" 
-              loading="eager" 
-              className="object-scale-down" 
+              loading="eager"
+              className="object-scale-down"
+              width={500}
+              height={400}
+              sizes="(max-width: 768px) 90vw, 500px"
+              priority={true}
             />
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;

@@ -93,8 +93,8 @@ export const TrustBadgeLevels = () => {
                   className="absolute inset-0 w-full h-full object-contain rounded-lg"
                   width={images[currentImage].width}
                   height={images[currentImage].height}
-                  priority={true}
-                  loading="eager"
+                  priority={currentImage === 0}
+                  loading={currentImage === 0 ? "eager" : "lazy"}
                   sizes="(max-width: 768px) 90vw, (max-width: 1200px) 70vw, 600px"
                 />
               </motion.div>

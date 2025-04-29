@@ -3,6 +3,7 @@ import { UserCheck } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { useIsMobile } from "@/hooks/use-mobile";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export function IndexHeroSection() {
   const isMobile = useIsMobile();
@@ -49,14 +50,15 @@ export function IndexHeroSection() {
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
-            <img 
+            <OptimizedImage 
               src="/lovable-uploads/ff8a3a50-21d0-4e53-98f4-3265e363fe55.png" 
               alt="Stellar Online Check-in Interface" 
               className="w-3/5 h-auto object-contain bg-transparent" 
               loading="eager" 
-              width="500" 
-              height="400" 
-              fetchPriority="high" 
+              priority={true}
+              width={500} 
+              height={400} 
+              sizes="(max-width: 768px) 90vw, 500px"
             />
           </div>
         </div>
