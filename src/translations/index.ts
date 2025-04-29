@@ -1,6 +1,6 @@
 
 import { navigationDE, navigationEN, navigationES, navigationIT } from './modules/navigation';
-import { heroDE, heroEN, heroES, heroIT } from './modules/features';
+import { heroDE, heroEN, heroES, heroIT } from './modules/hero';
 import { siteTranslations } from './modules/site';
 import { commonTranslations } from './modules/common';
 

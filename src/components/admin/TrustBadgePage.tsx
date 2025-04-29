@@ -49,7 +49,7 @@ const TrustBadgePage = () => {
       
       {/* Hero Section */}
       <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
-        <div className="container-custom relative z-10">
+        <div className="container mx-auto px-4 max-w-[1200px] relative z-10">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik">
@@ -77,15 +77,14 @@ const TrustBadgePage = () => {
 
       {/* Logo Carousel Section */}
       <section className="py-16 bg-white">
-        <div className="container-custom">
-          
+        <div className="container mx-auto px-4 max-w-[1200px]">
           <LogoCarouselAutoplay logos={testimonialLogos} />
         </div>
       </section>
 
       {/* Verification Section */}
       <section className="py-16 bg-white">
-        <div className="container-custom">
+        <div className="container mx-auto px-4 max-w-[1200px]">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-royal">
               {t('trustBadge.verification.title')}
@@ -125,7 +124,7 @@ const TrustBadgePage = () => {
 
       {/* Preview Section */}
       <section className="py-[26px] bg-white">
-        <div className="">
+        <div className="container mx-auto px-4 max-w-[1200px]">
           <div className="max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-6 text-royal text-center">
               {t('trustBadge.preview.title')}
@@ -158,7 +157,7 @@ const TrustBadgePage = () => {
       
       <TrustBadgeCertificates />
       
-      <div className="text-center bg-white py-[10px]">
+      <div className="text-center bg-white py-[10px] container mx-auto px-4 max-w-[1200px]">
         <CTAButton size="lg" className="bg-apple hover:bg-apple-600 font-aeonik">
           <UserCheck className="mr-2 h-4 w-4" /> {t('trustBadge.cta')}
         </CTAButton>
