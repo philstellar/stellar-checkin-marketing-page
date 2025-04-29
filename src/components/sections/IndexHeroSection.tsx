@@ -1,17 +1,19 @@
+
 import { UserCheck } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { useIsMobile } from "@/hooks/use-mobile";
 import OptimizedImage from "@/components/OptimizedImage";
 import { useNavigate } from "react-router-dom";
+import { memo, useMemo, useCallback } from "react";
 
-export function IndexHeroSection() {
+export const IndexHeroSection = memo(() => {
   const isMobile = useIsMobile();
   const { t, currentLanguage } = useTranslation();
   const navigate = useNavigate();
   
-  // Pre-compute headline parts for better performance
-  const headlineParts = (() => {
+  // Optimization: pre-compute headline parts only when needed
+  const headlineParts = useMemo(() => {
     const headline = t('hero.headline');
     const checkInRegex = /(Check-in|Check-ins|Checkin)/gi;
     
@@ -23,19 +25,21 @@ export function IndexHeroSection() {
     let lastIndex = 0;
     
     matches.forEach(match => {
-      if (match.index > lastIndex) {
+      if (match.index !== undefined && match.index > lastIndex) {
         parts.push({
           text: headline.substring(lastIndex, match.index),
           isHighlighted: false
         });
       }
       
-      parts.push({
-        text: match[0],
-        isHighlighted: true
-      });
-      
-      lastIndex = match.index + match[0].length;
+      if (match.index !== undefined) {
+        parts.push({
+          text: match[0],
+          isHighlighted: true
+        });
+        
+        lastIndex = match.index + match[0].length;
+      }
     });
     
     if (lastIndex < headline.length) {
@@ -46,11 +50,12 @@ export function IndexHeroSection() {
     }
     
     return parts;
-  })();
+  }, [t]);
   
-  const handleTrustBadgeClick = () => {
+  // Optimization: memoize handlers
+  const handleTrustBadgeClick = useCallback(() => {
     navigate(`/${currentLanguage}/trust-badge`);
-  };
+  }, [navigate, currentLanguage]);
   
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
@@ -107,4 +112,6 @@ export function IndexHeroSection() {
       </div>
     </section>
   );
-}
+});
+
+IndexHeroSection.displayName = 'IndexHeroSection';
