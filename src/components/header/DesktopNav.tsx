@@ -75,7 +75,7 @@ const DesktopNav = ({
               <ChevronDown className="h-4 w-4" />
             </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-white shadow-md z-50">
+          <DropdownMenuContent className="bg-white shadow-md z-50 !bg-white !border-gray-200">
             <DropdownMenuItem asChild>
               <a href="/#kurtaxe" className="cursor-pointer hover:bg-slate-100 w-full">
                 {t('kurtaxe.title')}

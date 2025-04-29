@@ -117,16 +117,19 @@
     @apply text-black font-sans bg-white;
     font-family: 'Aeonik', sans-serif;
     text-rendering: optimizeLegibility;
+    background-color: #fff;
   }
 
   section {
     @apply bg-white;
+    background-color: #fff;
   }
 
   header, 
   footer,
   .hero-section {
     @apply bg-floral;
+    background-color: #f9f8ef;
   }
 
   h1, h2, h3, h4, h5, h6 {
