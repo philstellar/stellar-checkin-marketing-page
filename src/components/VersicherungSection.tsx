@@ -4,34 +4,29 @@ import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import OptimizedImage from "@/components/OptimizedImage";
-import { Link } from "react-router-dom";
 
 export const VersicherungSection = () => {
-  const { t, currentLanguage } = useTranslation();
+  const { t } = useTranslation();
   
   return (
     <section id="versicherung" className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-1 md:order-first flex justify-center">
-            <Link to={`/${currentLanguage}/versicherung`}>
-              <OptimizedImage 
-                src="/lovable-uploads/da5cc900-97f6-4e95-a8d2-29fe4bf0fc66.png"
-                alt="Versicherung und Kautionsabwicklung" 
-                className="w-3/5 h-auto object-contain bg-transparent"
-                width={500}
-                height={800}
-                loading="lazy"
-                sizes="(max-width: 768px) 90vw, 500px"
-              />
-            </Link>
+            <OptimizedImage 
+              src="/lovable-uploads/da5cc900-97f6-4e95-a8d2-29fe4bf0fc66.png"
+              alt="Versicherung und Kautionsabwicklung" 
+              className="w-3/5 h-auto object-contain bg-transparent"
+              width={500}
+              height={800}
+              loading="lazy"
+              sizes="(max-width: 768px) 90vw, 500px"
+            />
           </div>
           
           <div className="order-2 md:order-last">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              <Link to={`/${currentLanguage}/versicherung`} className="hover:text-apple transition-colors">
-                {t('versicherung.title')}
-              </Link>
+              {t('versicherung.title')}
             </h2>
             <div className="h-1 w-24 bg-apple mb-6 rounded-full"></div>
             <p className="text-lg text-black mb-8">
@@ -43,20 +38,17 @@ export const VersicherungSection = () => {
                 {
                   icon: <CreditCard className="w-8 h-8 text-apple" />,
                   title: t('versicherung.process.title'),
-                  description: t('versicherung.process.description'),
-                  linkTo: `/${currentLanguage}/versicherung`
+                  description: t('versicherung.process.description')
                 },
                 {
                   icon: <Shield className="w-8 h-8 text-apple" />,
                   title: t('versicherung.income.title'),
-                  description: t('versicherung.income.description'),
-                  linkTo: `/${currentLanguage}/#versicherung`
+                  description: t('versicherung.income.description')
                 },
                 {
                   icon: <ShieldCheck className="w-8 h-8 text-apple" />,
                   title: t('versicherung.protection.title'),
-                  description: t('versicherung.protection.description'),
-                  linkTo: `/${currentLanguage}/trust-badge`
+                  description: t('versicherung.protection.description')
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
@@ -65,9 +57,7 @@ export const VersicherungSection = () => {
                   </div>
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-black mb-2 pb-2">
-                      <Link to={feature.linkTo} className="hover:text-apple transition-colors">
-                        {feature.title}
-                      </Link>
+                      {feature.title}
                       <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
                     </h3>
                     <p className="text-base text-black">{feature.description}</p>

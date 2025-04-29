@@ -4,10 +4,9 @@ import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
 import OptimizedImage from "@/components/OptimizedImage";
-import { Link } from "react-router-dom";
 
 const ZusatzservicesSection = () => {
-  const { t, currentLanguage } = useTranslation();
+  const { t } = useTranslation();
   
   return (
     <section id="zusatzservices" className="section-padding bg-white">
@@ -24,20 +23,17 @@ const ZusatzservicesSection = () => {
                 {
                   icon: <Gift className="w-8 h-8 text-apple" />,
                   title: t('zusatzservices.additionalServices.title'),
-                  description: t('zusatzservices.additionalServices.description'),
-                  linkTo: `/${currentLanguage}/#zusatzservices`
+                  description: t('zusatzservices.additionalServices.description')
                 },
                 {
                   icon: <CreditCard className="w-8 h-8 text-apple" />,
                   title: t('zusatzservices.payment.title'),
-                  description: t('zusatzservices.payment.description'),
-                  linkTo: `/${currentLanguage}/#versicherung`
+                  description: t('zusatzservices.payment.description')
                 },
                 {
                   icon: <TrendingUp className="w-8 h-8 text-apple" />,
                   title: t('zusatzservices.revenue.title'),
-                  description: t('zusatzservices.revenue.description'),
-                  linkTo: `/${currentLanguage}/#zusatzservices`
+                  description: t('zusatzservices.revenue.description')
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
@@ -46,9 +42,7 @@ const ZusatzservicesSection = () => {
                   </div>
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-black mb-2 pb-2">
-                      <Link to={feature.linkTo} className="hover:text-apple transition-colors">
-                        {feature.title}
-                      </Link>
+                      {feature.title}
                       <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
                     </h3>
                     <p className="text-base text-black">{feature.description}</p>
@@ -65,17 +59,15 @@ const ZusatzservicesSection = () => {
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
-            <Link to={`/${currentLanguage}/#zusatzservices`}>
-              <OptimizedImage 
-                src="/lovable-uploads/e71f8668-5c8c-4f12-9641-892072444f5e.png"
-                alt="Additional Services and Upselling Interface" 
-                className="w-3/5 h-auto object-contain bg-transparent"
-                width={500}
-                height={800}
-                loading="lazy"
-                sizes="(max-width: 768px) 90vw, 500px"
-              />
-            </Link>
+            <OptimizedImage 
+              src="/lovable-uploads/e71f8668-5c8c-4f12-9641-892072444f5e.png"
+              alt="Additional Services and Upselling Interface" 
+              className="w-3/5 h-auto object-contain bg-transparent"
+              width={500}
+              height={800}
+              loading="lazy"
+              sizes="(max-width: 768px) 90vw, 500px"
+            />
           </div>
         </div>
       </div>
