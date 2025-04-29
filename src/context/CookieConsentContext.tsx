@@ -50,11 +50,18 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function() {};
       
-      // Disable personalized ads and tracking
+      // Disable personalized ads and tracking for Google Ads
       window.gtag('js', new Date());
       window.gtag('config', 'AW-16898170225', {
         'allow_ad_personalization_signals': false,
         'anonymize_ip': true
+      });
+      
+      // Disable GA4 tracking
+      window.gtag('config', 'G-YZM5YCLGBD', {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false
       });
     }
   };
@@ -62,7 +69,12 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
   const enableAnalytics = () => {
     if (typeof window !== 'undefined') {
       window.gtag('js', new Date());
+      
+      // Enable Google Ads tracking
       window.gtag('config', 'AW-16898170225');
+      
+      // Enable GA4 tracking
+      window.gtag('config', 'G-YZM5YCLGBD');
     }
   };
 

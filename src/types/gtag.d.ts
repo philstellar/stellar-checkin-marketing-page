@@ -11,6 +11,8 @@ interface Window {
 
 interface GTagConfigOptions {
   allow_ad_personalization_signals?: boolean;
+  anonymize_ip?: boolean;
+  allow_google_signals?: boolean;
   page_path?: string;
   page_title?: string;
 }
