@@ -1,29 +1,29 @@
 
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import * as React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Language, LanguageContextType, LanguageProviderProps } from './language/types';
 import { getLanguageFromPath, getLocalizedPath } from './language/utils';
 
 // Create the context with default values
-export const LanguageContext = createContext<LanguageContextType>({
+export const LanguageContext = React.createContext<LanguageContextType>({
   language: 'de',
   setLanguage: () => {},
 });
 
 // Create a hook to use the language context
-export const useLanguage = () => useContext(LanguageContext);
+export const useLanguage = () => React.useContext(LanguageContext);
 
 // Create the provider component
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   // Initialize with default language
-  const [language, setLanguageState] = useState<Language>('de');
+  const [language, setLanguageState] = React.useState<Language>('de');
   
   // Get router hooks safely inside the component
   const location = useLocation();
   const navigate = useNavigate();
   
   // Initialize language on mount, considering URL and localStorage
-  useEffect(() => {
+  React.useEffect(() => {
     const initializeLanguage = (): Language => {
       const urlLanguage = getLanguageFromPath(location.pathname);
       
@@ -59,7 +59,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   };
 
   // Effect to update language when URL changes
-  useEffect(() => {
+  React.useEffect(() => {
     const urlLanguage = getLanguageFromPath(location.pathname);
     if (urlLanguage && urlLanguage !== language) {
       setLanguageState(urlLanguage);

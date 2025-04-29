@@ -1,5 +1,5 @@
 
-import React from 'react';
+import * as React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 
 interface MetaProviderProps {
