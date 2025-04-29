@@ -62,24 +62,16 @@ const VersicherungPage: React.FC = () => {
       </div>
 
       <section className="bg-white">
-        <div className="max-w-none w-full px-[2px] md:px-[15px] mx-auto">
-          <div className="max-w-none w-full mx-0">
-            <div className="max-w-none w-full mx-0">
-              <div className="max-w-none w-full mx-0">
-                <div className="max-w-none w-full mx-0 bg-white">
-                  <div className="max-w-3xl mx-auto text-center mb-12">
-                    <h2 className="text-3xl font-bold mb-4 text-royal text-center">
-                      {t('insurance.shortTerm.title')}
-                    </h2>
-                    <p className="text-lg text-royal-700 text-center mb-8">
-                      {t('insurance.shortTerm.description')}
-                    </p>
-                  </div>
-                  <InsurancePricingTable />
-                </div>
-              </div>
-            </div>
+        <div className="container-custom max-w-[90rem] mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-royal text-center">
+              {t('insurance.shortTerm.title')}
+            </h2>
+            <p className="text-lg text-royal-700 text-center mb-8">
+              {t('insurance.shortTerm.description')}
+            </p>
           </div>
+          <InsurancePricingTable />
         </div>
       </section>
 
