@@ -1,7 +1,9 @@
+
 import { UserCheck, Gift, CreditCard, TrendingUp } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const ZusatzservicesSection = () => {
   const { t } = useTranslation();
@@ -57,10 +59,14 @@ const ZusatzservicesSection = () => {
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
-            <img 
-              src="/lovable-uploads/a581a6b1-fefa-4f87-9015-66cde382b503.png"
-              alt="Zusatzservices und Upselling" 
+            <OptimizedImage 
+              src="/lovable-uploads/e71f8668-5c8c-4f12-9641-892072444f5e.png"
+              alt="Additional Services and Upselling Interface" 
               className="w-3/5 h-auto object-contain bg-transparent"
+              width={500}
+              height={800}
+              loading="lazy"
+              sizes="(max-width: 768px) 90vw, 500px"
             />
           </div>
         </div>
