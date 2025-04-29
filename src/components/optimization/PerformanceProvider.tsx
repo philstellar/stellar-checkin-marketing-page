@@ -1,10 +1,10 @@
 
-import React, { ReactNode } from 'react';
+import * as React from 'react';
 import FontOptimizer from './FontOptimizer';
 import ResourceHints from './ResourceHints';
 
 interface PerformanceProviderProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 const PerformanceProvider = ({ children }: PerformanceProviderProps) => {

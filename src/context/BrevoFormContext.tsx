@@ -1,5 +1,5 @@
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import * as React from 'react';
 
 interface BrevoFormContextType {
   isFormOpen: boolean;
@@ -7,10 +7,10 @@ interface BrevoFormContextType {
   closeForm: () => void;
 }
 
-const BrevoFormContext = createContext<BrevoFormContextType | undefined>(undefined);
+const BrevoFormContext = React.createContext<BrevoFormContextType | undefined>(undefined);
 
-export function BrevoFormProvider({ children }: { children: ReactNode }) {
-  const [isFormOpen, setIsFormOpen] = useState(false);
+export function BrevoFormProvider({ children }: { children: React.ReactNode }) {
+  const [isFormOpen, setIsFormOpen] = React.useState(false);
 
   const openForm = () => setIsFormOpen(true);
   const closeForm = () => setIsFormOpen(false);
@@ -23,7 +23,7 @@ export function BrevoFormProvider({ children }: { children: ReactNode }) {
 }
 
 export function useBrevoForm() {
-  const context = useContext(BrevoFormContext);
+  const context = React.useContext(BrevoFormContext);
   if (context === undefined) {
     throw new Error("useBrevoForm must be used within a BrevoFormProvider");
   }
