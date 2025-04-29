@@ -1,5 +1,5 @@
 
-import { memo, useCallback } from "react";
+import React, { memo, useCallback } from "react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
@@ -11,27 +11,22 @@ import OptimizedImage from "./OptimizedImage";
 const aboutRoutes: Record<string, {
   aboutUs: string;
   successStories: string;
-  faq: string;
 }> = {
   de: {
     aboutUs: "/de/ueber-uns",
-    successStories: "/de/erfolgsbeispiele",
-    faq: "/de/faq"
+    successStories: "/de/erfolgsbeispiele"
   },
   en: {
     aboutUs: "/en/about-us",
-    successStories: "/en/success-stories",
-    faq: "/en/faq"
+    successStories: "/en/success-stories"
   },
   it: {
     aboutUs: "/it/chi-siamo",
-    successStories: "/it/storie-di-successo",
-    faq: "/it/faq"
+    successStories: "/it/storie-di-successo"
   },
   es: {
     aboutUs: "/es/sobre-nosotros",
-    successStories: "/es/historias-de-exito",
-    faq: "/es/faq"
+    successStories: "/es/historias-de-exito"
   }
 };
 
@@ -79,8 +74,6 @@ const Footer = () => {
   
   // Memoize about routes lookup
   const about = aboutRoutes[language] || aboutRoutes.de;
-  
-  // Use React's built-in useMemo or HOF like memo for expensive computations
   
   return <footer className="bg-white">
       <div className="container-custom bg-white">
@@ -140,12 +133,6 @@ const Footer = () => {
                 <Link to={about.successStories} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.successStories')}
-                </Link>
-              </li>
-              <li>
-                <Link to={about.faq} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
-                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
-                  {t('navigation.faq')}
                 </Link>
               </li>
             </ul>

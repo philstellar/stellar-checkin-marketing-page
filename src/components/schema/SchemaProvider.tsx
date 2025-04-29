@@ -13,8 +13,7 @@ export const SchemaProvider: React.FC<SchemaProviderProps> = ({ children }) => {
   // Function to extract FAQ data when on FAQ-related pages
   const getFaqSchemaData = () => {
     // FAQ schema will only be returned on specific pages
-    if (location.pathname.includes('faq') || 
-        location.pathname.includes('trust-badge') || 
+    if (location.pathname.includes('trust-badge') || 
         location.pathname.includes('versicherung') || 
         location.pathname.includes('insurance') ||
         location.pathname.includes('seguro') ||

@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -56,15 +57,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/success-stories"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/storie-di-successo"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/historias-de-exito"/>
-  </url>
-  <url>
-    <loc>https://stellar-checkin.com/de/faq</loc>
-    <lastmod>2025-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/faq"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/faq"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/faq"/>
   </url>
   <url>
     <loc>https://stellar-checkin.com/de/versicherung</loc>

@@ -18,7 +18,6 @@ const Brevo = lazy(() => import('@/pages/Brevo'));
 const TrustBadgePage = lazy(() => import('@/components/admin/TrustBadgePage'));
 const UeberUns = lazy(() => import('@/pages/UeberUns'));
 const Erfolgsbeispiele = lazy(() => import('@/pages/Erfolgsbeispiele'));
-const FAQ = lazy(() => import('@/pages/FAQ'));
 
 export const germanRoutes: RouteConfig[] = [
   {
@@ -48,10 +47,6 @@ export const germanRoutes: RouteConfig[] = [
   {
     path: '/de/erfolgsbeispiele',
     element: <Erfolgsbeispiele />
-  },
-  {
-    path: '/de/faq',
-    element: <FAQ />
   },
   {
     path: '/de/versicherung',

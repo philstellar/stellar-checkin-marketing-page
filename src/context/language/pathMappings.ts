@@ -110,11 +110,5 @@ export const pathMappings: Record<string, Record<Language, string>> = {
     'en': 'success-stories',
     'it': 'storie-di-successo',
     'es': 'historias-de-exito'
-  },
-  'faq': {
-    'de': 'faq',
-    'en': 'faq',
-    'it': 'faq',
-    'es': 'faq'
   }
 };
