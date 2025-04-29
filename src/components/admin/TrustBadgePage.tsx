@@ -49,13 +49,13 @@ const TrustBadgePage = () => {
   return <>
       <MetaHead 
         title={t('trustBadge.headline1') + t('trustBadge.headline2') + t('trustBadge.headline3')}
-        description="Boost guest confidence and drive more direct bookings with Stellar's Trust Badge verification system. Our comprehensive solution showcases your property's authenticity, displays verified guest reviews, and creates a secure booking environment that helps travelers feel confident when booking directly. Join trusted hosts across Europe and see your conversion rates grow substantially."
+        description="Boost guest confidence and increase direct bookings with Stellar's Trust Badge. Our verification system showcases your property's authenticity, displays verified reviews, and helps guests feel secure when booking directly. Become a trusted host today and watch your conversion rates grow."
       />
       
       <Header />
       
-      {/* Hero Section - Height predefined to reduce CLS */}
-      <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white" style={{ minHeight: '600px' }}>
+      {/* Hero Section */}
+      <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden bg-white">
         <div className="container-custom relative z-10">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -98,8 +98,8 @@ const TrustBadgePage = () => {
         </div>
       </section>
 
-      {/* Verification Section - Fixed height to prevent CLS */}
-      <section id="gaeste-voranmeldung" className="py-16 bg-white" style={{ minHeight: '450px' }}>
+      {/* Verification Section */}
+      <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-royal">

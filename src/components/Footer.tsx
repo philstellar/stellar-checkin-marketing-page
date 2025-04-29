@@ -1,143 +1,184 @@
 
-import React, { useEffect, useCallback } from 'react';
-import { useTranslation } from '@/hooks/use-translation';
-import { Link } from 'react-router-dom';
-import LanguageSelector from './LanguageSelector';
-import OptimizedImage from './OptimizedImage';
+import { memo } from "react";
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { ExternalLink } from "lucide-react";
+import { useTranslation } from "@/hooks/use-translation";
+import { useLanguage } from "@/context/LanguageContext";
+import { Separator } from "@/components/ui/separator";
+import OptimizedImage from "./OptimizedImage";
 
-const Footer = () => {
-  const { t, currentLanguage } = useTranslation();
-  const currentYear = new Date().getFullYear();
-  
-  // Process email addresses safely after component mounts
-  const processEmails = useCallback(() => {
-    try {
-      if (typeof document === 'undefined') return;
-      
-      const emailElements = document.querySelectorAll('[data-email]');
-      emailElements.forEach(function(element) {
-        try {
-          const encodedEmail = element.getAttribute('data-email');
-          if (!encodedEmail) return;
-          
-          const decodedEmail = encodedEmail.replace(/AT/, '@').replace(/DOT/g, '.');
-          
-          if (element.tagName.toLowerCase() === 'a') {
-            element.setAttribute('href', 'mailto:' + decodedEmail);
-            if (!element.textContent || element.textContent === '') {
-              element.textContent = decodedEmail;
-            }
-          } else {
-            element.textContent = decodedEmail;
-          }
-        } catch (err) {
-          console.error('Error processing individual email element:', err);
-        }
-      });
-    } catch (e) {
-      console.error('Error processing email addresses:', e);
-    }
-  }, []);
-  
-  useEffect(() => {
-    // Use a small timeout to ensure DOM is fully ready
-    const timer = setTimeout(processEmails, 100);
-    return () => clearTimeout(timer);
-  }, [processEmails]);
-  
-  return (
-    <footer className="bg-white text-royal-800 py-12">
-      <div className="container-custom grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Logo and Description */}
-        <div className="mb-6">
-          <Link to={`/${currentLanguage}/`} className="block mb-4">
-            <OptimizedImage 
-              src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
-              alt="Stellar Logo" 
-              width={150} 
-              height={36} 
-              className="h-9 w-auto object-contain"
-            />
-          </Link>
-          <p className="text-sm text-royal-600">
-            {t('footer.tagline')}
-          </p>
-        </div>
-
-        {/* Sitemap */}
-        <div>
-          <h4 className="font-semibold text-lg mb-4">{t('footer.sitemap')}</h4>
-          <ul className="text-sm">
-            <li>
-              <Link to={`/${currentLanguage}/ueber-uns`} className="hover:text-apple transition-colors">
-                {t('footer.aboutUs')}
-              </Link>
-            </li>
-            <li>
-              <Link to={`/${currentLanguage}/erfolgsbeispiele`} className="hover:text-apple transition-colors">
-                {t('footer.successStories')}
-              </Link>
-            </li>
-            <li>
-              <Link to={`/${currentLanguage}/faq`} className="hover:text-apple transition-colors">
-                {t('footer.faq')}
-              </Link>
-            </li>
-            <li>
-              <Link to={`/${currentLanguage}/trust-badge`} className="hover:text-apple transition-colors">
-                {t('footer.trustBadge')}
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Legal */}
-        <div>
-          <h4 className="font-semibold text-lg mb-4">{t('footer.legal')}</h4>
-          <ul className="text-sm">
-            <li>
-              <Link to={`/${currentLanguage}/impressum`} className="hover:text-apple transition-colors">
-                {t('footer.imprint')}
-              </Link>
-            </li>
-            <li>
-              <Link to={`/${currentLanguage}/datenschutz`} className="hover:text-apple transition-colors">
-                {t('footer.privacy')}
-              </Link>
-            </li>
-            <li>
-              <Link to={`/${currentLanguage}/agb`} className="hover:text-apple transition-colors">
-                {t('footer.terms')}
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Contact & Language */}
-        <div>
-          <h4 className="font-semibold text-lg mb-4">{t('footer.contact')}</h4>
-          <ul className="text-sm">
-            <li className="mb-2">
-              <a data-email="infoATstellar-checkinDOTcom" className="hover:text-apple transition-colors">infoATstellar-checkinDOTcom</a>
-            </li>
-            <li>
-              <a href="tel:+4917647740917" className="hover:text-apple transition-colors">
-                +49 176 47740917
-              </a>
-            </li>
-          </ul>
-          <div className="mt-4">
-            <LanguageSelector />
-          </div>
-        </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="container-custom mt-8 border-t border-royal-100 pt-4 text-center text-sm text-royal-600">
-        &copy; {currentYear} Stellar Checkin. {t('footer.allRightsReserved')}
-      </div>
-    </footer>
-  );
+const aboutRoutes: Record<string, {
+  aboutUs: string;
+  successStories: string;
+  faq: string;
+}> = {
+  de: {
+    aboutUs: "/de/ueber-uns",
+    successStories: "/de/erfolgsbeispiele",
+    faq: "/de/faq"
+  },
+  en: {
+    aboutUs: "/en/about-us",
+    successStories: "/en/success-stories",
+    faq: "/en/faq"
+  },
+  it: {
+    aboutUs: "/it/chi-siamo",
+    successStories: "/it/storie-di-successo",
+    faq: "/it/faq"
+  },
+  es: {
+    aboutUs: "/es/sobre-nosotros",
+    successStories: "/es/historias-de-exito",
+    faq: "/es/faq"
+  }
 };
 
-export default Footer;
+const Footer = () => {
+  const { t } = useTranslation();
+  const { language } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, hash?: string) => {
+    e.preventDefault();
+    
+    // If we're not on the homepage and a hash is provided, navigate to the homepage with hash
+    if (location.pathname !== `/${language}/` && hash) {
+      navigate(`/${language}/#${hash}`);
+    } 
+    // If we're already on the homepage and a hash is provided
+    else if (hash) {
+      // Navigate to the hash directly
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // For non-hash links, just navigate and scroll to top
+      navigate(e.currentTarget.getAttribute('href') || '/');
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleLogoClick = () => {
+    // Navigate to the check-in page based on current language
+    navigate(`/${language}/`);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const about = aboutRoutes[language] || aboutRoutes.de;
+
+  return <footer className="bg-white">
+      <div className="container-custom bg-white">
+        <Separator className="my-8 bg-[#8E9196]" />
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <button onClick={handleLogoClick} className="bg-transparent border-0 p-0 cursor-pointer">
+              <OptimizedImage 
+                src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
+                alt="Stellar Logo" 
+                className="h-6 mb-4 w-auto object-contain" 
+                width={150} 
+                height={24} 
+                loading="lazy" 
+              />
+            </button>
+            <p className="text-black mb-6 max-w-md">
+              {t('footer.tagline')}
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.solutions')}</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to={`/${language}/#gaeste-voranmeldung`} className="flex items-center text-black hover:text-apple transition-colors" onClick={(e) => handleNavigation(e, 'gaeste-voranmeldung')}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.features')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${language}/versicherung`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.insurance')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${language}/trust-badge`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.trustBadge')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${language}/#preise`} className="flex items-center text-black hover:text-apple transition-colors" onClick={(e) => handleNavigation(e, 'preise')}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.pricing')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-black">{t('navigation.aboutStellar')}</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to={about.aboutUs} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.aboutUs')}
+                </Link>
+              </li>
+              <li>
+                <Link to={about.successStories} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.successStories')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${language}/trust-badge`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.trustBadge')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-black">{t('footer.legal')}</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to={`/${language}/impressum`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('footer.imprint')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${language}/datenschutz`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('footer.privacy')}
+                </Link>
+              </li>
+              <li>
+                <Link to={`/${language}/agb`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('footer.terms')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-royal-400/30 mt-10 pt-8 pb-8 text-center">
+          <p className="text-black">&copy; {new Date().getFullYear()} Stellar Tourism Innovations GmbH. {t('footer.copyright')}</p>
+        </div>
+      </div>
+    </footer>;
+};
+
+export default memo(Footer);

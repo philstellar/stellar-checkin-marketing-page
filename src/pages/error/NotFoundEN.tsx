@@ -4,16 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import NotFoundHero from "@/components/NotFoundHero";
 
 export default function NotFoundEN() {
   return (
     <>
       <Header />
-      <NotFoundHero />
-      <div className="bg-floral py-12">
+      <div className="min-h-screen flex items-center justify-center bg-floral">
         <div className="container-custom text-center">
-          <div className="space-y-4 max-w-2xl mx-auto">
+          <h1 className="text-6xl font-bold text-apple mb-4">404</h1>
+          <p className="text-2xl text-gray-600 mb-8 font-medium">
+            Sorry, this page doesn't exist
+          </p>
+          <p className="text-gray-500 mb-8 max-w-lg mx-auto">
+            The page you're looking for may have been removed, renamed, or is temporarily unavailable.
+          </p>
+          <div className="space-y-4">
             <p className="text-gray-600 font-medium">You might want to:</p>
             <ul className="space-y-2 text-gray-500 mb-8">
               <li>• Return to the homepage</li>
