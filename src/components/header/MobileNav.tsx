@@ -107,21 +107,19 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 {t('navigation.trustBadge')}
               </button>
 
-              <a 
-                href={`/${currentLanguage}/#${t('navigation.pricingAnchor')}`} 
+              <button 
+                onClick={() => handleSectionNavigation(t('navigation.pricingAnchor'))}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-                onClick={onClose}
               >
                 {t('navigation.pricing')}
-              </a>
+              </button>
               
-              <a 
-                href={`/${currentLanguage}/#${t('navigation.contactAnchor')}`} 
+              <button 
+                onClick={() => handleSectionNavigation(t('navigation.contactAnchor'))}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-                onClick={onClose}
               >
                 {t('navigation.contact')}
-              </a>
+              </button>
             </div>
             
             <CTAButton 
