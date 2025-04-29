@@ -1,5 +1,5 @@
 
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import Header from "@/components/Header";
 import { IndexHeroSection } from "@/components/sections/IndexHeroSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
@@ -76,6 +76,21 @@ const Index = () => {
   const { t, currentLanguage } = useTranslation();
   const isHome = location.pathname === '/' || location.pathname === `/${currentLanguage}/`;
   
+  // Preload hero image
+  useEffect(() => {
+    const preloadHeroImage = () => {
+      const imageUrl = '/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png';
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = imageUrl;
+      link.fetchPriority = 'high';
+      document.head.appendChild(link);
+    };
+    
+    preloadHeroImage();
+  }, []);
+  
   // Memoize schema data to prevent re-computation
   const homePageSchema = React.useMemo(() => ({
     "@context": "https://schema.org",
@@ -104,6 +119,7 @@ const Index = () => {
           description={t('site.homepage.description')}
           image="/lovable-uploads/88f97631-50cd-493d-b68c-92e73cb443c7.png"
           structuredData={homePageSchema}
+          preloadImages={['/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png']}
         />
       )}
       <Header />

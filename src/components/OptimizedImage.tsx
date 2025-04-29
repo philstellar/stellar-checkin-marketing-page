@@ -12,6 +12,7 @@ interface OptimizedImageProps {
   style?: React.CSSProperties;
   onClick?: () => void;
   sizes?: string;
+  isHero?: boolean;
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -24,7 +25,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   priority = false,
   style,
   onClick,
-  sizes
+  sizes,
+  isHero = false
 }) => {
   // Convert priority to loading="eager" 
   const loadingValue = priority ? 'eager' : loading;
@@ -35,6 +37,22 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     display: 'block', // Prevent layout shifts
     objectFit: 'contain',
   };
+
+  // If this is a hero image, add it to the head for preloading
+  React.useEffect(() => {
+    if ((isHero || priority) && typeof document !== 'undefined') {
+      const linkElement = document.createElement('link');
+      linkElement.rel = 'preload';
+      linkElement.href = src;
+      linkElement.as = 'image';
+      linkElement.fetchPriority = 'high';
+      document.head.appendChild(linkElement);
+
+      return () => {
+        document.head.removeChild(linkElement);
+      };
+    }
+  }, [src, isHero, priority]);
 
   return (
     <img
@@ -48,6 +66,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       onClick={onClick}
       sizes={sizes}
       decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
+      fetchPriority={isHero || priority ? "high" : "auto"}
     />
   );
 };
