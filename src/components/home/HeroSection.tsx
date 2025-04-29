@@ -56,12 +56,12 @@ const HeroSection = () => {
             <OptimizedImage 
               src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
               alt="Stellar Online Check-in Interface" 
-              className="w-full h-auto object-contain bg-transparent"
+              className="w-auto h-auto max-h-[400px] object-contain bg-transparent"
               loading="eager"
               priority={true}
-              width={500}
-              height={900}
-              sizes="(max-width: 768px) 90vw, 500px"
+              width={350}
+              height={400}
+              sizes="(max-width: 768px) 90vw, 350px"
             />
           </div>
         </div>
