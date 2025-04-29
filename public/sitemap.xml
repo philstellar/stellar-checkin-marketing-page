@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -20,7 +21,7 @@
     </image:image>
   </url>
 
-  <!-- German URLs -->
+  <!-- German routes -->
   <url>
     <loc>https://stellar-checkin.com/de/impressum</loc>
     <lastmod>2025-04-29</lastmod>
@@ -104,7 +105,7 @@
     </image:image>
   </url>
 
-  <!-- English URLs -->
+  <!-- English routes -->
   <url>
     <loc>https://stellar-checkin.com/en/impressum</loc>
     <lastmod>2025-04-29</lastmod>
@@ -154,7 +155,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Italian URLs -->
+  <!-- Italian routes -->
   <url>
     <loc>https://stellar-checkin.com/it/impressum</loc>
     <lastmod>2025-04-29</lastmod>
@@ -204,7 +205,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Spanish URLs -->
+  <!-- Spanish routes -->
   <url>
     <loc>https://stellar-checkin.com/es/impressum</loc>
     <lastmod>2025-04-29</lastmod>
