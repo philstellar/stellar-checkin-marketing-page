@@ -57,16 +57,16 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="order-1 md:order-last flex justify-center">
-            <div className="w-3/5 relative" style={{ aspectRatio: '1/1', maxWidth: '500px' }}>
-              <AspectRatio ratio={1/1} className="bg-transparent">
+            <div className="w-full md:w-3/5 relative" style={{ maxWidth: '500px' }}>
+              <AspectRatio ratio={4/3} className="bg-transparent">
                 <OptimizedImage 
                   src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
                   alt="Insurance Settings Interface" 
                   loading="eager"
                   className="w-full h-full object-contain"
                   width={500}
-                  height={500}
-                  sizes="(max-width: 768px) 90vw, 500px"
+                  height={375}
+                  sizes="(max-width: 768px) 100vw, 500px"
                   priority={true}
                 />
               </AspectRatio>

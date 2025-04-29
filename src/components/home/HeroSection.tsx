@@ -54,8 +54,8 @@ const HeroSection = () => {
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
-            <div className="w-3/5 relative" style={{ aspectRatio: '1/1', maxWidth: '500px' }}>
-              <AspectRatio ratio={1/1} className="bg-transparent">
+            <div className="w-full md:w-3/5 relative" style={{ maxWidth: '500px' }}>
+              <AspectRatio ratio={4/3} className="bg-transparent">
                 <OptimizedImage 
                   src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
                   alt="Stellar Online Check-in Interface" 
@@ -63,8 +63,8 @@ const HeroSection = () => {
                   loading="eager"
                   priority={true}
                   width={500}
-                  height={500}
-                  sizes="(max-width: 768px) 90vw, 500px"
+                  height={375}
+                  sizes="(max-width: 768px) 100vw, 500px"
                 />
               </AspectRatio>
             </div>
