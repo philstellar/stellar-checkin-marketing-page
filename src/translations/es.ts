@@ -6,7 +6,6 @@ import { partnersES } from './modules/partners';
 import { kurtaxeES } from './modules/kurtaxe';
 import { insuranceES } from './modules/insurance';
 import { trustBadgeES } from './modules/trustBadge';
-import { cookiesES } from './modules/cookies/es';
 import { zusatzservicesES } from './modules/zusatzservices/es';
 import { brevoPopupES } from './modules/brevoPopup/es';
 import { identityES } from './modules/identity/es';
@@ -25,7 +24,6 @@ export const es = {
   kurtaxe: kurtaxeES,
   insurance: insuranceES,
   trustBadge: trustBadgeES,
-  cookies: cookiesES,
   zusatzservices: zusatzservicesES,
   brevoPopup: brevoPopupES,
   identity: identityES,
