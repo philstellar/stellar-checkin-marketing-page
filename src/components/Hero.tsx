@@ -5,16 +5,22 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import OptimizedImage from './OptimizedImage';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const isMobile = useIsMobile();
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
+  const navigate = useNavigate();
   
   // Format the headlines to apply the color to Check-in
   const formatHeadline = (text: string) => {
     return text.replace(/Check-in/gi, '<span style="color:#a4c309">Check-in</span>')
                .replace(/Check-ins/gi, '<span style="color:#a4c309">Check-ins</span>')
                .replace(/Checkin/gi, '<span style="color:#a4c309">Checkin</span>');
+  };
+  
+  const handleTrustBadgeClick = () => {
+    navigate(`/${currentLanguage}/trust-badge`);
   };
   
   return (
@@ -49,21 +55,21 @@ const Hero = () => {
                 <div className="w-8 h-8 rounded-full bg-apple-400"></div>
                 <div className="w-8 h-8 rounded-full bg-apple-500"></div>
               </div>
-              <p className="ml-4 text-sm text-black font-aeonik">
-                <span className="font-medium">{t('hero.tagline')}</span>
+              <p className="ml-4 text-sm text-black font-aeonik cursor-pointer" onClick={handleTrustBadgeClick}>
+                <span className="font-medium hover:text-apple transition-colors">{t('navigation.trustBadge')}</span>
               </p>
             </div>
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
             <OptimizedImage 
-              src="/lovable-uploads/d22bc7c6-7bc6-4e74-80df-eb62d4f34b18.png" 
+              src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
               alt="Stellar Online Check-in Interface" 
-              className="w-3/5 h-auto object-contain bg-transparent"
+              className="w-full h-auto object-contain bg-transparent"
               loading="eager"
               priority={true}
               width={500}
-              height={400}
+              height={900}
               sizes="(max-width: 768px) 60vw, 500px"
             />
           </div>

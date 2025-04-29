@@ -4,10 +4,12 @@ import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { useIsMobile } from "@/hooks/use-mobile";
 import OptimizedImage from "@/components/OptimizedImage";
+import { useNavigate } from "react-router-dom";
 
 export function IndexHeroSection() {
   const isMobile = useIsMobile();
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
+  const navigate = useNavigate();
   
   // Pre-compute headline parts for better performance
   const headlineParts = (() => {
@@ -47,6 +49,10 @@ export function IndexHeroSection() {
     return parts;
   })();
   
+  const handleTrustBadgeClick = () => {
+    navigate(`/${currentLanguage}/trust-badge`);
+  };
+  
   return (
     <section className="pt-24 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-#0f266145 to-#0f266145-400/20 bg-white"></div>
@@ -80,21 +86,21 @@ export function IndexHeroSection() {
                 <div className="w-8 h-8 rounded-full bg-apple-400"></div>
                 <div className="w-8 h-8 rounded-full bg-apple-500"></div>
               </div>
-              <p className="ml-4 text-sm text-black font-aeonik">
-                <span className="font-medium">{t('hero.tagline')}</span>
+              <p className="ml-4 text-sm text-black font-aeonik group cursor-pointer" onClick={handleTrustBadgeClick}>
+                <span className="font-medium hover:text-apple transition-colors">{t('navigation.trustBadge')}</span>
               </p>
             </div>
           </div>
           
           <div className="order-1 md:order-last flex justify-center md:justify-end">
             <OptimizedImage 
-              src="/lovable-uploads/d22bc7c6-7bc6-4e74-80df-eb62d4f34b18.png" 
+              src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
               alt="Stellar Online Check-in Interface" 
-              className="w-3/5 h-auto object-contain bg-transparent md:mr-4" 
+              className="w-full h-auto object-contain bg-transparent md:mr-4" 
               loading="eager" 
               priority={true}
               width={500} 
-              height={400} 
+              height={900} 
               sizes="(max-width: 768px) 90vw, 500px"
             />
           </div>
