@@ -5,6 +5,7 @@ import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { useLanguage } from "@/context/LanguageContext";
 import { Separator } from "@/components/ui/separator";
+import OptimizedImage from "./OptimizedImage";
 
 const aboutRoutes: Record<string, {
   aboutUs: string;
@@ -70,7 +71,14 @@ const Footer = () => {
         <Separator className="my-8 bg-[#8E9196]" />
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <img src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" alt="Stellar Logo" className="h-6 mb-4 w-auto object-contain" width="150" height="24" loading="lazy" />
+            <OptimizedImage 
+              src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
+              alt="Stellar Logo" 
+              className="h-6 mb-4 w-auto object-contain" 
+              width={150} 
+              height={24} 
+              loading="lazy" 
+            />
             <p className="text-black mb-6 max-w-md">
               {t('footer.tagline')}
             </p>

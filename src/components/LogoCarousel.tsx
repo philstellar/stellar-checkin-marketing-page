@@ -1,32 +1,40 @@
+
 import { useEffect, useRef } from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import useEmblaCarousel from 'embla-carousel-react';
 import { useTranslation } from '@/hooks/use-translation';
+import OptimizedImage from './OptimizedImage';
 
 const logos = [{
   src: "/lovable-uploads/4d73a118-7cc1-4e3f-bf33-dec5ec07b93c.png",
   alt: "Beds24",
-  width: 160
+  width: 160,
+  height: 80
 }, {
   src: "/lovable-uploads/349e2cab-5eb3-4451-8d9e-0cdf5927f51b.png",
   alt: "Guesty",
-  width: 160
+  width: 160,
+  height: 80
 }, {
   src: "/lovable-uploads/dc32a014-5de5-41d8-b177-4489d94576f7.png",
   alt: "Hostfully",
-  width: 160
+  width: 160,
+  height: 80
 }, {
   src: "/lovable-uploads/3352a02f-84ed-4bbb-a143-9c2f96f0107a.png",
   alt: "Hostaway",
-  width: 160
+  width: 160,
+  height: 80
 }, {
   src: "/lovable-uploads/eb13347a-14b9-4262-9031-98ecc831003c.png",
   alt: "Lodgify",
-  width: 160
+  width: 160,
+  height: 80
 }, {
   src: "/lovable-uploads/dd00ad8c-b1db-44a5-8b95-67ed878022b9.png",
   alt: "Uplisting",
-  width: 160
+  width: 160,
+  height: 80
 }];
 
 const LogoCarousel = () => {
@@ -88,10 +96,15 @@ const LogoCarousel = () => {
                   <HoverCardTrigger asChild>
                     <div className="h-20 flex items-center justify-center p-4 bg-transparent transition-all duration-300 cursor-pointer hover:scale-110">
                       <div className="w-full h-full flex items-center justify-center filter hover:drop-shadow-md">
-                        <img src={logo.src} alt={logo.alt} style={{
-                      width: logo.width ? `${logo.width}px` : 'auto',
-                      height: 'auto'
-                    }} className="max-w-full max-h-full object-contain transition-all duration-300" loading="lazy" />
+                        <OptimizedImage 
+                          src={logo.src} 
+                          alt={logo.alt} 
+                          width={logo.width}
+                          height={logo.height}
+                          className="max-w-full max-h-full object-contain transition-all duration-300"
+                          loading="lazy"
+                          sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, (max-width: 1024px) 20vw, 160px"
+                        />
                       </div>
                     </div>
                   </HoverCardTrigger>
