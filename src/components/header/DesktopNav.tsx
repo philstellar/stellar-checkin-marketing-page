@@ -27,13 +27,13 @@ const DesktopNav = ({
   };
 
   const handleSectionNavigation = (sectionId: string) => {
-    if (location.pathname !== `/${currentLanguage}/` && location.pathname !== '/') {
-      navigate(`/${currentLanguage}/`, {
-        state: {
-          scrollTo: sectionId
-        }
-      });
+    const isHomePage = location.pathname === `/${currentLanguage}/` || location.pathname === '/';
+    
+    if (!isHomePage) {
+      // If we're not on the homepage, navigate to home with the section in the URL
+      navigate(`/${currentLanguage}/#${sectionId}`);
     } else {
+      // If we're already on the homepage, just scroll to the section
       handleSectionClick(sectionId);
     }
   };
@@ -77,32 +77,32 @@ const DesktopNav = ({
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white shadow-md z-50 !bg-white !border-gray-200">
             <DropdownMenuItem asChild>
-              <a href="/#kurtaxe" className="cursor-pointer hover:bg-slate-100 w-full">
+              <a href={`/${currentLanguage}/#kurtaxe`} className="cursor-pointer hover:bg-slate-100 w-full">
                 {t('kurtaxe.title')}
               </a>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <a href="/#zusatzservices" className="cursor-pointer hover:bg-slate-100 w-full">
+              <a href={`/${currentLanguage}/#zusatzservices`} className="cursor-pointer hover:bg-slate-100 w-full">
                 {t('zusatzservices.title')}
               </a>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <a href="/#versicherung" className="cursor-pointer hover:bg-slate-100 w-full">
+              <a href={`/${currentLanguage}/#versicherung`} className="cursor-pointer hover:bg-slate-100 w-full">
                 {t('versicherung.title')}
               </a>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <a href="/#identitaetspruefung" className="cursor-pointer hover:bg-slate-100 w-full">
+              <a href={`/${currentLanguage}/#identitaetspruefung`} className="cursor-pointer hover:bg-slate-100 w-full">
                 {t('identity.title')}
               </a>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <a href="/#einstellungen" className="cursor-pointer hover:bg-slate-100 w-full">
+              <a href={`/${currentLanguage}/#einstellungen`} className="cursor-pointer hover:bg-slate-100 w-full">
                 {t('settings.title')}
               </a>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <a href="/#integrationen" className="cursor-pointer hover:bg-slate-100 w-full">
+              <a href={`/${currentLanguage}/#integrationen`} className="cursor-pointer hover:bg-slate-100 w-full">
                 {t('integration.title')}
               </a>
             </DropdownMenuItem>
@@ -126,12 +126,14 @@ const DesktopNav = ({
         {renderBoldText(t('navigation.trustBadge'))}
       </button>
 
-      <button onClick={() => handleSectionNavigation('preise')} className="text-royal hover:text-apple font-medium transition-colors">
+      <a href={`/${currentLanguage}/#${t('navigation.pricingAnchor')}`} className="text-royal hover:text-apple font-medium transition-colors">
         {t('navigation.pricing')}
-      </button>
-      <button onClick={() => handleSectionNavigation('kontakt')} className="text-royal hover:text-apple font-medium transition-colors">
+      </a>
+      
+      <a href={`/${currentLanguage}/#${t('navigation.contactAnchor')}`} className="text-royal hover:text-apple font-medium transition-colors">
         {t('navigation.contact')}
-      </button>
+      </a>
+      
       <LanguageSelector />
       <CTAButton variant="default" className="bg-apple hover:bg-apple-600">
         {t('navigation.register')}
