@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useCallback } from 'react';
+import * as React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
 import DesktopNav from './header/DesktopNav';
@@ -10,17 +10,17 @@ import { MetaHead } from './meta';
 import { useLanguage } from '@/context/LanguageContext';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { language } = useLanguage();
   
-  const handleScroll = useCallback(() => {
+  const handleScroll = React.useCallback(() => {
     setIsScrolled(window.scrollY > 10);
   }, []);
   
-  useEffect(() => {
+  React.useEffect(() => {
     window.addEventListener('scroll', handleScroll, {
       passive: true
     });
@@ -29,11 +29,11 @@ const Header = () => {
     };
   }, [handleScroll]);
   
-  useEffect(() => {
+  React.useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
   
-  useEffect(() => {
+  React.useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -69,7 +69,7 @@ const Header = () => {
     });
   };
   
-  const handleSectionClick = useCallback((sectionId: string) => {
+  const handleSectionClick = React.useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       setIsMenuOpen(false);
@@ -79,7 +79,7 @@ const Header = () => {
     }
   }, []);
   
-  useEffect(() => {
+  React.useEffect(() => {
     const state = location.state as {
       scrollTo?: string;
     };
