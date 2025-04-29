@@ -34,7 +34,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       if (typeof window !== 'undefined') {
         const saved = localStorage.getItem('language');
         if (saved === 'de' || saved === 'en' || saved === 'es' || saved === 'it') {
-          return saved;
+          return saved as Language;
         }
       }
       
@@ -63,7 +63,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     const urlLanguage = getLanguageFromPath(location.pathname);
     if (urlLanguage && urlLanguage !== language) {
       setLanguageState(urlLanguage);
-      localStorage.setItem('language', urlLanguage);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('language', urlLanguage);
+      }
     }
   }, [location.pathname, language]);
 

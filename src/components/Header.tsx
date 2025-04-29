@@ -7,7 +7,7 @@ import MobileNav from './header/MobileNav';
 import LanguageSelector from './LanguageSelector';
 import OptimizedImage from './OptimizedImage';
 import { MetaHead } from './meta';
-import { useLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/context/language/LanguageContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

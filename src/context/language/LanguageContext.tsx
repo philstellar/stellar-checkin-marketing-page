@@ -14,7 +14,7 @@ const LanguageContext = createContext<LanguageContextType>({
 export const useLanguage = () => useContext(LanguageContext);
 
 // Language provider component
-export const LanguageProvider = ({ children }: LanguageProviderProps) => {
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [language, setLanguageState] = useState<Language>('de');

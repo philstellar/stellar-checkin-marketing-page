@@ -35,6 +35,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     display: 'block', // Prevent layout shifts
     objectFit: 'contain',
   };
+  
+  // Use fetchPriority for high-priority images
+  const fetchPriority = priority ? "high" : "auto";
 
   return (
     <img
@@ -48,6 +51,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       onClick={onClick}
       sizes={sizes}
       decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
+      fetchPriority={fetchPriority}
     />
   );
 };
