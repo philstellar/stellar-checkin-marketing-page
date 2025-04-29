@@ -1,4 +1,3 @@
-
 import { memo, useCallback } from "react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
@@ -118,7 +117,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to={`/${language}/#preise`} className="flex items-center text-black hover:text-apple transition-colors" onClick={e => handleNavigation(e, 'preise')}>
+                <Link to={`/${language}/#${t('navigation.pricingAnchor')}`} className="flex items-center text-black hover:text-apple transition-colors" onClick={e => handleNavigation(e, t('navigation.pricingAnchor'))}>
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.pricing')}
                 </Link>

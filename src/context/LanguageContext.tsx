@@ -64,6 +64,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     // Save to localStorage
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', newLanguage);
+      // Mark that language was changed by picker to prevent detection popup
+      localStorage.setItem('languageChoiceMade', 'true');
+      localStorage.setItem('lastLanguageChangeByPicker', 'true');
     }
     
     // Update URL based on current path
