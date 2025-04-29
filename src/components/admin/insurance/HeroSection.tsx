@@ -5,9 +5,11 @@ import CTAButton from '../../../components/CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import OptimizedImage from '@/components/OptimizedImage';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const HeroSection = () => {
   const { t, currentLanguage } = useTranslation();
+  const isMobile = useIsMobile();
   
   // Get the title and replace the keywords with styled spans based on language
   const formattedTitle = () => {
@@ -57,19 +59,21 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="order-1 md:order-last flex justify-center">
-            <div className="w-full md:w-3/5 relative" style={{ maxWidth: '500px' }}>
-              <AspectRatio ratio={4/3} className="bg-transparent">
-                <OptimizedImage 
-                  src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
-                  alt="Insurance Settings Interface" 
-                  loading="eager"
-                  className="w-full h-full object-contain"
-                  width={500}
-                  height={375}
-                  sizes="(max-width: 768px) 100vw, 500px"
-                  priority={true}
-                />
-              </AspectRatio>
+            <div className="w-full md:w-4/5 relative" style={{ maxWidth: '700px' }}>
+              <div className="relative">
+                <AspectRatio ratio={isMobile ? 4/5 : 4/3} className="bg-transparent">
+                  <OptimizedImage 
+                    src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
+                    alt="Insurance Settings Interface" 
+                    loading="eager"
+                    className="w-full h-full object-contain hero-image-shadow"
+                    width={700}
+                    height={525}
+                    sizes="(max-width: 768px) 100vw, 700px"
+                    priority={true}
+                  />
+                </AspectRatio>
+              </div>
             </div>
           </div>
         </div>

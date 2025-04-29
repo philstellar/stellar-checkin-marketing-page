@@ -63,19 +63,21 @@ const Hero = () => {
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
-            <div className="w-full md:w-3/5 relative" style={{ maxWidth: '500px' }}>
-              <AspectRatio ratio={4/3} className="bg-transparent">
-                <OptimizedImage 
-                  src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
-                  alt="Stellar Online Check-in Interface" 
-                  className="w-full h-full object-contain bg-transparent" 
-                  loading="eager"
-                  priority={true}
-                  width={500}
-                  height={375}
-                  sizes="(max-width: 768px) 100vw, 500px"
-                />
-              </AspectRatio>
+            <div className="w-full md:w-4/5 relative" style={{ maxWidth: '700px' }}>
+              <div className="relative">
+                <AspectRatio ratio={isMobile ? 4/5 : 4/3} className="bg-transparent">
+                  <OptimizedImage 
+                    src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
+                    alt="Stellar Online Check-in Interface" 
+                    className="w-full h-full object-contain bg-transparent hero-image-shadow" 
+                    loading="eager"
+                    priority={true}
+                    width={700}
+                    height={525}
+                    sizes="(max-width: 768px) 100vw, 700px"
+                  />
+                </AspectRatio>
+              </div>
             </div>
           </div>
         </div>
