@@ -5,9 +5,10 @@ import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import OptimizedImage from "@/components/OptimizedImage";
+import { Link } from "react-router-dom";
 
 const IdentitaetspruefungSection = () => {
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
   
   return (
     <section id="identitaetspruefung" className="section-padding bg-white">
@@ -27,17 +28,20 @@ const IdentitaetspruefungSection = () => {
                 {
                   icon: <ScanFace className="w-8 h-8 text-apple" />,
                   title: t('identity.biometric.title'),
-                  description: t('identity.biometric.description')
+                  description: t('identity.biometric.description'),
+                  linkTo: `/${currentLanguage}/#identitaetspruefung`
                 },
                 {
                   icon: <Fingerprint className="w-8 h-8 text-apple" />,
                   title: t('identity.document.title'),
-                  description: t('identity.document.description')
+                  description: t('identity.document.description'),
+                  linkTo: `/${currentLanguage}/#identitaetspruefung`
                 },
                 {
                   icon: <ShieldCheck className="w-8 h-8 text-apple" />,
                   title: t('identity.privacy.title'),
-                  description: t('identity.privacy.description')
+                  description: t('identity.privacy.description'),
+                  linkTo: `/${currentLanguage}/datenschutz`
                 }
               ].map((feature, index) => (
                 <div key={index} className="flex items-start gap-5">
@@ -46,7 +50,9 @@ const IdentitaetspruefungSection = () => {
                   </div>
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-black mb-2 pb-2">
-                      {feature.title}
+                      <Link to={feature.linkTo} className="hover:text-apple transition-colors">
+                        {feature.title}
+                      </Link>
                       <div className="mt-1 h-1 w-[30%] bg-apple rounded-full"></div>
                     </h3>
                     <p className="text-base text-black">{feature.description}</p>
@@ -63,15 +69,17 @@ const IdentitaetspruefungSection = () => {
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
-            <OptimizedImage 
-              src="/lovable-uploads/9eed864c-02ee-458e-af5f-0306b81bbd3b.png"
-              alt="Identitätsprüfung mit Stellar" 
-              className="w-3/5 h-auto object-contain bg-transparent"
-              width={500}
-              height={800}
-              loading="lazy"
-              sizes="(max-width: 768px) 90vw, 500px"
-            />
+            <Link to={`/${currentLanguage}/#identitaetspruefung`}>
+              <OptimizedImage 
+                src="/lovable-uploads/9eed864c-02ee-458e-af5f-0306b81bbd3b.png"
+                alt="Identitätsprüfung mit Stellar" 
+                className="w-3/5 h-auto object-contain bg-transparent"
+                width={500}
+                height={800}
+                loading="lazy"
+                sizes="(max-width: 768px) 90vw, 500px"
+              />
+            </Link>
           </div>
         </div>
       </div>
