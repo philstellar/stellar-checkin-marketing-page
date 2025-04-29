@@ -23,8 +23,8 @@ Allow: /
 User-agent: AdsBot-Google
 Allow: /
 
-# Reference to sitemap - using absolute URL for clarity
-Sitemap: https://stellar-checkin.com/sitemap.xml
+# Reference to sitemap index - using absolute URL for clarity
+Sitemap: https://stellar-checkin.com/sitemap_index.xml
 
 # No crawl delay for Googlebot to ensure quick indexing
 User-agent: Googlebot

@@ -170,7 +170,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="/sitemap.xml" className="flex items-center text-black hover:text-apple transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href="/sitemap_index.xml" className="flex items-center text-black hover:text-apple transition-colors" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('footer.sitemap')}
                 </a>

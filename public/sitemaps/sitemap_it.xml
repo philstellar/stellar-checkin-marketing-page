@@ -1,0 +1,64 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://stellar-checkin.com/it</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/impressum</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/datenschutz</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/agb</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/chi-siamo</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/storie-di-successo</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/faq</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/assicurazione</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/trust-badge</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
