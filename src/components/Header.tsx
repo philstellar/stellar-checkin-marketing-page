@@ -89,35 +89,6 @@ const Header = () => {
     }
   }, [location, navigate]);
   
-  // Prefetch key pages for faster navigation
-  useEffect(() => {
-    // Create link elements for key pages to prefetch
-    const prefetchLinks = [
-      { href: `/${language}/versicherung`, as: 'document' },
-      { href: `/${language}/trust-badge`, as: 'document' }
-    ];
-    
-    const linkElements: HTMLLinkElement[] = [];
-    
-    prefetchLinks.forEach(link => {
-      const linkEl = document.createElement('link');
-      linkEl.rel = 'prefetch';
-      linkEl.href = link.href;
-      linkEl.as = link.as;
-      document.head.appendChild(linkEl);
-      linkElements.push(linkEl);
-    });
-    
-    // Clean up prefetch links on unmount
-    return () => {
-      linkElements.forEach(link => {
-        if (document.head.contains(link)) {
-          document.head.removeChild(link);
-        }
-      });
-    };
-  }, [language]);
-  
   return (
     <>
       <MetaHead />

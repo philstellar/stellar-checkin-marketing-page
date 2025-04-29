@@ -64,8 +64,8 @@ export const TrustBadgeLevels = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-16 bg-white">
-      <div className="max-w-[1200px] mx-auto">
+    <div className="container-custom py-16 bg-white">
+      <div className="max-w-4xl mx-auto">
         <div className="space-y-6 text-center mb-12">
           <h3 className="text-2xl font-semibold text-royal mb-8">
             {t('trustBadge.preview.title')}

@@ -1,42 +1,25 @@
 
-import { navigationDE, navigationEN, navigationES, navigationIT } from './modules/navigation';
-import { heroDE, heroEN, heroES, heroIT } from './modules/hero';
-import { siteTranslations } from './modules/site';
-import { commonTranslations } from './modules/common';
+import { de } from './de';
+import { en } from './en';
+import { it } from './it';
+import { es } from './es';
 
-// Import other translation modules
-import { insuranceDE } from './modules/insurance/de';
-import { insuranceEN } from './modules/insurance/en';
-import { insuranceES } from './modules/insurance/es';
-import { insuranceIT } from './modules/insurance/it';
+import { siteTranslations } from './modules/site';
+
+// Re-export the translations
+export * from './modules/site';
+
+export type TranslationKey = string;
+
+// Extend each language object with the site translations
+const deWithSite = { ...de, site: siteTranslations.de };
+const enWithSite = { ...en, site: siteTranslations.en };
+const itWithSite = { ...it, site: siteTranslations.it };
+const esWithSite = { ...es, site: siteTranslations.es };
 
 export const translations = {
-  de: {
-    navigation: navigationDE,
-    hero: heroDE,
-    site: siteTranslations.de,
-    common: commonTranslations.de,
-    insurance: insuranceDE,
-  },
-  en: {
-    navigation: navigationEN,
-    hero: heroEN,
-    site: siteTranslations.en,
-    common: commonTranslations.en,
-    insurance: insuranceEN,
-  },
-  it: {
-    navigation: navigationIT,
-    hero: heroIT,
-    site: siteTranslations.it,
-    common: commonTranslations.it,
-    insurance: insuranceIT,
-  },
-  es: {
-    navigation: navigationES,
-    hero: heroES,
-    site: siteTranslations.es,
-    common: commonTranslations.es,
-    insurance: insuranceES,
-  }
+  de: deWithSite,
+  en: enWithSite,
+  it: itWithSite,
+  es: esWithSite,
 };
