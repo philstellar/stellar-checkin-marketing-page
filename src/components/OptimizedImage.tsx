@@ -29,17 +29,29 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   // Convert priority to loading="eager" instead of using fetchPriority which causes a warning
   const loadingValue = priority ? 'eager' : loading;
   
-  // Generate WebP source if the original is PNG
-  const webpSrc = src.toLowerCase().endsWith('.png')
-    ? src.replace(/\.png$/i, '.webp')
-    : src;
-  
-  // We'll provide the original as fallback for browsers that don't support WebP
+  // Generate WebP source if the original isn't already WebP
+  const isWebP = src.toLowerCase().endsWith('.webp');
   const isPng = src.toLowerCase().endsWith('.png');
+  const isJpg = src.toLowerCase().endsWith('.jpg') || src.toLowerCase().endsWith('.jpeg');
+  
+  // Only convert if it's a PNG or JPG
+  const webpSrc = isWebP ? src : (isPng || isJpg) ? 
+    src.replace(/\.(png|jpg|jpeg)$/i, '.webp') : 
+    src;
+  
+  // Add fetchpriority for important images
+  const fetchPriority = priority ? "high" : undefined;
+  
+  // For priority images (likely LCP candidates), apply display block to improve rendering
+  const imageStyle = priority ? {
+    ...style,
+    display: 'block', // Prevent layout shifts
+    contentVisibility: 'auto' as 'auto', // Optimize rendering
+  } : style;
   
   return (
     <picture>
-      {isPng && (
+      {!isWebP && (isPng || isJpg) && (
         <source 
           srcSet={webpSrc} 
           type="image/webp" 
@@ -53,9 +65,11 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         height={height}
         className={className}
         loading={loadingValue}
-        style={style}
+        style={imageStyle}
         onClick={onClick}
         sizes={sizes}
+        fetchpriority={fetchPriority}
+        decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
       />
     </picture>
   );

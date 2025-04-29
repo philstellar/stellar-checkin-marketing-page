@@ -28,6 +28,7 @@ export function IndexHeroSection() {
             <h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 font-aeonik"
               dangerouslySetInnerHTML={{ __html: getFormattedHeadline() }}
+              style={{ contentVisibility: 'auto' }}
             />
             <p className="text-lg text-black mb-8 max-w-lg font-aeonik">
               {t('hero.subheadline')}
