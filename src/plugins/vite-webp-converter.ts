@@ -24,22 +24,25 @@ export function webpConverter(): Plugin {
       
       // Handle file changes
       watcher.on('add', async (filePath) => {
-        if (filePath.includes(uploadsDir) && filePath.toLowerCase().endsWith('.png')) {
+        if (filePath.includes(uploadsDir) && 
+           (filePath.toLowerCase().endsWith('.png') || 
+            filePath.toLowerCase().endsWith('.jpg') || 
+            filePath.toLowerCase().endsWith('.jpeg'))) {
           try {
-            const webpPath = filePath.replace(/\.png$/i, '.webp');
+            const webpPath = filePath.replace(/\.(png|jpg|jpeg)$/i, '.webp');
             
             // Check if WebP already exists and is newer
             if (fs.existsSync(webpPath)) {
-              const pngStat = fs.statSync(filePath);
+              const imgStat = fs.statSync(filePath);
               const webpStat = fs.statSync(webpPath);
               
-              // Skip if WebP is newer than PNG
-              if (webpStat.mtime > pngStat.mtime) {
+              // Skip if WebP is newer than original
+              if (webpStat.mtime > imgStat.mtime) {
                 return;
               }
             }
             
-            // Convert PNG to WebP
+            // Convert to WebP
             await sharp(filePath)
               .webp({ quality: 80 })
               .toFile(webpPath);
@@ -71,41 +74,51 @@ async function convertExistingImages() {
   
   try {
     if (!fs.existsSync(uploadsDir)) {
+      console.warn(`WebP converter: Directory not found: ${uploadsDir}`);
       return;
     }
     
     const files = fs.readdirSync(uploadsDir);
-    const pngFiles = files.filter(file => file.toLowerCase().endsWith('.png'));
+    const imgFiles = files.filter(file => 
+      file.toLowerCase().endsWith('.png') || 
+      file.toLowerCase().endsWith('.jpg') || 
+      file.toLowerCase().endsWith('.jpeg')
+    );
+    
+    console.log(`🔍 WebP converter: Found ${imgFiles.length} images to process`);
+    
     const conversionPromises = [];
     
-    console.log(`🔍 Found ${pngFiles.length} PNG files to process`);
-    
-    for (const pngFile of pngFiles) {
-      const pngPath = path.join(uploadsDir, pngFile);
-      const webpPath = pngPath.replace(/\.png$/i, '.webp');
+    for (const imgFile of imgFiles) {
+      const imgPath = path.join(uploadsDir, imgFile);
+      const webpPath = imgPath.replace(/\.(png|jpg|jpeg)$/i, '.webp');
       
       // Skip if WebP already exists and is newer
       if (fs.existsSync(webpPath)) {
-        const pngStat = fs.statSync(pngPath);
+        const imgStat = fs.statSync(imgPath);
         const webpStat = fs.statSync(webpPath);
         
-        if (webpStat.mtime > pngStat.mtime) {
+        if (webpStat.mtime > imgStat.mtime) {
           continue;
         }
       }
       
-      // Convert PNG to WebP
+      // Convert to WebP with appropriate quality settings
+      const isLogo = imgFile.toLowerCase().includes('logo');
+      const quality = isLogo ? 90 : 80; // Higher quality for logos
+      
       conversionPromises.push(
-        sharp(pngPath)
-          .webp({ quality: 80 })
+        sharp(imgPath)
+          .webp({ quality })
           .toFile(webpPath)
-          .then(() => console.log(`✅ Converted ${pngFile} to WebP`))
-          .catch(err => console.error(`❌ Error converting ${pngFile} to WebP:`, err))
+          .then(() => console.log(`✅ WebP converter: Converted ${imgFile} to WebP`))
+          .catch(err => console.error(`❌ WebP converter: Error converting ${imgFile}:`, err))
       );
     }
     
     await Promise.all(conversionPromises);
+    console.log(`✅ WebP converter: Processed ${conversionPromises.length} images`);
   } catch (err) {
-    console.error('Error processing images:', err);
+    console.error('WebP converter: Error processing images:', err);
   }
 }

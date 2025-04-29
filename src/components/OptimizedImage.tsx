@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface OptimizedImageProps {
   src: string;
@@ -26,6 +26,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   onClick,
   sizes
 }) => {
+  const [webpFailed, setWebpFailed] = useState(false);
+  
   // Convert priority to loading="eager" instead of using fetchPriority which causes a warning
   const loadingValue = priority ? 'eager' : loading;
   
@@ -56,13 +58,29 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     (imageStyle as any).contentVisibility = 'auto';
   }
   
+  // Log WebP availability for debugging
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'production') {
+      if (!isWebP && (isPng || isJpg)) {
+        console.log(`[OptimizedImage] Using WebP source for: ${src} → ${webpSrc}`);
+      }
+    }
+  }, [src, webpSrc, isWebP, isPng, isJpg]);
+
+  // Handle WebP source error
+  const handleWebPError = () => {
+    console.warn(`[OptimizedImage] WebP failed to load: ${webpSrc}, falling back to original format`);
+    setWebpFailed(true);
+  };
+  
   return (
     <picture>
-      {!isWebP && (isPng || isJpg) && (
+      {!isWebP && !webpFailed && (isPng || isJpg) && (
         <source 
           srcSet={webpSrc} 
           type="image/webp" 
           sizes={sizes}
+          onError={handleWebPError}
         />
       )}
       <img

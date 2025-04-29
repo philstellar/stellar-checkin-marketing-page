@@ -1,69 +1,44 @@
 
 /**
- * This script creates a template Favorent logo if the original is missing
- * 
- * Usage:
- * 1. Install dependencies: npm install sharp canvas
- * 2. Run: node scripts/create-favorent-logo.js
+ * This script creates a WebP version of the Favorent logo
+ * Usage: node scripts/create-favorent-logo.js
  */
 
-const { createCanvas } = require('canvas');
+const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
-const sharp = require('sharp');
 
-const outputDir = path.join(__dirname, '../public/lovable-uploads');
-const outputPath = path.join(outputDir, 'new-favorent-logo.png');
-const webpOutputPath = path.join(outputDir, 'new-favorent-logo.webp');
+const inputPath = path.join(__dirname, '../public/lovable-uploads/new-favorent-logo.png');
+const outputPath = path.join(__dirname, '../public/lovable-uploads/new-favorent-logo.webp');
 
-// Ensure directory exists
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
+async function createWebpLogo() {
+  try {
+    console.log('Creating WebP version of Favorent logo...');
+    console.log(`Input: ${inputPath}`);
+    console.log(`Output: ${outputPath}`);
+    
+    // Check if input file exists
+    if (!fs.existsSync(inputPath)) {
+      console.error(`Error: Input file not found at ${inputPath}`);
+      return;
+    }
+
+    // Convert PNG to WebP with good quality
+    await sharp(inputPath)
+      .webp({ quality: 80 })
+      .toFile(outputPath);
+    
+    const originalSize = fs.statSync(inputPath).size;
+    const webpSize = fs.statSync(outputPath).size;
+    const savedPercent = ((originalSize - webpSize) / originalSize * 100).toFixed(1);
+    
+    console.log(`✅ Successfully created: ${outputPath}`);
+    console.log(`Original size: ${(originalSize / 1024).toFixed(2)}KB`);
+    console.log(`WebP size: ${(webpSize / 1024).toFixed(2)}KB`);
+    console.log(`Saved: ${savedPercent}%`);
+  } catch (error) {
+    console.error('Error creating WebP image:', error);
+  }
 }
 
-// Check if logo already exists
-if (fs.existsSync(outputPath)) {
-  console.log('Logo already exists, skipping creation');
-  process.exit(0);
-}
-
-// Create canvas for the logo
-const width = 300;
-const height = 100;
-const canvas = createCanvas(width, height);
-const context = canvas.getContext('2d');
-
-// Fill background
-context.fillStyle = '#ffffff';
-context.fillRect(0, 0, width, height);
-
-// Text styling
-context.fillStyle = '#333333';
-context.font = 'bold 40px Arial';
-context.textAlign = 'center';
-context.textBaseline = 'middle';
-
-// Draw text
-context.fillText('FavoRent', width / 2, height / 2);
-
-// Add a simple icon
-context.beginPath();
-context.arc(50, 50, 20, 0, 2 * Math.PI);
-context.fillStyle = '#a4c309';
-context.fill();
-
-// Save the PNG
-const buffer = canvas.toBuffer('image/png');
-fs.writeFileSync(outputPath, buffer);
-console.log(`Created logo at: ${outputPath}`);
-
-// Convert to WebP
-sharp(outputPath)
-  .webp({ quality: 90 })
-  .toFile(webpOutputPath)
-  .then(() => {
-    console.log(`Created WebP version at: ${webpOutputPath}`);
-  })
-  .catch(err => {
-    console.error('Error creating WebP version:', err);
-  });
+createWebpLogo();

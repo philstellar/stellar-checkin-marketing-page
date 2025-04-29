@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { UserCheck, BadgeCheck, Star, Shield, Globe2 } from 'lucide-react';
@@ -9,6 +8,7 @@ import CTAButton from '../components/CTAButton';
 import TrustBadgeFAQ from '../components/admin/TrustBadgeFAQ';
 import TrustBadgeCertificates from '../components/admin/TrustBadgeCertificates';
 import LogoCarouselAutoplay from '../components/LogoCarouselAutoplay';
+import OptimizedImage from '../components/OptimizedImage';
 
 const testimonialLogos = [{
   src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
@@ -19,7 +19,7 @@ const testimonialLogos = [{
   alt: "Homeby",
   width: 160
 }, {
-  src: "/lovable-uploads/new-favorent-logo.webp", // Updated to use webp format
+  src: "/lovable-uploads/new-favorent-logo.webp", // Using WebP format
   alt: "Favorent",
   width: 150
 }, {
@@ -70,7 +70,15 @@ const TrustBadgePage = () => {
               </div>
             </div>
             <div className="order-1 md:order-last flex justify-center">
-              <img src="/lovable-uploads/3098a042-bbb0-4607-b03f-beb60fdc911d.png" alt="Trust Badge Preview" className="w-full h-auto object-contain max-w-[800px]" loading="eager" fetchPriority="high" />
+              <OptimizedImage 
+                src="/lovable-uploads/3098a042-bbb0-4607-b03f-beb60fdc911d.png" 
+                alt="Trust Badge Preview" 
+                className="w-full h-auto object-contain max-w-[800px]" 
+                loading="eager"
+                priority={true}
+                width={800}
+                height={600}
+              />
             </div>
           </div>
         </div>
@@ -79,7 +87,6 @@ const TrustBadgePage = () => {
       {/* Logo Carousel Section */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          
           <LogoCarouselAutoplay logos={testimonialLogos} />
         </div>
       </section>

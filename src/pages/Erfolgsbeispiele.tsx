@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import { Card } from "@/components/ui/card";
 import LogoCarouselAutoplay from '@/components/LogoCarouselAutoplay';
 import CTAButton from '@/components/CTAButton';
+import OptimizedImage from '@/components/OptimizedImage';
+
 const testimonialLogos = [{
   src: "/lovable-uploads/676aad56-42f8-4099-a3bb-1239e0d91468.png",
   alt: "Hof Liebeneck Osterspai",
@@ -83,6 +85,7 @@ const testimonials = [{
   quote: "Als Immobilienmanagement-Unternehmen mussten wir ständig zwischen verschiedenen Systemen wechseln. Stellar Checkin hat unsere gesamten Check-in-Prozesse vereinfacht und digitalisiert.\n\nDie Möglichkeit, Gästedaten automatisch zu erfassen, Versicherungen anzubieten und Zusatzleistungen zu verkaufen, hat unsere Effizienz und Umsätze deutlich gesteigert.",
   website: "https://homeby.it"
 }];
+
 const Erfolgsbeispiele = () => {
   return <>
       <Header />
@@ -129,7 +132,13 @@ const Erfolgsbeispiele = () => {
                 <div className="flex flex-col h-full">
                   <div className="mb-6 my-0 py-0">
                     <div className="flex items-center gap-4 mb-4">
-                      <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover" />
+                      <OptimizedImage 
+                        src={testimonial.image} 
+                        alt={testimonial.name} 
+                        className="w-16 h-16 rounded-full object-cover" 
+                        width={64}
+                        height={64}
+                      />
                       <div>
                         <h3 className="text-xl font-semibold mb-1 text-royal">
                           <a href={testimonial.website} target="_blank" rel="noopener noreferrer" className="hover:text-apple transition-colors">
@@ -166,4 +175,5 @@ const Erfolgsbeispiele = () => {
       <Footer />
     </>;
 };
+
 export default Erfolgsbeispiele;
