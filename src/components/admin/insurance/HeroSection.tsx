@@ -22,6 +22,16 @@ const HeroSection = () => {
     } else if (currentLanguage === 'en') {
       return title
         .replace(/integrated protection/gi, '<span style="color:#a4c309">integrated protection</span>');
+    } else if (currentLanguage === 'it') {
+      return title
+        .replace('Automatizzare', '<span class="text-apple">Automatizzare</span>')
+        .replace('assicurazione', '<span class="text-apple">assicurazione</span>')
+        .replace('depositi', '<span style="color:#a4c309">depositi</span>');
+    } else if (currentLanguage === 'es') {
+      return title
+        .replace('Automatice', '<span class="text-apple">Automatice</span>')
+        .replace('Seguro', '<span class="text-apple">Seguro</span>')
+        .replace('Depósitos', '<span style="color:#a4c309">Depósitos</span>');
     }
     
     return title;

@@ -1,3 +1,4 @@
+
 import { memo } from "react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
@@ -133,7 +134,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                
+                <Link to={about.faq} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                  <ExternalLink className="h-5 w-5 text-apple mr-2" />
+                  {t('navigation.faq')}
+                </Link>
               </li>
             </ul>
           </div>
