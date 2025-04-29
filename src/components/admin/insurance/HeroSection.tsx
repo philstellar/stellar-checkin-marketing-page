@@ -4,6 +4,7 @@ import { UserCheck } from 'lucide-react';
 import CTAButton from '../../../components/CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import OptimizedImage from '@/components/OptimizedImage';
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const HeroSection = () => {
   const { t, currentLanguage } = useTranslation();
@@ -56,16 +57,20 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="order-1 md:order-last flex justify-center">
-            <OptimizedImage 
-              src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
-              alt="Insurance Settings Interface" 
-              loading="eager"
-              className="w-3/5 h-auto object-contain"
-              width={500}
-              height={500}
-              sizes="(max-width: 768px) 90vw, 500px"
-              priority={true}
-            />
+            <div className="w-3/5 relative" style={{ aspectRatio: '1/1', maxWidth: '500px' }}>
+              <AspectRatio ratio={1/1} className="bg-transparent">
+                <OptimizedImage 
+                  src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
+                  alt="Insurance Settings Interface" 
+                  loading="eager"
+                  className="w-full h-full object-contain"
+                  width={500}
+                  height={500}
+                  sizes="(max-width: 768px) 90vw, 500px"
+                  priority={true}
+                />
+              </AspectRatio>
+            </div>
           </div>
         </div>
       </div>

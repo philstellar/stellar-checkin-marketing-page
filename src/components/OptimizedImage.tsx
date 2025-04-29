@@ -26,17 +26,14 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   onClick,
   sizes
 }) => {
-  // Convert priority to loading="eager" instead of using fetchPriority which causes a warning
+  // Convert priority to loading="eager" 
   const loadingValue = priority ? 'eager' : loading;
-  
-  // Add fetchpriority for important images - using camelCase for React
-  const fetchPriority = priority ? "high" : undefined;
   
   // For priority images (likely LCP candidates), apply optimized styles
   const imageStyle: React.CSSProperties = {
     ...style,
-    display: priority ? 'block' : undefined, // Prevent layout shifts
-    contain: priority ? 'paint' : undefined, // Optimize rendering
+    display: 'block', // Prevent layout shifts
+    objectFit: 'contain',
   };
 
   return (
@@ -50,7 +47,6 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       style={imageStyle}
       onClick={onClick}
       sizes={sizes}
-      fetchPriority={fetchPriority}
       decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
     />
   );

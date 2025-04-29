@@ -113,14 +113,16 @@ const Header = () => {
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center">
               <button onClick={handleHomeClick} className="flex items-center">
-                <OptimizedImage 
-                  src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
-                  alt="Stellar Logo" 
-                  width={150} 
-                  height={36} 
-                  className="h-9 w-auto object-contain"
-                  priority={true}
-                />
+                <div className="w-[150px] h-[36px] relative" style={{ aspectRatio: '150/36' }}>
+                  <OptimizedImage 
+                    src="/lovable-uploads/ff2f3aee-64a7-4b39-8853-4cf47dab5b66.png" 
+                    alt="Stellar Logo" 
+                    width={150} 
+                    height={36} 
+                    className="h-9 w-auto object-contain"
+                    priority={true}
+                  />
+                </div>
               </button>
             </div>
             
