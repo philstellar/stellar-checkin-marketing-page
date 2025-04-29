@@ -15,7 +15,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/"/>
     <image:image>
-      <image:loc>https://stellar-checkin.com/lovable-uploads/ff8a3a50-21d0-4e53-98f4-3265e363fe55.png</image:loc>
+      <image:loc>https://stellar-checkin.com/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png</image:loc>
       <image:title>Stellar Online Check-in Interface</image:title>
       <image:caption>Online Check-in platform for vacation rentals</image:caption>
     </image:image>
@@ -49,31 +49,52 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/agb"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/agb"/>
   </url>
-
-  <!-- Insurance Pages - All Languages -->
+  <url>
+    <loc>https://stellar-checkin.com/de/ueber-uns</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/chi-siamo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/sobre-nosotros"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/de/erfolgsbeispiele</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/success-stories"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/storie-di-successo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/historias-de-exito"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/de/faq</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/faq"/>
+  </url>
   <url>
     <loc>https://stellar-checkin.com/de/versicherung</loc>
     <lastmod>2025-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/versicherung"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/insurance"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/assicurazione"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/seguro"/>
     <image:image>
-      <image:loc>https://stellar-checkin.com/lovable-uploads/078c9766-fb89-443d-b1bb-21897d1d1dce.png</image:loc>
-      <image:title>Hiscox Logo</image:title>
-      <image:caption>Insurance partner for rental damages</image:caption>
+      <image:loc>https://stellar-checkin.com/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png</image:loc>
+      <image:title>Insurance Settings Interface</image:title>
+      <image:caption>Insurance management platform for vacation rentals</image:caption>
     </image:image>
   </url>
-
-  <!-- Trust Badge Pages - All Languages -->
   <url>
     <loc>https://stellar-checkin.com/de/trust-badge</loc>
     <lastmod>2025-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/trust-badge"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/trust-badge"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/trust-badge"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/trust-badge"/>
@@ -82,42 +103,6 @@
       <image:title>Trust Badge Level 1</image:title>
       <image:caption>Trust certification for vacation rental properties</image:caption>
     </image:image>
-  </url>
-
-  <!-- About Us Pages - All Languages -->
-  <url>
-    <loc>https://stellar-checkin.com/de/ueber-uns</loc>
-    <lastmod>2025-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/ueber-uns"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/about-us"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/chi-siamo"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/sobre-nosotros"/>
-  </url>
-
-  <!-- Success Stories Pages - All Languages -->
-  <url>
-    <loc>https://stellar-checkin.com/de/erfolgsbeispiele</loc>
-    <lastmod>2025-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/erfolgsbeispiele"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/success-stories"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/storie-di-successo"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/historias-de-exito"/>
-  </url>
-
-  <!-- FAQ Pages - All Languages -->
-  <url>
-    <loc>https://stellar-checkin.com/de/faq</loc>
-    <lastmod>2025-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/faq"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en/faq"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it/faq"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://stellar-checkin.com/es/faq"/>
   </url>
 
   <!-- English URLs -->
@@ -139,6 +124,36 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/about-us</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/success-stories</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/faq</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/insurance</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/en/trust-badge</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Italian URLs -->
   <url>
@@ -158,6 +173,36 @@
     <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/chi-siamo</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/storie-di-successo</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/faq</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/assicurazione</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/it/trust-badge</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Spanish URLs -->
@@ -179,13 +224,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- Home Page -->
   <url>
-    <loc>https://stellar-checkin.com/de/home</loc>
+    <loc>https://stellar-checkin.com/es/sobre-nosotros</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/historias-de-exito</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/faq</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/seguro</loc>
     <lastmod>2025-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de/home"/>
+  </url>
+  <url>
+    <loc>https://stellar-checkin.com/es/trust-badge</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
