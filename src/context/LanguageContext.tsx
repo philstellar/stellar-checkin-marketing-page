@@ -1,8 +1,8 @@
 
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Language, LanguageContextType, LanguageProviderProps } from './language/types';
 import { getLanguageFromPath, getLocalizedPath } from './language/utils';
+import { Language, LanguageContextType, LanguageProviderProps } from './language/types';
 
 // Create the context with default values
 export const LanguageContext = createContext<LanguageContextType>({
@@ -34,7 +34,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       if (typeof window !== 'undefined') {
         const saved = localStorage.getItem('language');
         if (saved === 'de' || saved === 'en' || saved === 'es' || saved === 'it') {
-          return saved;
+          return saved as Language;
         }
       }
       
