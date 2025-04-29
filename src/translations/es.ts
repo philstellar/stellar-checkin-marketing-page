@@ -16,6 +16,7 @@ import { pricingES } from './modules/pricing/es';
 import { contactES } from './modules/contact/es';
 import { footerES } from './modules/footer/es';
 import { versicherungES } from './modules/versicherung/es';
+import { notFoundES } from './modules/notFound/es';
 
 export const es = {
   navigation: navigationES,
@@ -34,5 +35,6 @@ export const es = {
   pricing: pricingES,
   contact: contactES,
   footer: footerES,
-  versicherung: versicherungES
+  versicherung: versicherungES,
+  notFound: notFoundES
 };
