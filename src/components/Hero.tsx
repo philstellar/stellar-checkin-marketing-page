@@ -6,7 +6,6 @@ import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import OptimizedImage from './OptimizedImage';
 import { useNavigate } from 'react-router-dom';
-import { AspectRatio } from './ui/aspect-ratio';
 
 const Hero = () => {
   const isMobile = useIsMobile();
@@ -63,22 +62,16 @@ const Hero = () => {
           </div>
           
           <div className="order-1 md:order-last flex justify-center">
-            {/* Image with fixed aspect ratio container */}
-            <div className="w-3/5 relative" style={{ aspectRatio: '500/800', contentVisibility: 'auto', containIntrinsicSize: '500px 800px' }}>
-              <AspectRatio ratio={5/8} className="bg-transparent hero-image-shadow">
-                <OptimizedImage 
-                  src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
-                  alt="Stellar Online Check-in Interface" 
-                  className="object-contain bg-transparent w-full h-full" 
-                  loading="eager"
-                  priority={true}
-                  isHero={true}
-                  width={500}
-                  height={800}
-                  sizes="(max-width: 768px) 90vw, 500px"
-                />
-              </AspectRatio>
-            </div>
+            <OptimizedImage 
+              src="/lovable-uploads/c8760687-17ea-4cbe-b66e-6a87286d97db.png" 
+              alt="Stellar Online Check-in Interface" 
+              className="w-3/5 h-auto object-contain bg-transparent hero-image-shadow" 
+              loading="eager"
+              priority={true}
+              width={500}
+              height={800}
+              sizes="(max-width: 768px) 90vw, 500px"
+            />
           </div>
         </div>
       </div>

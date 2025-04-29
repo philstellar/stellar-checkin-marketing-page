@@ -1,5 +1,5 @@
 
-import * as React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
 import DesktopNav from './header/DesktopNav';
@@ -9,18 +9,18 @@ import OptimizedImage from './OptimizedImage';
 import { MetaHead } from './meta';
 import { useLanguage } from '@/context/LanguageContext';
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isScrolled, setIsScrolled] = React.useState(false);
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { language } = useLanguage();
   
-  const handleScroll = React.useCallback(() => {
+  const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 10);
   }, []);
   
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll, {
       passive: true
     });
@@ -29,11 +29,11 @@ const Header: React.FC = () => {
     };
   }, [handleScroll]);
   
-  React.useEffect(() => {
+  useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
   
-  React.useEffect(() => {
+  useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
     });
   };
   
-  const handleSectionClick = React.useCallback((sectionId: string) => {
+  const handleSectionClick = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       setIsMenuOpen(false);
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
     }
   }, []);
   
-  React.useEffect(() => {
+  useEffect(() => {
     const state = location.state as {
       scrollTo?: string;
     };

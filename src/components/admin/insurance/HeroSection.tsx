@@ -5,7 +5,6 @@ import CTAButton from '../../../components/CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import OptimizedImage from '@/components/OptimizedImage';
 import { useIsMobile } from "@/hooks/use-mobile";
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const HeroSection = () => {
   const { t, currentLanguage } = useTranslation();
@@ -69,22 +68,16 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="order-1 md:order-last flex justify-center">
-            {/* Image with fixed aspect ratio container */}
-            <div className="w-4/5 relative" style={{ aspectRatio: '700/800', contentVisibility: 'auto', containIntrinsicSize: '700px 800px' }}>
-              <AspectRatio ratio={7/8} className="bg-transparent hero-image-shadow">
-                <OptimizedImage 
-                  src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
-                  alt="Insurance Settings Interface" 
-                  loading="eager"
-                  className="object-contain bg-transparent w-full h-full"
-                  width={700}
-                  height={800}
-                  sizes="(max-width: 768px) 90vw, 700px"
-                  priority={true}
-                  isHero={true}
-                />
-              </AspectRatio>
-            </div>
+            <OptimizedImage 
+              src="/lovable-uploads/cb98c7ff-3021-46ac-8a75-c5df74510127.png" 
+              alt="Insurance Settings Interface" 
+              loading="eager"
+              className="w-4/5 md:w-4/5 h-auto object-contain hero-image-shadow"
+              width={700}
+              height={800}
+              sizes="(max-width: 768px) 90vw, 700px"
+              priority={true}
+            />
           </div>
         </div>
       </div>

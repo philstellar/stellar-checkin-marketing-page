@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -190,23 +191,9 @@
   }
   
   /* Hero image shadow and glow effects */
-  .hero-image-container {
-    contain: layout paint style;
-    content-visibility: auto;
-  }
-
   .hero-image-shadow {
     filter: drop-shadow(0 10px 15px rgba(15, 38, 97, 0.12));
     transition: filter 0.3s ease-in-out;
-    position: relative;
-  }
-
-  .hero-image-shadow::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(249, 248, 239, 0.05);
-    border-radius: 6px;
   }
   
   .hero-image-shadow:hover {
