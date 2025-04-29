@@ -80,5 +80,4 @@ export const MetaHead: React.FC<MetaHeadProps> = ({
   );
 };
 
-// Default export for compatibility with existing imports
 export default MetaHead;
