@@ -1,4 +1,6 @@
 
+'use client';
+
 import * as React from 'react';
 
 type CookieConsent = {
@@ -40,6 +42,8 @@ interface CookieConsentProviderProps {
 export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ children }) => {
   // Get stored consent from localStorage or use default values
   const getStoredConsent = (): CookieConsent => {
+    if (typeof window === 'undefined') return defaultConsent;
+    
     const storedConsent = localStorage.getItem('cookieConsent');
     if (storedConsent) {
       try {
