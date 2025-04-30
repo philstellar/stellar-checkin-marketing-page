@@ -127,7 +127,7 @@ const DesktopNav = ({
         onClick={() => handleSectionNavigation('kontakt')}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
-        {t('navigation.contact')}
+        {renderBoldText(t('navigation.contact'))}
       </button>
       
       <LanguageSelector />
