@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { LanguageProvider } from './context/language/LanguageContext'
 import MetaProvider from './components/meta/MetaProvider'
 import PerformanceProvider from './components/optimization/PerformanceProvider'
+import { CookieConsentProvider } from './context/CookieConsentContext'
 
 // Create root and render the app with strict mode disabled to avoid double-rendering issues
 const container = document.getElementById("root");
@@ -61,12 +62,14 @@ injectCriticalCSS();
 
 root.render(
   <BrowserRouter>
-    <LanguageProvider>
-      <MetaProvider>
-        <PerformanceProvider>
-          <App />
-        </PerformanceProvider>
-      </MetaProvider>
-    </LanguageProvider>
+    <CookieConsentProvider>
+      <LanguageProvider>
+        <MetaProvider>
+          <PerformanceProvider>
+            <App />
+          </PerformanceProvider>
+        </MetaProvider>
+      </LanguageProvider>
+    </CookieConsentProvider>
   </BrowserRouter>
 );
