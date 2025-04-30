@@ -5,4 +5,5 @@ export {
   EinstellungenSection
 } from './features';
 
-export { IntegrationenSection } from './features/IntegrationenSection';
+import IntegrationenSection from './features/IntegrationenSection';
+export { IntegrationenSection };
