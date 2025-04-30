@@ -120,7 +120,7 @@ const DesktopNav = ({
         onClick={() => handleSectionNavigation('preise')}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
-        {t('navigation.pricing')}
+        {renderBoldText(t('navigation.pricing'))}
       </button>
       
       <button 
