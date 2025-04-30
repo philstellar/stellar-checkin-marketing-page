@@ -41,8 +41,10 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
     const isHomePage = location.pathname === `/${currentLanguage}/` || location.pathname === '/';
     
     if (!isHomePage) {
-      // If we're not on the homepage, navigate to home with the section in the URL
-      navigate(`/${currentLanguage}/#${sectionId}`);
+      // If we're not on the homepage, navigate to home with the section in state
+      navigate(`/${currentLanguage}/`, { 
+        state: { scrollTo: sectionId } 
+      });
       onClose();
     } else {
       // If we're already on the homepage, just scroll to the section
@@ -50,6 +52,16 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
       onClose();
     }
   };
+
+  // Define submenu items
+  const featureItems = [
+    { id: 'kurtaxe', title: t('kurtaxe.title') },
+    { id: 'zusatzservices', title: t('zusatzservices.title') },
+    { id: 'versicherung', title: t('versicherung.title') },
+    { id: 'identitaetspruefung', title: t('identity.title') },
+    { id: 'einstellungen', title: t('settings.title') },
+    { id: 'integrationen', title: t('integration.title') }
+  ];
 
   return (
     <AnimatePresence>
@@ -86,12 +98,27 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             animate="visible"
           >
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
-              <button 
-                onClick={() => handleSectionNavigation('gaeste-voranmeldung')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-              >
-                {t('navigation.features')}
-              </button>
+              <div className="space-y-2">
+                <button 
+                  onClick={() => handleSectionNavigation('gaeste-voranmeldung')}
+                  className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
+                >
+                  {t('navigation.features')}
+                </button>
+                
+                {/* Submenu for features */}
+                <div className="pl-4 space-y-2">
+                  {featureItems.map(item => (
+                    <button 
+                      key={item.id}
+                      onClick={() => handleSectionNavigation(item.id)}
+                      className="block w-full text-sm text-royal hover:text-apple transition-colors py-1 text-left"
+                    >
+                      {item.title}
+                    </button>
+                  ))}
+                </div>
+              </div>
 
               <button 
                 onClick={() => handleNavigation('versicherung')}

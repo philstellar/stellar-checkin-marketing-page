@@ -53,16 +53,8 @@ const Header = () => {
   };
   
   const handleHomeClick = () => {
-    // Navigate to the check-in page based on current language
+    // Navigate to the home page based on current language
     navigate(`/${language}/`);
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  const handleTrustBadgeClick = () => {
-    navigate(`/${language}/trust-badge`);
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -73,9 +65,12 @@ const Header = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       setIsMenuOpen(false);
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
+      // Add a small delay to ensure the menu closes before scrolling
+      setTimeout(() => {
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }, 100);
     }
   }, []);
   
@@ -84,16 +79,22 @@ const Header = () => {
       scrollTo?: string;
     };
     if (state?.scrollTo) {
-      const element = document.getElementById(state.scrollTo);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth'
-        });
-        navigate(location.pathname, {
-          replace: true,
-          state: {}
-        });
-      }
+      // Use a small timeout to ensure the page has fully loaded
+      const timeoutId = setTimeout(() => {
+        const element = document.getElementById(state.scrollTo as string);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth'
+          });
+          // Clear the state to prevent re-scrolling on future navigation
+          navigate(location.pathname, {
+            replace: true,
+            state: {}
+          });
+        }
+      }, 300);
+      
+      return () => clearTimeout(timeoutId);
     }
   }, [location, navigate]);
   
