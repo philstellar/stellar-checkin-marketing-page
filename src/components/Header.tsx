@@ -9,6 +9,19 @@ import OptimizedImage from './OptimizedImage';
 import { MetaHead } from './meta';
 import { useLanguage } from '@/context/language/LanguageContext';
 
+// Create a consistent mapping of navigation targets to section IDs
+export const SECTION_IDS = {
+  features: 'gaeste-voranmeldung',
+  kurtaxe: 'kurtaxe',
+  zusatzservices: 'zusatzservices',
+  versicherung: 'versicherung',
+  identity: 'identitaetspruefung',
+  settings: 'einstellungen',
+  integration: 'integrationen',
+  pricing: 'preise',
+  contact: 'kontakt'
+};
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,44 +74,85 @@ const Header = () => {
     });
   };
   
+  // Enhanced scroll handling with retry mechanism
   const handleSectionClick = useCallback((sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      setIsMenuOpen(false);
-      // Add a small delay to ensure the menu closes before scrolling
-      setTimeout(() => {
-        element.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }, 100);
-    } else {
-      console.warn(`Element with id '${sectionId}' not found`);
-    }
+    console.log(`Attempting to scroll to section: ${sectionId}`);
+    
+    // Function to attempt scrolling with retries
+    const attemptScroll = (attempts = 0, maxAttempts = 5) => {
+      const element = document.getElementById(sectionId);
+      
+      if (element) {
+        console.log(`Found element with ID: ${sectionId}, scrolling to it`);
+        setIsMenuOpen(false);
+        
+        // Add a small delay to ensure the menu closes before scrolling
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+        
+        return true;
+      } else {
+        console.log(`Element with ID: ${sectionId} not found (attempt ${attempts + 1}/${maxAttempts})`);
+        
+        if (attempts < maxAttempts) {
+          // Retry with increasing delays (exponential backoff)
+          setTimeout(() => {
+            attemptScroll(attempts + 1, maxAttempts);
+          }, 300 * Math.pow(1.5, attempts));
+          return false;
+        } else {
+          console.warn(`Failed to find element with id '${sectionId}' after ${maxAttempts} attempts`);
+          return false;
+        }
+      }
+    };
+    
+    attemptScroll();
   }, []);
   
   useEffect(() => {
     const state = location.state as {
       scrollTo?: string;
     };
+    
     if (state?.scrollTo) {
-      // Use a small timeout to ensure the page has fully loaded
-      const timeoutId = setTimeout(() => {
+      console.log(`Navigation state includes scrollTo: ${state.scrollTo}`);
+      
+      // Use a more robust approach with retries for navigation state scrolling
+      const attemptStateScroll = (attempts = 0, maxAttempts = 8) => {
         const element = document.getElementById(state.scrollTo as string);
+        
         if (element) {
+          console.log(`Found state-targeted element: ${state.scrollTo}, scrolling to it`);
           element.scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth',
+            block: 'start'
           });
+          
           // Clear the state to prevent re-scrolling on future navigation
           navigate(location.pathname, {
             replace: true,
             state: {}
           });
+        } else if (attempts < maxAttempts) {
+          console.log(`State-targeted element: ${state.scrollTo} not found yet, retrying... (${attempts + 1}/${maxAttempts})`);
+          // Use a longer timeout for sections that might be lazy-loaded
+          setTimeout(() => {
+            attemptStateScroll(attempts + 1, maxAttempts);
+          }, 400 * Math.pow(1.5, attempts));
         } else {
-          console.warn(`Element with id '${state.scrollTo}' not found after navigation`);
+          console.warn(`Failed to find element with id '${state.scrollTo}' after ${maxAttempts} attempts`);
         }
-      }, 300);
+      };
       
-      return () => clearTimeout(timeoutId);
+      // Initial delay to account for initial render and lazy loading
+      setTimeout(() => {
+        attemptStateScroll();
+      }, 300);
     }
   }, [location, navigate]);
   

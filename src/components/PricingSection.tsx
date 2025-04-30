@@ -5,6 +5,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
+import { SECTION_IDS } from "@/components/Header";
 
 export default function PricingSection() {
   const { t } = useTranslation();
@@ -18,14 +19,14 @@ export default function PricingSection() {
   };
 
   const scrollToContact = () => {
-    const contactSection = document.getElementById('kontakt');
+    const contactSection = document.getElementById(SECTION_IDS.contact);
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <section id="preise" className="section-padding">
+    <section id={SECTION_IDS.pricing} className="section-padding">
       <div className="container-custom max-w-[90rem] mx-auto">
         <HeadingWithLine 
           title={t('pricing.title')} 

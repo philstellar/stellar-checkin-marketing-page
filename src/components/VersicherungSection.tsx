@@ -4,12 +4,13 @@ import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import OptimizedImage from "@/components/OptimizedImage";
+import { SECTION_IDS } from './Header';
 
 export const VersicherungSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="versicherung" className="section-padding bg-white">
+    <section id={SECTION_IDS.versicherung} className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-1 md:order-first flex justify-center">

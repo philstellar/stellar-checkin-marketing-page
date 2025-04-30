@@ -1,5 +1,5 @@
 
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import Header from "@/components/Header";
 import { IndexHeroSection } from "@/components/sections/IndexHeroSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
@@ -27,23 +27,30 @@ const EinstellungenSection = lazy(() => import(/* webpackChunkName: "settings" *
 const PricingSection = lazy(() => import(/* webpackChunkName: "pricing" */ "@/components/PricingSection"));
 const ContactSection = lazy(() => import(/* webpackChunkName: "contact" */ "@/components/contact/ContactSection"));
 
-// Use intersection observer to lazy-load components only when they're about to enter the viewport
-const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white" }) => {
-  const [isVisible, setIsVisible] = React.useState(false);
+// Enhanced LazyLoadSection with immediate visibility option
+const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white", immediatelyVisible = false }) => {
+  const [isVisible, setIsVisible] = React.useState(immediatelyVisible);
   const sectionRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
+    // If marked as immediately visible, don't use IntersectionObserver
+    if (immediatelyVisible) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         // When the section is about to enter the viewport, show it
         if (entry.isIntersecting) {
+          console.log(`LazyLoadSection: Section now visible`);
           setIsVisible(true);
           // Disconnect after it's visible
           if (sectionRef.current) observer.unobserve(sectionRef.current);
         }
       },
       {
-        rootMargin: '200px', // Start loading 200px before it enters viewport
+        rootMargin: '300px', // Increased from 200px to load sooner
         threshold: 0
       }
     );
@@ -55,10 +62,10 @@ const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white" }) => {
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
-  }, []);
+  }, [immediatelyVisible]);
 
   return (
-    <div ref={sectionRef}>
+    <div ref={sectionRef} className="section-wrapper">
       {isVisible ? (
         <Suspense fallback={<SectionLoader height={height} bg={bg} />}>
           {children}
@@ -70,10 +77,31 @@ const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white" }) => {
   );
 };
 
+// Check if we have an anchor in the URL and pre-load the related section
+const usePreloadSectionFromHash = () => {
+  // Get the hash from the URL
+  const location = useLocation();
+  const [sectionsToPreload, setSectionsToPreload] = React.useState<string[]>([]);
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    const state = location.state as { scrollTo?: string };
+    const targetId = hash || (state?.scrollTo ?? '');
+
+    if (targetId) {
+      console.log(`Hash or scrollTo detected: ${targetId}, preloading section`);
+      setSectionsToPreload(prev => [...prev, targetId]);
+    }
+  }, [location]);
+
+  return sectionsToPreload;
+};
+
 // Optimize the main Index component with React.memo
 const Index = () => {
   const location = useLocation();
   const { t, currentLanguage } = useTranslation();
+  const sectionsToPreload = usePreloadSectionFromHash();
   const isHome = location.pathname === '/' || location.pathname === `/${currentLanguage}/`;
   
   // Memoize schema data to prevent re-computation
@@ -113,31 +141,31 @@ const Index = () => {
         <PartnersSection />
         <ZusatzservicesSection />
         
-        <LazyLoadSection>
+        <LazyLoadSection immediatelyVisible={sectionsToPreload.includes('kurtaxe')}>
           <KurtaxeSection />
         </LazyLoadSection>
         
-        <LazyLoadSection>
+        <LazyLoadSection immediatelyVisible={sectionsToPreload.includes('versicherung')}>
           <VersicherungSection />
         </LazyLoadSection>
         
-        <LazyLoadSection bg="bg-floral-100">
+        <LazyLoadSection bg="bg-floral-100" immediatelyVisible={sectionsToPreload.includes('identitaetspruefung')}>
           <IdentitaetspruefungSection />
         </LazyLoadSection>
         
-        <LazyLoadSection>
+        <LazyLoadSection immediatelyVisible={sectionsToPreload.includes('integrationen')}>
           <IntegrationenSection />
         </LazyLoadSection>
         
-        <LazyLoadSection bg="bg-floral-100">
+        <LazyLoadSection bg="bg-floral-100" immediatelyVisible={sectionsToPreload.includes('einstellungen')}>
           <EinstellungenSection />
         </LazyLoadSection>
         
-        <LazyLoadSection>
+        <LazyLoadSection immediatelyVisible={sectionsToPreload.includes('preise')}>
           <PricingSection />
         </LazyLoadSection>
         
-        <LazyLoadSection bg="bg-floral-100">
+        <LazyLoadSection bg="bg-floral-100" immediatelyVisible={sectionsToPreload.includes('kontakt')}>
           <ContactSection />
         </LazyLoadSection>
       </main>

@@ -3,12 +3,13 @@ import { useTranslation } from "@/hooks/use-translation";
 import ContactForm from "./ContactForm";
 import ContactInformation from "./ContactInformation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
+import { SECTION_IDS } from "@/components/Header";
 
 const ContactSection = () => {
   const { t, currentLanguage } = useTranslation();
   
-  // Get the correct ID based on language
-  const sectionId = currentLanguage === 'es' ? 'contacto' : 'kontakt';
+  // Get the correct ID from our centralized mapping
+  const sectionId = SECTION_IDS.contact;
 
   return (
     <section id={sectionId} className="section-padding bg-white">

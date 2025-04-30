@@ -4,6 +4,7 @@ import { Database, Link, ServerCog } from 'lucide-react';
 import CTAButton from "@/components/CTAButton";
 import LogoCarouselAutoplay from "@/components/LogoCarouselAutoplay";
 import { useTranslation } from "@/hooks/use-translation";
+import { SECTION_IDS } from '@/components/Header';
 
 export const IntegrationenSection: React.FC = () => {
   const { t } = useTranslation();
@@ -60,7 +61,7 @@ export const IntegrationenSection: React.FC = () => {
   ];
   
   return (
-    <section id="integrationen" className="section-padding bg-white">
+    <section id={SECTION_IDS.integration} className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">

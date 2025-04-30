@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Palette, Globe, Settings } from 'lucide-react';
 import { useTranslation } from "@/hooks/use-translation";
+import { SECTION_IDS } from '@/components/Header';
 
 export const EinstellungenSection: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +27,7 @@ export const EinstellungenSection: React.FC = () => {
   ];
   
   return (
-    <section id="einstellungen" className="">
+    <section id={SECTION_IDS.settings} className="">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 text-royal break-words">

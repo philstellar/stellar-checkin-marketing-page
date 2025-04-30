@@ -6,6 +6,7 @@ import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from '@/hooks/use-translation';
 import { ChevronDown } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { SECTION_IDS } from '../Header';
 
 type DesktopNavProps = {
   handleSectionClick: (sectionId: string) => void;
@@ -31,11 +32,13 @@ const DesktopNav = ({
     
     if (!isHomePage) {
       // If we're not on the homepage, navigate to home with the section in the state
+      console.log(`Navigating to home with scrollTo state: ${sectionId}`);
       navigate(`/${currentLanguage}/`, { 
         state: { scrollTo: sectionId }
       });
     } else {
       // If we're already on the homepage, just scroll to the section
+      console.log(`Already on homepage, scrolling directly to: ${sectionId}`);
       handleSectionClick(sectionId);
     }
   };
@@ -62,7 +65,7 @@ const DesktopNav = ({
     <nav className="hidden md:flex items-center space-x-8">
       <div className="flex items-center space-x-1">
         <button 
-          onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
+          onClick={() => handleSectionNavigation(SECTION_IDS.features)} 
           className="text-royal hover:text-apple font-medium transition-colors"
         >
           {renderBoldText(t('navigation.features'))}
@@ -79,43 +82,43 @@ const DesktopNav = ({
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white shadow-md z-50 !bg-white !border-gray-200">
             <DropdownMenuItem 
-              onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
+              onClick={() => handleSectionNavigation(SECTION_IDS.features)} 
               className="cursor-pointer hover:bg-slate-100 w-full"
             >
               {t('features.title')}
             </DropdownMenuItem>
             <DropdownMenuItem 
-              onClick={() => handleSectionNavigation('kurtaxe')} 
+              onClick={() => handleSectionNavigation(SECTION_IDS.kurtaxe)} 
               className="cursor-pointer hover:bg-slate-100 w-full"
             >
               {t('kurtaxe.title')}
             </DropdownMenuItem>
             <DropdownMenuItem 
-              onClick={() => handleSectionNavigation('zusatzservices')} 
+              onClick={() => handleSectionNavigation(SECTION_IDS.zusatzservices)} 
               className="cursor-pointer hover:bg-slate-100 w-full"
             >
               {t('zusatzservices.title')}
             </DropdownMenuItem>
             <DropdownMenuItem 
-              onClick={() => handleSectionNavigation('versicherung')} 
+              onClick={() => handleSectionNavigation(SECTION_IDS.versicherung)} 
               className="cursor-pointer hover:bg-slate-100 w-full"
             >
               {t('versicherung.title')}
             </DropdownMenuItem>
             <DropdownMenuItem 
-              onClick={() => handleSectionNavigation('identitaetspruefung')} 
+              onClick={() => handleSectionNavigation(SECTION_IDS.identity)} 
               className="cursor-pointer hover:bg-slate-100 w-full"
             >
               {t('identity.title')}
             </DropdownMenuItem>
             <DropdownMenuItem 
-              onClick={() => handleSectionNavigation('einstellungen')} 
+              onClick={() => handleSectionNavigation(SECTION_IDS.settings)} 
               className="cursor-pointer hover:bg-slate-100 w-full"
             >
               {t('settings.title')}
             </DropdownMenuItem>
             <DropdownMenuItem 
-              onClick={() => handleSectionNavigation('integrationen')} 
+              onClick={() => handleSectionNavigation(SECTION_IDS.integration)} 
               className="cursor-pointer hover:bg-slate-100 w-full"
             >
               {t('integration.title')}
@@ -141,14 +144,14 @@ const DesktopNav = ({
       </button>
 
       <button 
-        onClick={() => handleSectionNavigation('preise')}
+        onClick={() => handleSectionNavigation(SECTION_IDS.pricing)}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         {renderBoldText(t('navigation.pricing'))}
       </button>
       
       <button 
-        onClick={() => handleSectionNavigation('kontakt')}
+        onClick={() => handleSectionNavigation(SECTION_IDS.contact)}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         {renderBoldText(t('navigation.contact'))}

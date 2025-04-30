@@ -6,6 +6,7 @@ import CTAButton from '../CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageSelector from '../LanguageSelector';
+import { SECTION_IDS } from '../Header';
 
 type MobileNavProps = {
   isOpen: boolean;
@@ -42,26 +43,28 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
     
     if (!isHomePage) {
       // If we're not on the homepage, navigate to home with the section in state
+      console.log(`[Mobile] Navigating to home with scrollTo state: ${sectionId}`);
       navigate(`/${currentLanguage}/`, { 
         state: { scrollTo: sectionId } 
       });
       onClose();
     } else {
       // If we're already on the homepage, just scroll to the section
+      console.log(`[Mobile] Already on homepage, scrolling directly to: ${sectionId}`);
       handleSectionClick(sectionId);
       onClose();
     }
   };
 
-  // Define submenu items
+  // Define submenu items with consistent IDs
   const featureItems = [
-    { id: 'gaeste-voranmeldung', title: t('features.title') },
-    { id: 'kurtaxe', title: t('kurtaxe.title') },
-    { id: 'zusatzservices', title: t('zusatzservices.title') },
-    { id: 'versicherung', title: t('versicherung.title') },
-    { id: 'identitaetspruefung', title: t('identity.title') },
-    { id: 'einstellungen', title: t('settings.title') },
-    { id: 'integrationen', title: t('integration.title') }
+    { id: SECTION_IDS.features, title: t('features.title') },
+    { id: SECTION_IDS.kurtaxe, title: t('kurtaxe.title') },
+    { id: SECTION_IDS.zusatzservices, title: t('zusatzservices.title') },
+    { id: SECTION_IDS.versicherung, title: t('versicherung.title') },
+    { id: SECTION_IDS.identity, title: t('identity.title') },
+    { id: SECTION_IDS.settings, title: t('settings.title') },
+    { id: SECTION_IDS.integration, title: t('integration.title') }
   ];
 
   return (
@@ -101,7 +104,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
             <div className="w-full border-t border-muted pt-5 mt-3 space-y-4">
               <div className="space-y-2">
                 <button 
-                  onClick={() => handleSectionNavigation('gaeste-voranmeldung')}
+                  onClick={() => handleSectionNavigation(SECTION_IDS.features)}
                   className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
                 >
                   {t('navigation.features')}
@@ -136,14 +139,14 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               </button>
 
               <button 
-                onClick={() => handleSectionNavigation('preise')}
+                onClick={() => handleSectionNavigation(SECTION_IDS.pricing)}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.pricing')}
               </button>
               
               <button 
-                onClick={() => handleSectionNavigation('kontakt')}
+                onClick={() => handleSectionNavigation(SECTION_IDS.contact)}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.contact')}

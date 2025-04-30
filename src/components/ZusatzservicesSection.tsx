@@ -4,12 +4,13 @@ import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
 import OptimizedImage from "@/components/OptimizedImage";
+import { SECTION_IDS } from './Header';
 
 const ZusatzservicesSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="zusatzservices" className="section-padding bg-white">
+    <section id={SECTION_IDS.zusatzservices} className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-first">
