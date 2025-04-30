@@ -135,14 +135,14 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               </button>
 
               <button 
-                onClick={() => handleSectionNavigation(t('navigation.pricingAnchor'))}
+                onClick={() => handleSectionNavigation('preise')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.pricing')}
               </button>
               
               <button 
-                onClick={() => handleSectionNavigation(t('navigation.contactAnchor'))}
+                onClick={() => handleSectionNavigation('kontakt')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
                 {t('navigation.contact')}

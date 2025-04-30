@@ -30,8 +30,10 @@ const DesktopNav = ({
     const isHomePage = location.pathname === `/${currentLanguage}/` || location.pathname === '/';
     
     if (!isHomePage) {
-      // If we're not on the homepage, navigate to home with the section in the URL
-      navigate(`/${currentLanguage}/#${sectionId}`);
+      // If we're not on the homepage, navigate to home with the section in the state
+      navigate(`/${currentLanguage}/`, { 
+        state: { scrollTo: sectionId }
+      });
     } else {
       // If we're already on the homepage, just scroll to the section
       handleSectionClick(sectionId);
@@ -115,14 +117,14 @@ const DesktopNav = ({
       </button>
 
       <button 
-        onClick={() => handleSectionNavigation(t('navigation.pricingAnchor'))}
+        onClick={() => handleSectionNavigation('preise')}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         {t('navigation.pricing')}
       </button>
       
       <button 
-        onClick={() => handleSectionNavigation(t('navigation.contactAnchor'))}
+        onClick={() => handleSectionNavigation('kontakt')}
         className="text-royal hover:text-apple font-medium transition-colors"
       >
         {t('navigation.contact')}

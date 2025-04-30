@@ -71,6 +71,8 @@ const Header = () => {
           behavior: 'smooth'
         });
       }, 100);
+    } else {
+      console.warn(`Element with id '${sectionId}' not found`);
     }
   }, []);
   
@@ -91,6 +93,8 @@ const Header = () => {
             replace: true,
             state: {}
           });
+        } else {
+          console.warn(`Element with id '${state.scrollTo}' not found after navigation`);
         }
       }, 300);
       
