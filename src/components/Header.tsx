@@ -8,19 +8,11 @@ import LanguageSelector from './LanguageSelector';
 import OptimizedImage from './OptimizedImage';
 import { MetaHead } from './meta';
 import { useLanguage } from '@/context/language/LanguageContext';
+import { useScrollToSection } from '@/hooks/use-scroll-to-section';
+import { SECTION_IDS } from '@/constants/section-ids';
 
-// Create a consistent mapping of navigation targets to section IDs
-export const SECTION_IDS = {
-  features: 'gaeste-voranmeldung',
-  kurtaxe: 'kurtaxe',
-  zusatzservices: 'zusatzservices',
-  versicherung: 'versicherung',
-  identity: 'identitaetspruefung',
-  settings: 'einstellungen',
-  integration: 'integrationen',
-  pricing: 'preise',
-  contact: 'kontakt'
-};
+// Re-export SECTION_IDS for backward compatibility
+export { SECTION_IDS } from '@/constants/section-ids';
 
 // Log the SECTION_IDS for debugging - will show up in the console
 console.log('SECTION_IDS mapping:', SECTION_IDS);
@@ -31,6 +23,7 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const { scrollToSection } = useScrollToSection();
   
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 10);
@@ -79,107 +72,9 @@ const Header = () => {
   
   // Enhanced scroll handling with improved retry mechanism
   const handleSectionClick = useCallback((sectionId: string) => {
-    console.log(`Attempting to scroll to section: ${sectionId}`);
-    console.log(`Available sections in DOM:`, 
-      Object.entries(SECTION_IDS)
-        .map(([key, id]) => ({ key, id, exists: !!document.getElementById(id) }))
-    );
-    
-    // Function to attempt scrolling with increased retries
-    const attemptScroll = (attempts = 0, maxAttempts = 10) => {
-      const element = document.getElementById(sectionId);
-      
-      if (element) {
-        console.log(`Found element with ID: ${sectionId}, scrolling to it`);
-        setIsMenuOpen(false);
-        
-        // Add a small delay to ensure the menu closes before scrolling
-        setTimeout(() => {
-          try {
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-            console.log(`Successfully scrolled to ${sectionId}`);
-          } catch (err) {
-            console.error(`Error scrolling to ${sectionId}:`, err);
-          }
-        }, 150);
-        
-        return true;
-      } else {
-        console.log(`Element with ID: ${sectionId} not found (attempt ${attempts + 1}/${maxAttempts})`);
-        
-        if (attempts < maxAttempts) {
-          // Retry with increasing delays (exponential backoff with longer timeouts)
-          const delay = 400 * Math.pow(1.5, attempts);
-          console.log(`Will retry in ${delay}ms`);
-          setTimeout(() => {
-            attemptScroll(attempts + 1, maxAttempts);
-          }, delay);
-          return false;
-        } else {
-          console.warn(`Failed to find element with id '${sectionId}' after ${maxAttempts} attempts. Available IDs:`, 
-            Array.from(document.querySelectorAll('[id]')).map(el => el.id)
-          );
-          return false;
-        }
-      }
-    };
-    
-    attemptScroll();
-  }, []);
-  
-  useEffect(() => {
-    const state = location.state as {
-      scrollTo?: string;
-    };
-    
-    if (state?.scrollTo) {
-      console.log(`Navigation state includes scrollTo: ${state.scrollTo}`);
-      console.log(`Current URL path: ${location.pathname}`);
-      
-      // Use a more robust approach with retries for navigation state scrolling
-      const attemptStateScroll = (attempts = 0, maxAttempts = 12) => {
-        const element = document.getElementById(state.scrollTo as string);
-        
-        if (element) {
-          console.log(`Found state-targeted element: ${state.scrollTo}, scrolling to it`);
-          try {
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-            console.log(`Successfully scrolled to ${state.scrollTo} from navigation state`);
-            
-            // Clear the state to prevent re-scrolling on future navigation
-            navigate(location.pathname, {
-              replace: true,
-              state: {}
-            });
-          } catch (err) {
-            console.error(`Error scrolling to ${state.scrollTo}:`, err);
-          }
-        } else if (attempts < maxAttempts) {
-          const delay = 500 * Math.pow(1.5, attempts);
-          console.log(`State-targeted element: ${state.scrollTo} not found yet, retrying in ${delay}ms... (${attempts + 1}/${maxAttempts})`);
-          // Use a longer timeout for sections that might be lazy-loaded
-          setTimeout(() => {
-            attemptStateScroll(attempts + 1, maxAttempts);
-          }, delay);
-        } else {
-          console.warn(`Failed to find element with id '${state.scrollTo}' after ${maxAttempts} attempts. Available IDs in DOM:`, 
-            Array.from(document.querySelectorAll('[id]')).map(el => el.id)
-          );
-        }
-      };
-      
-      // Initial delay to account for initial render and lazy loading
-      setTimeout(() => {
-        attemptStateScroll();
-      }, 500);
-    }
-  }, [location, navigate]);
+    scrollToSection(sectionId);
+    setIsMenuOpen(false);
+  }, [scrollToSection]);
   
   return (
     <>

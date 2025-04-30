@@ -4,7 +4,7 @@ import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
 import OptimizedImage from "@/components/OptimizedImage";
-import { SECTION_IDS } from './Header';
+import { SECTION_IDS } from '@/constants/section-ids';
 
 const ZusatzservicesSection = () => {
   const { t } = useTranslation();

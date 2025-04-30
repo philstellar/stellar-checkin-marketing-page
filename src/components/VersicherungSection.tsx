@@ -4,7 +4,7 @@ import { Shield, ShieldCheck, CreditCard } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import OptimizedImage from "@/components/OptimizedImage";
-import { SECTION_IDS } from './Header';
+import { SECTION_IDS } from '@/constants/section-ids';
 
 export const VersicherungSection = () => {
   const { t } = useTranslation();

@@ -6,7 +6,7 @@ import CTAButton from "@/components/CTAButton";
 import { UserCheck } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
-import { SECTION_IDS } from '@/components/Header';
+import { SECTION_IDS } from '@/constants/section-ids';
 
 const KurtaxeSection = () => {
   const { t } = useTranslation();

@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Palette, Globe, Settings } from 'lucide-react';
 import { useTranslation } from "@/hooks/use-translation";
-import { SECTION_IDS } from '@/components/Header';
+import { SECTION_IDS } from '@/constants/section-ids';
 
 export const EinstellungenSection: React.FC = () => {
   const { t } = useTranslation();

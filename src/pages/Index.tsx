@@ -1,4 +1,3 @@
-
 import React, { lazy, Suspense, useEffect } from 'react';
 import Header from "@/components/Header";
 import { IndexHeroSection } from "@/components/sections/IndexHeroSection";
@@ -9,7 +8,7 @@ import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 import { MetaHead } from "@/components/meta";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "@/hooks/use-translation";
-import { SECTION_IDS } from '@/components/Header';
+import { SECTION_IDS } from '@/constants/section-ids';
 
 // Custom loading component with content-visibility optimization
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (

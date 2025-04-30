@@ -5,7 +5,7 @@ import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import OptimizedImage from "@/components/OptimizedImage";
-import { SECTION_IDS } from '@/components/Header';
+import { SECTION_IDS } from '@/constants/section-ids';
 
 const IdentitaetspruefungSection = () => {
   const { t } = useTranslation();

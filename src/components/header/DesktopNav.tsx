@@ -6,7 +6,7 @@ import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from '@/hooks/use-translation';
 import { ChevronDown } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { SECTION_IDS } from '../Header';
+import { SECTION_IDS } from '@/constants/section-ids';
 
 type DesktopNavProps = {
   handleSectionClick: (sectionId: string) => void;
@@ -163,6 +163,24 @@ const DesktopNav = ({
       </CTAButton>
     </nav>
   );
+
+  function handleMouseEnter(path: string) {
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = `/${currentLanguage}/${path}`;
+    link.as = 'document';
+    document.head.appendChild(link);
+  }
+
+  function renderBoldText(text: string) {
+    const cleanText = text.replace(/\*\*/g, '');
+    
+    if (text !== cleanText) {
+      return <strong className="text-apple">{cleanText}</strong>;
+    }
+    
+    return cleanText;
+  }
 };
 
 export default memo(DesktopNav);
