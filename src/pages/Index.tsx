@@ -1,3 +1,4 @@
+
 import React, { lazy, Suspense, useEffect } from 'react';
 import Header from "@/components/Header";
 import { IndexHeroSection } from "@/components/sections/IndexHeroSection";
@@ -10,6 +11,9 @@ import { useLocation } from "react-router-dom";
 import { useTranslation } from "@/hooks/use-translation";
 import { SECTION_IDS } from '@/constants/section-ids';
 
+// Import KurtaxeSection directly instead of lazy loading to fix the error
+import KurtaxeSection from "@/components/KurtaxeSection";
+
 // Custom loading component with content-visibility optimization
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
   <div 
@@ -19,7 +23,6 @@ const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
 );
 
 // Lazy load non-critical sections with proper loading indicators and chunk names
-const KurtaxeSection = lazy(() => import(/* webpackChunkName: "kurtaxe" */ "@/components/KurtaxeSection"));
 const VersicherungSection = lazy(() => import(/* webpackChunkName: "versicherung" */ "@/components/VersicherungSection"));
 const IdentitaetspruefungSection = lazy(() => import(/* webpackChunkName: "identity" */ "@/components/IdentitaetspruefungSection"));
 const IntegrationenSection = lazy(() => import(/* webpackChunkName: "integrations" */ "@/components/features/IntegrationenSection"));
@@ -54,7 +57,7 @@ const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white", immediate
         }
       },
       {
-        rootMargin: '400px', // Increased from 300px to load sooner
+        rootMargin: '500px', // Increased from 400px to load even sooner
         threshold: 0
       }
     );
@@ -65,7 +68,7 @@ const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white", immediate
     }
 
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (sectionRef.current && observer) observer.unobserve(sectionRef.current);
     };
   }, [immediatelyVisible, sectionId]);
 
@@ -154,12 +157,10 @@ const Index = () => {
         <PartnersSection />
         <ZusatzservicesSection />
         
-        <LazyLoadSection 
-          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.kurtaxe)} 
-          sectionId={SECTION_IDS.kurtaxe}
-        >
+        {/* Use the directly imported KurtaxeSection instead of lazy loading */}
+        <div id={SECTION_IDS.kurtaxe} className="section-wrapper" data-section-id={SECTION_IDS.kurtaxe}>
           <KurtaxeSection />
-        </LazyLoadSection>
+        </div>
         
         <LazyLoadSection 
           immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.versicherung)} 
