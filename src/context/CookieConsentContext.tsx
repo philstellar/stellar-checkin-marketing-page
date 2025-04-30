@@ -52,7 +52,7 @@ export const CookieConsentProvider: React.FC<CookieConsentProviderProps> = ({ ch
   };
 
   // Use state to track cookie consent
-  const [cookieConsent, setCookieConsent] = React.useState<CookieConsent>(getStoredConsent);
+  const [cookieConsent, setCookieConsent] = React.useState<CookieConsent>(getStoredConsent());
 
   // Update cookie consent settings
   const updateCookieConsent = (newConsent: Partial<CookieConsent>) => {
