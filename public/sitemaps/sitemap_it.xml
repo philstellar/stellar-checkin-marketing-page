@@ -5,7 +5,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://stellar-checkin.com/it</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de"/>
@@ -15,44 +15,43 @@
   </url>
   <url>
     <loc>https://stellar-checkin.com/it/impressum</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/it/datenschutz</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/it/agb</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/it/chi-siamo</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/it/storie-di-successo</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/it/assicurazione</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/it/trust-badge</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>

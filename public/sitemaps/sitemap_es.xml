@@ -1,52 +1,57 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://stellar-checkin.com/es</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://stellar-checkin.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stellar-checkin.com/en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stellar-checkin.com/it"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stellar-checkin.com/"/>
   </url>
   <url>
     <loc>https://stellar-checkin.com/es/impressum</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/es/datenschutz</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/es/agb</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/es/sobre-nosotros</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/es/historias-de-exito</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/es/seguro</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://stellar-checkin.com/es/trust-badge</loc>
-    <lastmod>2025-04-29</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
