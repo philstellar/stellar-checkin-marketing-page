@@ -1,5 +1,5 @@
 
-import React, { lazy, Suspense, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Header from "@/components/Header";
 import { IndexHeroSection } from "@/components/sections/IndexHeroSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
@@ -11,79 +11,17 @@ import { useLocation } from "react-router-dom";
 import { useTranslation } from "@/hooks/use-translation";
 import { SECTION_IDS } from '@/constants/section-ids';
 
-// Import KurtaxeSection directly instead of lazy loading to fix the error
+// Import all sections directly instead of lazy loading
 import KurtaxeSection from "@/components/KurtaxeSection";
-
-// Custom loading component with content-visibility optimization
-const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
-  <div 
-    className={`${height} ${bg} animate-pulse rounded-md`}
-    style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }}
-  ></div>
-);
-
-// Lazy load non-critical sections with proper loading indicators and chunk names
-const VersicherungSection = lazy(() => import(/* webpackChunkName: "versicherung" */ "@/components/VersicherungSection"));
-const IdentitaetspruefungSection = lazy(() => import(/* webpackChunkName: "identity" */ "@/components/IdentitaetspruefungSection"));
-const IntegrationenSection = lazy(() => import(/* webpackChunkName: "integrations" */ "@/components/features/IntegrationenSection"));
-const EinstellungenSection = lazy(() => import(/* webpackChunkName: "settings" */ "@/components/features/EinstellungenSection"));
-const PricingSection = lazy(() => import(/* webpackChunkName: "pricing" */ "@/components/PricingSection"));
-const ContactSection = lazy(() => import(/* webpackChunkName: "contact" */ "@/components/contact/ContactSection"));
+import VersicherungSection from "@/components/VersicherungSection";
+import IdentitaetspruefungSection from "@/components/IdentitaetspruefungSection";
+import IntegrationenSection from "@/components/features/IntegrationenSection";
+import EinstellungenSection from "@/components/features/EinstellungenSection";
+import PricingSection from "@/components/PricingSection";
+import ContactSection from "@/components/contact/ContactSection";
 
 // Debug information about loaded components
-console.log('Index page: Lazy components prepared for loading');
-
-// Enhanced LazyLoadSection with immediate visibility option and debug logging
-const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white", immediatelyVisible = false, sectionId = "" }) => {
-  const [isVisible, setIsVisible] = React.useState(immediatelyVisible);
-  const sectionRef = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    // If marked as immediately visible, don't use IntersectionObserver
-    if (immediatelyVisible) {
-      setIsVisible(true);
-      console.log(`LazyLoadSection: Section ${sectionId} set to immediately visible`);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // When the section is about to enter the viewport, show it
-        if (entry.isIntersecting) {
-          console.log(`LazyLoadSection: Section ${sectionId} now visible through intersection`);
-          setIsVisible(true);
-          // Disconnect after it's visible
-          if (sectionRef.current) observer.unobserve(sectionRef.current);
-        }
-      },
-      {
-        rootMargin: '500px', // Increased from 400px to load even sooner
-        threshold: 0
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-      console.log(`LazyLoadSection: Observing section ${sectionId}`);
-    }
-
-    return () => {
-      if (sectionRef.current && observer) observer.unobserve(sectionRef.current);
-    };
-  }, [immediatelyVisible, sectionId]);
-
-  return (
-    <div ref={sectionRef} className="section-wrapper" data-section-id={sectionId}>
-      {isVisible ? (
-        <Suspense fallback={<SectionLoader height={height} bg={bg} />}>
-          {children}
-        </Suspense>
-      ) : (
-        <SectionLoader height={height} bg={bg} />
-      )}
-    </div>
-  );
-};
+console.log('Index page: All components directly imported');
 
 // Improved hook to preload sections from hash or navigation state
 const usePreloadSectionFromHash = () => {
@@ -96,12 +34,12 @@ const usePreloadSectionFromHash = () => {
     const targetId = hash || (state?.scrollTo ?? '');
 
     if (targetId) {
-      console.log(`Hash or scrollTo detected: ${targetId}, preloading section`);
+      console.log(`Hash or scrollTo detected: ${targetId}, marking section for scroll`);
       // Make sure we're using the correct ID
       setSectionsToPreload(prev => [...prev, targetId]);
       
       // Log all available section IDs for debugging
-      console.log('Available section IDs for preloading:', SECTION_IDS);
+      console.log('Available section IDs:', SECTION_IDS);
     }
   }, [location]);
 
@@ -117,7 +55,13 @@ const Index = () => {
   
   // Log which sections are being preloaded
   useEffect(() => {
-    console.log('Sections marked for preloading:', sectionsToPreload);
+    console.log('Sections marked for scrolling:', sectionsToPreload);
+    
+    // Log all sections available in the DOM after rendering for debugging
+    console.log('Sections in DOM after render:', 
+      Object.entries(SECTION_IDS)
+        .map(([key, id]) => ({ key, id, exists: !!document.getElementById(id) }))
+    );
   }, [sectionsToPreload]);
   
   // Memoize schema data to prevent re-computation
@@ -157,55 +101,34 @@ const Index = () => {
         <PartnersSection />
         <ZusatzservicesSection />
         
-        {/* Use the directly imported KurtaxeSection instead of lazy loading */}
+        {/* All sections directly rendered with their IDs */}
         <div id={SECTION_IDS.kurtaxe} className="section-wrapper" data-section-id={SECTION_IDS.kurtaxe}>
           <KurtaxeSection />
         </div>
         
-        <LazyLoadSection 
-          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.versicherung)} 
-          sectionId={SECTION_IDS.versicherung}
-        >
+        <div id={SECTION_IDS.versicherung} className="section-wrapper" data-section-id={SECTION_IDS.versicherung}>
           <VersicherungSection />
-        </LazyLoadSection>
+        </div>
         
-        <LazyLoadSection 
-          bg="bg-floral-100" 
-          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.identity)} 
-          sectionId={SECTION_IDS.identity}
-        >
+        <div id={SECTION_IDS.identity} className="section-wrapper bg-floral-100" data-section-id={SECTION_IDS.identity}>
           <IdentitaetspruefungSection />
-        </LazyLoadSection>
+        </div>
         
-        <LazyLoadSection 
-          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.integration)} 
-          sectionId={SECTION_IDS.integration}
-        >
+        <div id={SECTION_IDS.integration} className="section-wrapper" data-section-id={SECTION_IDS.integration}>
           <IntegrationenSection />
-        </LazyLoadSection>
+        </div>
         
-        <LazyLoadSection 
-          bg="bg-floral-100" 
-          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.settings)} 
-          sectionId={SECTION_IDS.settings}
-        >
+        <div id={SECTION_IDS.settings} className="section-wrapper bg-floral-100" data-section-id={SECTION_IDS.settings}>
           <EinstellungenSection />
-        </LazyLoadSection>
+        </div>
         
-        <LazyLoadSection 
-          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.pricing)} 
-          sectionId={SECTION_IDS.pricing}
-        >
+        <div id={SECTION_IDS.pricing} className="section-wrapper" data-section-id={SECTION_IDS.pricing}>
           <PricingSection />
-        </LazyLoadSection>
+        </div>
         
-        <LazyLoadSection 
-          bg="bg-floral-100" 
-          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.contact)} 
-          sectionId={SECTION_IDS.contact}
-        >
+        <div id={SECTION_IDS.contact} className="section-wrapper bg-floral-100" data-section-id={SECTION_IDS.contact}>
           <ContactSection />
-        </LazyLoadSection>
+        </div>
       </main>
       <Footer />
     </div>
