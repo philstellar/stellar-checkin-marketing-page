@@ -3,7 +3,7 @@ import { useTranslation } from "@/hooks/use-translation";
 import ContactForm from "./ContactForm";
 import ContactInformation from "./ContactInformation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
-import { SECTION_IDS } from "@/components/Header";
+import { SECTION_IDS } from "@/constants/section-ids";
 
 const ContactSection = () => {
   const { t, currentLanguage } = useTranslation();

@@ -5,7 +5,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import CTAButton from "@/components/CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import { HeadingWithLine } from "@/components/ui/heading-with-line";
-import { SECTION_IDS } from "@/components/Header";
+import { SECTION_IDS } from "@/constants/section-ids";
 
 export default function PricingSection() {
   const { t } = useTranslation();

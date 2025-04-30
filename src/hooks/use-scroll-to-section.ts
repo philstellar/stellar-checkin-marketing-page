@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { SECTION_IDS } from '@/components/Header';
+import { SECTION_IDS } from '@/constants/section-ids';
 
 export const useScrollToSection = () => {
   const location = useLocation();
