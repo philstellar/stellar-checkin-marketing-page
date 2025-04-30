@@ -55,7 +55,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
 
   // Define submenu items
   const featureItems = [
-    { id: 'gaeste-voranmeldung', title: t('navigation.features') },
+    { id: 'gaeste-voranmeldung', title: t('features.title') },
     { id: 'kurtaxe', title: t('kurtaxe.title') },
     { id: 'zusatzservices', title: t('zusatzservices.title') },
     { id: 'versicherung', title: t('versicherung.title') },
@@ -109,7 +109,7 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
                 
                 {/* Submenu for features */}
                 <div className="pl-4 space-y-2">
-                  {featureItems.slice(1).map(item => (
+                  {featureItems.map(item => (
                     <button 
                       key={item.id}
                       onClick={() => handleSectionNavigation(item.id)}

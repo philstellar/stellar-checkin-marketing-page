@@ -78,22 +78,46 @@ const DesktopNav = ({
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white shadow-md z-50 !bg-white !border-gray-200">
-            <DropdownMenuItem onClick={() => handleSectionNavigation('kurtaxe')} className="cursor-pointer hover:bg-slate-100 w-full">
+            <DropdownMenuItem 
+              onClick={() => handleSectionNavigation('gaeste-voranmeldung')} 
+              className="cursor-pointer hover:bg-slate-100 w-full"
+            >
+              {t('features.title')}
+            </DropdownMenuItem>
+            <DropdownMenuItem 
+              onClick={() => handleSectionNavigation('kurtaxe')} 
+              className="cursor-pointer hover:bg-slate-100 w-full"
+            >
               {t('kurtaxe.title')}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleSectionNavigation('zusatzservices')} className="cursor-pointer hover:bg-slate-100 w-full">
+            <DropdownMenuItem 
+              onClick={() => handleSectionNavigation('zusatzservices')} 
+              className="cursor-pointer hover:bg-slate-100 w-full"
+            >
               {t('zusatzservices.title')}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleSectionNavigation('versicherung')} className="cursor-pointer hover:bg-slate-100 w-full">
+            <DropdownMenuItem 
+              onClick={() => handleSectionNavigation('versicherung')} 
+              className="cursor-pointer hover:bg-slate-100 w-full"
+            >
               {t('versicherung.title')}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleSectionNavigation('identitaetspruefung')} className="cursor-pointer hover:bg-slate-100 w-full">
+            <DropdownMenuItem 
+              onClick={() => handleSectionNavigation('identitaetspruefung')} 
+              className="cursor-pointer hover:bg-slate-100 w-full"
+            >
               {t('identity.title')}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleSectionNavigation('einstellungen')} className="cursor-pointer hover:bg-slate-100 w-full">
+            <DropdownMenuItem 
+              onClick={() => handleSectionNavigation('einstellungen')} 
+              className="cursor-pointer hover:bg-slate-100 w-full"
+            >
               {t('settings.title')}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleSectionNavigation('integrationen')} className="cursor-pointer hover:bg-slate-100 w-full">
+            <DropdownMenuItem 
+              onClick={() => handleSectionNavigation('integrationen')} 
+              className="cursor-pointer hover:bg-slate-100 w-full"
+            >
               {t('integration.title')}
             </DropdownMenuItem>
           </DropdownMenuContent>
