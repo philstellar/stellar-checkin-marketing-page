@@ -9,6 +9,7 @@ import ZusatzservicesSection from "@/components/ZusatzservicesSection";
 import { MetaHead } from "@/components/meta";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "@/hooks/use-translation";
+import { SECTION_IDS } from '@/components/Header';
 
 // Custom loading component with content-visibility optimization
 const SectionLoader = ({ height = "h-20", bg = "bg-white" }) => (
@@ -27,8 +28,11 @@ const EinstellungenSection = lazy(() => import(/* webpackChunkName: "settings" *
 const PricingSection = lazy(() => import(/* webpackChunkName: "pricing" */ "@/components/PricingSection"));
 const ContactSection = lazy(() => import(/* webpackChunkName: "contact" */ "@/components/contact/ContactSection"));
 
-// Enhanced LazyLoadSection with immediate visibility option
-const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white", immediatelyVisible = false }) => {
+// Debug information about loaded components
+console.log('Index page: Lazy components prepared for loading');
+
+// Enhanced LazyLoadSection with immediate visibility option and debug logging
+const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white", immediatelyVisible = false, sectionId = "" }) => {
   const [isVisible, setIsVisible] = React.useState(immediatelyVisible);
   const sectionRef = React.useRef<HTMLDivElement>(null);
 
@@ -36,6 +40,7 @@ const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white", immediate
     // If marked as immediately visible, don't use IntersectionObserver
     if (immediatelyVisible) {
       setIsVisible(true);
+      console.log(`LazyLoadSection: Section ${sectionId} set to immediately visible`);
       return;
     }
 
@@ -43,29 +48,30 @@ const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white", immediate
       ([entry]) => {
         // When the section is about to enter the viewport, show it
         if (entry.isIntersecting) {
-          console.log(`LazyLoadSection: Section now visible`);
+          console.log(`LazyLoadSection: Section ${sectionId} now visible through intersection`);
           setIsVisible(true);
           // Disconnect after it's visible
           if (sectionRef.current) observer.unobserve(sectionRef.current);
         }
       },
       {
-        rootMargin: '300px', // Increased from 200px to load sooner
+        rootMargin: '400px', // Increased from 300px to load sooner
         threshold: 0
       }
     );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
+      console.log(`LazyLoadSection: Observing section ${sectionId}`);
     }
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
-  }, [immediatelyVisible]);
+  }, [immediatelyVisible, sectionId]);
 
   return (
-    <div ref={sectionRef} className="section-wrapper">
+    <div ref={sectionRef} className="section-wrapper" data-section-id={sectionId}>
       {isVisible ? (
         <Suspense fallback={<SectionLoader height={height} bg={bg} />}>
           {children}
@@ -77,9 +83,8 @@ const LazyLoadSection = ({ children, height = "h-20", bg = "bg-white", immediate
   );
 };
 
-// Check if we have an anchor in the URL and pre-load the related section
+// Improved hook to preload sections from hash or navigation state
 const usePreloadSectionFromHash = () => {
-  // Get the hash from the URL
   const location = useLocation();
   const [sectionsToPreload, setSectionsToPreload] = React.useState<string[]>([]);
 
@@ -90,7 +95,11 @@ const usePreloadSectionFromHash = () => {
 
     if (targetId) {
       console.log(`Hash or scrollTo detected: ${targetId}, preloading section`);
+      // Make sure we're using the correct ID
       setSectionsToPreload(prev => [...prev, targetId]);
+      
+      // Log all available section IDs for debugging
+      console.log('Available section IDs for preloading:', SECTION_IDS);
     }
   }, [location]);
 
@@ -103,6 +112,11 @@ const Index = () => {
   const { t, currentLanguage } = useTranslation();
   const sectionsToPreload = usePreloadSectionFromHash();
   const isHome = location.pathname === '/' || location.pathname === `/${currentLanguage}/`;
+  
+  // Log which sections are being preloaded
+  useEffect(() => {
+    console.log('Sections marked for preloading:', sectionsToPreload);
+  }, [sectionsToPreload]);
   
   // Memoize schema data to prevent re-computation
   const homePageSchema = React.useMemo(() => ({
@@ -141,31 +155,55 @@ const Index = () => {
         <PartnersSection />
         <ZusatzservicesSection />
         
-        <LazyLoadSection immediatelyVisible={sectionsToPreload.includes('kurtaxe')}>
+        <LazyLoadSection 
+          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.kurtaxe)} 
+          sectionId={SECTION_IDS.kurtaxe}
+        >
           <KurtaxeSection />
         </LazyLoadSection>
         
-        <LazyLoadSection immediatelyVisible={sectionsToPreload.includes('versicherung')}>
+        <LazyLoadSection 
+          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.versicherung)} 
+          sectionId={SECTION_IDS.versicherung}
+        >
           <VersicherungSection />
         </LazyLoadSection>
         
-        <LazyLoadSection bg="bg-floral-100" immediatelyVisible={sectionsToPreload.includes('identitaetspruefung')}>
+        <LazyLoadSection 
+          bg="bg-floral-100" 
+          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.identity)} 
+          sectionId={SECTION_IDS.identity}
+        >
           <IdentitaetspruefungSection />
         </LazyLoadSection>
         
-        <LazyLoadSection immediatelyVisible={sectionsToPreload.includes('integrationen')}>
+        <LazyLoadSection 
+          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.integration)} 
+          sectionId={SECTION_IDS.integration}
+        >
           <IntegrationenSection />
         </LazyLoadSection>
         
-        <LazyLoadSection bg="bg-floral-100" immediatelyVisible={sectionsToPreload.includes('einstellungen')}>
+        <LazyLoadSection 
+          bg="bg-floral-100" 
+          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.settings)} 
+          sectionId={SECTION_IDS.settings}
+        >
           <EinstellungenSection />
         </LazyLoadSection>
         
-        <LazyLoadSection immediatelyVisible={sectionsToPreload.includes('preise')}>
+        <LazyLoadSection 
+          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.pricing)} 
+          sectionId={SECTION_IDS.pricing}
+        >
           <PricingSection />
         </LazyLoadSection>
         
-        <LazyLoadSection bg="bg-floral-100" immediatelyVisible={sectionsToPreload.includes('kontakt')}>
+        <LazyLoadSection 
+          bg="bg-floral-100" 
+          immediatelyVisible={sectionsToPreload.includes(SECTION_IDS.contact)} 
+          sectionId={SECTION_IDS.contact}
+        >
           <ContactSection />
         </LazyLoadSection>
       </main>

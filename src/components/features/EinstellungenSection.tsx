@@ -27,7 +27,7 @@ export const EinstellungenSection: React.FC = () => {
   ];
   
   return (
-    <section id={SECTION_IDS.settings} className="">
+    <section id={SECTION_IDS.settings} className="py-16 bg-floral-100">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 text-royal break-words">

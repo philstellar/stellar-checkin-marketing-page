@@ -5,12 +5,13 @@ import { ScanFace, ShieldCheck, Fingerprint } from "lucide-react";
 import CTAButton from "./CTAButton";
 import { useTranslation } from "@/hooks/use-translation";
 import OptimizedImage from "@/components/OptimizedImage";
+import { SECTION_IDS } from '@/components/Header';
 
 const IdentitaetspruefungSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="identitaetspruefung" className="section-padding bg-white">
+    <section id={SECTION_IDS.identity} className="section-padding bg-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-first">
