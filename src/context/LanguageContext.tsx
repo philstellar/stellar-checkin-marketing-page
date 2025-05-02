@@ -1,5 +1,5 @@
 
-import * as React from 'react';
+import React, { useState, useContext } from 'react';
 
 // Import directly from the actual context file
 import { 
