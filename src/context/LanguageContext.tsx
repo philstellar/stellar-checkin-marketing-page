@@ -1,15 +1,20 @@
 
 import * as React from 'react';
 
-// Re-export from the new location to handle any cached imports
+// Import directly from the actual context file
 import { 
   LanguageContext, 
-  LanguageProvider, 
-  useLanguage
+  LanguageProvider as OriginalLanguageProvider, 
+  useLanguage 
 } from './language/LanguageContext';
 
 // Import type separately for proper re-export
 import type { Language } from './language/types';
+
+// Create a wrapper component instead of just re-exporting
+const LanguageProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+  return <OriginalLanguageProvider>{children}</OriginalLanguageProvider>;
+};
 
 // Export values
 export { 
