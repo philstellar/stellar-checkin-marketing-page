@@ -1,24 +1,49 @@
 
 import React from 'react';
-import { 
-  LanguageProvider as OriginalProvider,
-  useLanguage as originalUseLanguage,
-  LanguageContext as OriginalContext
-} from './language/LanguageContext';
-import type { Language } from './language/types';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { getLanguageFromPath, getLocalizedPath } from './language/utils';
+import type { LanguageContextType, LanguageProviderProps, Language } from './language/types';
 
-// Export the original context
-export const LanguageContext = OriginalContext;
+// Create the context with default values
+export const LanguageContext = React.createContext<LanguageContextType>({
+  language: 'de',
+  setLanguage: () => {},
+});
 
-// Export the original hook
-export const useLanguage = originalUseLanguage;
+// Custom hook to use the language context
+export const useLanguage = () => React.useContext(LanguageContext);
 
-// Create a proper wrapper component
-export const LanguageProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
-  return <OriginalProvider>{children}</OriginalProvider>;
+// Language provider component
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [language, setLanguageState] = React.useState<Language>('de');
+
+  // Update language based on URL when location changes
+  React.useEffect(() => {
+    const pathLanguage = getLanguageFromPath(location.pathname);
+    if (pathLanguage && pathLanguage !== language) {
+      setLanguageState(pathLanguage);
+    }
+  }, [location.pathname, language]);
+
+  // Custom language setter that also updates the URL
+  const setLanguage = (newLanguage: Language) => {
+    if (newLanguage !== language) {
+      setLanguageState(newLanguage);
+      const newPath = getLocalizedPath(location.pathname, newLanguage);
+      navigate(newPath);
+    }
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
 };
 
-// Re-export the Language type
+// Export types
 export type { Language };
 
 export default LanguageContext;
