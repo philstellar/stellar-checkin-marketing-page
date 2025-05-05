@@ -1,7 +1,6 @@
 
 import { lazy } from 'react';
 import Index from '@/pages/Index';
-import VersicherungPage from '@/components/admin/VersicherungPage';
 
 // Define the interface for route configuration
 interface RouteConfig {
@@ -15,6 +14,7 @@ const Impressum = lazy(() => import('@/pages/Impressum'));
 const Datenschutz = lazy(() => import('@/pages/Datenschutz'));
 const Agb = lazy(() => import('@/pages/Agb'));
 const Brevo = lazy(() => import('@/pages/Brevo'));
+const VersicherungPage = lazy(() => import('@/pages/VersicherungPage'));
 const TrustBadgePage = lazy(() => import('@/components/admin/TrustBadgePage'));
 const UeberUns = lazy(() => import('@/pages/UeberUns'));
 const Erfolgsbeispiele = lazy(() => import('@/pages/Erfolgsbeispiele'));
