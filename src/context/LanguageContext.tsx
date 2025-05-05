@@ -1,3 +1,6 @@
 
-// Re-export everything from the language context folder
-export * from './language';
+// Re-export from the language folder to maintain backward compatibility
+export * from './language/LanguageContext';
+export * from './language/types';
+export * from './language/utils';
+export * from './language/pathMappings';

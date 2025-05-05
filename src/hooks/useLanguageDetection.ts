@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import type { Language } from '@/context/language';
+import type { Language } from '@/context/language/types';
 import { useLocation } from 'react-router-dom';
 
 type SupportedLanguages = Language | 'fr';

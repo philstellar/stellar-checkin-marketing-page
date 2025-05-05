@@ -1,5 +1,5 @@
 
-import { useLanguage } from '@/context/language';
+import { useLanguage } from '@/context/language/LanguageContext';
 import { translations } from '../translations';
 import get from 'lodash.get';
 

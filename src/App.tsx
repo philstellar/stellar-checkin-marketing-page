@@ -6,7 +6,7 @@ import BrevoFormPopupWrapper from './components/BrevoFormPopupWrapper';
 import { LanguageDetectionDialog } from './components/LanguageDetectionDialog';
 import { SchemaProvider } from './components/schema/SchemaProvider';
 import RouteConfig from './routes/RouteConfig';
-import { LanguageProvider } from './context/language';
+import { LanguageProvider } from './context/language/LanguageContext';
 import { BrowserRouter } from 'react-router-dom';
 import DynamicHead from './components/optimization/DynamicHead';
 

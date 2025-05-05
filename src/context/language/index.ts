@@ -1,5 +1,5 @@
 
-// Export everything needed from the language context
+// Export everything from the language context
 export * from './LanguageContext';
 export * from './types';
 export * from './utils';
