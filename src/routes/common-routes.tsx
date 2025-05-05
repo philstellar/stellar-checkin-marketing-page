@@ -1,6 +1,7 @@
 
-import { lazy } from 'react';
+import React from 'react';
 import Index from '@/pages/Index';
+import NotFound from '@/pages/NotFound';
 
 // Define the interface for route configuration
 interface RouteConfig {
@@ -8,9 +9,6 @@ interface RouteConfig {
   element?: React.ReactNode;
   redirectTo?: string;
 }
-
-// Lazy load pages
-const NotFound = lazy(() => import('@/pages/NotFound'));
 
 export const commonRoutes: RouteConfig[] = [
   {
