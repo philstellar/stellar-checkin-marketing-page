@@ -1,18 +1,23 @@
 
 import React from 'react';
-import { LanguageProvider as OriginalProvider } from './language/LanguageContext';
-import { useLanguage as originalUseLanguage } from './language/LanguageContext';
-import { LanguageContext as OriginalLanguageContext } from './language/LanguageContext';
+import { 
+  LanguageProvider as OriginalLanguageProvider,
+  useLanguage as originalUseLanguage,
+  LanguageContext as OriginalLanguageContext
+} from './language/LanguageContext';
 import type { Language } from './language/types';
 
-// Export the context and hook directly
+// Export the original context 
 export const LanguageContext = OriginalLanguageContext;
+
+// Export the original hook
 export const useLanguage = originalUseLanguage;
 
-// Export a simple wrapper component that directly uses the original provider
+// Create a proper wrapper component that directly uses the original provider
+// This ensures React hooks are used in a valid React component context
 export const LanguageProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
-  // No dynamic require here - use direct import instead
-  return <OriginalProvider>{children}</OriginalProvider>;
+  // Using the original provider component directly
+  return <OriginalLanguageProvider>{children}</OriginalLanguageProvider>;
 };
 
 // Re-export the Language type
