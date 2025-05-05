@@ -1,6 +1,6 @@
 
 import { useContext } from 'react';
-import { useLanguage } from '../context/language/LanguageContext';
+import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 import get from 'lodash.get';
 
