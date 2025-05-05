@@ -2,6 +2,7 @@
 import React from 'react';
 import Index from '@/pages/Index';
 import NotFound from '@/pages/NotFound';
+import TrustBadgePage from '@/pages/TrustBadgePage';
 
 // Define the interface for route configuration
 interface RouteConfig {
@@ -14,6 +15,10 @@ export const commonRoutes: RouteConfig[] = [
   {
     path: '/',
     element: <Index />
+  },
+  {
+    path: '/trust-badge',
+    element: <TrustBadgePage />
   },
   {
     path: '/:lang/home',

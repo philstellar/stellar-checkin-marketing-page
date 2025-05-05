@@ -8,6 +8,7 @@ import { SchemaProvider } from './components/schema/SchemaProvider';
 import RouteConfig from './routes/RouteConfig';
 import { LanguageProvider } from './context/language';
 import { BrowserRouter } from 'react-router-dom';
+import DynamicHead from './components/optimization/DynamicHead';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <LanguageProvider>
         <BrevoFormProvider>
           <SchemaProvider>
+            <DynamicHead />
             <RouteConfig />
             <BrevoFormPopupWrapper />
             <LanguageDetectionDialog />
