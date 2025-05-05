@@ -139,6 +139,7 @@ const DesktopNav = ({
         onClick={() => handleNavigation('trust-badge')}
         onMouseEnter={() => handleMouseEnter('trust-badge')}
         className="text-royal hover:text-apple font-medium transition-colors"
+        data-testid="trust-badge-nav-link"
       >
         {renderBoldText(t('navigation.trustBadge'))}
       </button>
