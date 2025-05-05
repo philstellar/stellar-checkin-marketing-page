@@ -1,26 +1,26 @@
 
-import React from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getLanguageFromPath, getLocalizedPath } from './language/utils';
 import type { LanguageContextType, LanguageProviderProps, Language } from './language/types';
 
 // Create the context with default values
-export const LanguageContext = React.createContext<LanguageContextType>({
+export const LanguageContext = createContext<LanguageContextType>({
   language: 'de',
   setLanguage: () => {},
 });
 
 // Custom hook to use the language context
-export const useLanguage = () => React.useContext(LanguageContext);
+export const useLanguage = () => useContext(LanguageContext);
 
 // Language provider component
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [language, setLanguageState] = React.useState<Language>('de');
+  const [language, setLanguageState] = useState<Language>('de');
 
   // Update language based on URL when location changes
-  React.useEffect(() => {
+  useEffect(() => {
     const pathLanguage = getLanguageFromPath(location.pathname);
     if (pathLanguage && pathLanguage !== language) {
       setLanguageState(pathLanguage);
