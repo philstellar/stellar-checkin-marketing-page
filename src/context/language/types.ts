@@ -1,12 +1,13 @@
 
 import { ReactNode } from 'react';
 
-// Define available language
-export type Language = 'en';
+// Define available languages
+export type Language = 'de' | 'en' | 'it' | 'es';
 
 // Define the context type
 export type LanguageContextType = {
   language: Language;
+  setLanguage: (language: Language) => void;
 };
 
 export type LanguageProviderProps = {

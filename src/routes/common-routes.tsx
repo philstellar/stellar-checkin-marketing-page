@@ -1,8 +1,6 @@
 
-import React from 'react';
+import { lazy } from 'react';
 import Index from '@/pages/Index';
-import NotFound from '@/pages/NotFound';
-import TrustBadgePage from '@/pages/TrustBadgePage';
 
 // Define the interface for route configuration
 interface RouteConfig {
@@ -11,14 +9,13 @@ interface RouteConfig {
   redirectTo?: string;
 }
 
+// Lazy load pages
+const NotFound = lazy(() => import('@/pages/NotFound'));
+
 export const commonRoutes: RouteConfig[] = [
   {
     path: '/',
     element: <Index />
-  },
-  {
-    path: '/trust-badge',
-    element: <TrustBadgePage />
   },
   {
     path: '/:lang/home',

@@ -1,7 +1,6 @@
-
 import React, { memo } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
-import { X, BadgeCheck } from "lucide-react";
+import { X } from "lucide-react";
 import CTAButton from '../CTAButton';
 import { useTranslation } from '@/hooks/use-translation';
 import { motion, AnimatePresence } from "framer-motion";
@@ -133,11 +132,9 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               
               <button 
                 onClick={() => handleNavigation('trust-badge')}
-                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left flex items-center"
-                data-testid="trust-badge-mobile-link"
+                className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
               >
-                <BadgeCheck className="h-5 w-5 text-apple mr-2" />
-                <span className="font-bold">{t('navigation.trustBadge')}</span>
+                {t('navigation.trustBadge')}
               </button>
 
               <button 

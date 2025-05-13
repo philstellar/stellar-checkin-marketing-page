@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import CTAButton from '../CTAButton';
 import LanguageSelector from '../LanguageSelector';
 import { useTranslation } from '@/hooks/use-translation';
-import { ChevronDown, BadgeCheck } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { SECTION_IDS } from '@/constants/section-ids';
 
@@ -138,10 +138,8 @@ const DesktopNav = ({
       <button
         onClick={() => handleNavigation('trust-badge')}
         onMouseEnter={() => handleMouseEnter('trust-badge')}
-        className="text-royal hover:text-apple font-medium transition-colors flex items-center"
-        data-testid="trust-badge-nav-link"
+        className="text-royal hover:text-apple font-medium transition-colors"
       >
-        <BadgeCheck className="w-5 h-5 mr-1 text-apple" />
         {renderBoldText(t('navigation.trustBadge'))}
       </button>
 
