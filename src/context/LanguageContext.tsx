@@ -1,49 +1,6 @@
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { getLanguageFromPath, getLocalizedPath } from './language/utils';
-import type { LanguageContextType, LanguageProviderProps, Language } from './language/types';
-
-// Create the context with default values
-export const LanguageContext = createContext<LanguageContextType>({
-  language: 'de',
-  setLanguage: () => {},
-});
-
-// Custom hook to use the language context
-export const useLanguage = () => useContext(LanguageContext);
-
-// Language provider component
-export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [language, setLanguageState] = useState<Language>('de');
-
-  // Update language based on URL when location changes
-  useEffect(() => {
-    const pathLanguage = getLanguageFromPath(location.pathname);
-    if (pathLanguage && pathLanguage !== language) {
-      setLanguageState(pathLanguage);
-    }
-  }, [location.pathname, language]);
-
-  // Custom language setter that also updates the URL
-  const setLanguage = (newLanguage: Language) => {
-    if (newLanguage !== language) {
-      setLanguageState(newLanguage);
-      const newPath = getLocalizedPath(location.pathname, newLanguage);
-      navigate(newPath);
-    }
-  };
-
-  return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
-      {children}
-    </LanguageContext.Provider>
-  );
-};
-
-// Export types
-export type { Language };
-
-export default LanguageContext;
+// Re-export from the language folder to maintain backward compatibility
+export { LanguageContext, useLanguage, LanguageProvider } from './language/LanguageContext';
+export * from './language/types';
+export * from './language/utils';
+export * from './language/pathMappings';
