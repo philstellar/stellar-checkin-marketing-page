@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useLanguage } from '@/context/LanguageContext';
 
 interface DynamicHeadProps {
   title?: string;
@@ -11,7 +10,6 @@ interface DynamicHeadProps {
 
 const DynamicHead = ({ title, description, canonicalUrl }: DynamicHeadProps) => {
   const location = useLocation();
-  const { language } = useLanguage();
   
   useEffect(() => {
     // Dynamically update head elements for better SEO and performance
@@ -41,24 +39,7 @@ const DynamicHead = ({ title, description, canonicalUrl }: DynamicHeadProps) => 
     const url = canonicalUrl || `${window.location.origin}${location.pathname}`;
     canonicalLink.setAttribute('href', url);
     
-    // Set alternate language URLs
-    const languages = ['en', 'de', 'it', 'es'];
-    languages.forEach(lang => {
-      let alternateLink = document.querySelector(`link[hreflang="${lang}"]`);
-      if (!alternateLink) {
-        alternateLink = document.createElement('link');
-        alternateLink.setAttribute('rel', 'alternate');
-        alternateLink.setAttribute('hreflang', lang);
-        document.head.appendChild(alternateLink);
-      }
-      
-      // Create the alternate URL based on the current path
-      const currentPath = location.pathname.split('/').slice(2).join('/');
-      const alternatePath = `/${lang}/${currentPath}`;
-      alternateLink.setAttribute('href', `${window.location.origin}${alternatePath}`);
-    });
-    
-  }, [title, description, canonicalUrl, location.pathname, language]);
+  }, [title, description, canonicalUrl, location.pathname]);
   
   return null; // This component doesn't render anything
 };
