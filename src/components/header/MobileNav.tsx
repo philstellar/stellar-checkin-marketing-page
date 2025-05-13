@@ -1,4 +1,3 @@
-
 import React, { memo } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
@@ -134,7 +133,6 @@ const MobileNav = ({ isOpen, handleSectionClick, onClose, isScrolled }: MobileNa
               <button 
                 onClick={() => handleNavigation('trust-badge')}
                 className="block w-full text-xl text-royal hover:text-apple font-medium transition-colors py-2 text-left"
-                data-testid="trust-badge-mobile-link"
               >
                 {t('navigation.trustBadge')}
               </button>

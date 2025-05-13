@@ -1,6 +1,7 @@
 
-import React from 'react';
+import { Suspense } from 'react';
 import { Route, Navigate } from 'react-router-dom';
+import { PageLoader } from './PageLoader';
 
 interface RouteConfig {
   path: string;
@@ -25,12 +26,16 @@ export const RouterWrapper: React.FC<RouterWrapperProps> = ({ routes }) => {
       );
     }
     
-    // Handle regular routes with direct components
+    // Handle regular routes with lazy loaded components
     return (
       <Route 
         key={route.path}
         path={route.path} 
-        element={route.element} 
+        element={route.element ? (
+          <Suspense fallback={<PageLoader />}>
+            {route.element}
+          </Suspense>
+        ) : null} 
       />
     );
   });

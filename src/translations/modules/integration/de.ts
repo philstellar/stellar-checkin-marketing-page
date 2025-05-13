@@ -14,18 +14,5 @@ export const integrationDE = {
     title: "Webhooks",
     description: "Neue Buchungen und Änderungen werden in Echtzeit mit unseren Plattformen synchronisiert."
   },
-  // Add the missing translation keys
-  api: {
-    title: "API-Zugang",
-    description: "Integrieren Sie Stellar mit Ihrer eigenen Software durch unsere robuste API-Schnittstelle."
-  },
-  developer: {
-    title: "Entwicklerportal",
-    description: "Zugang zu umfassender Dokumentation und Tools für individuelle Integrationen."
-  },
-  marketplace: {
-    title: "Integration-Marktplatz",
-    description: "Entdecken Sie vorgefertigte Integrationen mit beliebten Tools und Diensten."
-  },
   cta: "Integrationen entdecken"
 };

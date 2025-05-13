@@ -1,5 +1,7 @@
 
-export { versicherungDE } from './de';
-export { versicherungEN } from './en';
-export { versicherungES } from './es';
-export { versicherungIT } from './it';
+import { versicherungDE } from './de';
+import { versicherungEN } from './en';
+import { versicherungIT } from './it';
+import { versicherungES } from './es';
+
+export { versicherungDE, versicherungEN, versicherungIT, versicherungES };

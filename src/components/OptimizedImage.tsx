@@ -1,4 +1,6 @@
+
 import React from 'react';
+
 interface OptimizedImageProps {
   src: string;
   alt: string;
@@ -11,6 +13,7 @@ interface OptimizedImageProps {
   onClick?: () => void;
   sizes?: string;
 }
+
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
@@ -25,15 +28,28 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
   // Convert priority to loading="eager" 
   const loadingValue = priority ? 'eager' : loading;
-
+  
   // For priority images (likely LCP candidates), apply optimized styles
   const imageStyle: React.CSSProperties = {
     ...style,
-    display: 'block',
-    // Prevent layout shifts
-    objectFit: 'contain'
+    display: 'block', // Prevent layout shifts
+    objectFit: 'contain',
   };
-  return <img src={src} alt={alt} width={width} height={height} loading={loadingValue} style={imageStyle} onClick={onClick} sizes={sizes} decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
-  className="object-scale-down" />;
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      loading={loadingValue}
+      style={imageStyle}
+      onClick={onClick}
+      sizes={sizes}
+      decoding={priority ? "sync" : "async"} // Use sync decoding for priority images
+    />
+  );
 };
+
 export default OptimizedImage;

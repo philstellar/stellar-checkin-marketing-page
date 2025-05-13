@@ -1,6 +1,7 @@
 
-import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
+import { Suspense } from 'react';
+import { PageLoader } from './PageLoader';
 import { commonRoutes } from './common-routes';
 import { germanRoutes } from './de-routes';
 import { englishRoutes } from './en-routes';
@@ -38,12 +39,16 @@ const RouteConfig = () => {
           );
         }
         
-        // Handle regular routes with direct components (no lazy loading)
+        // Handle regular routes with lazy loaded components
         return (
           <Route 
             key={route.path}
             path={route.path} 
-            element={route.element} 
+            element={route.element ? (
+              <Suspense fallback={<PageLoader />}>
+                {route.element}
+              </Suspense>
+            ) : null} 
           />
         );
       })}

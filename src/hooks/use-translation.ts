@@ -1,10 +1,11 @@
 
-import { useLanguage } from '@/context/language';
+import { useContext } from 'react';
+import { LanguageContext } from '../context/language/LanguageContext';
 import { translations } from '../translations';
 import get from 'lodash.get';
 
 export const useTranslation = () => {
-  const { language } = useLanguage();
+  const { language } = useContext(LanguageContext);
   
   const t = (key: string, params?: Record<string, string | ((text: string) => React.ReactNode)>) => {
     // Special handling for current language
@@ -16,7 +17,6 @@ export const useTranslation = () => {
     
     // If translation is missing, return the key as fallback
     if (!value) {
-      console.warn(`Missing translation for key: ${key} in language: ${language}`);
       return key;
     }
     

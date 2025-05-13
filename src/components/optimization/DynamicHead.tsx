@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useLanguage } from '@/context/language';
+import { useLanguage } from '@/context/language/LanguageContext';
 
 interface DynamicHeadProps {
   title?: string;
