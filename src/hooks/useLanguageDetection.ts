@@ -1,5 +1,5 @@
 
-import React from 'react';
+import * as React from 'react';
 import type { Language } from '@/context/LanguageContext';
 import { useLocation } from 'react-router-dom';
 

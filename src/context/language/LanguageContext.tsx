@@ -1,5 +1,5 @@
 
-import React from 'react';
+import * as React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getLanguageFromPath, getLocalizedPath } from './utils';
 import type { LanguageContextType, LanguageProviderProps, Language } from './types';
