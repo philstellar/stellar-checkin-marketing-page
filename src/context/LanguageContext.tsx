@@ -1,24 +1,49 @@
 
-import * as React from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { getLanguageFromPath, getLocalizedPath } from './language/utils';
+import type { LanguageContextType, LanguageProviderProps, Language } from './language/types';
 
-// Re-export from the new location to handle any cached imports
-import { 
-  LanguageContext, 
-  LanguageProvider, 
-  useLanguage
-} from './language/LanguageContext';
+// Create the context with default values
+export const LanguageContext = createContext<LanguageContextType>({
+  language: 'de',
+  setLanguage: () => {},
+});
 
-// Import type separately for proper re-export
-import type { Language } from './language/types';
+// Custom hook to use the language context
+export const useLanguage = () => useContext(LanguageContext);
 
-// Export values
-export { 
-  LanguageContext, 
-  LanguageProvider, 
-  useLanguage
+// Language provider component
+export const LanguageProvider = ({ children }: LanguageProviderProps) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [language, setLanguageState] = useState<Language>('de');
+
+  // Update language based on URL when location changes
+  useEffect(() => {
+    const pathLanguage = getLanguageFromPath(location.pathname);
+    if (pathLanguage && pathLanguage !== language) {
+      setLanguageState(pathLanguage);
+    }
+  }, [location.pathname, language]);
+
+  // Custom language setter that also updates the URL
+  const setLanguage = (newLanguage: Language) => {
+    if (newLanguage !== language) {
+      setLanguageState(newLanguage);
+      const newPath = getLocalizedPath(location.pathname, newLanguage);
+      navigate(newPath);
+    }
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
 };
 
-// Export type properly
+// Export types
 export type { Language };
 
 export default LanguageContext;
