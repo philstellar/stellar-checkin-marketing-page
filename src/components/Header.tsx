@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
@@ -6,7 +7,7 @@ import MobileNav from './header/MobileNav';
 import LanguageSelector from './LanguageSelector';
 import OptimizedImage from './OptimizedImage';
 import { MetaHead } from './meta';
-import { useLanguage } from '@/context/language/LanguageContext';
+import { useLanguage } from '@/context/language';
 import { useScrollToSection } from '@/hooks/use-scroll-to-section';
 import { SECTION_IDS } from '@/constants/section-ids';
 

@@ -3,7 +3,7 @@ import React, { memo, useCallback } from "react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
-import { useLanguage } from "@/context/language/LanguageContext";
+import { useLanguage } from "@/context/language";
 import { Separator } from "@/components/ui/separator";
 import OptimizedImage from "./OptimizedImage";
 import { SECTION_IDS } from "@/constants/section-ids";
@@ -108,7 +108,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to={`/${language}/trust-badge`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation}>
+                <Link to={`/${language}/trust-badge`} className="flex items-center text-black hover:text-apple transition-colors" onClick={handleNavigation} data-testid="trust-badge-footer-link">
                   <ExternalLink className="h-5 w-5 text-apple mr-2" />
                   {t('navigation.trustBadge')}
                 </Link>

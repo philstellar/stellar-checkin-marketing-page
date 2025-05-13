@@ -5,7 +5,7 @@ import { getLanguageFromPath, getLocalizedPath } from './utils';
 import type { LanguageContextType, LanguageProviderProps, Language } from './types';
 
 // Create the context with default values
-const LanguageContext = React.createContext<LanguageContextType>({
+export const LanguageContext = React.createContext<LanguageContextType>({
   language: 'de',
   setLanguage: () => {},
 });
@@ -30,6 +30,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   // Custom language setter that also updates the URL
   const setLanguage = (newLanguage: Language) => {
     if (newLanguage !== language) {
+      localStorage.setItem('lastLanguageChangeByPicker', 'true');
       setLanguageState(newLanguage);
       const newPath = getLocalizedPath(location.pathname, newLanguage);
       navigate(newPath);
@@ -42,9 +43,3 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     </LanguageContext.Provider>
   );
 };
-
-// Export the context for direct use if needed
-export { LanguageContext };
-
-// Export types
-export type { Language };
